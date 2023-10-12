@@ -9,6 +9,8 @@
     --txt4: #bbbbbb;
     --txt5: #aaaaaa;
     --black: #000000;
+    --footer-bg: #000000;
+    --footer-txt: #cccccc;
 }
 
 :root.dark {
