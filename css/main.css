@@ -1,0 +1,73 @@
+:root,
+:root.light {
+    --bg: #161616;
+    --bg2: #222222;
+    --bg3: #2f2f2f;
+    --txt: #ffffff;
+    --txt2: #dddddd;
+    --txt3: #cccccc;
+    --txt4: #bbbbbb;
+    --txt5: #aaaaaa;
+    --black: #000000;
+}
+
+:root.dark {
+    --bg: #ffffff;
+    --bg2: #cccccc;
+    --bg3: #aaaaaa;
+    --txt: #000000;
+    --txt2: #111111;
+    --txt3: #161616;
+    --txt4: #222222;
+    --txt5: #2f2f2f;
+    --black: #000000;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+    color: var(--txt);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--txt);
+    margin: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.toggle-container {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+.theme-btn {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.theme-btn.light {
+  display: none;
+  color: #000000;
+}
+
+.dark .theme-btn.dark {
+  display: none;
+}
+
+.dark .theme-btn.light {
+  display: block;
+}

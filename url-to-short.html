@@ -1,0 +1,78 @@
+<!------------------------------------------------------------------------
+Project Name    : HungBok
+Domain Name     : hgbk.me
+File Name       : uts.html
+Encoding        : HTML5/UTF-8
+Creation Date   : 10/12/2023
+Project Start   : 10/12/2023
+
+Project Name    : HungBok Network
+Project Start   : 01/24/2021
+
+Project Name    : HungBok Games
+Project Start   : 09/07/2018
+
+Copyright 2021-2023. HungBok All Rights Reserved.
+
+This source code or any portion thereof must not be
+reproduced or used in any manner whatsoever.
+-------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title data-lang="title">Url To Short | HungBok</title>
+        <link rel="icon" href="/image/hungbok-circle.ico" type="image/x-icon">
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/main.css">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/uts.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+            document.onmousedown=disableclick;
+        </script>
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=/script">
+        </noscript>
+    </head>
+    <body>
+        <section class="search-section">
+            <div class="searchbox">
+                <h1 class="title" onClick="window.location.reload()">UTS</h1>
+            </div>
+            <div class="history-container">
+                <div class="container">
+                    <form name="theForm">
+                        <div class="radios">
+                            <input type="radio" id="myRadio6" name="numbers" value="6">
+                            <label for="myRadio6">6</label>
+                            <input type="radio" id="myRadio8" name="numbers" value="8" checked>
+                            <label for="myRadio8">8</label>
+                            <input type="radio" id="myRadio10" name="numbers" value="10">
+                            <label for="myRadio10">10</label>
+                            <input type="radio" id="myRadio12" name="numbers" value="12">
+                            <label for="myRadio12">12</label>
+                            <input type="radio" id="myRadio14" name="numbers" value="14">
+                            <label for="myRadio14">14</label>
+                            <input type="radio" id="myRadio16" name="numbers" value="16">
+                            <label for="myRadio16">16</label>
+                            <div>
+                                <input type="checkbox" id="specialCharsCB" value="yes">
+                                <label for="specialCharsCB"></label>
+                                <div>Include Special characters</div>
+                            </div>
+                        </div>
+                        <div class="actions button">
+                            <input type="button" value="Generate" onClick="randomString();" class="btn">
+                        </div>
+                        <div class="actions result">
+                            <p>https://hgbk.me/</p><input type="text" name="theField" width="100%" size="20" value="" id="stringBox" onclick="this.select();">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="/js/uts.js"></script>
+        <script type="text/javascript" src="https://www.hungbok.net/javascript/copyright.js"></script>
+    </body>
+</html>
