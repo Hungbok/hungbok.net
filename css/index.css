@@ -1,0 +1,448 @@
+.section {
+    height: 100vh;
+}
+
+.body-section {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    margin-bottom: 50px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#hungbok-logo {
+    width: 100px;
+    transform: translate(0, 100%);
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.cls-1,
+.cls-7 {
+    fill:#e6c300;
+}
+
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-6 {
+    fill:#2f2f2f;
+}
+
+.body-title {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.body-subtitle {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+}
+
+@media(max-width:1000px) {
+    .body-title {
+        font-size: 40px;
+    }
+
+    .body-subtitle {
+        font-size: 15px;
+    }
+}
+
+.body-subtitle a:hover {
+    background-color: #ffffff;
+    border: solid 2px #ffffff;
+    color: black;
+}
+
+.body-subtitle a {
+    padding: 7.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: solid 2px #161616;
+    color: black;
+    background-color: #dddddd;
+    border-radius: 47px;
+    text-decoration-line: none;
+}
+
+.body-subtitle2 {
+    position: relative;
+    color: white;
+    font-size: 14px;
+}
+
+.body-subtitle2 a {
+    color: #bbbbbb;
+}
+
+.body-subtitle2 a:hover {
+    filter: brightness(80);
+}
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background-color: #161616;
+	font-family: 'Note Sans',arial,'Apple SD Gothic Neo','Noto Sans CJK KR','본고딕','KoPubDotum','나눔바른고딕','나눔고딕','NanumGothic','맑은고딕','Malgun Gothic',sans-serif;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-drag: none;
+	user-select: none;
+}
+
+img {
+	-webkit-user-drag: none;
+}
+
+.copyright::after {
+	content: "Copyright 2022. HungBok All Rights Reserved.";
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #666666;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    border-radius: 7px;
+    background-color: #666666;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    border: 2px solid #666666;
+}
+
+body::-webkit-scrollbar-thumb:active {
+    border-radius: 7px;
+    background-color: #444444;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    border: 2px solid #444444;
+}
+
+body::-webkit-scrollbar-track {
+  	background-color: #161616;
+}
+
+:link {
+	text-decoration-line: none;
+	color: #FFFFFF;
+}
+
+:visited {
+	color: #FFFFFF;
+}
+
+:link:hover {
+	text-decoration-line: underline;
+	color: #FFFFFF;
+}
+.info-next,
+.info-prev {
+	text-decoration-line: none!important;
+}
+
+#topBtn {
+	position: fixed;
+	right: 2%;
+	bottom: 3%;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	display: none;
+	background: #000;
+	color: #fff;
+	font-size: 10px;
+	text-align: center;
+	border-radius: 5px;
+	text-decoration: none;
+	z-index: 10000;
+	cursor: pointer;
+	border: 0;
+}
+
+@font-face {
+	font-family: 'Black Han Sans';
+    font-weight: normal;
+    font-style: normal;
+	src: url('../../\　/fonts/BlackHanSans-Regular.ttf') format('woff2');
+}
+
+[data-tooltip-text]:hover {
+	position: relative;
+}
+
+.details-middle-content-table-right p[data-tooltip-text]:hover {
+	color: #dddddd;
+}
+
+[data-tooltip-text]::after {
+	-webkit-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+	-moz-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+	transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+
+	background-color: rgba(97, 97, 97, 0.95);
+
+  	-webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+	box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+	
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	border-radius: 2.5px;
+	
+	color: #FFFFFF;
+	font-size: inherit;
+	font-weight: 400;
+	padding: 8px;
+	position: absolute;
+	width: auto;
+	white-space: nowrap;
+	bottom: 150%;
+	left: 50%;
+	transform: translate(-50%, 0%);
+
+	z-index: 2;
+
+	overflow: auto;
+	opacity: 0;
+	visibility: hidden;
+	
+	content: attr(data-tooltip-text);
+}
+
+.untitle-name[data-tooltip-text]::after {
+	font-style: italic;
+}
+
+.platforms[data-tooltip-text]::after {
+	font-size: 11px;
+}
+
+.rating[data-tooltip-text]::after {
+	font-size: 10px;
+}
+
+.store-link [data-tooltip-text]::after {
+	bottom: 110%;
+}
+
+.lang-left[data-tooltip-text]::after {
+	left: -7px;
+	transform: translate(0%, 0%);
+}
+
+.external-link-content[data-tooltip-text]::after {
+	font-size: 16px;
+	opacity: 1!important;
+	bottom: 120%;
+}
+
+.star-ratings[data-tooltip-text]::after {
+	bottom: -140%;
+	padding: 0px 8px;
+}
+
+.details-middle-content-ost-table th[data-tooltip-text]::after {
+	bottom: 120%;
+}
+
+.details-middle-content-episode-table p[data-tooltip-text]::after {
+	bottom: 120%;
+}
+
+[data-tooltip-text]:hover::after {
+	opacity: 1;
+	visibility: visible;
+}
+
+#paginate {
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border: 1px solid #414141;
+	text-align: left;
+	font: normal 12px Arial;
+}
+
+#paginate strong {
+	font-weight: bold;
+}
+
+#paginate img {
+	width: 150px;
+}
+
+#paginate p {
+	margin: 2px;
+}
+
+#pagination a {
+	cursor: pointer;
+}
+
+#pagination a.current {
+	color: red;
+	cursor: default;
+}
+
+.hide-info {
+	filter: blur(5px);
+}
+
+#locale {
+	display: none;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -10;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans&family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap");
+
+
+img {
+	-webkit-user-drag: none;
+}
+
+.section {
+	width: 100vw;
+	text-align: center;
+}
+
+.header-section {
+	text-align: center;
+	padding-top: 80px;
+	width: 100%;
+}
+
+.lists-section {
+	text-align: center;
+	width: 1190px;
+	height: auto;
+	display: inline-block;
+	border-radius: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.list-section {
+	padding: 10px;
+	margin: 10px;
+	width: 1150px;
+	height: auto;
+	text-align: left;
+	background-color: #1a1b1e;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.calendar-content-section {
+	width: 1050px;
+	height: auto;
+	position: relative;
+	z-index: 2;
+}
+
+.calendar-contents-section {
+	margin-left: 50px;
+}
+
+.calendar-section {
+	display: inline-block;
+	position: relative;
+	font-size: 0;
+	width: auto;
+    padding-top: 22px;
+	/*width: calc(100% - 190px);*/
+}
+
+.item-section {
+	height: auto;
+	display: inline-block;
+}
+
+.detail-section {
+	height: auto;
+	z-index: 2;
+}
+
+.details-section {
+	width: 1050px;
+	display: inline-block;
+}
+
+.detail-title-section {
+	height: 300px;
+	width: auto;
+	position: relative;
+}
+
+.item-2-section {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: auto;
+	display: inline-block;
+}
+
+.item-3-section {
+	padding-left: 20px;
+	padding-right: 20px;
+	height: auto;
+	display: inline-block;
+}
+
+.aside {
+	width: 200px;
+	height: auto;
+	margin-top: 6px;
+	margin-bottom: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+	display: inline-block;
+}
+
+.profile-sections {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.profile-section {
+    position: relative;
+	display: inline-block;
+    width: 1000px;
+	height: 100%;
+    margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
