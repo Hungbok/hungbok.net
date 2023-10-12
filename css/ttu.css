@@ -109,7 +109,7 @@ video {
     max-width: 100%;
 }
 
-img:hover {
+#image-wrapper img:hover {
     cursor: pointer;
     box-shadow: 0px 0px 10px black;
     border-radius: 5px;
