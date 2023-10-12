@@ -22,34 +22,3 @@ filterCityButton.addEventListener("click", function() {
 removeFiltersButton.addEventListener("click", function() {
   hackerList.filter();
 });
-
-
-
-document.querySelectorAll(".surl").forEach((item, index) => {
-  item.addEventListener("click", async (event) => {
-      if (!navigator.clipboard) {
-          // Clipboard API not available
-          return;
-      }
-      try {
-          await navigator.clipboard.writeText("https://hgbk.me/" + event.target.innerText);
-          let newtime = new Date().getTime();
-          $('.search-section').append('<div class="copied ' + newtime + '">✔</div>');
-          setTimeout(function() {
-              $('.copied.' + newtime).remove();
-          }, 3000);
-
-          var tooltip = document.getElementById("myTooltip");
-          tooltip.innerHTML = "Copied"
-
-      } catch (err) {
-          console.error("Failed to copy!", err);
-      }
-  });
-});
-
-
-
-$("div").html(function(i, html) {
-  return html.replace(/(\w+\.\w+.\w+.\w+.\w+.\w+.\w+)/g, "<a href='https://$1' target='_blank'>$1</a>");
-});

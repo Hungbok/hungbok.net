@@ -76,6 +76,35 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://www.hungbok.net/js/short-url.js"></script>
+        <script>
+            $("div").html(function(i, html){
+                return html.replace(/(\w+\.\w+.\w+.\w+.\w+.\w+.\w+)/g, "<a href='https://$1' target='_blank'>$1</a>");
+            });
+        </script>
+        <script>
+            document.querySelectorAll(".surl").forEach((item, index) => {
+                item.addEventListener("click", async (event) => {
+                    if (!navigator.clipboard) {
+                        // Clipboard API not available
+                        return;
+                    }
+                    try {
+                        await navigator.clipboard.writeText("https://hgbk.me/" + event.target.innerText);
+                        let newtime = new Date().getTime();
+                        $('.search-section').append('<div class="copied ' + newtime + '">✔</div>');
+                        setTimeout(function(){
+                            $('.copied.' + newtime).remove();
+                        }, 3000);
+                        
+                        var tooltip = document.getElementById("myTooltip");
+                        tooltip.innerHTML = "Copied"
+                        
+                    } catch (err) {
+                        console.error("Failed to copy!", err);
+                    }
+                });
+            });        
+        </script>
         <script type="text/javascript" src="https://www.hungbok.net/js/main.js"></script>
         <script type="text/javascript" src="https://www.hungbok.net/javascript/copyright.js"></script>
     </body>
