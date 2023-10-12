@@ -2,11 +2,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title data-lang="title">Browse | HungBok</title>
-        <link rel="icon" href="https://www.hungbok.net/image/hungbok-circle.ico" type="image/x-icon">
+        <title data-lang="title">Short URL | HungBok</title>
+        <link rel="icon" href="/img/hungbok/hungbok-circle.ico" type="image/x-icon">
         <meta name="viewport" content="widht=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-        <link class="style" rel="stylesheet" type="text/css" href="https://www.hungbok.net/css/main.css">
-        <link class="style" rel="stylesheet" type="text/css" href="https://www.hungbok.net/css/short-url.css">
+        <link class="style" href="/css/main.css" rel="stylesheet" type="text/css">
+        <link class="style" href="/css/short-url.css" rel="stylesheet" type="text/css">
+        <script>
+            let newtime = new Date().getTime();
+            $('head').append('<link href="https://www.hungbok.net/css/main.css?' + newtime + '" rel="stylesheet" type="text/css">');
+            $('head').append('<link href="https://www.hungbok.net/css/short-url.css?' + newtime + '" rel="stylesheet" type="text/css">');
+
+            window.addEventListener('load', function () {
+                $(".style").remove();
+            })
+        </script>
         <script type="text/javascript">
             document.onmousedown = disableclick;
         </script>
@@ -17,7 +26,7 @@
     <body>
         <section class="search-section">
             <div class="searchbox">
-                <h1 class="title" onClick="window.location.reload()">Browse</h1>
+                <h1 class="title" onClick="window.location.reload()">URL</h1>
                 <input onkeyup="filter()" type="text" id="value" placeholder="Search..." autocomplete='off' oncontextmenu="event.cancelBubble=true;" ondragstart="event.cancelBubble=true;" onselectstart="event.cancelBubble=true;">
             </div>
             <div class="history-container">
@@ -75,7 +84,7 @@
         </script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="https://www.hungbok.net/js/short-url.js"></script>
+        <script type="text/javascript" src="/js/short-url.js"></script>
         <script>
             $("div").html(function(i, html){
                 return html.replace(/(\w+\.\w+.\w+.\w+.\w+.\w+.\w+)/g, "<a href='https://$1' target='_blank'>$1</a>");
@@ -105,7 +114,7 @@
                 });
             });        
         </script>
-        <script type="text/javascript" src="https://www.hungbok.net/js/main.js"></script>
-        <script type="text/javascript" src="https://www.hungbok.net/javascript/copyright.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="https://www.hungbok.net/js/copyright.js"></script>
     </body>
 </html>
