@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title data-lang="title">Short URL | HungBok</title>
+        <link rel="icon" href="/img/hungbok/hungbok-circle.ico" type="image/x-icon">
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+        <link class="style" href="/css/main.css" rel="stylesheet" type="text/css">
+        <link class="style" href="/css/sul.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+            document.onmousedown = disableclick;
+        </script>
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=/script">
+        </noscript>
+    </head>
+    <body>
+        <section class="section">
+            <div class="header">
+                <h1 class="title" onClick="window.location.reload()">SUL</h1>
+            </div>
+            <div class="container">
+                <div class="top-box">
+                    <input onkeyup="filter()" type="text" id="value" placeholder="UuqGRCo8  or  https://www.hungbok.com" autocomplete='off' oncontextmenu="event.cancelBubble=true;" ondragstart="event.cancelBubble=true;" onselectstart="event.cancelBubble=true;">
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">hb</div>
+                        <div class="url">www.heungbok.com</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">hbcom</div>
+                        <div class="url">www.hungbok.com</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">hbnet</div>
+                        <div class="url">www.hungbok.net</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">hbg</div>
+                        <div class="url">www.hungbokgames.com</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">hbn</div>
+                        <div class="url">www.hungboknetwork.com</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">list</div>
+                        <div class="url">www.hungbok.net/short-url</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">tti</div>
+                        <div class="url">www.hungbok.net/text-to-image</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">ttu</div>
+                        <div class="url">www.hungbok.net/text-to-url</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="text-content">
+                        <div class="surl">uts</div>
+                        <div class="url">www.hungbok.net/url-to-short</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="search-section">
+            <div class="history-container">
+                <div class="container">
+                </div>
+            </div>
+        </section>
+        <script>
+            function filter(){
+          
+                var value, name, item, i;
+            
+                value = document.getElementById("value").value.toUpperCase();
+                item = document.getElementsByClassName("item");
+            
+                for(i=0;i<item.length;i++){
+                  name = item[i].getElementsByClassName("text-content");
+                  if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+                    item[i].style.display = "inline-block";
+                  }else{
+                    item[i].style.display = "none";
+                  }
+                }
+              }
+        </script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/sul.js"></script>
+        <script>
+            $(".url").html(function(i, html){
+                return html.replace(/(\w+\.\w+.\w+.\w+.\w+.\w+.\w+)/g, "<a href='https://$1' target='_blank'>$1</a>");
+            });
+            
+            document.querySelectorAll(".surl").forEach((item, index) => {
+                item.addEventListener("click", async (event) => {
+                    if (!navigator.clipboard) {
+                        // Clipboard API not available
+                        return;
+                    }
+                    try {
+                        await navigator.clipboard.writeText("https://hgbk.me/" + event.target.innerText);
+                        let newtime = new Date().getTime();
+                        $('.search-section').append('<div class="copied ' + newtime + '"><img src="https://www.hungbok.net/img/icon/done.svg"></div>');
+                        setTimeout(function(){
+                            $('.copied.' + newtime).remove();
+                        }, 3000);
+                        
+                        var tooltip = document.getElementById("myTooltip");
+                        tooltip.innerHTML = "Copied"
+                        
+                    } catch (err) {
+                        console.error("Failed to copy!", err);
+                    }
+                });
+            });        
+        </script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="https://www.hungbok.net/js/copyright.js"></script>
+    </body>
+</html>
