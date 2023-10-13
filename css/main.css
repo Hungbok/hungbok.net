@@ -1,30 +1,36 @@
 :root,
 :root.light {
-    --bg: #161616;
-    --bg2: #222222;
-    --bg3: #2f2f2f;
-    --txt: #ffffff;
-    --txt2: #dddddd;
-    --txt3: #cccccc;
-    --txt4: #bbbbbb;
-    --txt5: #aaaaaa;
-    --black: #000000;
-    --footer-bg: #000000;
-    --footer-txt: #cccccc;
+    --background: #161616;
+    --section: #222222;
+    --container: #2f2f2f;
+    --box: #333333;
+    --btn: #666666;
+    --btnactive: #444444;
+    --title: #ffffff;
+    --subtitle: #dddddd;
+    --text: #cccccc;
+    --texthover: #dddddd;
+    --eventtext: #eeeeee;
+    --shadow: #000000;
+    --spotlight: #ffffff;
+    --filter: invert(100%) sepia(0%) saturate(24%) hue-rotate(114deg) brightness(108%) contrast(108%);
 }
 
 :root.dark {
-    --bg: #ffffff;
-    --bg2: #cccccc;
-    --bg3: #aaaaaa;
-    --txt: #000000;
-    --txt2: #111111;
-    --txt3: #161616;
-    --txt4: #222222;
-    --txt5: #2f2f2f;
-    --black: #000000;
-    --footer-bg: #cccccc;
-    --footer-txt: #222222;
+    --background: #ffffff;
+    --section: #eeeeee;
+    --container: #dddddd;
+    --box: #cccccc;
+    --btn: #aaaaaa;
+    --btnactive: #cccccc;
+    --title: #000000;
+    --subtitle: #222222;
+    --text: #333333;
+    --texthover: #2f2f2f;
+    --eventtext: #161616;
+    --shadow: #000000;
+    --spotlight: #ffffff;
+    --filter: invert(0%) sepia(97%) saturate(0%) hue-rotate(52deg) brightness(96%) contrast(103%);
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +40,7 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 6px;
-    background-color: #666666;
+    background-color: var(--btn);
     -webkit-background-clip: content-box;
     background-clip: content-box;
     border: 2px solid transparent;
@@ -42,35 +48,72 @@
 
 ::-webkit-scrollbar-thumb:hover {
     border-radius: 7px;
-    background-color: #666666;
+    background-color: var(--btn);
     -webkit-background-clip: content-box;
     background-clip: content-box;
-    border: 2px solid #666666;
+    border: 2px solid var(--btn);
 }
 
 ::-webkit-scrollbar-thumb:active {
     border-radius: 7px;
-    background-color: #444444;
+    background-color: var(--btnactive);
     -webkit-background-clip: content-box;
     background-clip: content-box;
-    border: 2px solid #444444;
+    border: 2px solid var(--btnactive);
 }
 
 ::-webkit-scrollbar-track {
-  	background-color: #161616;
+    background-color: var(--background);
+    border-radius: 6px;
 }
 
 a:link,
 a:hover,
 a:active,
 a:visited {
-    color: var(--txt);
+    color: var(--eventtext);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+input,
+textarea {
+  font: inherit;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+#topBtn {
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: none;
+    background: var(--shadow);
+    color: var(--spotlight);
+    font-size: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 10000;
+    cursor: pointer;
+    border: 0;
 }
 
 body {
-    background-color: var(--bg);
-    color: var(--txt);
+    background-color: var(--background);
+    color: var(--text);
     margin: 0;
+    height: 100vh;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -79,41 +122,293 @@ body {
 }
 
 .toggle-container {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translate(0%, -50%);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
 .theme-btn {
-  width: 35px;
-  height: 35px;
-  padding: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;filter: invert(98%) sepia(98%) saturate(7%) hue-rotate(121deg) brightness(103%) contrast(102%);
-  position: relative;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    filter: invert(98%) sepia(98%) saturate(7%) hue-rotate(121deg) brightness(103%) contrast(102%);
+    position: relative;
 }
 
 .theme-btn img {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .theme-btn.light {
-  display: none;
-  filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(59deg) brightness(105%) contrast(111%);
+    display: none;
+    filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(59deg) brightness(105%) contrast(111%);
 }
 
 .dark .theme-btn.dark {
-  display: none;
+    display: none;
 }
 
 .dark .theme-btn.light {
-  display: block;
+    display: block;
+}
+
+.great {
+  width: 58px;
+  height: 58px;
+}
+
+.great,
+.success {
+    filter: invert(39%) sepia(100%) saturate(366%) hue-rotate(100deg) brightness(87%) contrast(88%);
+}
+
+.warning {
+    filter: invert(79%) sepia(9%) saturate(6456%) hue-rotate(354deg) brightness(104%) contrast(101%);
+}
+
+.danger {
+    filter: invert(23%) sepia(90%) saturate(3256%) hue-rotate(341deg) brightness(95%) contrast(81%);
+}
+
+.section {
+    text-align: center;
+}
+
+.header {
+    background-color: var(--section);
+    position: relative;
+    height: 86px;
+    filter: drop-shadow(0px 0px 2.5px var(--shadow));
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.title {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    color: var(--title);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.container {
+    width: 800px;
+    display: inline-block;
+    margin: 20px 0px;
+}
+
+.top-box {
+    height: 170px;
+    width: 770px;
+    display: inline-block;
+    margin: 20px 0px;
+    font-weight: 600;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    text-align: left;
+    color: var(--text);
+    background-color: var(--section);
+    filter: drop-shadow(0px 0px 2.5px var(--shadow));
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.top-box > #value,
+.top-box > .target,
+.top-box > #textinput1_2007121003,
+.top-box > #text-input {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  cursor: text;
+  color: var(--title);
+  background-color: var(--section);
+  max-width: 100%;
+  border: 0;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.middle-box {
+  margin: 20px 0px;
+}
+
+.middle-box > .execute {
+  width: 100%;
+  display: inline-block;
+  margin: 0px;
+  font-weight: 600;
+  padding: 10px 0px;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--title);
+  background-color: var(--section);
+  filter:brightness(1) drop-shadow(0px 0px 2.5px var(--shadow));
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.middle-box > .execute:hover {
+  filter: brightness(0.9) drop-shadow(0px 0px 2.5px var(--shadow));
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.bottom-box {
+  height: 170px;
+  width: 770px;
+  display: inline-block;
+  position: relative;
+  margin: 20px 0px;
+  font-weight: 600;
+  padding: 15px;
+  border: 0px;
+  border-radius: 5px;
+  overflow: hidden;
+  color: var(--text);
+  background-color: var(--section);
+  filter: drop-shadow(0px 0px 2.5px var(--shadow));
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.bottom-box > .filterDetail,
+.bottom-box > #textoutput2_2007121003,
+.bottom-box > #stringBox {
+  display: inline-block;
+  cursor: text;
+  max-width: 100%;
+  border: 0;
+  position: relative;
+  font-weight: 600;
+  border: 0px;
+  border-radius: 5px;
+  color: var(--eventtext);
+  background-color: var(--section);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+input[type=radio]+label {
+  border-radius: 10px;
+  width: 100px;
+  padding: 10px 10px;
+  margin: 5px 10px;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+  color: var(--text);
+  background-color: var(--container);
+  border: 4px solid var(--section);
+  font-weight: bolder;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input[type=radio]:checked+label {
+  color: var(--text);
+  background-color: var(--section);
+  border: 4px solid var(--btn);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]+label {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  background: #ddd;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"]+label {
+  background: #198754;
+}
+
+input[type="checkbox"]+label:before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  transform: scale(1.1);
+  filter: drop-shadow(0px 0px 2.5px #000000);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+input:checked[type="checkbox"]+label:before {
+  left: 40px;
 }
