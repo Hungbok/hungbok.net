@@ -25,41 +25,32 @@
         </noscript>
     </head>
     <body>
-        <section class="search-section">
-            <div class="searchbox">
+        <section class="section">
+            <div class="header">
                 <h1 class="title" onClick="window.location.reload()">UTS</h1>
             </div>
-            <div class="history-container">
-                <div class="container">
-                    <form name="theForm">
-                        <div class="radios">
-                            <input type="radio" id="myRadio6" name="numbers" value="6">
-                            <label for="myRadio6">6</label>
-                            <input type="radio" id="myRadio8" name="numbers" value="8" checked>
-                            <label for="myRadio8">8</label>
-                            <input type="radio" id="myRadio10" name="numbers" value="10">
-                            <label for="myRadio10">10</label>
-                            <input type="radio" id="myRadio12" name="numbers" value="12">
-                            <label for="myRadio12">12</label>
-                            <input type="radio" id="myRadio14" name="numbers" value="14">
-                            <label for="myRadio14">14</label>
-                            <input type="radio" id="myRadio16" name="numbers" value="16">
-                            <label for="myRadio16">16</label>
-                            <div>
-                                <input type="checkbox" id="specialCharsCB" value="yes">
-                                <label for="specialCharsCB"></label>
-                                <div>Include Special characters</div>
-                            </div>
-                        </div>
-                        <div class="actions button">
-                            <input type="button" value="Generate" onClick="randomString();" class="btn">
-                        </div>
-                        <div class="actions result">
-                            <p>https://hgbk.me/</p><input type="text" name="theField" width="100%" size="20" value="" id="stringBox" onclick="this.select();">
-                        </div>
-                    </form>
+            <form name="theForm" class="container">
+                <div class="top-box">
+                    <input type="radio" id="myRadio8" name="numbers" value="8" checked>
+                    <label for="myRadio8">8</label>
+                    <input type="radio" id="myRadio10" name="numbers" value="10">
+                    <label for="myRadio10">10</label>
+                    <input type="radio" id="myRadio12" name="numbers" value="12">
+                    <label for="myRadio12">12</label>
+                    <input type="radio" id="myRadio14" name="numbers" value="14">
+                    <label for="myRadio14">14</label>
+                    <input type="radio" id="myRadio16" name="numbers" value="16">
+                    <label for="myRadio16">16</label>
+                    <input type="checkbox" id="specialCharsCB" value="yes">
+                    <label for="specialCharsCB"></label>
                 </div>
-            </div>
+                <div class="middle-box">
+                    <button type="button" id="generate-btn" class="execute" onClick="randomString();">Generate</button>
+                </div>
+                <div class="bottom-box">
+                    <p>https://hgbk.me/</p><input type="text" name="theField" width="100%" size="20" placeholder="uts" value="" id="stringBox" readonly="readonly" onclick="btnClick(this);">
+                </div>
+            </form>
         </section>
         <script type="text/javascript" src="/js/main.js"></script>
         <script type="text/javascript" src="/js/uts.js"></script>
