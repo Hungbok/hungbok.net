@@ -7,15 +7,6 @@
         <meta name="viewport" content="widht=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
         <link class="style" href="/css/main.css" rel="stylesheet" type="text/css">
         <link class="style" href="/css/tti.css" rel="stylesheet" type="text/css">
-        <script>
-            let newtime = new Date().getTime();
-            $('head').append('<link href="https://www.hungbok.net/css/main.css?' + newtime + '" rel="stylesheet" type="text/css">');
-            $('head').append('<link href="https://www.hungbok.net/css/tti.css?' + newtime + '" rel="stylesheet" type="text/css">');
-
-            window.addEventListener('load', function () {
-                $(".style").remove();
-            })
-        </script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script type="text/javascript">
             document.onmousedown = disableclick;
@@ -25,7 +16,7 @@
         </noscript>
     </head>
     <body>
-        <div id="app" class="search-section"></div>
+        <section id="app" class="section"></section>
         <script type="text/javascript" src="/js/main.js"></script>
         <script type="text/javascript" src="/js/tti.js"></script>
         <script type="text/javascript" src="https://www.hungbok.net/js/copyright.js"></script>

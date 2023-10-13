@@ -1,12 +1,5 @@
 const availableFonts = [
-    "Tahoma",
-    "Great Vibes",
-    "Georgia",
-    "EB Garamond",
-    "Jost",
-    "Pattaya",
-    "Playfair Display",
-    "Roboto"
+    "Open Sans"
 ];
 
 // Make the browser load the fonts if the API is available
@@ -15,24 +8,30 @@ if (window.document.fonts && window.document.fonts.load) {
 }
 
 document.getElementById("app").innerHTML = `
-<div class="searchbox">
+<div class="header">
     <h1 class="title" onClick="window.location.reload()">TTI</h1>
 </div>
-<div class="history-container">
-    <div class="container">
-        <form>
-            <label>Enter text:
-                <textarea type="text" id="text-input" placeholder="Please enter a text" autocomplete='off'></textarea>
-            </label>
-            <div id="text-count">(0 / 100)</div>
-            <label>Font:
-                <select id="font-select">
-                    ${availableFonts.map((font) => `<option>${font}</option>`).join("\n")}
-                </select>
-            </label>
-        </form>
-        <button type="button" id="generate-btn">Generate</button>
-        <div id="image-wrapper"></div>
+<div class="container">
+    <div class="top-box">
+        <textarea type="text" id="text-input" placeholder="HungBok" style="color: black;" autocomplete='off'></textarea>
+        <div id="text-color">
+            <input type="radio" id="fontcolor-b" name="fontcolor" value="black" checked>
+            <label for="fontcolor-b"> </label>
+            <input type="radio" id="fontcolor-w" name="fontcolor" value="white">
+            <label for="fontcolor-w"> </label>
+        </div>
+        <div id="text-count">(0 / 100)</div>
+        <select id="font-select">
+            ${availableFonts.map((font) => `<option>${font}</option>`).join("\n")}
+        </select>
+    </div>
+    <div class="middle-box">
+        <button type="button" id="generate-btn" class="execute">Generate</button>
+    </div>
+    <div class="bottom-box">
+        <div id="image-wrapper">
+            <img src="/img/hungbok/tti.png" style="height: 0px;">
+        </div>
     </div>
 </div>
 `;
@@ -110,6 +109,8 @@ async function textToBitmap(text, font) {
 
     ctx.textBaseline = "top";
 
+    var fontcolor = document.querySelector('input[name="fontcolor"]:checked').value;
+    const color = fontcolor;
     // scale up the font size by the DPR factor. When
     // rendering, we'll scale down the image by the same
     // amount.
@@ -150,6 +151,7 @@ async function textToBitmap(text, font) {
     // prevent cutting out ascender strokes on certain fonts.
     // 4 is chosen so that text starts being rendered at the upper half of
     // the canvas
+    ctx.fillStyle = color;
     ctx.fillText(text, canvasWidth / 4, canvasHeight / 4);
     trimCanvas(canvas);
 
@@ -238,4 +240,9 @@ $(document).ready(function() {
             $('#text-count').html("(100 / 100)");
         }
     });
+});
+
+$("#text-color").click(function() {
+    var fontcolor = document.querySelector('input[name="fontcolor"]:checked').value;
+    $('#text-input').css('color', fontcolor);
 });
