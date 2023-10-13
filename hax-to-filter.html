@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title data-lang="title">Hax To Filter | HungBok</title>
+        <link rel="icon" href="/img/hungbok/hungbok-circle.ico" type="image/x-icon">
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+        <link class="style" href="/css/main.css" rel="stylesheet" type="text/css">
+        <link class="style" href="/css/htf.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript">
+            document.onmousedown = disableclick;
+        </script>
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=/script">
+        </noscript>
+    </head>
+    <body>
+        <section class="section">
+            <div class="header">
+                <h1 class="title" onClick="window.location.reload()">HTF</h1>
+            </div>
+            <div class="container">
+                <div class="top-box">
+                    <input class="target" type="text" placeholder="#808080" value="" onclick="btnClick(this);"/>
+                </div>
+                <div class="middle-box">
+                    <button class="execute">Generate</button>
+                </div>
+                <div class="bottom-box">
+                    <div class="pixel realPixel" style="background-color: rgb(34, 34, 34);"></div>
+                    <div class="pixel filterPixel" style="filter: invert(10%) sepia(0%) saturate(3%) hue-rotate(157deg) brightness(89%) contrast(89%);"></div>
+                    <textarea class="filterDetail" onclick="btnClick(this);" placeholder="filter: invert(10%) sepia(0%) saturate(3%) hue-rotate(157deg) brightness(89%) contrast(89%);" readonly="readonly"></textarea>
+                    <div class="lossDetail"><img class="great" src="/img/icon/verified.svg"><p>0.0</p></div>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="/js/htf.js"></script>
+        <script type="text/javascript" src="https://www.hungbok.net/js/copyright.js"></script>
+    </body>
+</html>
