@@ -116,6 +116,9 @@
             $(".url").html(function(i, html){
                 return html.replace(/(\w+\.\w+.\w+.\w+.\w+.\w+.\w+)/g, "<a href='https://$1' target='_blank'>$1</a>");
             });
+            $(".surl").html(function(i, html){
+                return html.replace(/(\w+)/g, "<a href='https://hgbk.me/$1' target='_blank'>$1</a>");
+            });
             
             document.querySelectorAll(".surl").forEach((item, index) => {
                 item.addEventListener("click", async (event) => {
