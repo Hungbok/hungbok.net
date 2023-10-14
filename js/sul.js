@@ -1,6 +1,6 @@
 // JSON 파일 경로
 const dataUrl = '/data/sul.json';
-const resultsPerPage = 8; // 페이지당 결과 수
+const resultsPerPage = 10; // 페이지당 결과 수
 
 let currentPage = 1;
 let allData = []; // 모든 데이터를 저장하는 배열
