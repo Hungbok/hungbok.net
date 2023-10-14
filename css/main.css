@@ -251,7 +251,7 @@ body {
     transition: all 0.5s;
 }
 
-.top-box > #value,
+.top-box > #searchInput,
 .top-box > .target,
 .top-box > #textinput1_2007121003,
 .top-box > #text-input {
