@@ -13,7 +13,7 @@ document.getElementById("app").innerHTML = `
 </div>
 <div class="container">
     <div class="top-box">
-        <textarea type="text" id="text-input" placeholder="HungBok" style="color: black;" autocomplete='off'></textarea>
+        <textarea type="text" id="text-input" placeholder="https://hgbk.me/Lvdr78bE" style="color: black;" autocomplete='off'></textarea>
         <div id="text-color">
             <input type="radio" id="fontcolor-b" name="fontcolor" value="black" checked>
             <label for="fontcolor-b"> </label>
