@@ -254,6 +254,7 @@ body {
 .top-box > #searchInput,
 .top-box > .target,
 .top-box > #textinput1_2007121003,
+.top-box > #linkInput,
 .top-box > #text-input {
   height: 100%;
   width: 100%;
