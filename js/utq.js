@@ -6,7 +6,7 @@ var saveButton = document.getElementById("qrcode");
 
 // 로고 이미지를 미리 로드
 var logoImage = new Image();
-logoImage.src = 'img/hungbok/qr_logo.png'; // 로고 이미지 파일의 경로
+logoImage.src = 'img/hungbok/hb_circle_outline.svg'; // 로고 이미지 파일의 경로
 logoImage.onload = function() {
     // 로고 이미지 로드가 완료되면 generateQRCode 함수를 호출하여 QR 코드를 생성
     generateQRCode();
@@ -37,6 +37,7 @@ function generateQRCode() {
         text: link,
         width: 512,
         height: 512,
+        correctLevel: QRCode.CorrectLevel.H, // 에러 수정 수준을 선택 (L, M, Q, H 중 선택)
         colorDark: "#000000", // 전경색 (검은색)
         // colorLight: "rgba(0, 0, 0, 0)", // 배경색 (투명)
     });
@@ -46,7 +47,7 @@ function generateQRCode() {
     var ctx = canvas.getContext("2d");
     var centerX = canvas.width / 2;
     var centerY = canvas.height / 2;
-    var logoSize = canvas.width / 5; // 로고의 크기
+    var logoSize = canvas.width / 4; // 로고의 크기
 
     ctx.drawImage(logoImage, centerX - logoSize / 2, centerY - logoSize / 2, logoSize, logoSize);
 }

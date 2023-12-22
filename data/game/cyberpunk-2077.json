@@ -1,0 +1,19 @@
+{
+    "title_og": "Cyberpunk 2077",
+    "title_en": "Cyberpunk 2077",
+    "title_ja": "サイバーパンク2077",
+    "title_ko": "사이버펑크 2077",
+
+    "year": "2020",
+    "month": "12",
+    "day": "10",
+
+    "url": "cyberpunk-2077",
+    "page": "/game?q=cyberpunk-2077",
+    "logo": "src='/img/game/cyberpunk-2077/logo.png'",
+    "poster": "src='/img/game/cyberpunk-2077/poster.jpg'",
+    "thumbnail": "src='/img/game/cyberpunk-2077/thumbnail.jpg'",
+    "background": "src='/img/game/cyberpunk-2077/background.jpg'",
+    "trailer": "2",
+    "preview": "7"
+}

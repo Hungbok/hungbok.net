@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #45714f;
+      }
+
+      .cls-3 {
+        fill: #cf2436;
+      }
+    </style>
+  </defs>
+  <g id="Flag-_-HU" data-name="Flag-/-HU">
+    <path id="Mask" class="cls-1" d="m4,0h28c2.209,0,4,1.791,4,4v16c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0Z"/>
+    <path id="Rectangle" class="cls-2" d="m0,16h36v4c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-4Z"/>
+    <path id="Rectangle-2" data-name="Rectangle" class="cls-3" d="m4,0h28c2.209,0,4,1.791,4,4v4H0v-4C0,1.791,1.791,0,4,0Z"/>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #c9072a;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #001b69;
+      }
+    </style>
+  </defs>
+  <g id="Flag-_-GB" data-name="Flag-/-GB">
+    <path id="Mask" class="cls-5" d="m4,0h28c2.209,0,4,1.791,4,4v16c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0Z"/>
+    <path id="Path" class="cls-4" d="m32.294.011c1.728.126,3.151,1.349,3.576,2.976l-13.804,9.014,13.804,9.014c-.425,1.627-1.848,2.85-3.576,2.976l-14.294-9.334L3.706,23.989c-1.728-.126-3.151-1.349-3.576-2.976l13.804-9.014L.13,2.986C.554,1.359,1.978.136,3.706.011l14.294,9.334L32.294.011Z"/>
+    <path id="Path-2" data-name="Path" class="cls-1" d="m33.091.151c.556.157,1.062.431,1.491.795l-15.241,10.16-1.342-.894L33.091.151h0Z"/>
+    <path id="Path-3" data-name="Path" class="cls-1" d="m35.524,21.894c-.239.444-.56.838-.942,1.161l-15.241-10.16,1.342-.894,14.841,9.894h0Z"/>
+    <path id="Path-4" data-name="Path" class="cls-1" d="m2.909,23.849c-.556-.157-1.062-.431-1.491-.795l15.241-10.16,1.342.894L2.909,23.849h0Z"/>
+    <path id="Path-5" data-name="Path" class="cls-1" d="m.476,2.106c.239-.444.56-.838.942-1.161l15.241,10.16-1.342.894L.476,2.106H.476Z"/>
+    <polygon id="Path-6" data-name="Path" class="cls-3" points="21 9 36 9 36 15 21 15 21 24 15 24 15 15 0 15 0 9 15 9 15 0 21 0 21 9"/>
+    <polygon id="Path-7" data-name="Path" class="cls-2" points="19.8 10 36 10 36 14 19.8 14 19.8 24 16.2 24 16.2 14 0 14 0 10 16.2 10 16.2 0 19.8 0 19.8 10"/>
+  </g>
+</svg>

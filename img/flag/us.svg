@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #b31942;
+      }
+
+      .cls-4 {
+        fill: #0a3161;
+      }
+    </style>
+  </defs>
+  <g id="Flag-_-US" data-name="Flag-/-US">
+    <path id="Mask" class="cls-3" d="m4,0h28c2.209,0,4,1.791,4,4v16c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0Z"/>
+    <path id="Path" class="cls-2" d="m36,20c0,.345-.044.68-.126,1H.126c-.082-.32-.126-.655-.126-1v-1h36v1Z"/>
+    <path id="Path-2" data-name="Path" class="cls-2" d="m35.874,3c.082.32.126.655.126,1v1H0v-1c0-.345.044-.68.126-1h35.748Z"/>
+    <polygon id="Path-3" data-name="Path" class="cls-1" points="0 7 36 7 36 9 0 9 0 7"/>
+    <polygon id="Path-4" data-name="Path" class="cls-1" points="0 11 36 11 36 13 0 13 0 11"/>
+    <polygon id="Path-5" data-name="Path" class="cls-1" points="0 15 36 15 36 17 0 17 0 15"/>
+    <path id="Rectangle" class="cls-4" d="m4,0h14v14H0V4C0,1.791,1.791,0,4,0Z"/>
+  </g>
+  <g>
+    <g id="s18">
+      <g id="s9">
+        <g id="s5">
+          <g id="s4">
+            <path id="s" class="cls-1" d="m2.592,2.078l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-2" data-name="s" class="cls-1" d="m2.592,4.258l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-3" data-name="s" class="cls-1" d="m2.592,6.437l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-4" data-name="s" class="cls-1" d="m2.592,8.616l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          </g>
+          <path id="s-5" data-name="s" class="cls-1" d="m2.592,10.795l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+        <g id="s4-2" data-name="s4">
+          <path id="s-6" data-name="s" class="cls-1" d="m3.874,3.168l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-7" data-name="s" class="cls-1" d="m3.874,5.347l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-8" data-name="s" class="cls-1" d="m3.874,7.526l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-9" data-name="s" class="cls-1" d="m3.874,9.706l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+      </g>
+      <g id="s9-2" data-name="s9">
+        <g id="s5-2" data-name="s5">
+          <g id="s4-3" data-name="s4">
+            <path id="s-10" data-name="s" class="cls-1" d="m5.155,2.078l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-11" data-name="s" class="cls-1" d="m5.155,4.258l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-12" data-name="s" class="cls-1" d="m5.155,6.437l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-13" data-name="s" class="cls-1" d="m5.155,8.616l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          </g>
+          <path id="s-14" data-name="s" class="cls-1" d="m5.155,10.795l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+        <g id="s4-4" data-name="s4">
+          <path id="s-15" data-name="s" class="cls-1" d="m6.437,3.168l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-16" data-name="s" class="cls-1" d="m6.437,5.347l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-17" data-name="s" class="cls-1" d="m6.437,7.526l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-18" data-name="s" class="cls-1" d="m6.437,9.706l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+      </g>
+    </g>
+    <g id="s18-2" data-name="s18">
+      <g id="s9-3" data-name="s9">
+        <g id="s5-3" data-name="s5">
+          <g id="s4-5" data-name="s4">
+            <path id="s-19" data-name="s" class="cls-1" d="m7.718,2.078l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-20" data-name="s" class="cls-1" d="m7.718,4.258l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-21" data-name="s" class="cls-1" d="m7.718,6.437l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-22" data-name="s" class="cls-1" d="m7.718,8.616l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          </g>
+          <path id="s-23" data-name="s" class="cls-1" d="m7.718,10.795l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+        <g id="s4-6" data-name="s4">
+          <path id="s-24" data-name="s" class="cls-1" d="m9,3.168l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-25" data-name="s" class="cls-1" d="m9,5.347l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-26" data-name="s" class="cls-1" d="m9,7.526l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-27" data-name="s" class="cls-1" d="m9,9.706l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+      </g>
+      <g id="s9-4" data-name="s9">
+        <g id="s5-4" data-name="s5">
+          <g id="s4-7" data-name="s4">
+            <path id="s-28" data-name="s" class="cls-1" d="m10.282,2.078l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-29" data-name="s" class="cls-1" d="m10.282,4.258l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-30" data-name="s" class="cls-1" d="m10.282,6.437l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+            <path id="s-31" data-name="s" class="cls-1" d="m10.282,8.616l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          </g>
+          <path id="s-32" data-name="s" class="cls-1" d="m10.282,10.795l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+        <g id="s4-8" data-name="s4">
+          <path id="s-33" data-name="s" class="cls-1" d="m11.563,3.168l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-34" data-name="s" class="cls-1" d="m11.563,5.347l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-35" data-name="s" class="cls-1" d="m11.563,7.526l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-36" data-name="s" class="cls-1" d="m11.563,9.706l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+      </g>
+    </g>
+    <g id="s9-5" data-name="s9">
+      <g id="s5-5" data-name="s5">
+        <g id="s4-9" data-name="s4">
+          <path id="s-37" data-name="s" class="cls-1" d="m12.845,2.078l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-38" data-name="s" class="cls-1" d="m12.845,4.258l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-39" data-name="s" class="cls-1" d="m12.845,6.437l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+          <path id="s-40" data-name="s" class="cls-1" d="m12.845,8.616l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        </g>
+        <path id="s-41" data-name="s" class="cls-1" d="m12.845,10.795l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+      </g>
+      <g id="s4-10" data-name="s4">
+        <path id="s-42" data-name="s" class="cls-1" d="m14.126,3.168l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        <path id="s-43" data-name="s" class="cls-1" d="m14.126,5.347l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        <path id="s-44" data-name="s" class="cls-1" d="m14.126,7.526l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        <path id="s-45" data-name="s" class="cls-1" d="m14.126,9.706l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+      </g>
+    </g>
+    <g id="s5-6" data-name="s5">
+      <g id="s4-11" data-name="s4">
+        <path id="s-46" data-name="s" class="cls-1" d="m15.408,2.078l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        <path id="s-47" data-name="s" class="cls-1" d="m15.408,4.258l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        <path id="s-48" data-name="s" class="cls-1" d="m15.408,6.437l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+        <path id="s-49" data-name="s" class="cls-1" d="m15.408,8.616l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+      </g>
+      <path id="s-50" data-name="s" class="cls-1" d="m15.408,10.795l.366,1.126-.958-.696h1.184l-.958.696.366-1.126Z"/>
+    </g>
+  </g>
+</svg>

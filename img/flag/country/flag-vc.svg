@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Flag / VC</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Flag-/-VC" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Mask" fill="#FFD200"></path>
+        <path d="M4,0 L10,0 L10,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Rectangle-9" fill="#0073CD"></path>
+        <path d="M26,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L26,24 L26,0 Z" id="Rectangle-9-Copy" fill="#00A15A"></path>
+        <path d="M4,1 C2.34314575,1 1,2.34314575 1,4 L1,20 C1,21.6568542 2.34314575,23 4,23 L32,23 C33.6568542,23 35,21.6568542 35,20 L35,4 C35,2.34314575 33.6568542,1 32,1 L4,1 Z M4,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Mask" fill="#031619" fill-rule="nonzero" opacity="0.2"></path>
+        <polygon id="Rectangle" fill="#00A15A" transform="translate(18.000000, 16.000000) rotate(45.000000) translate(-18.000000, -16.000000) " points="15 13 19.5857864 14.4142136 21 19 16.4142136 17.5857864"></polygon>
+        <polygon id="Rectangle-Copy" fill="#00A15A" transform="translate(21.000000, 11.000000) rotate(45.000000) translate(-21.000000, -11.000000) " points="18 8 22.5857864 9.41421356 24 14 19.4142136 12.5857864"></polygon>
+        <polygon id="Rectangle-Copy" fill="#00A15A" transform="translate(15.000000, 11.000000) rotate(45.000000) translate(-15.000000, -11.000000) " points="12 8 16.5857864 9.41421356 18 14 13.4142136 12.5857864"></polygon>
+    </g>
+</svg>

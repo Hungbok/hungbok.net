@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title id="title">애니 | HungBok</title>
+        <link rel="icon" href="/img/hungbok/hb_circle.svg" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/main.css">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/anime.css">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/lightbox.css">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/slick.css">
+        <link class="style" rel="stylesheet" type="text/css" href="/css/youtube-popup.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/js/anime.js"></script>
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=/script">
+        </noscript>
+    </head>
+    <body>
+        <section id="section">
+            <section class="section">
+                <div class="header">
+                    <h1 class="title" onClick="window.location.reload()">
+                        <img {logo} onerror='this.src=`/img/icon/image_not_found.svg`;this.className=`onerror`;' loading='lazy'>
+                    </h1>
+                </div>
+                <div class="container">
+                    <div class="contents-top">
+                        <div class="contents-top-titles">
+                            <div class="contents-top-tag"></div>
+                            <div class="contents-top-title">
+                                <h6 title={title_en}>{title_og}</h6>
+                                <h1 title={title_ko}>{title_ko}</h1>
+                            </div>
+                            <div class="contents-top-links"></div>
+                        </div>
+                        <div class="contents-top-thumbnail">
+                            <div class="item">
+                                <div class="item-thumbnail">
+                                    <a class="thumbnail" href='/img/anime/{url}/thumbnail.jpg' data-lightbox="thumbnail" tabindex="-1">
+                                        <img class='thumbnail-background' src='/img/hungbok/hb_error_vertical.svg'>
+                                        <img class='thumbnail-background' {poster} onerror="this.remove ? this.remove() : this.removeNode();" loading='lazy'>
+                                        <img class='thumbnail-background' {thumbnail} onerror="this.remove ? this.remove() : this.removeNode();" loading='lazy'>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="external-links"></div>
+                        </div>
+                        <div class="contents-top-background">
+                            <img src='/img/hungbok/hb_error_horizontal.svg'>
+                            <img {thumbnail} onerror="this.remove ? this.remove() : this.removeNode();" loading='lazy'>
+                            <img {poster} onerror="this.remove ? this.remove() : this.removeNode();" loading='lazy'>
+                            <img {background} onerror="this.remove ? this.remove() : this.removeNode();" loading='lazy'>
+                        </div>
+                    </div>
+                    <div class="contents-preview"></div>
+                    <div class="contents-middle">
+                        <div class="synopsis">{synopsis}</div>
+                        <div class="info">
+                            <div class="info-poster">
+                                <div class="info-poster-thumbnail">
+                                    <a class="info-thumbnail" href='/img/anime/{url}/poster.jpg' data-lightbox="poster" tabindex="-1">
+                                        <img class='info-poster-background' src='/img/hungbok/hb_error_vertical.svg'>
+                                        <img class='info-poster-background' {poster} onerror="this.remove ? this.remove() : this.removeNode();" loading='lazy'>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info-box">
+                                <div class="info-table">
+                                    <div class="info-th">
+                                        <p class="info-subtitle">{title_en}</p>
+                                        <p class="info-title">{title_ko}</p>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>로마자</p>
+                                        </div>
+                                        <div class="info-right">
+                                            <p class="romaji" ttt={title_kana}>{title_romaji}</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>원작</p>
+                                        </div>
+                                        <div class="info-right">{original_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>감독</p>
+                                        </div>
+                                        <div class="info-right">{director_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>각본</p>
+                                        </div>
+                                        <div class="info-right">{writer_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>제작</p>
+                                        </div>
+                                        <div class="info-right">{producer_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>출연</p>
+                                        </div>
+                                        <div class="info-right starring">{starring_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>음악</p>
+                                        </div>
+                                        <div class="info-right">{music_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>테마</p>
+                                        </div>
+                                        <div class="info-right">{theme_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>촬영</p>
+                                        </div>
+                                        <div class="info-right">{cg_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>편집</p>
+                                        </div>
+                                        <div class="info-right">{editor_ko}</div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>제작사</p>
+                                        </div>
+                                        <div class="info-right production"></div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>방송사</p>
+                                        </div>
+                                        <div class="info-right publisher"></div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>방영일</p>
+                                        </div>
+                                        <div class="info-right">
+                                            <p>{year}년 {month}월 {day}일</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>편당 러닝타임</p>
+                                        </div>
+                                        <div class="info-right">
+                                            <p>{runningtime}분</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>화수</p>
+                                        </div>
+                                        <div class="info-right">
+                                            <p>{episode}화</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>국가</div>
+                                        <div class="info-right country {country}"></div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>언어</div>
+                                        <div class="info-right language {language}"></div>
+                                    </div>
+                                    <div class="info-tr">
+                                        <div class="info-left">
+                                            <p>심의 등급</div>
+                                        <div class="info-right age-rating">
+                                            <div class="age">
+                                                <img src="/img/rating/{age}.png" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/grac_{grac}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/cero_{cero}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/esrb_{esrb}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/pegi_{pegi}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/iarc_{iarc}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/apple_{apple}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/kcsc_{kcsc}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/tvpg_{tvpg}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/kmrb_{kmrb}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/eirin_{eirin}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                                <img src="/img/rating/cara_{cara}.svg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="summary">{summary}</div>
+                        </div>
+                        <div class="wiki"></div>
+                        <div class="story"></div>
+                        <div class="setting"></div>
+                        <div class="character"></div>
+                        <div class="music"></div>
+                        <div class="episode">
+                            <div class="episode-tables">
+                                <table class="episode-table">
+                                    <thead>
+                                        <tr>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                            <th>5</th>
+                                            <th>6</th>
+                                            <th>7</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <table class="episode-table" id="table-multi-hover">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="rating {type} {rating}"></div>
+                        <div class="series"></div>
+                        <div class="book data-import" data-type="book" data-file={book_url}></div>
+                        <div class="movie data-import" data-type="movie" data-file={movie_url}></div>
+                        <div class="tv data-import" data-type="tv" data-file={tv_url}></div>
+                        <div class="anime data-import" data-type="anime" data-file={anime_url}></div>
+                        <div class="game data-import" data-type="game" data-file={game_url}></div>
+                    </div>
+                </div>
+            </section>
+            <section id="slider">
+                <div class="slider"></div>
+            </section>
+        </section>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="https://www.hungbok.net/js/copyright.js"></script>
+    </body>
+</html>

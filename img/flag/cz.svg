@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #08437f;
+      }
+
+      .cls-3 {
+        fill: #d80c13;
+      }
+    </style>
+  </defs>
+  <g id="Flag-_-CZ" data-name="Flag-/-CZ">
+    <path id="Mask" class="cls-1" d="m4,0h28c2.209,0,4,1.791,4,4v16c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0Z"/>
+    <path id="Rectangle" class="cls-3" d="m0,12h36v8c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4v-8Z"/>
+    <path id="Path" class="cls-2" d="m1.327,22.975C.513,22.244,0,21.183,0,20.002V3.998C0,2.817.513,1.756,1.327,1.025l14.202,10.975L1.327,22.975h0Z"/>
+  </g>
+</svg>

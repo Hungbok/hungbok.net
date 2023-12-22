@@ -1,0 +1,227 @@
+[
+    {
+        "esd": "",
+        "platform": "EA",
+        "title": "Holiday Sale",
+        "starttime": "2023-12-22-03-00-00",
+        "endtime": "2024-01-05-03-00-00",
+        "image": "/img/free-games/sales/ea_holiday_2023.jpg",
+        "link": "https://www.ea.com/sales/holiday-sale"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Winter Sale",
+        "starttime": "2023-12-22-03-00-00",
+        "endtime": "2024-01-05-03-00-00",
+        "image": "/img/free-games/sales/steam_winter_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Battle.net",
+        "title": "Holiday Sale",
+        "starttime": "2023-12-20-01-00-00",
+        "endtime": "2024-01-01-23-59-59",
+        "image": "/img/free-games/sales/battlenet_holiday_2023.avif",
+        "link": "https://shop.battle.net/en-us/sale/holiday-sale-2023"
+    },
+    {
+        "esd": "",
+        "platform": "PlayStation Store",
+        "title": "Holiday Sale",
+        "starttime": "2023-12-20-00-00-00",
+        "endtime": "2024-01-17-23-59-59",
+        "image": "/img/free-games/sales/ps_holiday_2023.webp",
+        "link": "https://store.playstation.com/pages/HolidaySale?emcid=or-pl-474433"
+    },
+    {
+        "esd": "",
+        "platform": "Xbox Store",
+        "title": "Countdown Sale",
+        "starttime": "2023-12-15-01-00-00",
+        "endtime": "2024-01-02-00-00-00",
+        "image": "/img/free-games/sales/xbox_countdown_2023.jpg",
+        "link": "https://www.xbox.com/en-US/promotions/sales/countdown-sale"
+    },
+    {
+        "esd": "",
+        "platform": "Ubisoft Store",
+        "title": "Winter Sale",
+        "starttime": "2023-12-14-00-00-00",
+        "endtime": "2024-01-03-14-00-00",
+        "image": "/img/free-games/sales/ubi_winter_2023.jpg",
+        "link": "https://store.ubisoft.com/us/winter-sale"
+    },
+    {
+        "esd": "",
+        "platform": "Epic Games Store",
+        "title": "Holiday Sale",
+        "starttime": "2023-12-14-01-00-00",
+        "endtime": "2024-01-11-01-00-00",
+        "image": "/img/free-games/sales/epic_holiday_2023.jpg",
+        "link": "https://store.epicgames.com/en-US/sales-and-specials/holiday-sale"
+    },
+    {
+        "esd": "",
+        "platform": "GOG",
+        "title": "Winter Sale",
+        "starttime": "2023-12-13-00-00-00",
+        "endtime": "2024-01-04-00-00-00",
+        "image": "/img/free-games/sales/gog_winter_2023.jpg",
+        "link": "https://www.gog.com/en/promo/2023_winter_sale"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "VR Fest",
+        "starttime": "2023-12-05-03-00-00",
+        "endtime": "2023-12-12-03-00-00",
+        "image": "/img/free-games/sales/steam_vrfest_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Autumn Sale",
+        "starttime": "2023-11-22-03-00-00",
+        "endtime": "2023-11-29-03-00-00",
+        "image": "/img/free-games/sales/steam_autumn_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Scream The Revenge",
+        "starttime": "2023-10-27-03-00-00",
+        "endtime": "2023-11-03-03-00-00",
+        "image": "/img/free-games/sales/steam_scream_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Next Fest: October",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_nextfest10_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "SHMUP Fest",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_shmupfest_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "20th Anniversary",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_20thanniversary_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Strategy Fest",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_strategyfest_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Visual Novel Fest",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_visualnovelfest_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Stealth Fest",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_stealthfest_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "",
+        "platform": "Steam",
+        "title": "Summer Sale",
+        "starttime": "2023-10-01-03-00-00",
+        "endtime": "2023-11-01-03-00-00",
+        "image": "/img/free-games/sales/steam_summer_2023.jpg",
+        "link": "https://store.steampowered.com/"
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    },
+    {
+        "esd": "none",
+        "platform": "",
+        "title": "",
+        "starttime": "-----",
+        "endtime": "-----",
+        "image": "",
+        "link": ""
+    }
+]

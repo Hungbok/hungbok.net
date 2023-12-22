@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Flag / MV</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Flag-/-MV" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Mask" fill="#E5002C"></path>
+        <rect id="Rectangle" fill="#008130" x="6" y="6" width="24" height="12"></rect>
+        <path d="M19.8,8.08001449 C17.9742077,8.45063076 16.6,10.0648337 16.6,12 C16.6,13.9351663 17.9742077,15.5493692 19.8,15.9199855 C19.541512,15.9724558 19.2739727,16 19,16 C16.790861,16 15,14.209139 15,12 C15,9.790861 16.790861,8 19,8 C19.2739727,8 19.541512,8.02754421 19.8,8.08001449 Z" id="Path" fill="#FFFFFF"></path>
+        <path d="M4,1 C2.34314575,1 1,2.34314575 1,4 L1,20 C1,21.6568542 2.34314575,23 4,23 L32,23 C33.6568542,23 35,21.6568542 35,20 L35,4 C35,2.34314575 33.6568542,1 32,1 L4,1 Z M4,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Mask" fill="#031619" fill-rule="nonzero" opacity="0.2"></path>
+    </g>
+</svg>

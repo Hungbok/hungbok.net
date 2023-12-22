@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_1" data-name="레이어 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ee1620;
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #ff0;
+      }
+    </style>
+  </defs>
+  <g id="Flag-_-CN" data-name="Flag-/-CN">
+    <g id="Rectangle-13-_-Rectangle-13-Copy-_-Rectangle-13-Copy-2-Mask" data-name="Rectangle-13-+-Rectangle-13-Copy-+-Rectangle-13-Copy-2-Mask">
+      <path id="Mask" class="cls-1" d="m4,0h28c2.209,0,4,1.791,4,4v16c0,2.209-1.791,4-4,4H4c-2.209,0-4-1.791-4-4V4C0,1.791,1.791,0,4,0Z"/>
+      <polygon id="s" class="cls-2" points="6 2.4 8.116 8.912 2.576 4.888 9.424 4.888 3.884 8.912 6 2.4"/>
+      <polygon id="s-2" data-name="s" class="cls-2" points="12.47 1.296 12.269 3.569 11.095 1.612 13.195 2.505 10.971 3.017 12.47 1.296"/>
+      <polygon id="s-3" data-name="s" class="cls-2" points="15.261 3.964 14.194 5.982 13.872 3.723 15.461 5.361 13.212 4.97 15.261 3.964"/>
+      <polygon id="s-4" data-name="s" class="cls-2" points="15.527 7.989 13.73 9.395 14.357 7.201 15.14 9.345 13.246 8.07 15.527 7.989"/>
+      <polygon id="s-5" data-name="s" class="cls-2" points="12.423 9.677 12.317 11.957 11.063 10.05 13.199 10.856 10.997 11.46 12.423 9.677"/>
+    </g>
+  </g>
+</svg>

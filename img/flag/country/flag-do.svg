@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="24px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Flag / DO</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Flag-/-DO" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Mask" fill="#002D66"></path>
+        <path d="M21,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,9 L21,9 L21,0 Z" id="Path" fill="#E00017"></path>
+        <path d="M15,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,15 L15,15 L15,24 Z" id="Path" fill="#E00017"></path>
+        <polygon id="Path" fill="#FFFFFF" points="21 9 36 9 36 15 21 15 21 24 15 24 15 15 0 15 0 9 15 9 15 0 21 0"></polygon>
+        <circle id="Oval" fill="#006B02" fill-rule="nonzero" cx="18" cy="12" r="2"></circle>
+        <path d="M4,1 C2.34314575,1 1,2.34314575 1,4 L1,20 C1,21.6568542 2.34314575,23 4,23 L32,23 C33.6568542,23 35,21.6568542 35,20 L35,4 C35,2.34314575 33.6568542,1 32,1 L4,1 Z M4,0 L32,0 C34.209139,0 36,1.790861 36,4 L36,20 C36,22.209139 34.209139,24 32,24 L4,24 C1.790861,24 0,22.209139 0,20 L0,4 C0,1.790861 1.790861,0 4,0 Z" id="Mask" fill="#031619" fill-rule="nonzero" opacity="0.2"></path>
+    </g>
+</svg>
