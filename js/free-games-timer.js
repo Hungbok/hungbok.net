@@ -48,7 +48,7 @@ $(document).ready(function() {
                 timerContainer.textContent = "00:00:00";
                 if (timerContainer.classList.contains("start")) {
                     timerContainer.classList.add("on-sale");
-                    timerContainer.textContent = "할인 중";
+                    timerContainer.textContent = "";
                 } else if (timerContainer.classList.contains("end")) {
                     timerContainer.parentNode.parentNode.classList.add("sale-end");
                     timerContainer.textContent = "";

@@ -275,6 +275,10 @@
     top: 45%;
 }
 
+.sale-item .on-sale.timer-container::after {
+    content: "할인 중";
+}
+
 .sale-item.sale-end {
     filter: grayscale(1) brightness(0.5);
     text-decoration: line-through;
