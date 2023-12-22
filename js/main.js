@@ -311,23 +311,24 @@ $(document).ready(function() {
             '</button>' +
         '</div>' +
     '</header>');
-        
-	// 동적으로 생성된 .language-flag에 이벤트 리스너 추가
-	$(document).on('click', '.language-select', function(event) {
-		event.preventDefault(); // 기본 동작 방지
-
-		// 현재 URL 가져오기
-		var currentUrl = window.location.href;
-
-		// 선택한 언어 가져오기
-		var selectedLang = $(this).data('lang');
-
-		// 언어 코드에 해당하는 부분을 찾아서 바꾸기
-		var newUrl = currentUrl.replace(/\/([^\/]+)\/([^\/]+)\.html/, '/' + selectedLang + '/$2.html');
-
-		// 새로운 URL로 이동
-		window.location.href = newUrl;
-	});
+    
+    // Find all elements with the class 'clickable'
+    var clickableElements = document.querySelectorAll('.language-select');
+  
+    // Attach a click event listener to each clickable element
+    clickableElements.forEach(function (element) {
+      element.addEventListener('click', function () {
+        // Get the value of the 'data-lang' attribute of the clicked element
+        var selectedLang = this.getAttribute('data-lang');
+  
+        // Get the current URL
+        var currentUrl = window.location.href;
+  
+        // Replace the language code in the URL and navigate to the new URL
+        var newUrl = currentUrl.replace(/\/([^\/]+)\/([^\/]+)\.html/, '/' + selectedLang + '/$2.html');
+        window.location.href = newUrl;
+      });
+    });
     
 	$("body").append('<input id="topBtn" class="goupbtn" type="button" value="▲" onclick="clickme()">');
 

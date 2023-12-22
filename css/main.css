@@ -754,7 +754,7 @@ header .nav-music {
   width: 20px;
   height: 20px;
   background: url(/img/icon/done.svg) no-repeat;
-  left: calc(100% - 35px);
+  right: 10px;
   background-size: cover;
   filter: var(--filter);
   -webkit-transition: all 0.5s;
@@ -766,7 +766,7 @@ header .nav-music {
 
 .language-select::after {
   content: "";
-  padding-right: 40px;
+  padding-right: 45px;
 }
 
 .language-select[data-lang="en-us"],
