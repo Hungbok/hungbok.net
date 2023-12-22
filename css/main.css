@@ -181,6 +181,22 @@ header {
   transition: all 0.5s;
 }
 
+header > .search-container,
+header > .help-container,
+header > .language-container {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+header .nav-tv,
+header .nav-movie,
+header .nav-anime,
+header .nav-games,
+header .nav-books,
+header .nav-music {
+  display: none;
+}
+
 .nav-up {
   top: -75px;
 }
