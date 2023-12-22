@@ -850,6 +850,10 @@ header .nav-music {
 
 .section {
     text-align: center;
+}
+
+.body-anime .section {
+    text-align: center;
     padding-top: 161px;
 }
 
