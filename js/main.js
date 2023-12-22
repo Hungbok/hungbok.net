@@ -323,9 +323,10 @@ $(document).ready(function() {
   
         // Get the current URL
         var currentUrl = window.location.href;
-  
+
         // Replace the language code in the URL and navigate to the new URL
-        var newUrl = currentUrl.replace(/\/([^\/]+)\/([^\/]+)\.html/, '/' + selectedLang + '/$2.html');
+        // The modified regular expression allows for the absence of .html in the URL
+        var newUrl = currentUrl.replace(/\/([^\/]+)\/([^\/.]+)(\.html)?/, '/' + selectedLang + '/$2');
         window.location.href = newUrl;
       });
     });
