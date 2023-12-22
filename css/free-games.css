@@ -338,7 +338,6 @@
     border-radius: 20px;
     cursor: pointer;
     color: var(--text);
-    width: 70px;
     text-wrap: nowrap;
     background-color: var(--background);
     -webkit-transition: all 0.5s;
@@ -359,7 +358,7 @@
 }
 
 .sale-more-button.highlight {
-    width: 54px;
+    width: auto;
 }
 
 .sale-more-button svg {

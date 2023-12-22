@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     // JSON 파일 경로 설정
-    var jsonFilePath = '/data/free-games/sale.json';
+    var jsonFilePath = 'https://www.hungbok.com/data/free-games/sale.json';
     
     // 데이터 가져오기
     $.getJSON(jsonFilePath, function (data) {
@@ -11,7 +11,7 @@ $(document).ready(function () {
             $('.sale-container').append('<div class="sale-item ' + data[i].esd + '">'+
             '<a href="' + data[i].link + '" target="_blank">'+
                 '<div class="image">'+
-                    '<img src="' + data[i].image + '" onerror="this.src=`/img/hungbok/hb_error_horizontal.svg`;">'+
+                    '<img src="' + data[i].image + '" onerror="this.src=`https://www.hungbok.com/img/hungbok/hb_error_horizontal.svg`;">'+
                 '</div>'+
                 '<h1>' + data[i].platform + '<br>' + data[i].title + '</h1>'+
                 '<div class="timer-container start" settime="' + data[i].starttime + '"></div>'+
@@ -30,7 +30,7 @@ $(document).ready(function() {
     function fetchData(page, perPage) {
         const startIndex = (page - 1) * perPage;
         const endIndex = startIndex + perPage;
-        return fetch('/data/free-games/data.json')
+        return fetch('https://www.hungbok.com/data/free-games/data.json')
             .then(response => response.json())
             .then(data => data.slice(startIndex, endIndex));
     }
@@ -38,7 +38,7 @@ $(document).ready(function() {
     function createItemElement(t) {
         var e = '<div class="item ' + t.esd + ' ' + t.key + '">'+
                     '<div class="image">'+
-                        '<img src="' + t.image + '" onerror="this.src=`/img/hungbok/hb_error_horizontal.svg`;">'+
+                        '<img src="' + t.image + '" onerror="this.src=`https://www.hungbok.com/img/hungbok/hb_error_horizontal.svg`;">'+
                     '</div>'+
                     '<h1>' + t.title + '</h1>'+
                     '<div class="timer-container" settime="' + t.time + '"></div>'+
@@ -50,7 +50,7 @@ $(document).ready(function() {
         const itemElement = i.firstChild;
 
         // Call the function to load the script for each new item
-        loadScript('/js/free-games-timer.js', function() {
+        loadScript('https://www.hungbok.com/js/free-games-timer.js', function() {
             // You can perform additional actions after the script is loaded if needed
             console.log('Script loaded for item:', t.title);
         });
