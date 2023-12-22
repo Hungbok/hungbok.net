@@ -4,7 +4,7 @@ async function loadAsyncScripts() {
     
     // 일정한 딜레이 후에 스크립트 2 로드 및 실행
     await delay(500); // 1000 밀리초 (1초) 딜레이
-    await loadScript('https://www.hungbok.ner/js/free-games-timer.js');
+    await loadScript('https://www.hungbok.net/js/free-games-timer.js');
     
     // 여기에 필요한 다른 스크립트를 순서대로 로드 및 실행할 수 있습니다.
 }

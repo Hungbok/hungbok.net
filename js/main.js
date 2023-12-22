@@ -272,7 +272,7 @@ $(document).ready(function() {
                         '<div class="language-text">日本語</div>' +
                     '</div>' +
                     '<div class="language-line"></div>' +
-                    '<div class="language-select selected" data-lang="ko">' +
+                    '<div class="language-select" data-lang="ko">' +
                         '<div class="language-flag">' +
                             '<img src="https://www.hungbok.net/img/flag/kr.svg">' +
                         '</div>' +

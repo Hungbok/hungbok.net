@@ -748,7 +748,7 @@ header .nav-music {
   display: block;
 }
 
-.language-select.selected::before {
+.language-select[data-lang="ko"]::before {
   content: "";
   position: absolute;
   width: 20px;
