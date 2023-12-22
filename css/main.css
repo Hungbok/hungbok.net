@@ -182,8 +182,7 @@ header {
 }
 
 header > .search-container,
-header > .help-container,
-header > .language-container {
+header > .help-container {
   opacity: 0.5;
   pointer-events: none;
 }

@@ -80,7 +80,7 @@ $(document).ready(function() {
                         '<div class="language-flag">' +
                             '<img src="https://www.hungbok.net/img/flag/us.svg">' +
                         '</div>' +
-                        '<div class="language-text">영어</div>' +
+                        '<div class="language-text">English</div>' +
                     '</div>' +
                     '<div class="language-line"></div>' +
                     '<div class="language-select" data-lang="en-us">' +
@@ -269,7 +269,7 @@ $(document).ready(function() {
                         '<div class="language-flag">' +
                             '<img src="https://www.hungbok.net/img/flag/jp.svg">' +
                         '</div>' +
-                        '<div class="language-text">일본어</div>' +
+                        '<div class="language-text">日本語</div>' +
                     '</div>' +
                     '<div class="language-line"></div>' +
                     '<div class="language-select selected" data-lang="ko">' +
