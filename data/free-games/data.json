@@ -3,9 +3,17 @@
         "title": "Mystery Game",
         "esd": "epic upcoming",
         "key": "epickey",
-        "time": "2023-12-25-01-00-00",
-        "image": "https://www.hungbok.net/img/free-games/games/hb_19.png",
+        "time": "2023-12-26-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_20.png",
         "link": "https://store.epicgames.com/en-US/free-games"
+    },
+    {
+        "title": "Ghostwire: Tokyo",
+        "esd": "epic",
+        "key": "epickey",
+        "time": "2023-12-26-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_19.png",
+        "link": "https://store.epicgames.com/en-US/ghostwire-tokyo"
     },
     {
         "title": "Build your own Play on the Go Bundle",
