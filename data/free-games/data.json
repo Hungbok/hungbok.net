@@ -3,9 +3,17 @@
         "title": "Mystery Game",
         "esd": "epic upcoming",
         "key": "epickey",
-        "time": "2023-12-26-01-00-00",
-        "image": "https://www.hungbok.net/img/free-games/games/hb_20.png",
+        "time": "2023-12-27-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_21.png",
         "link": "https://store.epicgames.com/en-US/free-games"
+    },
+    {
+        "title": "The Outer Worlds: Spacer's Choice Edition",
+        "esd": "epic",
+        "key": "epickey",
+        "time": "2023-12-27-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_20.png",
+        "link": "https://store.epicgames.com/en-US/the-outer-worlds-spacers-choice-edition"
     },
     {
         "title": "Ghostwire: Tokyo",
