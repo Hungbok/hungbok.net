@@ -182,18 +182,15 @@ header {
 }
 
 header > .search-container,
-header > .help-container {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
+header > .help-container,
 header .nav-tv,
 header .nav-movie,
 header .nav-anime,
 header .nav-games,
 header .nav-books,
 header .nav-music {
-  display: none;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .nav-up {
@@ -220,7 +217,7 @@ header .nav-music {
   position: absolute;
   max-height: 30px;
   vertical-align: middle;
-  margin: 22.5px 20px;
+  margin: 22.5px 20px 22.5px 75px;
   left: 0;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -356,6 +353,68 @@ header .nav-music {
 
 .header-menu p {
 	margin: 0;
+}
+
+.side-panel {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.side-panel-icon {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    filter: var(--filter);
+    position: relative;
+    display: block;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.side-panel-icon img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.side-panel:hover .side-panel-icon img {
+    opacity: 0.5;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .search-container {
