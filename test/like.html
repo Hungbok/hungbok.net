@@ -29,7 +29,7 @@
                     const encodedContent = btoa(JSON.stringify(content));
 
                     // GitHub API를 사용하여 like.json 파일 업데이트
-                    fetch('https://api.github.com/repos/Hungbok/hungbok.net/contents/data/test/like.json', {
+                    fetch('https://api.github.com/repos/Hungbok/data/contents/like.json', {
                         method: 'PUT',
                         headers: {
                             'Authorization': 'Bearer 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',
@@ -52,7 +52,7 @@
         }
 
         // 초기 좋아요 개수 표시
-        fetch('https://raw.githubusercontent.com/Hungbok/hungbok.net/main/data/test/like.json')
+        fetch('https://raw.githubusercontent.com/Hungbok/data/main/like.json')
             .then(response => response.json())
             .then(data => {
                 const initialCount = data.content ? JSON.parse(atob(data.content)).count : 0;
