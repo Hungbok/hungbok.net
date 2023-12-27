@@ -416,6 +416,38 @@ header .nav-support {
   filter: unset;
 }
 
+header .nav-home .header-menu-text::after {
+  content: "메인";
+}
+
+header .nav-tv .header-menu-text::after {
+  content: "티비";
+}
+
+header .nav-movie .header-menu-text::after {
+  content: "영화";
+}
+
+header .nav-anime .header-menu-text::after {
+  content: "애니";
+}
+
+header .nav-games .header-menu-text::after {
+  content: "게임";
+}
+
+header .nav-books .header-menu-text::after {
+  content: "도서";
+}
+
+header .nav-music .header-menu-text::after {
+  content: "음악";
+}
+
+header .nav-support .header-menu-text::after {
+  content: "도움";
+}
+
 .header-menu.nav-back {
   display: inline-block;
   width: auto;

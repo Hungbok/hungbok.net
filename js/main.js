@@ -41,51 +41,51 @@ $(document).ready(function() {
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/home.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">메인</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<div class="header-menu-line"></div>' +
                         '<a class="header-menu nav-tv" href="/tv-series">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/tv.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">티비</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<a class="header-menu nav-movie" href="/movies">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/movie.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">영화</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<a class="header-menu nav-anime" href="/anime">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/smart_toy.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">애니</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<a class="header-menu nav-games" href="/games">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/game.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">게임</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<a class="header-menu nav-books" href="/books">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/book.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">도서</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<a class="header-menu nav-music" href="/music">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/music.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">음악</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                         '<div class="header-menu-line"></div>' +
                         '<a class="header-menu nav-support" href="/help">' +
                             '<div class="header-menu-icon">' +
                                 '<img src="https://www.hungbok.net/img/icon/help.svg">'+
                             '</div>' +
-                            '<div class="header-menu-text">도움</div>' +
+                            '<div class="header-menu-text"></div>' +
                         '</a>' +
                     '</div>' +
                 '</div>' +
