@@ -15,7 +15,7 @@
         // 좋아요 버튼 클릭 시 호출되는 함수
         function like() {
             // GitHub 저장소의 like.json 파일을 업데이트
-            fetch('https://api.github.com/repos/your-username/your-repo/contents/like.json')
+            fetch('https://api.github.com/repos/Hungbok/data/contents/like.json')
                 .then(response => response.json())
                 .then(data => {
                     // 현재 좋아요 개수 가져오기
