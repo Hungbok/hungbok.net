@@ -1,5 +1,21 @@
 [
     {
+        "title": "Vertigo Games Bundle",
+        "esd": "fanatical bundle",
+        "key": "steamkey",
+        "time": "2024-01-05-17-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_24.jpg",
+        "link": "https://www.fanatical.com/en/bundle/vertigo-games-bundle"
+    },
+    {
+        "title": "Cursed to Golf",
+        "esd": "epic",
+        "key": "epickey",
+        "time": "2023-12-29-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_23.png",
+        "link": "https://store.epicgames.com/en-US/p/cursed-to-golf-a6bc22"
+    },
+    {
         "title": "Human Resource Machine",
         "esd": "epic",
         "key": "epickey",
