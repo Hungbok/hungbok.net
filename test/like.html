@@ -15,7 +15,11 @@
         // 좋아요 버튼 클릭 시 호출되는 함수
         function like() {
             // GitHub 저장소의 like.json 파일을 업데이트
-            fetch('https://api.github.com/repos/Hungbok/data/contents/like.json')
+            fetch('https://api.github.com/repos/Hungbok/data/contents/like.json', {
+                headers: {
+                    'Authorization': 'Bearer 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',
+                }
+            })
                 .then(response => response.json())
                 .then(data => {
                     // 현재 좋아요 개수 가져오기
@@ -52,7 +56,11 @@
         }
 
         // 초기 좋아요 개수 표시
-        fetch('https://raw.githubusercontent.com/Hungbok/data/main/like.json')
+        fetch('https://raw.githubusercontent.com/Hungbok/data/main/like.json', {
+            headers: {
+                'Authorization': 'Bearer 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',
+            }
+        })
             .then(response => response.json())
             .then(data => {
                 const initialCount = data.content ? JSON.parse(atob(data.content)).count : 0;
