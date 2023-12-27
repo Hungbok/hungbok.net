@@ -23,293 +23,300 @@ $(document).ready(function() {
 
     $("body").prepend('<header class="nav-down">' +
         '<nav class="nav-header">' +
+            '<div class="side-panel">' +
+                '<a class="side-panel-icon" onclick="toggleSidePanel(this)">' +
+                    '<img src="https://www.hungbok.net/img/icon/menu.svg">' +
+                '</a>' +
+                '<div class="side-panel-menu">'+
+                    '<a class="side-panel-icon" onclick="toggleSidePanel(this)">' +
+                        '<img src="https://www.hungbok.net/img/icon/close.svg">' +
+                    '</a>' +
+                    '<div class="header-refresh">' +
+                        '<a href="/">' +
+                            '<img src="https://www.hungbok.net/img/hungbok/hb_square.svg">' +
+                        '</a>' +
+                    '</div>' +
+                    '<div class="header-menu-container">' +
+                        '<a class="header-menu nav-home" href="/">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/home.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">메인</div>' +
+                        '</a>' +
+                        '<div class="header-menu-line"></div>' +
+                        '<a class="header-menu nav-tv" href="/tv-series">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/tv.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">티비</div>' +
+                        '</a>' +
+                        '<a class="header-menu nav-movie" href="/movies">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/movie.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">영화</div>' +
+                        '</a>' +
+                        '<a class="header-menu nav-anime" href="/anime">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/smart_toy.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">애니</div>' +
+                        '</a>' +
+                        '<a class="header-menu nav-games" href="/games">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/game.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">게임</div>' +
+                        '</a>' +
+                        '<a class="header-menu nav-books" href="/books">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/book.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">도서</div>' +
+                        '</a>' +
+                        '<a class="header-menu nav-music" href="/music">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/music.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">음악</div>' +
+                        '</a>' +
+                        '<div class="header-menu-line"></div>' +
+                        '<a class="header-menu nav-support" href="/help">' +
+                            '<div class="header-menu-icon">' +
+                                '<img src="https://www.hungbok.net/img/icon/help.svg">'+
+                            '</div>' +
+                            '<div class="header-menu-text">도움</div>' +
+                        '</a>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
             '<div class="header-refresh">' +
                 '<a href="/">' +
                     '<img src="https://www.hungbok.net/img/hungbok/hb_square.svg">' +
                 '</a>' +
             '</div>' +
-            '<div class="header-menu nav-tv">' +
-                '<a href="/tv-series">' +
-                    '티비'+
+            '<div class="search-container">' +
+                '<input type="text" id="value" placeholder="작품명 검색" autocomplete="off">'+
+                '<div class="search-icon">' +
+                    '<img src="https://www.hungbok.net/img/icon/search.svg">' +
+                '</div>' +
+            '</div>' +
+            '<div class="help-container">' +
+                '<a class="help-icon" href="/support">' +
+                    '<img src="https://www.hungbok.net/img/icon/help.svg">' +
                 '</a>' +
             '</div>' +
-            '<div class="header-menu nav-movie">' +
-                '<a href="/movie">' +
-                    '영화'+
-                '</a>' +
-            '</div>' +
-            '<div class="header-menu nav-anime">' +
-                '<a href="/anime">' +
-                    '애니'+
-                '</a>' +
-            '</div>' +
-            '<div class="header-menu nav-games">' +
-                '<a href="/games">' +
-                    '게임'+
-                '</a>' +
-            '</div>' +
-            '<div class="header-menu nav-books">' +
-                '<a href="/books">' +
-                    '도서'+
-                '</a>' +
-            '</div>' +
-            '<div class="header-menu nav-music">' +
-                '<a href="/music">' +
-                    '음악'+
-                '</a>' +
-            '</div>' +
-        '</nav>' +
-        '<div class="search-container">' +
-            '<a class="search-icon" href="/search">' +
-                '<img src="https://www.hungbok.net/img/icon/search.svg">' +
-            '</a>' +
-        '</div>' +
-        '<div class="help-container">' +
-            '<a class="help-icon" href="/support">' +
-                '<img src="https://www.hungbok.net/img/icon/help.svg">' +
-            '</a>' +
-        '</div>' +
-        '<div class="language-container">' +
-            '<div class="language-icon">' +
-                '<img src="https://www.hungbok.net/img/icon/language.svg">' +
-            '</div>' +
-            '<div class="language-hover"></div>' +
-            '<div class="language-lists">' +
-                '<div class="language-list">' +
-                    '<div class="language-select" data-lang="en">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/us.svg">' +
+            '<div class="language-container">' +
+                '<div class="language-icon">' +
+                    '<img src="https://www.hungbok.net/img/icon/language.svg">' +
+                '</div>' +
+                '<div class="language-hover"></div>' +
+                '<div class="language-lists">' +
+                    '<div class="language-list">' +
+                        '<div class="language-select" data-lang="en">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/us.svg">' +
+                            '</div>' +
+                            '<div class="language-text">English</div>' +
                         '</div>' +
-                        '<div class="language-text">English</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="en-us">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/us.svg">' +
+                        '<div class="language-select" data-lang="en-us">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/us.svg">' +
+                            '</div>' +
+                            '<div class="language-text">영어(미국)</div>' +
                         '</div>' +
-                        '<div class="language-text">영어(미국)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="en-gb">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/gb.svg">' +
+                        '<div class="language-select" data-lang="en-gb">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/gb.svg">' +
+                            '</div>' +
+                            '<div class="language-text">영어(영국)</div>' +
                         '</div>' +
-                        '<div class="language-text">영어(영국)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="en-ca">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/ca.svg">' +
+                        '<div class="language-select" data-lang="en-ca">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/ca.svg">' +
+                            '</div>' +
+                            '<div class="language-text">영어(캐나다)</div>' +
                         '</div>' +
-                        '<div class="language-text">영어(캐나다)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="en-au">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/au.svg">' +
+                        '<div class="language-select" data-lang="en-au">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/au.svg">' +
+                            '</div>' +
+                            '<div class="language-text">영어(호주)</div>' +
                         '</div>' +
-                        '<div class="language-text">영어(호주)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="cs">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/cz.svg">' +
+                        '<div class="language-select" data-lang="cs">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/cz.svg">' +
+                            '</div>' +
+                            '<div class="language-text">체코어</div>' +
                         '</div>' +
-                        '<div class="language-text">체코어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="de">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/de.svg">' +
+                        '<div class="language-select" data-lang="de">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/de.svg">' +
+                            '</div>' +
+                            '<div class="language-text">독일어</div>' +
                         '</div>' +
-                        '<div class="language-text">독일어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="es">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/es.svg">' +
+                        '<div class="language-select" data-lang="es">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/es.svg">' +
+                            '</div>' +
+                            '<div class="language-text">스페인어</div>' +
                         '</div>' +
-                        '<div class="language-text">스페인어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="es-es">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/es.svg">' +
+                        '<div class="language-select" data-lang="es-es">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/es.svg">' +
+                            '</div>' +
+                            '<div class="language-text">스페인어(스페인)</div>' +
                         '</div>' +
-                        '<div class="language-text">스페인어(스페인)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="es-mx">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/mx.svg">' +
+                        '<div class="language-select" data-lang="es-mx">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/mx.svg">' +
+                            '</div>' +
+                            '<div class="language-text">스페인어(멕시코)</div>' +
                         '</div>' +
-                        '<div class="language-text">스페인어(멕시코)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="fi">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/fi.svg">' +
+                        '<div class="language-select" data-lang="fi">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/fi.svg">' +
+                            '</div>' +
+                            '<div class="language-text">핀란드</div>' +
                         '</div>' +
-                        '<div class="language-text">핀란드</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="fr">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/fr.svg">' +
+                        '<div class="language-select" data-lang="fr">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/fr.svg">' +
+                            '</div>' +
+                            '<div class="language-text">프랑스어</div>' +
                         '</div>' +
-                        '<div class="language-text">프랑스어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="fr-fr">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/fr.svg">' +
+                        '<div class="language-select" data-lang="fr-fr">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/fr.svg">' +
+                            '</div>' +
+                            '<div class="language-text">프랑스어(프랑스)</div>' +
                         '</div>' +
-                        '<div class="language-text">프랑스어(프랑스)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="fr-ca">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/ca.svg">' +
+                        '<div class="language-select" data-lang="fr-ca">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/ca.svg">' +
+                            '</div>' +
+                            '<div class="language-text">프랑스어(캐나다)</div>' +
                         '</div>' +
-                        '<div class="language-text">프랑스어(캐나다)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="hu">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/hu.svg">' +
+                        '<div class="language-select" data-lang="hu">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/hu.svg">' +
+                            '</div>' +
+                            '<div class="language-text">헝가리어</div>' +
                         '</div>' +
-                        '<div class="language-text">헝가리어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="hi">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/in.svg">' +
+                        '<div class="language-select" data-lang="hi">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/in.svg">' +
+                            '</div>' +
+                            '<div class="language-text">힌디어</div>' +
                         '</div>' +
-                        '<div class="language-text">힌디어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="it">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/it.svg">' +
+                        '<div class="language-select" data-lang="it">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/it.svg">' +
+                            '</div>' +
+                            '<div class="language-text">이탈리아어</div>' +
                         '</div>' +
-                        '<div class="language-text">이탈리아어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="nl">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/nl.svg">' +
+                        '<div class="language-select" data-lang="nl">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/nl.svg">' +
+                            '</div>' +
+                            '<div class="language-text">네덜란드어</div>' +
                         '</div>' +
-                        '<div class="language-text">네덜란드어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="pl">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/pl.svg">' +
+                        '<div class="language-select" data-lang="pl">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/pl.svg">' +
+                            '</div>' +
+                            '<div class="language-text">폴란드어</div>' +
                         '</div>' +
-                        '<div class="language-text">폴란드어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="pt">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/pt.svg">' +
+                        '<div class="language-select" data-lang="pt">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/pt.svg">' +
+                            '</div>' +
+                            '<div class="language-text">포르투갈어</div>' +
                         '</div>' +
-                        '<div class="language-text">포르투갈어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="pt-pt">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/pt.svg">' +
+                        '<div class="language-select" data-lang="pt-pt">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/pt.svg">' +
+                            '</div>' +
+                            '<div class="language-text">포르투갈어(포르투갈)</div>' +
                         '</div>' +
-                        '<div class="language-text">포르투갈어(포르투갈)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="pt-br">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/br.svg">' +
+                        '<div class="language-select" data-lang="pt-br">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/br.svg">' +
+                            '</div>' +
+                            '<div class="language-text">포르투갈어(브라질)</div>' +
                         '</div>' +
-                        '<div class="language-text">포르투갈어(브라질)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="ru">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/ru.svg">' +
+                        '<div class="language-select" data-lang="ru">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/ru.svg">' +
+                            '</div>' +
+                            '<div class="language-text">러시아어</div>' +
                         '</div>' +
-                        '<div class="language-text">러시아어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="ar">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/sa.svg">' +
+                        '<div class="language-select" data-lang="ar">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/sa.svg">' +
+                            '</div>' +
+                            '<div class="language-text">아랍어</div>' +
                         '</div>' +
-                        '<div class="language-text">아랍어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="th">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/th.svg">' +
+                        '<div class="language-select" data-lang="th">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/th.svg">' +
+                            '</div>' +
+                            '<div class="language-text">태국어</div>' +
                         '</div>' +
-                        '<div class="language-text">태국어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="tr">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/tr.svg">' +
+                        '<div class="language-select" data-lang="tr">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/tr.svg">' +
+                            '</div>' +
+                            '<div class="language-text">튀르키예어</div>' +
                         '</div>' +
-                        '<div class="language-text">튀르키예어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="uk">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/ua.svg">' +
+                        '<div class="language-select" data-lang="uk">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/ua.svg">' +
+                            '</div>' +
+                            '<div class="language-text">우크라이나어</div>' +
                         '</div>' +
-                        '<div class="language-text">우크라이나어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="ja">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/jp.svg">' +
+                        '<div class="language-select" data-lang="ja">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/jp.svg">' +
+                            '</div>' +
+                            '<div class="language-text">日本語</div>' +
                         '</div>' +
-                        '<div class="language-text">日本語</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="ko">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/kr.svg">' +
+                        '<div class="language-select" data-lang="ko">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/kr.svg">' +
+                            '</div>' +
+                            '<div class="language-text">한국어</div>' +
                         '</div>' +
-                        '<div class="language-text">한국어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="zh">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/cn.svg">' +
+                        '<div class="language-select" data-lang="zh">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/cn.svg">' +
+                            '</div>' +
+                            '<div class="language-text">중국어</div>' +
                         '</div>' +
-                        '<div class="language-text">중국어</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="zh-cn">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/cn.svg">' +
+                        '<div class="language-select" data-lang="zh-cn">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/cn.svg">' +
+                            '</div>' +
+                            '<div class="language-text">중국어(간체)</div>' +
                         '</div>' +
-                        '<div class="language-text">중국어(간체)</div>' +
-                    '</div>' +
-                    '<div class="language-line"></div>' +
-                    '<div class="language-select" data-lang="zh-tw">' +
-                        '<div class="language-flag">' +
-                            '<img src="https://www.hungbok.net/img/flag/tw.svg">' +
+                        '<div class="language-select" data-lang="zh-tw">' +
+                            '<div class="language-flag">' +
+                                '<img src="https://www.hungbok.net/img/flag/tw.svg">' +
+                            '</div>' +
+                            '<div class="language-text">중국어(번체)</div>' +
                         '</div>' +
-                        '<div class="language-text">중국어(번체)</div>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
-        '</div>' +
-        '<div class="toggle-container">' +
-            '<button class="theme-btn light" onclick="setTheme(`light`)">'+
-                '<img src="https://www.hungbok.net/img/icon/light_mode.svg">'+
-            '</button>' +
-            '<button class="theme-btn dark" onclick="setTheme(`dark`)">'+
-                '<img src="https://www.hungbok.net/img/icon/dark_mode.svg">'+
-            '</button>' +
-        '</div>' +
+            '<div class="toggle-container">' +
+                '<button class="theme-btn light" onclick="setTheme(`light`)">'+
+                    '<img src="https://www.hungbok.net/img/icon/light_mode.svg">'+
+                '</button>' +
+                '<button class="theme-btn dark" onclick="setTheme(`dark`)">'+
+                    '<img src="https://www.hungbok.net/img/icon/dark_mode.svg">'+
+                '</button>' +
+            '</div>' +
+        '</nav>' +
     '</header>');
     
     // Find all elements with the class 'language-select'
@@ -384,6 +391,20 @@ $(document).ready(function() {
         lastScrollTop = st;
     }
 });
+
+function toggleSidePanel() {
+    var sidePanel = document.querySelector('.side-panel');
+    var sidePanelMenu = document.querySelector('.side-panel-menu');
+
+    // highlight 클래스가 있으면 제거, 없으면 추가
+    if (sidePanel.classList.contains('open')) {
+        sidePanel.classList.remove('open');
+        sidePanelMenu.classList.remove('open');
+    } else {
+        sidePanel.classList.add('open');
+        sidePanelMenu.classList.add('open');
+    }
+}
 
 window.onload = function () {
     $('.tab-link').click(function(){
