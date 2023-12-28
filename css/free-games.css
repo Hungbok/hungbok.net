@@ -100,7 +100,7 @@
 }
 
 .sale-text::after {
-    content: "가장 최근 이벤트만 확인할 수 있습니다.";
+    content: "";
     color: #666666;
 }
 
@@ -276,7 +276,7 @@
 }
 
 .sale-item .on-sale.timer-container::after {
-    content: "할인 중";
+    content: "";
 }
 
 .sale-item.sale-end {
@@ -389,7 +389,7 @@
 }
 
 .sale-more-button::before {
-    content: "펼치기";
+    content: "";
     vertical-align: middle;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -399,7 +399,7 @@
 }
 
 .sale-more-button.highlight::before {
-    content: "접기";
+    content: "";
     vertical-align: middle;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -565,7 +565,7 @@
 }
 
 .item::before {
-    content: "종료됨";
+    content: "";
     position: absolute;
     z-index: 10;
     padding: 0px 50px;
@@ -638,7 +638,7 @@
 }
 
 .item a::after {
-    content: "에서 받기";
+    content: "";
 }
 
 .item.bundle a::after {
@@ -652,7 +652,7 @@
 }
 
 .item.bundle a::after {
-    content: "에서 구입";
+    content: "";
 }
 
 .item.price a {
@@ -670,7 +670,7 @@
 }
 
 .item.psplus a::after {
-    content: "에서 구독";
+    content: "";
 }
 
 .item.prime a::after {
@@ -684,7 +684,7 @@
 }
 
 .item.prime a::after {
-    content: "에서 구독";
+    content: "";
 }
 
 .item.choice a::after {
@@ -698,7 +698,7 @@
 }
 
 .item.choice a::after {
-    content: "에서 구독";
+    content: "";
 }
 
 .item a:hover {
@@ -761,11 +761,11 @@
 }
 
 .item.upcoming a::before {
-    content: "확인"!important;
+    content: "";
 }
 
 .item.upcoming a::after {
-    content: "하러 가기"!important;
+    content: "";
 }
 
 .item.upcoming a {
@@ -836,7 +836,7 @@
 }
 
 .item.upcoming::before {
-    content: "공개됨";
+    content: "";
     font-size: 130px;
     left: 50%;
     top: 322.5px;
@@ -928,42 +928,6 @@
 
 .amazonkey::after {
     background-image: url(/img/icon/primegaming.svg);
-}
-
-.item.steam a::before {
-    content: "스팀";
-}
-
-.item.epic a::before {
-    content: "에픽게임즈 스토어";
-}
-
-.item.gog a::before {
-    content: "GOG";
-}
-
-.item.ubi a::before {
-    content: "유비소프트 스토어";
-}
-
-.item.fanatical a::before {
-    content: "파나티컬";
-}
-
-.item.humble a::before {
-    content: "험블 번들";
-}
-
-.item.prime a::before {
-    content: "프라임 게이밍";
-}
-
-.item.psplus a::before {
-    content: "플레이스테이션 스토어";
-}
-
-.item.xbox a::before {
-    content: "엑스박스 스토어";
 }
 
 .container.all.alltype .item,

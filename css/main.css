@@ -329,7 +329,7 @@ header .nav-support {
 	text-decoration: none;
   color: var(--title);
 	font-weight: bold;
-	font-family: 'KoreanSWGI1R Regular';
+  font-family: 'Lato', "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Open Sans", "Lucida Grande", Tahoma, sans-serif;
 	font-size: 1em;
   padding: 10px 20px;
   border-radius: 20px;
@@ -413,38 +413,6 @@ header .nav-support {
 .body-music .nav-music .header-menu-icon img,
 .body-support .nav-support .header-menu-icon img {
   filter: unset;
-}
-
-header .nav-home .header-menu-text::after {
-  content: "메인";
-}
-
-header .nav-tv .header-menu-text::after {
-  content: "티비";
-}
-
-header .nav-movie .header-menu-text::after {
-  content: "영화";
-}
-
-header .nav-anime .header-menu-text::after {
-  content: "애니";
-}
-
-header .nav-games .header-menu-text::after {
-  content: "게임";
-}
-
-header .nav-books .header-menu-text::after {
-  content: "도서";
-}
-
-header .nav-music .header-menu-text::after {
-  content: "음악";
-}
-
-header .nav-support .header-menu-text::after {
-  content: "도움";
 }
 
 .header-menu.nav-back {
@@ -955,8 +923,7 @@ header .nav-support .header-menu-text::after {
   display: block;
 }
 
-.language-select[data-lang="ko"]::before {
-  content: "";
+.language-select::before {
   position: absolute;
   width: 20px;
   height: 20px;
@@ -980,203 +947,7 @@ header .nav-support .header-menu-text::after {
   vertical-align: middle;
   position: relative;
   display: inline-block;
-  font-family: 'KoreanSWGI1R Regular';
-}
-
-.language-select[data-lang="en"] .language-text::after {
-  content: "영어";
-}
-.language-select[data-lang="en-us"] .language-text::after {
-  content: "영어(미국)";
-}
-.language-select[data-lang="en-gb"] .language-text::after {
-  content: "영어(영국)";
-}
-.language-select[data-lang="en-ca"] .language-text::after {
-  content: "영어(캐나다)";
-}
-.language-select[data-lang="en-au"] .language-text::after {
-  content: "영어(호주)";
-}
-.language-select[data-lang="cs"] .language-text::after {
-  content: "체코어";
-}
-.language-select[data-lang="cs-cz"] .language-text::after {
-  content: "체코어(체코)";
-}
-.language-select[data-lang="de"] .language-text::after {
-  content: "독일어";
-}
-.language-select[data-lang="de-de"] .language-text::after {
-  content: "독일어(독일)";
-}
-.language-select[data-lang="es"] .language-text::after {
-  content: "스페인어";
-}
-.language-select[data-lang="es-es"] .language-text::after {
-  content: "스페인어(스페인)";
-}
-.language-select[data-lang="es-mx"] .language-text::after {
-  content: "스페인어(멕시코)";
-}
-.language-select[data-lang="fi"] .language-text::after {
-  content: "핀란드어";
-}
-.language-select[data-lang="fi-fi"] .language-text::after {
-  content: "핀란드어(핀란드)";
-}
-.language-select[data-lang="fr"] .language-text::after {
-  content: "프랑스어";
-}
-.language-select[data-lang="fr-fr"] .language-text::after {
-  content: "프랑스어(프랑스)";
-}
-.language-select[data-lang="fr-ca"] .language-text::after {
-  content: "프랑스어(캐나다)";
-}
-.language-select[data-lang="hu"] .language-text::after {
-  content: "헝가리어";
-}
-.language-select[data-lang="hu-hu"] .language-text::after {
-  content: "헝가리어(헝가리)";
-}
-.language-select[data-lang="hi"] .language-text::after {
-  content: "힌디어";
-}
-.language-select[data-lang="hi-in"] .language-text::after {
-  content: "힌디어(인도)";
-}
-.language-select[data-lang="it"] .language-text::after {
-  content: "이탈리아어";
-}
-.language-select[data-lang="it-it"] .language-text::after {
-  content: "이탈리아어(이탈리아)";
-}
-.language-select[data-lang="nl"] .language-text::after {
-  content: "네덜란드어";
-}
-.language-select[data-lang="nl-nl"] .language-text::after {
-  content: "네덜란드어(네덜란드)";
-}
-.language-select[data-lang="pl"] .language-text::after {
-  content: "폴란드어";
-}
-.language-select[data-lang="pl-pl"] .language-text::after {
-  content: "폴란드어(폴란드)";
-}
-.language-select[data-lang="pt"] .language-text::after {
-  content: "포르투갈어";
-}
-.language-select[data-lang="pt-pt"] .language-text::after {
-  content: "포르투갈어(포르투갈)";
-}
-.language-select[data-lang="pt-br"] .language-text::after {
-  content: "포르투갈어(브라질)";
-}
-.language-select[data-lang="ru"] .language-text::after {
-  content: "러시아어";
-}
-.language-select[data-lang="ru-ru"] .language-text::after {
-  content: "러시아어(러시아)";
-}
-.language-select[data-lang="ar"] .language-text::after {
-  content: "아랍어";
-}
-.language-select[data-lang="ar-sa"] .language-text::after {
-  content: "아랍어(사우디아라비아)";
-}
-.language-select[data-lang="th"] .language-text::after {
-  content: "태국어";
-}
-.language-select[data-lang="th-th"] .language-text::after {
-  content: "태국어(태국)";
-}
-.language-select[data-lang="tr"] .language-text::after {
-  content: "튀르키예어";
-}
-.language-select[data-lang="tr-tr"] .language-text::after {
-  content: "튀르키예어(튀르키예)";
-}
-.language-select[data-lang="uk"] .language-text::after {
-  content: "우크라이나어";
-}
-.language-select[data-lang="uk-ua"] .language-text::after {
-  content: "우크라이나어(우크라이나)";
-}
-.language-select[data-lang="ja"] .language-text::after {
-  content: "일본어";
-}
-.language-select[data-lang="ja-jp"] .language-text::after {
-  content: "일본어(일본)";
-}
-.language-select[data-lang="ko"] .language-text::after {
-  content: "한국어";
-}
-.language-select[data-lang="ko-kr"] .language-text::after {
-  content: "한국어(대한민국)";
-}
-.language-select[data-lang="zh"] .language-text::after {
-  content: "중국어";
-}
-.language-select[data-lang="zh-cn"] .language-text::after {
-  content: "중국어(중국)";
-}
-.language-select[data-lang="zh-tw"] .language-text::after {
-  content: "중국어(대만)";
-}
-.language-select[data-lang="zh-hans"] .language-text::after {
-  content: "중국어(간체)";
-}
-.language-select[data-lang="zh-hant"] .language-text::after {
-  content: "중국어(번체)";
-}
-.language-select[data-lang="bg"] .language-text::after {
-  content: "불가리아어";
-}
-.language-select[data-lang="bg-bg"] .language-text::after {
-  content: "불가리아어(불가리아)";
-}
-.language-select[data-lang="ms"] .language-text::after {
-  content: "인도네시아어";
-}
-.language-select[data-lang="ms-id"] .language-text::after {
-  content: "인도네시아어(인도네시아)";
-}
-.language-select[data-lang="el"] .language-text::after {
-  content: "그리스어";
-}
-.language-select[data-lang="el-gr"] .language-text::after {
-  content: "그리스어(그리스)";
-}
-.language-select[data-lang="no"] .language-text::after {
-  content: "노르웨이어";
-}
-.language-select[data-lang="no-no"] .language-text::after {
-  content: "노르웨이어(노르웨이)";
-}
-.language-select[data-lang="da"] .language-text::after {
-  content: "덴마크어";
-}
-.language-select[data-lang="da-dk"] .language-text::after {
-  content: "덴마크어(덴마크)";
-}
-.language-select[data-lang="sv"] .language-text::after {
-  content: "스웨덴어";
-}
-.language-select[data-lang="sv-se"] .language-text::after {
-  content: "스웨덴어(스웨덴)";
-}
-.language-select[data-lang="ro"] .language-text::after {
-  content: "루마니아어";
-}
-.language-select[data-lang="ro-ro"] .language-text::after {
-  content: "루마니아어(루마니아)";
-}
-.language-select[data-lang="vi"] .language-text::after {
-  content: "베트남어";
-}
-.language-select[data-lang="vi-vn"] .language-text::after {
-  content: "베트남어(베트남)";
+  font-family: 'Lato', "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Open Sans", "Lucida Grande", Tahoma, sans-serif;
 }
 
 .great {
