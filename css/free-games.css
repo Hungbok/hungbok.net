@@ -187,7 +187,7 @@
 
 .sale-item h1 {
     position: absolute;
-    top: 10%;
+    top: 15%;
     transform: translate(0%, -50%);
     width: calc(100% - 40px);
     color: #cccccc;
@@ -201,7 +201,7 @@
 
 .sale-item .start {
     position: absolute;
-    top: 45%;
+    top: 42.5%;
     color: #cccccc;
     z-index: 2;
     font-weight: bold;
@@ -235,7 +235,7 @@
 .sale-item .end {
     position: absolute;
     font-size: 16px;
-    top: 75%;
+    top: 70%;
     color: #cccccc;
     z-index: 2;
     font-weight: bold;
