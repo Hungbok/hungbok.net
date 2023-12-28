@@ -201,7 +201,7 @@
 
 .sale-item .start {
     position: absolute;
-    top: 42.5%;
+    top: 40%;
     color: #cccccc;
     z-index: 2;
     font-weight: bold;
@@ -272,7 +272,7 @@
     color: lime;
     animation: unset;
     font-size: 24px;
-    top: 45%;
+    top: 40%;
 }
 
 .sale-item .on-sale.timer-container::after {
