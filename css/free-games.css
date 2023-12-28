@@ -275,10 +275,6 @@
     top: 40%;
 }
 
-.sale-item .on-sale.timer-container::after {
-    content: "";
-}
-
 .sale-item.sale-end {
     filter: grayscale(1) brightness(0.5);
     text-decoration: line-through;
@@ -636,10 +632,6 @@
     border-radius: 20px;
 }
 
-.item a::after {
-    content: "";
-}
-
 .item.bundle a::after {
     padding-right: 25px;
 }
@@ -648,10 +640,6 @@
     background: url(/img/icon/basket.svg) no-repeat, linear-gradient(90deg,#e67300,60%,#f4bd85);
     background-position: calc(100% - 15px) center, center center;
     background-size: 20px 20px, 100% 100%;
-}
-
-.item.bundle a::after {
-    content: "";
 }
 
 .item.price a {
@@ -668,10 +656,6 @@
     background-size: 20px 20px, 100% 100%;
 }
 
-.item.psplus a::after {
-    content: "";
-}
-
 .item.prime a::after {
     padding-right: 30px;
 }
@@ -682,10 +666,6 @@
     background-size: 20px 20px, 100% 100%;
 }
 
-.item.prime a::after {
-    content: "";
-}
-
 .item.choice a::after {
     padding-right: 30px;
 }
@@ -694,10 +674,6 @@
     background: url(/img/icon/humblebundle_symbol_color.svg) no-repeat, linear-gradient(90deg,#45e600,60%,#a5ee86);
     background-position: calc(100% - 15px) center, center center;
     background-size: 20px 20px, 100% 100%;
-}
-
-.item.choice a::after {
-    content: "";
 }
 
 .item a:hover {
@@ -757,14 +733,6 @@
 
 .item:hover.expire::before {
     opacity: 0.25;
-}
-
-.item.upcoming a::before {
-    content: "";
-}
-
-.item.upcoming a::after {
-    content: "";
 }
 
 .item.upcoming a {
@@ -954,181 +922,6 @@
 .container.key .psplus {
     display: none;
 }
-
-/* .container.steam .item,
-.container.epic .item,
-.container.gog .item,
-.container.ubi .item,
-.container.xbox .item,
-.container.fanatical .item,
-.container.humble .item,
-.container.choice .item,
-.container.prime .item,
-.container.psplus .item {
-    display: none;
-}
-
-.container.steam .steam,
-.container.epic .epic,
-.container.gog .gog,
-.container.ubi .ubi,
-.container.xbox .xbox,
-.container.fanatical .fanatical,
-.container.humble .humble,
-.container.choice .choice,
-.container.prime .prime,
-.container.psplus .psplus {
-    display: block;
-}
-
-.container.bundle .item,
-.container.subscribe .item,
-.container.key .bundle,
-.container.key .choice,
-.container.key .prime,
-.container.key .psplus,
-.container.choice .choice,
-.container.prime .prime,
-.container.psplus .psplus {
-    display: none;
-}
-
-.container.bundle .bundle,
-.container.subscribe .choice,
-.container.subscribe .prime,
-.container.subscribe .psplus,
-.container.subscribe.choice .choice,
-.container.subscribe.prime .prime,
-.container.subscribe.psplus .psplus {
-    display: block;
-}
-
-.container.subscribe.steam .price,
-.container.subscribe.steam .choice,
-.container.subscribe.epic .price,
-.container.subscribe.epic .choice,
-.container.subscribe.gog .price,
-.container.subscribe.gog .choice,
-.container.subscribe.ubi .price,
-.container.subscribe.ubi .choice,
-.container.subscribe.xbox .price,
-.container.subscribe.xbox .choice,
-.container.subscribe.fanatical .price,
-.container.subscribe.fanatical .choice,
-.container.subscribe.humble .price,
-.container.subscribe.humble .choice,
-.container.subscribe.choice .prime,
-.container.subscribe.choice .psplus,
-.container.subscribe.prime .psplus,
-.container.subscribe.prime .choice,
-.container.subscribe.psplus .prime,
-.container.subscribe.psplus .choice {
-    display: none;
-} */
-
-/* .container.steam.bundle .item,
-.container.steam.subscribe .item,
-.container.steam.key .item.bundle,
-.container.steam.key .item.choice,
-.container.steam.key .item.prime,
-.container.steam.key .item.psplus,
-.container.epic.bundle .item,
-.container.epic.subscribe .item,
-.container.epic.key .item.choice,
-.container.epic.key .item.prime,
-.container.epic.key .item.psplus,
-.container.epic.key .item.bundle,
-.container.gog.bundle .item,
-.container.gog.subscribe .item,
-.container.gog.key .item.bundle,
-.container.gog.key .item.choice,
-.container.gog.key .item.prime,
-.container.gog.key .item.psplus,
-.container.ubi.bundle .item,
-.container.ubi.subscribe .item,
-.container.ubi.key .item.bundle,
-.container.ubi.key .item.choice,
-.container.ubi.key .item.prime,
-.container.ubi.key .item.psplus,
-.container.xbox.bundle .item,
-.container.xbox.subscribe .item,
-.container.xbox.key .item.bundle,
-.container.xbox.key .item.choice,
-.container.xbox.key .item.prime,
-.container.xbox.key .item.psplus,
-.container.fanatical.bundle .item,
-.container.fanatical.subscribe .item,
-.container.fanatical.key .item.bundle,
-.container.fanatical.key .item.choice,
-.container.fanatical.key .item.prime,
-.container.fanatical.key .item.psplus
-.container.humble.bundle .item,
-.container.humble.subscribe .item,
-.container.humble.key .item.bundle,
-.container.humble.key .item.choice,
-.container.humble.key .item.prime,
-.container.humble.key .item.psplus,
-.container.choice.bundle .item,
-.container.choice.subscribe .item,
-.container.choice.key .item.bundle,
-.container.choice.key .item.choice,
-.container.choice.key .item.prime,
-.container.choice.key .item.psplus,
-.container.prime.bundle .item,
-.container.prime.subscribe .item,
-.container.prime.key .item.bundle,
-.container.prime.key .item.choice,
-.container.prime.key .item.prime,
-.container.prime.key .item.psplus,
-.container.psplus.bundle .item,
-.container.psplus.subscribe .item,
-.container.psplus.key .item.bundle,
-.container.psplus.key .item.choice,
-.container.psplus.key .item.prime,
-.container.psplus.key .item.psplus {
-    display: none;
-}
-
-.container.steam.bundle .steam.bundle,
-.container.steam.subscribe .steam.choice,
-.container.steam.subscribe .steam.prime,
-.container.steam.subscribe .steam.psplus,
-.container.epic.bundle .epic.bundle,
-.container.epic.subscribe .epic.choice,
-.container.epic.subscribe .epic.prime,
-.container.epic.subscribe .epic.psplus,
-.container.gog.bundle .gog.bundle,
-.container.gog.subscribe .gog.choice,
-.container.gog.subscribe .gog.prime,
-.container.gog.subscribe .gog.psplus,
-.container.ubi.bundle .ubi.bundle,
-.container.ubi.subscribe .ubi.choice,
-.container.ubi.subscribe .ubi.prime,
-.container.ubi.subscribe .ubi.psplus,
-.container.xbox.bundle .xbox.bundle,
-.container.xbox.subscribe .xbox.choice,
-.container.xbox.subscribe .xbox.prime,
-.container.xbox.subscribe .xbox.psplus,
-.container.fanatical.bundle .fanatical.bundle,
-.container.fanatical.subscribe .fanatical.choice,
-.container.fanatical.subscribe .fanatical.prime,
-.container.fanatical.subscribe .fanatical.psplus,
-.container.humble.bundle .humble.bundle,
-.container.humble.subscribe .humble.choice,
-.container.humble.subscribe .humble.prime,
-.container.humble.subscribe .humble.psplus,
-.container.choice.bundle .choice.bundle,
-.container.choice.subscribe .choice.choice,
-.container.choice.subscribe .choice.prime,
-.container.choice.subscribe .choice.psplus,
-.container.prime.bundle .prime.bundle,
-.container.prime.subscribe .prime.psplus,
-.container.psplus.bundle .psplus.bundle,
-.container.psplus.subscribe .psplus.choice,
-.container.psplus.subscribe .psplus.prime,
-.container.psplus.subscribe .psplus.psplus {
-    display: block;
-} */
 
 .container.available .expire {
     display: none!important;
