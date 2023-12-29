@@ -1,5 +1,61 @@
 [
     {
+        "title": "Build Your Own Retro Bundle",
+        "esd": "fanatical bundle",
+        "key": "steamkey",
+        "time": "2024-02-14-17-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_31.jpg",
+        "link": "https://www.fanatical.com/en/pick-and-mix/build-your-own-retro-bundle"
+    },
+    {
+        "title": "Snakebird Complete",
+        "esd": "epic",
+        "key": "epickey",
+        "time": "2023-12-31-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_30.png",
+        "link": "https://store.epicgames.com/en-US/p/snakebird-complete-e6f0ae"
+    },
+    {
+        "title": "South of the Circle",
+        "esd": "gog",
+        "key": "gogkey",
+        "time": "2024-01-01-23-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_29.jpg",
+        "link": "https://www.gog.com/en/game/south_of_the_circle"
+    },
+    {
+        "title": "Asteroids: Recharged",
+        "esd": "prime price",
+        "key": "epickey",
+        "time": "2024-02-01-00-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_28.jpg",
+        "link": "https://gaming.amazon.com/asteroids-recharged-epic/dp/amzn1.pg.item.b35cb80b-691e-403e-98bd-2a3dce61d835"
+    },
+    {
+        "title": "A Tiny Sticker Tale",
+        "esd": "prime price",
+        "key": "primekey",
+        "time": "2024-02-01-00-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_27.jpg",
+        "link": "https://gaming.amazon.com/a-tiny-sticker-tale-aga/dp/amzn1.pg.item.34446159-c28f-411c-8225-538c42342e94"
+    },
+    {
+        "title": "Build Your Own Winter Bundle",
+        "esd": "fanatical bundle",
+        "key": "steamkey",
+        "time": "2024-01-31-17-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_26.jpg",
+        "link": "https://www.fanatical.com/en/pick-and-mix/build-your-own-winter-bundle"
+    },
+    {
+        "title": "Cat Quest",
+        "esd": "epic",
+        "key": "epickey",
+        "time": "2023-12-30-01-00-00",
+        "image": "https://www.hungbok.net/img/free-games/games/hb_25.png",
+        "link": "https://store.epicgames.com/en-US/p/cat-quest-8373e0"
+    },
+    {
         "title": "Vertigo Games Bundle",
         "esd": "fanatical bundle",
         "key": "steamkey",
