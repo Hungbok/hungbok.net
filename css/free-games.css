@@ -311,6 +311,7 @@
     background-color: var(--text);
     position: absolute;
     border-radius: 20px;
+    z-index: -1;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -328,6 +329,7 @@
     background-color: var(--text);
     position: absolute;
     border-radius: 20px;
+    z-index: -1;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;

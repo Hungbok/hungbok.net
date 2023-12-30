@@ -220,9 +220,11 @@ header .nav-support {
   position: absolute;
   max-height: 30px;
   vertical-align: middle;
-  margin: 22.5px 20px 22.5px 75px;
+  margin: 12.5px 20px 12.5px 75px;
   left: 0;
   z-index: 1;
+  border-radius: 50px;
+  padding: 10px;
   -ms-user-select: none;
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
@@ -237,8 +239,8 @@ header .nav-support {
   transition: all 0.5s;
 }
 
-.header-refresh:hover img {
-  opacity: 0.5;
+.header-refresh:hover {
+  background-color: var(--box);
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -332,6 +334,7 @@ header .nav-support {
   font-family: 'Lato', "Noto Sans JP", "Noto Sans KR", "Noto Sans SC", "Noto Sans TC", "Open Sans", "Lucida Grande", Tahoma, sans-serif;
 	font-size: 1em;
   padding: 10px 20px;
+  margin: 0 auto;
   border-radius: 20px;
 	white-space: nowrap;
   -webkit-transition: all 0.5s;
@@ -343,7 +346,7 @@ header .nav-support {
 
 .header-menu img {
   border-radius: 2.5px;
-  filter: invert(98%) sepia(98%) saturate(7%) hue-rotate(121deg) brightness(103%) contrast(102%);
+  filter: var(--filter);
   height: 30px;
   padding: 0px;
   margin: 0;
@@ -442,14 +445,14 @@ header .nav-support {
 .side-panel-icon {
     width: 25px;
     height: 25px;
-    padding: 5px;
+    padding: 10px;
     font-size: 20px;
     cursor: pointer;
     border: none;
     background-color: transparent;
-    filter: var(--filter);
     position: relative;
     display: block;
+    border-radius: 50px;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -464,9 +467,18 @@ header .nav-support {
     transition: all 0.5s;
 }
 
+.side-panel-icon:hover {
+    background-color: var(--box);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 .side-panel-menu .side-panel-icon {
   vertical-align: middle;
-  margin: 20px;
+  margin: 15px 20px;
   left: 0;
   position: absolute;
 }
@@ -478,6 +490,7 @@ header .nav-support {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: var(--filter);
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -492,23 +505,14 @@ header .nav-support {
     transition: all 0.5s;
 }
 
-.side-panel-icon:hover img {
-    opacity: 0.5;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
 .side-panel-menu {
   background-color: var(--background);
   position: absolute;
   left: -20px;
-  top: -20px;
+  top: -15px;
   transform: translate(-100%, 0px);
   height: calc(100vh + 75px);
-  width: 200px;
+  width: 250px;
   display: block;
   z-index: 1;
   -webkit-transition: all 0.5s;
@@ -604,14 +608,14 @@ header .nav-support {
 .help-icon {
     width: 25px;
     height: 25px;
-    padding: 5px;
+    padding: 10px;
     font-size: 20px;
     cursor: pointer;
     border: none;
     background-color: transparent;
-    filter: var(--filter);
     position: relative;
     display: block;
+    border-radius: 50px;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -633,6 +637,7 @@ header .nav-support {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: var(--filter);
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -647,8 +652,8 @@ header .nav-support {
     transition: all 0.5s;
 }
 
-.help-container:hover .help-icon img {
-    opacity: 0.5;
+.help-container:hover .help-icon {
+    background-color: var(--box);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -664,15 +669,15 @@ header .nav-support {
 }
 
 .theme-btn {
-    width: 35px;
-    height: 35px;
-    padding: 5px;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
     font-size: 20px;
     cursor: pointer;
     border: none;
     background-color: transparent;
-    filter: invert(98%) sepia(98%) saturate(7%) hue-rotate(121deg) brightness(103%) contrast(102%);
     position: relative;
+    border-radius: 50px;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -694,6 +699,7 @@ header .nav-support {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: invert(98%) sepia(98%) saturate(7%) hue-rotate(121deg) brightness(103%) contrast(102%);
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -708,8 +714,8 @@ header .nav-support {
     transition: all 0.5s;
 }
 
-.theme-btn:hover img {
-    opacity: 0.5;
+.theme-btn:hover {
+    background-color: var(--box);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -719,6 +725,9 @@ header .nav-support {
 
 .theme-btn.light {
     display: none;
+}
+  
+.theme-btn.light img {
     filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(59deg) brightness(105%) contrast(111%);
 }
 
@@ -740,13 +749,13 @@ header .nav-support {
 .language-icon {
     width: 25px;
     height: 25px;
-    padding: 5px;
+    padding: 10px;
     font-size: 20px;
     cursor: pointer;
     border: none;
     background-color: transparent;
-    filter: var(--filter);
     position: relative;
+    border-radius: 50px;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -768,6 +777,7 @@ header .nav-support {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    filter: var(--filter);
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -782,8 +792,8 @@ header .nav-support {
     transition: all 0.5s;
 }
 
-.language-container:hover .language-icon img {
-    opacity: 0.5;
+.language-container:hover .language-icon {
+    background-color: var(--box);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -799,6 +809,7 @@ header .nav-support {
   left: 50%;
   top: 30px;
   transform: translate(-50%, 0px);
+  z-index: -1;
 }
 
 .language-lists {
