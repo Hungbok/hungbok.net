@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 $(document).ready(function() {
     let data = [];
-    let itemsPerPage = 8;
+    let itemsPerPage = 16;
     let currentPage = 1;
     
     function fetchData(page, perPage) {
