@@ -87,7 +87,7 @@ $(document).ready(function() {
         const totalPageHeight = document.body.scrollHeight;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     
-        if (scrollPosition + windowHeight >= totalPageHeight - 350) {
+        if (scrollPosition + windowHeight >= totalPageHeight - 500) {
             currentPage++;
             displayData(currentPage);
         }
