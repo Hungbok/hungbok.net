@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
     // JSON 파일 경로 설정
-    var jsonFilePath = 'https://data.hungbok.net/data.json';
+    var jsonFilePath = 'https://www.hungbok.net/data/free-games/sale.json';
     
     // 데이터 가져오기
     $.getJSON(jsonFilePath, function (data) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
     function fetchData(page, perPage) {
         const startIndex = (page - 1) * perPage;
         const endIndex = startIndex + perPage;
-        return fetch('https://www.hungbok.net/data/free-games/data.json')
+        return fetch('https://data.hungbok.net/data.json')
             .then(response => response.json())
             .then(data => data.slice(startIndex, endIndex));
     }
