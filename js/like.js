@@ -3,7 +3,7 @@ function like(buttonNumber) {
     // GitHub 저장소의 like.json 파일을 업데이트
     fetch(`https://api.github.com/repos/Hungbok/data/contents/like${buttonNumber}.json`, {
         headers: {
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
         }
     })
         .then(response => response.json())
@@ -22,7 +22,7 @@ function like(buttonNumber) {
             fetch(`https://api.github.com/repos/Hungbok/data/contents/like${buttonNumber}.json`, {
                 method: 'PUT',
                 headers: {
-                    'Authorization': 'Bearer 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',
+                    'Authorization': 'Bearer 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',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
@@ -45,7 +45,7 @@ function like(buttonNumber) {
 function fetchInitialCount(buttonNumber) {
     fetch(`https://api.github.com/repos/Hungbok/data/contents/like${buttonNumber}.json`, {
         headers: {
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
         }
     })
         .then(response => response.json())
