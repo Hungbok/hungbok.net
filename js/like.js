@@ -1,7 +1,7 @@
 // 좋아요 버튼 클릭 시 호출되는 함수
 function like(buttonNumber) {
     // GitHub 저장소의 like.json 파일을 업데이트
-    fetch(`https://api.github.com/repos/Hungbok/data/contents/like${buttonNumber}.json`, {
+    fetch(`https://api.github.com/repos/Hungbok/data.hungbok.net/contents/like${buttonNumber}.json`, {
         headers: {
             'Authorization': 'Bearer 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',
         }
@@ -19,7 +19,7 @@ function like(buttonNumber) {
             const encodedContent = btoa(JSON.stringify(content));
 
             // GitHub API를 사용하여 like.json 파일 업데이트
-            fetch(`https://api.github.com/repos/Hungbok/data/contents/like${buttonNumber}.json`, {
+            fetch(`https://api.github.com/repos/Hungbok/data.hungbok.net/contents/like${buttonNumber}.json`, {
                 method: 'PUT',
                 headers: {
                     'Authorization': 'Bearer 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',
@@ -43,7 +43,7 @@ function like(buttonNumber) {
 
 // 초기 좋아요 개수 표시
 function fetchInitialCount(buttonNumber) {
-    fetch(`https://api.github.com/repos/Hungbok/data/contents/like${buttonNumber}.json`, {
+    fetch(`https://api.github.com/repos/Hungbok/data.hungbok.net/contents/like${buttonNumber}.json`, {
         headers: {
             'Authorization': 'Bearer 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',
         }
