@@ -8,6 +8,62 @@ function clickme() {
 	});
 }
 
+function showMessage(messageText) {
+    var completionMessageContainer = document.getElementById("MessageContainer");
+
+    var completionMessage = document.createElement("div");
+    completionMessage.className = "completion-message";
+    completionMessage.textContent = messageText;
+
+    // 새로운 문구를 중앙에 추가
+    completionMessageContainer.prepend(completionMessage);
+
+    // 트랜지션 효과를 이용하여 opacity를 1로 설정하여 나타나게 함
+    setTimeout(function() {
+      completionMessage.style.opacity = 1;
+    }, 10);
+
+    var fadeOutTime = 2000;
+
+    // 일정 시간 후에 사라지기
+    setTimeout(function() {
+      completionMessage.style.opacity = 0;
+
+      // 사라진 후에 요소 제거
+      setTimeout(function() {
+        completionMessage.parentNode.removeChild(completionMessage);
+      }, fadeOutTime);
+    }, fadeOutTime + 1000); // +1000ms 딜레이 추가
+}
+
+function showErrorMessage(messageText) {
+    var completionMessageContainer = document.getElementById("MessageContainer");
+
+    var completionMessage = document.createElement("div");
+    completionMessage.className = "error-message";
+    completionMessage.textContent = messageText;
+
+    // 새로운 문구를 중앙에 추가
+    completionMessageContainer.prepend(completionMessage);
+
+    // 트랜지션 효과를 이용하여 opacity를 1로 설정하여 나타나게 함
+    setTimeout(function() {
+      completionMessage.style.opacity = 1;
+    }, 10);
+
+    var fadeOutTime = 2000;
+
+    // 일정 시간 후에 사라지기
+    setTimeout(function() {
+      completionMessage.style.opacity = 0;
+
+      // 사라진 후에 요소 제거
+      setTimeout(function() {
+        completionMessage.parentNode.removeChild(completionMessage);
+      }, fadeOutTime);
+    }, fadeOutTime + 1000); // +1000ms 딜레이 추가
+}
+
 $(document).ready(function() {
 
 	//Pour afficher le bouton 
@@ -169,6 +225,7 @@ $(document).ready(function() {
       });
     });
     
+	$("body").append('<div id="MessageContainer"></div>');
 	$("body").append('<input id="topBtn" class="goupbtn" type="button" value="▲" onclick="clickme()">');
 
     // Hide Header on on scroll down

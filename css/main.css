@@ -151,6 +151,48 @@ textarea:focus {
     border: 0;
 }
 
+#MessageContainer {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999999;
+    pointer-events: none;
+}
+
+.completion-message {
+    background-color: #198754;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    opacity: 0;
+    filter: drop-shadow(0px 0px 1.25px var(--shadow));
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.error-message {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    opacity: 0;
+    filter: drop-shadow(0px 0px 1.25px red);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
