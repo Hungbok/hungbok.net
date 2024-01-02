@@ -477,6 +477,12 @@
     padding: 7px 10px;
 }
 
+.filter-type .button:nth-last-child(2),
+.filter-type .button:last-child {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .available-button {
     margin: 10px;
     padding: 5px 10px;
