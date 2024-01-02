@@ -30,18 +30,18 @@ $(document).ready(function() {
     function fetchData(page, perPage) {
         const startIndex = (page - 1) * perPage;
         const endIndex = startIndex + perPage;
-        return fetch('https://data.hungbok.net/data.json')
+        return fetch('https://data.hungbok.net/data/free-games.json')
             .then(response => response.json())
             .then(data => data.slice(startIndex, endIndex));
     }
     
     function createItemElement(t) {
-        var e = '<div class="item ' + t.esd + ' ' + t.key + '">'+
+        var e = '<div class="item ' + t.platform + ' ' + t.type + ' ' + t.key + '">'+
                     '<div class="image">'+
                         '<img src="' + t.image + '" onerror="this.src=`https://www.hungbok.net/img/hungbok/hb_error_horizontal.svg`;">'+
                     '</div>'+
                     '<h1>' + t.title + '</h1>'+
-                    '<div class="timer-container" settime="' + t.time + '"></div>'+
+                    '<div class="timer-container" settime="' + t.time_year + '-' + t.time_month + '-' + t.time_day + '-' + t.time_hour + '-' + t.time_minute + '-' + t.time_second + '"></div>'+
                     '<a href="' + t.link + '" target="_blank"></a>'+
                     '<img class="background" src="' + t.image + '">'+
                 '</div>';
