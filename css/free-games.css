@@ -113,11 +113,11 @@
     pointer-events: none;
 }
 
-.item-image.jp:before {
+.item.jp .item-image:before {
     background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
 }
 
-.item-image.us:before {
+.item.us .item-image:before {
     background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
 }
 

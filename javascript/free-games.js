@@ -87,9 +87,9 @@ function createAndAppendItem(item) {
     let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} from-${item.from} esd-${item.esd} ${expiredClass}`;
+    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
     div.innerHTML = `
-        <a class="item-image ${item.content}" href="${item.url}">
+        <a class="item-image" href="${item.url}">
             <img src="${item.image}" onerror="this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg';">
             <img src="${item.image}" onerror="this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg';">
         </a>
