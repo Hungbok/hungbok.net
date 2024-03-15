@@ -511,5 +511,5 @@
 }
 
 .item.unknown .timer-container.end::after {
-    content: "종료 알 수 없음";
+    content: "알 수 없음";
 }
