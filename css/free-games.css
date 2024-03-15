@@ -79,8 +79,10 @@
 }
 
 .item-image img {
-    height: 200px;
-    width: auto;
+    height: auto;
+    width: 100%;
+    filter: blur(10px) brightness(0.75) grayscale(0.5);
+    position: absolute;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -88,8 +90,35 @@
     transition: all 0.5s;
 }
 
+.item-image img:first-child {
+    position: relative;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+    filter: unset;
+}
+
 .item:hover .item-image img {
     transform: scale(1.05);
+}
+
+.item-image:before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    pointer-events: none;
+}
+
+.item-image.jp:before {
+    background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
+}
+
+.item-image.us:before {
+    background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
 }
 
 .item h1 {
@@ -217,12 +246,24 @@
     background-image: url(//media.hungbok.net/image/icon/gogcom.svg);
 }
 
-.esd-ubisoft::after {
+.esd-microsoftstore::after {
+    background-image: url(//media.hungbok.net/image/icon/microsoftstore.svg);
+}
+
+.esd-eaapp::after {
+    background-image: url(//media.hungbok.net/image/icon/ea.svg);
+}
+
+.esd-ubisoftstore::after {
     background-image: url(//media.hungbok.net/image/icon/ubisoft.svg);
 }
 
-.esd-xbox::after {
+.esd-xboxstore::after {
     background-image: url(//media.hungbok.net/image/icon/xbox.svg);
+}
+
+.esd-playstationstore::after {
+    background-image: url(//media.hungbok.net/image/icon/playstation.svg);
 }
 
 .esd-humblebundle::after {

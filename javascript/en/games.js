@@ -38,9 +38,9 @@ $(document).ready(function(){
             var replacement = {
                 '{type}': data.type,
                 '{title}': data['en'].title,
-                '{developer}': data['en'].developer,
+                '{developer}': data.developer,
                 '{info_developer}': data['en'].info_developer,
-                '{publisher}': data['en'].publisher,
+                '{publisher}': data.publisher,
                 '{info_publisher}': data['en'].info_publisher,
                 '{platform}': data.platform,
                 '{release}': data['en'].release,
@@ -152,6 +152,46 @@ $(document).ready(function(){
                 '{franchise3}': data.franchise3,
                 '{franchise4}': data.franchise4,
                 '{franchise5}': data.franchise5,
+
+                '{metacritic1}': data.metacritic1,
+                '{metacritic2}': data.metacritic2,
+                '{metacritic3}': data.metacritic3,
+                '{metacritic4}': data.metacritic4,
+                '{metacritic5}': data.metacritic5,
+                '{metacritic6}': data.metacritic6,
+                '{metacritic7}': data.metacritic7,
+                '{metacritic8}': data.metacritic8,
+                '{metacritic9}': data.metacritic9,
+                '{metacritic10}': data.metacritic10,
+                '{metacritic11}': data.metacritic11,
+                '{metacritic12}': data.metacritic12,
+                '{metacritic_class1}': data.metacritic_class1,
+                '{metacritic_class2}': data.metacritic_class2,
+                '{metacritic_class3}': data.metacritic_class3,
+                '{metacritic_class4}': data.metacritic_class4,
+                '{metacritic_class5}': data.metacritic_class5,
+                '{metacritic_class6}': data.metacritic_class6,
+                '{metacritic_class7}': data.metacritic_class7,
+                '{metacritic_class8}': data.metacritic_class8,
+                '{metacritic_class9}': data.metacritic_class9,
+                '{metacritic_class10}': data.metacritic_class10,
+                '{metacritic_class11}': data.metacritic_class11,
+                '{metacritic_class12}': data.metacritic_class12,
+                '{opencritic_rating}': data.opencritic_rating,
+                '{top_critic_average}': data.top_critic_average,
+                '{critics_recommend}': data.critics_recommend,
+                '{minimum_os}': data.minimum_os,
+                '{minimum_processor}': data.minimum_processor,
+                '{minimum_memory}': data.minimum_memory,
+                '{minimum_graphics}': data.minimum_graphics,
+                '{minimum_storage}': data.minimum_storage,
+                '{minimum_other}': data.minimum_other,
+                '{recommended_os}': data.recommended_os,
+                '{recommended_processor}': data.recommended_processor,
+                '{recommended_memory}': data.recommended_memory,
+                '{recommended_graphics}': data.recommended_graphics,
+                '{recommended_storage}': data.recommended_storage,
+                '{recommended_other}': data.recommended_other,
             };
             
             // body의 HTML 가져오기
@@ -187,13 +227,13 @@ $(document).ready(function(){
             videoData.forEach(function(item) {
                 $(".slider-main").append('<div class="slider-item">'+
                     '<div class="video-play-button youtube-link" videoid="' + item.id + '">'+
-                        '<img class="slider-background" src="//data.hungbok.net/image/games/' + url + '/hb_' + item.id + '.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '<div class="youtube-title">' + item.title + '</div>'+
                     '</div>'+
                 '</div>');
                 $(".slider-nav").append('<div class="slider-item">'+
                     '<div class="video-play-button">'+
-                        '<img class="slider-background" src="//data.hungbok.net/image/games/' + url + '/hb_' + item.id + '.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</div>'+
                 '</div>');
             });
@@ -209,13 +249,13 @@ $(document).ready(function(){
             // image 생성
             imageData.forEach(function(item) {
                 $(".slider-main").append('<div class="slider-item">'+
-                    '<a class="slider-image" href="//data.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
-                        '<img class="slider-background" src="//data.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '<a class="slider-image" href="//media.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
                 $(".slider-nav").append('<div class="slider-item">'+
                     '<a class="slider-image">'+
-                        '<img class="slider-background" src="//data.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
             });
