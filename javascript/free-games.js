@@ -119,7 +119,7 @@ window.onscroll = function() {
         setTimeout(() => {
             loadMoreData();
             loadingElement.style.display = 'none';
-        }, 1000);
+        }, 2000);
     }
 };
 
