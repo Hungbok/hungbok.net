@@ -90,8 +90,8 @@ function createAndAppendItem(item) {
     div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
     div.innerHTML = `
         <a class="item-image" href="${item.url}">
-            <img src="${item.image}" onerror="this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg';">
-            <img src="${item.image}" onerror="this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
         </a>
         <h1>${item.title}</h1>
         <h3>${item.content}</h3>
@@ -114,7 +114,12 @@ window.onscroll = function() {
 
     if (scrollPosition + windowHeight >= totalPageHeight - 500) {
         // 여기에 데이터를 생성하는 코드를 추가합니다.
-        loadMoreData();
+        const loadingElement = document.getElementById('loading');
+        loadingElement.style.display = 'block';
+        setTimeout(() => {
+            loadMoreData();
+            loadingElement.style.display = 'none';
+        }, 1000);
     }
 };
 

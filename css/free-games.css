@@ -1,5 +1,5 @@
 #dataContainer {
-    margin: auto;
+    margin: 0 0 100px;
     width: auto;
     max-width: 1200px;
     min-height: 430px;
@@ -11,6 +11,11 @@
     justify-content: center;
     align-items: stretch;
     position: relative;
+}
+
+#serverTime,
+#localTime {
+    display: none;
 }
 
 .item {
