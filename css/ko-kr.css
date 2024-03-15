@@ -509,3 +509,7 @@
 #dataContainer .item.from-humblechoice a.item-link::before {
     content: "험블 초이스";
 }
+
+.timer-container.end::after {
+    content: "종료 알 수 없음";
+}
