@@ -336,6 +336,10 @@
     transition: all 0.5s;
 }
 
+.filterPlatformBtn.active img {
+    filter: brightness(0);
+}
+
 #dateFilterBtn:hover,
 .filterDataBtn:hover,
 .filterPlatformBtn:hover {
