@@ -192,6 +192,7 @@ window.onscroll = function() {
         loadingElement.style.display = 'block';
         setTimeout(() => {
             loadMoreData();
+            loadMoreUpcomingData();
             loadingElement.style.display = 'none';
         }, 1000);
     }
