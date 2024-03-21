@@ -4,7 +4,7 @@ let start = 0;
 let limit = 8;
 
 // JSON 파일 불러오기
-fetch('//data.hungbok.net/data/free-games.json')
+fetch('//data.hungbok.net/data/games/sales.json')
 .then(response => response.json())
 .then(json => {
     data = json;
