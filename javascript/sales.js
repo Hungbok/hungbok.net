@@ -3,55 +3,14 @@ let filteredData = [];
 let start = 0;
 let limit = 16;
 
-// JSON 파일 불러오기 및 초기 처리
+// JSON 파일 불러오기
 fetch('//data.hungbok.net/data/games/sales.json')
 .then(response => response.json())
 .then(json => {
     data = json;
     filteredData = [...data];
-    sortAndDisplay(); // 데이터를 정렬하고 화면에 표시하는 함수 호출
-});
-
-// 데이터를 현재 상태(진행 중, 예정, 종료)에 따라 분류하고, 각 상태 내에서 남은 시간에 따라 정렬하는 함수
-function sortAndDisplay() {
-    const now = new Date();
-
-    // 데이터를 분류하고 정렬합니다.
-    const upcoming = []; // 시작 전
-    const ongoing = []; // 진행 중
-    const expired = []; // 종료
-
-    filteredData.forEach(item => {
-        const start = new Date(item.start.replace(/-/g, '/'));
-        const end = new Date(item.end.replace(/-/g, '/'));
-
-        if (start > now) {
-            // 시작 전
-            upcoming.push(item);
-        } else if (start <= now && end >= now) {
-            // 진행 중
-            ongoing.push(item);
-        } else {
-            // 종료
-            expired.push(item);
-        }
-    });
-
-    // 남은 시간에 따라 정렬합니다.
-    upcoming.sort((a, b) => new Date(a.start.replace(/-/g, '/')) - new Date(b.start.replace(/-/g, '/')));
-    ongoing.sort((a, b) => new Date(a.end.replace(/-/g, '/')) - new Date(b.end.replace(/-/g, '/')));
-    expired.sort((a, b) => new Date(b.end.replace(/-/g, '/')) - new Date(a.end.replace(/-/g, '/')));
-
-    // 정렬된 데이터를 합칩니다.
-    filteredData = [...upcoming, ...ongoing, ...expired];
-
-    // 화면을 초기화하고 데이터를 로드합니다.
-    start = 0;
-    document.getElementById('overDataContainer').innerHTML = '';
-    document.getElementById('outnowDataContainer').innerHTML = '';
-    document.getElementById('upcomingDataContainer').innerHTML = '';
     loadMoreData();
-}
+});
 
 let platform = 'all'; // 플랫폼을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
 let type = 'all'; // 타입을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
@@ -137,7 +96,7 @@ function createAndAppendItem(item) {
     }
 
     let div = document.createElement('div');
-    div.className = `item ${item.type}  ${item.content}`;
+    div.className = `item ${item.type} ${item.content}`;
     if (containerId === 'overDataContainer') {
         div.className += ' expired'; // 만료된 항목에 대해 'expired' 클래스 추가
     }
