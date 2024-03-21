@@ -618,11 +618,11 @@ details {
 }
 
 .elevator-up {
-    background: url(//data.hungbok.net/image/icon/up.svg) no-repeat center / 20px 20px;
+    background: url(//media.hungbok.net/image/icon/up.svg) no-repeat center / 20px 20px;
 }
 
 .elevator-down {
-    background: url(//data.hungbok.net/image/icon/down.svg) no-repeat center / 20px 20px;
+    background: url(//media.hungbok.net/image/icon/down.svg) no-repeat center / 20px 20px;
 }
 
 /* chapter */
@@ -749,7 +749,7 @@ details {
     bottom: -50px;
     width: 30px;
     height: 30px;
-    background: url(//data.hungbok.net/image/icon/close.svg) center no-repeat;
+    background: url(//media.hungbok.net/image/icon/close.svg) center no-repeat;
     background-size: 40px;
     text-align: right;
     outline: 0;
@@ -961,7 +961,7 @@ fieldset.pure-group.honeypot-field {
     line-height: 40px;
     display: none;
     color: transparent;
-    background: url(//data.hungbok.net/image/icon/up.svg) no-repeat center / 20px 20px black;
+    background: url(//media.hungbok.net/image/icon/up.svg) no-repeat center / 20px 20px black;
     font-size: 10px;
     text-align: center;
     border-radius: 10px;
@@ -1498,7 +1498,7 @@ fieldset.pure-group.honeypot-field {
     position: absolute;
      width: 20px;
     height: 20px;
-    background: url(//data.hungbok.net/image/icon/done.svg) no-repeat;
+    background: url(//media.hungbok.net/image/icon/done.svg) no-repeat;
     right: 20px;
     background-size: cover;
     -webkit-transition: all 0.5s;
