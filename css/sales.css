@@ -267,36 +267,40 @@
     opacity: 0.25;
 }
 
-.from-steam::after {
+.from-steam::before {
     background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center;
 }
 
-.from-epicgamesstore::after {
+.from-epicgamesstore::before {
     background: url(//media.hungbok.net/image/icon/epicgamesstore.svg) no-repeat center;
 }
 
-.from-gogcom::after {
+.from-gogcom::before {
     background: url(//media.hungbok.net/image/icon/gogcom.svg) no-repeat center;
 }
 
-.from-microsoftstore::after {
-    background: url(//media.hungbok.net/image/icon/microsoftstore.svg) no-repeat center;
+.from-battlenet::before {
+    background: url(//media.hungbok.net/image/icon/battlenet.svg) no-repeat center;
 }
 
-.from-eaapp::after {
+.from-eaapp::before {
     background: url(//media.hungbok.net/image/icon/ea.svg) no-repeat center;
 }
 
-.from-ubisoftstore::after {
+.from-ubisoftstore::before {
     background: url(//media.hungbok.net/image/icon/ubisoft.svg) no-repeat center;
 }
 
-.from-xboxstore::after {
+.from-xboxstore::before {
     background: url(//media.hungbok.net/image/icon/xbox.svg) no-repeat center;
 }
 
-.from-playstationstore::after {
+.from-playstationstore::before {
     background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center;
+}
+
+.from-nintendoeshop::before {
+    background: url(//media.hungbok.net/image/icon/nintendo.svg) no-repeat center;
 }
 
 .hide-expired .item.expired {
