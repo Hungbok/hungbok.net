@@ -119,8 +119,8 @@ section {
     height: 20px;
     z-index: 10;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: 15px;
+    top: 15px;
     pointer-events: none;
 }
 
@@ -168,9 +168,10 @@ section {
     margin: 20px 20px 0;
     text-align: left;
     line-height: 26px;
-    display: flex;
+    display: grid;
     align-items: start;
     justify-content: center;
+    grid-template-columns: 35px auto;
 }
 
 .item h1:before {

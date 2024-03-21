@@ -89,12 +89,11 @@ function createAndAppendItem(item) {
     let div = document.createElement('div');
     div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
     div.innerHTML = `
-        <a class="item-image" href="${item.url}">
+        <a class="item-image" href="${item.link}">
             <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
         </a>
         <h1>${item.title}</h1>
-        <h3>${item.content}</h3>
         <div class="timer-container start" settime="${item.start}"></div>
         <div class="timer-container end" settime="${item.end}"></div>
         <a class="item-link" href="${item.link}" target="_blank"></a>
