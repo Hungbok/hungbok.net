@@ -8,26 +8,25 @@ $(document).ready(function() {
 
     $.getJSON('//data.hungbok.net/data/langData.json', function(langData) {
 
-        // body에 언어 코드 클래스 확인
-        var bodyClass = $('body').attr('class');
-        var bodyClassList = bodyClass ? bodyClass.split(/\s+/) : [];
-        var isLangClassExist = false;
+        // html에서 lang 속성 값 확인
+        var htmlLang = $('html').attr('lang');
+        var isLangAttrExist = false;
         var selectedLang = 'en'; // 기본 언어 설정
-      
-        $.each(bodyClassList, function(index, item) {
-            if (langData[item]) {
-                // body 클래스 중 언어 코드 클래스가 있고, 데이터가 있는 경우
-                isLangClassExist = true;
-                selectedLang = item;
-                return false; // loop break
+    
+        if (htmlLang) {
+            htmlLang = htmlLang.substr(0,2); // 언어 코드가 2자리일 경우를 대비하여 2자리로 줄임
+            if (langData[htmlLang]) {
+                // html lang 속성에 해당하는 데이터가 있는 경우
+                isLangAttrExist = true;
+                selectedLang = htmlLang;
             }
-        });
-      
-        if (!isLangClassExist) {
-            // body 클래스 중 언어 코드 클래스가 없는 경우
-            if (langData[headeruserLang]) {
+        }
+    
+        if (!isLangAttrExist) {
+            // html lang 속성에 해당하는 데이터가 없는 경우
+            if (langData[footeruserLang]) {
                 // 사용자의 언어에 해당하는 데이터가 있는 경우
-                selectedLang = headeruserLang;
+                selectedLang = footeruserLang;
             }
         }
         
