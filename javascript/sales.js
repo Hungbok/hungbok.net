@@ -5,7 +5,8 @@ let limit = 16;
 
 // 여러 JSON 파일에서 데이터를 불러오고, 하나의 배열로 병합
 Promise.all([
-    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
+    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/games/sales-steam.json').then(response => response.json())
 ]).then(results => {
     // 배열을 펼쳐 모든 항목을 하나의 배열로 병합
     data = results.flat();
