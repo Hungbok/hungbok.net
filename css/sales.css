@@ -150,7 +150,7 @@
 }
 
 .item h1 {
-    margin: 20px;
+    margin: 20px 20px 0;
     text-align: left;
     line-height: 26px;
 }
@@ -184,7 +184,8 @@
 }
 
 .sale-date p {
-    margin: 0px 10px;
+    margin: 0px 5px;
+    display: inline-block;
 }
 
 .timer-container {
@@ -202,6 +203,7 @@
 .timer-container.start::before,
 .timer-container.end::before {
     display: block;
+    color: var(--white);
 }
 
 .item.unknown .timer-container.end {
