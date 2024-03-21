@@ -83,7 +83,7 @@ function createAndAppendItem(item) {
     let isOver = now > itemEnd; // 종료된 이벤트
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} ${item.esd} ${expiredClass}`;
+    div.className = `item ${item.type} ${item.content} ${item.esd}`;
     div.innerHTML = `
         <a class="item-link" href="${item.link}" target="_blank">
             <div class="item-image">

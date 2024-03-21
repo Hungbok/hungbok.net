@@ -1,4 +1,7 @@
-#dataContainer {
+#dataContainer,
+#overDataContainer,
+#outnowDataContainer,
+#upcomingDataContainer {
     margin: 0 0 100px;
     width: auto;
     max-width: 1200px;
