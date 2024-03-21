@@ -146,7 +146,7 @@ function createAndAppendItem(item) {
                     <div class="sale-timer timer-container end" settime="${item.end}"></div>
                 </div>
             </div>
-            <img class="item-background" src="${item.image}">
+            <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
         </a>
     `;
 
@@ -190,7 +190,7 @@ function createAndAppendUpcomingItem(item) {
                     <div class="sale-timer timer-container end" settime="${item.end}"></div>
                 </div>
             </div>
-            <img class="item-background" src="${item.image}">
+            <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
         </a>
     `;
 

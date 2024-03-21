@@ -95,7 +95,7 @@ function createAndAppendItem(item) {
         <div class="timer-container start" settime="${item.start}"></div>
         <div class="timer-container end" settime="${item.end}"></div>
         <a class="item-link" href="${item.link}" target="_blank"></a>
-        <img class="item-background" src="${item.image}">
+        <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
     `;
     document.getElementById('dataContainer').appendChild(div);
 
