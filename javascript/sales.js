@@ -23,7 +23,7 @@ Promise.all([
 ]).then(results => {
     upcomingData = results.flat();
     filteredUpcomingData = [...upcomingData];
-    loadMoreUpcomingData(); // 이 함수는 별도로 구현해야 합니다.
+    loadMoreUpcomingData();
 });
 
 // 필터링 기능
@@ -50,6 +50,7 @@ function filterData(typeValue) {
     document.getElementById('upcomingDataContainer').innerHTML = '';
     document.getElementById('upcomingContainer').innerHTML = '';
     loadMoreData();
+    loadMoreUpcomingData();
 }
 
 // 2차 필터링 기능
@@ -76,6 +77,7 @@ function filterPlatform(platformType) {
     document.getElementById('upcomingDataContainer').innerHTML = '';
     document.getElementById('upcomingContainer').innerHTML = '';
     loadMoreData();
+    loadMoreUpcomingData();
 }
 
 // active class 업데이트
