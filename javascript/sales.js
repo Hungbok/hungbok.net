@@ -182,18 +182,15 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
-// 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수
 window.onscroll = function() {
     const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     const totalPageHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
     if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-        // 여기에 데이터를 생성하는 코드를 추가합니다.
         const loadingElement = document.getElementById('loading');
         loadingElement.style.display = 'block';
         setTimeout(() => {
-            loadMoreData();
+            loadMoreData(); // 두 데이터 세트 모두 고려하여 로드
             loadingElement.style.display = 'none';
         }, 1000);
     }
@@ -201,18 +198,18 @@ window.onscroll = function() {
 
 // 무한 스크롤 기능
 function loadMoreData() {
+    // 'sales' 데이터 로드
     let end = start + limit;
     let slicedData = filteredData.slice(start, end);
     start += limit;
-
     slicedData.forEach(item => {
         createAndAppendItem(item);
     });
 
+    // 'sales-upcoming' 데이터 로드
     let endUpcoming = upcomingStart + upcomingLimit;
     let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, endUpcoming);
     upcomingStart += upcomingLimit;
-
     slicedUpcomingData.forEach(item => {
         createAndAppendUpcomingItem(item);
     });
