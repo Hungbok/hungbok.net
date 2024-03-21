@@ -8,7 +8,7 @@ let type = 'all';
 let upcomingData = [];
 let filteredUpcomingData = [];
 let upcomingStart = 0;
-let upcomingLimit = 16;
+let upcomingLimit = 8;
 
 Promise.all([
     fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
@@ -32,18 +32,23 @@ function filterData(typeValue) {
     type = typeValue;
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
+        filteredUpcomingData = [...upcomingData];
     } else if (type === 'all') {
         filteredData = data.filter(item => item.from === platform);
+        filteredUpcomingData = upcomingData.filter(item => item.from === platform);
     } else if (platform === 'all') {
         filteredData = data.filter(item => item.type === type);
+        filteredUpcomingData = upcomingData.filter(item => item.type === type);
     } else {
         filteredData = data.filter(item => item.type === type && item.from === platform);
+        filteredUpcomingData = upcomingData.filter(item => item.type === type && item.from === platform);
     }
-    console.log(`현재 필터링된 카테고리: ${type}`); // 필터링된 카테고리 출력
+    console.log(`현재 필터링된 카테고리: ${type}`);
     updateActiveClass();
-    document.getElementById('overDataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
-    document.getElementById('outnowDataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
-    document.getElementById('upcomingDataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
+    document.getElementById('overDataContainer').innerHTML = '';
+    document.getElementById('outnowDataContainer').innerHTML = '';
+    document.getElementById('upcomingDataContainer').innerHTML = '';
+    document.getElementById('upcomingContainer').innerHTML = '';
     loadMoreData();
 }
 
@@ -53,18 +58,23 @@ function filterPlatform(platformType) {
     platform = platformType;
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
+        filteredUpcomingData = [...upcomingData];
     } else if (type === 'all') {
         filteredData = data.filter(item => item.from === platform);
+        filteredUpcomingData = upcomingData.filter(item => item.from === platform);
     } else if (platform === 'all') {
         filteredData = data.filter(item => item.type === type);
+        filteredUpcomingData = upcomingData.filter(item => item.type === type);
     } else {
         filteredData = data.filter(item => item.type === type && item.from === platform);
+        filteredUpcomingData = upcomingData.filter(item => item.type === type && item.from === platform);
     }
     console.log(`현재 필터링된 플랫폼: ${platform}`); // 필터링된 플랫폼 출력
     updateActiveClass();
-    document.getElementById('overDataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
-    document.getElementById('outnowDataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
-    document.getElementById('upcomingDataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
+    document.getElementById('overDataContainer').innerHTML = '';
+    document.getElementById('outnowDataContainer').innerHTML = '';
+    document.getElementById('upcomingDataContainer').innerHTML = '';
+    document.getElementById('upcomingContainer').innerHTML = '';
     loadMoreData();
 }
 
