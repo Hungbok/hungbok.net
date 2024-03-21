@@ -29,6 +29,7 @@ Promise.all([
 // 필터링 기능
 function filterData(typeValue) {
     start = 0;
+    upcomingStart = 0;
     type = typeValue;
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
@@ -56,6 +57,7 @@ function filterData(typeValue) {
 // 2차 필터링 기능
 function filterPlatform(platformType) {
     start = 0;
+    upcomingStart = 0;
     platform = platformType;
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
