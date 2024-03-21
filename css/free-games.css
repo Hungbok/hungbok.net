@@ -162,6 +162,7 @@
     padding: 10px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    text-wrap: balance;
 }
 
 .item h3 {

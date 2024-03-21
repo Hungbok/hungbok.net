@@ -213,6 +213,7 @@ section {
 
 .sale-name {
     font-size: 14px;
+    text-wrap: balance;
 }
 
 .sale-date p {
