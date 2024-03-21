@@ -23,7 +23,7 @@ Promise.all([
 ]).then(results => {
     upcomingData = results.flat();
     filteredUpcomingData = [...upcomingData];
-    loadMoreData(); // 이 함수는 별도로 구현해야 합니다.
+    loadMoreUpcomingData(); // 이 함수는 별도로 구현해야 합니다.
 });
 
 // 필터링 기능
@@ -182,6 +182,7 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
+// 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수
 window.onscroll = function() {
     const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     const totalPageHeight = document.body.scrollHeight;
@@ -190,23 +191,22 @@ window.onscroll = function() {
         const loadingElement = document.getElementById('loading');
         loadingElement.style.display = 'block';
         setTimeout(() => {
-            loadMoreData(); // 두 데이터 세트 모두 고려하여 로드
+            loadMoreData();
             loadingElement.style.display = 'none';
         }, 1000);
     }
 };
 
-// 무한 스크롤 기능
 function loadMoreData() {
-    // 'sales' 데이터 로드
     let end = start + limit;
     let slicedData = filteredData.slice(start, end);
     start += limit;
     slicedData.forEach(item => {
         createAndAppendItem(item);
     });
+}
 
-    // 'sales-upcoming' 데이터 로드
+function loadMoreUpcomingData() {
     let endUpcoming = upcomingStart + upcomingLimit;
     let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, endUpcoming);
     upcomingStart += upcomingLimit;
