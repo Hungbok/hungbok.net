@@ -113,6 +113,7 @@ function createAndAppendItem(item) {
 
     // 아이템을 추가한 후에 타이머를 시작합니다.
     startTimer();
+    displayFormattedDate();
 }
 
 // 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수

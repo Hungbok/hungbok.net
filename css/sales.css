@@ -169,12 +169,13 @@
     display: none;
 }
 
-.sale-name {
+.item h2 {
     position: absolute;
     bottom: calc(100% - 200px);
     z-index: 1;
     margin: 0;
     padding: 20px;
+    font-size: 12px;
 }
 
 .timer-container {
