@@ -87,7 +87,7 @@ function createAndAppendItem(item) {
     let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} esd-${item.esd} ${expiredClass}`;
+    div.className = `item ${item.type} ${item.content} ${item.esd} ${expiredClass}`;
     div.innerHTML = `
         <a class="item-link" href="${item.link}" target="_blank">
             <div class="item-image">
@@ -244,6 +244,3 @@ function displayFormattedDate() {
         element.textContent = `${year}년 ${month}월 ${day}일`;
     });
 }
-
-// 함수를 호출하여 실행합니다.
-displayFormattedDate();
