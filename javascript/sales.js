@@ -6,6 +6,7 @@ let platform = 'all';
 let type = 'all';
 
 let upcomingData = [];
+let filteredUpcomingData = [];
 let upcomingStart = 0;
 let upcomingLimit = 16;
 
@@ -21,7 +22,7 @@ Promise.all([
     fetch('//data.hungbok.net/data/games/sales-upcoming.json').then(response => response.json())
 ]).then(results => {
     upcomingData = results.flat();
-    filteredData = [...upcomingData];
+    filteredUpcomingData = [...upcomingData];
     loadMoreData(); // 이 함수는 별도로 구현해야 합니다.
 });
 
