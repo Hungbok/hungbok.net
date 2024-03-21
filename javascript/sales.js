@@ -5,12 +5,24 @@ let limit = 24;
 let platform = 'all';
 let type = 'all';
 
+let upcomingData = [];
+let upcomingStart = 0;
+let upcomingLimit = 16;
+
 Promise.all([
     fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
 ]).then(results => {
     data = results.flat();
     filteredData = [...data];
     loadMoreData();
+});
+
+Promise.all([
+    fetch('//data.hungbok.net/data/games/sales-upcoming.json').then(response => response.json())
+]).then(results => {
+    upcomingData = results.flat();
+    filteredData = [...upcomingData];
+    loadMoreData(); // 이 함수는 별도로 구현해야 합니다.
 });
 
 // 필터링 기능
@@ -128,6 +140,46 @@ function createAndAppendItem(item) {
     displayFormattedDate();
 }
 
+// 아이템을 생성하고 추가하는 함수
+function createAndAppendUpcomingItem(item) {
+    let now = new Date();
+
+    let parts = item.end.split('-');
+    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+
+    let isExpired = now > itemEnd;
+    let expiredClass = isExpired ? 'expired' : '';
+
+    let div = document.createElement('div');
+    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+    div.innerHTML = `
+        <a class="item-link" href="${item.link}" target="_blank">
+            <div class="item-image">
+                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            </div>
+            <h2>
+                <div class="sale-name title-${item.from}"> ${item.title}</div>
+                <div class="sale-date">
+                    <div class="date-container" datehas="${item.start}"></div>
+                    <p>-</p>
+                    <div class="date-container" datehas="${item.end}"></div>
+                </div>
+            </h2>
+            <h1 class="from-${item.from}">${item.title}</h1>
+            <div class="sale-timer-container">
+                <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+            </div>
+            <img class="item-background" src="${item.image}">
+        </a>
+    `;
+
+    document.getElementById('upcomingContainer').appendChild(div);
+
+    startTimer();
+}
+
 // 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수
 window.onscroll = function() {
     const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
@@ -153,6 +205,7 @@ function loadMoreData() {
 
     slicedData.forEach(item => {
         createAndAppendItem(item);
+        createAndAppendUpcomingItem(item);
     });
 }
 
