@@ -206,6 +206,13 @@ function loadMoreData() {
 
     slicedData.forEach(item => {
         createAndAppendItem(item);
+    });
+
+    let endUpcoming = upcomingStart + upcomingLimit;
+    let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, endUpcoming);
+    upcomingStart += upcomingLimit;
+
+    slicedUpcomingData.forEach(item => {
         createAndAppendUpcomingItem(item);
     });
 }
