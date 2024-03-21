@@ -114,13 +114,14 @@
     margin: 20px 20px 0;
     text-align: left;
     line-height: 26px;
+    display: flex;
+    align-items: center;
 }
 
 .item h1:before {
     content: "";
-    background-size: cover;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     display: inline-block;
     position: relative;
     margin-right: 10px;
@@ -246,39 +247,39 @@
 }
 
 .from-steam::before {
-    background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center / 25px 25px;
 }
 
 .from-epicgamesstore::before {
-    background: url(//media.hungbok.net/image/icon/epicgamesstore.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/epicgamesstore.svg) no-repeat center / 25px 25px;
 }
 
 .from-gogcom::before {
-    background: url(//media.hungbok.net/image/icon/gogcom.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/gogcom.svg) no-repeat center / 25px 25px;
 }
 
 .from-battlenet::before {
-    background: url(//media.hungbok.net/image/icon/battlenet.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/battlenet.svg) no-repeat center / 25px 25px;
 }
 
 .from-eaapp::before {
-    background: url(//media.hungbok.net/image/icon/ea.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/ea.svg) no-repeat center / 25px 25px;
 }
 
 .from-ubisoftstore::before {
-    background: url(//media.hungbok.net/image/icon/ubisoft.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/ubisoft.svg) no-repeat center / 25px 25px;
 }
 
 .from-xboxstore::before {
-    background: url(//media.hungbok.net/image/icon/xbox.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/xbox.svg) no-repeat center / 25px 25px;
 }
 
 .from-playstationstore::before {
-    background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center / 25px 25px;
 }
 
 .from-nintendoeshop::before {
-    background: url(//media.hungbok.net/image/icon/nintendo.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/icon/nintendo.svg) no-repeat center / 25px 25px;
 }
 
 .title-steam::before {
