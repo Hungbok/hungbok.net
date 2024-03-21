@@ -72,38 +72,6 @@ function updateActiveClass() {
     if (platformBtn) platformBtn.classList.add('active');
 }
 
-function classifyAndSortItems(items) {
-    let now = new Date();
-    let upcomingItems = [];
-    let ongoingItems = [];
-    let overItems = [];
-
-    items.forEach(item => {
-        let startParts = item.start.split('-');
-        let endParts = item.end.split('-');
-        let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
-        let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
-
-        if (now < itemStart) {
-            upcomingItems.push(item);
-        } else if (now >= itemStart && now <= itemEnd) {
-            ongoingItems.push(item);
-        } else if (now > itemEnd) {
-            overItems.push(item);
-        }
-    });
-
-    // 남은 시간이 적은 순으로 정렬
-    upcomingItems.sort((a, b) => new Date(a.start) - new Date(b.start));
-    ongoingItems.sort((a, b) => new Date(a.end) - new Date(b.end));
-    overItems.sort((a, b) => new Date(b.end) - new Date(a.end)); // 최근에 만료된 순으로 정렬
-
-    // 정렬된 아이템들을 DOM에 추가
-    upcomingItems.forEach(item => createAndAppendItem(item));
-    ongoingItems.forEach(item => createAndAppendItem(item));
-    overItems.forEach(item => createAndAppendItem(item));
-}
-
 // 아이템을 생성하고 추가하는 함수
 function createAndAppendItem(item) {
     let now = new Date();
@@ -178,6 +146,42 @@ window.onscroll = function() {
         }, 1000);
     }
 };
+
+// loadMoreData 함수 내에서 호출하기 전에, filteredData를 다음과 같이 정렬합니다.
+filteredData.sort((a, b) => {
+    const now = new Date();
+    const aStart = new Date(a.start.replace(/-/g, '/')); // "yyyy-mm-dd-hh-mm-ss" → "yyyy/mm/dd hh:mm:ss"
+    const bStart = new Date(b.start.replace(/-/g, '/'));
+    const aEnd = new Date(a.end.replace(/-/g, '/'));
+    const bEnd = new Date(b.end.replace(/-/g, '/'));
+
+    // 둘 다 미래의 start 값을 가지는 경우
+    if (aStart > now && bStart > now) {
+        return aStart - bStart; // 더 가까운 미래의 start 값이 먼저 오도록 정렬
+    }
+    // 하나만 미래의 start 값을 가질 경우, 해당 아이템을 먼저 정렬
+    else if (aStart > now) {
+        return -1;
+    }
+    else if (bStart > now) {
+        return 1;
+    }
+
+    // 둘 다 과거의 start 값을 가지면서, end 값이 미래인 경우
+    if (aStart <= now && bStart <= now && aEnd > now && bEnd > now) {
+        return aEnd - bEnd; // 더 가까운 미래의 end 값이 먼저 오도록 정렬
+    }
+    // 하나만 end 값이 미래인 경우, 해당 아이템을 먼저 정렬
+    else if (aEnd > now) {
+        return -1;
+    }
+    else if (bEnd > now) {
+        return 1;
+    }
+
+    // start와 end 둘 다 과거인 경우
+    return bEnd - aEnd; // 더 최근에 만료된 데이터가 먼저 오도록 정렬
+});
 
 // 무한 스크롤 기능
 function loadMoreData() {

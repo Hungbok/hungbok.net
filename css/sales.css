@@ -28,6 +28,7 @@ section {
     position: relative;
     flex-wrap: wrap;
     align-content: flex-start;
+    justify-content: center;
 }
 
 .data-group {
