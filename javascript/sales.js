@@ -105,8 +105,8 @@ function createAndAppendItem(item) {
             <h1 class="from-${item.from}">${item.title}</h1>
             <h3>${item.content}</h3>
             <h3>${item.url}</h3>
-            <div class="timer-container start" settime="${item.start}"></div>
-            <div class="timer-container end" settime="${item.end}"></div>
+            <div class="sale-timer timer-container start" settime="${item.start}"></div>
+            <div class="sale-timer timer-container end" settime="${item.end}"></div>
             <img class="item-background" src="${item.image}">
         </a>
     `;

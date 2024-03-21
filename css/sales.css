@@ -285,6 +285,25 @@
     opacity: 0.25;
 }
 
+.sale-timer.start.expired::after {
+    z-index: 10;
+    padding: 20px 30px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-wrap: nowrap;
+    pointer-events: none;
+    background-color: var(--green-5);
+    position: absolute;
+    opacity: 1;
+    transform: rotate(360deg) translate(-90%, -55%);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 .from-steam::before {
     background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center;
 }
