@@ -2,18 +2,35 @@ let data = [];
 let filteredData = [];
 let start = 0;
 let limit = 24;
+let platform = 'all';
+let type = 'all';
+let dataUpcoming = []; // sales-upcoming.json 데이터 저장
+let filteredDataUpcoming = []; // 필터링된 sales-upcoming.json 데이터 저장
+let startUpcoming = 0; // #upcomingContainer에 출력할 데이터의 시작 지점
+let limitUpcoming = 24; // #upcomingContainer에 한 번에 출력할 데이터 수
 
-// JSON 파일 불러오기
-fetch('//data.hungbok.net/data/games/sales.json')
-.then(response => response.json())
-.then(json => {
-    data = json;
+Promise.all([
+    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/games/sales-2023.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/games/sales-upcoming.json').then(response => response.json()) // sales-upcoming.json 데이터 불러오기
+]).then(results => {
+    data = results.slice(0, 2).flat(); // 첫 두 결과는 기존 데이터
+    dataUpcoming = results[2]; // 세 번째 결과는 sales-upcoming.json 데이터
     filteredData = [...data];
+    filteredDataUpcoming = [...dataUpcoming]; // 필터링된 sales-upcoming.json 데이터 초기화
     loadMoreData();
+    loadMoreDataUpcoming(); // sales-upcoming.json 데이터를 처리하는 함수 호출
 });
 
-let platform = 'all'; // 플랫폼을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
-let type = 'all'; // 타입을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
+function loadMoreDataUpcoming() {
+    let endUpcoming = startUpcoming + limitUpcoming;
+    let slicedDataUpcoming = filteredDataUpcoming.slice(startUpcoming, endUpcoming);
+    startUpcoming += limitUpcoming;
+
+    slicedDataUpcoming.forEach(item => {
+        createAndAppendItemUpcoming(item); // sales-upcoming.json 데이터를 처리하는 별도의 함수
+    });
+}
 
 // 필터링 기능
 function filterData(typeValue) {
@@ -128,6 +145,47 @@ function createAndAppendItem(item) {
     // 아이템을 추가한 후에 타이머를 시작합니다.
     startTimer();
     displayFormattedDate();
+}
+
+function createAndAppendItemUpcoming(item) {
+    let now = new Date();
+
+    // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
+    let parts = item.end.split('-');
+    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+
+    let isExpired = now > itemEnd; // 만료 여부 판단
+    let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
+
+    let div = document.createElement('div');
+    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+    div.innerHTML = `
+        <a class="item-link" href="${item.link}" target="_blank">
+            <div class="item-image">
+                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            </div>
+            <h2>
+                <div class="sale-name title-${item.from}"> ${item.title}</div>
+                <div class="sale-date">
+                    <div class="date-container" datehas="${item.start}"></div>
+                    <p>-</p>
+                    <div class="date-container" datehas="${item.end}"></div>
+                </div>
+            </h2>
+            <h1 class="from-${item.from}">${item.title}</h1>
+            <div class="sale-timer-container">
+                <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+            </div>
+            <img class="item-background" src="${item.image}">
+        </a>
+    `;
+
+    document.getElementById('upcomingContainer').appendChild(div);
+
+    // 아이템을 추가한 후에 타이머를 시작합니다.
+    startTimer();
 }
 
 // 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수

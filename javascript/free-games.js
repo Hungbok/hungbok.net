@@ -2,18 +2,17 @@ let data = [];
 let filteredData = [];
 let start = 0;
 let limit = 16;
+let platform = 'all';
+let type = 'all';
 
-// JSON 파일 불러오기
-fetch('//data.hungbok.net/data/free-games.json')
-.then(response => response.json())
-.then(json => {
-    data = json;
+Promise.all([
+    fetch('//data.hungbok.net/data/free-games.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/free-games-2023.json').then(response => response.json())
+]).then(results => {
+    data = results.flat();
     filteredData = [...data];
     loadMoreData();
 });
-
-let platform = 'all'; // 플랫폼을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
-let type = 'all'; // 타입을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
 
 // 필터링 기능
 function filterData(typeValue) {
