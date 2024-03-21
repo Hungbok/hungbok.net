@@ -132,6 +132,26 @@ section {
     background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
 }
 
+.item.eu .item-image:before {
+    background: url(//media.hungbok.net/image/flag/eu.svg) no-repeat center;
+}
+
+.item.gb .item-image:before {
+    background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat center;
+}
+
+.item.fr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center;
+}
+
+.item.de .item-image:before {
+    background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center;
+}
+
+.item.kr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
+}
+
 .item-image::after {
     content: "";
     display: block;
@@ -150,6 +170,7 @@ section {
     line-height: 26px;
     display: flex;
     align-items: start;
+    justify-content: center;
 }
 
 .item h1:before {
