@@ -94,7 +94,13 @@ function createAndAppendItem(item) {
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             </div>
-            <p class="sale-name">${item.title}</p>
+            <h2>
+                <p class="sale-name">${item.title}</p>
+                <div class="sale-date">
+                    <div class="date-container" datehas="${item.start}"></div>
+                    <div class="date-container" datehas="${item.end}"></div>
+                </div>
+            </h2>
             <h1 class="from-${item.from}">${item.title}</h1>
             <h3>${item.content}</h3>
             <h3>${item.url}</h3>
@@ -217,3 +223,23 @@ function startTimer() {
         }, 100);
     });
 }
+
+function displayFormattedDate() {
+    let dateElements = document.querySelectorAll('.date-container'); // 날짜를 출력할 요소를 선택합니다.
+
+    dateElements.forEach(element => { // 각 요소에 대해 반복합니다.
+        let dateHas = element.getAttribute('datehas'); // datehas 속성 값을 가져옵니다.
+        let dateHasArray = dateHas.split('-'); // '-'로 구분된 dateHas 값을 배열로 변환합니다.
+
+        // dateHas 값이 yyyy-mm-dd-hh-mm-ss 형식이므로, 필요한 연, 월, 일 정보만 추출합니다.
+        let year = dateHasArray[0];
+        let month = dateHasArray[1];
+        let day = dateHasArray[2];
+
+        // yyyy년 mm월 dd일 형식으로 변환하여 요소의 텍스트로 설정합니다.
+        element.textContent = `${year}년 ${month}월 ${day}일`;
+    });
+}
+
+// 함수를 호출하여 실행합니다.
+displayFormattedDate();
