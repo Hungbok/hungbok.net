@@ -73,8 +73,23 @@ function createAndAppendItem(item) {
     let now = new Date();
 
     // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
-    let parts = item.end.split('-');
-    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+    let startParts = item.start.split('-');
+    let endParts = item.end.split('-');
+    let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+    let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+
+    // 현재 서버 시간 기준으로 데이터 분류
+    let containerId;
+    if (now < itemStart) {
+        // start 값이 현재 시간보다 미래인 경우
+        containerId = 'upcomingDataContainer';
+    } else if (now >= itemStart && now < itemEnd) {
+        // start 값이 지났지만 end 값은 아직 안 지난 경우
+        containerId = 'outnowDataContainer';
+    } else {
+        // start 값과 end 값 모두 지난 경우
+        containerId = 'overDataContainer';
+    }
 
     let isExpired = now > itemEnd; // 만료 여부 판단
     let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
@@ -105,7 +120,8 @@ function createAndAppendItem(item) {
             <img class="item-background" src="${item.image}">
         </a>
     `;
-    document.getElementById('dataContainer').appendChild(div);
+
+    document.getElementById(containerId).appendChild(div);
 
     // 아이템을 추가한 후에 타이머를 시작합니다.
     startTimer();
