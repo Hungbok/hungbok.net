@@ -6,7 +6,8 @@ let platform = 'all';
 let type = 'all';
 
 Promise.all([
-    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
+    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/games/sales-2023.json').then(response => response.json())
 ]).then(results => {
     data = results.flat();
     filteredData = [...data];
@@ -252,85 +253,4 @@ function displayFormattedDate() {
         // yyyy년 mm월 dd일 형식으로 변환하여 요소의 텍스트로 설정합니다.
         element.textContent = `${year}년 ${month}월 ${day}일`;
     });
-}
-
-let dataUpcoming = []; // sales-upcoming.json 데이터 저장
-let filteredDataUpcoming = []; // 필터링된 sales-upcoming.json 데이터 저장
-let startUpcoming = 0; // #upcomingContainer에 출력할 데이터의 시작 지점
-let limitUpcoming = 24; // #upcomingContainer에 한 번에 출력할 데이터 수
-
-async function fetchUpcomingData() {
-    const response = await fetch('//data.hungbok.net/data/games/sales-upcoming.json');
-    if (!response.ok) {
-        throw new Error('데이터를 불러오는 데 실패했습니다.');
-    }
-    const data = await response.json();
-    return data;
-}
-
-async function init() {
-    try {
-        const upcomingData = await fetchUpcomingData();
-        dataUpcoming = upcomingData; // 전체 데이터 저장
-        filteredDataUpcoming = upcomingData; // 필터링 없이 전체 데이터를 초기 상태로 설정
-        displayUpcomingData(upcomingData.slice(0, limitUpcoming)); // 초기 데이터 표시
-        startUpcoming += limitUpcoming; // 시작 지점 업데이트
-    } catch (error) {
-        console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
-    }
-}
-
-function displayUpcomingData(data) {
-    const container = document.getElementById('upcomingContainer');
-    data.forEach(item => {
-        createAndAppendItemUpcoming(item); // 데이터 아이템을 처리하는 별도의 함수로 이동
-    });
-}
-
-function loadMoreDataUpcoming() {
-    let endUpcoming = startUpcoming + limitUpcoming;
-    let slicedDataUpcoming = filteredDataUpcoming.slice(startUpcoming, endUpcoming);
-    startUpcoming += limitUpcoming;
-
-    slicedDataUpcoming.forEach(item => {
-        createAndAppendItemUpcoming(item);
-    });
-
-    // 만약 더 로드할 데이터가 없다면, 더 로드할 필요가 없는 로직을 추가할 수 있습니다.
-}
-
-function createAndAppendItemUpcoming(item) {
-    let now = new Date();
-    let parts = item.end.split('-');
-    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
-
-    let isExpired = now > itemEnd;
-    let expiredClass = isExpired ? 'expired' : '';
-
-    let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
-    div.innerHTML = `
-        <a class="item-link" href="${item.link}" target="_blank">
-            <div class="item-image">
-                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-            </div>
-            <h2>
-                <div class="sale-name title-${item.from}"> ${item.title}</div>
-                <div class="sale-date">
-                    <div class="date-container" datehas="${item.start}"></div>
-                    <p>-</p>
-                    <div class="date-container" datehas="${item.end}"></div>
-                </div>
-            </h2>
-            <h1 class="from-${item.from}">${item.title}</h1>
-            <div class="sale-timer-container">
-                <div class="sale-timer timer-container start" settime="${item.start}"></div>
-                <div class="sale-timer timer-container end" settime="${item.end}"></div>
-            </div>
-        </a>
-    `;
-    document.getElementById('upcomingContainer').appendChild(div);
-
-    // 아이템을 추가한 후에 타이머를 시작합니다.
-    startTimer();
 }
