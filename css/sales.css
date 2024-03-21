@@ -9,16 +9,17 @@ section {
     min-height: 430px;
     gap: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
 }
 
 #overDataContainer,
 #upcomingDataContainer {
     margin: 0 0 100px;
-    width: auto;
+    width: calc(50% - 7.5px);
     max-width: 1445px;
     min-height: 430px;
     gap: 15px;
@@ -34,6 +35,11 @@ section {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
+}
+
+.data-group > h1 {
+    width: calc(50% - 7.5px);
 }
 
 #serverTime,
