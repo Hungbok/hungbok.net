@@ -95,7 +95,7 @@ function createAndAppendItem(item) {
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             </div>
             <h2>
-                <div class="sale-name">${item.title}</div>
+                <div class="sale-name title-${item.from}"> ${item.title}</div>
                 <div class="sale-date">
                     <div class="date-container" datehas="${item.start}"></div>
                     <p>-</p>

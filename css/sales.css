@@ -146,7 +146,7 @@
     left: 0;
     top: 0;
     z-index: 1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
 }
 
 .item h1 {
@@ -319,6 +319,10 @@
 
 .from-nintendoeshop::before {
     background: url(//media.hungbok.net/image/icon/nintendo.svg) no-repeat center;
+}
+
+.title-steam::before {
+    content: "Steam";
 }
 
 .hide-expired .item.expired {
