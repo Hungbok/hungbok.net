@@ -1,7 +1,7 @@
 let data = [];
 let filteredData = [];
 let start = 0;
-let limit = 8;
+let limit = 16;
 
 // JSON 파일 불러오기
 fetch('//data.hungbok.net/data/free-games.json')
