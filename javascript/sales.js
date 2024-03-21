@@ -96,7 +96,7 @@ function createAndAppendItem(item) {
     }
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} ${item.esd}`;
+    div.className = `item ${item.type}`;
     if (containerId === 'overDataContainer') {
         div.className += ' expired'; // 만료된 항목에 대해 'expired' 클래스 추가
     }
@@ -115,8 +115,6 @@ function createAndAppendItem(item) {
                 </div>
             </h2>
             <h1 class="from-${item.from}">${item.title}</h1>
-            <h3>${item.content}</h3>
-            <h3>${item.url}</h3>
             <div class="sale-timer-container">
                 <div class="sale-timer timer-container start" settime="${item.start}"></div>
                 <div class="sale-timer timer-container end" settime="${item.end}"></div>
