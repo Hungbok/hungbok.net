@@ -91,6 +91,7 @@ section {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .item-image img {
