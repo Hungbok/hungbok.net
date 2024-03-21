@@ -6,8 +6,7 @@ let platform = 'all';
 let type = 'all';
 
 Promise.all([
-    fetch('//data.hungbok.net/data/free-games.json').then(response => response.json()),
-    fetch('//data.hungbok.net/data/free-games-2023.json').then(response => response.json())
+    fetch('//data.hungbok.net/data/free-games.json').then(response => response.json())
 ]).then(results => {
     data = results.flat();
     filteredData = [...data];
