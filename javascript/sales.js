@@ -96,7 +96,7 @@ function createAndAppendItem(item) {
     }
 
     let div = document.createElement('div');
-    div.className = `item ${item.type}`;
+    div.className = `item ${item.type}  ${item.content}`;
     if (containerId === 'overDataContainer') {
         div.className += ' expired'; // 만료된 항목에 대해 'expired' 클래스 추가
     }
