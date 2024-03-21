@@ -118,7 +118,7 @@
     text-align: left;
     line-height: 26px;
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
 .item h1:before {
