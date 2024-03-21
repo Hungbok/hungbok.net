@@ -11,7 +11,7 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     position: relative;
     flex-wrap: wrap;
 }
@@ -25,10 +25,9 @@ section {
     gap: 15px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     position: relative;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .data-group {
@@ -184,6 +183,10 @@ section {
     margin-right: 10px;
 }
 
+#upcomingDataContainer h1 {
+    display: none;
+}
+
 .item h3 {
     display: none;
 }
@@ -196,6 +199,11 @@ section {
     padding: 20px;
     font-size: 12px;
     text-align: left;
+}
+
+#upcomingDataContainer h2 {
+    bottom: unset;
+    top: calc(100% - 200px);
 }
 
 .date-container {
@@ -216,6 +224,13 @@ section {
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
+}
+
+#upcomingDataContainer .sale-timer-container {
+    position: absolute;
+    bottom: calc(100% - 200px);
+    z-index: 1;
+    width: 100%;
 }
 
 .timer-container {
@@ -239,6 +254,10 @@ section {
 .item.unknown .timer-container.end {
     font-size: 0;
     color: transparent;
+}
+
+#upcomingDataContainer .sale-timer-container .end {
+    display: none;
 }
 
 .item.unknown .timer-container.end::after {
