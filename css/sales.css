@@ -286,6 +286,38 @@
     content: "Steam";
 }
 
+.title-epicgamesstore::before {
+    content: "Epic Games Store";
+}
+
+.title-gogcom::before {
+    content: "GOG.com";
+}
+
+.title-battlenet::before {
+    content: "Battle.net";
+}
+
+.title-eaapp::before {
+    content: "EA";
+}
+
+.title-ubisoftstore::before {
+    content: "Ubisoft Store";
+}
+
+.title-xboxstore::before {
+    content: "Xbox Store";
+}
+
+.title-playstationstore::before {
+    content: "PlayStation Store";
+}
+
+.title-nintendoeshop::before {
+    content: "Nintendo eShop";
+}
+
 .hide-expired .item.expired {
     display: none;
 }
