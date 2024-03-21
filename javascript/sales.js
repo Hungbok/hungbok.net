@@ -87,7 +87,7 @@ function createAndAppendItem(item) {
     let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} esd-${item.esd} ${expiredClass}`;
+    div.className = `sale item ${item.type} ${item.content} esd-${item.esd} ${expiredClass}`;
     div.innerHTML = `
         <a class="item-link" href="${item.link}" target="_blank">
             <div class="item-image">
@@ -105,8 +105,10 @@ function createAndAppendItem(item) {
             <h1 class="from-${item.from}">${item.title}</h1>
             <h3>${item.content}</h3>
             <h3>${item.url}</h3>
-            <div class="sale-timer timer-container start" settime="${item.start}"></div>
-            <div class="sale-timer timer-container end" settime="${item.end}"></div>
+            <div class="sale-timer-container">
+                <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+            </div>
             <img class="item-background" src="${item.image}">
         </a>
     `;
