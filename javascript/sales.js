@@ -72,18 +72,29 @@ function updateActiveClass() {
 function createAndAppendItem(item) {
     let now = new Date();
 
-    // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환하여 아이템의 시작과 종료 시간을 계산합니다.
+    // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
     let partsStart = item.start.split('-');
     let itemStart = new Date(partsStart[0], partsStart[1] - 1, partsStart[2], partsStart[3], partsStart[4], partsStart[5]);
+
     let partsEnd = item.end.split('-');
     let itemEnd = new Date(partsEnd[0], partsEnd[1] - 1, partsEnd[2], partsEnd[3], partsEnd[4], partsEnd[5]);
 
-    let isUpcoming = now < itemStart; // 아직 시작하지 않은 이벤트
-    let isOngoing = now >= itemStart && now <= itemEnd; // 진행 중인 이벤트
-    let isOver = now > itemEnd; // 종료된 이벤트
+    let containerId; // 데이터를 추가할 컨테이너의 ID를 저장하는 변수
+
+    // start 값이 현재보다 미래인 경우
+    if (now < itemStart) {
+        containerId = 'upcomingDataContainer';
+    } else if (now >= itemStart && now < itemEnd) { // start 값이 과거이고 end 값이 미래인 경우
+        containerId = 'outnowDataContainer';
+    } else if (now >= itemStart && now >= itemEnd) { // start 값과 end 값이 모두 과거인 경우
+        containerId = 'overDataContainer';
+    }
+
+    let isExpired = now > itemEnd; // 만료 여부 판단
+    let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} ${item.esd}`;
+    div.className = `item ${item.type} ${item.content} ${item.esd} ${expiredClass}`;
     div.innerHTML = `
         <a class="item-link" href="${item.link}" target="_blank">
             <div class="item-image">
@@ -109,15 +120,7 @@ function createAndAppendItem(item) {
         </a>
     `;
 
-    // 조건에 따라 적절한 컨테이너에 아이템을 추가합니다.
-    if (isUpcoming) {
-        document.getElementById('upcomingDataContainer').appendChild(div);
-    } else if (isOngoing) {
-        document.getElementById('outnowDataContainer').appendChild(div);
-    } else if (isOver) {
-        div.classList.add('expired'); // 종료된 이벤트에 'expired' 클래스 추가
-        document.getElementById('overDataContainer').appendChild(div);
-    }
+    document.getElementById(containerId).appendChild(div);
 
     // 아이템을 추가한 후에 타이머를 시작합니다.
     startTimer();
