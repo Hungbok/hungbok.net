@@ -2,48 +2,18 @@ let data = [];
 let filteredData = [];
 let start = 0;
 let limit = 16;
-Promise.all([
-    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json()),
-    fetch('//data.hungbok.net/data/games/sales-steam.json').then(response => response.json())
-]).then(results => {
-    data = results.flat();
-    sortData();
+
+// JSON 파일 불러오기
+fetch('//data.hungbok.net/data/games/sales.json')
+.then(response => response.json())
+.then(json => {
+    data = json;
     filteredData = [...data];
     loadMoreData();
 });
 
-let platform = 'all'; 
-let type = 'all';
-
-function sortData() {
-    const now = new Date();
-    data.sort((a, b) => {
-        let aStart = new Date(a.start);
-        let aEnd = new Date(a.end);
-        let bStart = new Date(b.start);
-        let bEnd = new Date(b.end);
-
-        let aPastStart = aStart < now;
-        let bPastStart = bStart < now;
-        let aFutureEnd = aEnd > now;
-        let bFutureEnd = bEnd > now;
-
-        if (aPastStart && aFutureEnd && bPastStart && bFutureEnd) {
-            // 둘 다 현재보다 start가 과거이고 end가 미래인 경우
-            return aEnd - bEnd;
-        } else if ((!aPastStart || !aFutureEnd) && (!bPastStart || !bFutureEnd)) {
-            // 둘 다 현재보다 start가 미래이거나 end가 과거인 경우
-            let aDistance = Math.min(Math.abs(aStart - now), Math.abs(aEnd - now));
-            let bDistance = Math.min(Math.abs(bStart - now), Math.abs(bEnd - now));
-            return aDistance - bDistance;
-        } else {
-            // 하나는 현재보다 start가 과거이고 end가 미래이고, 다른 하나는 그렇지 않은 경우
-            if (aPastStart && aFutureEnd) return -1;
-            if (bPastStart && bFutureEnd) return 1;
-            return 0;
-        }
-    });
-}
+let platform = 'all'; // 플랫폼을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
+let type = 'all'; // 타입을 저장하는 전역 변수를 추가합니다. 초기값은 'all'입니다.
 
 // 필터링 기능
 function filterData(typeValue) {
