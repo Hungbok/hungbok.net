@@ -131,18 +131,20 @@ function createAndAppendItem(item) {
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             </div>
-            <h2>
-                <div class="sale-name title-${item.from}"> ${item.title}</div>
-                <div class="sale-date">
-                    <div class="date-container" datehas="${item.start}"></div>
-                    <p>-</p>
-                    <div class="date-container" datehas="${item.end}"></div>
-                </div>
-            </h2>
             <h1 class="from-${item.from}">${item.title}</h1>
-            <div class="sale-timer-container">
-                <div class="sale-timer timer-container start" settime="${item.start}"></div>
-                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+            <div class="sale-info">
+                <h2>
+                    <div class="sale-name title-${item.from}"> ${item.title}</div>
+                    <div class="sale-date">
+                        <div class="date-container" datehas="${item.start}"></div>
+                        <p>-</p>
+                        <div class="date-container" datehas="${item.end}"></div>
+                    </div>
+                </h2>
+                <div class="sale-timer-container">
+                    <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                    <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                </div>
             </div>
             <img class="item-background" src="${item.image}">
         </a>
@@ -173,18 +175,20 @@ function createAndAppendUpcomingItem(item) {
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             </div>
-            <h2>
-                <div class="sale-name title-${item.from}"> ${item.title}</div>
-                <div class="sale-date">
-                    <div class="date-container" datehas="${item.start}"></div>
-                    <p>-</p>
-                    <div class="date-container" datehas="${item.end}"></div>
-                </div>
-            </h2>
             <h1 class="from-${item.from}">${item.title}</h1>
-            <div class="sale-timer-container">
-                <div class="sale-timer timer-container start" settime="${item.start}"></div>
-                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+            <div class="sale-info">
+                <h2>
+                    <div class="sale-name title-${item.from}"> ${item.title}</div>
+                    <div class="sale-date">
+                        <div class="date-container" datehas="${item.start}"></div>
+                        <p>-</p>
+                        <div class="date-container" datehas="${item.end}"></div>
+                    </div>
+                </h2>
+                <div class="sale-timer-container">
+                    <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                    <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                </div>
             </div>
             <img class="item-background" src="${item.image}">
         </a>
