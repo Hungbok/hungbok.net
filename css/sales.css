@@ -133,14 +133,45 @@
     background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
 }
 
+.item-image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
 .item h1 {
     padding: 20px;
     text-align: left;
     margin: 0;
+    line-height: 26px;
+}
+
+.item h1:before {
+    content: "";
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
 }
 
 .item h3 {
     display: none;
+}
+
+.sale-name {
+    position: absolute;
+    bottom: calc(100% - 200px);
+    z-index: 1;
+    margin: 0;
+    padding: 20px;
 }
 
 .timer-container {
@@ -236,64 +267,36 @@
     opacity: 0.25;
 }
 
-.esd-steam::after {
-    background-image: url(//media.hungbok.net/image/icon/steam.svg);
+.from-steam::after {
+    background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center;
 }
 
-.esd-epicgamesstore::after {
-    background-image: url(//media.hungbok.net/image/icon/epicgamesstore.svg);
+.from-epicgamesstore::after {
+    background: url(//media.hungbok.net/image/icon/epicgamesstore.svg) no-repeat center;
 }
 
-.esd-gogcom::after {
-    background-image: url(//media.hungbok.net/image/icon/gogcom.svg);
+.from-gogcom::after {
+    background: url(//media.hungbok.net/image/icon/gogcom.svg) no-repeat center;
 }
 
-.esd-microsoftstore::after {
-    background-image: url(//media.hungbok.net/image/icon/microsoftstore.svg);
+.from-microsoftstore::after {
+    background: url(//media.hungbok.net/image/icon/microsoftstore.svg) no-repeat center;
 }
 
-.esd-eaapp::after {
-    background-image: url(//media.hungbok.net/image/icon/ea.svg);
+.from-eaapp::after {
+    background: url(//media.hungbok.net/image/icon/ea.svg) no-repeat center;
 }
 
-.esd-ubisoftstore::after {
-    background-image: url(//media.hungbok.net/image/icon/ubisoft.svg);
+.from-ubisoftstore::after {
+    background: url(//media.hungbok.net/image/icon/ubisoft.svg) no-repeat center;
 }
 
-.esd-xboxstore::after {
-    background-image: url(//media.hungbok.net/image/icon/xbox.svg);
+.from-xboxstore::after {
+    background: url(//media.hungbok.net/image/icon/xbox.svg) no-repeat center;
 }
 
-.esd-playstationstore::after {
-    background-image: url(//media.hungbok.net/image/icon/playstation.svg);
-}
-
-.esd-humblebundle::after {
-    background-image: url(//media.hungbok.net/image/icon/humblebundle.svg);
-}
-
-.esd-amazongamesapp::after {
-    background-image: url(//media.hungbok.net/image/icon/primegaming.svg);
-}
-
-.esd-playstationplus::after {
-    background-image: url(//media.hungbok.net/image/icon/playstationplus.svg);
-}
-
-.esd-fanatical::after {
-    background-image: url(//media.hungbok.net/image/icon/fanatical.svg);
-}
-
-.esd-humblechoice::after {
-    background-image: url(//media.hungbok.net/image/icon/humblechoice.svg);
-}
-
-.esd-indiegala::after {
-    background-image: url(//media.hungbok.net/image/icon/indiegala.svg);
-}
-
-.esd-itchio::after {
-    background-image: url(//media.hungbok.net/image/icon/itchio.svg);
+.from-playstationstore::after {
+    background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center;
 }
 
 .hide-expired .item.expired {

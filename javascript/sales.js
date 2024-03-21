@@ -94,7 +94,7 @@ function createAndAppendItem(item) {
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                 <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             </div>
-            <p>${item.title}</p>
+            <p class="sale-name">${item.title}</p>
             <h1 class="from-${item.from}">${item.title}</h1>
             <h3>${item.content}</h3>
             <h3>${item.url}</h3>
