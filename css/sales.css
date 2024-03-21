@@ -16,8 +16,12 @@ section {
     flex-wrap: wrap;
 }
 
-#overDataContainer,
 #upcomingDataContainer {
+    display: none;
+}
+
+#overDataContainer,
+#upcomingContainer {
     margin: 0 0 100px;
     width: calc(50% - 7.5px);
     max-width: 1445px;
@@ -73,7 +77,7 @@ section {
 }
 
 #overDataContainer .item,
-#upcomingDataContainer .item {
+#upcomingContainer .item {
     width: 100%;
 }
 
@@ -184,7 +188,7 @@ section {
     margin-right: 10px;
 }
 
-#upcomingDataContainer h1 {
+#upcomingContainer h1 {
     display: none;
 }
 
@@ -202,7 +206,7 @@ section {
     text-align: left;
 }
 
-#upcomingDataContainer h2 {
+#upcomingContainer h2 {
     bottom: unset;
     top: calc(100% - 200px);
 }
@@ -228,7 +232,7 @@ section {
     align-items: center;
 }
 
-#upcomingDataContainer .sale-timer-container {
+#upcomingContainer .sale-timer-container {
     position: absolute;
     bottom: calc(100% - 200px);
     z-index: 1;
@@ -258,7 +262,7 @@ section {
     color: transparent;
 }
 
-#upcomingDataContainer .sale-timer-container .end {
+#upcomingContainer .sale-timer-container .end {
     display: none;
 }
 
