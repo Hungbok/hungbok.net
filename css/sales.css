@@ -373,6 +373,7 @@
     color: #000000;
 }
 
+#dataContainer .item.expired::before,
 #dataContainer .item a.item-link::before,
 #dataContainer .item a.item-link::after {
     content: unset!important;
