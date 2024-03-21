@@ -72,6 +72,38 @@ function updateActiveClass() {
     if (platformBtn) platformBtn.classList.add('active');
 }
 
+function classifyAndSortItems(items) {
+    let now = new Date();
+    let upcomingItems = [];
+    let ongoingItems = [];
+    let overItems = [];
+
+    items.forEach(item => {
+        let startParts = item.start.split('-');
+        let endParts = item.end.split('-');
+        let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+        let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+
+        if (now < itemStart) {
+            upcomingItems.push(item);
+        } else if (now >= itemStart && now <= itemEnd) {
+            ongoingItems.push(item);
+        } else if (now > itemEnd) {
+            overItems.push(item);
+        }
+    });
+
+    // 남은 시간이 적은 순으로 정렬
+    upcomingItems.sort((a, b) => new Date(a.start) - new Date(b.start));
+    ongoingItems.sort((a, b) => new Date(a.end) - new Date(b.end));
+    overItems.sort((a, b) => new Date(b.end) - new Date(a.end)); // 최근에 만료된 순으로 정렬
+
+    // 정렬된 아이템들을 DOM에 추가
+    upcomingItems.forEach(item => createAndAppendItem(item));
+    ongoingItems.forEach(item => createAndAppendItem(item));
+    overItems.forEach(item => createAndAppendItem(item));
+}
+
 // 아이템을 생성하고 추가하는 함수
 function createAndAppendItem(item) {
     let now = new Date();

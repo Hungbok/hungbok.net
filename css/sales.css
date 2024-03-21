@@ -6,7 +6,7 @@ section {
     margin: 0 0 100px;
     width: auto;
     max-width: 1445px;
-    min-height: 430px;
+    min-height: 351px;
     gap: 15px;
     display: flex;
     flex-direction: row;
@@ -21,7 +21,7 @@ section {
     margin: 0 0 100px;
     width: calc(50% - 7.5px);
     max-width: 1445px;
-    min-height: 430px;
+    min-height: 415px;
     gap: 15px;
     display: flex;
     flex-direction: row;
