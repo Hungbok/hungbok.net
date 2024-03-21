@@ -342,6 +342,10 @@
     background-image: url(//media.hungbok.net/image/icon/itchio.svg);
 }
 
+.esd-legacygames::after {
+    background-image: url(//media.hungbok.net/image/icon/legacygames.svg);
+}
+
 .hide-expired .item.expired {
     display: none;
 }
@@ -420,13 +424,17 @@
     padding: 10px 45px 10px 15px;
 }
 
+#dataContainer .item.trials a.item-link {
+    background: url(//media.hungbok.net/image/icon/primegaming_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00e6a1, 60%, #90fddc);
+}
+
 #dataContainer .item.subscription a.item-link {
-    background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00e6a1, 60%, #90fddc);
+    background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #e600cb, 60%, #fd90e0);
     padding: 10px 45px 10px 15px;
 }
 
 #dataContainer .item.subscription.from-primegaming a.item-link {
-    background: url(//media.hungbok.net/image/icon/primegaming_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00e6a1, 60%, #90fddc);
+    background: url(//media.hungbok.net/image/icon/primegaming_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #9146ff, 60%, #bf99f8);
 }
 
 #dataContainer .item.subscription.from-humblechoice a.item-link {
