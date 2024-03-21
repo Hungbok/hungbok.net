@@ -68,13 +68,6 @@ function updateActiveClass() {
     if (platformBtn) platformBtn.classList.add('active');
 }
 
-// 필터 버튼에 클릭 이벤트 핸들러를 추가합니다.
-document.getElementById('dateFilterBtn').addEventListener('click', function() {
-    let dataContainer = document.getElementById('dataContainer');
-    this.classList.toggle('active'); // 'active' 클래스를 토글합니다.
-    dataContainer.classList.toggle('hide-expired'); // 'hide-expired' 클래스를 토글합니다.
-});
-
 // 아이템을 생성하고 추가하는 함수
 function createAndAppendItem(item) {
     let now = new Date();

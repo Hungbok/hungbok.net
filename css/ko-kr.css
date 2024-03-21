@@ -521,11 +521,3 @@
 .timer-container.end::before {
     content: "종료까지";
 }
-
-.sale-timer.start.expired::after {
-    content: "진행중";
-}
-
-.sale-timer.end.expired::after {
-    content: "종료됨";
-}
