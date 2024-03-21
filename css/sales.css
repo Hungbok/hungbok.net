@@ -176,6 +176,15 @@
     margin: 0;
     padding: 20px;
     font-size: 12px;
+    text-align: left;
+}
+
+.date-container {
+    display: inline-block;
+}
+
+.sale-date .date-container:last-child::before {
+    content: "-";
 }
 
 .timer-container {
