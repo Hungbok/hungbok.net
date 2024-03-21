@@ -98,6 +98,7 @@ function createAndAppendItem(item) {
                 <div class="sale-name">${item.title}</div>
                 <div class="sale-date">
                     <div class="date-container" datehas="${item.start}"></div>
+                    <p>-</p>
                     <div class="date-container" datehas="${item.end}"></div>
                 </div>
             </h2>

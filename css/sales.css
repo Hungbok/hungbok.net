@@ -183,8 +183,8 @@
     display: inline-block;
 }
 
-.sale-date .date-container:last-child::before {
-    content: "-";
+.sale-date p {
+    margin: 0px 10px;
 }
 
 .timer-container {
