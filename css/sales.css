@@ -68,7 +68,6 @@ section {
     overflow: hidden;
     border-radius: 20px;
     position: relative;
-    max-height: 1000px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -174,13 +173,16 @@ section {
 }
 
 .item h1 {
-    margin: 20px 20px 0;
+    margin: 20px;
     text-align: left;
     line-height: 26px;
     display: grid;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     grid-template-columns: 35px auto;
+    position: absolute;
+    bottom: calc(100% - 200px);
+    z-index: 1;
 }
 
 .item h1:before {
@@ -201,13 +203,13 @@ section {
 }
 
 .item h2 {
-    position: absolute;
-    bottom: calc(100% - 200px);
-    z-index: 1;
     margin: 0;
     padding: 20px;
     font-size: 12px;
-    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #upcomingContainer h2 {
@@ -219,8 +221,15 @@ section {
     display: inline-block;
 }
 
+.sale-info {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 200px);
+    justify-content: space-between;
+}
+
 .sale-name {
-    font-size: 14px;
+    font-size: 18px;
     text-wrap: balance;
 }
 
@@ -245,7 +254,7 @@ section {
 
 .timer-container {
     font-size: 24px;
-    margin: 20px 10px;
+    margin: 0px 10px 20px;
     font-weight: bold;
     display: inline-block;
     -webkit-transition: all 0.5s;
@@ -314,7 +323,6 @@ section {
 .expired.item {
     filter: grayscale(0.75) brightness(0.25);
     opacity: 0.75;
-    max-height: 200px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
