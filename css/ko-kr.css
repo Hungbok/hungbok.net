@@ -526,7 +526,6 @@
     content: "진행중";
 }
 
-#dataContainer .sale.item.expired::before,
 .sale-timer.end.expired::after {
     content: "종료됨";
 }
