@@ -1,0 +1,228 @@
+main {
+    overflow: hidden;
+}
+
+.container {
+    display: inline-block;
+}
+
+.timezone-calculator {
+    align-items: flex-start;
+    display: flex;
+    width: 100vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-content: center;
+}
+
+label {
+    font-size: 30px;
+    opacity: 1;
+    color: white;
+    margin-right: 20px;
+    width: 60px;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+input[type="datetime-local"] {
+    display: none;
+}
+
+.timezone {
+    align-items: center;
+    background-color: #1e1e1e;
+    border-radius: 20px;
+    display: flex;
+    margin: 4px;
+    padding: 0px 20px;
+    justify-content: center;
+}
+
+.timezone p {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.timezone-container {
+    height: 100px;
+    position: relative;
+    text-align: center;
+    width: 80px;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.timezone .timezone-container:nth-child(3) {
+    width: 100px;
+}
+
+.timezone-container:hover {
+    overflow: unset;
+    z-index: 100;
+}
+
+.timezone .timezone-container::before,
+.timezone .timezone-container::after {
+    font-size: 50px;
+    opacity: 1;
+    color: white;
+    line-height: 90px;
+    height: 90px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    transform: scale(1);
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.timezone .timezone-container:nth-child(3)::after {
+    content: "-";
+    right: -10px;
+}
+
+.timezone .timezone-container:nth-child(4)::after {
+    content: "-";
+    right: -5px;
+}
+
+.timezone .timezone-container:nth-child(4)::before,
+.timezone .timezone-container:nth-child(5)::before {
+    content: "-";
+    left: -5px;
+}
+
+.timezone .timezone-container:nth-child(6)::after,
+.timezone .timezone-container:nth-child(7)::after {
+    content: ":";
+    right: -7.5px;
+    animation: clock 1s linear infinite;
+}
+
+.timezone .timezone-container:nth-child(7)::before,
+.timezone .timezone-container:nth-child(8)::before {
+    content: ":";
+    left: -7.5px;
+    animation: clock 1s linear infinite;
+}
+
+.timezone-content {
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    transition: top 200ms;
+    width: 80px;
+    border-radius: 20px;
+    z-index: 50;
+}
+
+.timezone .timezone-container:nth-child(3) .timezone-content {
+    width: 100px;
+}
+
+.timezone-container:hover .timezone-content {
+    color: rgb(255, 255, 255, .75);
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.timezone-content > div {
+    color: white;
+    font-size: 20px;
+    opacity: 0.5;
+    transition: opacity 400ms, font-size 400ms;
+    width: 80px;
+    height: 100px;
+    line-height: 100px;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.timezone-content > div:hover {
+    transform: scale(1.25);
+}
+
+.timezone .timezone-container:nth-child(3) .timezone-content > div {
+    width: 100px;
+}
+
+.timezone .timezone-container:nth-child(3) .timezone-content > div:hover {
+    transform: scale(1.125);
+}
+
+.timezone-content > div.active {
+    font-size: 33px;
+    opacity: 1;
+}
+
+@keyframes clock {
+    0%, 50% {
+        opacity: 0;
+    }
+    51%, 100% {
+        opacity: 1;
+    }
+}
+
+.current-time-button {
+    padding: 10px 20px;
+    margin: 20px;
+    display: inline-block;
+    width: calc(50% - 55px);
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.current-time-button:hover {
+    background-color: var(--background-6);
+}
