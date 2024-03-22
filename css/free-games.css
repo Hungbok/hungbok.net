@@ -440,6 +440,7 @@ section > h1 {
     border-radius: 20px;
 }
 
+#filter-type > .filterDataBtn[data-type="all"],
 .filter-content.games > .filterPlatformBtn[data-platform="primegaming"],
 .filter-content.games > .filterPlatformBtn[data-platform="playstationplus"],
 .filter-content.games > .filterPlatformBtn[data-platform="humblechoice"],
