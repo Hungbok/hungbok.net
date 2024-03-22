@@ -7,12 +7,25 @@ let type = 'games';
 let isLoading = false; // 데이터 로딩 상태를 추적하는 변수를 추가합니다.
 let hasMoreData = true; // 더 로드할 데이터가 있는지 여부를 추적하는 변수를 추가합니다.
 
+let upcomingData = [];
+let filteredUpcomingData = [];
+let upcomingStart = 0;
+let upcomingLimit = 8;
+
 Promise.all([
     fetch('//data.hungbok.net/data/free-games.json').then(response => response.json())
 ]).then(results => {
     data = results.flat();
     filteredData = [...data];
     loadMoreData();
+});
+
+Promise.all([
+    fetch('//data.hungbok.net/data/games/sales-upcoming.json').then(response => response.json())
+]).then(results => {
+    upcomingData = results.flat();
+    filteredUpcomingData = [...upcomingData];
+    loadMoreUpcomingData();
 });
 
 // 필터링 기능
@@ -111,6 +124,48 @@ function createAndAppendItem(item) {
     startTimer();
 }
 
+// 아이템을 생성하고 추가하는 함수
+function createAndAppendUpcomingItem(item) {
+    let now = new Date();
+
+    let parts = item.end.split('-');
+    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+
+    let isExpired = now > itemEnd;
+    let expiredClass = isExpired ? 'expired' : '';
+
+    let div = document.createElement('div');
+    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+    div.innerHTML = `
+        <a class="item-link" href="${item.link}" target="_blank">
+            <div class="item-image">
+                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            </div>
+            <h1 class="from-${item.from}">${item.title}</h1>
+            <div class="sale-info">
+                <h2>
+                    <div class="sale-name title-${item.from}"> ${item.title}</div>
+                    <div class="sale-date">
+                        <div class="date-container" datehas="${item.start}"></div>
+                        <p>-</p>
+                        <div class="date-container" datehas="${item.end}"></div>
+                    </div>
+                </h2>
+                <div class="sale-timer-container">
+                    <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                    <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                </div>
+            </div>
+            <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+        </a>
+    `;
+
+    document.getElementById('upcomingContainer').appendChild(div);
+
+    startTimer();
+}
+
 // 스크롤 이벤트 핸들러에서도 hasMoreData를 체크합니다.
 window.onscroll = function() {
     if (!hasMoreData || isLoading) return; // 더 이상 로드할 데이터가 없거나, 이미 로딩 중이라면 함수를 종료합니다.
@@ -148,6 +203,15 @@ function loadMoreData() {
 
     start += slicedData.length;
     isLoading = false; // 로딩 상태를 종료합니다.
+}
+
+function loadMoreUpcomingData() {
+    let endUpcoming = upcomingStart + upcomingLimit;
+    let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, endUpcoming);
+    upcomingStart += upcomingLimit;
+    slicedUpcomingData.forEach(item => {
+        createAndAppendUpcomingItem(item);
+    });
 }
 
 // 서버 시간과 로컬 시간 표시 함수
