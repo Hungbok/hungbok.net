@@ -3,6 +3,7 @@ section > h1 {
 }
 
 #dataContainer {
+    margin: 0 0 100px;
     width: auto;
     max-width: 1200px;
     min-height: 430px;
@@ -529,7 +530,6 @@ section > h1 {
 }
 
 #upcomingContainer {
-    margin: 0 0 100px;
     width: auto;
     max-width: 1445px;
     min-height: 351px;
