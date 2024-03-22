@@ -3,7 +3,7 @@ let filteredData = [];
 let start = 0;
 let limit = 24;
 let platform = 'all';
-let type = 'all';
+let type = 'pc';
 
 let upcomingData = [];
 let filteredUpcomingData = [];
@@ -21,6 +21,7 @@ Promise.all([
     data = results.flat();
     filteredData = [...data];
     loadMoreData();
+    filterData(type); 
 });
 
 Promise.all([
@@ -29,6 +30,7 @@ Promise.all([
     upcomingData = results.flat();
     filteredUpcomingData = [...upcomingData];
     loadMoreUpcomingData();
+    filterData(type); 
 });
 
 // 필터링 기능
