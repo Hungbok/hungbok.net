@@ -440,6 +440,48 @@ section > h1 {
     border-radius: 20px;
 }
 
+.filter-content.games > .filterPlatformBtn[data-platform="humblebundle"],
+.filter-content.games > .filterPlatformBtn[data-platform="fanatical"],
+.filter-content.games > .filterPlatformBtn[data-platform="indiegala"],
+.filter-content.games > .filterPlatformBtn[data-platform="itchio"],
+.filter-content.games > .filterPlatformBtn[data-platform="primegaming"],
+.filter-content.games > .filterPlatformBtn[data-platform="playstationplus"],
+.filter-content.games > .filterPlatformBtn[data-platform="humblechoice"] 
+.filter-content.trials > .filterPlatformBtn[data-platform="humblebundle"],
+.filter-content.trials > .filterPlatformBtn[data-platform="fanatical"],
+.filter-content.trials > .filterPlatformBtn[data-platform="indiegala"],
+.filter-content.trials > .filterPlatformBtn[data-platform="itchio"],
+.filter-content.trials > .filterPlatformBtn[data-platform="primegaming"],
+.filter-content.trials > .filterPlatformBtn[data-platform="playstationplus"],
+.filter-content.trials > .filterPlatformBtn[data-platform="humblechoice"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="steam"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="epicgamesstore"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="gogcom"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="microsoftstore"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="eaapp"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="ubisoftstore"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="xboxstore"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="playstationstore"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="nintendoeshop"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="primegaming"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="playstationplus"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="humblechoice"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="steam"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="epicgamesstore"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="gogcom"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="microsoftstore"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="eaapp"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="ubisoftstore"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="xboxstore"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="playstationstore"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="nintendoeshop"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="humblebundle"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="fanatical"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="indiegala"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="itchio"] {
+    display: none;
+}
+
 #dataContainer .item.games a.item-link {
     background: linear-gradient(90deg, #e6c300, 60%, #f7e589);
 }
