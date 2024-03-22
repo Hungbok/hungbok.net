@@ -3,7 +3,7 @@ let filteredData = [];
 let start = 0;
 let limit = 16;
 let platform = 'all';
-let type = 'all';
+let type = 'games';
 let isLoading = false; // 데이터 로딩 상태를 추적하는 변수를 추가합니다.
 let hasMoreData = true; // 더 로드할 데이터가 있는지 여부를 추적하는 변수를 추가합니다.
 
@@ -146,11 +146,6 @@ function createAndAppendUpcomingItem(item) {
             <div class="sale-info">
                 <h2>
                     <div class="sale-name title-${item.from}"> ${item.title}</div>
-                    <div class="sale-date">
-                        <div class="date-container" datehas="${item.start}"></div>
-                        <p>-</p>
-                        <div class="date-container" datehas="${item.end}"></div>
-                    </div>
                 </h2>
                 <div class="sale-timer-container">
                     <div class="sale-timer timer-container start" settime="${item.start}"></div>

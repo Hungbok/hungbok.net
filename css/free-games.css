@@ -580,6 +580,18 @@
     filter: drop-shadow(0px 0px 20px black);
 }
 
+#upcomingContainer .item-image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
 #upcomingContainer .item:hover .item-image img {
     transform: scale(1);
 }
@@ -738,6 +750,11 @@
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+#upcomingContainer .sale-timer.start.expired,
+#upcomingContainer .sale-timer.end.expired {
+    display: none;
 }
 
 #upcomingContainer .timer-container.start::before,
