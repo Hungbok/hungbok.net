@@ -367,6 +367,10 @@ section > h1 {
     background-image: url(//media.hungbok.net/image/icon/nintendo.svg);
 }
 
+.esd-drmfree::after {
+    background-image: url(//media.hungbok.net/image/icon/unlock.svg);
+}
+
 .hide-expired .item.expired {
     display: none;
 }
