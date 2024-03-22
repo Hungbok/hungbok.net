@@ -334,7 +334,7 @@ $(document).ready(function() {
     '</div>'+
     '<div class="share-link">'+
         '<div class="share-url"><input value="https://hgbk.me/{share}" readonly></div>'+
-        '<div class="share-copy"><img src="//data.hungbok.net/image/icon/copy.svg" onerror="this.src=`//data.hungbok.net/image/icon/exclamation.svg`;" loading="lazy"></div>'+
+        '<div class="share-copy"><img src="//media.hungbok.net/image/icon/copy.svg" onerror="this.src=`//media.hungbok.net/image/icon/exclamation.svg`;" loading="lazy"></div>'+
     '</div>');
     
     $(document).on('click', '.share-link .share-copy', function() {
@@ -415,7 +415,7 @@ window.addEventListener('load', function() {
                     let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : ""; // 해당 언어의 type을 가져옵니다. item에 type이 없거나 언어 데이터에 해당 type이 없는 경우에는 빈 문자열을 사용합니다.
                     $(".search-results").append(`
                         <a href="${item.url}">
-                            <img class="search-results-image" src="${item.image}" onerror="this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                            <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                             ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
                         </a>
                     `);
