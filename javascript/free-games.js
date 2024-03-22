@@ -132,34 +132,38 @@ function createAndAppendItem(item) {
 function createAndAppendUpcomingItem(item) {
     let now = new Date();
 
-    let parts = item.end.split('-');
-    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+    // 시작 시간 파싱
+    let startParts = item.start.split('-');
+    let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
 
-    let isExpired = now > itemEnd;
-    let expiredClass = isExpired ? 'expired' : '';
+    // 종료 시간 파싱
+    let endParts = item.end.split('-');
+    let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
 
-    let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
-    div.innerHTML = `
-        <a class="item-link" href="${item.link}" target="_blank">
-            <div class="item-image">
-                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-            </div>
-            <h1 class="from-${item.from}">${item.title}</h1>
-            <div class="sale-info">
-                <div class="sale-timer-container">
-                    <div class="sale-timer timer-container start" settime="${item.start}"></div>
-                    <div class="sale-timer timer-container end" settime="${item.end}"></div>
+    // 현재 시간이 시작 시간 이후이고 종료 시간 이전인지 확인
+    if (now > itemStart && now < itemEnd) {
+        let div = document.createElement('div');
+        div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd}`;
+        div.innerHTML = `
+            <a class="item-link" href="${item.link}" target="_blank">
+                <div class="item-image">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                 </div>
-            </div>
-            <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-        </a>
-    `;
+                <h1 class="from-${item.from}">${item.title}</h1>
+                <div class="sale-info">
+                    <div class="sale-timer-container">
+                        <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                        <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                    </div>
+                </div>
+                <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            </a>
+        `;
 
-    document.getElementById('upcomingContainer').appendChild(div);
+        document.getElementById('upcomingContainer').appendChild(div);
 
-    startTimer();
+        startTimer();
+    }
 }
 
 // 스크롤 이벤트 핸들러에서도 hasMoreData를 체크합니다.
