@@ -10,6 +10,11 @@ let filteredUpcomingData = [];
 let upcomingStart = 0;
 let upcomingLimit = 8;
 
+let hasMoreData = true;
+let isLoading = false;
+let hasMoreUpcomingData = true;
+let isLoadingUpcoming = false;
+
 Promise.all([
     fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
 ]).then(results => {
@@ -50,6 +55,10 @@ function filterData(typeValue) {
     document.getElementById('outnowDataContainer').innerHTML = '';
     document.getElementById('upcomingDataContainer').innerHTML = '';
     document.getElementById('upcomingContainer').innerHTML = '';
+    isLoading = false;
+    hasMoreData = true;
+    isLoadingUpcoming = false;
+    hasMoreUpcomingData = true;
     loadMoreData();
     loadMoreUpcomingData();
 }
@@ -78,6 +87,10 @@ function filterPlatform(platformType) {
     document.getElementById('outnowDataContainer').innerHTML = '';
     document.getElementById('upcomingDataContainer').innerHTML = '';
     document.getElementById('upcomingContainer').innerHTML = '';
+    isLoading = false;
+    hasMoreData = true;
+    isLoadingUpcoming = false;
+    hasMoreUpcomingData = true;
     loadMoreData();
     loadMoreUpcomingData();
 }
@@ -200,38 +213,73 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
-// 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수
 window.onscroll = function() {
-    const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-    const totalPageHeight = document.body.scrollHeight;
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-        const loadingElement = document.getElementById('loading');
-        loadingElement.style.display = 'block';
-        setTimeout(() => {
-            loadMoreData();
-            loadMoreUpcomingData();
-            loadingElement.style.display = 'none';
-        }, 1000);
+    if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming)) {
+        const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const totalPageHeight = document.body.scrollHeight;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        if (scrollPosition + windowHeight >= totalPageHeight - 500) {
+            if (hasMoreData && !isLoading) {
+                loadMoreData();
+            }
+            if (hasMoreUpcomingData && !isLoadingUpcoming) {
+                loadMoreUpcomingData();
+            }
+        }
     }
 };
 
 function loadMoreData() {
-    let end = start + limit;
-    let slicedData = filteredData.slice(start, end);
-    start += limit;
+    if (!hasMoreData || isLoading) return;
+
+    isLoading = true; // 데이터 로딩 시작을 표시
+    const loadingElement = document.getElementById('loading');
+    loadingElement.style.display = 'block';
+
+    // 데이터 로딩 로직...
+    let slicedData = filteredData.slice(start, start + limit);
+    if (slicedData.length === 0) {
+        hasMoreData = false;
+        isLoading = false;
+        loadingElement.style.display = 'none';
+        console.log('더 이상 로드할 데이터가 없습니다.');
+        return;
+    }
+
     slicedData.forEach(item => {
         createAndAppendItem(item);
     });
+
+    start += slicedData.length;
+    isLoading = false; // 로딩 상태 종료
+    loadingElement.style.display = 'none';
 }
 
 function loadMoreUpcomingData() {
-    let endUpcoming = upcomingStart + upcomingLimit;
-    let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, endUpcoming);
-    upcomingStart += upcomingLimit;
+    if (!hasMoreUpcomingData || isLoadingUpcoming) return;
+
+    isLoadingUpcoming = true; // 추가 데이터 로딩 시작을 표시
+    const loadingElementUpcoming = document.getElementById('loading-upcoming'); // 'loading-upcoming'에 해당하는 요소가 있어야 함
+    loadingElementUpcoming.style.display = 'block';
+
+    // 데이터 로딩 로직...
+    let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, upcomingStart + upcomingLimit);
+    if (slicedUpcomingData.length === 0) {
+        hasMoreUpcomingData = false;
+        isLoadingUpcoming = false;
+        loadingElementUpcoming.style.display = 'none';
+        console.log('더 이상 로드할 추가 데이터가 없습니다.');
+        return;
+    }
+
     slicedUpcomingData.forEach(item => {
         createAndAppendUpcomingItem(item);
     });
+
+    upcomingStart += slicedUpcomingData.length;
+    isLoadingUpcoming = false; // 로딩 상태 종료
+    loadingElementUpcoming.style.display = 'none';
 }
 
 // 서버 시간과 로컬 시간 표시 함수
