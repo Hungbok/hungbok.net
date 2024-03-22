@@ -440,17 +440,9 @@ section > h1 {
     border-radius: 20px;
 }
 
-.filter-content.games > .filterPlatformBtn[data-platform="humblebundle"],
-.filter-content.games > .filterPlatformBtn[data-platform="fanatical"],
-.filter-content.games > .filterPlatformBtn[data-platform="indiegala"],
-.filter-content.games > .filterPlatformBtn[data-platform="itchio"],
 .filter-content.games > .filterPlatformBtn[data-platform="primegaming"],
 .filter-content.games > .filterPlatformBtn[data-platform="playstationplus"],
-.filter-content.games > .filterPlatformBtn[data-platform="humblechoice"] 
-.filter-content.trials > .filterPlatformBtn[data-platform="humblebundle"],
-.filter-content.trials > .filterPlatformBtn[data-platform="fanatical"],
-.filter-content.trials > .filterPlatformBtn[data-platform="indiegala"],
-.filter-content.trials > .filterPlatformBtn[data-platform="itchio"],
+.filter-content.games > .filterPlatformBtn[data-platform="humblechoice"],
 .filter-content.trials > .filterPlatformBtn[data-platform="primegaming"],
 .filter-content.trials > .filterPlatformBtn[data-platform="playstationplus"],
 .filter-content.trials > .filterPlatformBtn[data-platform="humblechoice"],
