@@ -45,6 +45,7 @@ function filterData(typeValue) {
     }
     console.log(`현재 필터링된 카테고리: ${type}`); // 필터링된 카테고리 출력
     document.getElementById('filter-platform').classList = [`filter-content ${type}`];
+    let platform = 'all';
     filterPlatform(platform); 
     updateActiveClass();
     document.getElementById('dataContainer').innerHTML = ''; // 필터링 결과를 담는 컨테이너 초기화
