@@ -192,8 +192,13 @@ section > h1 {
     transition: all 0.5s;
 }
 
-.timer-container.start {
+.timer-container.start.expired,
+.timer-container.end {
     display: none;
+}
+
+.timer-container.start.expired + .timer-container.end {
+    display: block;
 }
 
 .item.unknown .timer-container.end {
