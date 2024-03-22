@@ -4,6 +4,8 @@ let start = 0;
 let limit = 16;
 let platform = 'all';
 let type = 'all';
+let isLoading = false; // 데이터 로딩 상태를 추적하는 변수를 추가합니다.
+let hasMoreData = true; // 더 로드할 데이터가 있는지 여부를 추적하는 변수를 추가합니다.
 
 Promise.all([
     fetch('//data.hungbok.net/data/free-games.json').then(response => response.json())
@@ -105,14 +107,15 @@ function createAndAppendItem(item) {
     startTimer();
 }
 
-// 스크롤이 화면 가장 아래에 닿았을 때 데이터를 추가로 생성하는 함수
+// 스크롤 이벤트 핸들러에서도 hasMoreData를 체크합니다.
 window.onscroll = function() {
+    if (!hasMoreData || isLoading) return; // 더 이상 로드할 데이터가 없거나, 이미 로딩 중이라면 함수를 종료합니다.
+
     const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     const totalPageHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
     if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-        // 여기에 데이터를 생성하는 코드를 추가합니다.
         const loadingElement = document.getElementById('loading');
         loadingElement.style.display = 'block';
         setTimeout(() => {
@@ -123,22 +126,24 @@ window.onscroll = function() {
 };
 
 function loadMoreData() {
-    // 현재 시작점부터 limit까지의 데이터를 슬라이스합니다.
+    if (!hasMoreData || isLoading) return; // 더 이상 데이터가 없거나, 이미 로딩 중이라면 함수를 종료합니다.
+
+    isLoading = true; // 데이터 로딩 시작을 표시합니다.
     let slicedData = filteredData.slice(start, start + limit);
 
-    // slicedData의 길이가 0이면, 더 이상 로드할 데이터가 없다는 것을 의미합니다.
     if (slicedData.length === 0) {
         console.log('더 이상 로드할 데이터가 없습니다.');
-        return; // 여기서 함수를 종료하면, 더 이상 데이터를 로드하지 않습니다.
+        hasMoreData = false; // 더 이상 로드할 데이터가 없음을 표시합니다.
+        isLoading = false; // 로딩 상태를 종료합니다.
+        return;
     }
 
-    // 데이터를 페이지에 추가합니다.
     slicedData.forEach(item => {
         createAndAppendItem(item);
     });
 
-    // 시작점을 업데이트합니다.
-    start += slicedData.length; // 주의: 여기서 limit 대신 slicedData.length를 사용합니다. 마지막 로드에서 limit보다 적은 데이터가 로드될 수 있기 때문입니다.
+    start += slicedData.length;
+    isLoading = false; // 로딩 상태를 종료합니다.
 }
 
 // 서버 시간과 로컬 시간 표시 함수
