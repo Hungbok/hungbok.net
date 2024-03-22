@@ -91,10 +91,12 @@ function createAndAppendItem(item) {
             <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
             <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
         </a>
-        <h1>${item.title}</h1>
-        <div class="timer-container start" settime="${item.start}"></div>
-        <div class="timer-container end" settime="${item.end}"></div>
-        <a class="item-link" href="${item.link}" target="_blank"></a>
+        <div class="info">
+            <h1>${item.title}</h1>
+            <div class="timer-container start" settime="${item.start}"></div>
+            <div class="timer-container end" settime="${item.end}"></div>
+            <a class="item-link" href="${item.link}" target="_blank"></a>
+        </div>
         <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
     `;
     document.getElementById('dataContainer').appendChild(div);
