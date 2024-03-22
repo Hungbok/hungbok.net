@@ -68,6 +68,13 @@ section {
     overflow: hidden;
     border-radius: 20px;
     position: relative;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -127,6 +134,7 @@ section {
     right: 15px;
     top: 15px;
     pointer-events: none;
+    filter: drop-shadow(0px 0px 20px black);
 }
 
 .item.jp .item-image:before {
@@ -166,11 +174,7 @@ section {
     left: 0;
     top: 0;
     z-index: 1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75));
-}
-
-#upcomingContainer .item-image::after {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 }
 
 .item h1 {
@@ -178,13 +182,15 @@ section {
     text-align: left;
     line-height: 26px;
     display: grid;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     grid-template-columns: 35px auto;
     position: absolute;
-    bottom: calc(100% - 200px);
+    top: 0;
     z-index: 1;
     text-wrap: balance;
+    filter: drop-shadow(0px 0px 5px black);
+    pointer-events: none;
 }
 
 .item h1:before {
@@ -194,10 +200,6 @@ section {
     display: inline-block;
     position: relative;
     margin-right: 10px;
-}
-
-#upcomingContainer h1 {
-    display: none;
 }
 
 .item h3 {
@@ -212,11 +214,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-}
-
-#upcomingContainer h2 {
-    bottom: unset;
-    top: calc(100% - 200px);
 }
 
 .date-container {
@@ -245,9 +242,6 @@ section {
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
-}
-
-#upcomingContainer .sale-timer-container {
     position: absolute;
     bottom: calc(100% - 200px);
     z-index: 1;

@@ -446,6 +446,10 @@
     content: "에서 구입하기";
 }
 
+#dataContainer .item.trials a.item-link::after {
+    content: "에서 트라이얼 즐기기";
+}
+
 #dataContainer .item.subscription a.item-link::after {
     content: " 구독하기";
 }
