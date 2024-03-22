@@ -122,15 +122,23 @@ window.onscroll = function() {
     }
 };
 
-// 무한 스크롤 기능
 function loadMoreData() {
-    let end = start + limit;
-    let slicedData = filteredData.slice(start, end);
-    start += limit;
+    // 현재 시작점부터 limit까지의 데이터를 슬라이스합니다.
+    let slicedData = filteredData.slice(start, start + limit);
 
+    // slicedData의 길이가 0이면, 더 이상 로드할 데이터가 없다는 것을 의미합니다.
+    if (slicedData.length === 0) {
+        console.log('더 이상 로드할 데이터가 없습니다.');
+        return; // 여기서 함수를 종료하면, 더 이상 데이터를 로드하지 않습니다.
+    }
+
+    // 데이터를 페이지에 추가합니다.
     slicedData.forEach(item => {
         createAndAppendItem(item);
     });
+
+    // 시작점을 업데이트합니다.
+    start += slicedData.length; // 주의: 여기서 limit 대신 slicedData.length를 사용합니다. 마지막 로드에서 limit보다 적은 데이터가 로드될 수 있기 때문입니다.
 }
 
 // 서버 시간과 로컬 시간 표시 함수

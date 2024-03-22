@@ -157,9 +157,18 @@
     background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
 }
 
+.info {
+    height: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .item h1 {
     background-color: rgba(0, 0, 0, 0.25);
     padding: 10px;
+    width: calc(100% - 20px);
     border-radius: 20px;
     backdrop-filter: blur(10px);
     text-wrap: balance;
@@ -252,7 +261,6 @@
 .expired.item {
     filter: grayscale(0.75) brightness(0.25);
     opacity: 0.5;
-    text-decoration: line-through;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
