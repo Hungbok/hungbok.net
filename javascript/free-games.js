@@ -10,7 +10,7 @@ let hasMoreData = true; // 더 로드할 데이터가 있는지 여부를 추적
 let upcomingData = [];
 let filteredUpcomingData = [];
 let upcomingStart = 0;
-let upcomingLimit = 9;
+let upcomingLimit = 6;
 
 Promise.all([
     fetch('//data.hungbok.net/data/free-games.json').then(response => response.json())
