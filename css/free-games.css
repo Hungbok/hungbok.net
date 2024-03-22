@@ -358,6 +358,10 @@ section > h1 {
     background-image: url(//media.hungbok.net/image/icon/legacygames.svg);
 }
 
+.esd-nintendoeshop::after {
+    background-image: url(//media.hungbok.net/image/icon/nintendo.svg);
+}
+
 .hide-expired .item.expired {
     display: none;
 }

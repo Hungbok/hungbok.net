@@ -486,6 +486,10 @@
     content: "플레이스테이션 스토어";
 }
 
+#dataContainer .item.from-playstationstore a.item-link::before {
+    content: "닌텐도 스위치";
+}
+
 #dataContainer .item.from-humblebundle a.item-link::before {
     content: "험블 번들";
 }
