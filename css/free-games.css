@@ -439,7 +439,7 @@
 }
 
 #dataContainer .item.subscription a.item-link {
-    background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #e600cb, 60%, #fd90e0);
+    background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #ec5151, 60%, #fd9090);
     padding: 10px 45px 10px 15px;
 }
 

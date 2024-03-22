@@ -3,7 +3,7 @@ let filteredData = [];
 let start = 0;
 let limit = 24;
 let platform = 'all';
-let type = 'all';
+let type = 'pc';
 
 let upcomingData = [];
 let filteredUpcomingData = [];
