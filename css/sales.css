@@ -480,6 +480,18 @@ section > h1 {
     content: unset!important;
 }
 
+.filter-content.pc > .filterPlatformBtn[data-platform="xboxstore"],
+.filter-content.pc > .filterPlatformBtn[data-platform="playstationstore"],
+.filter-content.pc > .filterPlatformBtn[data-platform="nintendoeshop"],
+.filter-content.console > .filterPlatformBtn[data-platform="steam"],
+.filter-content.console > .filterPlatformBtn[data-platform="epicgamesstore"],
+.filter-content.console > .filterPlatformBtn[data-platform="gogcom"],
+.filter-content.console > .filterPlatformBtn[data-platform="battlenet"],
+.filter-content.console > .filterPlatformBtn[data-platform="eaapp"],
+.filter-content.console > .filterPlatformBtn[data-platform="ubisoftstore"] {
+    display: none;
+}
+
 @keyframes bounce {
     0%, 100% {
         transform: scale(1);

@@ -53,6 +53,7 @@ function filterData(typeValue) {
     }
     console.log(`현재 필터링된 카테고리: ${type}`);
     updateActiveClass();
+    document.getElementById('filter-platform').classList = [`filter-content ${type}`];
     document.getElementById('overDataContainer').innerHTML = '';
     document.getElementById('outnowDataContainer').innerHTML = '';
     document.getElementById('upcomingDataContainer').innerHTML = '';
@@ -61,6 +62,7 @@ function filterData(typeValue) {
     hasMoreData = true;
     isLoadingUpcoming = false;
     hasMoreUpcomingData = true;
+    filterPlatform('all'); 
     loadMoreData();
     loadMoreUpcomingData();
 }
