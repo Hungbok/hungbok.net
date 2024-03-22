@@ -21,13 +21,21 @@ Promise.all([
     filterData(type); 
 });
 
+// 데이터를 가져오는 부분은 변경하지 않았습니다.
 Promise.all([
     fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
 ]).then(results => {
     upcomingData = results.flat();
-    filteredUpcomingData = [...upcomingData];
+    // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+    filteredUpcomingData = upcomingData.filter(item => {
+        let now = new Date();
+        let startParts = item.start.split('-');
+        let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+        let endParts = item.end.split('-');
+        let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+        return now > itemStart && now < itemEnd;
+    });
     loadMoreUpcomingData();
-    filterData(type); 
 });
 
 // 필터링 기능
@@ -205,13 +213,15 @@ function loadMoreData() {
     isLoading = false; // 로딩 상태를 종료합니다.
 }
 
+// 'loadMoreUpcomingData' 함수 수정
 function loadMoreUpcomingData() {
-    let endUpcoming = upcomingStart + upcomingLimit;
-    let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, endUpcoming);
-    upcomingStart += upcomingLimit;
-    slicedUpcomingData.forEach(item => {
+    let loadedItems = 0;
+    while (loadedItems < upcomingLimit && upcomingStart < filteredUpcomingData.length) {
+        let item = filteredUpcomingData[upcomingStart];
         createAndAppendUpcomingItem(item);
-    });
+        upcomingStart++;
+        loadedItems++;
+    }
 }
 
 // 서버 시간과 로컬 시간 표시 함수
