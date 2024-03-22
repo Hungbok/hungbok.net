@@ -174,14 +174,20 @@ function createAndAppendItem(item) {
 function createAndAppendUpcomingItem(item) {
     let now = new Date();
 
-    let parts = item.end.split('-');
-    let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+    // 아이템의 시작 및 종료 시간을 Date 객체로 변환
+    let startParts = item.start.split('-');
+    let endParts = item.end.split('-');
+    let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+    let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
 
-    let isExpired = now > itemEnd;
-    let expiredClass = isExpired ? 'expired' : '';
+    // 현재 시간이 아이템 시작 시간 이후이고 종료 시간 이전 또는 같은 경우
+    // 혹은 현재 시간이 아이템 종료 시간보다 이후인 경우 건너뛰기
+    if (now >= itemStart || now > itemEnd) {
+        return; // 해당 조건에 부합하는 경우 함수 실행 중단
+    }
 
     let div = document.createElement('div');
-    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+    div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd}`;
     div.innerHTML = `
         <a class="item-link" href="${item.link}" target="_blank">
             <div class="item-image">
