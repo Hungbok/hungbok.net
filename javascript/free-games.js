@@ -3,7 +3,7 @@ let filteredData = [];
 let start = 0;
 let limit = 16;
 let platform = 'all';
-let type = 'games';
+let type = 'all';
 let isLoading = false; // 데이터 로딩 상태를 추적하는 변수를 추가합니다.
 let hasMoreData = true; // 더 로드할 데이터가 있는지 여부를 추적하는 변수를 추가합니다.
 
@@ -21,7 +21,7 @@ Promise.all([
 });
 
 Promise.all([
-    fetch('//data.hungbok.net/data/games/sales-upcoming.json').then(response => response.json())
+    fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
 ]).then(results => {
     upcomingData = results.flat();
     filteredUpcomingData = [...upcomingData];

@@ -499,3 +499,249 @@
         transform: rotate(2.5deg);
     }
 }
+
+#upcomingContainer {
+    margin: 0 0 100px;
+    width: auto;
+    max-width: 1445px;
+    min-height: 351px;
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#upcomingContainer .item {
+    padding: unset;
+    width: 30%;
+    max-width: 350px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#upcomingContainer .item:hover {
+    transform: translate(0px, -5px);
+}
+
+#upcomingContainer .item::before,
+#upcomingContainer .item::after {
+    content: unset;
+}
+
+#upcomingContainer .item .item-link {
+    background: unset;
+    color: unset;
+    font-weight: unset;
+    text-decoration: unset;
+    padding: unset;
+    margin-top: unset;
+    border-radius: unset;
+    display: block;
+    height: 100%;
+}
+
+#upcomingContainer .item .item-image {
+    border-radius: unset;
+    filter: unset;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#upcomingContainer .item .item-image:before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    pointer-events: none;
+    filter: drop-shadow(0px 0px 20px black);
+}
+
+#upcomingContainer .item:hover .item-image img {
+    transform: scale(1);
+}
+
+#upcomingContainer .item h1 {
+    background-color: unset;
+    padding: unset;
+    width: unset;
+    border-radius: unset;
+    backdrop-filter: unset;
+    margin: 20px;
+    text-align: left;
+    line-height: 26px;
+    display: grid;
+    align-items: start;
+    justify-content: center;
+    grid-template-columns: 35px auto;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    text-wrap: balance;
+    filter: drop-shadow(0px 0px 5px black);
+    pointer-events: none;
+}
+
+#upcomingContainer .item h1:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+
+#upcomingContainer .from-steam::before {
+    background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-epicgamesstore::before {
+    background: url(//media.hungbok.net/image/icon/epicgamesstore.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-gogcom::before {
+    background: url(//media.hungbok.net/image/icon/gogcom.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-battlenet::before {
+    background: url(//media.hungbok.net/image/icon/battlenet.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-eaapp::before {
+    background: url(//media.hungbok.net/image/icon/ea.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-ubisoftstore::before {
+    background: url(//media.hungbok.net/image/icon/ubisoft.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-xboxstore::before {
+    background: url(//media.hungbok.net/image/icon/xbox.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-playstationstore::before {
+    background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-nintendoeshop::before {
+    background: url(//media.hungbok.net/image/icon/nintendo.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .sale-info {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 200px);
+    justify-content: space-between;
+}
+
+#upcomingContainer .item h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#upcomingContainer .sale-name {
+    font-size: 18px;
+    text-wrap: balance;
+}
+
+#upcomingContainer .title-steam::before {
+    content: "Steam";
+}
+
+#upcomingContainer .title-epicgamesstore::before {
+    content: "Epic Games Store";
+}
+
+#upcomingContainer .title-gogcom::before {
+    content: "GOG.com";
+}
+
+#upcomingContainer .title-battlenet::before {
+    content: "Battle.net";
+}
+
+#upcomingContainer .title-eaapp::before {
+    content: "EA";
+}
+
+#upcomingContainer .title-ubisoftstore::before {
+    content: "Ubisoft Store";
+}
+
+#upcomingContainer .title-xboxstore::before {
+    content: "Xbox Store";
+}
+
+#upcomingContainer .title-playstationstore::before {
+    content: "PlayStation Store";
+}
+
+#upcomingContainer .title-nintendoeshop::before {
+    content: "Nintendo Switch";
+}
+
+#upcomingContainer .date-container {
+    display: inline-block;
+}
+
+#upcomingContainer .sale-date p {
+    margin: 0px 5px;
+    display: inline-block;
+}
+
+#upcomingContainer .sale-timer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: calc(100% - 200px);
+    z-index: 1;
+    width: 100%;
+}
+
+#upcomingContainer .timer-container {
+    font-size: 24px;
+    margin: 0px 10px 20px;
+    font-weight: bold;
+    display: inline-block;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#upcomingContainer .timer-container.start::before,
+#upcomingContainer .timer-container.end::before {
+    display: block;
+    color: var(--white);
+}
