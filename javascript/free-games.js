@@ -144,9 +144,6 @@ function createAndAppendUpcomingItem(item) {
             </div>
             <h1 class="from-${item.from}">${item.title}</h1>
             <div class="sale-info">
-                <h2>
-                    <div class="sale-name title-${item.from}"> ${item.title}</div>
-                </h2>
                 <div class="sale-timer-container">
                     <div class="sale-timer timer-container start" settime="${item.start}"></div>
                     <div class="sale-timer timer-container end" settime="${item.end}"></div>

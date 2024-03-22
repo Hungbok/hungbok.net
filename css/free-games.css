@@ -557,6 +557,10 @@
     height: 100%;
 }
 
+#upcomingContainer .item .item-link:hover {
+    opacity: 1;
+}
+
 #upcomingContainer .item .item-image {
     border-radius: unset;
     filter: unset;
