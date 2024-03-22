@@ -229,10 +229,20 @@ window.onscroll = function() {
 
         if (scrollPosition + windowHeight >= totalPageHeight - 500) {
             if (hasMoreData && !isLoading) {
-                loadMoreData();
+                const loadingElement = document.getElementById('loading');
+                loadingElement.style.display = 'block';
+                setTimeout(() => {
+                    loadMoreData();
+                    loadingElement.style.display = 'none';
+                }, 1000);
             }
             if (hasMoreUpcomingData && !isLoadingUpcoming) {
-                loadMoreUpcomingData();
+                const loadingElement = document.getElementById('loading-upcoming');
+                loadingElement.style.display = 'block';
+                setTimeout(() => {
+                    loadMoreUpcomingData();
+                    loadingElement.style.display = 'none';
+                }, 1000);
             }
         }
     }
