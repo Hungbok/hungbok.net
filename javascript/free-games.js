@@ -2,15 +2,15 @@ let data = [];
 let filteredData = [];
 let start = 0;
 let limit = 16;
-let platform = 'steam';
-let type = 'games';
+let platform = 'all';
+let type = 'all';
 let isLoading = false; // 데이터 로딩 상태를 추적하는 변수를 추가합니다.
 let hasMoreData = true; // 더 로드할 데이터가 있는지 여부를 추적하는 변수를 추가합니다.
 
 let upcomingData = [];
 let filteredUpcomingData = [];
 let upcomingStart = 0;
-let upcomingLimit = 8;
+let upcomingLimit = 9;
 
 Promise.all([
     fetch('//data.hungbok.net/data/free-games.json').then(response => response.json())
