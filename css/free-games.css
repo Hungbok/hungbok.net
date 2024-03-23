@@ -865,3 +865,27 @@ section > h1 {
     display: block;
     color: var(--white);
 }
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .item,
+    #upcomingContainer .item {
+        width: 40%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .item,
+    #upcomingContainer .item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .item,
+    #upcomingContainer .item {
+        width: 90%;
+    }
+}
