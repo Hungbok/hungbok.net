@@ -904,13 +904,4 @@ section > h1 {
     #dateFilterBtn {
         width: 100%;
     }
-
-    .header-title.logo {
-        font-size: 0;
-    }
-
-    .header-title.logo::after {
-        content: "H";
-        font-size: 35px;
-    }
 }

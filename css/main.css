@@ -2077,6 +2077,15 @@ fieldset.pure-group.honeypot-field {
 }
 
 @media (max-width: 767px) {
+    .header .header-title.logo {
+        font-size: 0;
+    }
+
+    .header .header-title.logo::after {
+        content: "H";
+        font-size: 35px;
+    }
+
     .header-menu {
         min-width: 100px;
     }
