@@ -418,14 +418,17 @@
     content: "공유할 서비스를 선택해 주세요.";
 }
 
+.sale-date > .date-container > p:first-child::after,
 .calendar-item-year::after {
     content: "년";
 }
 
+.sale-date > .date-container > p:nth-child(2)::after,
 .calendar-item-month::after {
     content: "월";
 }
 
+.sale-date > .date-container > p:last-child::after,
 .calendar-item-day::after {
     content: "일";
 }

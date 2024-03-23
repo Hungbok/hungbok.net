@@ -399,7 +399,7 @@ function displayFormattedDate() {
         let monthInEnglish = convertMonthToEnglish(month);
 
         // yyyy년 mm월 dd일 형식에서 yyyy년 Month dd일 형식으로 변환하여 요소의 텍스트로 설정합니다.
-        element.textContent = `<p>${monthInEnglish}</p><p>${day}</p><p>${year}</p>`;
+        element.innerHTML = `<p>${monthInEnglish}</p><p>${day}</p><p>${year}</p>`;
     });
 }
 
