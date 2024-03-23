@@ -2077,6 +2077,12 @@ fieldset.pure-group.honeypot-field {
 }
 
 @media (max-width: 767px) {
+    .header-menu {
+        min-width: 100px;
+    }
+    .header-menu.logo-container {
+        text-align: right;
+    }
     .search-container {
         display: none;
     }
