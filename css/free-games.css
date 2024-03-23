@@ -381,7 +381,7 @@ section > h1 {
 
 .filter-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 }
@@ -887,5 +887,21 @@ section > h1 {
     .item,
     #upcomingContainer .item {
         width: 90%;
+    }
+
+    .filter-content {
+        flex-wrap: wrap;
+    }
+
+    .filterDataBtn {
+        width: 30%;
+    }
+
+    .filterPlatformBtn {
+        width: 20%;
+    }
+
+    #dateFilterBtn {
+        width: 100%;
     }
 }
