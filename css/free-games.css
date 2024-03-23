@@ -442,6 +442,7 @@ section > h1 {
     margin-top: 20px;
     display: inline-block;
     border-radius: 20px;
+    line-height: 24px;
 }
 
 #filter-type > .filterDataBtn[data-type="all"],
@@ -520,8 +521,10 @@ section > h1 {
     background: url(//media.hungbok.net/image/icon/playstationplus_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00b8e6, 60%, #89e2f8);
 }
 
-#dataContainer .item.trials.from-playstationstore a.item-link:before,
-#dataContainer .item.trials.from-playstationstore a.item-link:after {
+#dataContainer .item.subscription.from-nintendoswitchonline a.item-link::before,
+#dataContainer .item.subscription.from-nintendoswitchonline a.item-link::after,
+#dataContainer .item.trials.from-playstationstore a.item-link::before,
+#dataContainer .item.trials.from-playstationstore a.item-link::after {
     font-size: 14px;
     font-weight: bold;
 }

@@ -443,7 +443,7 @@
 }
 
 #dataContainer .item.bundle a.item-link::before {
-    content: "Purchase in ";
+    content: "Buy in ";
 }
 
 #dataContainer .item.trials a.item-link::before {
