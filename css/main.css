@@ -2119,3 +2119,12 @@ fieldset.pure-group.honeypot-field {
         filter: drop-shadow(0px 0px 20px rgb(255, 0, 0, 0));
     }
 }
+
+/* ---------- beta ---------- */
+
+.side-header,
+.header-button-container > a:first-child,
+.search-container {
+    opacity: 0.5;
+    pointer-events: none;
+}
