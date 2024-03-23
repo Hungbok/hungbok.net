@@ -417,3 +417,124 @@
 .text-share-text::after {
     content: "共有するサービスを選択してください。";
 }
+
+.calendar-item-year::after {
+    content: "년";
+}
+
+.calendar-item-month::after {
+    content: "월";
+}
+
+.calendar-item-day::after {
+    content: "일";
+}
+
+#dataContainer .item.expired::before {
+    content: "만료됨";
+}
+
+#dataContainer .item a.item-link::after {
+    content: "에서 받기";
+}
+
+#dataContainer .item.games a.item-link::after {
+    content: "에서 받기";
+}
+
+#dataContainer .item.bundle a.item-link::after {
+    content: "에서 구입하기";
+}
+
+#dataContainer .item.trials a.item-link::after {
+    content: "에서 트라이얼 즐기기";
+}
+
+#dataContainer .item.subscription a.item-link::after {
+    content: " 구독하기";
+}
+
+#dataContainer .item.from-steam a.item-link::before {
+    content: "스팀";
+}
+
+#dataContainer .item.from-epicgamesstore a.item-link::before {
+    content: "에픽게임즈 스토어";
+}
+
+#dataContainer .item.from-gogcom a.item-link::before {
+    content: "지오지닷컴";
+}
+
+#dataContainer .item.from-eaapp a.item-link::before {
+    content: "EA";
+}
+
+#dataContainer .item.from-microsoftstore a.item-link::before {
+    content: "마이크로소프트 스토어";
+}
+
+#dataContainer .item.from-ubisoftstore a.item-link::before {
+    content: "유비소프트 스토어";
+}
+
+#dataContainer .item.from-xboxstore a.item-link::before {
+    content: "엑스박스 스토어";
+}
+
+#dataContainer .item.from-playstationstore a.item-link::before {
+    content: "플레이스테이션 스토어";
+}
+
+#dataContainer .item.from-nintendoeshop a.item-link::before {
+    content: "닌텐도 스위치";
+}
+
+#dataContainer .item.from-humblebundle a.item-link::before {
+    content: "험블 번들";
+}
+
+#dataContainer .item.from-fanatical a.item-link::before {
+    content: "파나티컬";
+}
+
+#dataContainer .item.from-indiegala a.item-link::before {
+    content: "인디갈라";
+}
+
+#dataContainer .item.from-itchio a.item-link::before {
+    content: "잇치 닷 아이오";
+}
+
+#dataContainer .item.from-primegaming a.item-link::before {
+    content: "프라임 게이밍";
+}
+
+#dataContainer .item.from-xboxgamepass a.item-link::before {
+    content: "엑스박스 게임패스";
+}
+
+#dataContainer .item.from-playstationplus a.item-link::before {
+    content: "플레이스테이션 플러스";
+}
+
+#dataContainer .item.from-nintendoswitchonline a.item-link::before {
+    content: "닌텐도 스위치 온라인";
+}
+
+#dataContainer .item.from-humblechoice a.item-link::before {
+    content: "험블 초이스";
+}
+
+.item.unknown .timer-container.end::after {
+    content: "알 수 없음";
+}
+
+.item.trials .timer-container.start::before,
+.sale-timer.timer-container.start::before {
+    content: "시작까지";
+}
+
+.sale-timer.timer-container.end::before {
+    content: "종료까지";
+}
