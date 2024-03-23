@@ -431,39 +431,39 @@
 }
 
 #dataContainer .item.expired::before {
-    content: "만료됨";
+    content: "終了";
 }
 
 #dataContainer .item a.item-link::after {
-    content: "에서 받기";
+    content: "でもらう";
 }
 
 #dataContainer .item.games a.item-link::after {
-    content: "에서 받기";
+    content: "でもらう";
 }
 
 #dataContainer .item.bundle a.item-link::after {
-    content: "에서 구입하기";
+    content: "で購入";
 }
 
 #dataContainer .item.trials a.item-link::after {
-    content: "에서 트라이얼 즐기기";
+    content: "でトライアルをプレイ";
 }
 
 #dataContainer .item.subscription a.item-link::after {
-    content: " 구독하기";
+    content: "をサブスクライブ";
 }
 
 #dataContainer .item.from-steam a.item-link::before {
-    content: "스팀";
+    content: "Steam";
 }
 
 #dataContainer .item.from-epicgamesstore a.item-link::before {
-    content: "에픽게임즈 스토어";
+    content: "Epic Gamesストア";
 }
 
 #dataContainer .item.from-gogcom a.item-link::before {
-    content: "지오지닷컴";
+    content: "GOG.com";
 }
 
 #dataContainer .item.from-eaapp a.item-link::before {
@@ -471,70 +471,70 @@
 }
 
 #dataContainer .item.from-microsoftstore a.item-link::before {
-    content: "마이크로소프트 스토어";
+    content: "Microsoftストア";
 }
 
 #dataContainer .item.from-ubisoftstore a.item-link::before {
-    content: "유비소프트 스토어";
+    content: "Ubisoftストア";
 }
 
 #dataContainer .item.from-xboxstore a.item-link::before {
-    content: "엑스박스 스토어";
+    content: "Xboxストア";
 }
 
 #dataContainer .item.from-playstationstore a.item-link::before {
-    content: "플레이스테이션 스토어";
+    content: "Playstationストア";
 }
 
 #dataContainer .item.from-nintendoeshop a.item-link::before {
-    content: "닌텐도 스위치";
+    content: "Nintendo Switch";
 }
 
 #dataContainer .item.from-humblebundle a.item-link::before {
-    content: "험블 번들";
+    content: "Humble Bundle";
 }
 
 #dataContainer .item.from-fanatical a.item-link::before {
-    content: "파나티컬";
+    content: "Fanatical";
 }
 
 #dataContainer .item.from-indiegala a.item-link::before {
-    content: "인디갈라";
+    content: "Indiegala";
 }
 
 #dataContainer .item.from-itchio a.item-link::before {
-    content: "잇치 닷 아이오";
+    content: "itch.io";
 }
 
 #dataContainer .item.from-primegaming a.item-link::before {
-    content: "프라임 게이밍";
+    content: "Prime Gaming";
 }
 
 #dataContainer .item.from-xboxgamepass a.item-link::before {
-    content: "엑스박스 게임패스";
+    content: "Xbox Game Pass";
 }
 
 #dataContainer .item.from-playstationplus a.item-link::before {
-    content: "플레이스테이션 플러스";
+    content: "PlayStation Plus";
 }
 
 #dataContainer .item.from-nintendoswitchonline a.item-link::before {
-    content: "닌텐도 스위치 온라인";
+    content: "Nintendo Switch Online";
 }
 
 #dataContainer .item.from-humblechoice a.item-link::before {
-    content: "험블 초이스";
+    content: "Humble Choice";
 }
 
 .item.unknown .timer-container.end::after {
-    content: "알 수 없음";
+    content: "不明";
 }
 
 .item.trials .timer-container.start::before,
 .sale-timer.timer-container.start::before {
-    content: "시작까지";
+    content: "開始まで";
 }
 
 .sale-timer.timer-container.end::before {
-    content: "종료까지";
+    content: "終了まで";
 }

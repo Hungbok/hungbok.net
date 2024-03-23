@@ -192,6 +192,10 @@ section > h1 {
     transition: all 0.5s;
 }
 
+.item.trials .timer-container.start::before {
+    margin-right: 10px;
+}
+
 .timer-container.start.expired,
 .timer-container.end {
     display: none;
