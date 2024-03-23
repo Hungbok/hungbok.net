@@ -511,7 +511,15 @@
 }
 
 #dataContainer .item.from-playstationplus a.item-link::before {
+    content: "엑스박스 게임패스";
+}
+
+#dataContainer .item.from-xboxgamepass a.item-link::before {
     content: "플레이스테이션 플러스";
+}
+
+#dataContainer .item.from-nintendoswitchonline a.item-link::before {
+    content: "닌텐도 스위치 온라인";
 }
 
 #dataContainer .item.from-humblechoice a.item-link::before {
