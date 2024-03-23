@@ -536,3 +536,43 @@ section > h1 {
         transform: rotate(2.5deg);
     }
 }
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .item,
+    #upcomingContainer .item {
+        width: 40%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .item,
+    #upcomingContainer .item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .item,
+    #upcomingContainer .item {
+        width: 90%;
+    }
+
+    .filter-content {
+        flex-wrap: wrap;
+    }
+
+    .filterDataBtn {
+        width: 30%;
+    }
+
+    .filterPlatformBtn {
+        width: 20%;
+    }
+
+    #dateFilterBtn {
+        width: 100%;
+    }
+}
