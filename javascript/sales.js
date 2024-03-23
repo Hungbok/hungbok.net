@@ -396,6 +396,6 @@ function displayFormattedDate() {
         let day = dateHasArray[2];
 
         // yyyy년 mm월 dd일 형식으로 변환하여 요소의 텍스트로 설정합니다.
-        element.textContent = `${year}년 ${month}월 ${day}일`;
+        element.textContent = `<p>${year}</p><p>${month}</p><p>${day}</p>`;
     });
 }
