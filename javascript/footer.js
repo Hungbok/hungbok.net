@@ -39,21 +39,21 @@ $(document).ready(function() {
                 '</div>'+
                 '<div class="footer-middle">'+
                     '<div class="footer-social">'+
-                        '<div class="footer-menu" ttt="facebook">'+
-                            '<a class="footer-menu-button icon-facebook" href="https://www.hungbok.com/facebook" target="_blank"></a>'+
-                        '</div>'+
-                        '<div class="footer-menu" ttt="Instagram">'+
-                            '<a class="footer-menu-button icon-instagram" href="https://www.hungbok.com/instagram" target="_blank"></a>'+
-                        '</div>'+
+                        // '<div class="footer-menu" ttt="facebook">'+
+                        //     '<a class="footer-menu-button icon-facebook" href="https://www.hungbok.com/facebook" target="_blank"></a>'+
+                        // '</div>'+
+                        // '<div class="footer-menu" ttt="Instagram">'+
+                        //     '<a class="footer-menu-button icon-instagram" href="https://www.hungbok.com/instagram" target="_blank"></a>'+
+                        // '</div>'+
                         '<div class="footer-menu" ttt="X">'+
-                            '<a class="footer-menu-button icon-x" href="https://www.hungbok.com/x" target="_blank"></a>'+
+                            '<a class="footer-menu-button icon-x" href="https://x.com/HungBokNetwork" target="_blank"></a>'+
                         '</div>'+
-                        '<div class="footer-menu" ttt="YouTube">'+
-                            '<a class="footer-menu-button icon-youtube" href="https://www.hungbok.com/youtube" target="_blank"></a>'+
-                        '</div>'+
-                        '<div class="footer-menu" ttt="Discord">'+
-                            '<a class="footer-menu-button icon-discord" href="https://www.hungbok.com/discord" target="_blank"></a>'+
-                        '</div>'+
+                        // '<div class="footer-menu" ttt="YouTube">'+
+                        //     '<a class="footer-menu-button icon-youtube" href="https://www.hungbok.com/youtube" target="_blank"></a>'+
+                        // '</div>'+
+                        // '<div class="footer-menu" ttt="Discord">'+
+                        //     '<a class="footer-menu-button icon-discord" href="https://www.hungbok.com/discord" target="_blank"></a>'+
+                        // '</div>'+
                     '</div>'+
                     '<div class="footer-site">'+
                         '<div class="footer-menu">'+
