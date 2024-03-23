@@ -2125,6 +2125,8 @@ fieldset.pure-group.honeypot-field {
 .side-header > .side-panel-icon,
 .header-button-container > a:first-child,
 .search-container > div,
+.header-button.theme-light,
+.header-button.theme-dark,
 .footer-menu-button {
     opacity: 0.5;
     pointer-events: none;
