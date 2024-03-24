@@ -424,14 +424,14 @@ section > h1 {
 #dateFilterBtn:hover,
 .filterDataBtn:hover,
 .filterPlatformBtn:hover {
-    background-color: #222222;
+    background-color: var(--background-8);
 }
 
 #dateFilterBtn.active,
 .filterDataBtn.active,
 .filterPlatformBtn.active {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 #dataContainer .item a.item-link {
@@ -582,6 +582,7 @@ section > h1 {
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
+    background-color: var(--background-8);
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
