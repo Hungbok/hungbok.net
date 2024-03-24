@@ -231,7 +231,7 @@
     content: "";
     width: 86px;
     height: 86px;
-    background-image: url("//data.hungbok.net/image/icon/play.svg");
+    background-image: url("//media.hungbok.net/image/icon/play.svg");
     background-size: cover;
     vertical-align: bottom;
     display: inline-block;
@@ -379,7 +379,7 @@
     content: "";
     width: 40px;
     height: 40px;
-    background-image: url("//data.hungbok.net/image/icon/play.svg");
+    background-image: url("//media.hungbok.net/image/icon/play.svg");
     background-size: cover;
     vertical-align: bottom;
     display: inline-block;
@@ -1359,7 +1359,7 @@
 .more-info .info-right .info-language p.y,
 .info-language-popup p.y {
     filter: brightness(0.75);
-    background: url(//data.hungbok.net/image/icon/done.svg) no-repeat center / 20px 20px;
+    background: url(//media.hungbok.net/image/icon/done.svg) no-repeat center / 20px 20px;
 }
 
 .more-info .info-right .info-language p.n,
@@ -1367,7 +1367,7 @@
 .more-info .info-right .info-language p.undefined,
 .info-language-popup p.undefined {
     filter: brightness(0.25);
-    background: url(//data.hungbok.net/image/icon/close.svg) no-repeat center / 20px 20px;
+    background: url(//media.hungbok.net/image/icon/close.svg) no-repeat center / 20px 20px;
 }
 
 .description {
@@ -2037,156 +2037,156 @@
 /* region 000 - Top */
 
 .region_001::before {
-    background: url(//data.hungbok.net/image/flag/north_america.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/north_america.svg) no-repeat center;
 }
 
 .region_002::before {
-    background: url(//data.hungbok.net/image/flag/jp.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
 }
 
 .region_003::before {
-    background: url(//data.hungbok.net/image/flag/eu.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/eu.svg) no-repeat center;
 }
 
 /* region 100 - North America */
 
 .region_101::before {
-    background: url(//data.hungbok.net/image/flag/us.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
 }
 
 .region_102::before {
-    background: url(//data.hungbok.net/image/flag/ca.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/ca.svg) no-repeat center;
 }
 
 .region_103::before {
-    background: url(//data.hungbok.net/image/flag/mx.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/mx.svg) no-repeat center;
 }
 
 /* region 200 - Europe */
 
 .region_201::before {
-    background: url(//data.hungbok.net/image/flag/gb.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat center;
 }
 
 .region_202::before {
-    background: url(//data.hungbok.net/image/flag/fr.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center;
 }
 
 .region_203::before {
-    background: url(//data.hungbok.net/image/flag/de.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center;
 }
 
 .region_204::before {
-    background: url(//data.hungbok.net/image/flag/it.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/it.svg) no-repeat center;
 }
 
 .region_205::before {
-    background: url(//data.hungbok.net/image/flag/nl.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/nl.svg) no-repeat center;
 }
 
 .region_206::before {
-    background: url(//data.hungbok.net/image/flag/be.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/be.svg) no-repeat center;
 }
 
 .region_207::before {
-    background: url(//data.hungbok.net/image/flag/pl.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/pl.svg) no-repeat center;
 }
 
 .region_208::before {
-    background: url(//data.hungbok.net/image/flag/cz.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/cz.svg) no-repeat center;
 }
 
 .region_209::before {
-    background: url(//data.hungbok.net/image/flag/es.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/es.svg) no-repeat center;
 }
 
 .region_210::before {
-    background: url(//data.hungbok.net/image/flag/pt.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/pt.svg) no-repeat center;
 }
 
 /* region 300 - Asia */
 
 .region_301::before {
-    background: url(//data.hungbok.net/image/flag/kr.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
 }
 
 .region_302::before {
-    background: url(//data.hungbok.net/image/flag/hk.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/hk.svg) no-repeat center;
 }
 
 .region_303::before {
-    background: url(//data.hungbok.net/image/flag/tw.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/tw.svg) no-repeat center;
 }
 
 /* region 400 - Oceania */
 
 .region_401::before {
-    background: url(//data.hungbok.net/image/flag/au.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/au.svg) no-repeat center;
 }
 
 .region_402::before {
-    background: url(//data.hungbok.net/image/flag/nz.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/nz.svg) no-repeat center;
 }
 
 /* region 500 - South America */
 
 .region_501::before {
-    background: url(//data.hungbok.net/image/flag/br.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/br.svg) no-repeat center;
 }
 
 .region_502::before {
-    background: url(//data.hungbok.net/image/flag/ar.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/ar.svg) no-repeat center;
 }
 
 /* region 600 - Africa */
 
 .region_601::before {
-    background: url(//data.hungbok.net/image/flag/za.svg) no-repeat center;
+    background: url(//media.hungbok.net/image/flag/za.svg) no-repeat center;
 }
 
 /* region 700 - Triple Bundle */
 
 .region_701::before {
-    background: url(//data.hungbok.net/image/flag/us.svg) no-repeat 0px / 20px 15px, url(//data.hungbok.net/image/flag/ca.svg) no-repeat 22.5px / 20px 15px, url(//data.hungbok.net/image/flag/mx.svg) no-repeat 45px / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/us.svg) no-repeat 0px / 20px 15px, url(//media.hungbok.net/image/flag/ca.svg) no-repeat 22.5px / 20px 15px, url(//media.hungbok.net/image/flag/mx.svg) no-repeat 45px / 20px 15px;
     width: 65px;
 }
 
 .region_702::before {
-    background: url(//data.hungbok.net/image/flag/gb.svg) no-repeat 0px / 20px 15px, url(//data.hungbok.net/image/flag/fr.svg) no-repeat 22.5px / 20px 15px, url(//data.hungbok.net/image/flag/de.svg) no-repeat 45px / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat 0px / 20px 15px, url(//media.hungbok.net/image/flag/fr.svg) no-repeat 22.5px / 20px 15px, url(//media.hungbok.net/image/flag/de.svg) no-repeat 45px / 20px 15px;
     width: 65px;
 }
 
 .region_703::before {
-    background: url(//data.hungbok.net/image/flag/kr.svg) no-repeat 0px / 20px 15px, url(//data.hungbok.net/image/flag/hk.svg) no-repeat 22.5px / 20px 15px, url(//data.hungbok.net/image/flag/tw.svg) no-repeat 45px / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat 0px / 20px 15px, url(//media.hungbok.net/image/flag/hk.svg) no-repeat 22.5px / 20px 15px, url(//media.hungbok.net/image/flag/tw.svg) no-repeat 45px / 20px 15px;
     width: 65px;
 }
 
 /* region 800 - Double Bundle */
 
 .region_801::before {
-    background: url(//data.hungbok.net/image/flag/hk.svg) no-repeat left / 20px 15px, url(//data.hungbok.net/image/flag/tw.svg) no-repeat right / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/hk.svg) no-repeat left / 20px 15px, url(//media.hungbok.net/image/flag/tw.svg) no-repeat right / 20px 15px;
     width: 45px;
 }
 
 .region_802::before {
-    background: url(//data.hungbok.net/image/flag/au.svg) no-repeat left / 20px 15px, url(//data.hungbok.net/image/flag/nz.svg) no-repeat right / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/au.svg) no-repeat left / 20px 15px, url(//media.hungbok.net/image/flag/nz.svg) no-repeat right / 20px 15px;
     width: 45px;
 }
 
 .region_803::before {
-    background: url(//data.hungbok.net/image/flag/br.svg) no-repeat left / 20px 15px, url(//data.hungbok.net/image/flag/ar.svg) no-repeat right / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/br.svg) no-repeat left / 20px 15px, url(//media.hungbok.net/image/flag/ar.svg) no-repeat right / 20px 15px;
     width: 45px;
 }
 
 /* region 900 - Region Bundle */
 
 .region_901::before {
-    background: url(//data.hungbok.net/image/flag/north_america.svg) no-repeat left / 20px 15px, url(//data.hungbok.net/image/flag/eu.svg) no-repeat right / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/north_america.svg) no-repeat left / 20px 15px, url(//media.hungbok.net/image/flag/eu.svg) no-repeat right / 20px 15px;
     width: 45px;
 }
 
 .region_902::before {
-    background: url(//data.hungbok.net/image/flag/north_america.svg) no-repeat left / 20px 15px, url(//data.hungbok.net/image/flag/jp.svg) no-repeat right / 20px 15px;
+    background: url(//media.hungbok.net/image/flag/north_america.svg) no-repeat left / 20px 15px, url(//media.hungbok.net/image/flag/jp.svg) no-repeat right / 20px 15px;
     width: 45px;
 }
 
