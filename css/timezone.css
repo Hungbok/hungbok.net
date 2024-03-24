@@ -23,6 +23,7 @@ main {
     justify-content: center;
     flex-direction: row;
     align-content: center;
+    margin: 50px 0px;
 }
 
 label {
@@ -227,7 +228,7 @@ input[type="datetime-local"] {
 
 .current-time-button {
     padding: 10px 20px;
-    margin: 20px;
+    margin: 0 20px 50px;
     display: inline-block;
     width: calc(50% - 55px);
     text-align: center;
