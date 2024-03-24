@@ -109,7 +109,7 @@ if (!y || !m) {
                     items.forEach(item => {
                         var platform = item.platform;
                         var url = item.url;
-                        calendar += (url ? " <a class='calendar-item' href='https://www.hungbok.com/games?q=" + url + "'>" : "") + (url ? " <img class='calendar-image' src='https://data.hungbok.net/image/games/" + url + "/hb_thumbnail.jpg' onerror='this.src=`//data.hungbok.net/image/hb/hb_error_vertical.svg`;'/>" : "") + "<div class='calendar-item-info'><p class='calendar-item-title'>" + (url ? " <img class='calendar-image' src='https://data.hungbok.net/image/games/" + url + "/hb_logo.png' onerror='this.src=`//data.hungbok.net/image/hb/hb_error.svg`;'/>" : "") + "</p>" + (platform ? " <p class='calendar-item-text " + platform + "'></p>" : "") + "</div></a>";
+                        calendar += (url ? " <a class='calendar-item' href='https://www.hungbok.com/games?q=" + url + "'>" : "") + (url ? " <img class='calendar-image' src='https://media.hungbok.net/image/games/" + url + "/hb_thumbnail.jpg' onerror='this.src=`//media.hungbok.net/image/hb/hb_error_vertical.svg`;'/>" : "") + "<div class='calendar-item-info'><p class='calendar-item-title'>" + (url ? " <img class='calendar-image' src='https://media.hungbok.net/image/games/" + url + "/hb_logo.png' onerror='this.src=`//media.hungbok.net/image/hb/hb_error.svg`;'/>" : "") + "</p>" + (platform ? " <p class='calendar-item-text " + platform + "'></p>" : "") + "</div></a>";
                     });
                     calendar += "</div></div>";
                 }
@@ -131,7 +131,7 @@ if (!y || !m) {
                 items.forEach(item => {
                     var platform = item.platform;
                     var url = item.url;
-                    calendar += (url ? " <a class='calendar-item' href='https://www.hungbok.com/games?q=" + url + "'>" : "") + (url ? " <img class='calendar-image' src='https://data.hungbok.net/image/games/" + url + "/hb_thumbnail.jpg' onerror='this.src=`//data.hungbok.net/image/hb/hb_error_vertical.svg`;'/>" : "") + "<div class='calendar-item-info'><p class='calendar-item-title'>" + (url ? " <img class='calendar-image' src='https://data.hungbok.net/image/games/" + url + "/hb_logo.png' onerror='this.src=`//data.hungbok.net/image/hb/hb_error.svg`;'/>" : "") + "</p>" + (platform ? " <p class='calendar-item-text " + platform + "'></p>" : "") + "</div></a>";
+                    calendar += (url ? " <a class='calendar-item' href='https://www.hungbok.com/games?q=" + url + "'>" : "") + (url ? " <img class='calendar-image' src='https://media.hungbok.net/image/games/" + url + "/hb_thumbnail.jpg' onerror='this.src=`//media.hungbok.net/image/hb/hb_error_vertical.svg`;'/>" : "") + "<div class='calendar-item-info'><p class='calendar-item-title'>" + (url ? " <img class='calendar-image' src='https://media.hungbok.net/image/games/" + url + "/hb_logo.png' onerror='this.src=`//media.hungbok.net/image/hb/hb_error.svg`;'/>" : "") + "</p>" + (platform ? " <p class='calendar-item-text " + platform + "'></p>" : "") + "</div></a>";
                 });
                 calendar += "</div></div>";
             }
@@ -175,10 +175,10 @@ if (!y || !m) {
             remainderData.forEach(item => {
                 $("#calendar-remainder").append("<div class='calendar-day'>"+
                     "<a class='calendar-item' href='https://www.hungbok.com/games?q=" + item.url + "'>"+
-                        "<img class='calendar-image' src='https://data.hungbok.net/image/games/" + item.url + "/hb_thumbnail.jpg' onerror='this.src=`//data.hungbok.net/image/hb/hb_error_vertical.svg`;'/>"+
+                        "<img class='calendar-image' src='https://media.hungbok.net/image/games/" + item.url + "/hb_thumbnail.jpg' onerror='this.src=`//media.hungbok.net/image/hb/hb_error_vertical.svg`;'/>"+
                         "<div class='calendar-item-info'>"+
                             "<p class='calendar-item-title'>"+
-                                "<img class='calendar-image' src='https://data.hungbok.net/image/games/" + item.url + "/hb_logo.png' onerror='this.src=`//data.hungbok.net/image/hb/hb_error.svg`;'/>"+
+                                "<img class='calendar-image' src='https://media.hungbok.net/image/games/" + item.url + "/hb_logo.png' onerror='this.src=`//media.hungbok.net/image/hb/hb_error.svg`;'/>"+
                             "</p>"+
                             "<p class='calendar-item-text " + item.platform + "'></p>"+
                         "</div>"+
@@ -190,12 +190,12 @@ if (!y || !m) {
         window.addEventListener('load', function() {
             loadAsyncScripts();
 
-            $(".pc").append('<img src="https://data.hungbok.net/image/icon/display.svg">');
-            $(".ps").append('<img src="https://data.hungbok.net/image/icon/playstation.svg">');
-            $(".xb").append('<img src="https://data.hungbok.net/image/icon/xbox.svg">');
-            $(".ns").append('<img src="https://data.hungbok.net/image/icon/nintendo.svg">');
-            $(".mo").append('<img src="https://data.hungbok.net/image/icon/phone.svg">');
-            $(".cl").append('<img src="https://data.hungbok.net/image/icon/cloud.svg">');
+            $(".pc").append('<img src="https://media.hungbok.net/image/icon/display.svg">');
+            $(".ps").append('<img src="https://media.hungbok.net/image/icon/playstation.svg">');
+            $(".xb").append('<img src="https://media.hungbok.net/image/icon/xbox.svg">');
+            $(".ns").append('<img src="https://media.hungbok.net/image/icon/nintendo.svg">');
+            $(".mo").append('<img src="https://media.hungbok.net/image/icon/phone.svg">');
+            $(".cl").append('<img src="https://media.hungbok.net/image/icon/cloud.svg">');
         });
     })
     .catch(error => {
