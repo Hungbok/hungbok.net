@@ -388,7 +388,7 @@ window.addEventListener('load', function() {
                     return;
                 }
 
-                let languageCode = $("body").attr("class").split(' ').find(cls => cls.length === 2) || "en"; // 언어코드를 가져옵니다. 언어 데이터에 해당 언어가 없거나 body에 언어 코드가 없는 경우에는 'en'을 기본으로 합니다.
+                let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en"; // 언어코드를 가져옵니다. 언어 데이터에 해당 언어가 없거나 body에 언어 코드가 없는 경우에는 'en'을 기본으로 합니다.
                 
                 let results = data.filter(item => { 
                     return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
