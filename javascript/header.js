@@ -111,7 +111,7 @@ $(document).ready(function() {
                     '<div class="header-menu search-container">'+
                         '<div class="search">'+
                             '<input type="text" id="search-value" placeholder="" autocomplete="off">'+
-                            '<div class="search-icon">'+
+                            '<div id="searching" class="search-icon">'+
                                 '<img src="//media.hungbok.net/image/icon/search.svg">'+
                             '</div>'+
                         '</div>'+
