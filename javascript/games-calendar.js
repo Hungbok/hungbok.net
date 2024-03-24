@@ -1,6 +1,6 @@
 async function loadAsyncScripts() {
     // 이미지 및 동영상 슬라이드쇼
-    await loadScript('//data.hungbok.net/javascript/slick.js');
+    await loadScript('//www.hungbok.net/javascript/slick.js');
 }
 
 function loadScript(src) {
