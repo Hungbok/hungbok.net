@@ -304,7 +304,7 @@ $(document).ready(function() {
                 '<input id="honeypot" type="text" name="honeypot" value="" />'+
             '</fieldset>'+
         '</div>'+
-        '<button class="button-success pure-button button-xlarge report-button report-text" onclick="showMessage(`신고가 성공적으로 접수되었습니다.`);">'+
+        '<button class="button-success pure-button button-xlarge report-button report-text" onclick="showMessage(`reported`);">'+
             '<p class="text-report-title"></p>'+
         '</button>'+
         '<div class="report-text text-report-more"><a class="text-report-help" href="https://help.hungbok.com/contact"></a></div>'+
@@ -384,7 +384,7 @@ $(document).ready(function() {
         document.execCommand('copy');
         document.body.removeChild(tempInput);
     
-        showMessage('클립보드에 복사되었습니다.');
+        showMessage('copied');
     });
     
     $(document).on('change', '.share-link .share-url > input', function() {
@@ -406,7 +406,7 @@ $(document).ready(function() {
         document.execCommand('copy');
         document.body.removeChild(tempInput);
     
-        showMessage('클립보드에 복사되었습니다.');
+        showMessage('copied');
     });
 });
 
