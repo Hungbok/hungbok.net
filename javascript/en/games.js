@@ -1,12 +1,12 @@
 async function loadAsyncScripts() {
     // 동영상 팝업 재생
-    await loadScript('//data.hungbok.net/javascript/youtube-popup.js');
+    await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
-    await loadScript('//data.hungbok.net/javascript/lightbox.js');
+    await loadScript('//www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
-    await loadScript('//data.hungbok.net/javascript/slick.js');
-    await loadScript('//data.hungbok.net/javascript/html_loader.js');
-    await loadScript('//data.hungbok.net/javascript/en/error404.js');
+    await loadScript('//www.hungbok.net/javascript/slick.js');
+    await loadScript('//www.hungbok.net/javascript/html_loader.js');
+    await loadScript('//www.hungbok.net/javascript/en/error404.js');
 }
 
 function loadScript(src) {
@@ -811,19 +811,19 @@ $(document).ready(function(){
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                     '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
@@ -834,19 +834,19 @@ $(document).ready(function(){
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                     '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
@@ -857,19 +857,19 @@ $(document).ready(function(){
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                     '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
-                        '<img src="//data.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
@@ -1032,7 +1032,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1044,7 +1044,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1056,7 +1056,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1068,7 +1068,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1080,7 +1080,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1097,7 +1097,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1109,7 +1109,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1121,7 +1121,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1133,7 +1133,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1145,7 +1145,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1162,7 +1162,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1174,7 +1174,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1186,7 +1186,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1198,7 +1198,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1210,7 +1210,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1227,7 +1227,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1239,7 +1239,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1251,7 +1251,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1263,7 +1263,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1275,7 +1275,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1292,7 +1292,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1304,7 +1304,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1316,7 +1316,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1328,7 +1328,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1340,7 +1340,7 @@ $(document).ready(function(){
                         '<div class="discover-title-time">01 : 30</div>'+
                         '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
                             '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//data.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
                                 '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
                                 '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
                             '</a>'+
@@ -1349,7 +1349,7 @@ $(document).ready(function(){
                 '</div>'+
             '</div>'+
         '</div>');
-        $.getScript('//data.hungbok.net/javascript/owl.carousel.min.js', function() {
+        $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
             // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
             // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
             var $owl = $('.owl-carousel');
@@ -1486,7 +1486,7 @@ function showError(image) {
 }
 
 function hideError(image) {
-    image.src = "//data.hungbok.net/image/hb/hb_error_horizontal.svg";
+    image.src = "//media.hungbok.net/image/hb/hb_error_horizontal.svg";
 }
 
 $(document).ready(function(){

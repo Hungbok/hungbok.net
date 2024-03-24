@@ -1,12 +1,12 @@
 async function loadAsyncScripts() {
     // 동영상 팝업 재생
-    await loadScript('//data.hungbok.net/javascript/youtube-popup.js');
+    await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
-    await loadScript('//data.hungbok.net/javascript/lightbox.js');
+    await loadScript('//www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
-    await loadScript('//data.hungbok.net/javascript/slick.js');
-    await loadScript('//data.hungbok.net/javascript/html_loader.js');
-    await loadScript('//data.hungbok.net/javascript/ko/error404.js');
+    await loadScript('//www.hungbok.net/javascript/slick.js');
+    await loadScript('//www.hungbok.net/javascript/html_loader.js');
+    await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
 
 function loadScript(src) {
