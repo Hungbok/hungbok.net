@@ -81,9 +81,8 @@ input[type="datetime-local"] {
     width: 100px;
 }
 
-.timezone-container:hover {
-    overflow: unset;
-    z-index: 100;
+.timezone:hover .timezone-container {
+    height: 300px;
 }
 
 .timezone .timezone-container::before,
@@ -136,6 +135,11 @@ input[type="datetime-local"] {
     animation: clock 1s linear infinite;
 }
 
+.timezone:hover .timezone-container::after,
+.timezone:hover .timezone-container::before {
+    top: 100px;
+}
+
 .timezone-content {
     display: flex;
     flex-direction: column;
@@ -146,6 +150,10 @@ input[type="datetime-local"] {
     width: 80px;
     border-radius: 20px;
     z-index: 50;
+}
+
+.timezone:hover .timezone-container .timezone-content {
+    padding-top: 100px;
 }
 
 .timezone .timezone-container:nth-child(3) .timezone-content {
