@@ -387,10 +387,17 @@ window.addEventListener('load', function() {
         $.getJSON("//data.hungbok.net/data/search/movieData.json"),
         $.getJSON("//data.hungbok.net/data/search/televisionData.json"),
         $.getJSON("//data.hungbok.net/data/search/booksData.json"),
-        $.getJSON("//data.hungbok.net/data/langData.json")
+        $.getJSON("//data.hungbok.net/data/langData.json"),
     ).then(function(data, gamesData, animeData, movieData, televisionData, booksData, langData) {
         // 각각의 결과에서 필요한 데이터만 추출합니다. (response[0]에 실제 데이터가 있음)
-        let data = [...data[0], ...gamesData[0], ...animeData[0], ...movieData[0], ...televisionData[0], ...booksData[0]];
+        let searchData = [
+            ...data[0], 
+            ...gamesData[0], 
+            ...animeData[0], 
+            ...movieData[0], 
+            ...televisionData[0], 
+            ...booksData[0]
+        ];
         langData = langData[0]; // langData 역시 같은 방식으로 추출합니다.
 
         $("#search-value").on("input focus", function() {
@@ -402,7 +409,7 @@ window.addEventListener('load', function() {
 
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
             
-            let results = data.filter(item => {
+            let results = searchData.filter(item => {
                 return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
                     let lowerText = text.toLowerCase();
                     if(lowerText.includes(searchValue)) {
