@@ -381,16 +381,16 @@ $(document).ready(function() {
 window.addEventListener('load', function() {
     // $.when()을 이용하여 여러 JSON 파일을 동시에 불러옵니다.
     $.when(
-        $.getJSON("//data.hungbok.net/data/searchData.json"),
-        $.getJSON("//data.hungbok.net/data/searchGamesData.json"),
-        $.getJSON("//data.hungbok.net/data/searchAnimeData.json"),
-        $.getJSON("//data.hungbok.net/data/searchMovieData.json"),
-        $.getJSON("//data.hungbok.net/data/searchTelevisionData.json"),
-        $.getJSON("//data.hungbok.net/data/searchBooksData.json"),
+        $.getJSON("//data.hungbok.net/data/search/data.json"),
+        $.getJSON("//data.hungbok.net/data/search/gamesData.json"),
+        $.getJSON("//data.hungbok.net/data/search/animeData.json"),
+        $.getJSON("//data.hungbok.net/data/search/movieData.json"),
+        $.getJSON("//data.hungbok.net/data/search/televisionData.json"),
+        $.getJSON("//data.hungbok.net/data/search/booksData.json"),
         $.getJSON("//data.hungbok.net/data/langData.json")
-    ).then(function(searchData, searchGamesData, searchAnimeData, searchMovieData, searchTelevisionData, searchBooksData, langData) {
+    ).then(function(data, gamesData, animeData, movieData, televisionData, booksData, langData) {
         // 각각의 결과에서 필요한 데이터만 추출합니다. (response[0]에 실제 데이터가 있음)
-        let data = [...searchData[0], ...searchGamesData[0], ...searchAnimeData[0], ...searchMovieData[0], ...searchTelevisionData[0], ...searchBooksData[0]];
+        let data = [...data[0], ...gamesData[0], ...animeData[0], ...movieData[0], ...televisionData[0], ...booksData[0]];
         langData = langData[0]; // langData 역시 같은 방식으로 추출합니다.
 
         $("#search-value").on("input focus", function() {
