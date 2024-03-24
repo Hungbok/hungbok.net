@@ -466,26 +466,24 @@ window.addEventListener('load', function() {
             e.stopPropagation(); 
         });
     });
-});
-
-$(document).ready(function() {
-    function search() {
-        var searchValue = $("#search-value").val().trim();
-        if (searchValue) {
-            window.location.href = `https://www.hungbok.com/search?q=${encodeURIComponent(searchValue)}`;
+    
+    $(document).ready(function() {
+        function search() {
+            var searchValue = $("#search-value").val().trim();
+            if (searchValue) {
+                window.location.href = `https://www.hungbok.com/search?q=${encodeURIComponent(searchValue)}`;
+            }
         }
-    }
-
-    // input#search-value에 포커스되었을 때 엔터키 이벤트 처리
-    $("#search-value").on("keypress", function(e) {
-        if (e.which == 13) { // 엔터키의 키 코드는 13입니다.
-            e.preventDefault(); // 폼 제출을 방지합니다.
+    
+        $("#search-value").on("keypress", function(e) {
+            if (e.which == 13) { // 엔터키의 키 코드는 13입니다.
+                e.preventDefault(); // 폼 제출을 방지합니다.
+                search();
+            }
+        });
+    
+        $("#searching").on("click", function() {
             search();
-        }
-    });
-
-    // 검색 버튼 클릭 이벤트 처리
-    $("#searching").on("click", function() {
-        search();
+        });
     });
 });
