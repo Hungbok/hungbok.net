@@ -217,6 +217,11 @@
     transition: all 0.5s;
 }
 
+.slider-main.slick-initialized.slick-slider {
+    max-height: 360px;
+    overflow: hidden;
+}
+
 .slider-main .slider-image:hover .slider-background,
 .slider-main .video-play-button:hover .slider-background {
     transform: scale(1.05);
