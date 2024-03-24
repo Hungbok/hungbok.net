@@ -43,60 +43,94 @@ function topButton() {
 
 // ---------- Message Box
 
-function showMessage(messageText) {
-    var completionMessageContainer = document.getElementById("message-container");
+async function showMessage(messageText) {
+    var lang = document.documentElement.lang; // 현재 페이지의 lang 값을 가져옴
+    var dataUrl = "https://data.hungbok.net/data/langData.json"; // langData.json의 URL
 
-    var completionMessage = document.createElement("div");
-    completionMessage.className = "completion-message";
-    completionMessage.textContent = messageText;
+    try {
+        const response = await fetch(dataUrl); // langData.json 파일을 비동기적으로 가져옴
+        if (!response.ok) { // 응답이 성공적이지 않으면 에러 처리
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        const langData = await response.json(); // 응답 데이터를 JSON으로 파싱
 
-    // 새로운 문구를 중앙에 추가
-    completionMessageContainer.prepend(completionMessage);
+        // 현재 페이지의 lang 속성에 해당하는 메시지 텍스트 가져오기
+        // 예외 처리: 해당 언어 설정이나 메시지 텍스트가 없는 경우 원본 messageText 사용
+        var messageToShow = langData[lang] && langData[lang][messageText] ? langData[lang][messageText] : messageText;
 
-    // 트랜지션 효과를 이용하여 opacity를 1로 설정하여 나타나게 함
-    setTimeout(function() {
-        completionMessage.style.opacity = 1;
-    }, 10);
+        var completionMessageContainer = document.getElementById("message-container");
 
-    var fadeOutTime = 2000;
+        var completionMessage = document.createElement("div");
+        completionMessage.className = "completion-message";
+        completionMessage.textContent = messageToShow; // 수정된 부분: messageToShow 사용
 
-    // 일정 시간 후에 사라지기
-    setTimeout(function() {
-        completionMessage.style.opacity = 0;
+        // 새로운 문구를 중앙에 추가
+        completionMessageContainer.prepend(completionMessage);
 
-        // 사라진 후에 요소 제거
+        // 트랜지션 효과를 이용하여 opacity를 1로 설정하여 나타나게 함
         setTimeout(function() {
-            completionMessage.parentNode.removeChild(completionMessage);
-        }, fadeOutTime);
-    }, fadeOutTime + 1000); // +1000ms 딜레이 추가
+            completionMessage.style.opacity = 1;
+        }, 10);
+
+        var fadeOutTime = 2000;
+
+        // 일정 시간 후에 사라지기
+        setTimeout(function() {
+            completionMessage.style.opacity = 0;
+
+            // 사라진 후에 요소 제거
+            setTimeout(function() {
+                completionMessage.parentNode.removeChild(completionMessage);
+            }, fadeOutTime);
+        }, fadeOutTime + 1000); // +1000ms 딜레이 추가
+    } catch (error) {
+        console.error("Could not load language data:", error);
+    }
 }
 
-function showErrorMessage(messageText) {
-    var completionMessageContainer = document.getElementById("message-container");
+async function showErrorMessage(messageText) {
+    var lang = document.documentElement.lang; // 현재 페이지의 lang 값을 가져옴
+    var dataUrl = "https://data.hungbok.net/data/langData.json"; // langData.json의 URL
 
-    var completionMessage = document.createElement("div");
-    completionMessage.className = "error-message";
-    completionMessage.textContent = messageText;
+    try {
+        const response = await fetch(dataUrl); // langData.json 파일을 비동기적으로 가져옴
+        if (!response.ok) { // 응답이 성공적이지 않으면 에러 처리
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        const langData = await response.json(); // 응답 데이터를 JSON으로 파싱
 
-    // 새로운 문구를 중앙에 추가
-    completionMessageContainer.prepend(completionMessage);
+        // 현재 페이지의 lang 속성에 해당하는 메시지 텍스트 가져오기
+        // 예외 처리: 해당 언어 설정이나 메시지 텍스트가 없는 경우 원본 messageText 사용
+        var messageToShow = langData[lang] && langData[lang][messageText] ? langData[lang][messageText] : messageText;
 
-    // 트랜지션 효과를 이용하여 opacity를 1로 설정하여 나타나게 함
-    setTimeout(function() {
-        completionMessage.style.opacity = 1;
-    }, 10);
+        var completionMessageContainer = document.getElementById("message-container");
 
-    var fadeOutTime = 2000;
+        var completionMessage = document.createElement("div");
+        completionMessage.className = "error-message";
+        completionMessage.textContent = messageToShow; // 수정된 부분: messageToShow 사용
 
-    // 일정 시간 후에 사라지기
-    setTimeout(function() {
-        completionMessage.style.opacity = 0;
+        // 새로운 문구를 중앙에 추가
+        completionMessageContainer.prepend(completionMessage);
 
-        // 사라진 후에 요소 제거
+        // 트랜지션 효과를 이용하여 opacity를 1로 설정하여 나타나게 함
         setTimeout(function() {
-            completionMessage.parentNode.removeChild(completionMessage);
-        }, fadeOutTime);
-    }, fadeOutTime + 1000); // +1000ms 딜레이 추가
+            completionMessage.style.opacity = 1;
+        }, 10);
+
+        var fadeOutTime = 2000;
+
+        // 일정 시간 후에 사라지기
+        setTimeout(function() {
+            completionMessage.style.opacity = 0;
+
+            // 사라진 후에 요소 제거
+            setTimeout(function() {
+                completionMessage.parentNode.removeChild(completionMessage);
+            }, fadeOutTime);
+        }, fadeOutTime + 1000); // +1000ms 딜레이 추가
+    } catch (error) {
+        console.error("Could not load language data:", error);
+    }
 }
 
 // ---------- Toggle
@@ -466,7 +500,7 @@ window.addEventListener('load', function() {
             e.stopPropagation(); 
         });
     });
-    
+
     $(document).ready(function() {
         function search() {
             var searchValue = $("#search-value").val().trim();
