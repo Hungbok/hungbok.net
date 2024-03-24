@@ -1633,12 +1633,10 @@
 
 .owl-carousel {
     position: relative;
-    max-height: 700px;
-    overflow: hidden;
 }
 
 .game-section .owl-stage {
-    margin: 45px 0;
+    margin: 0;
     padding: 10px 0px;
     display: flex;
     display: -webkit-flex;
