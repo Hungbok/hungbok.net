@@ -1628,13 +1628,13 @@
 
 .owl-carousel {
     position: relative;
-    max-height: 600px;
+    max-height: 700px;
     overflow: hidden;
 }
 
 .game-section .owl-stage {
-    margin: 15px 0;
-    padding: 40px 0;
+    margin: 45px 0;
+    padding: 10px 0px;
     display: flex;
     display: -webkit-flex;
     justify-content: center;
@@ -1734,7 +1734,6 @@
 }
 
 .game-section .owl-theme.custom-carousel .owl-dots {
-    margin-top: -20px;
     position: relative;
     z-index: 5;
 }
@@ -1748,12 +1747,6 @@
 .owl-theme .owl-dots {
     text-align: center;
     -webkit-tap-highlight-color: transparent;
-}
-
-.game-section .owl-theme.custom-carousel .owl-dots {
-    margin-top: -20px;
-    position: relative;
-    z-index: 5;
 }
 
 .owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
