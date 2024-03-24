@@ -1075,7 +1075,7 @@ fieldset.pure-group.honeypot-field {
     left: 0;
     position: absolute;
     width: 100%;
-    background-color: var(--background-8-opacity-8);
+    background-color: var(--background-8-opacity-80);
     backdrop-filter: blur(50px);
 }
 
