@@ -379,59 +379,70 @@ $(document).ready(function() {
 // ---------- Search
 
 window.addEventListener('load', function() {
-    $.getJSON("//data.hungbok.net/data/searchData.json", function(data) { 
-        $.getJSON("//data.hungbok.net/data/langData.json", function(langData) { 
-            $("#search-value").on("input focus", function() { 
-                let searchValue = $(this).val().toLowerCase().trim(); 
-                if(searchValue === '') { 
-                    $(".search-results").empty().hide(); 
-                    return;
-                }
+    // $.when()을 이용하여 여러 JSON 파일을 동시에 불러옵니다.
+    $.when(
+        $.getJSON("//data.hungbok.net/data/searchData.json"),
+        $.getJSON("//data.hungbok.net/data/searchGamesData.json"),
+        $.getJSON("//data.hungbok.net/data/searchAnimeData.json"),
+        $.getJSON("//data.hungbok.net/data/searchMovieData.json"),
+        $.getJSON("//data.hungbok.net/data/searchTelevisionData.json"),
+        $.getJSON("//data.hungbok.net/data/searchBooksData.json"),
+        $.getJSON("//data.hungbok.net/data/langData.json")
+    ).then(function(searchData, searchGamesData, searchAnimeData, searchMovieData, searchTelevisionData, searchBooksData, langData) {
+        // 각각의 결과에서 필요한 데이터만 추출합니다. (response[0]에 실제 데이터가 있음)
+        let data = [...searchData[0], ...searchGamesData[0], ...searchAnimeData[0], ...searchMovieData[0], ...searchTelevisionData[0], ...searchBooksData[0]];
+        langData = langData[0]; // langData 역시 같은 방식으로 추출합니다.
 
-                let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en"; // 언어코드를 가져옵니다. 언어 데이터에 해당 언어가 없거나 body에 언어 코드가 없는 경우에는 'en'을 기본으로 합니다.
-                
-                let results = data.filter(item => { 
-                    return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
-                        let lowerText = text.toLowerCase();
-                        if(lowerText.includes(searchValue)) {
-                            return true;
-                        }
-                        let cleanedText = lowerText.replace(/\s+/g, '');
-                        let cleanedSearchValue = searchValue.replace(/\s+/g, '');
-                        return cleanedText.includes(cleanedSearchValue);
-                    });
-                }).slice(0, 5); 
+        $("#search-value").on("input focus", function() {
+            let searchValue = $(this).val().toLowerCase().trim();
+            if(searchValue === '') {
+                $(".search-results").empty().hide();
+                return;
+            }
 
-                $(".search-results").empty(); 
-                if(results.length === 0) { 
-                    $(".search-results").hide();
-                    return;
-                }
-                results.forEach(item => { 
-                    let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-                    if (!title) {
-                        title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en']; // 언어코드에 해당하는 title이 없으면 영어를 기본으로 합니다.
+            let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
+            
+            let results = data.filter(item => {
+                return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
+                    let lowerText = text.toLowerCase();
+                    if(lowerText.includes(searchValue)) {
+                        return true;
                     }
-                    let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : ""; // 해당 언어의 type을 가져옵니다. item에 type이 없거나 언어 데이터에 해당 type이 없는 경우에는 빈 문자열을 사용합니다.
-                    $(".search-results").append(`
-                        <a href="${item.url}">
-                            <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                            ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
-                        </a>
-                    `);
+                    let cleanedText = lowerText.replace(/\s+/g, '');
+                    let cleanedSearchValue = searchValue.replace(/\s+/g, '');
+                    return cleanedText.includes(cleanedSearchValue);
                 });
-                $(".search-results").show(); 
-            });
+            }).slice(0, 5);
 
-            $(document).on("click", function(e) { 
-                if(!$(e.target).closest('.search-container').length) { 
-                    $(".search-results").hide(); 
+            $(".search-results").empty();
+            if(results.length === 0) {
+                $(".search-results").hide();
+                return;
+            }
+            results.forEach(item => {
+                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+                if (!title) {
+                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
                 }
+                let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+                $(".search-results").append(`
+                    <a href="${item.url}">
+                        <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                        ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
+                    </a>
+                `);
             });
+            $(".search-results").show();
+        });
 
-            $(".search-container").on("click", function(e) { 
-                e.stopPropagation(); 
-            });
+        $(document).on("click", function(e) {
+            if(!$(e.target).closest('.search-container').length) {
+                $(".search-results").hide();
+            }
+        });
+
+        $(".search-container").on("click", function(e) { 
+            e.stopPropagation(); 
         });
     });
 });
