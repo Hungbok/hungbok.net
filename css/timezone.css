@@ -92,6 +92,7 @@ input[type="datetime-local"] {
     color: var(--text-8);
     line-height: 90px;
     height: 90px;
+    top: 0;
     position: absolute;
     pointer-events: none;
     z-index: 1;
