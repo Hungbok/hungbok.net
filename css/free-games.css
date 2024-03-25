@@ -379,6 +379,13 @@ section > h1 {
     display: none;
 }
 
+.filter-container {
+    background-color: var(--background-8);
+    margin: 50px 0px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
 .filter-content {
     display: flex;
     justify-content: center;
@@ -424,7 +431,7 @@ section > h1 {
 #dateFilterBtn:hover,
 .filterDataBtn:hover,
 .filterPlatformBtn:hover {
-    background-color: var(--background-8);
+    background-color: var(--background-6);
 }
 
 #dateFilterBtn.active,

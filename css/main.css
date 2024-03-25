@@ -741,6 +741,7 @@ details {
 .popup {
     cursor: pointer;
     border-radius: 20px;
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -749,7 +750,7 @@ details {
 }
 
 .popup:hover {
-    background-color: var(--background-8);
+    background-color: var(--background-6);
 }
 
 .popup-content {
