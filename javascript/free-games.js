@@ -13,7 +13,11 @@ let upcomingStart = 0;
 let upcomingLimit = 6;
 
 Promise.all([
-    fetch('//data.hungbok.net/data/free-games.json').then(response => response.json())
+    fetch('//data.hungbok.net/data/free-games.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/free-games/games.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/free-games/bundle.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/free-games/subscription.json').then(response => response.json()),
+    fetch('//data.hungbok.net/data/free-games/trials.json').then(response => response.json())
 ]).then(results => {
     data = results.flat();
     filteredData = [...data];
