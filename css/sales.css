@@ -419,6 +419,13 @@ section > h1 {
     display: none;
 }
 
+.filter-container {
+    background-color: var(--background-8);
+    margin: 50px 0px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
 .filter-content {
     display: flex;
     justify-content: space-between;
@@ -464,14 +471,14 @@ section > h1 {
 #dateFilterBtn:hover,
 .filterDataBtn:hover,
 .filterPlatformBtn:hover {
-    background-color: #222222;
+    background-color: var(--background-6);
 }
 
 #dateFilterBtn.active,
 .filterDataBtn.active,
 .filterPlatformBtn.active {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 #dataContainer .item.expired::before,
