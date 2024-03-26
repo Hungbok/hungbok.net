@@ -692,6 +692,7 @@
 }
 
 .more-info-tabs .more-info-tab-link.active {
+  background: #ededed;
   color: #222;
 }
 
