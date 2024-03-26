@@ -923,6 +923,13 @@ div.system-requirements-title {
     width: 100%;
 }
 
+.metacritic-reviews {
+    background-color: var(--background-8);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
 .metacritic {
     display: inline-flex;
     justify-content: space-evenly;
@@ -975,9 +982,9 @@ div.system-requirements-title {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    background-color: #2e2e2e;
-    border-radius: 10px;
-    padding: 10px;
+    background-color: var(--background-8);
+    border-radius: 20px;
+    padding: 20px;
     margin: 5px;
     align-items: center;
     justify-content: center;
@@ -990,6 +997,12 @@ div.system-requirements-title {
     display: flex;
 }
 
+.opencritic-title {
+    width: 100%;
+    justify-content: center;
+}
+
+.metacritic-reviews div img,
 .opencritic div img {
     width: 40px;
     height: 40px;
@@ -1390,6 +1403,7 @@ div.system-requirements-title {
     background-size: unset;
     padding: 30px;
     background-color: var(--background-8);
+    color: var(--text-4);
     border-radius: 20px;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
@@ -1441,6 +1455,7 @@ div.system-requirements-title {
     height: auto;
     grid-template-columns: 50% 50%;
     justify-items: center;
+    color: var(--text-6);
 }
 
 .more-info .info-right .info-language p,
