@@ -698,7 +698,7 @@
 .section-info-item-title {
     color: var(--text-2);
     font-weight: bold;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
     text-align: left;
     font-size: 24px;
 }
