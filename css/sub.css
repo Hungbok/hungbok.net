@@ -163,7 +163,7 @@ a.section-title {
 
 a.section-title:hover {
     filter: brightness(1);
-    background-color: var(--background-8);
+    background-color: var(--background-10-opacity-50);
 }
 
 div.section-title {
@@ -185,6 +185,10 @@ h1.section-title {
     text-align: center;
 }
 
+h2.icon-container {
+    text-align: left;
+}
+
 h2.icon-container.section-title {
     text-align: center;
     background-color: var(--background-6);
@@ -203,6 +207,7 @@ h2.section-title > .image {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin: 0 5px;
 }
 
 .icon-content .external-link-text .external-link-button {
