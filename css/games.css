@@ -983,11 +983,8 @@ div.system-requirements-title {
     margin: 10px;
 }
 
-.metacritic > div.icon-none {
-    display: none;
-}
-
-.metacritic.icon-none {
+.metacritic > div.icon-none,
+.metacritic > p.metacritic-none {
     display: none;
 }
 
