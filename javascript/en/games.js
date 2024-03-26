@@ -1504,11 +1504,11 @@ $(document).ready(function(){
       }
     });
   
-    $('ul.tabs li').click(function(){
+    $('.more-info-tabs .more-info-tab-link').click(function(){
       var tab_id = $(this).attr('data-tab');
   
-      $('ul.tabs li').removeClass('current');
-      $('.tab-content').removeClass('current');
+      $('.more-info-tabs .more-info-tab-link').removeClass('current');
+      $('.more-info-tab-content').removeClass('current');
   
       $(this).addClass('current');
       $("#"+tab_id).addClass('current');
