@@ -851,11 +851,28 @@ div.system-requirements-title {
     display: flex;
     justify-items: start;
     flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+.more-info-item-text.release:after {
+    content: "";
+    width: calc(100% - 40px);
+    height: 1px;
+    background-color: var(--text-4);
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translate(0px, -50%);
 }
 
 .more-info-item-text.release > div {
     width: calc(50% - 20px);
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .more-info-item-text.release > .release-type,
@@ -867,10 +884,16 @@ div.system-requirements-title {
 .more-info .release p {
     margin: 0;
     text-wrap: balance;
+    display: inline-block;
+    z-index: 1;
 }
 
 .more-info .release p:first-child {
     font-weight: bold;
+}
+
+.more-info .release p:nth-child(2) {
+    padding: 5px 10px;
 }
 
 .more-info .release .release-platform {
