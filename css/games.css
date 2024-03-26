@@ -627,8 +627,6 @@
 }
 
 .more-info {
-    overflow-x: hidden;
-    overflow-y: scroll;
     max-height: calc(100vh - 380px);
     display: flex;
     flex-direction: row;
