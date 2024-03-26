@@ -141,6 +141,10 @@
     margin: 5px 0;
 }
 
+h2.section-title {
+    text-align: left;
+}
+
 .section-title .image {
     display: inline-block;
     width: 20px;
@@ -183,10 +187,6 @@ h1.section-title {
     padding: 10px 0;
     border-radius: 20px;
     text-align: center;
-}
-
-h2.icon-container {
-    text-align: left;
 }
 
 h2.icon-container.section-title {

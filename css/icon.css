@@ -1166,11 +1166,15 @@
 }
 
 .icon-vr {
-    background: url(//media.hungbok.net/image/icon/headset-vr.svg) no-repeat center / 30px 30px, #333333;
+    background: url(//media.hungbok.net/image/icon/goggles.svg) no-repeat center / 30px 30px, #333333;
+}
+
+.icon-console {
+    background: url(//media.hungbok.net/image/icon/gamepad.svg) no-repeat center / 30px 30px, #333333;
 }
 
 .icon-arcade {
-    background: url(//media.hungbok.net/image/icon/joystick.svg) no-repeat center / 30px 30px, #333333;
+    background: url(//media.hungbok.net/image/icon/arcade.svg) no-repeat center / 30px 30px, #333333;
 }
 
 .icon-playstation {
