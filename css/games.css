@@ -663,7 +663,7 @@
 .more-info-item-title {
     color: var(--text-2);
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 10px;
     text-align: left;
     font-size: 24px;
 }
@@ -676,9 +676,10 @@
 .system-requirements {
     color: var(--text-4);
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-block;
     text-align: left;
+    width: 50%;
+    font-size: 16px;
 }
 
 .system-requirements > div {
@@ -695,7 +696,7 @@
     color: var(--text-6);
 }
 
-.system-requirements-title {
+div.system-requirements-title {
     width: calc(50% - 20px);
     display: inline-block;
     background-color: var(--text-3);
@@ -719,7 +720,7 @@
     content: "";
     width: calc(100% - 40px);
     height: 1px;
-    background-color: var(--text-4);
+    background-color: var(--background-6);
     position: absolute;
     left: 20px;
     bottom: 1px;
@@ -748,6 +749,9 @@
 .more-info-tab-content {
     display: none;
     padding: 20px;
+    margin: 0;
+    font-size: 0;
+    text-align: left;
     background-color: var(--background-8);
     border-radius: 0 0 20px 20px;
 }
@@ -1378,6 +1382,9 @@
     vertical-align: middle;
     text-wrap: unset;
     background-size: unset;
+    padding: 20px;
+    background-color: var(--background-8);
+    border-radius: 20px;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -o-transition: all 1s;
