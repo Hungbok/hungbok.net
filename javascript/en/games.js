@@ -1503,7 +1503,9 @@ $(document).ready(function(){
         $this.addClass('open');
       }
     });
-  
+});
+
+$(document).ready(function(){
     $('.more-info-tab-link').click(function(){
       var tabId = $(this).attr('data-tab');
   
