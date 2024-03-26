@@ -851,7 +851,6 @@ div.system-requirements-title {
     display: flex;
     justify-items: start;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .more-info-item-text.release > div {
