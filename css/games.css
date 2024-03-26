@@ -1357,8 +1357,8 @@ div.system-requirements-title {
 .age {
     font-size: 0;
     display: flex;
-    gap: 5px;
     flex-wrap: wrap;
+    justify-content: center;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -1366,6 +1366,11 @@ div.system-requirements-title {
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
     user-select: none;
+}
+
+.more-info-item-text.platform {
+    gap: 5px;
+    justify-content: flex-start;
 }
 
 .more-info .age div {
