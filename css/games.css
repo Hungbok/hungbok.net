@@ -951,7 +951,10 @@ div.system-requirements-title {
     display: flex;
     flex-wrap: wrap;
     height: calc(100% - 20px);
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
 }
 
 .metacritic-title {
@@ -960,17 +963,24 @@ div.system-requirements-title {
 }
 
 .metacritic {
-    display: inline-flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    margin: 5px;
+    background-color: var(--background-6);
     border-radius: 10px;
-    min-width: 30px;
-    width: calc(25% - 25px);
-    background-position: 10px center, center, center, center, center;
-    padding-left: 50px;
-    font-weight: bold;
+    min-width: 240px;
+}
+
+.metacritic > div {
+    display: inline-flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 10px;
 }
 
 .metacritic.icon-none {
@@ -978,15 +988,15 @@ div.system-requirements-title {
 }
 
 .metacritic p {
-    margin: 0;
+    margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    line-height: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .metacritic-g {
