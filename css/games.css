@@ -678,12 +678,12 @@
     flex-wrap: wrap;
 }
 
-ul.tabs{
+.more-info-tabs {
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-ul.tabs li{
+.more-info-tabs .more-info-tab-link {
   background: none;
   color: #222;
   display: inline-block;
@@ -691,18 +691,18 @@ ul.tabs li{
   cursor: pointer;
 }
 
-ul.tabs li.current{
+.more-info-tabs .more-info-tab-link.current {
   background: #ededed;
   color: #222;
 }
 
-.tab-content{
+.more-info-tab-content {
   display: none;
   background: #ededed;
   padding: 15px;
 }
 
-.tab-content.current{
+.more-info-tab-content.current {
   display: inherit;
 }
 
