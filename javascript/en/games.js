@@ -1504,14 +1504,14 @@ $(document).ready(function(){
       }
     });
   
-    $('.more-info-tabs .more-info-tab-link').click(function(){
-      var tab_id = $(this).attr('data-tab');
+    $('ul.more-info-tabs li').click(function(){
+      var tabId = $(this).attr('data-tab');
   
-      $('.more-info-tabs .more-info-tab-link').removeClass('current');
-      $('.more-info-tab-content').removeClass('current');
+      $('ul.more-info-tabs li').removeClass('active');
+      $('.more-info-tab-content').removeClass('active');
   
-      $(this).addClass('current');
-      $("#"+tab_id).addClass('current');
+      $(this).addClass('active');
+      $("#" + tabId).addClass('active');
     })
 });
 

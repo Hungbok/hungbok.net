@@ -691,18 +691,16 @@
   cursor: pointer;
 }
 
-.more-info-tabs .more-info-tab-link.current {
-  background: #ededed;
+.more-info-tabs .more-info-tab-link.active {
   color: #222;
 }
 
 .more-info-tab-content {
   display: none;
-  background: #ededed;
   padding: 15px;
 }
 
-.more-info-tab-content.current {
+.more-info-tab-content.active {
   display: inherit;
 }
 
