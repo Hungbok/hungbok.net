@@ -1515,7 +1515,7 @@ function changeTab(evt, tabIndex) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
     }
-    document.getElementById("content" + tabIndex).style.display = "block";
+    document.getElementById("tab-content-" + tabIndex).style.display = "block";
     evt.currentTarget.className += " active-tab";
 }
 

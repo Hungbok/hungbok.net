@@ -678,12 +678,12 @@
     flex-wrap: wrap;
 }
 
-.tabs {
+.more-info-tabs {
     overflow: hidden;
     background-color: #f1f1f1;
 }
 
-.tab {
+.more-info-tab {
     background-color: inherit;
     float: left;
     border: none;
@@ -693,11 +693,11 @@
     transition: background-color 0.3s;
 }
 
-.tab:hover {
+.more-info-tab:hover {
     background-color: #ddd;
 }
 
-.tab-content {
+.more-info-tab-content {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
