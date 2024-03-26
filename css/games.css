@@ -928,6 +928,15 @@ div.system-requirements-title {
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100% - 20px);
+    justify-content: center;
+}
+
+.metacritic-title {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .metacritic {
@@ -939,7 +948,6 @@ div.system-requirements-title {
     border-radius: 10px;
     min-width: 30px;
     width: calc(25% - 25px);
-    height: 30px;
     background-position: 10px center, center, center, center, center;
     padding-left: 50px;
     font-weight: bold;
@@ -957,6 +965,8 @@ div.system-requirements-title {
     height: 20px;
     text-align: center;
     line-height: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .metacritic-g {
@@ -985,7 +995,6 @@ div.system-requirements-title {
     background-color: var(--background-8);
     border-radius: 20px;
     padding: 20px;
-    margin: 5px;
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -1004,7 +1013,6 @@ div.system-requirements-title {
 
 .metacritic-reviews div img,
 .opencritic div img {
-    width: 40px;
     height: 40px;
 }
 
