@@ -875,12 +875,29 @@ $(document).ready(function(){
                 '</p>'+
             '</div>');
 
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_first}/g, data[0].data_import_type_first);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_first}/g, data[0].data_import_first);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_second}/g, data[0].data_import_type_second);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_second}/g, data[0].data_import_second);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_third}/g, data[0].data_import_type_third);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_third}/g, data[0].data_import_third);
+            // 대체할 값들을 저장한 객체
+            var replaceimportment = {
+                '{type}': data[0].type,
+                '{title}': data[0]['en'].title,
+                '{data_import_type_first}': data[0].data_import_type_first,
+                '{data_import_first}': data[0].data_import_first,
+                '{data_import_type_second}': data[0].data_import_type_second,
+                '{data_import_second}': data[0].data_import_second,
+                '{data_import_type_third}': data[0].data_import_type_third,
+                '{data_import_third}': data[0].data_import_third,
+            };
+            
+            // body의 HTML 가져오기
+            var importContent = document.body.innerHTML;
+            
+            // 각 키에 대응하는 값을 대체
+            for (var key in replaceimportment) {
+              var re = new RegExp(key, 'g');
+              importContent = htmlContent.replace(re, replaceimportment[key]);
+            }
+            
+            // 변경된 HTML 설정
+            document.body.innerHTML = importContent;
             
             function loadJSON(file, callback) {
                 var xhr = new XMLHttpRequest();
