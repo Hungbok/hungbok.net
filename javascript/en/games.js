@@ -1505,17 +1505,22 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $('.more-info-tabs .more-info-tab-link').click(function(){
-      var tabId = $(this).attr('data-tab');
-  
-      $('.more-info-tabs .more-info-tab-link').removeClass('active');
-      $('.more-info-tab-content').removeClass('active');
-  
-      $(this).addClass('active');
-      $("#" + tabId).addClass('active');
-    })
-});
+function changeTab(evt, tabIndex) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("more-info-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("more-info-tab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+    }
+    document.getElementById("content" + tabIndex).style.display = "block";
+    evt.currentTarget.className += " active-tab";
+}
+
+// 초기 탭 설정 (예: 첫 번째 탭 활성화)
+changeTab({currentTarget: document.getElementsByClassName("more-info-tab")[0]}, 0);
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
