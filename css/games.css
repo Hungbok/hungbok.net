@@ -663,9 +663,8 @@
 .more-info-item-title {
     color: var(--text-2);
     font-weight: bold;
-    margin: 0 0 10px;
+    margin: 0;
     text-align: left;
-    font-size: 24px;
 }
 
 .more-info-item-text {
@@ -683,7 +682,7 @@
 }
 
 .system-requirements > div {
-    width: calc(50% - 20px);
+    width: calc(100% - 20px);
     margin: 10px;
 }
 
@@ -696,8 +695,15 @@
     color: var(--text-6);
 }
 
+.section-info-item-title {
+    color: var(--text-2);
+    font-weight: bold;
+    margin: 0 0 10px;
+    text-align: left;
+    font-size: 24px;
+}
+
 div.system-requirements-title {
-    width: calc(50% - 20px);
     display: inline-block;
     background-color: var(--text-3);
     color: var(--background-8);
@@ -1382,7 +1388,7 @@ div.system-requirements-title {
     vertical-align: middle;
     text-wrap: unset;
     background-size: unset;
-    padding: 20px;
+    padding: 30px;
     background-color: var(--background-8);
     border-radius: 20px;
     -webkit-transition: all 1s;
