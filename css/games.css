@@ -1809,9 +1809,16 @@ div.opencritic-reviews {
     width: 20px;
     height: 15px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: -50%;
+    transform: translate(-50%, 0%);
+    bottom: 5px;
     pointer-events: none;
+    z-index: 12;
+}
+
+.external-link a.external-link-button {
+    background-size: 30px 30px, 80px 80px;
+    width: 50px;
+    height: 50px;
 }
 
 /* home */
