@@ -116,6 +116,16 @@
 
 /* icon page */
 
+#search {
+    width: calc(50% - 60px);
+    border: none;
+    padding: 20px 30px;
+    margin: 0;
+    color: var(--text-2);
+    background-color: var(--background-7);
+    border-radius: 20px;
+}
+
 .icon-section {
     text-align: left;
     margin-bottom: 40px;
@@ -125,6 +135,10 @@
     text-align: left;
     display: grid;
     grid-template-columns: 30% 70%;
+    background-color: var(--background-8);
+    padding: 10px 0;
+    border-radius: 20px;
+    margin: 5px 0;
 }
 
 .section-title .image {
@@ -165,6 +179,9 @@ h1.section-title {
     font-size: 32px;
     font-weight: bold;
     color: rgb(255, 255, 255);
+    background-color: var(--background-6);
+    padding: 10px 0;
+    border-radius: 20px;
 }
 
 h2.section-title > .image {
