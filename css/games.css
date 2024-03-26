@@ -571,7 +571,7 @@
     text-align: center;
     position: relative;
     cursor: pointer;
-    background-color: var(--background-8);
+    background-color: var(--background-10);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -581,7 +581,7 @@
 }
 
 .additional-link:hover {
-    background-color: var(--background-6);
+    background-color: var(--background-8);
 }
 
 .additional-link > img {
