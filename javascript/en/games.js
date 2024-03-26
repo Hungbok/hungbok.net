@@ -1506,10 +1506,10 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $('.more-info-tab-link').click(function(){
+    $('.more-info-tabs .more-info-tab-link').click(function(){
       var tabId = $(this).attr('data-tab');
   
-      $('.more-info-tab-link').removeClass('active');
+      $('.more-info-tabs .more-info-tab-link').removeClass('active');
       $('.more-info-tab-content').removeClass('active');
   
       $(this).addClass('active');
