@@ -674,38 +674,87 @@
 }
 
 .system-requirements {
+    color: var(--text-4);
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
+    text-align: left;
+}
+
+.system-requirements > div {
+    width: calc(50% - 20px);
+    margin: 10px;
+}
+
+.system-requirements > div > p {
+    margin: 0;
+    color: var(--text-4);
+}
+
+.system-requirements > div > p:first-child {
+    color: var(--text-6);
+}
+
+.system-requirements-title {
+    width: calc(50% - 20px);
+    display: inline-block;
+    background-color: var(--text-3);
+    color: var(--background-8);
+    border-radius: 5px;
+    padding: 2.5px 5px;
+    vertical-align: text-bottom;
+    font-weight: bold;
+    margin: 10px 5px;
 }
 
 .more-info-tabs {
     overflow: hidden;
-    background-color: #f1f1f1;
+    padding: 20px 20px 0;
+    position: relative;
+    background-color: var(--background-8);
+    border-radius: 20px 20px 0 0;
+}
+
+.more-info-tabs:after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--text-4);
+    position: absolute;
+    left: 0;
+    bottom: 1px;
 }
 
 .more-info-tab {
-    background-color: inherit;
     float: left;
-    border: none;
+    border-bottom: transparent 3px solid;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    transition: background-color 0.3s;
+    padding: 10px 20px;
+    color: var(--text-6);
+    z-index: 1;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .more-info-tab:hover {
-    background-color: #ddd;
+    color: var(--text-4);
 }
 
 .more-info-tab-content {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+    padding: 20px;
+    background-color: var(--background-8);
+    border-radius: 0 0 20px 20px;
 }
 
 .active-tab {
-    background-color: #ccc;
+    color: var(--text-2);
+    border-bottom: var(--text-2) 3px solid;
 }
 
 .more-info-item-text.release > div::before,
