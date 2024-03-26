@@ -517,7 +517,7 @@
     color: var(--text-5);
     padding: 5px 10px;
     border-radius: 20px;
-    min-height: 30px;
+    min-height: 20px;
     justify-content: center;
     align-items: center;
     -webkit-transition: all 0.5s;
@@ -1051,6 +1051,15 @@ div.system-requirements-title {
 .opencritic-title {
     width: 100%;
     justify-content: center;
+}
+
+.opencritic-reviews {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--background-6);
 }
 
 .metacritic-reviews div img,
