@@ -661,7 +661,7 @@
 .more-info-item-title {
     color: var(--text-2);
     font-weight: bold;
-    margin: 0;
+    margin: 0px 0px 5px;
     text-align: left;
 }
 
@@ -1378,7 +1378,8 @@ div.system-requirements-title {
     user-select: none;
 }
 
-.more-info-item-text.platform {
+.more-info-item-text.platform,
+.more-info-item-text.age {
     gap: 5px;
     justify-content: flex-start;
 }
