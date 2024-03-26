@@ -1053,7 +1053,7 @@ div.system-requirements-title {
     justify-content: center;
 }
 
-.opencritic-reviews {
+div.opencritic-reviews {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
