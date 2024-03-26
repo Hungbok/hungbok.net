@@ -30,168 +30,168 @@ $(document).ready(function(){
         $.getJSON(`//data.hungbok.net/data/games/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
 
-            $("#page-title").text(data['en'].title + ' | HungBok');
-            $('body').addClass('body-' + data.type + ' ' + data['en'].lang);
-            $('#report-title').attr('value', 'https://www.hungbok.com' + data.page);
+            $("#page-title").text(data[0]['en'].title + ' | HungBok');
+            $('body').addClass('body-' + data[0].type + ' ' + data[0]['en'].lang);
+            $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
 
             // 대체할 값들을 저장한 객체
             var replacement = {
-                '{type}': data.type,
-                '{title}': data['en'].title,
-                '{developer}': data.developer,
-                '{info_developer}': data['en'].info_developer,
-                '{publisher}': data.publisher,
-                '{info_publisher}': data['en'].info_publisher,
-                '{platform}': data.platform,
-                '{release}': data['en'].release,
-                '{genre}': data['en'].genre,
-                '{mode}': data['en'].mode,
-                '{franchise}': data['en'].franchise,
+                '{type}': data[0].type,
+                '{title}': data[0]['en'].title,
+                '{developer}': data[0].developer,
+                '{info_developer}': data[0]['en'].info_developer,
+                '{publisher}': data[0].publisher,
+                '{info_publisher}': data[0]['en'].info_publisher,
+                '{platform}': data[0].platform,
+                '{release}': data[0]['en'].release,
+                '{genre}': data[0]['en'].genre,
+                '{mode}': data[0]['en'].mode,
+                '{franchise}': data[0]['en'].franchise,
   
-                '{pc}': data.pc,
-                '{console}': data.console,
-                '{mobile}': data.mobile,
-                '{esd}': data.esd,
-                '{release_date}': data['en'].release_date,
-                '{engine}': data['en'].engine,
-                '{age}': data.age,
-                '{esrb}': data.esrb,
-                '{pegi}': data.pegi,
-                '{iarc}': data.iarc,
-                '{cero}': data.cero,
-                '{grac}': data.grac,
-                '{usk}': data.usk,
-                '{acb}': data.acb,
-                '{gsrr}': data.gsrr,
-                '{rars}': data.rars,
-                '{classind}': data.classind,
-                '{appstoreage}': data.appstoreage,
+                '{pc}': data[0].pc,
+                '{console}': data[0].console,
+                '{mobile}': data[0].mobile,
+                '{esd}': data[0].esd,
+                '{release_date}': data[0]['en'].release_date,
+                '{engine}': data[0]['en'].engine,
+                '{age}': data[0].age,
+                '{esrb}': data[0].esrb,
+                '{pegi}': data[0].pegi,
+                '{iarc}': data[0].iarc,
+                '{cero}': data[0].cero,
+                '{grac}': data[0].grac,
+                '{usk}': data[0].usk,
+                '{acb}': data[0].acb,
+                '{gsrr}': data[0].gsrr,
+                '{rars}': data[0].rars,
+                '{classind}': data[0].classind,
+                '{appstoreage}': data[0].appstoreage,
   
-                '{en_audio}': data.en_audio,
-                '{en_text}': data.en_text,
-                '{id_audio}': data.id_audio,
-                '{id_text}': data.id_text,
-                '{ms_audio}': data.ms_audio,
-                '{ms_text}': data.ms_text,
-                '{cs_audio}': data.cs_audio,
-                '{cs_text}': data.cs_text,
-                '{da_audio}': data.da_audio,
-                '{da_text}': data.da_text,
-                '{de_audio}': data.de_audio,
-                '{de_text}': data.de_text,
-                '{es_audio}': data.es_audio,
-                '{es_text}': data.es_text,
-                '{fr_audio}': data.fr_audio,
-                '{fr_text}': data.fr_text,
-                '{es_mx_audio}': data.es_mx_audio,
-                '{es_mx_text}': data.es_mx_text,
-                '{it_audio}': data.it_audio,
-                '{it_text}': data.it_text,
-                '{hu_audio}': data.hu_audio,
-                '{hu_text}': data.hu_text,
-                '{nl_audio}': data.nl_audio,
-                '{nl_text}': data.nl_text,
-                '{no_audio}': data.no_audio,
-                '{no_text}': data.no_text,
-                '{pl_audio}': data.pl_audio,
-                '{pl_text}': data.pl_text,
-                '{pt_audio}': data.pt_audio,
-                '{pt_text}': data.pt_text,
-                '{ro_audio}': data.ro_audio,
-                '{ro_text}': data.ro_text,
-                '{fi_audio}': data.fi_audio,
-                '{fi_text}': data.fi_text,
-                '{sv_audio}': data.sv_audio,
-                '{sv_text}': data.sv_text,
-                '{vi_audio}': data.vi_audio,
-                '{vi_text}': data.vi_text,
-                '{tr_audio}': data.tr_audio,
-                '{tr_text}': data.tr_text,
-                '{bg_audio}': data.bg_audio,
-                '{bg_text}': data.bg_text,
-                '{ru_audio}': data.ru_audio,
-                '{ru_text}': data.ru_text,
-                '{uk_audio}': data.uk_audio,
-                '{uk_text}': data.uk_text,
-                '{el_audio}': data.el_audio,
-                '{el_text}': data.el_text,
-                '{ar_audio}': data.ar_audio,
-                '{ar_text}': data.ar_text,
-                '{hi_audio}': data.hi_audio,
-                '{hi_text}': data.hi_text,
-                '{th_audio}': data.th_audio,
-                '{th_text}': data.th_text,
-                '{ja_audio}': data.ja_audio,
-                '{ja_text}': data.ja_text,
-                '{ko_audio}': data.ko_audio,
-                '{ko_text}': data.ko_text,
-                '{pt_br_audio}': data.pt_br_audio,
-                '{pt_br_text}': data.pt_br_text,
-                '{zh_cn_audio}': data.zh_cn_audio,
-                '{zh_cn_text}': data.zh_cn_text,
-                '{zh_tw_audio}': data.zh_tw_audio,
-                '{zh_tw_text}': data.zh_tw_text,
+                '{en_audio}': data[0].en_audio,
+                '{en_text}': data[0].en_text,
+                '{id_audio}': data[0].id_audio,
+                '{id_text}': data[0].id_text,
+                '{ms_audio}': data[0].ms_audio,
+                '{ms_text}': data[0].ms_text,
+                '{cs_audio}': data[0].cs_audio,
+                '{cs_text}': data[0].cs_text,
+                '{da_audio}': data[0].da_audio,
+                '{da_text}': data[0].da_text,
+                '{de_audio}': data[0].de_audio,
+                '{de_text}': data[0].de_text,
+                '{es_audio}': data[0].es_audio,
+                '{es_text}': data[0].es_text,
+                '{fr_audio}': data[0].fr_audio,
+                '{fr_text}': data[0].fr_text,
+                '{es_mx_audio}': data[0].es_mx_audio,
+                '{es_mx_text}': data[0].es_mx_text,
+                '{it_audio}': data[0].it_audio,
+                '{it_text}': data[0].it_text,
+                '{hu_audio}': data[0].hu_audio,
+                '{hu_text}': data[0].hu_text,
+                '{nl_audio}': data[0].nl_audio,
+                '{nl_text}': data[0].nl_text,
+                '{no_audio}': data[0].no_audio,
+                '{no_text}': data[0].no_text,
+                '{pl_audio}': data[0].pl_audio,
+                '{pl_text}': data[0].pl_text,
+                '{pt_audio}': data[0].pt_audio,
+                '{pt_text}': data[0].pt_text,
+                '{ro_audio}': data[0].ro_audio,
+                '{ro_text}': data[0].ro_text,
+                '{fi_audio}': data[0].fi_audio,
+                '{fi_text}': data[0].fi_text,
+                '{sv_audio}': data[0].sv_audio,
+                '{sv_text}': data[0].sv_text,
+                '{vi_audio}': data[0].vi_audio,
+                '{vi_text}': data[0].vi_text,
+                '{tr_audio}': data[0].tr_audio,
+                '{tr_text}': data[0].tr_text,
+                '{bg_audio}': data[0].bg_audio,
+                '{bg_text}': data[0].bg_text,
+                '{ru_audio}': data[0].ru_audio,
+                '{ru_text}': data[0].ru_text,
+                '{uk_audio}': data[0].uk_audio,
+                '{uk_text}': data[0].uk_text,
+                '{el_audio}': data[0].el_audio,
+                '{el_text}': data[0].el_text,
+                '{ar_audio}': data[0].ar_audio,
+                '{ar_text}': data[0].ar_text,
+                '{hi_audio}': data[0].hi_audio,
+                '{hi_text}': data[0].hi_text,
+                '{th_audio}': data[0].th_audio,
+                '{th_text}': data[0].th_text,
+                '{ja_audio}': data[0].ja_audio,
+                '{ja_text}': data[0].ja_text,
+                '{ko_audio}': data[0].ko_audio,
+                '{ko_text}': data[0].ko_text,
+                '{pt_br_audio}': data[0].pt_br_audio,
+                '{pt_br_text}': data[0].pt_br_text,
+                '{zh_cn_audio}': data[0].zh_cn_audio,
+                '{zh_cn_text}': data[0].zh_cn_text,
+                '{zh_tw_audio}': data[0].zh_tw_audio,
+                '{zh_tw_text}': data[0].zh_tw_text,
   
-                '{social}': data.social,
-                '{store}': data.store,
+                '{social}': data[0].social,
+                '{store}': data[0].store,
   
-                '{attention}': data.attention,
-                '{plot}': data['en'].plot,
-                '{source}': data['en'].source,
-                '{update}': data['en'].update,
+                '{attention}': data[0].attention,
+                '{plot}': data[0]['en'].plot,
+                '{source}': data[0]['en'].source,
+                '{update}': data[0]['en'].update,
   
-                '{url}': data.url,
-                '{share}': data.share,
-                '{page}': data.page,
-                '{logo}': data.logo,
-                '{capsule}': data.capsule,
-                '{poster}': data.poster,
-                '{thumbnail}': data.thumbnail,
-                '{franchise1}': data.franchise1,
-                '{franchise2}': data.franchise2,
-                '{franchise3}': data.franchise3,
-                '{franchise4}': data.franchise4,
-                '{franchise5}': data.franchise5,
+                '{url}': data[0].url,
+                '{share}': data[0].share,
+                '{page}': data[0].page,
+                '{logo}': data[0].logo,
+                '{capsule}': data[0].capsule,
+                '{poster}': data[0].poster,
+                '{thumbnail}': data[0].thumbnail,
+                '{franchise1}': data[0].franchise1,
+                '{franchise2}': data[0].franchise2,
+                '{franchise3}': data[0].franchise3,
+                '{franchise4}': data[0].franchise4,
+                '{franchise5}': data[0].franchise5,
 
-                '{metacritic1}': data.metacritic1,
-                '{metacritic2}': data.metacritic2,
-                '{metacritic3}': data.metacritic3,
-                '{metacritic4}': data.metacritic4,
-                '{metacritic5}': data.metacritic5,
-                '{metacritic6}': data.metacritic6,
-                '{metacritic7}': data.metacritic7,
-                '{metacritic8}': data.metacritic8,
-                '{metacritic9}': data.metacritic9,
-                '{metacritic10}': data.metacritic10,
-                '{metacritic11}': data.metacritic11,
-                '{metacritic12}': data.metacritic12,
-                '{metacritic_class1}': data.metacritic_class1,
-                '{metacritic_class2}': data.metacritic_class2,
-                '{metacritic_class3}': data.metacritic_class3,
-                '{metacritic_class4}': data.metacritic_class4,
-                '{metacritic_class5}': data.metacritic_class5,
-                '{metacritic_class6}': data.metacritic_class6,
-                '{metacritic_class7}': data.metacritic_class7,
-                '{metacritic_class8}': data.metacritic_class8,
-                '{metacritic_class9}': data.metacritic_class9,
-                '{metacritic_class10}': data.metacritic_class10,
-                '{metacritic_class11}': data.metacritic_class11,
-                '{metacritic_class12}': data.metacritic_class12,
-                '{opencritic_rating}': data.opencritic_rating,
-                '{top_critic_average}': data.top_critic_average,
-                '{critics_recommend}': data.critics_recommend,
-                '{minimum_os}': data.minimum_os,
-                '{minimum_processor}': data.minimum_processor,
-                '{minimum_memory}': data.minimum_memory,
-                '{minimum_graphics}': data.minimum_graphics,
-                '{minimum_storage}': data.minimum_storage,
-                '{minimum_other}': data.minimum_other,
-                '{recommended_os}': data.recommended_os,
-                '{recommended_processor}': data.recommended_processor,
-                '{recommended_memory}': data.recommended_memory,
-                '{recommended_graphics}': data.recommended_graphics,
-                '{recommended_storage}': data.recommended_storage,
-                '{recommended_other}': data.recommended_other,
+                '{metacritic1}': data[0].metacritic1,
+                '{metacritic2}': data[0].metacritic2,
+                '{metacritic3}': data[0].metacritic3,
+                '{metacritic4}': data[0].metacritic4,
+                '{metacritic5}': data[0].metacritic5,
+                '{metacritic6}': data[0].metacritic6,
+                '{metacritic7}': data[0].metacritic7,
+                '{metacritic8}': data[0].metacritic8,
+                '{metacritic9}': data[0].metacritic9,
+                '{metacritic10}': data[0].metacritic10,
+                '{metacritic11}': data[0].metacritic11,
+                '{metacritic12}': data[0].metacritic12,
+                '{metacritic_class1}': data[0].metacritic_class1,
+                '{metacritic_class2}': data[0].metacritic_class2,
+                '{metacritic_class3}': data[0].metacritic_class3,
+                '{metacritic_class4}': data[0].metacritic_class4,
+                '{metacritic_class5}': data[0].metacritic_class5,
+                '{metacritic_class6}': data[0].metacritic_class6,
+                '{metacritic_class7}': data[0].metacritic_class7,
+                '{metacritic_class8}': data[0].metacritic_class8,
+                '{metacritic_class9}': data[0].metacritic_class9,
+                '{metacritic_class10}': data[0].metacritic_class10,
+                '{metacritic_class11}': data[0].metacritic_class11,
+                '{metacritic_class12}': data[0].metacritic_class12,
+                '{opencritic_rating}': data[0].opencritic_rating,
+                '{top_critic_average}': data[0].top_critic_average,
+                '{critics_recommend}': data[0].critics_recommend,
+                '{minimum_os}': data[0].minimum_os,
+                '{minimum_processor}': data[0].minimum_processor,
+                '{minimum_memory}': data[0].minimum_memory,
+                '{minimum_graphics}': data[0].minimum_graphics,
+                '{minimum_storage}': data[0].minimum_storage,
+                '{minimum_other}': data[0].minimum_other,
+                '{recommended_os}': data[0].recommended_os,
+                '{recommended_processor}': data[0].recommended_processor,
+                '{recommended_memory}': data[0].recommended_memory,
+                '{recommended_graphics}': data[0].recommended_graphics,
+                '{recommended_storage}': data[0].recommended_storage,
+                '{recommended_other}': data[0].recommended_other,
             };
             
             // body의 HTML 가져오기
@@ -207,16 +207,16 @@ $(document).ready(function(){
             document.body.innerHTML = htmlContent;
 
             // 통합 const
-            const url = data.url;
+            const url = data[0].url;
     
             // 반복생성
 
-            var video_value = data.videocount; // video 수
+            var video_value = data[0].videocount; // video 수
             var videoData = [];
             for (var i = 1; i <= video_value; i++) {
-                var videoId = data['videoid' + i];
-                var videoTitle = data['en']['videotitle' + i];
-                var videoServer = data['videoserver' + i];
+                var videoId = data[0]['videoid' + i];
+                var videoTitle = data[0]['en']['videotitle' + i];
+                var videoServer = data[0]['videoserver' + i];
                 videoData.push({
                     id: videoId,
                     title: videoTitle,
@@ -238,7 +238,7 @@ $(document).ready(function(){
                 '</div>');
             });
     
-            var image_value = data.imagecount; // image 수
+            var image_value = data[0].imagecount; // image 수
             var imageData = [];
             for (var i = 1; i <= image_value; i++) {
                 var imageImage = 'image_' + i;
@@ -260,11 +260,11 @@ $(document).ready(function(){
                 '</div>');
             });
 
-            var description_value = data['en'].descriptioncount; // description 수
+            var description_value = data[0]['en'].descriptioncount; // description 수
             var descriptionData = [];
             for (var i = 1; i <= description_value; i++) {
-                var desClass = data['en']['pclass' + i];
-                var desText = data['en']['ptext' + i];
+                var desClass = data[0]['en']['pclass' + i];
+                var desText = data[0]['en']['ptext' + i];
                 descriptionData.push({
                     class: desClass,
                     text: desText,
@@ -278,42 +278,42 @@ $(document).ready(function(){
             // 틀 생성
 
             // 소셜 const
-            const websiteurl = data.website;
-            const facebookurl = data.facebook;
-            const instagramurl = data.instagram;
-            const threadsurl = data.threads;
-            const twitterurl = data.twitter;
-            const waibourl = data.waibo;
-            const mastodonurl = data.mastodon;
-            const discordurl = data.discord;
-            const vkurl = data.vk;
-            const tumblrurl = data.tumblr;
-            const navercafeurl = data.navercafe;
-            const youtubeurl = data.youtube;
-            const twitchurl = data.twitch;
-            const tiktokurl = data.tiktok;
-            const douyinurl = data.douyin;
-            const niconicodougaurl = data.niconicodouga;
-            const bilibiliurl = data.bilibili;
-            const kakaotalkurl = data.kakaotalk;
-            const lineurl = data.line;
-            const whatsappurl = data.whatsapp;
-            const linkedinurl = data.linkedin;
-            const wikipediaurl = data.wikipedia;
-            const wikipediaenurl = data.wikipediaen;
-            const wikipediajaurl = data.wikipediaja;
-            const fandomurl = data.fandom;
-            const namuwikiurl = data.namuwiki;
-            const niconicodaihyakkaurl = data.niconicodaihyakka;
-            const pixivhyakkajitenurl = data.pixivhyakkajiten;
-            const baidubaikeurl = data.baidubaike;
-            const kickurl = data.kick;
-            const kakaostoryurl = data.kakaostory;
-            const telegramurl = data.telegram;
-            const snapchaturl = data.snapchat;
-            const wechaturl = data.wechat;
-            const qqurl = data.qq;
-            const redditurl = data.reddit;
+            const websiteurl = data[0].website;
+            const facebookurl = data[0].facebook;
+            const instagramurl = data[0].instagram;
+            const threadsurl = data[0].threads;
+            const twitterurl = data[0].twitter;
+            const waibourl = data[0].waibo;
+            const mastodonurl = data[0].mastodon;
+            const discordurl = data[0].discord;
+            const vkurl = data[0].vk;
+            const tumblrurl = data[0].tumblr;
+            const navercafeurl = data[0].navercafe;
+            const youtubeurl = data[0].youtube;
+            const twitchurl = data[0].twitch;
+            const tiktokurl = data[0].tiktok;
+            const douyinurl = data[0].douyin;
+            const niconicodougaurl = data[0].niconicodouga;
+            const bilibiliurl = data[0].bilibili;
+            const kakaotalkurl = data[0].kakaotalk;
+            const lineurl = data[0].line;
+            const whatsappurl = data[0].whatsapp;
+            const linkedinurl = data[0].linkedin;
+            const wikipediaurl = data[0].wikipedia;
+            const wikipediaenurl = data[0].wikipediaen;
+            const wikipediajaurl = data[0].wikipediaja;
+            const fandomurl = data[0].fandom;
+            const namuwikiurl = data[0].namuwiki;
+            const niconicodaihyakkaurl = data[0].niconicodaihyakka;
+            const pixivhyakkajitenurl = data[0].pixivhyakkajiten;
+            const baidubaikeurl = data[0].baidubaike;
+            const kickurl = data[0].kick;
+            const kakaostoryurl = data[0].kakaostory;
+            const telegramurl = data[0].telegram;
+            const snapchaturl = data[0].snapchat;
+            const wechaturl = data[0].wechat;
+            const qqurl = data[0].qq;
+            const redditurl = data[0].reddit;
 
             // 소셜 링크
 
@@ -498,24 +498,24 @@ $(document).ready(function(){
             '</div>');
 
             // ESD const
-            const steamurl = data.steam;
-            const epicgamesstoreurl = data.epicgamesstore;
-            const gogcomurl = data.gog;
-            const eaappurl = data.ea;
-            const ubisoftconnecturl = data.ubisoft;
-            const rockstargameslauncherurl = data.rockstargames;
-            const stoveurl = data.stove;
-            const metastoreurl = data.metastore;
-            const googleplayurl = data.googleplay;
-            const appstoreurl = data.appstore;
-            const galaxystoreurl = data.galaxystore;
-            const microsoftstoreurl = data.msstore;
-            const dmmgamesurl = data.dmm;
-            const dlsiteurl = data.dlsite;
-            const amazonlunaurl = data.amazonluna;
-            const geforcenowurl = data.geforcenow;
-            const xboxcloudgamingurl = data.xboxcloudgaming;
-            const stadiaurl = data.stadia;
+            const steamurl = data[0].steam;
+            const epicgamesstoreurl = data[0].epicgamesstore;
+            const gogcomurl = data[0].gog;
+            const eaappurl = data[0].ea;
+            const ubisoftconnecturl = data[0].ubisoft;
+            const rockstargameslauncherurl = data[0].rockstargames;
+            const stoveurl = data[0].stove;
+            const metastoreurl = data[0].metastore;
+            const googleplayurl = data[0].googleplay;
+            const appstoreurl = data[0].appstore;
+            const galaxystoreurl = data[0].galaxystore;
+            const microsoftstoreurl = data[0].msstore;
+            const dmmgamesurl = data[0].dmm;
+            const dlsiteurl = data[0].dlsite;
+            const amazonlunaurl = data[0].amazonluna;
+            const geforcenowurl = data[0].geforcenow;
+            const xboxcloudgamingurl = data[0].xboxcloudgaming;
+            const stadiaurl = data[0].stadia;
 
             // ESD 링크
             $(".steam").append('<div class="external-link" ttt="Steam">'+
@@ -543,11 +543,11 @@ $(document).ready(function(){
             '</div>');
 
             // battle.net
-            const battleneturl = data.battlenet;
-            const battlenetusurl = data.battlenetus;
-            const battleneteuurl = data.battleneteu;
-            const battlenetkrurl = data.battlenetkr;
-            const battlenettwurl = data.battlenettw;
+            const battleneturl = data[0].battlenet;
+            const battlenetusurl = data[0].battlenetus;
+            const battleneteuurl = data[0].battleneteu;
+            const battlenetkrurl = data[0].battlenetkr;
+            const battlenettwurl = data[0].battlenettw;
             $(".battlenet").append('<div class="external-link" ttt="Battle.net">'+
                 '<a class="external-link-button icon-battlenet" href="https://shop.battle.net/product/' + battleneturl + '" target="_blank"></a>'+
             '</div>');
@@ -580,9 +580,9 @@ $(document).ready(function(){
             '</div>');
 
             // xbox store
-            const xboxgamesstoreurl = data.xboxstore;
-            const xboxgamesstorexbourl = data.xboxstorexbo;
-            const xboxgamesstorexsxurl = data.xboxstorexsx;
+            const xboxgamesstoreurl = data[0].xboxstore;
+            const xboxgamesstorexbourl = data[0].xboxstorexbo;
+            const xboxgamesstorexsxurl = data[0].xboxstorexsx;
             $(".xboxstore").append('<div class="external-link" ttt="Xbox Store">'+
                 '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstoreurl + '" target="_blank"></a>'+
             '</div>');
@@ -595,41 +595,41 @@ $(document).ready(function(){
             //
 
             // playstation store
-            const playstationstoreurl = data.psstore;
-            const playstationstoreps4url = data.psstoreps4;
-            const playstationstoreps5url = data.psstoreps5;
-            const playstationstorejpurl = data.psstorejp;
-            const playstationstorenaurl = data.psstorena;
-            const playstationstoreeuurl = data.psstoreeu;
-            const playstationstoreusurl = data.psstoreus;
-            const playstationstorecaurl = data.psstoreca;
-            const playstationstoremxurl = data.psstoremx;
-            const playstationstoreukurl = data.psstoreuk;
-            const playstationstorefrurl = data.psstorefr;
-            const playstationstoredeurl = data.psstorede;
-            const playstationstoreiturl = data.psstoreit;
-            const playstationstorenlurl = data.psstorenl;
-            const playstationstorebeurl = data.psstorebe;
-            const playstationstoreplurl = data.psstorepl;
-            const playstationstoreczurl = data.psstorecz;
-            const playstationstoreesurl = data.psstorees;
-            const playstationstorepturl = data.psstorept;
-            const playstationstorekrurl = data.psstorekr;
-            const playstationstorehkurl = data.psstorehk;
-            const playstationstoretwurl = data.psstoretw;
-            const playstationstoreauurl = data.psstoreau;
-            const playstationstorenzurl = data.psstorenz;
-            const playstationstorebrurl = data.psstorebr;
-            const playstationstorearurl = data.psstorear;
-            const playstationstorezaurl = data.psstoreza;
-            const playstationstoreuscamxurl = data.psstoreuscamx;
-            const playstationstoreukfrdeurl = data.psstoreukfrde;
-            const playstationstorekrhktwurl = data.psstorekrhktw;
-            const playstationstorehktwurl = data.psstorehktw;
-            const playstationstoreaunzurl = data.psstoreaunz;
-            const playstationstorebrarurl = data.psstorebrar;
-            const playstationstorenaeuurl = data.psstorenaeu;
-            const playstationstorenajpurl = data.psstorenajp;
+            const playstationstoreurl = data[0].psstore;
+            const playstationstoreps4url = data[0].psstoreps4;
+            const playstationstoreps5url = data[0].psstoreps5;
+            const playstationstorejpurl = data[0].psstorejp;
+            const playstationstorenaurl = data[0].psstorena;
+            const playstationstoreeuurl = data[0].psstoreeu;
+            const playstationstoreusurl = data[0].psstoreus;
+            const playstationstorecaurl = data[0].psstoreca;
+            const playstationstoremxurl = data[0].psstoremx;
+            const playstationstoreukurl = data[0].psstoreuk;
+            const playstationstorefrurl = data[0].psstorefr;
+            const playstationstoredeurl = data[0].psstorede;
+            const playstationstoreiturl = data[0].psstoreit;
+            const playstationstorenlurl = data[0].psstorenl;
+            const playstationstorebeurl = data[0].psstorebe;
+            const playstationstoreplurl = data[0].psstorepl;
+            const playstationstoreczurl = data[0].psstorecz;
+            const playstationstoreesurl = data[0].psstorees;
+            const playstationstorepturl = data[0].psstorept;
+            const playstationstorekrurl = data[0].psstorekr;
+            const playstationstorehkurl = data[0].psstorehk;
+            const playstationstoretwurl = data[0].psstoretw;
+            const playstationstoreauurl = data[0].psstoreau;
+            const playstationstorenzurl = data[0].psstorenz;
+            const playstationstorebrurl = data[0].psstorebr;
+            const playstationstorearurl = data[0].psstorear;
+            const playstationstorezaurl = data[0].psstoreza;
+            const playstationstoreuscamxurl = data[0].psstoreuscamx;
+            const playstationstoreukfrdeurl = data[0].psstoreukfrde;
+            const playstationstorekrhktwurl = data[0].psstorekrhktw;
+            const playstationstorehktwurl = data[0].psstorehktw;
+            const playstationstoreaunzurl = data[0].psstoreaunz;
+            const playstationstorebrarurl = data[0].psstorebrar;
+            const playstationstorenaeuurl = data[0].psstorenaeu;
+            const playstationstorenajpurl = data[0].psstorenajp;
             $(".psstore").append('<div class="external-link" ttt="PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreurl + '" target="_blank"></a>'+
             '</div>');
@@ -675,39 +675,39 @@ $(document).ready(function(){
             //
 
             // nintendo eshop
-            const nintendoeshopurl = data.eshop;
-            const nintendoeshopjpurl = data.eshopjp;
-            const nintendoeshopnaurl = data.eshopna;
-            const nintendoeshopeuurl = data.eshopeu;
-            const nintendoeshopusurl = data.eshopus;
-            const nintendoeshopcaurl = data.eshopca;
-            const nintendoeshopmxurl = data.eshopmx;
-            const nintendoeshopukurl = data.eshopuk;
-            const nintendoeshopfrurl = data.eshopfr;
-            const nintendoeshopdeurl = data.eshopde;
-            const nintendoeshopiturl = data.eshopit;
-            const nintendoeshopnlurl = data.eshopnl;
-            const nintendoeshopbeurl = data.eshopbe;
-            const nintendoeshopplurl = data.eshoppl;
-            const nintendoeshopczurl = data.eshopcz;
-            const nintendoeshopesurl = data.eshopes;
-            const nintendoeshoppturl = data.eshoppt;
-            const nintendoeshopkrurl = data.eshopkr;
-            const nintendoeshophkurl = data.eshophk;
-            const nintendoeshoptwurl = data.eshoptw;
-            const nintendoeshopauurl = data.eshopau;
-            const nintendoeshopnzurl = data.eshopnz;
-            const nintendoeshopbrurl = data.eshopbr;
-            const nintendoeshoparurl = data.eshopar;
-            const nintendoeshopzaurl = data.eshopza;
-            const nintendoeshopuscamxurl = data.eshopuscamx;
-            const nintendoeshopukfrdeurl = data.eshopukfrde;
-            const nintendoeshopkrhktwurl = data.eshopkrhktw;
-            const nintendoeshophktwurl = data.eshophktw;
-            const nintendoeshopaunzurl = data.eshopaunz;
-            const nintendoeshopbrarurl = data.eshopbrar;
-            const nintendoeshopnaeuurl = data.eshopnaeu;
-            const nintendoeshopnajpurl = data.eshopnajp;
+            const nintendoeshopurl = data[0].eshop;
+            const nintendoeshopjpurl = data[0].eshopjp;
+            const nintendoeshopnaurl = data[0].eshopna;
+            const nintendoeshopeuurl = data[0].eshopeu;
+            const nintendoeshopusurl = data[0].eshopus;
+            const nintendoeshopcaurl = data[0].eshopca;
+            const nintendoeshopmxurl = data[0].eshopmx;
+            const nintendoeshopukurl = data[0].eshopuk;
+            const nintendoeshopfrurl = data[0].eshopfr;
+            const nintendoeshopdeurl = data[0].eshopde;
+            const nintendoeshopiturl = data[0].eshopit;
+            const nintendoeshopnlurl = data[0].eshopnl;
+            const nintendoeshopbeurl = data[0].eshopbe;
+            const nintendoeshopplurl = data[0].eshoppl;
+            const nintendoeshopczurl = data[0].eshopcz;
+            const nintendoeshopesurl = data[0].eshopes;
+            const nintendoeshoppturl = data[0].eshoppt;
+            const nintendoeshopkrurl = data[0].eshopkr;
+            const nintendoeshophkurl = data[0].eshophk;
+            const nintendoeshoptwurl = data[0].eshoptw;
+            const nintendoeshopauurl = data[0].eshopau;
+            const nintendoeshopnzurl = data[0].eshopnz;
+            const nintendoeshopbrurl = data[0].eshopbr;
+            const nintendoeshoparurl = data[0].eshopar;
+            const nintendoeshopzaurl = data[0].eshopza;
+            const nintendoeshopuscamxurl = data[0].eshopuscamx;
+            const nintendoeshopukfrdeurl = data[0].eshopukfrde;
+            const nintendoeshopkrhktwurl = data[0].eshopkrhktw;
+            const nintendoeshophktwurl = data[0].eshophktw;
+            const nintendoeshopaunzurl = data[0].eshopaunz;
+            const nintendoeshopbrarurl = data[0].eshopbrar;
+            const nintendoeshopnaeuurl = data[0].eshopnaeu;
+            const nintendoeshopnajpurl = data[0].eshopnajp;
             $(".eshop").append('<div class="external-link" ttt="Nintendo eShop">'+
                 '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopurl + '" target="_blank"></a>'+
             '</div>');
@@ -799,12 +799,12 @@ $(document).ready(function(){
                 showMore.style.display = "block";
             }
 
-            const data_import_type_first = data.data_import_type_first;
-            const data_import_first = data.data_import_first;
-            const data_import_type_second = data.data_import_type_second;
-            const data_import_second = data.data_import_second;
-            const data_import_type_third = data.data_import_type_third;
-            const data_import_third = data.data_import_third;
+            const data_import_type_first = data[0].data_import_type_first;
+            const data_import_first = data[0].data_import_first;
+            const data_import_type_second = data[0].data_import_type_second;
+            const data_import_second = data[0].data_import_second;
+            const data_import_type_third = data[0].data_import_type_third;
+            const data_import_third = data[0].data_import_third;
 
             $(".dlc").append('<p class="description-title">This product is an Expansion Pack or Downloadable Content.</p>'+
             '<p>This content requires one of the following products to play.</p>'+
@@ -875,12 +875,12 @@ $(document).ready(function(){
                 '</p>'+
             '</div>');
 
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_first}/g, data.data_import_type_first);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_first}/g, data.data_import_first);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_second}/g, data.data_import_type_second);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_second}/g, data.data_import_second);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_third}/g, data.data_import_type_third);
-            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_third}/g, data.data_import_third);
+            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_first}/g, data[0].data_import_type_first);
+            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_first}/g, data[0].data_import_first);
+            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_second}/g, data[0].data_import_type_second);
+            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_second}/g, data[0].data_import_second);
+            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_type_third}/g, data[0].data_import_type_third);
+            document.body.innerHTML = document.body.innerHTML.replace(/{data_import_third}/g, data[0].data_import_third);
             
             function loadJSON(file, callback) {
                 var xhr = new XMLHttpRequest();
@@ -1474,7 +1474,7 @@ function showError(image) {
         .then(data => {
             // 'title'값을 가져와서 div에 설정
             var div = document.createElement('div');
-            div.innerHTML = data['en'].title;
+            div.innerHTML = data[0]['en'].title;
 
             // 기존 이미지 대신 div 삽입
             image.parentNode.insertBefore(div, image);
