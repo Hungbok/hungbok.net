@@ -874,6 +874,15 @@ $(document).ready(function(){
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
             '</div>');
+
+            document.body.innerHTML = document.body.innerHTML
+            .replace(/{data_import_type_first}/g, data[0].data_import_type_first)
+            .replace(/{data_import_first}/g, data[0].data_import_first)
+            .replace(/{data_import_type_second}/g, data[0].data_import_type_second)
+            .replace(/{data_import_second}/g, data[0].data_import_second)
+            .replace(/{data_import_type_third}/g, data[0].data_import_type_third)
+            .replace(/{data_import_third}/g, data[0].data_import_third);
+
             
             function loadJSON(file, callback) {
                 var xhr = new XMLHttpRequest();
