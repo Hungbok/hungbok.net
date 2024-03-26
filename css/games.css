@@ -517,7 +517,9 @@
     color: var(--text-5);
     padding: 5px 10px;
     border-radius: 20px;
+    min-height: 30px;
     justify-content: center;
+    align-items: center;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -539,6 +541,7 @@
     text-wrap: nowrap;
     background-size: 15px 15px, 30px, 30px, 30px, 30px, 30px;
     border-radius: 20px;
+    font-size: 16px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -937,6 +940,7 @@ div.system-requirements-title {
     flex-wrap: wrap;
     height: calc(100% - 20px);
     align-content: space-between;
+    gap: 40px;
 }
 
 .reviews .release-type {
@@ -955,7 +959,6 @@ div.system-requirements-title {
     background-color: var(--background-8);
     border-radius: 20px;
     padding: 20px;
-    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     height: calc(100% - 20px);
@@ -967,7 +970,7 @@ div.system-requirements-title {
 
 .metacritic-title {
     width: 100%;
-    margin-bottom: 10px;
+    margin: 10px 0 20px;
 }
 
 .metacritic {
