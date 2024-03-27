@@ -1393,6 +1393,7 @@ div.opencritic-reviews {
     font-size: 0;
     display: flex;
     flex-wrap: wrap;
+    min-height: 30px;
     justify-content: center;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
