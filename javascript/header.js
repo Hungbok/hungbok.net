@@ -178,10 +178,10 @@ $(document).ready(function() {
                                 //     '<div class="language-flag"></div>'+
                                 //     '<div class="language-text"></div>'+
                                 // '</div>'+
-                                // '<div class="language-select" data-lang="fr">'+
-                                //     '<div class="language-flag"></div>'+
-                                //     '<div class="language-text"></div>'+
-                                // '</div>'+
+                                '<div class="language-select" data-lang="fr">'+
+                                    '<div class="language-flag"></div>'+
+                                    '<div class="language-text"></div>'+
+                                '</div>'+
                                 // '<div class="language-select" data-lang="fr-ca">'+
                                 //     '<div class="language-flag"></div>'+
                                 //     '<div class="language-text"></div>'+
