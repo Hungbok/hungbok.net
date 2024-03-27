@@ -36,8 +36,7 @@ $(document).ready(function(){
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
-            // 'lang' 키는 'en'과 'ko' 객체에서 다루지 않을 수도 있으므로, 아래와 같이 수정하지 않았습니다.
-            $('body').addClass('body-' + data[0].type + ' ' + data[0]['en'].lang);
+            $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang'));
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
     
 

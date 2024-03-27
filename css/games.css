@@ -1824,6 +1824,7 @@ div.opencritic-reviews {
     background-size: 30px 30px, 80px 80px;
     width: 60px;
     height: 60px;
+    border-radius: 20px;
 }
 
 /* home */
