@@ -29,31 +29,38 @@ $(document).ready(function(){
         // JSON 파일 가져오기
         $.getJSON(`//data.hungbok.net/data/games/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
+        
+            // en 또는 ko 데이터에 접근하는 함수
+            function getLocalizedData(data, key) {
+                return data['en'] && data['en'][key] ? data['en'][key] : data['en'][key];
+            }
 
-            $("#page-title").text(data[0]['en'].title + ' | HungBok');
+            $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
+            // 'lang' 키는 'en'과 'ko' 객체에서 다루지 않을 수도 있으므로, 아래와 같이 수정하지 않았습니다.
             $('body').addClass('body-' + data[0].type + ' ' + data[0]['en'].lang);
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
+    
 
             // 대체할 값들을 저장한 객체
             var replacement = {
                 '{type}': data[0].type,
-                '{title}': data[0]['en'].title,
+                '{title}': getLocalizedData(data[0], 'title'),
                 '{developer}': data[0].developer,
-                '{info_developer}': data[0]['en'].info_developer,
+                '{info_developer}': getLocalizedData(data[0], 'info_developer'),
                 '{publisher}': data[0].publisher,
-                '{info_publisher}': data[0]['en'].info_publisher,
+                '{info_publisher}': getLocalizedData(data[0], 'info_publisher'),
                 '{platform}': data[0].platform,
-                '{release}': data[0]['en'].release,
-                '{genre}': data[0]['en'].genre,
-                '{mode}': data[0]['en'].mode,
-                '{franchise}': data[0]['en'].franchise,
+                '{release}': getLocalizedData(data[0], 'release'),
+                '{genre}': getLocalizedData(data[0], 'genre'),
+                '{mode}': getLocalizedData(data[0], 'mode'),
+                '{franchise}': getLocalizedData(data[0], 'franchise'),
   
                 '{pc}': data[0].pc,
                 '{console}': data[0].console,
                 '{mobile}': data[0].mobile,
                 '{esd}': data[0].esd,
-                '{release_date}': data[0]['en'].release_date,
-                '{engine}': data[0]['en'].engine,
+                '{release_date}': getLocalizedData(data[0], 'release_date'),
+                '{engine}': getLocalizedData(data[0], 'engine'),
                 '{age}': data[0].age,
                 '{esrb}': data[0].esrb,
                 '{pegi}': data[0].pegi,
@@ -136,9 +143,9 @@ $(document).ready(function(){
                 '{store}': data[0].store,
   
                 '{attention}': data[0].attention,
-                '{plot}': data[0]['en'].plot,
-                '{source}': data[0]['en'].source,
-                '{update}': data[0]['en'].update,
+                '{plot}': getLocalizedData(data[0], 'plot'),
+                '{source}': getLocalizedData(data[0], 'source'),
+                '{update}': getLocalizedData(data[0], 'update'),
   
                 '{url}': data[0].url,
                 '{share}': data[0].share,
@@ -215,7 +222,7 @@ $(document).ready(function(){
             var videoData = [];
             for (var i = 1; i <= video_value; i++) {
                 var videoId = data[0]['videoid' + i];
-                var videoTitle = data[0]['en']['videotitle' + i];
+                var videoTitle = getLocalizedData(data[0], 'videotitle' + i);
                 var videoServer = data[0]['videoserver' + i];
                 videoData.push({
                     id: videoId,
@@ -260,11 +267,11 @@ $(document).ready(function(){
                 '</div>');
             });
 
-            var description_value = data[0]['en'].descriptioncount; // description 수
+            var description_value = getLocalizedData(data[0], 'descriptioncount'); // description 수
             var descriptionData = [];
             for (var i = 1; i <= description_value; i++) {
-                var desClass = data[0]['en']['pclass' + i];
-                var desText = data[0]['en']['ptext' + i];
+                var desClass = getLocalizedData(data[0], 'pclass' + i);
+                var desText = getLocalizedData(data[0], 'ptext' + i);
                 descriptionData.push({
                     class: desClass,
                     text: desText,
@@ -551,7 +558,7 @@ $(document).ready(function(){
             $(".battlenet").append('<div class="external-link" ttt="Battle.net">'+
                 '<a class="external-link-button icon-battlenet" href="https://shop.battle.net/product/' + battleneturl + '" target="_blank"></a>'+
             '</div>');
-            $(".battlenetus").append('<div class="external-link region_002" ttt="Battle.net">'+
+            $(".battlenetus").append('<div class="external-link region_001" ttt="Battle.net">'+
                 '<a class="external-link-button icon-battlenet" href="https://us.shop.battle.net/product/' + battlenetusurl + '" target="_blank"></a>'+
             '</div>');
             $(".battleneteu").append('<div class="external-link region_003" ttt="Battle.net">'+

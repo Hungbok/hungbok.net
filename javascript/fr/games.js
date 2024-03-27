@@ -32,12 +32,12 @@ $(document).ready(function(){
         
             // en 또는 ko 데이터에 접근하는 함수
             function getLocalizedData(data, key) {
-                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+                return data['fr'] && data['fr'][key] ? data['fr'][key] : data['en'][key];
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
             // 'lang' 키는 'en'과 'ko' 객체에서 다루지 않을 수도 있으므로, 아래와 같이 수정하지 않았습니다.
-            $('body').addClass('body-' + data[0].type + ' ' + data[0]['ko'].lang);
+            $('body').addClass('body-' + data[0].type + ' ' + data[0]['fr'].lang);
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
     
 
@@ -558,8 +558,11 @@ $(document).ready(function(){
             $(".battlenet").append('<div class="external-link" ttt="Battle.net">'+
                 '<a class="external-link-button icon-battlenet" href="https://shop.battle.net/product/' + battleneturl + '" target="_blank"></a>'+
             '</div>');
-            $(".battlenetkr").append('<div class="external-link" region_301" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://kr.shop.battle.net/product/' + battlenetkrurl + '" target="_blank"></a>'+
+            $(".battlenetus").append('<div class="external-link region_001" ttt="Battle.net">'+
+                '<a class="external-link-button icon-battlenet" href="https://us.shop.battle.net/product/' + battlenetusurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".battleneteu").append('<div class="external-link region_003" ttt="Battle.net">'+
+                '<a class="external-link-button icon-battlenet" href="https://eu.shop.battle.net/product/' + battleneteuurl + '" target="_blank"></a>'+
             '</div>');
             //
 
@@ -643,11 +646,38 @@ $(document).ready(function(){
             $(".psstoreps5").append('<div class="external-link" ttt="PlayStation 5 | PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps5url + '" target="_blank"></a>'+
             '</div>');
-            $(".psstorekrhktw").append('<div class="external-link region_703" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorekrhktwurl + '" target="_blank"></a>'+
+            $(".psstorenaeu").append('<div class="external-link region_901" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenaeuurl + '" target="_blank"></a>'+
             '</div>');
-            $(".psstorekr").append('<div class="external-link region_301" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorekrurl + '" target="_blank"></a>'+
+            $(".psstorenajp").append('<div class="external-link region_902" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenajpurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreuscamx").append('<div class="external-link region_701" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreuscamxurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreukfrde").append('<div class="external-link region_702" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreukfrdeurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreaunz").append('<div class="external-link region_802" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreaunzurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstorena").append('<div class="external-link region_001" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenaurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreeu").append('<div class="external-link region_003" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreeuurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreus").append('<div class="external-link region_101" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreusurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreca").append('<div class="external-link region_102" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorecaurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreuk").append('<div class="external-link region_201" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreukurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".psstoreau").append('<div class="external-link region_401" ttt="PlayStation Store">'+
+                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreauurl + '" target="_blank"></a>'+
             '</div>');
             //
 
@@ -688,13 +718,45 @@ $(document).ready(function(){
             $(".eshop").append('<div class="external-link" ttt="Nintendo eShop">'+
                 '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopurl + '" target="_blank"></a>'+
             '</div>');
-            // multiple
-            $(".eshopkrhktw").append('<div class="external-link region_703" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopkrhktwurl + '" target="_blank"></a>'+
+            // top multiple
+            $(".eshopnaeu").append('<div class="external-link region_901" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnaeuurl + '" target="_blank"></a>'+
             '</div>');
-            // kr
-            $(".eshopkr").append('<div class="external-link region_301" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://store.nintendo.co.kr/' + nintendoeshopkrurl + '" target="_blank"></a>'+
+            $(".eshopnajp").append('<div class="external-link region_902" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnajpurl + '" target="_blank"></a>'+
+            '</div>');
+            // multiple
+            $(".eshopuscamx").append('<div class="external-link region_701" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopuscamxurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".eshopukfrde").append('<div class="external-link region_702" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopukfrdeurl + '" target="_blank"></a>'+
+            '</div>');
+
+            $(".eshopaunz").append('<div class="external-link region_802" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopaunzurl + '" target="_blank"></a>'+
+            '</div>');
+            // top
+            $(".eshopna").append('<div class="external-link region_001" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnaurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".eshopeu").append('<div class="external-link region_003" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopeuurl + '" target="_blank"></a>'+
+            '</div>');
+            // na
+            $(".eshopus").append('<div class="external-link region_101" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopusurl + '" target="_blank"></a>'+
+            '</div>');
+            $(".eshopca").append('<div class="external-link region_102" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/en-ca/store/products/' + nintendoeshopcaurl + '" target="_blank"></a>'+
+            '</div>');
+            // eu
+            $(".eshopuk").append('<div class="external-link region_201" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/GB/en/titles/' + nintendoeshopukurl + '" target="_blank"></a>'+
+            '</div>');
+            // oc
+            $(".eshopau").append('<div class="external-link region_401" ttt="Nintendo eShop">'+
+                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/AU/en/titles/' + nintendoeshopauurl + '" target="_blank"></a>'+
             '</div>');
             //
 
@@ -731,10 +793,10 @@ $(document).ready(function(){
             '</div>');
 
             // 얼리엑세스 틀
-            $(".early-access").append('<p class="description-title">이 게임은 앞서 해보기 게임입니다.</p>'+
-            '<p>앞서 해보기 게임은 현재 개발 중인 게임으로 개발 중간에 많은 것이 변경될 수 있습니다. 앞서 해보기 게임을 플레이할 때 전혀 예측하지 못한 이슈가 발생하거나 완전히 새로운 게임플레이 요소를 경험할 수 있습니다.</p>'+
-            '<p>현재 개발 중인 게임을 바로 플레이하거나 더 완전한 게임 경험을 제공할 때까지 기다릴 수 있습니다.</p>'+
-            '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">자세히 보기</a></p>');
+            $(".early-access").append('<p class="description-title">This Game is an Early Access Game.</p>'+
+            '<p>Early Access games are still under development and may change significantly over time. As a result, you may experience unforeseen issues or completely new gameplay elements while playing this game.</p>'+
+            '<p>You can play now to experience the game while it\'s being built or wait until it offers a more complete experience.</p>'+
+            '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">Learn More</a></p>');
     
             var description = document.querySelector('.description');
             var showMore = document.querySelector('.show-more');
@@ -751,8 +813,8 @@ $(document).ready(function(){
             const data_import_type_third = data[0].data_import_type_third;
             const data_import_third = data[0].data_import_third;
 
-            $(".dlc").append('<p class="description-title">이 제품은 확장팩 혹은 다운로드 가능한 콘텐츠입니다.</p>'+
-            '<p>플레이하려면 다음 제품 중 하나가 필요합니다.</p>'+
+            $(".dlc").append('<p class="description-title">This product is an Expansion Pack or Downloadable Content.</p>'+
+            '<p>This content requires one of the following products to play.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
@@ -774,8 +836,8 @@ $(document).ready(function(){
                 '</p>'+
             '</div>');
 
-            $(".mod").append('<p class="description-title">이 제품은 2차 창작 모드 혹은 애드온입니다.</p>'+
-            '<p>플레이하려면 다음 제품이 필요합니다.</p>'+
+            $(".mod").append('<p class="description-title">This product is an Mod or Add-on.</p>'+
+            '<p>This content requires the following product to play.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
@@ -797,8 +859,8 @@ $(document).ready(function(){
                 '</p>'+
             '</div>');
 
-            $(".mode").append('<p class="description-title">이 콘텐츠는 게임 모드입니다.</p>'+
-            '<p>다음 제품에 포함되어 있습니다.</p>'+
+            $(".mode").append('<p class="description-title">This product is in Mode.</p>'+
+            '<p>Included in the following product.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
@@ -1421,7 +1483,7 @@ function showError(image) {
         .then(data => {
             // 'title'값을 가져와서 div에 설정
             var div = document.createElement('div');
-            div.innerHTML = data[0]['ko'].title;
+            div.innerHTML = data[0]['fr'].title;
 
             // 기존 이미지 대신 div 삽입
             image.parentNode.insertBefore(div, image);
