@@ -324,11 +324,11 @@
 }
 
 .early-access-date::before {
-    content: "早期アクセス | ";
+    content: "早期アクセス";
 }
 
 .full-release-date::before {
-    content: "正式リリース | ";
+    content: "正式リリース";
 }
 
 .description-source::before {
@@ -540,4 +540,14 @@
 
 .sale-timer.timer-container.end::before {
     content: "終了まで";
+}
+
+.body-games.en .middle-content::before {
+    content: "このページは日本語に翻訳されていません。";
+    grid-column-start: 1;
+    grid-column-end: 3;
+    outline: var(--red-5) solid 1px;
+    color: var(--red-5);
+    padding: 10px 0px;
+    border-radius: 20px;
 }

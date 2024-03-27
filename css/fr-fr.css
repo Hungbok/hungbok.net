@@ -541,3 +541,13 @@
 .sale-timer.timer-container.end::before {
     content: "End in";
 }
+
+.body-games.en .middle-content::before {
+    content: "Cette page n'a pas été traduite en français.";
+    grid-column-start: 1;
+    grid-column-end: 3;
+    outline: var(--red-5) solid 1px;
+    color: var(--red-5);
+    padding: 10px 0px;
+    border-radius: 20px;
+}

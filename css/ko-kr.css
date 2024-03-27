@@ -324,11 +324,11 @@
 }
 
 .early-access-date::before {
-    content: "앞서 해보기 | ";
+    content: "앞서 해보기";
 }
 
 .full-release-date::before {
-    content: "정식 출시 | ";
+    content: "정식 출시";
 }
 
 .description-source::before {
@@ -541,4 +541,14 @@
 
 .sale-timer.timer-container.end::before {
     content: "종료까지";
+}
+
+.body-games.en .middle-content::before {
+    content: "이 페이지는 한국어로 번역되지 않았습니다.";
+    grid-column-start: 1;
+    grid-column-end: 3;
+    outline: var(--red-5) solid 1px;
+    color: var(--red-5);
+    padding: 10px 0px;
+    border-radius: 20px;
 }
