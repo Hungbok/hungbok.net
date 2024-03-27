@@ -667,6 +667,9 @@
     color: var(--text-4);
     border-radius: 20px;
     max-width: calc(100% - 80px);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .more-info-item-title {
@@ -710,6 +713,7 @@
     margin: 0 0 20px;
     text-align: left;
     font-size: 24px;
+    width: 100%;
 }
 
 div.system-requirements-title {
@@ -1458,7 +1462,7 @@ div.opencritic-reviews {
 }
 
 .info-language-popup {
-    grid-template-columns: 150px 100px 150px 100px;
+    grid-template-columns: auto 100px;
     padding: 0;
     display: grid;
     justify-items: start;
@@ -1466,7 +1470,7 @@ div.opencritic-reviews {
     justify-content: space-between;
     overflow: hidden;
     margin: 0px;
-    width: auto;
+    width: 50%;
     height: auto;
     vertical-align: middle;
     text-wrap: unset;
