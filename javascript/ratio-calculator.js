@@ -31,3 +31,18 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
       this.value = this.value.replace(/[^0-9]/g, '');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 선택할 요소들의 셀렉터를 배열로 저장합니다.
+    var selectors = ['#textoutput', '.filterDetail', 'input#inputD', 'input#stringBox'];
+
+    // 각 셀렉터에 대해 반복하면서 이벤트 리스너를 추가합니다.
+    selectors.forEach(function(selector) {
+        var elements = document.querySelectorAll(selector);
+        elements.forEach(function(element) {
+            element.addEventListener('click', function() {
+                this.select();
+            });
+        });
+    });
+});
