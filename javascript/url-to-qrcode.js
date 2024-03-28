@@ -68,14 +68,16 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('qrcode').addEventListener('click', function() {
         // #qrcode 아래에 있는 canvas 요소를 찾습니다.
-        var canvas = this.nextElementSibling; 
-        if(canvas && canvas.tagName === 'CANVAS') {
+        var canvas = this.nextElementSibling;
+        if (canvas && canvas.tagName === 'CANVAS') {
             // canvas의 데이터를 이용하여 PNG 파일로 저장합니다.
-            var imgData = canvas.toDataURL('image/png').replace("image/png", "image/octet-stream");
+            var imgData = canvas.toDataURL('image/png');
             var link = document.createElement('a');
             link.download = 'qrcode.png'; // 파일 이름 설정
             link.href = imgData;
+            document.body.appendChild(link); // DOM에 link를 임시로 추가합니다.
             link.click();
+            document.body.removeChild(link); // 사용 후 link를 제거합니다.
         }
     });
 });
