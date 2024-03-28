@@ -11,7 +11,7 @@ if (window.document.fonts && window.document.fonts.load) {
 
 document.getElementById("app").innerHTML = `
     <div class="top-box">
-        <textarea type="text" id="text-input" placeholder="https://hgbk.me/Lvdr78bE" style="color: black;" autocomplete='off'></textarea>
+        <textarea type="text" id="text-input" placeholder="https://hgbk.me/Lvdr78bE" style="color: black;" autocomplete='off' maxlength="100"></textarea>
         <div id="text-color">
             <input type="radio" id="fontcolor-b" name="fontcolor" value="black" checked>
             <label for="fontcolor-b"> </label>

@@ -147,7 +147,6 @@ input, textarea {
 }
 
 .top-box {
-    height: 170px;
     width: 770px;
     display: inline-block;
     margin: 20px 0px;
@@ -186,7 +185,6 @@ input, textarea {
 }
 
 .bottom-box {
-    height: 170px;
     width: 770px;
     display: inline-block;
     position: relative;
@@ -202,6 +200,10 @@ input, textarea {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.text-converter-textarea {
+    height: 170px;
 }
 
 #textinput {

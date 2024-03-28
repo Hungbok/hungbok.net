@@ -340,3 +340,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById('target').addEventListener('input', function(e) {
+  // 현재 입력 필드의 값을 가져옴
+  var currentValue = e.target.value;
+
+  // '#'과 숫자를 제외한 모든 문자를 찾아서 제거하는 정규식
+  var filteredValue = currentValue.replace(/[^#\d]/g, '');
+
+  // 필터링된 값을 입력 필드에 다시 설정
+  e.target.value = filteredValue;
+});
