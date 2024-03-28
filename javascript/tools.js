@@ -66,18 +66,10 @@ $(document).ready(function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var textarea = document.getElementById('textinput');
-    var textarea2 = document.getElementById('textoutput');
 
     textarea.addEventListener('input', autoResize, false);
 
     function autoResize() {
-        this.style.height = 'auto'; // 높이를 자동으로 재설정
-        this.style.height = this.scrollHeight + 'px'; // scrollHeight를 사용하여 실제 텍스트 높이에 맞게 조정
-    }
-
-    textarea2.addEventListener('input', autoResize2, false);
-
-    function autoResize2() {
         this.style.height = 'auto'; // 높이를 자동으로 재설정
         this.style.height = this.scrollHeight + 'px'; // scrollHeight를 사용하여 실제 텍스트 높이에 맞게 조정
     }

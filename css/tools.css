@@ -203,6 +203,10 @@ input, textarea {
     transition: all 0.5s;
 }
 
+.text-converter-textarea {
+    height: 170px;
+}
+
 #textinput {
     font-size: 20px;
 }
