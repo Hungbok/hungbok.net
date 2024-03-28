@@ -91,7 +91,7 @@ input, textarea {
     transition: all 0.5s;
 }
 
-#clear, #allclear {
+.tools-link {
     padding: 10px 20px;
     margin: 20px;
     display: inline-block;
@@ -117,8 +117,7 @@ input, textarea {
     transition: all 0.5s;
 }
 
-#clear:hover,
-#allclear:hover,
+.tools-link:hover,
 .link:hover,
 .execute:hover {
     background-color: var(--background-6);
