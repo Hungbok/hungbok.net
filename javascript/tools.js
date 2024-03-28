@@ -52,3 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+$(document).ready(function() {
+    $('#textinput').on('keyup', function() {
+        $('#text-count').html("(" + $(this).val().length + " / 200)");
+
+        if ($(this).val().length > 100) {
+            $(this).val($(this).val().substring(0, 200));
+            $('#text-count').html("(200 / 200)");
+        }
+    });
+});

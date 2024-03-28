@@ -165,7 +165,6 @@ input, textarea {
 }
 
 .middle-box {
-    margin: 20px 0px;
     width: 100%;
     position: relative;
 }
@@ -467,10 +466,10 @@ input:checked[type="checkbox"]+label {
 
 #text-color {
     display: inline-block;
-    left: 15px;
-    position: absolute;
+    position: relative;
     text-align: center;
-    bottom: 0;
+    width: 100%;
+    margin: 20px 0;
 }
 
 input[type=radio] + label {
@@ -482,16 +481,18 @@ input[type=radio] + label {
 
 #fontcolor-b + label {
     background-color: #111111;
-    width: 30px;
+    width: calc(50% - 40px);
     padding: 10px 10px;
     margin: 0;
+    border-radius: 20px;
 }
 
 #fontcolor-w + label {
     background-color: #cccccc;
-    width: 30px;
+    width: calc(50% - 40px);
     padding: 10px 10px;
     margin: 0;
+    border-radius: 20px;
 }
 
 #image-wrapper {
@@ -595,6 +596,11 @@ select:focus {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.ratio {
+    margin: 0;
+    min-height: auto;
 }
 
 input[type=radio]+label {
