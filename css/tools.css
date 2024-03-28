@@ -498,9 +498,10 @@ input[type=radio] + label {
 
 #image-wrapper img {
     top: 50%;
-    max-width: 100%;
-    height: auto!important;
+    max-width: calc(100% - 40px);
+    height: auto !important;
     position: relative;
+    padding: 10px 20px;
     transform: translate(0%, -50%);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -512,7 +513,7 @@ input[type=radio] + label {
 #image-wrapper img:hover {
     cursor: pointer;
     box-shadow: 0px 0px 10px var(--shadow);
-    border-radius: 5px;
+    border-radius: 20px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
