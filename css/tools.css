@@ -14,7 +14,8 @@ main {
     justify-content: center;
 }
 
-.timezone-calculator {
+.timezone-calculator,
+.tools-container {
     align-items: flex-start;
     display: flex;
     width: 100vw;
@@ -46,6 +47,9 @@ main {
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -74,6 +78,18 @@ main {
     justify-content: center;
     width: 800px;
     margin: 20px 0px;
+}
+
+.tools-content {
+    align-items: center;
+    background-color: var(--background-8);
+    border-radius: 20px;
+    display: flex;
+    padding: 0px 20px;
+    justify-content: center;
+    width: 800px;
+    margin: 20px 0px;
+    flex-wrap: wrap;
 }
 
 .top-box {
