@@ -38,7 +38,8 @@ main {
     margin: 50px 0px;
 }
 
-.link {
+.link,
+.execute {
     padding: 10px 20px;
     margin: 20px;
     display: inline-block;
@@ -59,7 +60,8 @@ main {
     transition: all 0.5s;
 }
 
-.link:hover {
+.link:hover,
+.execute:hover {
     background-color: var(--background-6);
 }
 
@@ -417,4 +419,23 @@ select:focus {
 
 .danger {
     filter: invert(23%) sepia(90%) saturate(3256%) hue-rotate(341deg) brightness(95%) contrast(81%);
+}
+
+.top-box > #searchInput, .top-box > .target, .top-box > #textinput, .top-box > #linkInput, .top-box > #text-input {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    cursor: text;
+    color: var(--title);
+    background-color: var(--section);
+    max-width: 100%;
+    border: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }

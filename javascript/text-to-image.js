@@ -10,7 +10,6 @@ if (window.document.fonts && window.document.fonts.load) {
 }
 
 document.getElementById("app").innerHTML = `
-<div class="timezone">
     <div class="top-box">
         <textarea type="text" id="text-input" placeholder="https://hgbk.me/Lvdr78bE" style="color: black;" autocomplete='off'></textarea>
         <div id="text-color">
@@ -31,9 +30,7 @@ document.getElementById("app").innerHTML = `
         <div id="image-wrapper">
             <img src="/img/hungbok/tti.png" style="height: 0px;">
         </div>
-    </div>
-</div>
-`;
+    </div>`;
 
 const btn = document.getElementById("generate-btn");
 
