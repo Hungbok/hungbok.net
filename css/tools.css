@@ -155,7 +155,7 @@ input, textarea {
     font-weight: 600;
     padding: 15px;
     border: 0px;
-    border-radius: 5px;
+    border-radius: 20px;
     text-align: left;
     color: var(--text-4);
     background-color: var(--background-8);
@@ -181,7 +181,7 @@ input, textarea {
     font-weight: 600;
     padding: 15px;
     border: 0px;
-    border-radius: 5px;
+    border-radius: 20px;
     overflow: hidden;
     color: var(--text-4);
     background-color: var(--background-8);
@@ -461,15 +461,15 @@ input[type=radio] + label {
 
 #fontcolor-b + label {
     background-color: #111111;
-    width: unset;
-    padding: 0;
+    width: 30px;
+    padding: 10px 10px;
     margin: 0;
 }
 
 #fontcolor-w + label {
     background-color: #cccccc;
-    width: unset;
-    padding: 0;
+    width: 30px;
+    padding: 10px 10px;
     margin: 0;
 }
 
