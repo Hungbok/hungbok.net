@@ -122,10 +122,7 @@ if (window.document.fonts && window.document.fonts.load) {
 }
 
 document.getElementById("app").innerHTML = `
-<div class="header">
-    <h1 class="title" onClick="window.location.reload()">TTI</h1>
-</div>
-<div class="container">
+<div class="timezone">
     <div class="top-box">
         <textarea type="text" id="text-input" placeholder="https://hgbk.me/Lvdr78bE" style="color: black;" autocomplete='off'></textarea>
         <div id="text-color">
