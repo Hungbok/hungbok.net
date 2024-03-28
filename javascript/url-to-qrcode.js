@@ -2,7 +2,6 @@
 var qrcodeElement = document.getElementById("qrcode");
 var linkInput = document.getElementById("linkInput");
 var generateButton = document.getElementById("generateButton");
-var saveButton = document.getElementById("qrcode");
 
 // 로고 이미지를 미리 로드
 var logoImage = new Image();
@@ -17,10 +16,6 @@ generateButton.addEventListener("click", function() {
     clearQRCode();
     // QR 코드 생성
     generateQRCode();
-});
-
-saveButton.addEventListener("click", function() {
-    saveQRCode();
 });
 
 function generateQRCode() {
@@ -59,15 +54,6 @@ function clearQRCode() {
     }
 }
 
-function saveQRCode() {
-    // QR 코드 이미지를 canvas에 그린 후, 이미지로 저장
-    var canvas = qrcodeElement.querySelector("canvas");
-    var link = document.createElement('a');
-    link.download = 'hb_' + linkInput.value + '.png';
-    link.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-    link.click();
-}
-
 $(document).ready(function() {
     $('#linkInput').on('keyup', function() {
         $('#text-count').html("(" + $(this).val().length + " / 100)");
@@ -75,6 +61,21 @@ $(document).ready(function() {
         if ($(this).val().length > 100) {
             $(this).val($(this).val().substring(0, 100));
             $('#text-count').html("(100 / 100)");
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('qrcode').addEventListener('click', function() {
+        // #qrcode 아래에 있는 canvas 요소를 찾습니다.
+        var canvas = this.nextElementSibling; 
+        if(canvas && canvas.tagName === 'CANVAS') {
+            // canvas의 데이터를 이용하여 PNG 파일로 저장합니다.
+            var imgData = canvas.toDataURL('image/png').replace("image/png", "image/octet-stream");
+            var link = document.createElement('a');
+            link.download = 'qrcode.png'; // 파일 이름 설정
+            link.href = imgData;
+            link.click();
         }
     });
 });
