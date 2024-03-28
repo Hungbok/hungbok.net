@@ -245,3 +245,18 @@ $("#text-color").click(function() {
     var fontcolor = document.querySelector('input[name="fontcolor"]:checked').value;
     $('#text-input').css('color', fontcolor);
 });
+
+var saveButton = document.getElementById("image-wrapper");
+
+saveButton.addEventListener("click", function() {
+    saveImage();
+});
+
+function saveImage() {
+    // QR 코드 이미지를 canvas에 그린 후, 이미지로 저장
+    var canvas = qrcodeElement.querySelector("canvas");
+    var link = document.createElement('a');
+    link.download = 'hb_' + linkInput.value + '.png';
+    link.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+    link.click();
+}
