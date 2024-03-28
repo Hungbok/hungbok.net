@@ -55,7 +55,7 @@ function clearQRCode() {
 }
 
 $(document).ready(function() {
-    $('#textinput').on('input', function() {
+    $('#linkInput').on('input', function() {
         const maxLength = 100;
         let textLength = $(this).val().length;
 

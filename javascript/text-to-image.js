@@ -228,7 +228,7 @@ function trimCanvas(canvas) {
 }
 
 $(document).ready(function() {
-    $('#textinput').on('input', function() {
+    $('#text-input').on('input', function() {
         const maxLength = 100;
         let textLength = $(this).val().length;
 
