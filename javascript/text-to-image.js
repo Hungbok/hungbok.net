@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
             ctx.drawImage(imgElement, 0, 0);
             canvas.toBlob(function(blob) {
                 var link = document.createElement('a');
-                var filename = document.querySelector('#text-input').value + '.png'; // 파일 이름 설정
+                var filename = 'hb_' + document.querySelector('#text-input').value + '.png'; // 파일 이름 설정
                 link.download = filename;
                 link.href = URL.createObjectURL(blob);
                 link.click();
