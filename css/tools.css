@@ -405,3 +405,16 @@ select {
 select:focus {
     outline: none;
 }
+
+.great,
+.success {
+    filter: invert(39%) sepia(100%) saturate(366%) hue-rotate(100deg) brightness(87%) contrast(88%);
+}
+
+.warning {
+    filter: invert(79%) sepia(9%) saturate(6456%) hue-rotate(354deg) brightness(104%) contrast(101%);
+}
+
+.danger {
+    filter: invert(23%) sepia(90%) saturate(3256%) hue-rotate(341deg) brightness(95%) contrast(81%);
+}
