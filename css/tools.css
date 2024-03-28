@@ -98,7 +98,7 @@ input, textarea {
     text-align: center;
     border-radius: 20px;
     cursor: pointer;
-    width: calc(50% - 40px);
+    width: calc(50% - 80px);
     border: none;
     outline: none;
     color: white;
