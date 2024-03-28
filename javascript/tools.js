@@ -54,13 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 $(document).ready(function() {
-    $('#textinput').on('keyup', function() {
-        $('#text-count').html("(" + $(this).val().length + " / 300)");
+    $('#textinput').on('input', function() {
+        const maxLength = 300;
+        let textLength = $(this).val().length;
 
-        if ($(this).val().length > 100) {
-            $(this).val($(this).val().substring(0, 300));
-            $('#text-count').html("(300 / 300)");
+        if (textLength > maxLength) {
+            $(this).val($(this).val().substring(0, maxLength));
+            textLength = maxLength; // 문자 수를 최대 길이로 설정
         }
+        
+        $('#text-count').html(`(${textLength} / ${maxLength})`);
     });
 });
 
