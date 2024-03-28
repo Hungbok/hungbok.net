@@ -526,3 +526,11 @@ input[type=radio]:checked+label {
     -ms-transition: all 0.5s;
     transition: all 0.5s;
 }
+
+#specialCharsCB + label {
+    margin: 30px;
+}
+
+input:checked[type="checkbox"]+label {
+    background: #198754;
+}
