@@ -91,6 +91,32 @@ input, textarea {
     transition: all 0.5s;
 }
 
+#clear, #allclear {
+    padding: 10px 20px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    width: calc(50% - 40px);
+    border: none;
+    outline: none;
+    color: white;
+    background-color: transparent;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 .link:hover,
 .execute:hover {
     background-color: var(--background-6);
