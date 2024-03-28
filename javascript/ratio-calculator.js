@@ -12,12 +12,42 @@ document.getElementById('generateButton').addEventListener('click', function() {
       document.getElementById('inputD').value = D;
     }
 });
-  
+
+document.getElementById('set21-9').addEventListener('click', function() {
+    document.getElementById('inputA').value = '21';
+    document.getElementById('inputB').value = '9';
+});
+
+document.getElementById('set16-9').addEventListener('click', function() {
+    document.getElementById('inputA').value = '16';
+    document.getElementById('inputB').value = '9';
+});
+
+document.getElementById('set4-5').addEventListener('click', function() {
+    document.getElementById('inputA').value = '4';
+    document.getElementById('inputB').value = '5';
+});
+
+document.getElementById('set4-3').addEventListener('click', function() {
+    document.getElementById('inputA').value = '4';
+    document.getElementById('inputB').value = '3';
+});
+
+document.getElementById('set2-3').addEventListener('click', function() {
+    document.getElementById('inputA').value = '2';
+    document.getElementById('inputB').value = '3';
+});
+
+document.getElementById('set1-16').addEventListener('click', function() {
+    document.getElementById('inputA').value = '1';
+    document.getElementById('inputB').value = '16';
+});
+
 document.getElementById('clear').addEventListener('click', function() {
     document.getElementById('inputC').value = '';
     document.getElementById('inputD').value = '';
 });
-  
+
 document.getElementById('allclear').addEventListener('click', function() {
     document.getElementById('inputA').value = '';
     document.getElementById('inputB').value = '';
@@ -46,3 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function numberMaxLength(e){
+    if(e.value.length > e.maxLength){
+        e.value = e.value.slice(0, e.maxLength);
+    }
+}

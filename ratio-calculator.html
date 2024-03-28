@@ -56,14 +56,20 @@
                 <div class="tools-container">
                     <div class="tools-content">
                         <div class="bottom-box ratio">
-                            <input type="number" id="inputA" required placeholder="A" maxlength="20" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">:<input type="number" id="inputB" required placeholder="B" maxlength="20" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <input type="number" id="inputA" required placeholder="A" maxlength="20" oninput="numberMaxLength(this);">:<input type="number" id="inputB" required placeholder="B" maxlength="20" oninput="numberMaxLength(this);">
                         </div>
                         <div class="bottom-box ratio">
-                            <input type="number" id="inputC" required placeholder="C" maxlength="20" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">:<input type="number" id="inputD" required placeholder="D">
+                            <input type="number" id="inputC" required placeholder="C" maxlength="20" oninput="numberMaxLength(this);">:<input type="number" id="inputD" required placeholder="D">
                         </div>
                         <div class="middle-box">
                             <button class="execute" id="generateButton">Calculate</button>
                         </div>
+                        <a class="tools-link" id="set21-9">Set 21:9</a>
+                        <a class="tools-link" id="set16-9">Set 16:9</a>
+                        <a class="tools-link" id="set4-5">Set 4:5</a>
+                        <a class="tools-link" id="set4-3">Set 4:3</a>
+                        <a class="tools-link" id="set2-3">Set 2:3</a>
+                        <a class="tools-link" id="set1-16">Set 1:16</a>
                         <a class="tools-link" id="clear">Clear C, D</a>
                         <a class="tools-link" id="allclear">Clear All</a>
                     </div>
