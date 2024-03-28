@@ -222,6 +222,10 @@ input, textarea {
 
 .top-box {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 input[type="checkbox"] {
@@ -246,7 +250,7 @@ input[type="checkbox"]+label {
 }
 
 #specialCharsCB + label {
-    margin: 30px;
+    margin: 30px 0 0;
 }
 
 input[type="checkbox"]+label:before {
@@ -277,11 +281,15 @@ input:checked[type="checkbox"]+label {
 
 .bottom-box {
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .bottom-box p {
     display: inline-block;
-    padding: 62.5px 0px;
+    padding: 0px 0px;
     margin: 0;
     width: 370px;
     color: var(--text-4);
@@ -296,7 +304,7 @@ input:checked[type="checkbox"]+label {
 
 #stringBox {
     display: inline-block;
-    padding: 62.5px 0px;
+    padding: 0px 0px;
     margin: 0;
     width: 400px;
     text-align: left;
