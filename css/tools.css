@@ -117,6 +117,8 @@ input, textarea {
     transition: all 0.5s;
 }
 
+#clear:hover,
+#allclear:hover,
 .link:hover,
 .execute:hover {
     background-color: var(--background-6);
