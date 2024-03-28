@@ -56,10 +56,10 @@
                 <div class="tools-container">
                     <div class="tools-content">
                         <div class="bottom-box ratio">
-                            <input type="number" id="inputA" required placeholder="A" maxlength="20">:<input type="number" id="inputB" required placeholder="B" maxlength="20">
+                            <input type="number" id="inputA" required placeholder="A" maxlength="20" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">:<input type="number" id="inputB" required placeholder="B" maxlength="20" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
                         </div>
                         <div class="bottom-box ratio">
-                            <input type="number" id="inputC" required placeholder="C" maxlength="20">:<input type="number" id="inputD" required placeholder="D">
+                            <input type="number" id="inputC" required placeholder="C" maxlength="20" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">:<input type="number" id="inputD" required placeholder="D">
                         </div>
                         <div class="middle-box">
                             <button class="execute" id="generateButton">Calculate</button>
