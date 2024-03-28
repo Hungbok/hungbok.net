@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (canvas) {
             var imgData = canvas.toDataURL('image/png');
             var link = document.createElement('a');
-            link.download = 'hb_' + linkInput.value + '.png'; // 파일 이름 설정
+            link.download = 'hb_qrcode_' + linkInput.value + '.png'; // 파일 이름 설정
             link.href = imgData;
 
             // Firefox의 경우, link가 body에 추가되어 있어야 동작합니다.
