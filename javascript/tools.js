@@ -63,3 +63,21 @@ $(document).ready(function() {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var textInput = document.getElementById('textinput');
+    var textOutput = document.getElementById('textoutput');
+
+    textInput.addEventListener('input', function() {
+        // textinput의 내용을 textoutput으로 복사
+        textOutput.value = textInput.value;
+
+        // textoutput의 높이를 내용에 맞게 조정
+        autoResize(textOutput);
+    });
+
+    function autoResize(textarea) {
+        textarea.style.height = 'auto'; // 높이를 자동으로 재설정
+        textarea.style.height = textarea.scrollHeight + 'px'; // scrollHeight를 사용하여 실제 텍스트 높이에 맞게 조정
+    }
+});

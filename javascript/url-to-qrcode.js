@@ -84,4 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 0);
         }
     });
+    var textarea = document.getElementById('linkInput');
+
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto'; // 높이를 자동으로 재설정
+        this.style.height = this.scrollHeight + 'px'; // scrollHeight를 사용하여 실제 텍스트 높이에 맞게 조정
+    }
 });
