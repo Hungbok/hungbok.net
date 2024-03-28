@@ -3,6 +3,11 @@ main {
     display: flex;
 }
 
+input, textarea {
+    font: inherit;
+    resize: none;
+}
+
 .language-selecter {
     opacity: 0.5;
     pointer-events: none;
@@ -364,14 +369,6 @@ input[type=radio] + label {
     background-color: #cccccc;
 }
 
-#text-count {
-    display: inline-block;
-    right: 15px;
-    bottom: 15px;
-    position: absolute;
-    text-align: center;
-}
-
 #image-wrapper {
     height: 150px;
     padding: 10px;
@@ -467,6 +464,40 @@ select:focus {
     border-radius: 5px;
     color: var(--eventtext);
     background-color: var(--section);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+input[type=radio]+label {
+    border-radius: 10px;
+    width: 100px;
+    padding: 10px 10px;
+    margin: 5px 10px;
+    cursor: pointer;
+    user-select: none;
+    display: inline-block;
+    color: var(--text);
+    background-color: var(--container);
+    border: 4px solid var(--section);
+    font-weight: bolder;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio]:checked+label {
+    color: var(--text);
+    background-color: var(--section);
+    border: 4px solid var(--btn);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
