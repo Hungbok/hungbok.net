@@ -66,19 +66,22 @@ $(document).ready(function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // #qrcode 요소에 클릭 이벤트 리스너를 추가합니다.
     document.getElementById('qrcode').addEventListener('click', function() {
-        // #qrcode 내부의 첫 번째 canvas 요소를 찾습니다.
-        var canvas = this.getElementsByTagName('canvas')[0];
+        var canvas = this.querySelector('canvas'); // canvas 요소를 찾습니다.
         if (canvas) {
-            // canvas의 데이터를 이용하여 PNG 파일로 저장합니다.
             var imgData = canvas.toDataURL('image/png');
             var link = document.createElement('a');
             link.download = 'hb_' + linkInput.value + '.png'; // 파일 이름 설정
             link.href = imgData;
+
+            // Firefox의 경우, link가 body에 추가되어 있어야 동작합니다.
+            // 또한, link.click() 호출 후 바로 link를 제거하면 Firefox에서 작동하지 않을 수 있습니다.
+            // setTimeout을 사용하여 비동기적으로 제거합니다.
             document.body.appendChild(link); // DOM에 link를 임시로 추가합니다.
             link.click(); // link 클릭 이벤트를 강제로 발생시켜 파일 다운로드를 시작합니다.
-            document.body.removeChild(link); // 사용 후 link를 제거합니다.
+            setTimeout(function() { 
+                document.body.removeChild(link); // 사용 후 link를 제거합니다.
+            }, 0);
         }
     });
 });
