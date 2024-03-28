@@ -5,7 +5,7 @@ var generateButton = document.getElementById("generateButton");
 
 // 로고 이미지를 미리 로드
 var logoImage = new Image();
-logoImage.src = '//media.hungbok.net/image/hb/hb_qrcode_icon.svg'; // 로고 이미지 파일의 경로
+logoImage.src = '//www.hungbok.net/image/hb/hb_qrcode_icon.svg'; // 로고 이미지 파일의 경로
 logoImage.onload = function() {
     // 로고 이미지 로드가 완료되면 generateQRCode 함수를 호출하여 QR 코드를 생성
     generateQRCode();
