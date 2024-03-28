@@ -54,6 +54,7 @@ input, textarea {
     cursor: pointer;
     border: none;
     outline: none;
+    color: white;
     background-color: transparent;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
