@@ -523,7 +523,7 @@ select:focus {
     transition: all 0.5s;
 }
 
-.bottom-box > .filterDetail, .bottom-box > #textoutput, .bottom-box > #stringBox {
+.bottom-box > .filterDetail, .bottom-box > #textoutput, .bottom-box > #stringBox, input[type="number"] {
     display: inline-block;
     cursor: text;
     max-width: 100%;
