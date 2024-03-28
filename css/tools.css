@@ -129,8 +129,8 @@ input, textarea {
     border: 0px;
     border-radius: 5px;
     text-align: left;
-    color: var(--text);
-    background-color: var(--section);
+    color: var(--text-4);
+    background-color: var(--background-8);
     filter: drop-shadow(0px 0px 2.5px var(--shadow));
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -155,8 +155,8 @@ input, textarea {
     border: 0px;
     border-radius: 5px;
     overflow: hidden;
-    color: var(--text);
-    background-color: var(--section);
+    color: var(--text-4);
+    background-color: var(--background-8);
     filter: drop-shadow(0px 0px 2.5px var(--shadow));
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -200,7 +200,7 @@ input[type="number"] {
     padding: 62.5px 0px;
     margin: 0;
     width: 370px;
-    color: var(--text);
+    color: var(--text-4);
     cursor: default;
     text-align: right;
     -webkit-transition: all 0.5s;
@@ -240,8 +240,8 @@ input[type="number"] {
     height: 150px;
     padding: 10px;
     border-radius: 5px;
-    color: var(--text);
-    background-color: var(--section);
+    color: var(--text-4);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -331,8 +331,8 @@ input[type="number"] {
     padding: 20px;
     border-radius: 5px;
     cursor: default;
-    color: var(--text);
-    background-color: var(--section);
+    color: var(--text-4);
+    background-color: var(--background-8);
     filter: drop-shadow(0px 0px 2.5px var(--shadow));
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -396,8 +396,8 @@ input[type=radio] + label {
     height: 150px;
     padding: 10px;
     border-radius: 5px;
-    color: var(--text);
-    background-color: var(--section);
+    color: var(--text-4);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -465,8 +465,8 @@ select:focus {
     padding: 0px;
     text-align: center;
     cursor: text;
-    color: var(--title);
-    background-color: var(--section);
+    color: var(--text-1);
+    background-color: var(--background-8);
     max-width: 100%;
     border: 0;
     -webkit-transition: all 0.5s;
@@ -485,8 +485,8 @@ select:focus {
     font-weight: 600;
     border: 0px;
     border-radius: 5px;
-    color: var(--eventtext);
-    background-color: var(--section);
+    color: var(--text-2);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -502,9 +502,9 @@ input[type=radio]+label {
     cursor: pointer;
     user-select: none;
     display: inline-block;
-    color: var(--text);
-    background-color: var(--container);
-    border: 4px solid var(--section);
+    color: var(--text-4);
+    background-color: var(--background-7);
+    border: 4px solid var(--background-8);
     font-weight: bolder;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -518,9 +518,9 @@ input[type=radio] {
 }
 
 input[type=radio]:checked+label {
-    color: var(--text);
-    background-color: var(--section);
-    border: 4px solid var(--btn);
+    color: var(--text-4);
+    background-color: var(--background-8);
+    border: 4px solid var(--text-10);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -533,5 +533,5 @@ input[type=radio]:checked+label {
 }
 
 input:checked[type="checkbox"]+label {
-    background: #198754;
+    background: var(--success);
 }
