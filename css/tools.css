@@ -289,6 +289,7 @@ input:checked[type="checkbox"]+label {
     border-radius: 5px;
     color: var(--text-4);
     background-color: var(--background-8);
+    display: flex;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -321,6 +322,17 @@ input:checked[type="checkbox"]+label {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+canvas {
+    left: 50%;
+    max-height: 140px;
+    height: auto !important;
+    position: relative;
+    transform: translate(-50%, 0%);
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 5px;
 }
 
 .target {
