@@ -470,10 +470,16 @@ input[type=radio] + label {
 
 #fontcolor-b + label {
     background-color: #111111;
+    width: unset;
+    padding: 0;
+    margin: 0;
 }
 
 #fontcolor-w + label {
     background-color: #cccccc;
+    width: unset;
+    padding: 0;
+    margin: 0;
 }
 
 #image-wrapper {
