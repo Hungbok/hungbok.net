@@ -246,17 +246,26 @@ $("#text-color").click(function() {
     $('#text-input').css('color', fontcolor);
 });
 
-var saveButton = document.getElementById("image-wrapper");
-
-saveButton.addEventListener("click", function() {
-    saveImage();
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('image-wrapper').addEventListener('click', function() {
+        var img = this.querySelector('img'); // 이미지 태그를 찾습니다.
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        
+        var imgElement = new Image();
+        imgElement.onload = function() {
+            canvas.width = imgElement.width;
+            canvas.height = imgElement.height;
+            ctx.drawImage(imgElement, 0, 0);
+            canvas.toBlob(function(blob) {
+                var link = document.createElement('a');
+                var filename = document.querySelector('#text-input').value + '.png'; // 파일 이름 설정
+                link.download = filename;
+                link.href = URL.createObjectURL(blob);
+                link.click();
+                URL.revokeObjectURL(link.href); // 메모리 누수 방지
+            }, 'image/png');
+        };
+        imgElement.src = img.src;
+    });
 });
-
-function saveImage() {
-    // QR 코드 이미지를 canvas에 그린 후, 이미지로 저장
-    var canvas = qrcodeElement.querySelector("canvas");
-    var link = document.createElement('a');
-    link.download = 'hb_' + linkInput.value + '.png';
-    link.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-    link.click();
-}
