@@ -29,6 +29,16 @@
     cursor: pointer;
 }
 
+#pagination {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
 button {
     padding: 10px 20px;
     margin: 5px;
@@ -38,13 +48,7 @@ button {
     cursor: pointer;
     border: none;
     outline: none;
-    -ms-user-select: none;
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-drag: none;
-    user-select: none;
+    background-color: var(--text-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -53,5 +57,21 @@ button {
 }
 
 button:hover {
-    background-color: var(--background-6);
+    background-color: var(--text-10);
+}
+
+button.active {
+    background-color: var(--hungbok);
+    color: var(--background-10);
+}
+
+button:disabled:hover {
+    cursor: not-allowed;
+    background-color: var(--background-8);
+    color: var(--background-4);
+}
+
+#pagination > span {
+    padding: 10px;
+    pointer-events: none;
 }
