@@ -46,8 +46,12 @@ function createImage(src, name) {
     a.href = src;
     a.download = `${name}.jpg`; // 다운로드될 파일명 설정
     a.target = "_blank"; // 새 탭에서 링크 열기
-    a.style.display = 'inline-block'; // a 태그를 인라인 블록으로 설정하여 마진 적용 가능
+    a.style.display = 'flex'; // a 태그를 인라인 블록으로 설정하여 마진 적용 가능
     a.style.maxWidth = '100%';
+    a.style.justifyContent = 'center';
+    a.style.padding = '5px';
+    a.style.backgroundColor = '#ffffff';
+    a.style.borderRadius = '5px';
 
     var img = document.createElement('img');
     img.src = src;
