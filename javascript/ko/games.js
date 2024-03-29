@@ -743,6 +743,84 @@ $(document).ready(function(){
             '<p>앞서 해보기 게임은 현재 개발 중인 게임으로 개발 중간에 많은 것이 변경될 수 있습니다. 앞서 해보기 게임을 플레이할 때 전혀 예측하지 못한 이슈가 발생하거나 완전히 새로운 게임플레이 요소를 경험할 수 있습니다.</p>'+
             '<p>현재 개발 중인 게임을 바로 플레이하거나 더 완전한 게임 경험을 제공할 때까지 기다릴 수 있습니다.</p>'+
             '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">자세히 보기</a></p>');
+
+            // Platform
+            $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
+            $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
+            $(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
+            $(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
+            $(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
+            $(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
+            $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');
+
+            // Store
+            $(".platform.steam").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.epicgamesstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.gogcom").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.microsoftstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.eaapp").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.ubisoftstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.battlenet").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.rockstargamesstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.stove").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.xboxstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.playstationstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.nintendoeshop").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.metastore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.googleplay").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.appstore").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.dmmgames").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.dlsite").append('<div class="icon-pc" ttt="PC"></div>');
+            
+            $(".platform.windows").append('<div class="icon-windows" ttt="Windows"></div>');
+            $(".platform.mac").append('<div class="icon-mac" ttt="macOS"></div>');
+            $(".platform.macos").append('<div class="icon-macos" ttt="macOS"></div>');
+            $(".platform.linux").append('<div class="icon-linux" ttt="Linux"></div>');
+
+            $(".platform.playstationvr2").append('<div class="icon-playstationvr2" ttt="PlayStation VR2"></div>');
+            $(".platform.playstation5").append('<div class="icon-playstation5" ttt="PlayStation 5"></div>');
+            $(".platform.playstationvr").append('<div class="icon-playstationvr" ttt="PlayStation VR"></div>');
+            $(".platform.playstation4pro").append('<div class="icon-playstation4pro" ttt="PlayStation 4 Pro"></div>');
+            $(".platform.playstation4").append('<div class="icon-playstation4" ttt="PlayStation 4"></div>');
+            $(".platform.playstationvita").append('<div class="icon-playstationvita" ttt="PlayStation Vita"></div>');
+            $(".platform.playstation3").append('<div class="icon-playstation3" ttt="PlayStation 3"></div>');
+            $(".platform.playstationportable").append('<div class="icon-playstationportable" ttt="PlayStation Portable"></div>');
+            $(".platform.playstation2").append('<div class="icon-playstation2" ttt="PlayStation 2"></div>');
+            $(".platform.playstation1").append('<div class="icon-playstation1" ttt="PlayStation"></div>');
+
+            $(".platform.xboxseriesxs").append('<div class="icon-xboxseriesxs" ttt="Xbox Series X|S"></div>');
+            $(".platform.xboxseriesx").append('<div class="icon-xboxseriesx" ttt="Xbox Series X"></div>');
+            $(".platform.xboxseriess").append('<div class="icon-xboxseriess" ttt="Xbox Series S"></div>');
+            $(".platform.xboxonex").append('<div class="icon-xboxonex" ttt="Xbox One X"></div>');
+            $(".platform.xboxone").append('<div class="icon-xboxone" ttt="Xbox One"></div>');
+            $(".platform.xbox360").append('<div class="icon-xbox360" ttt="Xbox 360"></div>');
+            $(".platform.xbox1").append('<div class="icon-xbox1" ttt="Xbox"></div>');
+
+            $(".platform.nintendoswitch").append('<div class="icon-nintendoswitch" ttt="Nintendo Switch"></div>');
+            $(".platform.newnintendo3ds").append('<div class="icon-newnintendo3ds" ttt="New Nintendo 3DS"></div>');
+            $(".platform.wiiu").append('<div class="icon-wiiu" ttt="Wii U"></div>');
+            $(".platform.nintendo3ds").append('<div class="icon-nintendo3ds" ttt="Nintendo 3DS"></div>');
+            $(".platform.nintendodsi").append('<div class="icon-nintendodsi" ttt="Nintendo DSi"></div>');
+            $(".platform.wii").append('<div class="icon-wii" ttt="Wii"></div>');
+            $(".platform.nintendods").append('<div class="icon-nintendods" ttt="Nintendo DS"></div>');
+            $(".platform.nintendogamecube").append('<div class="icon-nintendogamecube" ttt="Nintendo Gamecube"></div>');
+            $(".platform.gameboyadvance").append('<div class="icon-gameboyadvance" ttt="Game Boy Advance"></div>');
+            $(".platform.gameboycolor").append('<div class="icon-gameboycolor" ttt="Game Boy Color"></div>');
+            $(".platform.nintendo64").append('<div class="icon-nintendo64" ttt="Nintendo 64"></div>');
+            $(".platform.virtualboy").append('<div class="icon-virtualboy" ttt="Virtual Boy"></div>');
+            $(".platform.superfamicom").append('<div class="icon-superfamicom" ttt="Super Famicom"></div>');
+            $(".platform.gameboy").append('<div class="icon-gameboy" ttt="Game Boy"></div>');
+            $(".platform.familycomputer").append('<div class="icon-familycomputer" ttt="Family Computer"></div>');
+            $(".platform.gameandwatch").append('<div class="icon-gameandwatch" ttt="GAME & WATCH"></div>');
+
+            $(".platform.ios").append('<div class="icon-ios" ttt="iOS"></div>');
+            $(".platform.android").append('<div class="icon-android" ttt="Android"></div>');
+
+            $(".platform.xboxcloudgaming").append('<div class="icon-xboxcloudgaming" ttt="Xbox Cloud Gaming"></div>');
+            $(".platform.amazonluna").append('<div class="icon-amazonluna" ttt="Amazon Luna"></div>');
+            $(".platform.geforcenow").append('<div class="icon-geforcenow" ttt="Geforce Now"></div>');
+            $(".platform.stadia").append('<div class="icon-stadia" ttt="Stadia"></div>');
     
             var description = document.querySelector('.description');
             var showMore = document.querySelector('.show-more');
