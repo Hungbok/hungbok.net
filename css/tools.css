@@ -592,7 +592,7 @@ select:focus {
     transition: all 0.5s;
 }
 
-#text-input {
+.top-box > #text-input {
     font-size: 26px;
     font-family: 'Open Sans';
     font-weight: 400;
