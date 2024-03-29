@@ -65,7 +65,7 @@ button.active {
     color: var(--background-10);
 }
 
-button:disabled:hover {
+button:disabled {
     cursor: not-allowed;
     background-color: var(--background-8);
     color: var(--background-4);
