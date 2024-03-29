@@ -15,11 +15,11 @@
 }
 
 #searchResults img {
-    max-width: 20px;
-    max-height: 20px;
+    height: 100%;
+    max-width: 200px;
+    max-height: 300px;
     pointer-events: none;
     filter: brightness(0.75);
-    margin-left: 5px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -29,13 +29,8 @@
 
 .item {
     position: relative;
-    background-color: var(--background-8);
-    padding: 20px 40px;
-    border-radius: 20px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: inline-block;
     margin: 5px 0px;
 }
 
