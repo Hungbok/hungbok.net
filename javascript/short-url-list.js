@@ -26,21 +26,20 @@ async function paginateData(data, page) {
 
     if (dataToDisplay.length === 0) {
         // 데이터가 비어 있을 경우 사용자에게 알림
-        const noResultsMessage = document.createElement('div');
-        noResultsMessage.innerHTML = `<strong>검색 결과가 없습니다.</strong>`;
-        searchResults.appendChild(noResultsMessage);
+        searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
-            resultItem.innerHTML = `
-            <div class="item" ttt="${item.url}">
+            // 검색 결과에 추가
+            searchResults.innerHTML += `
+            <div class="item" ttt="${item.published}">
                 <div class="link">${item.link}</div>
                 <div class="url">${item.url}</div>
             </div>
             `;
-            searchResults.appendChild(resultItem);
         });
     }
 }
+
 
 function updatePaginationButtons(data) {
     const pagination = document.getElementById('pagination');
