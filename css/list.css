@@ -8,13 +8,50 @@
     border-radius: 20px;
 }
 
+#searchResults {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .item {
     position: relative;
     background-color: var(--background-8);
-    padding: 10px 0;
+    padding: 20px 40px;
     border-radius: 20px;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 5px 0px;
+}
+
+.url {
+    cursor: pointer;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+button:hover {
+    background-color: var(--background-6);
 }

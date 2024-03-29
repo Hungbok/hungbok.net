@@ -32,7 +32,7 @@ async function paginateData(data, page) {
             // 검색 결과에 추가
             searchResults.innerHTML += `
             <div class="item" ttt="${item.published}">
-                <div class="link">${item.link}</div>
+                <div class="link"><a href="${item.link}" target="_blank">${item.link}</a></div>
                 <div class="url copy" copy="https://hgbk.me/${item.url}">${item.url}</div>
             </div>
             `;
@@ -118,11 +118,12 @@ function searchOnEnter(event) {
     }
 }
 
-// .copy 클래스를 가진 모든 요소를 찾아 각각에 대하여 이벤트 리스너를 추가합니다.
-document.querySelectorAll('.copy').forEach(item => {
-    item.addEventListener('click', function() {
+// document 레벨에서 클릭 이벤트 리스너를 추가하여 이벤트 위임을 사용합니다.
+document.addEventListener('click', function(event) {
+    // 클릭된 요소가 .copy 클래스를 가진 요소인지 확인합니다.
+    if (event.target.classList.contains('copy')) {
         // 클릭된 요소의 'copy' 속성 값을 가져옵니다.
-        var copyText = this.getAttribute('copy');
+        var copyText = event.target.getAttribute('copy');
 
         // 클립보드에 복사하기 위한 임시 textarea 요소를 생성합니다.
         var tempInput = document.createElement('textarea');
@@ -134,5 +135,5 @@ document.querySelectorAll('.copy').forEach(item => {
 
         // 사용자에게 복사가 완료되었음을 알립니다. (선택적)
         showMessage('copied');
-    });
+    }
 });
