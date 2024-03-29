@@ -1,5 +1,5 @@
 // JSON 파일 경로
-const dataUrl = '//data.hungbok.net/data/url-shortener.json';
+const dataUrl = '//data.hungbok.net/data/games/list.json';
 const resultsPerPage = 5; // 페이지당 결과 수
 
 let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
