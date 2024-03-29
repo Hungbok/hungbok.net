@@ -17,164 +17,164 @@
 
 .language-en:after,
 .language-select[data-lang="en"] .language-text::after {
-    content: "English";
+    content: "Anglais";
 }
 
 .language-ja:after,
 .language-select[data-lang="ja"] .language-text::after {
-    content: "Japanese";
+    content: "Japonais";
 }
 
 .language-ko:after,
 .language-select[data-lang="ko"] .language-text::after {
-    content: "Korean";
+    content: "Coréen";
 }
 
 /* 비활성 언어 */
 
 .language-en-gb:after,
 .language-select[data-lang="en-gb"] .language-text::after {
-    content: "English (British)";
+    content: "Anglais (Royaume-Uni)";
 }
 
 .language-en-ca:after,
 .language-select[data-lang="en-ca"] .language-text::after {
-    content: "English (Canada)";
+    content: "Anglais (Canada)";
 }
 
 .language-en-au:after,
 .language-select[data-lang="en-au"] .language-text::after {
-    content: "English (Australia)";
+    content: "Anglais (Australie)";
 }
 
 .language-id:after,
 .language-select[data-lang="id"] .language-text::after {
-    content: "Indonesian";
+    content: "Indonésien";
 }
 
 .language-ms:after,
 .language-select[data-lang="ms"] .language-text::after {
-    content: "Malay";
+    content: "Malais";
 }
 
 .language-cs:after,
 .language-select[data-lang="cs"] .language-text::after {
-    content: "Czech";
+    content: "Tchèque";
 }
 
 .language-da:after,
 .language-select[data-lang="da"] .language-text::after {
-    content: "Danish";
+    content: "Danois";
 }
 
 .language-de:after,
 .language-select[data-lang="de"] .language-text::after {
-    content: "German";
+    content: "Allemand";
 }
 
 .language-es:after,
 .language-select[data-lang="es"] .language-text::after {
-    content: "Spanish";
+    content: "Espagnol";
 }
 
 .language-es-mx:after,
 .language-select[data-lang="es-mx"] .language-text::after {
-    content: "Spanish (Mexico)";
+    content: "Espagnol (Mexique)";
 }
 
 .language-fr:after,
 .language-select[data-lang="fr"] .language-text::after {
-    content: "French";
+    content: "Français";
 }
 
 .language-fr-ca:after,
 .language-select[data-lang="fr-ca"] .language-text::after {
-    content: "French (Canada)";
+    content: "Français (Canada)";
 }
 
 .language-it:after,
 .language-select[data-lang="it"] .language-text::after {
-    content: "Italian";
+    content: "Italien";
 }
 
 .language-hu:after,
 .language-select[data-lang="hu"] .language-text::after {
-    content: "Hungarian";
+    content: "Hongrois";
 }
 
 .language-nl:after,
 .language-select[data-lang="nl"] .language-text::after {
-    content: "Dutch";
+    content: "Néerlandais";
 }
 
 .language-no:after,
 .language-select[data-lang="no"] .language-text::after {
-    content: "Norwegian";
+    content: "Norvégien";
 }
 
 .language-pl:after,
 .language-select[data-lang="pl"] .language-text::after {
-    content: "Polish";
+    content: "Polonais";
 }
 
 .language-pt:after,
 .language-select[data-lang="pt"] .language-text::after {
-    content: "Portuguese";
+    content: "Portugais";
 }
 
 .language-pt-br:after,
 .language-select[data-lang="pt-br"] .language-text::after {
-    content: "Portuguese (Brazil)";
+    content: "Portugais (Brésil)";
 }
 
 .language-ro:after,
 .language-select[data-lang="ro"] .language-text::after {
-    content: "Romanian";
+    content: "Roumain";
 }
 
 .language-fi:after,
 .language-select[data-lang="fi"] .language-text::after {
-    content: "Finnish";
+    content: "Finnois";
 }
 
 .language-sv:after,
 .language-select[data-lang="sv"] .language-text::after {
-    content: "Swedish";
+    content: "Suédois";
 }
 
 .language-vi:after,
 .language-select[data-lang="vi"] .language-text::after {
-    content: "Vietnamese";
+    content: "Vietnamien";
 }
 
 .language-tr:after,
 .language-select[data-lang="tr"] .language-text::after {
-    content: "Turkish";
+    content: "Turc";
 }
 
 .language-bg:after,
 .language-select[data-lang="bg"] .language-text::after {
-    content: "Bulgarian";
+    content: "Bulgare";
 }
 
 .language-ru:after,
 .language-select[data-lang="ru"] .language-text::after {
-    content: "Russian";
+    content: "Russe";
 }
 
 .language-uk:after,
 .language-select[data-lang="uk"] .language-text::after {
-    content: "Ukrainian";
+    content: "Ukrainien";
 }
 
 .language-el:after,
 .language-select[data-lang="el"] .language-text::after {
-    content: "Greek";
+    content: "Grec";
 }
 
 .language-ar:after,
 .language-select[data-lang="ar"] .language-text::after {
-    content: "Arabic";
+    content: "Arabe";
 }
 
 .language-hi:after,
@@ -184,139 +184,139 @@
 
 .language-th:after,
 .language-select[data-lang="th"] .language-text::after {
-    content: "Thai";
+    content: "Thaï";
 }
 
 .language-zh-cn:after,
 .language-select[data-lang="zh-cn"] .language-text::after {
-    content: "Chinese (Simplified)";
+    content: "Chinois (Simplifié)";
 }
 
 .language-zh-tw:after,
 .language-select[data-lang="zh-tw"] .language-text::after {
-    content: "Chinese (Traditional)";
+    content: "Chinois (Traditionnel)";
 }
 
 /* 미사용
 
 .language-select[data-lang="en-us"] .language-text::after {
-    content: "영어(미국)";
+    content: "Anglais (États-Unis)";
 }
 
 .language-select[data-lang="cs-cz"] .language-text::after {
-    content: "체코어(체코)";
+    content: "Tchèque (République Tchèque)";
 }
 
 .language-select[data-lang="de-de"] .language-text::after {
-    content: "독일어(독일)";
+    content: "Allemand (Allemagne)";
 }
 
 .language-select[data-lang="es-es"] .language-text::after {
-    content: "스페인어(스페인)";
+    content: "Espagnol (Espagne)";
 }
 
 .language-select[data-lang="fi-fi"] .language-text::after {
-    content: "핀란드어(핀란드)";
+    content: "Finnois (Finlande)";
 }
 
 .language-select[data-lang="fr-fr"] .language-text::after {
-    content: "프랑스어(프랑스)";
+    content: "Français (France)";
 }
 
 .language-select[data-lang="hu-hu"] .language-text::after {
-    content: "헝가리어(헝가리)";
+    content: "Hongrois (Hongrie)";
 }
 
 .language-select[data-lang="hi-in"] .language-text::after {
-    content: "힌디어(인도)";
+    content: "Hindi (Inde)";
 }
 
 .language-select[data-lang="it-it"] .language-text::after {
-    content: "이탈리아어(이탈리아)";
+    content: "Italien (Italie)";
 }
 
 .language-select[data-lang="nl-nl"] .language-text::after {
-    content: "네덜란드어(네덜란드)";
+    content: "Néerlandais (Pays-Bas)";
 }
 
 .language-select[data-lang="pl-pl"] .language-text::after {
-    content: "폴란드어(폴란드)";
+    content: "Polonais (Pologne)";
 }
 
 .language-select[data-lang="pt-pt"] .language-text::after {
-    content: "포르투갈어(포르투갈)";
+    content: "Portugais (Portugal)";
 }
 
 .language-select[data-lang="ru-ru"] .language-text::after {
-    content: "러시아어(러시아)";
+    content: "Russe (Russie)";
 }
 
 .language-select[data-lang="ar-sa"] .language-text::after {
-    content: "아랍어(사우디아라비아)";
+    content: "Arabe (Arabie Saoudite)";
 }
 
 .language-select[data-lang="th-th"] .language-text::after {
-    content: "태국어(태국)";
+    content: "Thaï (Thaïlande)";
 }
 
 .language-select[data-lang="tr-tr"] .language-text::after {
-    content: "튀르키예어(튀르키예)";
+    content: "Turc (Turquie)";
 }
 
 .language-select[data-lang="uk-ua"] .language-text::after {
-    content: "우크라이나어(우크라이나)";
+    content: "Ukrainien (Ukraine)";
 }
 
 .language-select[data-lang="zh"] .language-text::after {
-    content: "중국어";
+    content: "Chinois";
 }
 
 .language-select[data-lang="ja-jp"] .language-text::after {
-    content: "일본어(일본)";
+    content: "Japonais (Japon)";
 }
 
 .language-select[data-lang="ko-kr"] .language-text::after {
-    content: "한국어(대한민국)";
+    content: "Coréen (Corée du Sud)";
 }
 
 .language-select[data-lang="zh-hans"] .language-text::after {
-    content: "중국어(간체)";
+    content: "Chinois (Simplifié)";
 }
 
 .language-select[data-lang="zh-hant"] .language-text::after {
-    content: "중국어(번체)";
+    content: "Chinois (Traditionnel)";
 }
 
 .language-select[data-lang="bg-bg"] .language-text::after {
-    content: "불가리아어(불가리아)";
+    content: "Bulgare (Bulgarie)";
 }
 
 .language-select[data-lang="ms-id"] .language-text::after {
-    content: "인도네시아어(인도네시아)";
+    content: "Indonésien (Indonésie)";
 }
 
 .language-select[data-lang="el-gr"] .language-text::after {
-    content: "그리스어(그리스)";
+    content: "Grec (Grèce)";
 }
 
 .language-select[data-lang="no-no"] .language-text::after {
-    content: "노르웨이어(노르웨이)";
+    content: "Norvégien (Norvège)";
 }
 
 .language-select[data-lang="da-dk"] .language-text::after {
-    content: "덴마크어(덴마크)";
+    content: "Danois (Danemark)";
 }
 
 .language-select[data-lang="sv-se"] .language-text::after {
-    content: "스웨덴어(스웨덴)";
+    content: "Suédois (Suède)";
 }
 
 .language-select[data-lang="ro-ro"] .language-text::after {
-    content: "루마니아어(루마니아)";
+    content: "Roumain (Roumanie)";
 }
 
 .language-select[data-lang="vi-vn"] .language-text::after {
-    content: "베트남어(베트남)";
+    content: "Vietnamien (Vietnam)";
 } */
 
 .info-th > p::after {
@@ -360,46 +360,46 @@
 }
 
 .report-item#option1 p::after {
-    content: "Inappropriate Content";
+    content: "Contenu Inapproprié";
 }
 .report-item#option1::after {
-    content: "Content that violates public order or moral standards, or is deemed unsuitable. This includes sexually explicit content, violent images or language, hate speech, etc.";
+    content: "Contenu qui viole l'ordre public ou les normes morales, ou qui est jugé inapproprié. Cela inclut le contenu à caractère sexuellement explicite, les images ou le langage violents, les discours de haine, etc.";
 }
 .report-item#option2 p::after {
-    content: "Threatening Content";
+    content: "Contenu Menaçant";
 }
 .report-item#option2::after {
-    content: "Content that threatens or attacks individuals or groups. This can range from direct physical threats to language or actions that may indirectly incite violence or harassment.";
+    content: "Contenu qui menace ou attaque des individus ou des groupes. Cela peut aller des menaces physiques directes aux langages ou actions susceptibles d'inciter indirectement à la violence ou au harcèlement.";
 }
 .report-item#option3 p::after {
-    content: "Illegal and Unlawful Content";
+    content: "Contenu Illégal et Contraire à la Loi";
 }
 .report-item#option3::after {
-    content: "Content that violates local laws, including infringement of copyright, trademarks, privacy rights, etc.";
+    content: "Contenu qui viole les lois locales, y compris la violation des droits d'auteur, des marques, des droits à la vie privée, etc.";
 }
 .report-item#option4 p::after {
-    content: "Harmful Content";
+    content: "Contenu Nuisible";
 }
 .report-item#option4::after {
-    content: "Content that is psychologically or emotionally harmful. This includes defamation, abuse, discrimination, hate speech, child exploitation, etc.";
+    content: "Contenu qui est psychologiquement ou émotionnellement nuisible. Cela inclut la diffamation, les abus, la discrimination, les discours de haine, l'exploitation des enfants, etc.";
 }
 .report-item#option5 p::after {
-    content: "Privacy Violation and Defamation";
+    content: "Violation de la Vie Privée et Diffamation";
 }
 .report-item#option5::after {
-    content: "Actions that unlawfully expose personal information or damage reputation.";
+    content: "Actions qui exposent illégalement des informations personnelles ou qui endommagent la réputation.";
 }
 .report-item#option6 p::after {
-    content: "Spam and Fraudulent Content";
+    content: "Contenu Spam et Frauduleux";
 }
 .report-item#option6::after {
-    content: "Improper marketing or advertising, spam links, security threats, and content intended to deceive or harm users.";
+    content: "Marketing ou publicité inappropriés, liens spam, menaces de sécurité et contenu destiné à tromper ou à nuire aux utilisateurs.";
 }
 .report-item#option7 p::after {
-    content: "Misinformation or False Information";
+    content: "Désinformation ou Information Fausse";
 }
 .report-item#option7::after {
-    content: "Providing false information, fake news, rumors, or information requiring fact-checking.";
+    content: "Fournir de fausses informations, des fake news, des rumeurs ou des informations nécessitant une vérification des faits.";
 }
 
 .text-report-more::before {
