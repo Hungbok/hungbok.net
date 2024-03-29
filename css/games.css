@@ -1686,7 +1686,7 @@ div.opencritic-reviews {
 }
 
 .description-attention > p.description-title,
-.description > p.description-title {
+.description-content > p.description-title {
     color: var(--text-4);
     font-weight: bold;
 }
@@ -1802,6 +1802,10 @@ div.opencritic-reviews {
 
 .description p.description-update {
     float: right;
+}
+
+.description-center {
+    text-align: center;
 }
 
 .franchise-template {
