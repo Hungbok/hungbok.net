@@ -326,8 +326,7 @@ input:checked[type="checkbox"]+label {
     bottom: 0;
 }
 
-#qrcode,
-#image {
+#qrcode {
     height: 150px;
     padding: 10px;
     border-radius: 5px;
@@ -335,6 +334,23 @@ input:checked[type="checkbox"]+label {
     background-color: var(--background-8);
     display: flex;
     justify-content: center;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#image {
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text-4);
+    background-color: var(--background-8);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;

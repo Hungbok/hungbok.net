@@ -22,10 +22,11 @@ function createImage(src, name) {
     a.href = src;
     a.download = `${name}.jpg`; // 다운로드될 파일명 설정
     a.style.display = 'inline-block'; // a 태그를 인라인 블록으로 설정하여 마진 적용 가능
-
+    a.style.maxWidth = '100%';
+    
     var img = document.createElement('img');
     img.src = src;
-    img.style.margin = '10px'; // 이미지 간격 조정
+    img.style.width = '100%';
 
     a.appendChild(img);
     
