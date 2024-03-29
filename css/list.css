@@ -75,3 +75,15 @@ button:disabled {
     padding: 10px;
     pointer-events: none;
 }
+
+#searchResults img {
+    max-width: 20px;
+    max-height: 20px;
+    pointer-events: none;
+    filter: brightness(0.75);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
