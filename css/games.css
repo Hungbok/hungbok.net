@@ -1819,17 +1819,17 @@ div.opencritic-reviews {
     height: 15px;
     left: 50%;
     transform: translate(-50%, 0%);
-    bottom: 5px;
+    bottom: -20px;
     pointer-events: none;
     z-index: 12;
 }
 
-.external-store-link .external-link a.external-link-button {
+/* .external-store-link .external-link a.external-link-button {
     background-size: 30px 30px, 80px 80px;
     width: 60px;
     height: 60px;
     border-radius: 20px;
-}
+} */
 
 /* home */
 
