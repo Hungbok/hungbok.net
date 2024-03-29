@@ -159,6 +159,9 @@ $(document).ready(function(){
                 '{franchise4}': data[0].franchise4,
                 '{franchise5}': data[0].franchise5,
 
+                '{review}': data[0].review,
+                '{metacritic}': data[0].metacritic,
+                '{opencritic}': data[0].opencritic,
                 '{metacritic1}': data[0].metacritic1,
                 '{metacritic2}': data[0].metacritic2,
                 '{metacritic3}': data[0].metacritic3,
@@ -186,6 +189,11 @@ $(document).ready(function(){
                 '{opencritic_rating}': data[0].opencritic_rating,
                 '{top_critic_average}': data[0].top_critic_average,
                 '{critics_recommend}': data[0].critics_recommend,
+                
+                '{system_requirements}': data[0].system_requirements,
+                '{system_requirements_tab1}': data[0].system_requirements_tab1,
+                '{system_requirements_tab2}': data[0].system_requirements_tab2,
+                '{system_requirements_tab3}': data[0].system_requirements_tab3,
                 '{minimum_os}': data[0].minimum_os,
                 '{minimum_processor}': data[0].minimum_processor,
                 '{minimum_memory}': data[0].minimum_memory,

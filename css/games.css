@@ -530,6 +530,7 @@
 .info-table .info-right > p > img {
     height: 100%;
     max-height: 30px;
+    max-width: 75px;
 }
 
 .info .info-right div {
@@ -653,12 +654,20 @@
     margin: 10px;
 }
 
+.review.none {
+    display: none;
+}
+
 .more-info-release,
 .more-info-language,
 .more-info-reviews {
     width: 100%;
     max-width: calc(100% - 20px);
     margin: 10px;
+}
+
+.more-info-release.none {
+    display: none;
 }
 
 .more-info-language {
@@ -763,6 +772,10 @@ div.system-requirements-title {
 
 .more-info-tab:hover {
     color: var(--text-4);
+}
+
+.more-info-tab.none {
+    display: none;
 }
 
 .more-info-tab-content {
@@ -972,6 +985,10 @@ div.system-requirements-title {
     gap: 10px;
 }
 
+.metacritic-reviews.none {
+    display: none;
+}
+
 .metacritic-title {
     width: 100%;
     margin: 10px 0 20px;
@@ -1044,6 +1061,10 @@ div.system-requirements-title {
     align-items: center;
     justify-content: space-evenly;
     gap: 20px;
+}
+
+.opencritic.none {
+    display: none;
 }
 
 .opencritic > div {
