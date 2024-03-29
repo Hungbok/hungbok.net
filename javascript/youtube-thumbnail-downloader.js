@@ -29,10 +29,10 @@ function generateImages() {
     imageContainer.innerHTML = ''; // 이미지 컨테이너 초기화
 
     // 이미지 URL 생성
-    var imageUrlMaxRes = `https://img.youtube.com/vi/${linkInput}/maxresdefault.jpg`;
-    var imageUrlSd = `https://img.youtube.com/vi/${linkInput}/sddefault.jpg`;
-    var imageUrlHq = `https://i3.ytimg.com/vi/${linkInput}/hqdefault.jpg`;
-    var imageUrlMq = `https://img.youtube.com/vi/${linkInput}/mqdefault.jpg`;
+    var imageUrlMaxRes = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+    var imageUrlSd = `https://img.youtube.com/vi/${videoID}/sddefault.jpg`;
+    var imageUrlHq = `https://i3.ytimg.com/vi/${videoID}/hqdefault.jpg`;
+    var imageUrlMq = `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
 
     // 각 해상도별 이미지 생성 및 추가
     imageContainer.appendChild(createImage(imageUrlMaxRes, 'maxresdefault'));
