@@ -681,6 +681,10 @@
     flex-direction: row;
 }
 
+.more-info-language.none {
+    display: none;
+}
+
 .more-info-item-title {
     color: var(--text-2);
     font-weight: bold;
