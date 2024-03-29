@@ -29,21 +29,27 @@
 
 .item {
     position: relative;
-    text-align: center;
+    text-align: left;
     display: inline-block;
-    margin: 5px 0px;
 }
 
-.url,
-.link a {
-    cursor: pointer;
+.image {
     display: flex;
-    align-items: center;
-    align-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    height: 300px;
+    position: relative;
+    box-shadow: 0 10px 20px var(--background-10-opavity-75);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
-.url::before {
-    content: "https://hgbk.me/";
+.item:hover .image {
+    transform: translate(0. -5px);
 }
 
 #pagination {
