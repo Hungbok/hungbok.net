@@ -96,7 +96,7 @@ function searchInstantly() {
     }
 
     filteredData = allData.filter(item =>
-        item.title.toLowerCase().includes(textToSearch) || item.content.toLowerCase().includes(textToSearch)
+        item.link.toLowerCase().includes(textToSearch) || item.url.toLowerCase().includes(textToSearch)
     );
 
     currentPage = 1;
