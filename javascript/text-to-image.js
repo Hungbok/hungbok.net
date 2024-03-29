@@ -28,7 +28,7 @@ document.getElementById("app").innerHTML = `
     </div>
     <div class="bottom-box">
         <div id="image-wrapper">
-            <img src="hb_text_to_image.png" style="height: 0px;">
+            <img src="//www.hungbok.net/image/hb/hb_text_to_image.png" style="height: 0px;">
         </div>
     </div>`;
 
