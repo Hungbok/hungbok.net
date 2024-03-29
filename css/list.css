@@ -13,6 +13,18 @@
     margin: 0 auto;
 }
 
+#searchResults img {
+    max-width: 20px;
+    max-height: 20px;
+    pointer-events: none;
+    filter: brightness(0.75);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 .item {
     position: relative;
     background-color: var(--background-8);
@@ -27,6 +39,10 @@
 
 .url {
     cursor: pointer;
+}
+
+.url::before {
+    content: "https://hgbk.me/";
 }
 
 #pagination {
@@ -74,16 +90,4 @@ button:disabled {
 #pagination > span {
     padding: 10px;
     pointer-events: none;
-}
-
-#searchResults img {
-    max-width: 20px;
-    max-height: 20px;
-    pointer-events: none;
-    filter: brightness(0.75);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
 }
