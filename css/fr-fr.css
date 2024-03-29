@@ -320,15 +320,15 @@
 } */
 
 .info-th > p::after {
-    content: "Details";
+    content: "Détails";
 }
 
 .early-access-date::before {
-    content: "Early Access";
+    content: "Jeu en accès anticipé";
 }
 
 .full-release-date::before {
-    content: "Full Release";
+    content: "Version Complète";
 }
 
 .description-source::before {
@@ -336,27 +336,27 @@
 }
 
 .description-update::before {
-    content: "Last Update | ";
+    content: "Dernière Mise à Jour | ";
 }
 
 .show-more::after {
-    content: "Show More";
+    content: "Montre Plus";
 }
 
 .show-more.open::after {
-    content: "Show Less";
+    content: "Montrer Moins";
 }
 
 .franchise > .details > summary::after {
-    content: "[ Show · Hide ]";
+    content: "[ Afficher · Masquer ]";
 }
 
 .text-report-title::after {
-    content: "Report";
+    content: "Rapport";
 }
 
 .text-report-text::after {
-    content: "Please select the reason for reporting.";
+    content: "Veuillez sélectionner la raison du signalement.";
 }
 
 .report-item#option1 p::after {
@@ -403,19 +403,19 @@
 }
 
 .text-report-more::before {
-    content: "Need more help?";
+    content: "Besoin d'aide?";
 }
 
 .text-report-help::after {
-    content: "Contact Us";
+    content: "Contactez-nous";
 }
 
 .text-share-title::after {
-    content: "Share";
+    content: "Partager";
 }
 
 .text-share-text::after {
-    content: "Please select the service to share.";
+    content: "Veuillez sélectionner le service à partager.";
 }
 
 .sale-date > .date-container > p:first-child::after,
@@ -434,27 +434,27 @@
 }
 
 #dataContainer .item.expired::before {
-    content: "Expired";
+    content: "Expiré";
 }
 
 #dataContainer .item a.item-link::before {
-    content: "Claim on ";
+    content: "Obtenez-le sur ";
 }
 
 #dataContainer .item.games a.item-link::before {
-    content: "Claim on ";
+    content: "Obtenez-le sur ";
 }
 
 #dataContainer .item.bundle a.item-link::before {
-    content: "Buy in ";
+    content: "Acheter sur ";
 }
 
 #dataContainer .item.trials a.item-link::before {
-    content: "Play Trials in ";
+    content: "Jouez aux essais sur ";
 }
 
 #dataContainer .item.subscription a.item-link::before {
-    content: "Subscribe to ";
+    content: "Abonnez-vous à ";
 }
 
 #dataContainer .item.from-steam a.item-link::after {
@@ -530,16 +530,16 @@
 }
 
 .item.unknown .timer-container.end::after {
-    content: "Unknown";
+    content: "Inconnu";
 }
 
 .item.trials .timer-container.start::before,
 .sale-timer.timer-container.start::before {
-    content: "Start in";
+    content: "Commence après";
 }
 
 .sale-timer.timer-container.end::before {
-    content: "End in";
+    content: "Expire après";
 }
 
 .body-games.en .middle-content::before {
