@@ -90,7 +90,6 @@ button:hover {
 
 button img {
     height: 12px;
-    filter: invert(0%) sepia(95%) saturate(1208%) hue-rotate(351deg) brightness(78%) contrast(87%);
 }
 
 button.active {
@@ -100,6 +99,8 @@ button.active {
 
 button:disabled {
     cursor: not-allowed;
+    background-color: var(--background-8);
+    color: var(--background-4);
     filter: brightness(0.75);
 }
 
