@@ -32,8 +32,10 @@ async function paginateData(data, page) {
             // 검색 결과에 추가
             searchResults.innerHTML += `
             <div class="item">
-                <div class="title">${item.title}</div>
-                <div class="content">${item.content}</div>
+                <a class="link" href="${item.link}">
+                    <div class="image"><img src="${item.image}"></div>
+                    <div class="title">${item.title}</div>
+                </a>
             </div>
             `;
         });
@@ -96,7 +98,7 @@ function searchInstantly() {
     }
 
     filteredData = allData.filter(item =>
-        item.title.toLowerCase().includes(textToSearch) || item.content.toLowerCase().includes(textToSearch)
+        item.title.toLowerCase().includes(textToSearch)
     );
 
     currentPage = 1;
