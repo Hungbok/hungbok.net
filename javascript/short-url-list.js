@@ -50,9 +50,9 @@ function updatePaginationButtons(data) {
     const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
 
     if (currentPage > 1) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})">이전페이지</button>`;
+        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
     } else {
-        pagination.innerHTML += `<button disabled>이전페이지</button>`;
+        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
     }
 
     if (maxLeft > 1) {
@@ -70,9 +70,9 @@ function updatePaginationButtons(data) {
     }
 
     if (currentPage < totalPages) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})">다음페이지</button>`;
+        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
     } else {
-        pagination.innerHTML += `<button disabled>다음페이지</button>`;
+        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
     }
 }
 

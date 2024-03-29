@@ -83,6 +83,10 @@ button:hover {
     background-color: var(--text-10);
 }
 
+button img {
+    height: 12px;
+}
+
 button.active {
     background-color: var(--hungbok);
     color: var(--background-10);
