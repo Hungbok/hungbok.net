@@ -817,23 +817,24 @@ $(document).ready(function(){
             $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');
 
             // Store
-            $(".platform.steam").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.epicgamesstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.gogcom").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.microsoftstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.eaapp").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.ubisoftstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.battlenet").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.rockstargamesstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.stove").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.xboxstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.playstationstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.nintendoeshop").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.metastore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.googleplay").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.appstore").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.dmmgames").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.dlsite").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.steam").append('<div class="icon-steam" ttt="Steam"></div>');
+            $(".platform.epicgamesstore").append('<div class="icon-epicgamesstore" ttt="Epic Games Store"></div>');
+            $(".platform.gogcom").append('<div class="icon-gogcom" ttt="GOG.com"></div>');
+            $(".platform.microsoftstore").append('<div class="icon-microsoftstore" ttt="Microsoft Store"></div>');
+            $(".platform.eaapp").append('<div class="icon-eaapp" ttt="EA"></div>');
+            $(".platform.ubisoftstore").append('<div class="icon-ubisoftstore" ttt="Ubisoft Store"></div>');
+            $(".platform.battlenet").append('<div class="icon-battlenet" ttt="Battle.net"></div>');
+            $(".platform.rockstargamesstore").append('<div class="icon-rockstargamesstore" ttt="Rockstar Games Store"></div>');
+            $(".platform.stove").append('<div class="icon-stove" ttt="Stove"></div>');
+            $(".platform.xboxstore").append('<div class="icon-xboxstore" ttt="Xbox Games Store"></div>');
+            $(".platform.playstationstore").append('<div class="icon-playstationstore" ttt="PlayStation Store"></div>');
+            $(".platform.nintendoeshop").append('<div class="icon-nintendoeshop" ttt="Nintendo eShop"></div>');
+            $(".platform.metastore").append('<div class="icon-metastore" ttt="Meta Store"></div>');
+            $(".platform.googleplay").append('<div class="icon-googleplay" ttt="Google Play"></div>');
+            $(".platform.appstore").append('<div class="icon-appstore" ttt="App Store"></div>');
+            $(".platform.galaxystore").append('<div class="icon-galaxystore" ttt="Galaxy Store"></div>');
+            $(".platform.dmmgames").append('<div class="icon-dmmgames" ttt="DMM GAMES"></div>');
+            $(".platform.dlsite").append('<div class="icon-dlsite" ttt="DLsite"></div>');
             
             $(".platform.windows").append('<div class="icon-windows" ttt="Windows"></div>');
             $(".platform.mac").append('<div class="icon-mac" ttt="macOS"></div>');
