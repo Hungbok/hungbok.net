@@ -73,6 +73,7 @@ $(document).ready(function(){
                 '{classind}': data[0].classind,
                 '{appstoreage}': data[0].appstoreage,
   
+                '{language}': data[0].language,
                 '{en_audio}': data[0].en_audio,
                 '{en_text}': data[0].en_text,
                 '{id_audio}': data[0].id_audio,
