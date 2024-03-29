@@ -2,7 +2,7 @@
 const dataUrl = '//data.hungbok.net/data/url-shortener.json';
 const resultsPerPage = 5; // 페이지당 결과 수
 
-let currentPage = 1;
+let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
 let allData = []; // 모든 데이터를 저장하는 배열
 let filteredData = []; // 검색된 데이터를 저장하는 배열
 
@@ -24,35 +24,64 @@ async function paginateData(data, page) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
-    dataToDisplay.forEach(item => {
-        // 검색 결과에 추가
-        const resultItem = document.createElement('div');
-        resultItem.innerHTML = `
-            <div class="item" ttt="${item.published}">
+    if (dataToDisplay.length === 0) {
+        // 데이터가 비어 있을 경우 사용자에게 알림
+        const noResultsMessage = document.createElement('div');
+        noResultsMessage.innerHTML = `<strong>검색 결과가 없습니다.</strong>`;
+        searchResults.appendChild(noResultsMessage);
+    } else {
+        dataToDisplay.forEach(item => {
+            resultItem.innerHTML = `
+            <div class="item" ttt="${item.url}">
                 <div class="link">${item.link}</div>
                 <div class="url">${item.url}</div>
             </div>
-        `;
-        searchResults.appendChild(resultItem);
-    });
+            `;
+            searchResults.appendChild(resultItem);
+        });
+    }
 }
 
 function updatePaginationButtons(data) {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
-
+    
     const totalPages = Math.ceil(data.length / resultsPerPage);
+    const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
+    const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
 
-    for (let i = 1; i <= totalPages; i++) {
-        const pageButton = document.createElement('button');
-        pageButton.textContent = i;
-        pageButton.onclick = () => {
-            currentPage = i;
-            paginateData(data, currentPage);
-            updatePaginationButtons(data);
-        };
-        pagination.appendChild(pageButton);
+    if (currentPage > 1) {
+        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})">이전페이지</button>`;
+    } else {
+        pagination.innerHTML += `<button disabled>이전페이지</button>`;
     }
+
+    if (maxLeft > 1) {
+        pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
+        pagination.innerHTML += `<span>...</span>`;
+    }
+
+    for (let i = maxLeft; i <= maxRight; i++) {
+        pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
+    }
+
+    if (maxRight < totalPages) {
+        pagination.innerHTML += `<span>...</span>`;
+        pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
+    }
+
+    if (currentPage < totalPages) {
+        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})">다음페이지</button>`;
+    } else {
+        pagination.innerHTML += `<button disabled>다음페이지</button>`;
+    }
+}
+
+function changePage(page) {
+    currentPage = page;
+    paginateData(filteredData.length > 0 ? filteredData : allData, currentPage);
+    updatePaginationButtons(filteredData.length > 0 ? filteredData : allData);
+    history.pushState(null, '', `?page=${currentPage}`);
 }
 
 function searchInstantly() {
@@ -60,29 +89,24 @@ function searchInstantly() {
     const textToSearch = inputText.trim().toLowerCase();
 
     if (!textToSearch) {
-        // 검색어가 비어 있으면 모든 데이터 표시
+        filteredData = [];
         currentPage = 1;
         paginateData(allData, currentPage);
         updatePaginationButtons(allData);
         return;
     }
 
-    // 검색어와 일치하는 항목만 필터링
     filteredData = allData.filter(item =>
         item.title.toLowerCase().includes(textToSearch) || item.content.toLowerCase().includes(textToSearch)
     );
 
     currentPage = 1;
-
-    // 검색 결과 페이지를 업데이트
     paginateData(filteredData, currentPage);
     updatePaginationButtons(filteredData);
 }
 
-// 입력 필드 값이 변경될 때마다 실시간 검색 실행
 document.getElementById('searchInput').addEventListener('input', searchInstantly);
 
-// 초기 데이터를 로드하고 페이지를 표시하기 위해 페이지 로드 시 호출
 loadData().then(data => {
     allData = data;
     paginateData(allData, currentPage);
@@ -91,6 +115,6 @@ loadData().then(data => {
 
 function searchOnEnter(event) {
     if (event.key === 'Enter') {
-        searchData();
+        searchInstantly();
     }
 }
