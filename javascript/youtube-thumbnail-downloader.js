@@ -2,40 +2,32 @@ function generateImages() {
     var linkInput = document.getElementById('linkInput').value;
     var imageContainer = document.getElementById('image');
 
-    // 기존 이미지들을 지우고 새로운 이미지를 생성하기 전에 컨테이너를 비웁니다.
-    imageContainer.innerHTML = '';
+    imageContainer.innerHTML = ''; // 이미지 컨테이너 초기화
 
-    // 이미지 URL을 생성합니다.
+    // 이미지 URL 생성
     var imageUrlMaxRes = `https://img.youtube.com/vi/${linkInput}/maxresdefault.jpg`;
     var imageUrlSd = `https://img.youtube.com/vi/${linkInput}/sddefault.jpg`;
+    var imageUrlHq = `https://i3.ytimg.com/vi/${linkInput}/hqdefault.jpg`;
     var imageUrlMq = `https://img.youtube.com/vi/${linkInput}/mqdefault.jpg`;
 
-    // 최대 해상도 이미지
-    var imgMaxRes = createImage(imageUrlMaxRes);
-    imageContainer.appendChild(imgMaxRes);
-
-    // 표준 해상도 이미지
-    var imgSd = createImage(imageUrlSd);
-    imageContainer.appendChild(imgSd);
-
-    // 중간 품질 이미지
-    var imgMq = createImage(imageUrlMq);
-    imageContainer.appendChild(imgMq);
+    // 각 해상도별 이미지 생성 및 추가
+    imageContainer.appendChild(createImage(imageUrlMaxRes, 'maxresdefault'));
+    imageContainer.appendChild(createImage(imageUrlSd, 'sddefault'));
+    imageContainer.appendChild(createImage(imageUrlHq, 'hqdefault'));
+    imageContainer.appendChild(createImage(imageUrlMq, 'mqdefault'));
 }
 
-// 이미지 생성 및 다운로드 기능을 추가하는 함수
-function createImage(src) {
+function createImage(src, name) {
+    var a = document.createElement('a');
+    a.href = src;
+    a.download = `${name}.jpg`; // 다운로드될 파일명 설정
+    a.style.display = 'inline-block'; // a 태그를 인라인 블록으로 설정하여 마진 적용 가능
+
     var img = document.createElement('img');
     img.src = src;
-    img.style.margin = '10px'; // 간격 조정
-    img.onclick = function() {
-        // 이미지 다운로드를 위한 링크 생성
-        var a = document.createElement('a');
-        a.href = src;
-        a.download = src.split('/').pop(); // 파일 이름 설정
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    };
-    return img;
+    img.style.margin = '10px'; // 이미지 간격 조정
+
+    a.appendChild(img);
+    
+    return a; // 클릭 시 이미지가 다운로드되는 a 태그 반환
 }

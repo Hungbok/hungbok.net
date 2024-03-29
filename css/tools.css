@@ -326,7 +326,8 @@ input:checked[type="checkbox"]+label {
     bottom: 0;
 }
 
-#qrcode {
+#qrcode,
+#image {
     height: 150px;
     padding: 10px;
     border-radius: 5px;
@@ -342,7 +343,8 @@ input:checked[type="checkbox"]+label {
 }
 
 #qrcode img,
-#qrcode canvas {
+#qrcode canvas,
+#imag img {
     max-height: 140px;
     height: auto!important;
     position: relative;
@@ -357,7 +359,8 @@ input:checked[type="checkbox"]+label {
 }
 
 #qrcode img:hover,
-#qrcode canvas:hover {
+#qrcode canvas:hover,
+#imag img:hover {
     cursor: pointer;
     box-shadow: 0px 0px 10px var(--shadow);
     border-radius: 5px;
