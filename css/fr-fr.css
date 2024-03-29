@@ -543,7 +543,7 @@
 }
 
 .body-games.en .middle-content::before {
-    content: "Cette page n'a pas été traduite en français.";
+    content: "Cette page n'a pas été traduite en Français.";
     grid-column-start: 1;
     grid-column-end: 3;
     outline: var(--red-5) solid 1px;
