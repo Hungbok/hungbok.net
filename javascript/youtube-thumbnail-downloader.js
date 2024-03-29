@@ -29,37 +29,31 @@ function generateImages() {
     imageContainer.innerHTML = ''; // 이미지 컨테이너 초기화
 
     // 이미지 URL 생성
-    var imageUrls = {
-        'maxresdefault': `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`,
-        'sddefault': `https://img.youtube.com/vi/${videoID}/sddefault.jpg`,
-        'hqdefault': `https://i3.ytimg.com/vi/${videoID}/hqdefault.jpg`,
-        'mqdefault': `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`
-    };
+    var imageUrlMaxRes = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+    var imageUrlSd = `https://img.youtube.com/vi/${videoID}/sddefault.jpg`;
+    var imageUrlHq = `https://i3.ytimg.com/vi/${videoID}/hqdefault.jpg`;
+    var imageUrlMq = `https://img.youtube.com/vi/${videoID}/mqdefault.jpg`;
 
     // 각 해상도별 이미지 생성 및 추가
-    Object.keys(imageUrls).forEach(key => {
-        var canvas = document.createElement('canvas');
-        canvas.width = key === 'sddefault' ? 640 : (key === 'hqdefault' ? 480 : canvas.width);
-        canvas.height = key === 'sddefault' ? 360 : (key === 'hqdefault' ? 270 : canvas.height);
-        var ctx = canvas.getContext('2d');
-        var img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.onload = function() {
-            if (key === 'sddefault') {
-                ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 640, 360);
-            } else if (key === 'hqdefault') {
-                ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 480, 270);
-            } else {
-                ctx.drawImage(img, 0, 0);
-            }
-            canvas.onclick = function() {
-                var downloadLink = document.createElement('a');
-                downloadLink.href = canvas.toDataURL('image/jpeg');
-                downloadLink.download = `${key}.jpg`;
-                downloadLink.click();
-            };
-            imageContainer.appendChild(canvas);
-        };
-        img.src = imageUrls[key];
-    });
+    imageContainer.appendChild(createImage(imageUrlMaxRes, 'maxresdefault'));
+    imageContainer.appendChild(createImage(imageUrlSd, 'sddefault'));
+    imageContainer.appendChild(createImage(imageUrlHq, 'hqdefault'));
+    imageContainer.appendChild(createImage(imageUrlMq, 'mqdefault'));
+}
+
+function createImage(src, name) {
+    var a = document.createElement('a');
+    a.href = src;
+    a.download = `${name}.jpg`; // 다운로드될 파일명 설정
+    a.target = "_blank"; // 새 탭에서 링크 열기
+    a.style.display = 'inline-block'; // a 태그를 인라인 블록으로 설정하여 마진 적용 가능
+    a.style.maxWidth = '100%';
+
+    var img = document.createElement('img');
+    img.src = src;
+    img.style.maxWidth = '100%';
+
+    a.appendChild(img);
+    
+    return a; // 클릭 시 이미지가 다운로드되는 a 태그 반환
 }
