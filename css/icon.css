@@ -1177,6 +1177,10 @@
     background: url(//media.hungbok.net/image/icon/arcade.svg) no-repeat center / 30px 30px, #333333;
 }
 
+.icon-cloud {
+    background: url(//media.hungbok.net/image/icon/cloud.svg) no-repeat center / 30px 30px, #333333;
+}
+
 .icon-playstation {
     background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center / 30px 30px, #013791;
 }
