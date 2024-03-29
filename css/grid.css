@@ -76,6 +76,7 @@ button {
     cursor: pointer;
     border: none;
     outline: none;
+    font-weight: bold;
     background-color: var(--text-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
