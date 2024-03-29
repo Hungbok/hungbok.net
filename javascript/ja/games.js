@@ -533,27 +533,27 @@ $(document).ready(function(){
             const stadiaurl = data[0].stadia;
 
             // ESD 링크
-            $(".steam").append('<div class="external-link" ttt="Steam">'+
+            $(".external-store-link.steam").append('<div class="external-link" ttt="Steam">'+
                 '<a class="external-link-button icon-steam" href="https://store.steampowered.com/app/' + steamurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".epicgamesstore").append('<div class="external-link" ttt="Epic Games Store">'+
+            $(".external-store-link.epicgamesstore").append('<div class="external-link" ttt="Epic Games Store">'+
                 '<a class="external-link-button icon-epicgamesstore" href="https://store.epicgames.com/p/' + epicgamesstoreurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".gog").append('<div class="external-link" ttt="GOG.com">'+
+            $(".external-store-link.gog").append('<div class="external-link" ttt="GOG.com">'+
                 '<a class="external-link-button icon-gogcom" href="https://www.gog.com/game/' + gogcomurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".ea").append('<div class="external-link" ttt="EA">'+
+            $(".external-store-link.ea").append('<div class="external-link" ttt="EA">'+
                 '<a class="external-link-button icon-eaapp" href="https://www.ea.com/games/' + eaappurl + '/buy/pc" target="_blank"></a>'+
             '</div>');
 
-            $(".ubisoft").append('<div class="external-link" ttt="Ubisoft Store">'+
+            $(".external-store-link.ubisoft").append('<div class="external-link" ttt="Ubisoft Store">'+
                 '<a class="external-link-button icon-ubisoftconnect" href="https://store.ubisoft.com/' + ubisoftconnecturl + '.html" target="_blank"></a>'+
             '</div>');
 
-            $(".msstore").append('<div class="external-link" ttt="Microsoft Store">'+
+            $(".external-store-link.msstore").append('<div class="external-link" ttt="Microsoft Store">'+
                 '<a class="external-link-button icon-microsoftstore" href="https://apps.microsoft.com/detail/' + microsoftstoreurl + '" target="_blank"></a>'+
             '</div>');
 
@@ -563,31 +563,31 @@ $(document).ready(function(){
             const battleneteuurl = data[0].battleneteu;
             const battlenetkrurl = data[0].battlenetkr;
             const battlenettwurl = data[0].battlenettw;
-            $(".battlenet").append('<div class="external-link" ttt="Battle.net">'+
+            $(".external-store-link.battlenet").append('<div class="external-link" ttt="Battle.net">'+
                 '<a class="external-link-button icon-battlenet" href="https://shop.battle.net/product/' + battleneturl + '" target="_blank"></a>'+
             '</div>');
-            $(".battlenetus").append('<div class="external-link region_002" ttt="Battle.net">'+
+            $(".external-store-link.battlenetus").append('<div class="external-link region_002" ttt="Battle.net">'+
                 '<a class="external-link-button icon-battlenet" href="https://us.shop.battle.net/product/' + battlenetusurl + '" target="_blank"></a>'+
             '</div>');
             //
 
-            $(".rockstargames").append('<div class="external-link" ttt="Rockstar Games Store">'+
+            $(".external-store-link.rockstargames").append('<div class="external-link" ttt="Rockstar Games Store">'+
                 '<a class="external-link-button icon-rockstargameslauncher" href="https://store.rockstargames.com/game/buy-' + rockstargameslauncherurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".stove").append('<div class="external-link" ttt="STOVE">'+
+            $(".external-store-link.stove").append('<div class="external-link" ttt="STOVE">'+
                 '<a class="external-link-button icon-stove" href="https://store.onstove.com/games/' + stoveurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".metastore").append('<div class="external-link" ttt="Meta Store">'+
+            $(".external-store-link.metastore").append('<div class="external-link" ttt="Meta Store">'+
                 '<a class="external-link-button icon-metastore" href="https://www.meta.com/experiences/' + metastoreurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".dmm").append('<div class="external-link" ttt="DMM GAMES">'+
+            $(".external-store-link.dmm").append('<div class="external-link" ttt="DMM GAMES">'+
                 '<a class="external-link-button icon-dmmgames" href="https://' + dmmgamesurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".dlsite").append('<div class="external-link" ttt="DLsite">'+
+            $(".external-store-link.dlsite").append('<div class="external-link" ttt="DLsite">'+
                 '<a class="external-link-button icon-dlsite" href="https://' + dlsiteurl + '" target="_blank"></a>'+
             '</div>');
 
@@ -595,13 +595,13 @@ $(document).ready(function(){
             const xboxgamesstoreurl = data[0].xboxstore;
             const xboxgamesstorexbourl = data[0].xboxstorexbo;
             const xboxgamesstorexsxurl = data[0].xboxstorexsx;
-            $(".xboxstore").append('<div class="external-link" ttt="Xbox Store">'+
+            $(".external-store-link.xboxstore").append('<div class="external-link" ttt="Xbox Store">'+
                 '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstoreurl + '" target="_blank"></a>'+
             '</div>');
-            $(".xboxstorexbo").append('<div class="external-link" ttt="Xbox One | Xbox Store">'+
+            $(".external-store-link.xboxstorexbo").append('<div class="external-link" ttt="Xbox One | Xbox Store">'+
                 '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstorexbourl + '" target="_blank"></a>'+
             '</div>');
-            $(".xboxstorexsx").append('<div class="external-link" ttt="Xbox Series X|S | Xbox Store">'+
+            $(".external-store-link.xboxstorexsx").append('<div class="external-link" ttt="Xbox Series X|S | Xbox Store">'+
                 '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstorexsxurl + '" target="_blank"></a>'+
             '</div>');
             //
@@ -642,19 +642,19 @@ $(document).ready(function(){
             const playstationstorebrarurl = data[0].psstorebrar;
             const playstationstorenaeuurl = data[0].psstorenaeu;
             const playstationstorenajpurl = data[0].psstorenajp;
-            $(".psstore").append('<div class="external-link" ttt="PlayStation Store">'+
+            $(".external-store-link.psstore").append('<div class="external-link" ttt="PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreurl + '" target="_blank"></a>'+
             '</div>');
-            $(".psstoreps4").append('<div class="external-link" ttt="PlayStation 4 | PlayStation Store">'+
+            $(".external-store-link.psstoreps4").append('<div class="external-link" ttt="PlayStation 4 | PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps4url + '" target="_blank"></a>'+
             '</div>');
-            $(".psstoreps5").append('<div class="external-link" ttt="PlayStation 5 | PlayStation Store">'+
+            $(".external-store-link.psstoreps5").append('<div class="external-link" ttt="PlayStation 5 | PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps5url + '" target="_blank"></a>'+
             '</div>');
-            $(".psstorenajp").append('<div class="external-link region_902" ttt="PlayStation Store">'+
+            $(".external-store-link.psstorenajp").append('<div class="external-link region_902" ttt="PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenajpurl + '" target="_blank"></a>'+
             '</div>');
-            $(".psstorejp").append('<div class="external-link region_002" ttt="PlayStation Store">'+
+            $(".external-store-link.psstorejp").append('<div class="external-link region_002" ttt="PlayStation Store">'+
                 '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorejpurl + '" target="_blank"></a>'+
             '</div>');
             //
@@ -693,48 +693,48 @@ $(document).ready(function(){
             const nintendoeshopbrarurl = data[0].eshopbrar;
             const nintendoeshopnaeuurl = data[0].eshopnaeu;
             const nintendoeshopnajpurl = data[0].eshopnajp;
-            $(".eshop").append('<div class="external-link" ttt="Nintendo eShop">'+
+            $(".external-store-link.eshop").append('<div class="external-link" ttt="Nintendo eShop">'+
                 '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopurl + '" target="_blank"></a>'+
             '</div>');
             // multiple
-            $(".eshopnajp").append('<div class="external-link region_902" ttt="Nintendo eShop">'+
+            $(".external-store-link.eshopnajp").append('<div class="external-link region_902" ttt="Nintendo eShop">'+
                 '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnajpurl + '" target="_blank"></a>'+
             '</div>');
             // jp
-            $(".eshopjp").append('<div class="external-link region_002" ttt="Nintendo eShop">'+
+            $(".external-store-link.eshopjp").append('<div class="external-link region_002" ttt="Nintendo eShop">'+
                 '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/JP/ja/titles/' + nintendoeshopjpurl + '" target="_blank"></a>'+
             '</div>');
             //
 
-            $(".googleplay").append('<div class="external-link" ttt="Google Play">'+
+            $(".external-store-link.googleplay").append('<div class="external-link" ttt="Google Play">'+
                 '<a class="external-link-button icon-googleplay" href="https://play.google.com/store/apps/details?id=' + googleplayurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".appstore").append('<div class="external-link" ttt="App Store">'+
+            $(".external-store-link.appstore").append('<div class="external-link" ttt="App Store">'+
                 '<a class="external-link-button icon-appstore" href="https://apps.apple.com/app/id' + appstoreurl + '" target="_blank"></a>'+
             '</div>');
 
-            $(".galaxystore").append('<div class="external-link" ttt="Galaxy Store">'+
+            $(".external-store-link.galaxystore").append('<div class="external-link" ttt="Galaxy Store">'+
                 '<a class="external-link-button icon-galaxystore" href="https://galaxystore.samsung.com/detail/' + galaxystoreurl + '" target="_blank"></a>'+
             '</div>');
 
             // https://luna.amazon.com/detail/B0BTRVRN6M
-            $(".luna").append('<div class="external-link" ttt="Amazon Luna">'+
+            $(".external-store-link.luna").append('<div class="external-link" ttt="Amazon Luna">'+
                 '<a class="external-link-button icon-amazonluna" href="https://luna.amazon.com/detail/' + amazonlunaurl + '" target="_blank"></a>'+
             '</div>');
 
             // https://nvda.ws/3Qee2Mx
-            $(".geforcenow").append('<div class="external-link" ttt="GeForce NOW">'+
+            $(".external-store-link.geforcenow").append('<div class="external-link" ttt="GeForce NOW">'+
                 '<a class="external-link-button icon-geforcenow" href="https://nvda.ws/' + geforcenowurl + '" target="_blank"></a>'+
             '</div>');
 
             // https://www.xbox.com/play/games/BT5P2X999VH2
-            $(".xboxcloud").append('<div class="external-link" ttt="Xbox Cloud Gaming">'+
+            $(".external-store-link.xboxcloud").append('<div class="external-link" ttt="Xbox Cloud Gaming">'+
                 '<a class="external-link-button icon-xboxcloudgaming" href="https://www.xbox.com/play/games/' + xboxcloudgamingurl + '" target="_blank"></a>'+
             '</div>');
 
             // https://stadia.google.com/store/details/990ec302c2cd4ba7817cedcf633ab20frcp1/sku/7ac7671e9f4342bd8c55ca140cf94138p
-            $(".stadia").append('<div class="external-link" ttt="Stadia">'+
+            $(".external-store-link.stadia").append('<div class="external-link" ttt="Stadia">'+
                 '<a class="external-link-button icon-stadia" href="https://stadia.google.com/store/details/' + stadiaurl + '" target="_blank"></a>'+
             '</div>');
 
