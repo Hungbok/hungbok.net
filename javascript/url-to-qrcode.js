@@ -24,7 +24,7 @@ function generateQRCode() {
 
     // 링크가 비어있는지 확인
     if (link === "") {
-        var link = "https://hgbk.me/Lvdr78bE"
+        var link = "https://hgbk.me/2nfTqhmP"
     }
 
     // QR 코드 생성

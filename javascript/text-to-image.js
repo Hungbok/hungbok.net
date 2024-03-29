@@ -11,7 +11,7 @@ if (window.document.fonts && window.document.fonts.load) {
 
 document.getElementById("app").innerHTML = `
     <div class="top-box">
-        <textarea type="text" id="text-input" placeholder="https://hgbk.me/Lvdr78bE" style="color: black;" autocomplete='off' maxlength="100"></textarea>
+        <textarea type="text" id="text-input" placeholder="https://hgbk.me/2nfTqhmP" style="color: black;" autocomplete='off' maxlength="100"></textarea>
         <div id="text-color">
             <input type="radio" id="fontcolor-b" name="fontcolor" value="black" checked>
             <label for="fontcolor-b"> </label>
@@ -28,7 +28,7 @@ document.getElementById("app").innerHTML = `
     </div>
     <div class="bottom-box">
         <div id="image-wrapper">
-            <img src="" style="height: 0px;">
+            <img src="hb_text_to_image.png" style="height: 0px;">
         </div>
     </div>`;
 

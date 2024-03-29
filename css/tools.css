@@ -446,12 +446,6 @@ input:checked[type="checkbox"]+label {
     transition: all 0.5s;
 }
 
-#text-input {
-    font-size: 26px;
-    font-family: 'Open Sans';
-    font-weight: 400;
-}
-
 #font-select {
     visibility: hidden;
     width: 0;
@@ -512,6 +506,8 @@ input[type=radio] + label {
     height: auto !important;
     position: relative;
     padding: 10px 20px;
+    background-color: var(--background-2);
+    border-radius: 20px;
     transform: translate(0%, -50%);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -594,6 +590,15 @@ select:focus {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+#text-input {
+    font-size: 26px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    padding: 10px 20px;
+    background-color: var(--background-2);
+    border-radius: 20px;
 }
 
 .ratio {
