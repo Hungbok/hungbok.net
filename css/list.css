@@ -7,3 +7,14 @@
     background-color: var(--background-7);
     border-radius: 20px;
 }
+
+.item {
+    position: relative;
+    background-color: var(--background-8);
+    padding: 10px 0;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
