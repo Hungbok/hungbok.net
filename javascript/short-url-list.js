@@ -32,7 +32,7 @@ async function paginateData(data, page) {
             // 검색 결과에 추가
             searchResults.innerHTML += `
             <div class="item" ttt="${item.published}">
-                <div class="link"><a href="${item.link}" target="_blank">${item.link}</a></div>
+                <div class="link"><a href="${item.link}" target="_blank">${item.link}<img src="//media.hungbok.net/image/icon/open_new.svg"></a></div>
                 <div class="url copy" copy="https://hgbk.me/${item.url}">${item.url}<img src="//media.hungbok.net/image/icon/copy.svg"></div>
             </div>
             `;
