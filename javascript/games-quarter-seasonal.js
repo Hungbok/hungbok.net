@@ -339,7 +339,7 @@ function addNavigationButtons() {
       .text(function() {
         var urlParts = prev.split('?')[0].split('/'); // '?'를 기준으로 split 하여 첫 번째 부분(주소 부분)을 '/'로 다시 split
         var queryParams = prev.split('?')[1]; // '?'를 기준으로 split 하여 두 번째 부분(쿼리 파라미터 부분)을 가져옴
-        var year = urlParts[urlParts.length - 2]; // 연도는 '/'로 split한 배열의 끝에서 두 번째 요소
+        var year = urlParts[urlParts.length - 1]; // 연도는 '/'로 split한 배열의 끝에서 두 번째 요소
         var season = queryParams.split('=')[1]; // 'q='를 기준으로 split 하여 두 번째 부분(계절)
         var seasonText = convertSeason(season); // 계절을 변환하는 함수를 호출하여 계절 텍스트를 가져옴
         return '❮ ' + year + '년 ' + (seasonText ? seasonText : '') + ' 출시 예정 게임';
@@ -353,7 +353,7 @@ function addNavigationButtons() {
       .text(function() {
         var urlParts = next.split('?')[0].split('/'); // '?'를 기준으로 split 하여 첫 번째 부분(주소 부분)을 '/'로 다시 split
         var queryParams = next.split('?')[1]; // '?'를 기준으로 split 하여 두 번째 부분(쿼리 파라미터 부분)을 가져옴
-        var year = urlParts[urlParts.length - 2]; // 연도는 '/'로 split한 배열의 끝에서 두 번째 요소
+        var year = urlParts[urlParts.length - 1]; // 연도는 '/'로 split한 배열의 끝에서 두 번째 요소
         var season = queryParams.split('=')[1]; // 'q='를 기준으로 split 하여 두 번째 부분(계절)
         var seasonText = convertSeason(season); // 계절을 변환하는 함수를 호출하여 계절 텍스트를 가져옴
         return year + '년 ' + (seasonText ? seasonText : '') + ' 출시 예정 게임' + ' ❯';
