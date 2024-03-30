@@ -302,7 +302,7 @@
 
 .slick-dots {
     display: flex;
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     padding: 0;
     margin: 0;
     list-style: none;
@@ -310,7 +310,7 @@
     justify-content: center;
     position: absolute;
     bottom: 0px;
-    left: 10px;
+    left: 5px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
