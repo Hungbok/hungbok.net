@@ -535,14 +535,15 @@
 
 .info .info-right div {
     display: inline-block;
-    margin: 0px 5px;
+    margin: 0px;
     width: 30px;
     height: 30px;
     vertical-align: middle;
     text-wrap: nowrap;
-    background-size: 15px 15px, 30px, 30px, 30px, 30px, 30px;
+    background-size: 20px 20px, 30px, 30px, 30px, 30px, 30px;
     border-radius: 20px;
     font-size: 16px;
+    background-color: transparent;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -1437,7 +1438,7 @@ div.opencritic-reviews {
 }
 
 .more-info .age div {
-    border-radius: 7.5px;
+    border-radius: 5px;
     background-size: 20px 20px;
     display: inline-block;
     margin: 0px;
