@@ -66,6 +66,18 @@
     font-weight: bold;
 }
 
+.platform {
+    display: flex;
+    gap: 5px;
+}
+
+.platform div {
+    height: 20px;
+    width: 20px;
+    background-size: 15px 15px;
+    background-color: transparent;
+}
+
 .date p {
     display: inline-block;
     margin: 0;
