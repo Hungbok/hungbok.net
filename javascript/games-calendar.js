@@ -232,7 +232,7 @@ $('.calendar-day').on('mouseup', function() {
     $(this).find('.calendar-container').trigger('mouseup');
 });
 
-$(document).ready(function() {
+window.addEventListener('load', function() {
     loadAsyncScripts();
     
     $(".pc").append('<img ttt="PC" src="https://media.hungbok.net/image/icon/display.svg">');
