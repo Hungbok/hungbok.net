@@ -222,7 +222,7 @@
 }
 
 .slick-prev {
-    left: -5px;
+    left: 5px;
 }
 
 .slick-prev::before {
@@ -242,7 +242,7 @@
 }
 
 .slick-next {
-    right: -5px;
+    right: 5px;
 }
 
 .slick-next::before {
