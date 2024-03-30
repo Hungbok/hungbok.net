@@ -82,7 +82,7 @@
     transition: all 0.5s;
 }
 
-.calendar-day:hover .calendar-background {
+.calendar-container:hover .calendar-background {
     background-color: var(--background-7);
 }
 
@@ -267,6 +267,7 @@
     box-shadow: 0px 0px 2.5px var(--absolute-10);
     position: relative;
     margin: 0px 5px;
+    overflow: hidden;
     transform: scale(1.5) translate(0px, -2.5px);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -279,8 +280,7 @@
     z-index: 10;
 }
 
-.calendar-day:hover .slick-slide {
-    overflow: hidden;
+.calendar-container:hover .slick-slide {
     transform: scale(1);
 }
 
