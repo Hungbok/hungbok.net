@@ -816,6 +816,7 @@ $(document).ready(function(){
             $(".platform.gameandwatch").append('<div class="icon-gameandwatch" ttt="GAME & WATCH"></div>');
 
             $(".platform.ios").append('<div class="icon-ios" ttt="iOS"></div>');
+            $(".platform.ipados").append('<div class="icon-ipados" ttt="iPadOS"></div>');
             $(".platform.android").append('<div class="icon-android" ttt="Android"></div>');
 
             $(".platform.xboxcloudgaming").append('<div class="icon-xboxcloudgaming" ttt="Xbox Cloud Gaming"></div>');
