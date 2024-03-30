@@ -481,7 +481,7 @@ window.addEventListener('load', function() {
                 }
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
                 $(".search-results").append(`
-                    <a href="${item.url}">
+                    <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                         ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
                     </a>
