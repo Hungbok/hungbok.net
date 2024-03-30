@@ -187,7 +187,7 @@ if (!y || !m) {
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
+        $(document).ready(function() {
             loadAsyncScripts();
             
             $(".pc").append('<img ttt="PC" src="https://media.hungbok.net/image/icon/display.svg">');
