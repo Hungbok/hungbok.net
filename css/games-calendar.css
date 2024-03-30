@@ -60,7 +60,6 @@
     overflow: hidden;
     padding-bottom: 10px;
     position: relative;
-    aspect-ratio: 200 / 300;
 }
 
 .calendar-day.today {
@@ -268,7 +267,7 @@
     box-shadow: 0px 0px 2.5px var(--absolute-10);
     position: relative;
     margin: 0px 5px;
-    transform: scale(1.5);
+    transform: scale(1.5) translate(0px, -2.5px);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
