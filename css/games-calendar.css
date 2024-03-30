@@ -60,6 +60,7 @@
     overflow: hidden;
     padding-bottom: 10px;
     position: relative;
+    aspect-ratio: 200 / 300;
 }
 
 .calendar-day.today {
@@ -185,6 +186,8 @@
 
 .calendar-container {
     position: relative;
+    margin: 10px;
+    aspect-ratio: 200 / 300;
 }
 
 .slick-track {
@@ -295,6 +298,8 @@
     list-style: none;
     text-align: center;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
 
 .slick-dots li {
