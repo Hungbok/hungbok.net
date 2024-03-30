@@ -297,8 +297,6 @@
     list-style: none;
     text-align: center;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
 }
 
 .slick-dots li {
