@@ -184,7 +184,7 @@
 
 .calendar-container {
     position: relative;
-    margin: 10px;
+    padding: 10px;
     height: calc(100% - 20px);
 }
 
