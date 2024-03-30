@@ -337,8 +337,8 @@ function addNavigationButtons() {
       .click(function() { window.location.href = prev; })
       .text(function() {
         var parts = prev.split('/');
-        var year = parts[parts.length - 2];
-        var season = convertSeason(parts[parts.length - 1]);
+        var year = parts[parts.length - 1];
+        var season = convertSeason(parts[parts.length]);
         return '❮ ' + year + '년 ' + (season ? season : '') + ' 출시 예정 게임';
       });
   
@@ -347,8 +347,8 @@ function addNavigationButtons() {
       .click(function() { window.location.href = next; })
       .text(function() {
           var parts = next.split('/');
-          var year = parts[parts.length - 2];
-          var season = convertSeason(parts[parts.length - 1]);
+          var year = parts[parts.length - 1];
+          var season = convertSeason(parts[parts.length]);
           return year + '년 ' + (season ? season : '') + ' 출시 예정 게임' + ' ❯';
       });
   }
