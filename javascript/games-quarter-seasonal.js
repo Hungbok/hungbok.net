@@ -277,20 +277,20 @@ function addNavigationButtons() {
       next = `./${year+1}`;
       break;
     case 'winter':
-      prev = `../${year-1}/autumn`;
-      next = `../${year}/spring`;
+      prev = `../${year-1}?q=autumn`;
+      next = `../${year}?q=spring`;
       break;
     case 'spring':
-      prev = `../${year}/winter`;
-      next = `../${year}/summer`;
+      prev = `../${year}?q=winter`;
+      next = `../${year}?q=summer`;
       break;
     case 'summer':
-      prev = `../${year}/spring`;
-      next = `../${year}/autumn`;
+      prev = `../${year}?q=spring`;
+      next = `../${year}?q=autumn`;
       break;
     case 'autumn':
-      prev = `../${year}/summer`;
-      next = `../${year+1}/winter`;
+      prev = `../${year}?q=summer`;
+      next = `../${year+1}?q=winter`;
       break;
   }
 
