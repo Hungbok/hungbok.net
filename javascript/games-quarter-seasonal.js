@@ -113,8 +113,8 @@ if (year && season && monthRange) {
           var url = item.url || 'Unknown';
           var platform = item.platform || 'Unknown';
           var title = item.title || 'Unknown';
-          var dev = gameData[languageCode]?.info_developer || 'Unknown';
-          var pub = gameData[languageCode]?.info_publisher || 'Unknown';
+          var dev = gameData[0]['en']?.info_developer || 'Unknown';
+          var pub = gameData[0][languageCode]?.info_publisher || 'Unknown';
 
           // yyyy, mm, dd 값 추가
           var dateParts = item.date.split('-');
