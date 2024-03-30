@@ -112,7 +112,7 @@ if (year && season && monthRange) {
           // 값이 없는 경우 'Unknown'으로 대체
           var url = item.url || 'Unknown';
           var platform = item.platform || 'Unknown';
-          var title = gameData[languageCode]?.title || 'Unknown';
+          var title = item.title || 'Unknown';
           var dev = gameData[languageCode]?.info_developer || 'Unknown';
           var pub = gameData[languageCode]?.info_publisher || 'Unknown';
 
@@ -126,7 +126,7 @@ if (year && season && monthRange) {
           if (dd === '32' && mm === '13') {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
-              <img src="https://data.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg'">
+              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
               <div class="calendar-item-title">
@@ -138,12 +138,12 @@ if (year && season && monthRange) {
                 <p>${pub}</p>
               </div>
               <div class="calendar-item-platform ${platform}">
-                <img class="display" src="https://data.hungbok.net/image/icon/display.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="playstation" src="https://data.hungbok.net/image/icon/playstation.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="xbox" src="https://data.hungbok.net/image/icon/xbox.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="nintendo" src="https://data.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="phone" src="https://data.hungbok.net/image/icon/phone.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="cloud" src="https://data.hungbok.net/image/icon/cloud.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
+                <img class="display" src="https://media.hungbok.net/image/icon/display.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
               <div class="calendar-item-date">
                 <p class="calendar-item-year">${yyyy}</p>
@@ -153,7 +153,7 @@ if (year && season && monthRange) {
           } else if (mm === '13') {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
-              <img src="https://data.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg'">
+              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
               <div class="calendar-item-title">
@@ -165,12 +165,12 @@ if (year && season && monthRange) {
                 <p>${pub}</p>
               </div>
               <div class="calendar-item-platform ${platform}">
-                <img class="display" src="https://data.hungbok.net/image/icon/display.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="playstation" src="https://data.hungbok.net/image/icon/playstation.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="xbox" src="https://data.hungbok.net/image/icon/xbox.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="nintendo" src="https://data.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="phone" src="https://data.hungbok.net/image/icon/phone.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="cloud" src="https://data.hungbok.net/image/icon/cloud.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
+                <img class="display" src="https://media.hungbok.net/image/icon/display.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
               <div class="calendar-item-date">
                 <p class="calendar-item-year">${yyyy}</p>
@@ -180,7 +180,7 @@ if (year && season && monthRange) {
           } else if (dd === '32') {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
-              <img src="https://data.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg'">
+              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
               <div class="calendar-item-title">
@@ -192,12 +192,12 @@ if (year && season && monthRange) {
                 <p>${pub}</p>
               </div>
               <div class="calendar-item-platform ${platform}">
-                <img class="display" src="https://data.hungbok.net/image/icon/display.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="playstation" src="https://data.hungbok.net/image/icon/playstation.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="xbox" src="https://data.hungbok.net/image/icon/xbox.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="nintendo" src="https://data.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="phone" src="https://data.hungbok.net/image/icon/phone.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="cloud" src="https://data.hungbok.net/image/icon/cloud.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
+                <img class="display" src="https://media.hungbok.net/image/icon/display.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
               <div class="calendar-item-date">
                 <p class="calendar-item-year">${yyyy}</p>
@@ -208,7 +208,7 @@ if (year && season && monthRange) {
           } else {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
-              <img src="https://data.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//data.hungbok.net/image/hb/hb_error_horizontal.svg'">
+              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
               <div class="calendar-item-title">
@@ -220,12 +220,12 @@ if (year && season && monthRange) {
                 <p>${pub}</p>
               </div>
               <div class="calendar-item-platform ${platform}">
-                <img class="display" src="https://data.hungbok.net/image/icon/display.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="playstation" src="https://data.hungbok.net/image/icon/playstation.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="xbox" src="https://data.hungbok.net/image/icon/xbox.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="nintendo" src="https://data.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="phone" src="https://data.hungbok.net/image/icon/phone.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
-                <img class="cloud" src="https://data.hungbok.net/image/icon/cloud.svg" onerror="this.src='//data.hungbok.net/image/hb/hb_error.svg';">
+                <img class="display" src="https://media.hungbok.net/image/icon/display.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
               <div class="calendar-item-date">
                 <p class="calendar-item-year">${yyyy}</p>
@@ -246,13 +246,13 @@ if (year && season && monthRange) {
     })
     .catch(error => {
       var script = document.createElement('script');
-      script.src = '//data.hungbok.net/javascript/error404.js';
+      script.src = '//www.hungbok.net/javascript/error404.js';
       document.head.appendChild(script);
       // 연도에 해당하는 파일이 없거나 다른 오류가 발생한 경우
     });
 } else {
   var script = document.createElement('script');
-  script.src = '//data.hungbok.net/javascript/error404.js';
+  script.src = '//www.hungbok.net/javascript/error404.js';
   document.head.appendChild(script);
   // 연도나 계절 클래스가 없는 경우
 }
