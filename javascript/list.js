@@ -31,18 +31,16 @@ async function paginateData(data, page) {
         dataToDisplay.forEach(item => {
             // 검색 결과에 추가
             searchResults.innerHTML += `
-            <div class="item">
-                <a class="link" href="${item.link}">
-                    <div class="image"><img src="${item.image}"></div>
-                    <div class="title" title="${item.title}">${item.title}</div>
-                    <div class="platform ${item.platform}"></div>
-                    <div class="date">
-                        <p class="grid-date-year">${item.release_year}</p>
-                        <p class="grid-date-month">${item.release_month}</p>
-                        <p class="grid-date-day">${item.release_day}</p>
-                    </div>
-                </a>
-            </div>
+            <a class="item" href="${item.link}">
+                <div class="image"><img src="${item.image}"></div>
+                <div class="title" title="${item.title}">${item.title}</div>
+                <div class="platform ${item.platform}"></div>
+                <div class="date">
+                    <p class="grid-date-year">${item.release_year}</p>
+                    <p class="grid-date-month">${item.release_month}</p>
+                    <p class="grid-date-day">${item.release_day}</p>
+                </div>
+            </a>
             `;
         });
 
