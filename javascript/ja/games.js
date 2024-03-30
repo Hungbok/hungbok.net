@@ -764,7 +764,7 @@ $(document).ready(function(){
             $(".platform.battlenet").append('<div class="icon-battlenet" ttt="Battle.net"></div>');
             $(".platform.rockstargamesstore").append('<div class="icon-rockstargamesstore" ttt="Rockstar Games Store"></div>');
             $(".platform.stove").append('<div class="icon-stove" ttt="Stove"></div>');
-            $(".platform.xboxstore").append('<div class="icon-xboxstore" ttt="Xbox Games Store"></div>');
+            $(".platform.xboxstore").append('<div class="icon-xboxgamesstore" ttt="Xbox Games Store"></div>');
             $(".platform.playstationstore").append('<div class="icon-playstationstore" ttt="PlayStation Store"></div>');
             $(".platform.nintendoeshop").append('<div class="icon-nintendoeshop" ttt="Nintendo eShop"></div>');
             $(".platform.metastore").append('<div class="icon-metastore" ttt="Meta Store"></div>');
