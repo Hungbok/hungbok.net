@@ -19,7 +19,6 @@
 
 #searchResults img {
     height: 100%;
-    max-width: 200px;
     max-height: 300px;
     pointer-events: none;
     -webkit-transition: all 0.5s;
@@ -45,6 +44,7 @@
     width: 200px;
     height: 300px;
     position: relative;
+    justify-content: center;
     box-shadow: 0 10px 20px rgb(0 0 0 / 50%);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
