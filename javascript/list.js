@@ -29,6 +29,13 @@ async function paginateData(data, page) {
         searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
+            const monthNames = ["1", "2", "3", "4", "5", "6",
+                                "7", "8", "9", "10", "11", "12"];
+
+            // item.release_month가 문자열이고 "01", "02" 등의 형태로 되어 있다고 가정합니다.
+            // parseInt를 사용하여 문자열을 정수로 변환하고, 배열의 인덱스는 0부터 시작하기 때문에 1을 빼줍니다.
+            const monthName = monthNames[parseInt(item.release_month, 10) - 1];
+
             // 검색 결과에 추가
             searchResults.innerHTML += `
             <a class="item" href="${item.link}">
@@ -37,7 +44,7 @@ async function paginateData(data, page) {
                 <div class="platform ${item.platform}"></div>
                 <div class="date">
                     <p class="grid-date-year">${item.release_year}</p>
-                    <p class="grid-date-month">${item.release_month}</p>
+                    <p class="grid-date-month">${monthName}</p>
                     <p class="grid-date-day">${item.release_day}</p>
                 </div>
             </a>
