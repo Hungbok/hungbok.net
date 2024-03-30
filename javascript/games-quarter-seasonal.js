@@ -331,26 +331,32 @@ function addNavigationButtons() {
     .click(function() { window.location.href = next; })
     .text(next.split('/')[1] + '년 출시 예정 게임 ❯'); 
   } else {
-    // 계절이 'winter', 'spring', 'summer', 'autumn'일 때의 버튼 생성
+    function extractYearAndSeason(url) {
+      var queryParams = url.split('?')[1];
+      var params = queryParams.split('&');
+      var year = url.split('/')[1]; // URL의 첫 번째 부분이 연도임
+      var seasonParam = params.find(function(param) { return param.startsWith('q='); });
+      var seasonValue = seasonParam.split('=')[1];
+      return { year: year, season: seasonValue };
+    }
+    
     var prevButton = $('<div></div>')
       .addClass('calendar-prev')
       .click(function() { window.location.href = prev; })
       .text(function() {
-        var parts = prev.split('/');
-        var year = parts[parts.length - 1];
-        var season = convertSeason(parts[parts.length]);
-        return '❮ ' + year + '년 ' + (season ? season : '') + ' 출시 예정 게임';
+        var extracted = extractYearAndSeason(prev);
+        var season = convertSeason(extracted.season);
+        return '❮ ' + extracted.year + '년 ' + (season ? season : '') + ' 출시 예정 게임';
       });
-  
+    
     var nextButton = $('<div></div>')
       .addClass('calendar-next')
       .click(function() { window.location.href = next; })
       .text(function() {
-          var parts = next.split('/');
-          var year = parts[parts.length - 1];
-          var season = convertSeason(parts[parts.length]);
-          return year + '년 ' + (season ? season : '') + ' 출시 예정 게임' + ' ❯';
-      });
+        var extracted = extractYearAndSeason(next);
+        var season = convertSeason(extracted.season);
+        return extracted.year + '년 ' + (season ? season : '') + ' 출시 예정 게임' + ' ❯';
+      });    
   }
   
   // 버튼 추가 부분
