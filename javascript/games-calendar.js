@@ -189,7 +189,7 @@ if (!y || !m) {
 
         window.addEventListener('load', function() {
             loadAsyncScripts();
-
+            
             $(".pc").append('<img ttt="PC" src="https://media.hungbok.net/image/icon/display.svg">');
             $(".ps").append('<img ttt="PlayStation" src="https://media.hungbok.net/image/icon/playstation.svg">');
             $(".xb").append('<img ttt="Xbox" src="https://media.hungbok.net/image/icon/xbox.svg">');
