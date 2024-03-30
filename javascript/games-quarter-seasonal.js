@@ -331,32 +331,33 @@ function addNavigationButtons() {
     .click(function() { window.location.href = next; })
     .text(next.split('/')[1] + '년 출시 예정 게임 ❯'); 
   } else {
-    function extractYearAndSeason(url) {
-      var queryParams = url.split('?')[1];
-      var params = queryParams.split('&');
-      var year = url.split('/')[1]; // URL의 첫 번째 부분이 연도임
-      var seasonParam = params.find(function(param) { return param.startsWith('q='); });
-      var seasonValue = seasonParam.split('=')[1];
-      return { year: year, season: seasonValue };
-    }
-    
     var prevButton = $('<div></div>')
       .addClass('calendar-prev')
-      .click(function() { window.location.href = prev; })
+      .click(function() {
+        window.location.href = prev;
+      })
       .text(function() {
-        var extracted = extractYearAndSeason(prev);
-        var season = convertSeason(extracted.season);
-        return '❮ ' + extracted.year + '년 ' + (season ? season : '') + ' 출시 예정 게임';
+        var urlParts = prev.split('?')[0].split('/'); // '?'를 기준으로 split 하여 첫 번째 부분(주소 부분)을 '/'로 다시 split
+        var queryParams = prev.split('?')[1]; // '?'를 기준으로 split 하여 두 번째 부분(쿼리 파라미터 부분)을 가져옴
+        var year = urlParts[urlParts.length - 2]; // 연도는 '/'로 split한 배열의 끝에서 두 번째 요소
+        var season = queryParams.split('=')[1]; // 'q='를 기준으로 split 하여 두 번째 부분(계절)
+        var seasonText = convertSeason(season); // 계절을 변환하는 함수를 호출하여 계절 텍스트를 가져옴
+        return '❮ ' + year + '년 ' + (seasonText ? seasonText : '') + ' 출시 예정 게임';
       });
     
     var nextButton = $('<div></div>')
       .addClass('calendar-next')
-      .click(function() { window.location.href = next; })
+      .click(function() {
+        window.location.href = next;
+      })
       .text(function() {
-        var extracted = extractYearAndSeason(next);
-        var season = convertSeason(extracted.season);
-        return extracted.year + '년 ' + (season ? season : '') + ' 출시 예정 게임' + ' ❯';
-      });    
+        var urlParts = next.split('?')[0].split('/'); // '?'를 기준으로 split 하여 첫 번째 부분(주소 부분)을 '/'로 다시 split
+        var queryParams = next.split('?')[1]; // '?'를 기준으로 split 하여 두 번째 부분(쿼리 파라미터 부분)을 가져옴
+        var year = urlParts[urlParts.length - 2]; // 연도는 '/'로 split한 배열의 끝에서 두 번째 요소
+        var season = queryParams.split('=')[1]; // 'q='를 기준으로 split 하여 두 번째 부분(계절)
+        var seasonText = convertSeason(season); // 계절을 변환하는 함수를 호출하여 계절 텍스트를 가져옴
+        return year + '년 ' + (seasonText ? seasonText : '') + ' 출시 예정 게임' + ' ❯';
+      });
   }
   
   // 버튼 추가 부분
