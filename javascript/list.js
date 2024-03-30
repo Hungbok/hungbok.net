@@ -34,7 +34,9 @@ async function paginateData(data, page) {
             <div class="item">
                 <a class="link" href="${item.link}">
                     <div class="image"><img src="${item.image}"></div>
-                    <div class="title">${item.title}</div>
+                    <div class="title" title="${item.title}">${item.title}</div>
+                    <div class="plarform ${item.platform}"></div>
+                    <div class="date"><p>${item.release_year}</p><p>${item.release_month}</p><p>${item.release_day}</p></div>
                 </a>
             </div>
             `;
