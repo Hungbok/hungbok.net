@@ -418,16 +418,19 @@
     content: "共有するサービスを選択してください。";
 }
 
+.grid-date-year::after,
 .sale-date > .date-container > p:first-child::after,
 .calendar-item-year::after {
     content: "年";
 }
 
+.grid-date-month::after,
 .sale-date > .date-container > p:nth-child(2)::after,
 .calendar-item-month::after {
     content: "月";
 }
 
+.grid-date-day::after,
 .sale-date > .date-container > p:last-child::after,
 .calendar-item-day::after {
     content: "日";

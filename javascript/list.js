@@ -36,7 +36,11 @@ async function paginateData(data, page) {
                     <div class="image"><img src="${item.image}"></div>
                     <div class="title" title="${item.title}">${item.title}</div>
                     <div class="plarform ${item.platform}"></div>
-                    <div class="date"><p>${item.release_year}</p><p>${item.release_month}</p><p>${item.release_day}</p></div>
+                    <div class="date">
+                        <p class="grid-date-year">${item.release_year}</p>
+                        <p class="grid-date-month">${item.release_month}</p>
+                        <p class="grid-date-day">${item.release_day}</p>
+                    </div>
                 </a>
             </div>
             `;
@@ -121,3 +125,12 @@ function searchOnEnter(event) {
         searchInstantly();
     }
 }
+
+$(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
+$(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
+$(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
+$(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
+$(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
+$(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
+$(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
+$(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');

@@ -418,16 +418,19 @@
     content: "Please select the service to share.";
 }
 
+.grid-date-year::after,
 .sale-date > .date-container > p:first-child::after,
 .calendar-item-year::after {
     content: "";
 }
 
+.grid-date-month::after,
 .sale-date > .date-container > p:nth-child(2)::after,
 .calendar-item-month::after {
     content: ",";
 }
 
+.grid-date-day::after,
 .sale-date > .date-container > p:last-child::after,
 .calendar-item-day::after {
     content: "";

@@ -64,6 +64,11 @@
     overflow: hidden;
 }
 
+.date p {
+    display: inline-block;
+    margin: 0;
+}
+
 #pagination {
     margin: 50px;
     -ms-user-select: none;
