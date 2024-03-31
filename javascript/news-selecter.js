@@ -44,7 +44,7 @@ $(document).ready(function(){
                 '{url}': data[0].url,
                 '{image}': data[0].image,
                 '{share}': data[0].link,
-                '{date}': data[0].published,
+                '{date}': data[0].date,
                 '{writer}': data[0].writer,
             };
             
