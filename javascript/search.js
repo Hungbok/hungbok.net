@@ -24,18 +24,10 @@ window.addEventListener('load', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
 
-        const resultsPerPage = 10; // 페이지 당 결과 수
-        let currentPage = 1; // 현재 페이지
-        
-        if(urlParams.has('page')) {
-            currentPage = parseInt(urlParams.get('page')) || 1;
-        }
-
-        function displayResults(page) {
-            $(".search-results").empty();
-            const startIndex = (page - 1) * resultsPerPage;
-            const endIndex = startIndex + resultsPerPage;
-            const filteredResults = searchData.filter(item => {
+        if(searchValue !== '') {
+            let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
+            
+            let results = searchData.filter(item => {
                 return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
                     let lowerText = text.toLowerCase();
                     if(lowerText.includes(searchValue)) {
@@ -45,38 +37,41 @@ window.addEventListener('load', function() {
                     let cleanedSearchValue = searchValue.replace(/\s+/g, '');
                     return cleanedText.includes(cleanedSearchValue);
                 });
-            });
-
-            const resultsToShow = filteredResults.slice(startIndex, endIndex);
-            
-            if(resultsToShow.length === 0) {
-                $(".search-results").hide();
+            }).map(item => {
+                // 일치율 계산을 위한 로직 추가
+                let maxMatchRate = 0; // 최대 일치율
+                (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+                    let lowerText = text.toLowerCase();
+                    let cleanedText = lowerText.replace(/\s+/g, '');
+                    let cleanedSearchValue = searchValue.replace(/\s+/g, '');
+                    let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
+                    if(matchRate > maxMatchRate) {
+                        maxMatchRate = matchRate; // 최대 일치율 업데이트
+                    }
+                });
+                return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
+            }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
+            .slice(0, 5); // 상위 5개 결과만 추출
+        
+            $(".searchResults").empty();
+            if(results.length === 0) {
+                $(".searchResults").hide();
                 return;
             }
-            
-            resultsToShow.forEach(item => {
-                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue)) || item.title['en'];
-                let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
+            results.forEach(item => {
+                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+                if (!title) {
+                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+                }
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-                $(".search-results").append(`
+                $(".searchResults").append(`
                     <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                         ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
                     </a>
                 `);
             });
-            $(".search-results").show();
-            displayPagination(filteredResults.length, page);
+            $(".searchResults").show();
         }
-
-        function displayPagination(totalResults, currentPage) {
-            const totalPages = Math.ceil(totalResults / resultsPerPage);
-            $('.pagination').empty();
-            for(let i = 1; i <= totalPages; i++) {
-                $('.pagination').append(`<a href="?q=${searchValue}&page=${i}" class="${i === currentPage ? 'active' : ''}">${i}</a>`);
-            }
-        }
-
-        displayResults(currentPage);
     });
 });
