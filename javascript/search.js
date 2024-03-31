@@ -72,6 +72,11 @@ async function paginateData(data, page) {
         searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
+            let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+            if (!title) {
+                title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+            }
+            let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
             searchResults.innerHTML += `
             <a href="${item.link}">
                 <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
