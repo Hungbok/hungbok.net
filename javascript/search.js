@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
         let page = parseInt(urlParams.get('page') || '1'); // page가 없으면 1로 설정
-        const itemsPerPage = 10; // 한 페이지에 표시할 아이템 수
+        const itemsPerPage = 5; // 한 페이지에 표시할 아이템 수
 
         if(searchValue !== '') {
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
@@ -59,7 +59,6 @@ window.addEventListener('load', function() {
             $("#searchResults").empty();
             if(results.length === 0) {
                 $("#searchResults").append(`<p>검색결과가 존재하지 않습니다.</p>`);
-                $("#searchResults").show();
                 return;
             }
 
@@ -77,11 +76,10 @@ window.addEventListener('load', function() {
                     </a>
                 `);
             });
-            $("#searchResults").show();
 
             // 페이지네이션 버튼 추가
             const totalPages = Math.ceil(results.length / itemsPerPage);
-            const paginationContainer = $("#paginationContainer");
+            const paginationContainer = $("#pagination");
             paginationContainer.empty();
 
             // 이전 페이지 버튼
