@@ -79,7 +79,8 @@ window.addEventListener('load', function() {
                 $("#searchResults").append(`
                     <a href="${item.link}">
                         <img class="searchresultsimage" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                        ${type ? `<p class="searchresultstype">${type}</p>` : ""}<p class="searchresultstitle" title="${title}">${title}</p>
+                        <div class="searchresultstype">${type ? `<p>${type}</p>` : ""}</div>
+                        <div class="searchresultstitle"><p title="${title}">${title}</p></div>
                     </a>
                 `);
             });
