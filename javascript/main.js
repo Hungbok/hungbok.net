@@ -477,10 +477,12 @@ window.addEventListener('load', function() {
                 return;
             }
             results.forEach(item => {
-                // 검색된 subtitle의 언어 코드를 기반으로 title을 찾아 출력
-                let titleLanguageCode = item.foundLanguageCode && item.title[item.foundLanguageCode] ? item.foundLanguageCode : (item.title[languageCode] ? languageCode : "en");
+                // 검색된 subtitle의 언어 코드와 현재 페이지의 languageCode 비교
+                let matchedLanguageCode = item.foundLanguageCode && item.title[item.foundLanguageCode] ? item.foundLanguageCode : "en";
+                let titleLanguageCode = (item.title[languageCode]) ? languageCode : matchedLanguageCode; // 현재 languageCode가 title에 있으면 그 값을, 아니면 matchedLanguageCode를 사용
                 let title = item.title[titleLanguageCode];
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+            
                 $(".search-results").append(`
                     <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
@@ -501,7 +503,7 @@ window.addEventListener('load', function() {
             e.stopPropagation(); 
         });
     });
-    
+
     function search() {
         var searchValue = $("#search-value").val().trim();
         if (searchValue) {
