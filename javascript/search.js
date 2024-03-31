@@ -61,7 +61,7 @@ window.addEventListener('load', function() {
 
             $("#searchResults").empty();
             if(results.length === 0) {
-                $("#searchResults").append(`<p>검색결과가 존재하지 않습니다.</p>`);
+                $("#searchResults").append(`<div class="no-data">검색 결과가 없습니다.</div>`);
                 $("#searchingValueNumber").text('0'); // 검색 결과 개수를 0으로 설정
                 return;
             }
