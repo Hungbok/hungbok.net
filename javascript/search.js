@@ -78,6 +78,7 @@ window.addEventListener('load', function() {
             paginatedResults.forEach(item => {
                 // 결과 표시 로직은 기존과 동일
             });
+            $("#searchResults").show();
 
             // 페이지네이션 로직
             generatePagination(currentPage, Math.ceil(results.length / itemsPerPage));
