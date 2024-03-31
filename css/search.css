@@ -32,6 +32,10 @@
     align-items: center;
 }
 
+#searchResults a:hover {
+    background: var(--background-8);
+}
+
 .searchresultsimage {
     max-width: 100%;
     border-radius: 10px;
