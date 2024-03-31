@@ -834,7 +834,7 @@ details {
 }
 
 .report-item.selected {
-    background-color: var(--background-9);
+    background-color: var(--background-4);
 }
 
 .report-item p {
@@ -846,7 +846,7 @@ details {
     margin: 5px;
     padding: 5px 10px;
     border-radius: 5px;
-    color: var(--text-3);
+    color: var(--text-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -855,20 +855,19 @@ details {
 }
 
 .text-report-help:hover {
-    color: var(--text-4);
-    background-color: var(--background-10-opacity-75);
+    background-color: var(--background-10-opacity-50);
 }
 
 .report-button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 20px;
-    background-color: var(--background-9);
+    background-color: var(--background-6);
     margin-top: 20px;
     border: 0;
     width: 100%;
     text-align: center;
-    color: var(--text-4);
+    color: var(--text-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -881,8 +880,7 @@ details {
 }
 
 .report-button:hover {
-    color: var(--text-2);
-    background-color: var(--background-10);
+    background-color: var(--background-4);
 }
 
 .form-elements {
