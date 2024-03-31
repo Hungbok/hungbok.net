@@ -42,8 +42,8 @@ $(document).ready(function(){
                 '{title}': getLocalizedData(data[0], 'title'),
                 '{content}': getLocalizedData(data[0], 'content'),
                 '{url}': data[0].url,
-                '{share}': data[0].share,
-                '{date}': data[0].date,
+                '{share}': data[0].link,
+                '{date}': data[0].published,
                 '{writer}': data[0].writer,
             };
             
@@ -63,11 +63,6 @@ $(document).ready(function(){
         $('body').addClass('ko');
         $('.section').remove();
         $('.top-backgrounds').remove();
-        $('main').append(`<section class="section">
-            <input type="text" id="searchInput" placeholder="검색어 입력" autocomplete='off'>
-            <div id="searchResults"></div>
-            <div id="pagination"></div>
-        </section>`);
 
         // 스크립트와 CSS를 동적으로 불러오는 함수
         function loadResource(type, url) {
@@ -84,8 +79,14 @@ $(document).ready(function(){
             }
         }
         
-        loadResource('js', '//www.hungbok.net/javascript/news.js');
         loadResource('css', '//www.hungbok.net/css/list.css');
+        loadResource('js', '//www.hungbok.net/javascript/news.js');
+
+        $('main').append(`<section class="section">
+            <input type="text" id="searchInput" placeholder="검색어 입력" autocomplete='off'>
+            <div id="searchResults"></div>
+            <div id="pagination"></div>
+        </section>`);
     }
 });
 
