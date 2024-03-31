@@ -59,7 +59,30 @@ function updateURL() {
     history.pushState(null, '', newURL);
 }
 
-async function paginateData(data, page) {
+async function paginateData(data, searchValue, page, resultsPerPage) {
+    // 검색값 정제
+    let cleanedSearchValue = searchValue.replace(/\s+/g, '').toLowerCase();
+
+    // 데이터 필터링 및 일치율 계산
+    let filteredData = data.filter(item => {
+        return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
+            let lowerText = text.toLowerCase();
+            let cleanedText = lowerText.replace(/\s+/g, '');
+            return cleanedText.includes(cleanedSearchValue);
+        });
+    }).map(item => {
+        let maxMatchRate = 0;
+        (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+            let lowerText = text.toLowerCase();
+            let cleanedText = lowerText.replace(/\s+/g, '');
+            let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
+            if(matchRate > maxMatchRate) {
+                maxMatchRate = matchRate;
+            }
+        });
+        return {...item, matchRate: maxMatchRate};
+    }).sort((a, b) => b.matchRate - a.matchRate);
+
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
     const dataToDisplay = data.slice(startIndex, endIndex);
@@ -69,33 +92,23 @@ async function paginateData(data, page) {
 
     if (dataToDisplay.length === 0) {
         // 데이터가 비어 있을 경우 사용자에게 알림
-        searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
+        searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
-            const monthNames = ["1", "2", "3", "4", "5", "6",
-                                "7", "8", "9", "10", "11", "12"];
-
-            // item.release_month가 문자열이고 "01", "02" 등의 형태로 되어 있다고 가정합니다.
-            // parseInt를 사용하여 문자열을 정수로 변환하고, 배열의 인덱스는 0부터 시작하기 때문에 1을 빼줍니다.
-            const monthName = monthNames[parseInt(item.release_month, 10) - 1];
-
-            // 검색 결과에 추가
-            searchResults.innerHTML += `
-            <a class="item" href="${item.link}">
-                <div class="image"><img src="${item.image}"></div>
-                <div class="title" title="${item.title}">${item.title}</div>
-                <div class="platform ${item.platform}"></div>
-                <div class="date">
-                    <p class="grid-date-year">${item.release_year}</p>
-                    <p class="grid-date-month">${monthName}</p>
-                    <p class="grid-date-day">${item.release_day}</p>
-                </div>
-            </a>
-            `;
+            let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+            if (!title) {
+                title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+            }
+            let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+            $(".search-results").append(`
+                <a href="${item.link}">
+                    <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
+                </a>
+            `);
         });
     }
 }
-
 
 function updatePaginationButtons(data) {
     const pagination = document.getElementById('pagination');
