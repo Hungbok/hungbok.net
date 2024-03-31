@@ -1,13 +1,19 @@
 // 여러 JSON 파일 경로
 const dataUrls = [
-    '//data.hungbok.net/data/games/list1.json',
-    '//data.hungbok.net/data/games/list2.json',
-    '//data.hungbok.net/data/games/list3.json'
-    // 필요한 만큼 더 추가할 수 있습니다.
+    '//data.hungbok.net/data/search/data.json',
+    '//data.hungbok.net/data/search/gamesData.json',
+    '//data.hungbok.net/data/search/animeData.json',
+    '//data.hungbok.net/data/search/movieData.json',
+    '//data.hungbok.net/data/search/televisionData.json',
+    '//data.hungbok.net/data/search/booksData.json',
+    '//data.hungbok.net/data/langData.json'
 ];
 const resultsPerPage = 5; // 페이지당 결과 수
 
+// URL에서 페이지와 검색어를 읽어옵니다.
 let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
+let searchQuery = new URLSearchParams(window.location.search).get('q') || '';
+
 let allData = []; // 모든 데이터를 저장하는 배열
 let filteredData = []; // 검색된 데이터를 저장하는 배열
 
@@ -23,6 +29,32 @@ async function loadData() {
     } catch (error) {
         console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
     }
+}
+
+function searchByQuery() {
+    if (!searchQuery) {
+        filteredData = [];
+        currentPage = 1;
+        paginateData(allData, currentPage);
+        updatePaginationButtons(allData);
+        return;
+    }
+
+    filteredData = allData.filter(item =>
+        item.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    currentPage = 1;
+    paginateData(filteredData, currentPage);
+    updatePaginationButtons(filteredData);
+}
+
+function updateURL() {
+    let newURL = `?page=${currentPage}`;
+    if (searchQuery) {
+        newURL += `&q=${encodeURIComponent(searchQuery)}`;
+    }
+    history.pushState(null, '', newURL);
 }
 
 async function paginateData(data, page) {
@@ -111,7 +143,7 @@ function changePage(page) {
     currentPage = page;
     paginateData(filteredData.length > 0 ? filteredData : allData, currentPage);
     updatePaginationButtons(filteredData.length > 0 ? filteredData : allData);
-    history.pushState(null, '', `?page=${currentPage}`);
+    updateURL();
 }
 
 function searchInstantly() {
@@ -135,12 +167,22 @@ function searchInstantly() {
     updatePaginationButtons(filteredData);
 }
 
-document.getElementById('searchInput').addEventListener('input', searchInstantly);
+document.getElementById('searchInput').value = searchQuery; // URL에서 읽은 검색어를 입력 필드에 설정합니다.
+
+document.getElementById('searchInput').addEventListener('change', function () {
+    searchQuery = this.value.trim();
+    searchByQuery();
+    updateURL();
+});
 
 loadData().then(data => {
     allData = data;
-    paginateData(allData, currentPage);
-    updatePaginationButtons(allData);
+    if (searchQuery) {
+        searchByQuery();
+    } else {
+        paginateData(allData, currentPage);
+        updatePaginationButtons(allData);
+    }
 });
 
 function searchOnEnter(event) {
