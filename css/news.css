@@ -80,7 +80,7 @@
     grid-template-columns: auto 300px;
     column-gap: 20px;
     row-gap: 40px;
-    padding: 20px 40px 40px;
+    padding: 40px;
     position: relative;
     align-items: start;
 }
