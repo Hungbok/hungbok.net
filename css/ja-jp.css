@@ -554,3 +554,15 @@
     padding: 10px 0px;
     border-radius: 20px;
 }
+
+.searchingValue > #searchingValue::before {
+    content: "検索したキーワード: ";
+}
+
+.searchingValue > #searchingValueNumber::before {
+    content: "全";
+}
+
+.searchingValue > #searchingValueNumber::after {
+    content: "件検索しました";
+}

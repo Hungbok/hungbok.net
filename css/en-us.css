@@ -544,3 +544,15 @@
 .sale-timer.timer-container.end::before {
     content: "End in";
 }
+
+.searchingValue > #searchingValue::before {
+    content: "You searched for: ";
+}
+
+.searchingValue > #searchingValueNumber::before {
+    content: "Found a total of ";
+}
+
+.searchingValue > #searchingValueNumber::after {
+    content: " results";
+}

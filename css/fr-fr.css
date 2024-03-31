@@ -554,3 +554,15 @@
     padding: 10px 0px;
     border-radius: 20px;
 }
+
+.searchingValue > #searchingValue::before {
+    content: "Vous avez recherché: ";
+}
+
+.searchingValue > #searchingValueNumber::before {
+    content: "J'ai trouvé un total de ";
+}
+
+.searchingValue > #searchingValueNumber::after {
+    content: " résultats";
+}
