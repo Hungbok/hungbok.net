@@ -62,7 +62,6 @@ async function paginateData(data, page) {
     }
 }
 
-
 function updatePaginationButtons(data) {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
