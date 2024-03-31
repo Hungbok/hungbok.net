@@ -43,28 +43,29 @@ $(document).ready(function() {
                     return cleanedText.includes(cleanedSearchValue);
                 });
             }).map(item => {
-                // 일치율 계산을 위한 로직 추가
-                let maxMatchRate = 0; // 최대 일치율
-                let foundLanguageCode = null; // 검색된 subtitle의 언어 코드
+                let maxMatchRate = 0;
+                let foundLanguageCode = null;
                 (Object.entries(item.subtitle).concat(Object.entries(item.title))).forEach(([key, text]) => {
                     let lowerText = text.toLowerCase();
                     let cleanedText = lowerText.replace(/\s+/g, '');
                     let cleanedSearchValue = searchValue.replace(/\s+/g, '');
                     let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
                     if(matchRate > maxMatchRate) {
-                        maxMatchRate = matchRate; // 최대 일치율 업데이트
-                        foundLanguageCode = key.split('-')[0]; // 검색된 subtitle의 언어 코드 추출
+                        maxMatchRate = matchRate;
+                        foundLanguageCode = key.split('-')[0];
                     }
                 });
 
-                // 언어 코드에 따라 title과 subtitle 결정
-                let selectedLanguageCode = item.title[languageCode] ? languageCode : 'en'; // languageCode 값에 해당하는 언어가 없으면 기본값으로 en 설정
-                if(foundLanguageCode && item.title[foundLanguageCode]) {
-                    selectedLanguageCode = foundLanguageCode; // 검색된 subtitle의 언어 코드를 기반으로 선택
-                }
-                
-                return {...item, matchRate: maxMatchRate, selectedLanguageCode}; // 일치율과 선택된 언어 코드를 포함한 객체 반환
-            }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
+                // 검색된 언어 코드가 현재 페이지의 languageCode와 일치하거나, 일치하는 언어가 없으면 'en'을 기본값으로 사용
+                let titleLanguageCode = item.title[languageCode] ? languageCode : 'en';
+                let subtitleLanguageCode = item.subtitle[languageCode] ? languageCode : 'en';
+        
+                // foundLanguageCode가 title 및 subtitle에 존재하면 해당 언어 코드 사용
+                titleLanguageCode = item.title[foundLanguageCode] ? foundLanguageCode : titleLanguageCode;
+                subtitleLanguageCode = item.subtitle[foundLanguageCode] ? foundLanguageCode : subtitleLanguageCode;
+        
+                return {...item, matchRate: maxMatchRate, titleLanguageCode, subtitleLanguageCode};
+            }).sort((a, b) => b.matchRate - a.matchRate)
             
             let paginatedResults = results.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
@@ -80,8 +81,8 @@ $(document).ready(function() {
 
             // 검색 결과를 페이지에 맞게 표시
             paginatedResults.forEach(item => {
-                // 최종 결정된 언어 코드를 기반으로 title 출력
-                let title = item.title[item.selectedLanguageCode];
+                let title = item.title[item.titleLanguageCode];
+                let subtitle = item.subtitle[item.subtitleLanguageCode];
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
                 $("#searchResults").append(`
                     <a href="${item.link}">
