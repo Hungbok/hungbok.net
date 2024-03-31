@@ -68,6 +68,22 @@ $(document).ready(function(){
             <div id="searchResults"></div>
             <div id="pagination"></div>
         </section>`);
+
+        // 스크립트와 CSS를 동적으로 불러오는 함수
+        function loadResource(type, url) {
+            if (type === 'js') {
+                var script = document.createElement('script');
+                script.src = url;
+                document.body.appendChild(script);
+            } else if (type === 'css') {
+                var link = document.createElement('link');
+                link.href = url;
+                link.type = 'text/css';
+                link.rel = 'stylesheet';
+                document.getElementsByTagName('head')[0].appendChild(link);
+            }
+        }
+        
         loadResource('js', '//www.hungbok.net/javascript/news.js');
         loadResource('css', '//www.hungbok.net/css/list.css');
     }
