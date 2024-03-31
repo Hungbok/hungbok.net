@@ -474,7 +474,7 @@ window.addEventListener('load', function() {
                     selectedLanguageCode = foundLanguageCode; // 검색된 subtitle의 언어 코드를 기반으로 선택
                 }
                 
-                return {...item, matchRate: maxMatchRate, foundLanguageCode}; // 일치율과 검색된 언어 코드를 포함한 객체 반환
+                return {...item, matchRate: maxMatchRate, selectedLanguageCode}; // 일치율과 선택된 언어 코드를 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
             .slice(0, 5); // 상위 5개 결과만 추출
 
