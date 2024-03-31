@@ -16,21 +16,6 @@ async function loadData() {
     }
 }
 
-async function fetchTitle(url, lang = 'en') {
-    try {
-        // JSON 파일에서 데이터를 불러옵니다.
-        const response = await fetch(`//data.hungbok.net/data/news/${url}.json`);
-        const data = await response.json();
-        
-        // 현재 페이지의 언어 설정을 확인하고, 해당 언어로 된 제목을 반환합니다.
-        // 만약 해당 언어의 데이터가 없다면, 영어(en)로 된 제목을 반환합니다.
-        return data[lang] ? data[lang].title : data['en'].title;
-    } catch (error) {
-        console.error('데이터를 불러오는 데 실패했습니다.', error);
-        return null;
-    }
-}
-
 async function paginateData(data, page) {
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
@@ -39,27 +24,37 @@ async function paginateData(data, page) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
+    // 현재 문서의 언어 설정 확인
+    const currentLang = document.documentElement.lang || 'en';
+
     if (dataToDisplay.length === 0) {
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        // 현재 페이지의 언어 설정을 가져옵니다.
-        const currentLang = document.documentElement.lang || 'en';
-
         for (const item of dataToDisplay) {
-            const title = await fetchTitle(item.url, currentLang);
-            
-            searchResults.innerHTML += `
-            <a class="item" href="${item.link}">
-                <div class="image">
-                    <img src="${item.image}">
-                </div>
-                <div class="info">
-                    <div class="type ${item.type}"></div>
-                    <div class="title" title="${title}">${title}</div>
-                    <div class="date" settime="${item.published}"></div>
-                </div>
-            </a>
-            `;
+            // 언어에 맞는 제목을 불러오기 위한 URL 구성
+            const url = `//data.hungbok.net/data/news/${item.url}.json`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                // 현재 언어로 된 제목이 있으면 사용, 없으면 기본 언어(en)로 대체
+                const title = data[currentLang]?.title || data.en.title;
+
+                searchResults.innerHTML += `
+                <a class="item" href="${item.link}">
+                    <div class="image">
+                        <img src="${item.image}">
+                    </div>
+                    <div class="info">
+                        <div class="type ${item.type}"></div>
+                        <div class="title" title="${title}">${title}</div>
+                        <div class="date" settime="${item.published}"></div>
+                    </div>
+                </a>
+                `;
+            } catch (error) {
+                console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
+            }
         }
     }
 }
