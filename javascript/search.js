@@ -73,18 +73,26 @@ $(document).ready(function() {
 
             // 검색 결과를 페이지에 맞게 표시
             paginatedResults.forEach(item => {
-                // 검색된 결과의 언어 코드를 확인하여 사용자의 현재 languageCode와 일치하거나, 일치하는 언어가 없으면 'en'을 사용
-                let titleLanguageCode = (item.title[languageCode] || item.title['en']) ? (item.title[languageCode] ? languageCode : 'en') : Object.keys(item.title)[0];
-                let subtitleLanguageCode = (item.subtitle && item.subtitle[languageCode] || item.subtitle && item.subtitle['en']) ? (item.subtitle && item.subtitle[languageCode] ? languageCode : 'en') : (item.subtitle ? Object.keys(item.subtitle)[0] : null);
-                
-                // 최종 결정된 subtitle의 언어값과 동일한 title값의 언어로 출력
-                // 만약 subtitle의 언어 코드가 결정되었다면, 해당 언어 코드를 사용하고, 그렇지 않으면 위에서 결정된 title의 언어 코드를 사용
-                titleLanguageCode = subtitleLanguageCode || titleLanguageCode;
-                
-                let title = item.title[titleLanguageCode];
-                let subtitle = item.subtitle ? item.subtitle[titleLanguageCode] : "";
+                let titleMatchLangs = []; // title에서 검색어와 일치하는 언어 코드를 저장할 배열
+                let subtitleMatchLangs = []; // subtitle에서 검색어와 일치하는 언어 코드를 저장할 배열
+            
+                // title과 subtitle에서 검색어와 일치하는 언어 코드 찾기
+                Object.entries(item.title).forEach(([lang, text]) => {
+                    if (text.toLowerCase().includes(searchValue)) titleMatchLangs.push(lang);
+                });
+                Object.entries(item.subtitle || {}).forEach(([lang, text]) => {
+                    if (text.toLowerCase().includes(searchValue)) subtitleMatchLangs.push(lang);
+                });
+            
+                // 일치하는 언어 코드가 여러 개인 경우, 우선 순위에 따라 언어 코드 결정
+                let finalLangCode = subtitleMatchLangs.includes(languageCode) || titleMatchLangs.includes(languageCode) ? languageCode :
+                                     subtitleMatchLangs.includes('en') || titleMatchLangs.includes('en') ? 'en' :
+                                     subtitleMatchLangs[0] || titleMatchLangs[0] || 'en'; // subtitle 우선
+            
+                // 최종적으로 결정된 언어 코드를 사용하여 title 출력
+                let title = item.title[finalLangCode] || item.title['en'] || Object.values(item.title)[0];
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-                
+            
                 $("#searchResults").append(`
                     <a href="${item.link}">
                         <img class="searchresultsimage" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
