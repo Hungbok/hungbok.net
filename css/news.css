@@ -34,6 +34,7 @@
     align-items: center;
     justify-content: center;
     padding: 40px;
+    position: relative;
 }
 
 .top-content-name {
@@ -46,6 +47,23 @@
     position: absolute;
     left: 40px;
     bottom: 40px;
+}
+
+.top-content-tag {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--text-6);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.top-content-title {
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: bold;
 }
 
 /* middle */
