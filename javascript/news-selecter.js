@@ -42,6 +42,7 @@ $(document).ready(function(){
                 '{title}': getLocalizedData(data[0], 'title'),
                 '{content}': getLocalizedData(data[0], 'content'),
                 '{url}': data[0].url,
+                '{image}': data[0].image,
                 '{share}': data[0].link,
                 '{date}': data[0].published,
                 '{writer}': data[0].writer,
