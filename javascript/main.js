@@ -467,6 +467,13 @@ window.addEventListener('load', function() {
                         foundLanguageCode = key.split('-')[0]; // 검색된 subtitle의 언어 코드 추출
                     }
                 });
+
+                // 언어 코드에 따라 title과 subtitle 결정
+                let selectedLanguageCode = item.title[languageCode] ? languageCode : 'en'; // languageCode 값에 해당하는 언어가 없으면 기본값으로 en 설정
+                if(foundLanguageCode && item.title[foundLanguageCode]) {
+                    selectedLanguageCode = foundLanguageCode; // 검색된 subtitle의 언어 코드를 기반으로 선택
+                }
+                
                 return {...item, matchRate: maxMatchRate, foundLanguageCode}; // 일치율과 검색된 언어 코드를 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
             .slice(0, 5); // 상위 5개 결과만 추출
@@ -477,12 +484,9 @@ window.addEventListener('load', function() {
                 return;
             }
             results.forEach(item => {
-                // 검색된 subtitle의 언어 코드와 현재 페이지의 languageCode 비교
-                let matchedLanguageCode = item.foundLanguageCode && item.title[item.foundLanguageCode] ? item.foundLanguageCode : "en";
-                let titleLanguageCode = (item.title[languageCode]) ? languageCode : matchedLanguageCode; // 현재 languageCode가 title에 있으면 그 값을, 아니면 matchedLanguageCode를 사용
-                let title = item.title[titleLanguageCode];
+                // 최종 결정된 언어 코드를 기반으로 title 출력
+                let title = item.title[item.selectedLanguageCode];
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-            
                 $(".search-results").append(`
                     <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
@@ -503,7 +507,7 @@ window.addEventListener('load', function() {
             e.stopPropagation(); 
         });
     });
-
+    
     function search() {
         var searchValue = $("#search-value").val().trim();
         if (searchValue) {
