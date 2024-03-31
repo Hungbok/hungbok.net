@@ -1,7 +1,20 @@
-#searchResults {
+#searchResults,
+.searchingValue {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.searchingValue {
+    text-align: left;
+}
+
+#searchingValue {
+    font-size: 30px;
+}
+
+#searchingValueNumber {
+    font-size: 20px;
 }
 
 #searchResults a {

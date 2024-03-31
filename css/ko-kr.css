@@ -555,3 +555,15 @@
     padding: 10px 0px;
     border-radius: 20px;
 }
+
+.searchingValue > #searchingValue::before {
+    content: "검색어: ";
+}
+
+.searchingValue > #searchingValueNumber::before {
+    content: "총 ";
+}
+
+.searchingValue > #searchingValueNumber::after {
+    content: "개 검색됨";
+}
