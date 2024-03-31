@@ -2,7 +2,7 @@
 
 .top-backgrounds {
     width: 100vw;
-    height: 490px;
+    height: 400px;
     overflow: hidden;
     position: absolute;
     transform: translate(0px, -90px);
@@ -29,10 +29,23 @@
 /* top */
 
 .top-content {
-    min-height: 400px;
+    min-height: 230px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 40px;
+}
+
+.top-content-name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
 }
 
 /* middle */
@@ -220,6 +233,10 @@
     width: 100%;
 }
 
+.descriptions {
+    position: relative;
+}
+
 /* report & share */
 
 .additional-links {
@@ -227,7 +244,8 @@
     gap: 5px;
     position: absolute;
     margin: 0px;
-    right: -50px;
+    left: -50px;
+    top: 0;
 }
 
 .additional-link {
