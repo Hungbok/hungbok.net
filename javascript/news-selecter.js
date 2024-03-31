@@ -80,7 +80,6 @@ $(document).ready(function(){
             }
         }
         
-        loadResource('css', '//www.hungbok.net/css/list.css');
         loadResource('js', '//www.hungbok.net/javascript/news.js');
 
         $('main').append(`<section class="section">
