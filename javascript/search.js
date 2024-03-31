@@ -1,218 +1,64 @@
-// 여러 JSON 파일 경로
-const dataUrls = [
-    '//data.hungbok.net/data/search/data.json',
-    '//data.hungbok.net/data/search/gamesData.json',
-    '//data.hungbok.net/data/search/animeData.json',
-    '//data.hungbok.net/data/search/movieData.json',
-    '//data.hungbok.net/data/search/televisionData.json',
-    '//data.hungbok.net/data/search/booksData.json',
-    '//data.hungbok.net/data/langData.json'
-];
 
-// URL에서 페이지와 검색어를 읽어옵니다.
-let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
-let searchQuery = new URLSearchParams(window.location.search).get('q') || '';
+$.when(
+    $.getJSON("//data.hungbok.net/data/search/data.json"),
+    $.getJSON("//data.hungbok.net/data/search/gamesData.json"),
+    $.getJSON("//data.hungbok.net/data/search/animeData.json"),
+    $.getJSON("//data.hungbok.net/data/search/movieData.json"),
+    $.getJSON("//data.hungbok.net/data/search/televisionData.json"),
+    $.getJSON("//data.hungbok.net/data/search/booksData.json"),
+    $.getJSON("//data.hungbok.net/data/langData.json"),
+).then(function(data, gamesData, animeData, movieData, televisionData, booksData, langData) {
+    // 각각의 결과에서 필요한 데이터만 추출합니다. (response[0]에 실제 데이터가 있음)
+    let searchData = [
+        ...data[0], 
+        ...gamesData[0], 
+        ...animeData[0], 
+        ...movieData[0], 
+        ...televisionData[0], 
+        ...booksData[0]
+    ];
+    langData = langData[0]; // langData 역시 같은 방식으로 추출합니다.
 
-let allData = []; // 모든 데이터를 저장하는 배열
-let filteredData = []; // 검색된 데이터를 저장하는 배열
-
-async function loadData() {
-    try {
-        let allDataLoaded = [];
-        for (let dataUrl of dataUrls) {
-            const response = await fetch(dataUrl);
-            const data = await response.json();
-            allDataLoaded = allDataLoaded.concat(data); // 데이터를 합칩니다.
-        }
-        return allDataLoaded;
-    } catch (error) {
-        console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
-    }
-}
-
-function searchByQuery() {
-    if (!searchQuery) {
-        filteredData = allData; // searchQuery가 비어있으면 모든 데이터를 사용합니다.
-        currentPage = 1;
-        paginateData(allData, currentPage);
-        updatePaginationButtons(allData);
-        return;
-    }
-
-    // searchQuery가 비어있지 않으면 필터링을 수행합니다.
-    filteredData = allData.filter(item => {
-        const title = String(item.title);
-        return title.toLowerCase().includes(searchQuery.toLowerCase());
-    });
-
-    currentPage = 1;
-    paginateData(filteredData, currentPage);
-    updatePaginationButtons(filteredData);
-}
-
-function updateURL() {
-    let newURL = `?page=${currentPage}`;
-    if (searchQuery) {
-        newURL += `&q=${encodeURIComponent(searchQuery)}`;
-    }
-    history.pushState(null, '', newURL);
-}
-
-$(document).ready(function() {
-    // 페이지네이션 설정
-    const resultsPerPage = 10;
-    let currentPage = 1; // 현재 페이지 초기값
-
-    function searchAndUpdateUI(searchValue, currentPage) {
-        let searchValueLower = searchValue.toLowerCase().trim();
-        let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
-
-        let filteredResults = searchData.filter(item => {
-            return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
-                let lowerText = text.toLowerCase();
-                if(lowerText.includes(searchValueLower)) {
-                    return true;
-                }
-                let cleanedText = lowerText.replace(/\s+/g, '');
-                let cleanedSearchValue = searchValueLower.replace(/\s+/g, '');
-                return cleanedText.includes(cleanedSearchValue);
-            });
-        }).map(item => {
-            let maxMatchRate = 0;
-            (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
-                let lowerText = text.toLowerCase();
-                let cleanedText = lowerText.replace(/\s+/g, '');
-                let cleanedSearchValue = searchValueLower.replace(/\s+/g, '');
-                let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
-                if(matchRate > maxMatchRate) {
-                    maxMatchRate = matchRate;
-                }
-            });
-            return {...item, matchRate: maxMatchRate};
-        }).sort((a, b) => b.matchRate - a.matchRate);
-
-        const startIndex = (currentPage - 1) * resultsPerPage;
-        const endIndex = startIndex + resultsPerPage;
-        const dataToDisplay = filteredResults.slice(startIndex, endIndex);
-
-        const searchResults = $('#searchResults');
-        searchResults.html('');
-
-        if (dataToDisplay.length === 0) {
-            searchResults.html(`<div class="no-data">검색 결과가 없습니다.</div>`);
-        } else {
-            dataToDisplay.forEach(item => {
-                let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValueLower));
-                if (!title) {
-                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
-                }
-
-                searchResults.append(`
-                    <a href="${item.link}" class="item">
-                        <div class="image"><img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';"></div>
-                        ${type ? `<div class="search-results-type">${type}</div>` : ''}<div class="title" title="${title}">${title}</div>
-                    </a>
-                `);
-            });
-        }
-    }
-
-    // 검색 이벤트 바인딩
-    $("#searchInput").on("keyup", function() {
-        let searchValue = $(this).val();
-        currentPage = 1; // 검색 시 항상 첫 페이지로 리셋
-        searchAndUpdateUI(searchValue, currentPage);
-    });
-
-    // 페이지 변경 로직 (예시로 추가한 부분이므로, 실제 페이지네이션 구현이 필요합니다.)
-    // 예를 들어, 페이지 번호 클릭 이벤트를 처리하거나, 다음/이전 페이지 버튼을 구현해야 합니다.
-});
-
-
-function updatePaginationButtons(data) {
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
+    let searchValue = $(this).val().toLowerCase().trim();
     
-    const totalPages = Math.ceil(data.length / resultsPerPage);
-    const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
-    const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
+    let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
+    
+    let results = searchData.filter(item => {
+        return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
+            let lowerText = text.toLowerCase();
+            if(lowerText.includes(searchValue)) {
+                return true;
+            }
+            let cleanedText = lowerText.replace(/\s+/g, '');
+            let cleanedSearchValue = searchValue.replace(/\s+/g, '');
+            return cleanedText.includes(cleanedSearchValue);
+        });
+    }).map(item => {
+        // 일치율 계산을 위한 로직 추가
+        let maxMatchRate = 0; // 최대 일치율
+        (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+            let lowerText = text.toLowerCase();
+            let cleanedText = lowerText.replace(/\s+/g, '');
+            let cleanedSearchValue = searchValue.replace(/\s+/g, '');
+            let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
+            if(matchRate > maxMatchRate) {
+                maxMatchRate = matchRate; // 최대 일치율 업데이트
+            }
+        });
+        return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
+    }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
 
-    if (currentPage > 1) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-    } else {
-        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-    }
-
-    if (maxLeft > 1) {
-        pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
-        pagination.innerHTML += `<span>...</span>`;
-    }
-
-    for (let i = maxLeft; i <= maxRight; i++) {
-        pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
-    }
-
-    if (maxRight < totalPages) {
-        pagination.innerHTML += `<span>...</span>`;
-        pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
-    }
-
-    if (currentPage < totalPages) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-    } else {
-        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-    }
-}
-
-function changePage(page) {
-    currentPage = page;
-    paginateData(filteredData.length > 0 ? filteredData : allData, currentPage);
-    updatePaginationButtons(filteredData.length > 0 ? filteredData : allData);
-    updateURL();
-}
-
-function searchInstantly() {
-    const inputText = document.getElementById('searchInput').value;
-    const textToSearch = inputText.trim().toLowerCase();
-
-    if (!textToSearch) {
-        filteredData = [];
-        currentPage = 1;
-        paginateData(allData, currentPage);
-        updatePaginationButtons(allData);
-        return;
-    }
-
-    filteredData = allData.filter(item =>
-        item.title.toLowerCase().includes(textToSearch)
-    );
-
-    currentPage = 1;
-    paginateData(filteredData, currentPage);
-    updatePaginationButtons(filteredData);
-}
-
-document.getElementById('searchInput').value = searchQuery; // URL에서 읽은 검색어를 입력 필드에 설정합니다.
-
-document.getElementById('searchInput').addEventListener('change', function () {
-    searchQuery = this.value.trim();
-    searchByQuery();
-    updateURL();
+    results.forEach(item => {
+        let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+        if (!title) {
+            title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+        }
+        let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+        $(".search-results").append(`
+            <a href="${item.link}">
+                <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
+            </a>
+        `);
+    });
 });
-
-loadData().then(data => {
-    allData = data;
-    if (searchQuery) {
-        searchByQuery();
-    } else {
-        paginateData(allData, currentPage);
-        updatePaginationButtons(allData);
-    }
-});
-
-function searchOnEnter(event) {
-    if (event.key === 'Enter') {
-        searchInstantly();
-    }
-}
