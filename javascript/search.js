@@ -84,45 +84,58 @@ window.addEventListener('load', function() {
                 `);
             });
         }
-        // 여기에 페이지 네비게이션 로직 추가
-        const pagination = document.getElementById('pagination'); // pagination 요소의 ID를 확인하세요.
-        pagination.innerHTML = '';
-        
-        const resultsPerPage = 5; // 한 페이지당 결과 수
-        const currentPage = parseInt(new URLSearchParams(window.location.search).get('page') || '1', 10); // 현재 페이지
-        const totalPages = Math.ceil(results.length / resultsPerPage); // 총 페이지 수 계산
-        const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
-        const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
-
-        if (currentPage > 1) {
-            pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-        } else {
-            pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-        }
-
-        if (maxLeft > 1) {
-            pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
-            pagination.innerHTML += `<span>...</span>`;
-        }
-
-        for (let i = maxLeft; i <= maxRight; i++) {
-            pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
-        }
-
-        if (maxRight < totalPages) {
-            pagination.innerHTML += `<span>...</span>`;
-            pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
-        }
-
-        if (currentPage < totalPages) {
-            pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-        } else {
-            pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-        }
-
-        // changePage 함수 구현
-        window.changePage = function(page) {
-            window.location.href = '?q=' + encodeURIComponent(searchValue) + '&page=' + page; // searchValue는 검색어 변수입니다. 적절히 조정하세요.
-        }
     });
 });
+
+// 페이징 처리를 위한 함수 정의
+function changePage(page) {
+    currentPage = page;
+    // 여기에 페이지가 변경될 때 실행할 로직을 추가합니다.
+    // 예: 새로운 데이터를 가져오거나, 현재 페이지의 데이터를 보여주는 로직 등
+
+    renderPagination(); // 페이지네이션을 다시 그립니다.
+}
+
+// 페이지네이션을 그리는 함수
+function renderPagination() {
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+    
+    const totalPages = Math.ceil(data.length / resultsPerPage); // 전체 페이지 수 계산
+    const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
+    const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
+
+    if (currentPage > 1) {
+        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
+    } else {
+        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
+    }
+
+    if (maxLeft > 1) {
+        pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
+        pagination.innerHTML += `<span>...</span>`;
+    }
+
+    for (let i = maxLeft; i <= maxRight; i++) {
+        pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
+    }
+
+    if (maxRight < totalPages) {
+        pagination.innerHTML += `<span>...</span>`;
+        pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
+    }
+
+    if (currentPage < totalPages) {
+        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
+    } else {
+        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
+    }
+}
+
+// 예시 데이터, 현재 페이지, 페이지 당 결과 수 초기화
+let data = []; // 데이터를 적절하게 로드해야 합니다.
+let currentPage = 1;
+const resultsPerPage = 10; // 한 페이지 당 보여줄 아이템의 수
+
+// 페이지네이션 초기화
+renderPagination();
