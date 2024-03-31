@@ -83,58 +83,47 @@ window.addEventListener('load', function() {
                     </a>
                 `);
             });
+
+            // 페이지네이션 버튼 추가
+            const totalPages = Math.ceil(results.length / itemsPerPage);
+            const paginationContainer = $("#pagination");
+            paginationContainer.empty();
+
+            // 이전 페이지 버튼
+            if(page > 1) {
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${page - 1}"><img src="//media.hungbok.net/image/icon/prev.svg"></a>`);
+            } else {
+                paginationContainer.append(`<span><img src="//media.hungbok.net/image/icon/prev.svg"></span>`);
+            }
+
+            // 페이지 번호 버튼
+            let startPage = Math.max(page - 2, 1);
+            let endPage = Math.min(page + 2, totalPages);
+
+            if(startPage > 1) {
+                paginationContainer.append(`<a href="?q=${searchValue}&page=1">1</a>`);
+                if(startPage > 2) paginationContainer.append(`<span>...</span>`);
+            }
+
+            for(let i = startPage; i <= endPage; i++) {
+                if(i === page) {
+                    paginationContainer.append(`<span>${i}</span>`);
+                } else {
+                    paginationContainer.append(`<a href="?q=${searchValue}&page=${i}">${i}</a>`);
+                }
+            }
+
+            if(endPage < totalPages) {
+                if(endPage < totalPages - 1) paginationContainer.append(`<span>...</span>`);
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${totalPages}">${totalPages}</a>`);
+            }
+
+            // 다음 페이지 버튼
+            if(page < totalPages) {
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${page + 1}"><img src="//media.hungbok.net/image/icon/next.svg"></a>`);
+            } else {
+                paginationContainer.append(`<span><img src="//media.hungbok.net/image/icon/next.svg"></span>`);
+            }
         }
     });
-});
-
-// 페이지 변경 함수
-function changePage(page) {
-    // 현재 페이지를 업데이트
-    currentPage = page;
-    // 페이지 변경에 따른 데이터 로드 및 UI 업데이트 로직을 여기에 구현
-    console.log("현재 페이지:", currentPage);
-    // 예시: 검색 결과를 다시 불러오고, 페이지 네비게이션을 업데이트하는 함수를 호출할 수 있습니다.
-    // loadSearchResults(); // 검색 결과를 불러오는 함수(실제 구현 필요)
-    updatePagination(); // 페이지 네비게이션을 업데이트하는 함수
-}
-
-// 페이지 네비게이션 업데이트 함수
-function updatePagination() {
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
-    
-    const totalPages = Math.ceil(data.length / resultsPerPage);
-    const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
-    const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
-
-    if (currentPage > 1) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-    } else {
-        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-    }
-
-    if (maxLeft > 1) {
-        pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
-        if (maxLeft > 2) pagination.innerHTML += `<span>...</span>`;
-    }
-
-    for (let i = maxLeft; i <= maxRight; i++) {
-        pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
-    }
-
-    if (maxRight < totalPages) {
-        if (maxRight < totalPages - 1) pagination.innerHTML += `<span>...</span>`;
-        pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
-    }
-
-    if (currentPage < totalPages) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-    } else {
-        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-    }
-}
-
-// 페이지 로드 시 최초로 페이지 네비게이션 업데이트
-document.addEventListener('DOMContentLoaded', () => {
-    updatePagination();
 });
