@@ -31,11 +31,15 @@ async function paginateData(data, page) {
         dataToDisplay.forEach(item => {
 
             searchResults.innerHTML += `
-            <a href="${item.link}">
-                <div class="image"><img src="${item.image}"></div>
-                <div class="type ${item.type}"></div>
-                <div class="title" title="${item.title}">${item.title}</div>
-                <div class="date" settime="${item.published}"></div>
+            <a class="item" href="${item.link}">
+                <div class="image">
+                    <img src="${item.image}">
+                </div>
+                <div class="info">
+                    <div class="type ${item.type}"></div>
+                    <div class="title" title="${item.title}">${item.title}</div>
+                    <div class="date" settime="${item.published}"></div>
+                </div>
             </a>
             `;
         });
