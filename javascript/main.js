@@ -440,7 +440,7 @@ window.addEventListener('load', function() {
                 $(".search-results").empty().hide();
                 return;
             }
-
+        
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
             
             let results = searchData.filter(item => {
@@ -454,30 +454,22 @@ window.addEventListener('load', function() {
                     return cleanedText.includes(cleanedSearchValue);
                 });
             }).map(item => {
-                let maxMatchRate = 0;
-                let foundLanguageCode = null;
+                // 일치율 계산을 위한 로직 추가
+                let maxMatchRate = 0; // 최대 일치율
+                let foundLanguageCode = null; // 검색된 subtitle의 언어 코드
                 (Object.entries(item.subtitle).concat(Object.entries(item.title))).forEach(([key, text]) => {
                     let lowerText = text.toLowerCase();
                     let cleanedText = lowerText.replace(/\s+/g, '');
                     let cleanedSearchValue = searchValue.replace(/\s+/g, '');
                     let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
                     if(matchRate > maxMatchRate) {
-                        maxMatchRate = matchRate;
-                        foundLanguageCode = key.split('-')[0];
+                        maxMatchRate = matchRate; // 최대 일치율 업데이트
+                        foundLanguageCode = key.split('-')[0]; // 검색된 subtitle의 언어 코드 추출
                     }
                 });
-        
-                // 검색된 언어 코드가 현재 페이지의 languageCode와 일치하거나, 일치하는 언어가 없으면 'en'을 기본값으로 사용
-                let titleLanguageCode = item.title[languageCode] ? languageCode : 'en';
-                let subtitleLanguageCode = item.subtitle[languageCode] ? languageCode : 'en';
-        
-                // foundLanguageCode가 title 및 subtitle에 존재하면 해당 언어 코드 사용
-                titleLanguageCode = item.title[foundLanguageCode] ? foundLanguageCode : titleLanguageCode;
-                subtitleLanguageCode = item.subtitle[foundLanguageCode] ? foundLanguageCode : subtitleLanguageCode;
-        
-                return {...item, matchRate: maxMatchRate, titleLanguageCode, subtitleLanguageCode};
-            }).sort((a, b) => b.matchRate - a.matchRate)
-            .slice(0, 5);
+                return {...item, matchRate: maxMatchRate, foundLanguageCode}; // 일치율과 검색된 언어 코드를 포함한 객체 반환
+            }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
+            .slice(0, 5); // 상위 5개 결과만 추출
 
             $(".search-results").empty();
             if(results.length === 0) {
@@ -485,9 +477,18 @@ window.addEventListener('load', function() {
                 return;
             }
             results.forEach(item => {
-                let title = item.title[item.titleLanguageCode];
-                let subtitle = item.subtitle[item.subtitleLanguageCode];
+                // 검색된 결과의 언어 코드를 확인하여 사용자의 현재 languageCode와 일치하거나, 일치하는 언어가 없으면 'en'을 사용
+                let titleLanguageCode = (item.title[languageCode] || item.title['en']) ? (item.title[languageCode] ? languageCode : 'en') : Object.keys(item.title)[0];
+                let subtitleLanguageCode = (item.subtitle && item.subtitle[languageCode] || item.subtitle && item.subtitle['en']) ? (item.subtitle && item.subtitle[languageCode] ? languageCode : 'en') : (item.subtitle ? Object.keys(item.subtitle)[0] : null);
+                
+                // 최종 결정된 subtitle의 언어값과 동일한 title값의 언어로 출력
+                // 만약 subtitle의 언어 코드가 결정되었다면, 해당 언어 코드를 사용하고, 그렇지 않으면 위에서 결정된 title의 언어 코드를 사용
+                titleLanguageCode = subtitleLanguageCode || titleLanguageCode;
+                
+                let title = item.title[titleLanguageCode];
+                let subtitle = item.subtitle ? item.subtitle[titleLanguageCode] : "";
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+                
                 $(".search-results").append(`
                     <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
