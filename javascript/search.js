@@ -8,7 +8,6 @@ const dataUrls = [
     '//data.hungbok.net/data/search/booksData.json',
     '//data.hungbok.net/data/langData.json'
 ];
-const resultsPerPage = 5; // 페이지당 결과 수
 
 // URL에서 페이지와 검색어를 읽어옵니다.
 let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
@@ -59,56 +58,77 @@ function updateURL() {
     history.pushState(null, '', newURL);
 }
 
-async function paginateData(data, searchValue, page, resultsPerPage) {
-    // 검색값 정제
-    let cleanedSearchValue = searchValue.replace(/\s+/g, '').toLowerCase();
+$(document).ready(function() {
+    // 페이지네이션 설정
+    const resultsPerPage = 10;
+    let currentPage = 1; // 현재 페이지 초기값
 
-    // 데이터 필터링 및 일치율 계산
-    let filteredData = data.filter(item => {
-        return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
-            let lowerText = text.toLowerCase();
-            let cleanedText = lowerText.replace(/\s+/g, '');
-            return cleanedText.includes(cleanedSearchValue);
-        });
-    }).map(item => {
-        let maxMatchRate = 0;
-        (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
-            let lowerText = text.toLowerCase();
-            let cleanedText = lowerText.replace(/\s+/g, '');
-            let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
-            if(matchRate > maxMatchRate) {
-                maxMatchRate = matchRate;
-            }
-        });
-        return {...item, matchRate: maxMatchRate};
-    }).sort((a, b) => b.matchRate - a.matchRate);
+    function searchAndUpdateUI(searchValue, currentPage) {
+        let searchValueLower = searchValue.toLowerCase().trim();
+        let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
 
-    const startIndex = (page - 1) * resultsPerPage;
-    const endIndex = startIndex + resultsPerPage;
-    const dataToDisplay = data.slice(startIndex, endIndex);
+        let filteredResults = searchData.filter(item => {
+            return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
+                let lowerText = text.toLowerCase();
+                if(lowerText.includes(searchValueLower)) {
+                    return true;
+                }
+                let cleanedText = lowerText.replace(/\s+/g, '');
+                let cleanedSearchValue = searchValueLower.replace(/\s+/g, '');
+                return cleanedText.includes(cleanedSearchValue);
+            });
+        }).map(item => {
+            let maxMatchRate = 0;
+            (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+                let lowerText = text.toLowerCase();
+                let cleanedText = lowerText.replace(/\s+/g, '');
+                let cleanedSearchValue = searchValueLower.replace(/\s+/g, '');
+                let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
+                if(matchRate > maxMatchRate) {
+                    maxMatchRate = matchRate;
+                }
+            });
+            return {...item, matchRate: maxMatchRate};
+        }).sort((a, b) => b.matchRate - a.matchRate);
 
-    const searchResults = document.getElementById('searchResults');
-    searchResults.innerHTML = '';
+        const startIndex = (currentPage - 1) * resultsPerPage;
+        const endIndex = startIndex + resultsPerPage;
+        const dataToDisplay = filteredResults.slice(startIndex, endIndex);
 
-    if (dataToDisplay.length === 0) {
-        // 데이터가 비어 있을 경우 사용자에게 알림
-        searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
-    } else {
-        dataToDisplay.forEach(item => {
-            let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-            if (!title) {
-                title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
-            }
-            let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-            $(".search-results").append(`
-                <a href="${item.link}">
-                    <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                    ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
-                </a>
-            `);
-        });
+        const searchResults = $('#searchResults');
+        searchResults.html('');
+
+        if (dataToDisplay.length === 0) {
+            searchResults.html(`<div class="no-data">검색 결과가 없습니다.</div>`);
+        } else {
+            dataToDisplay.forEach(item => {
+                let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValueLower));
+                if (!title) {
+                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+                }
+
+                searchResults.append(`
+                    <a href="${item.link}" class="item">
+                        <div class="image"><img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';"></div>
+                        ${type ? `<div class="search-results-type">${type}</div>` : ''}<div class="title" title="${title}">${title}</div>
+                    </a>
+                `);
+            });
+        }
     }
-}
+
+    // 검색 이벤트 바인딩
+    $("#searchInput").on("keyup", function() {
+        let searchValue = $(this).val();
+        currentPage = 1; // 검색 시 항상 첫 페이지로 리셋
+        searchAndUpdateUI(searchValue, currentPage);
+    });
+
+    // 페이지 변경 로직 (예시로 추가한 부분이므로, 실제 페이지네이션 구현이 필요합니다.)
+    // 예를 들어, 페이지 번호 클릭 이벤트를 처리하거나, 다음/이전 페이지 버튼을 구현해야 합니다.
+});
+
 
 function updatePaginationButtons(data) {
     const pagination = document.getElementById('pagination');
