@@ -1,12 +1,8 @@
 async function loadAsyncScripts() {
-    // 동영상 팝업 재생
-    await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
-    // 이미지 및 동영상 슬라이드쇼
-    await loadScript('//www.hungbok.net/javascript/slick.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
-    await loadScript('//www.hungbok.net/javascript/en/error404.js');
+    await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
 
 function loadScript(src) {
@@ -64,7 +60,7 @@ $(document).ready(function(){
             document.body.innerHTML = htmlContent;
         });
     } else {
-        $('body').addClass('en');
+        $('body').addClass('ko');
         $('.section').remove();
         $('.top-backgrounds').remove();
         $('main').append(`<section class="section">
