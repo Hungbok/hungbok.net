@@ -18,6 +18,10 @@ async function loadData() {
 function getTimeDifference(publishedTime) {
     // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 년, 월, 일, 시, 분, 초로 분해
     const parts = publishedTime.split('-');
+    if (parts.length !== 6) {
+        return "알 수 없음"; // 형식이 잘못된 경우
+    }
+
     const year = parseInt(parts[0], 10);
     const month = parseInt(parts[1], 10) - 1; // JavaScript의 월은 0부터 시작
     const day = parseInt(parts[2], 10);
@@ -31,6 +35,12 @@ function getTimeDifference(publishedTime) {
 
     // 현재 시간과 게시 시간의 차이 계산 (초 단위)
     const diffInSeconds = Math.floor((currentDate.getTime() - publishedDate.getTime()) / 1000);
+    
+    // diffInSeconds가 NaN이거나 음수인 경우 "알 수 없음"을 반환
+    if (isNaN(diffInSeconds) || diffInSeconds < 0) {
+        return "알 수 없음";
+    }
+
     const diffInMinutes = Math.floor(diffInSeconds / 60);
     const diffInHours = Math.floor(diffInMinutes / 60);
     const diffInDays = Math.floor(diffInHours / 24);
