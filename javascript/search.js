@@ -77,7 +77,7 @@ window.addEventListener('load', function() {
         if(searchValue !== '') {
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
             
-            let results = searchData.filter(item => {
+            let pageResults = searchData.filter(item => {
                 return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
                     let lowerText = text.toLowerCase();
                     if(lowerText.includes(searchValue)) {
@@ -112,19 +112,17 @@ window.addEventListener('load', function() {
             // 페이지네이션을 화면에 표시
             $("#searchResults").append(createPagination());
             pageResults.forEach(item => {
-                results.forEach(item => {
-                    let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-                    if (!title) {
-                        title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
-                    }
-                    let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-                    $("#searchResults").append(`
-                        <a href="${item.link}">
-                            <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                            ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
-                        </a>
-                    `);
-                });
+                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+                if (!title) {
+                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+                }
+                let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+                $("#searchResults").append(`
+                    <a href="${item.link}">
+                        <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                        ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
+                    </a>
+                `);
             });
             $("#searchResults").append(createPagination()); // 결과 목록 아래에도 페이지네이션 추가
         }
