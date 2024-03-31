@@ -1,53 +1,45 @@
-#searchInput {
-    width: calc(50% - 60px);
-    border: none;
-    padding: 20px 30px;
-    margin: 50px;
-    color: var(--text-2);
-    background-color: var(--background-7);
-    border-radius: 20px;
-}
-
 #searchResults {
     width: 90%;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-#searchResults img {
-    max-width: 20px;
-    max-height: 20px;
-    pointer-events: none;
-    margin-left: 5px;
+#searchResults a {
+    display: grid;
+    column-gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    grid-template-columns: 75px auto;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-.item {
-    position: relative;
-    background-color: var(--background-8);
-    padding: 20px 40px;
-    border-radius: 20px;
-    text-align: center;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 5px 0px;
 }
 
-.url,
-.link a {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    align-content: center;
+#searchResults img {
+    max-width: 100%;
+    border-radius: 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
-.url::before {
-    content: "https://hgbk.me/";
+#searchResults .search-results-type {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-5);
+}
+
+#searchResults .search-results-title {
+    margin: 0;
+    font-size: 18px;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 #pagination {
