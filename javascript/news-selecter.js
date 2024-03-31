@@ -33,7 +33,7 @@ $(document).ready(function(){
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
             $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang'));
-            $('#report-title').attr('value', 'https://www.hungbok.com/news/' + data[0].url);
+            $('#report-title').attr('value', 'https://www.hungbok.com/news?q=' + data[0].url);
     
 
             // 대체할 값들을 저장한 객체
