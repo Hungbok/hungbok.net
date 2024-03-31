@@ -29,23 +29,13 @@ async function paginateData(data, page) {
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
-            const monthNames = ["1", "2", "3", "4", "5", "6",
-                                "7", "8", "9", "10", "11", "12"];
-
-            const monthName = item.release_month ? monthNames[parseInt(item.release_month, 10) - 1] : '';
-            const displayMonth = monthName ? `<p class="grid-date-month">${monthName}</p>` : '';
-            const displayDay = item.release_day ? `<p class="grid-date-day">${item.release_day}</p>` : '';
 
             searchResults.innerHTML += `
-            <a class="item" href="${item.link}">
+            <a href="${item.link}">
                 <div class="image"><img src="${item.image}"></div>
+                <div class="type ${item.type}"></div>
                 <div class="title" title="${item.title}">${item.title}</div>
-                <div class="platform ${item.platform}"></div>
-                <div class="date">
-                    <p class="grid-date-year">${item.release_year}</p>
-                    ${displayMonth}
-                    ${displayDay}
-                </div>
+                <div class="date ${item.date}"></div>
             </a>
             `;
         });
