@@ -26,7 +26,7 @@ async function paginateData(data, page) {
 
     if (dataToDisplay.length === 0) {
         // 데이터가 비어 있을 경우 사용자에게 알림
-        searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
+        searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
             // 검색 결과에 추가
