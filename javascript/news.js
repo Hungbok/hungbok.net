@@ -16,7 +16,21 @@ async function loadData() {
     }
 }
 
-async function paginateData(data, page) {
+async function fetchTitleByLang(item) {
+    const lang = document.documentElement.lang || 'en'; // 현재 페이지의 lang 값을 가져오거나 기본값으로 'en'을 설정합니다.
+    const url = `//data.hungbok.net/data/news/${item.url}.json`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data[lang] ? data[lang].title : data['en'].title;
+    } catch (error) {
+        console.error('Error fetching title:', error);
+        return null; // 오류 발생 시 null 반환
+    }
+}
+
+async function paginateData(data, page, resultsPerPage) {
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
     const dataToDisplay = data.slice(startIndex, endIndex);
@@ -24,16 +38,12 @@ async function paginateData(data, page) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
-    // 현재 페이지의 언어 설정 가져오기
-    const lang = document.documentElement.lang || 'en';
-
     if (dataToDisplay.length === 0) {
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         for (const item of dataToDisplay) {
-            // 각 아이템에 대한 title 정보를 비동기적으로 가져온다.
-            const title = await fetchTitleForItem(item.url, lang);
-            
+            const title = await fetchTitleByLang(item); // 비동기적으로 제목을 가져옵니다.
+
             searchResults.innerHTML += `
             <a class="item" href="${item.link}">
                 <div class="image">
@@ -48,13 +58,6 @@ async function paginateData(data, page) {
             `;
         }
     }
-}
-
-async function fetchTitleForItem(url, lang) {
-    const response = await fetch(`//data.hungbok.net/data/news/${url}.json`);
-    const data = await response.json();
-    // lang 코드에 해당하는 title이 있으면 해당 title을, 없으면 'en'의 title을 반환
-    return data[lang] ? data[lang].title : data['en'].title;
 }
 
 function updatePaginationButtons(data) {
