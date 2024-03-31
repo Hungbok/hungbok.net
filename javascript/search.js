@@ -107,7 +107,7 @@ window.addEventListener('load', function() {
 
             for(let i = startPage; i <= endPage; i++) {
                 if(i === page) {
-                    paginationContainer.append(`<span>${i}</span>`);
+                    paginationContainer.append(`<span ${i === page ? 'class="active"' : ''}>${i}</span>`);
                 } else {
                     paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${i}'" ${i === page ? 'class="active"' : ''}>${i}</button>`);
                 }
