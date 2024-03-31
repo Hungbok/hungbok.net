@@ -19,20 +19,20 @@
     align-items: center;
 }
 
-#searchResults img {
+.searchresultsimage {
     max-width: 100%;
     border-radius: 10px;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
-#searchResults .search-results-type {
+.searchresultstype {
     margin: 0;
     font-size: 16px;
     color: var(--text-5);
 }
 
-#searchResults .search-results-title {
+.searchresultstitle {
     margin: 0;
     font-size: 24px;
     text-wrap: nowrap;
@@ -54,7 +54,7 @@
     user-select: none;
 }
 
-button {
+#pagination a {
     padding: 10px 20px;
     margin: 5px;
     display: inline-block;
@@ -73,11 +73,11 @@ button {
     transition: all 0.5s;
 }
 
-button:hover {
+#pagination a:hover {
     background-color: var(--background-8);
 }
 
-button img {
+#pagination a img {
     height: 12px;
 }
 

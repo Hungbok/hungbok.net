@@ -71,8 +71,8 @@ window.addEventListener('load', function() {
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
                 $("#searchResults").append(`
                     <a href="${item.link}">
-                        <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                        ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
+                        <img class="searchresultsimage" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                        ${type ? `<p class="searchresultstype">${type}</p>` : ""}<p class="searchresultstitle" title="${title}">${title}</p>
                     </a>
                 `);
             });
@@ -84,9 +84,9 @@ window.addEventListener('load', function() {
 
             // 이전 페이지 버튼
             if(page > 1) {
-                paginationContainer.append(`<a href="?q=${searchValue}&page=${page - 1}">이전페이지</a>`);
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${page - 1}"><img src="//media.hungbok.net/image/icon/prev.svg"></a>`);
             } else {
-                paginationContainer.append(`<span>이전페이지</span>`);
+                paginationContainer.append(`<span><img src="//media.hungbok.net/image/icon/prev.svg"></span>`);
             }
 
             // 페이지 번호 버튼
@@ -113,9 +113,9 @@ window.addEventListener('load', function() {
 
             // 다음 페이지 버튼
             if(page < totalPages) {
-                paginationContainer.append(`<a href="?q=${searchValue}&page=${page + 1}">다음페이지</a>`);
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${page + 1}"><img src="//media.hungbok.net/image/icon/next.svg"></a>`);
             } else {
-                paginationContainer.append(`<span>다음페이지</span>`);
+                paginationContainer.append(`<span><img src="//media.hungbok.net/image/icon/next.svg"></span>`);
             }
         }
     });
