@@ -35,7 +35,7 @@ async function paginateData(data, page) {
                 <div class="image"><img src="${item.image}"></div>
                 <div class="type ${item.type}"></div>
                 <div class="title" title="${item.title}">${item.title}</div>
-                <div class="date ${item.date}"></div>
+                <div class="date" settime="${item.published}"></div>
             </a>
             `;
         });
