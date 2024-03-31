@@ -51,7 +51,6 @@ window.addEventListener('load', function() {
                 });
                 return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
-            .slice(0, 5); // 상위 5개 결과만 추출
         
             $("#searchResults").empty();
             if(results.length === 0) {
