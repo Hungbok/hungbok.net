@@ -9,7 +9,6 @@ window.addEventListener('load', function() {
         $.getJSON("//data.hungbok.net/data/search/booksData.json"),
         $.getJSON("//data.hungbok.net/data/langData.json"),
     ).then(function(data, gamesData, animeData, movieData, televisionData, booksData, langData) {
-        // 각각의 결과에서 필요한 데이터만 추출합니다. (response[0]에 실제 데이터가 있음)
         let searchData = [
             ...data[0], 
             ...gamesData[0], 
@@ -18,11 +17,14 @@ window.addEventListener('load', function() {
             ...televisionData[0], 
             ...booksData[0]
         ];
-        langData = langData[0]; // langData 역시 같은 방식으로 추출합니다.
+        langData = langData[0];
 
-        // URL에서 q 매개변수의 값을 검색어로 사용합니다.
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
+        const currentPage = parseInt(urlParams.get('page') || '1', 10); // 페이지 매개변수 추가
+        const itemsPerPage = 10; // 한 페이지에 표시할 아이템 수 설정
+        const totalItems = searchData.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage); // 총 페이지 수 계산
 
         if(searchValue !== '') {
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
@@ -38,26 +40,30 @@ window.addEventListener('load', function() {
                     return cleanedText.includes(cleanedSearchValue);
                 });
             }).map(item => {
-                // 일치율 계산을 위한 로직 추가
-                let maxMatchRate = 0; // 최대 일치율
+                let maxMatchRate = 0;
                 (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
                     let lowerText = text.toLowerCase();
                     let cleanedText = lowerText.replace(/\s+/g, '');
                     let cleanedSearchValue = searchValue.replace(/\s+/g, '');
                     let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
                     if(matchRate > maxMatchRate) {
-                        maxMatchRate = matchRate; // 최대 일치율 업데이트
+                        maxMatchRate = matchRate;
                     }
                 });
-                return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
-            }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
-        
+                return {...item, matchRate: maxMatchRate};
+            }).sort((a, b) => b.matchRate - a.matchRate)
+
+            // 페이지에 맞게 결과를 분할합니다.
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedResults = results.slice(startIndex, endIndex);
+
             $("#searchResults").empty();
-            if(results.length === 0) {
-                $("#searchResults").hide();
+            if(paginatedResults.length === 0) {
+                $("#searchResults").append(`<p>검색 결과가 존재하지 않습니다.</p>`).show();
                 return;
             }
-            results.forEach(item => {
+            paginatedResults.forEach(item => {
                 let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
                 if (!title) {
                     title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
@@ -71,6 +77,53 @@ window.addEventListener('load', function() {
                 `);
             });
             $("#searchResults").show();
+
+            // 페이지네이션 로직
+            function createPageButton(page, isActive, isCurrent=false) {
+                return `<a href="?q=${searchValue}&page=${page}" class="${isActive ? 'active' : ''} ${isCurrent ? 'current' : ''}">${page}</a>`;
+            }
+
+            function renderPagination() {
+                let paginationHTML = '';
+                if(currentPage > 1) {
+                    paginationHTML += createPageButton(currentPage - 1, true) + '이전 ';
+                } else {
+                    paginationHTML += '이전 ';
+                }
+
+                // 첫 페이지와 현재 페이지 사이에 '...'을 추가하는 조건
+                if(currentPage > 3) {
+                    paginationHTML += createPageButton(1, true) + '... ';
+                } else if(currentPage === 3) {
+                    paginationHTML += createPageButton(1, true);
+                }
+
+                // 현재 페이지의 앞뒤로 2페이지씩 표시
+                const startPage = Math.max(1, currentPage - 2);
+                const endPage = Math.min(totalPages, currentPage + 2);
+                for(let page = startPage; page <= endPage; page++) {
+                    paginationHTML += createPageButton(page, true, page === currentPage);
+                }
+
+                // 마지막 페이지와 현재 페이지 사이에 '...'을 추가
+                if(currentPage < totalPages - 2) {
+                    paginationHTML += '... ' + createPageButton(totalPages, true);
+                } else if(currentPage === totalPages - 2) {
+                    paginationHTML += createPageButton(totalPages, true);
+                }
+
+                if(currentPage < totalPages) {
+                    paginationHTML += ' 다음' + createPageButton(currentPage + 1, true);
+                } else {
+                    paginationHTML += ' 다음';
+                }
+
+                $("#pagination").html(paginationHTML);
+            }
+
+            if(totalPages > 1) {
+                renderPagination();
+            }
         }
     });
 });
