@@ -23,25 +23,38 @@ async function paginateData(data, page) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
+    // 현재 문서의 언어 설정 확인
+    const currentLang = document.documentElement.lang || 'en';
+
     if (dataToDisplay.length === 0) {
-        // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        dataToDisplay.forEach(item => {
+        for (const item of dataToDisplay) {
+            // 언어에 맞는 제목을 불러오기 위한 URL 구성
+            const url = `//data.hungbok.net/data/news/${item.url}.json`;
 
-            searchResults.innerHTML += `
-            <a class="item" href="${item.link}">
-                <div class="image">
-                    <img src="${item.image}">
-                </div>
-                <div class="info">
-                    <div class="type ${item.type}"></div>
-                    <div class="title" title="${item.title}">${item.title}</div>
-                    <div class="date" settime="${item.published}"></div>
-                </div>
-            </a>
-            `;
-        });
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                // 현재 언어로 된 제목이 있으면 사용, 없으면 기본 언어(en)로 대체
+                const title = data[currentLang]?.title || data.en.title;
+
+                searchResults.innerHTML += `
+                <a class="item" href="${item.link}">
+                    <div class="image">
+                        <img src="${item.image}">
+                    </div>
+                    <div class="info">
+                        <div class="type ${item.type}"></div>
+                        <div class="title" title="${title}">${title}</div>
+                        <div class="date" settime="${item.published}"></div>
+                    </div>
+                </a>
+                `;
+            } catch (error) {
+                console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
+            }
+        }
     }
 }
 
