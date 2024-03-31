@@ -26,6 +26,10 @@ function loadData() {
     });
 }
 
+function setSearchInputValue(p) {
+    document.getElementById('searchInput').value = p;
+}
+
 async function paginateData(data, page) {
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
