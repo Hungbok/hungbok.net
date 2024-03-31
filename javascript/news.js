@@ -16,7 +16,9 @@ async function loadData() {
 }
 
 function getTimeDifference(publishedTime) {
-    const publishedDate = new Date(publishedTime.replace(/-/g, ':').replace(' ', ''));
+    // 'yyyy-mm-dd-hh-mm-ss' 형식을 'YYYY-MM-DDTHH:mm:ss' 형식으로 변환
+    const formattedTime = publishedTime.replace(/-/g, ':').replace(' ', 'T').slice(0, 10) + 'T' + publishedTime.slice(11).replace(/-/g, ':');
+    const publishedDate = new Date(formattedTime);
     const currentDate = new Date();
     const diffInSeconds = Math.floor((currentDate - publishedDate) / 1000);
     const diffInMinutes = Math.floor(diffInSeconds / 60);
