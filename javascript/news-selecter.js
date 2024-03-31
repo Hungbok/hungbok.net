@@ -84,7 +84,6 @@ $(document).ready(function(){
         loadResource('js', '//www.hungbok.net/javascript/news.js');
 
         $('main').append(`<section class="section">
-            <input type="text" id="searchInput" placeholder="검색어 입력" autocomplete='off'>
             <div id="searchResults"></div>
             <div id="pagination"></div>
         </section>`);
