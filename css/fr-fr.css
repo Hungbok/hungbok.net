@@ -536,7 +536,7 @@
     content: "Inconnu";
 }
 
-.item.trials .timer-container.start::before,
+.item .timer-container.start::before,
 .sale-timer.timer-container.start::before {
     content: "Commence après";
 }
