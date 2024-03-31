@@ -4,6 +4,8 @@ section {
 
 section > h1 {
     font-size: 50px;
+    padding: 50px;
+    margin: 0;
 }
 
 #outnowDataContainer {
@@ -49,7 +51,7 @@ section > h1 {
 .data-group > h1 {
     width: calc(50% - 7.5px);
     font-size: 40px;
-    margin: 0;
+    margin: 30px 0 20px;
 }
 
 #serverTime,
@@ -421,7 +423,7 @@ section > h1 {
 
 .filter-container {
     background-color: var(--background-8);
-    margin: 50px 0px;
+    margin: 0px 0px;
     padding: 10px 20px;
     border-radius: 20px;
 }

@@ -1,9 +1,11 @@
 section > h1 {
     font-size: 50px;
+    padding: 50px;
+    margin: 0;
 }
 
 #dataContainer {
-    margin: 0 0 100px;
+    margin: 50px 0 100px;
     width: auto;
     max-width: 1200px;
     min-height: 430px;
@@ -381,7 +383,7 @@ section > h1 {
 
 .filter-container {
     background-color: var(--background-8);
-    margin: 50px 0px;
+    margin: 0px;
     padding: 10px 20px;
     border-radius: 20px;
 }

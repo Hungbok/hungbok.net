@@ -19,8 +19,7 @@ input, textarea {
     justify-content: center;
 }
 
-.timezone-calculator,
-.tools-container {
+.timezone-calculator {
     align-items: flex-start;
     display: flex;
     width: 100vw;
@@ -28,6 +27,18 @@ input, textarea {
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
+    align-content: center;
+    margin: 50px 0px;
+}
+
+.tools-container {
+    align-items: flex-start;
+    display: flex;
+    width: 100vw;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
     align-content: center;
     margin: 50px 0px;
 }
