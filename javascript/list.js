@@ -1,6 +1,6 @@
 // JSON 파일 경로
 const dataUrl = '//data.hungbok.net/data/games/list.json';
-const resultsPerPage = 5; // 페이지당 결과 수
+const resultsPerPage = 20; // 페이지당 결과 수
 
 let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
 let allData = []; // 모든 데이터를 저장하는 배열

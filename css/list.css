@@ -43,7 +43,18 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    align-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.url:hover,
+.link a:hover {
+    background-color: var(--background-6);
 }
 
 .url::before {
