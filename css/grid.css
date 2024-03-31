@@ -88,6 +88,13 @@
     font-weight: 300;
 }
 
+.no-data {
+    margin: 100px 0;
+    font-size: 50px;
+    color: var(--text-10);
+    font-weight: 600;
+}
+
 #pagination {
     margin: 50px;
     -ms-user-select: none;
