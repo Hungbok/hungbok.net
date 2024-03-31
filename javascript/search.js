@@ -33,16 +33,18 @@ async function loadData() {
 
 function searchByQuery() {
     if (!searchQuery) {
-        filteredData = [];
+        filteredData = allData; // searchQuery가 비어있으면 모든 데이터를 사용합니다.
         currentPage = 1;
         paginateData(allData, currentPage);
         updatePaginationButtons(allData);
         return;
     }
 
-    filteredData = allData.filter(item =>
-        item.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // searchQuery가 비어있지 않으면 필터링을 수행합니다.
+    filteredData = allData.filter(item => {
+        const title = String(item.title);
+        return title.toLowerCase().includes(searchQuery.toLowerCase());
+    });
 
     currentPage = 1;
     paginateData(filteredData, currentPage);
@@ -70,11 +72,6 @@ async function paginateData(data, page) {
         searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
-            let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-            if (!title) {
-                title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
-            }
-            let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
             searchResults.innerHTML += `
             <a href="${item.link}">
                 <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
