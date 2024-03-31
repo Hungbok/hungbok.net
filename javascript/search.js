@@ -71,6 +71,10 @@ $(document).ready(function() {
             // 검색 결과 개수 출력
             $("#searchingValueNumber").text(results.length.toString());
 
+            function getBaseLangCode(langCode) {
+                return langCode.split('-')[0];
+            }
+
             // 검색 결과를 페이지에 맞게 표시
             paginatedResults.forEach(item => {
                 let titleMatchLangs = []; // title에서 검색어와 일치하는 언어 코드를 저장할 배열
@@ -78,10 +82,10 @@ $(document).ready(function() {
             
                 // title과 subtitle에서 검색어와 일치하는 언어 코드 찾기
                 Object.entries(item.title).forEach(([lang, text]) => {
-                    if (text.toLowerCase().includes(searchValue)) titleMatchLangs.push(lang);
+                    if (text.toLowerCase().includes(searchValue)) titleMatchLangs.push(getBaseLangCode(lang));
                 });
                 Object.entries(item.subtitle || {}).forEach(([lang, text]) => {
-                    if (text.toLowerCase().includes(searchValue)) subtitleMatchLangs.push(lang);
+                    if (text.toLowerCase().includes(searchValue)) subtitleMatchLangs.push(getBaseLangCode(lang));
                 });
             
                 // 일치하는 언어 코드가 여러 개인 경우, 우선 순위에 따라 언어 코드 결정
@@ -90,7 +94,12 @@ $(document).ready(function() {
                                      subtitleMatchLangs[0] || titleMatchLangs[0] || 'en'; // subtitle 우선
             
                 // 최종적으로 결정된 언어 코드를 사용하여 title 출력
-                let title = item.title[finalLangCode] || item.title['en'] || Object.values(item.title)[0];
+                // 여기서 title과 subtitle의 실제 언어 코드를 찾을 때도 getBaseLangCode 함수를 사용해야 합니다.
+                let titleLangCode = Object.keys(item.title).find(lang => getBaseLangCode(lang) === finalLangCode) || 'en';
+                let subtitleLangCode = item.subtitle ? Object.keys(item.subtitle).find(lang => getBaseLangCode(lang) === finalLangCode) || 'en' : 'en';
+            
+                let title = item.title[titleLangCode] || item.title['en'] || Object.values(item.title)[0];
+                let subtitle = item.subtitle ? (item.subtitle[subtitleLangCode] || item.subtitle['en'] || Object.values(item.subtitle)[0]) : "";
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
             
                 $("#searchResults").append(`
