@@ -53,9 +53,9 @@ window.addEventListener('load', function() {
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
             .slice(0, 5); // 상위 5개 결과만 추출
         
-            $(".searchResults").empty();
+            $("#searchResults").empty();
             if(results.length === 0) {
-                $(".searchResults").hide();
+                $("#searchResults").hide();
                 return;
             }
             results.forEach(item => {
@@ -64,14 +64,14 @@ window.addEventListener('load', function() {
                     title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
                 }
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-                $(".searchResults").append(`
+                $("#searchResults").append(`
                     <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                         ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
                     </a>
                 `);
             });
-            $(".searchResults").show();
+            $("#searchResults").show();
         }
     });
 });
