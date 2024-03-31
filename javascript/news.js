@@ -24,12 +24,16 @@ async function paginateData(data, page) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
+    // 현재 페이지의 언어 설정 가져오기
+    const lang = document.documentElement.lang || 'en';
+
     if (dataToDisplay.length === 0) {
-        // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        dataToDisplay.forEach(item => {
-
+        for (const item of dataToDisplay) {
+            // 각 아이템에 대한 title 정보를 비동기적으로 가져온다.
+            const title = await fetchTitleForItem(item.url, lang);
+            
             searchResults.innerHTML += `
             <a class="item" href="${item.link}">
                 <div class="image">
@@ -37,13 +41,20 @@ async function paginateData(data, page) {
                 </div>
                 <div class="info">
                     <div class="type ${item.type}"></div>
-                    <div class="title" title="${item.title}">${item.title}</div>
+                    <div class="title" title="${title}">${title}</div>
                     <div class="date" settime="${item.published}"></div>
                 </div>
             </a>
             `;
-        });
+        }
     }
+}
+
+async function fetchTitleForItem(url, lang) {
+    const response = await fetch(`//data.hungbok.net/data/news/${url}.json`);
+    const data = await response.json();
+    // lang 코드에 해당하는 title이 있으면 해당 title을, 없으면 'en'의 title을 반환
+    return data[lang] ? data[lang].title : data['en'].title;
 }
 
 function updatePaginationButtons(data) {
