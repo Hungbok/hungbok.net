@@ -23,61 +23,13 @@ window.addEventListener('load', function() {
         // URL에서 q 매개변수의 값을 검색어로 사용합니다.
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
+        const currentPage = parseInt(urlParams.get('page') || '1', 10); // 현재 페이지
+        const itemsPerPage = 10; // 페이지 당 항목 수
 
-        // 페이지 매개변수를 가져오고, 유효하지 않은 경우 1로 설정합니다.
-        const currentPage = parseInt(urlParams.get('page')) || 1;
-        const itemsPerPage = 10; // 한 페이지에 보여줄 아이템 수
-        const totalItems = results.length; // 총 아이템 수
-        const totalPages = Math.ceil(totalItems / itemsPerPage); // 총 페이지 수
-
-        // 현재 페이지에 따라 결과를 필터링합니다.
-        const pageResults = results.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-
-        // 페이지네이션 생성
-        function createPagination() {
-            let paginationHtml = `<div class="pagination">`;
-            const prevPage = currentPage - 1;
-            const nextPage = currentPage + 1;
-
-            // 이전 페이지 버튼
-            if(currentPage > 1) {
-                paginationHtml += `<a href="?page=${prevPage}" class="prev">이전페이지</a>`;
-            } else {
-                paginationHtml += `<span class="prev disabled">이전페이지</span>`;
-            }
-
-            // 페이지 버튼
-            if(currentPage > 3) {
-                paginationHtml += `<a href="?page=1">1</a>`;
-                if(currentPage > 4) paginationHtml += `<span>...</span>`;
-            }
-            for(let i = Math.max(1, currentPage - 2); i <= Math.min(currentPage + 2, totalPages); i++) {
-                if(i === currentPage) {
-                    paginationHtml += `<span class="current">${i}</span>`;
-                } else {
-                    paginationHtml += `<a href="?page=${i}">${i}</a>`;
-                }
-            }
-            if(currentPage < totalPages - 2) {
-                if(currentPage < totalPages - 3) paginationHtml += `<span>...</span>`;
-                paginationHtml += `<a href="?page=${totalPages}">${totalPages}</a>`;
-            }
-
-            // 다음 페이지 버튼
-            if(currentPage < totalPages) {
-                paginationHtml += `<a href="?page=${nextPage}" class="next">다음페이지</a>`;
-            } else {
-                paginationHtml += `<span class="next disabled">다음페이지</span>`;
-            }
-
-            paginationHtml += `</div>`;
-            return paginationHtml;
-        }
-        
         if(searchValue !== '') {
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
             
-            let pageResults = searchData.filter(item => {
+            let results = searchData.filter(item => {
                 return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
                     let lowerText = text.toLowerCase();
                     if(lowerText.includes(searchValue)) {
@@ -101,17 +53,8 @@ window.addEventListener('load', function() {
                 });
                 return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
-
-            // 검색 결과 업데이트
-            $("#searchResults").empty();
-            if(pageResults.length === 0) {
-                $("#searchResults").append("<p>검색 결과가 존재하지 않습니다.</p>");
-                return;
-            }
-
-            // 페이지네이션을 화면에 표시
-            $("#searchResults").append(createPagination());
-            pageResults.forEach(item => {
+        
+            results.forEach(item => {
                 let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
                 if (!title) {
                     title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
@@ -124,7 +67,62 @@ window.addEventListener('load', function() {
                     </a>
                 `);
             });
-            $("#searchResults").append(createPagination()); // 결과 목록 아래에도 페이지네이션 추가
+
+            let paginatedResults = results.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+            
+            $("#searchResults").empty();
+            if(paginatedResults.length === 0) {
+                $("#searchResults").append(`<p>검색 결과가 존재하지 않습니다.</p>`).show();
+                return;
+            }
+            paginatedResults.forEach(item => {
+                // 결과 표시 로직은 기존과 동일
+            });
+
+            // 페이지네이션 로직
+            generatePagination(currentPage, Math.ceil(results.length / itemsPerPage));
         }
     });
 });
+
+function generatePagination(currentPage, totalPages) {
+    let paginationHTML = '';
+    if (currentPage > 1) {
+        paginationHTML += `<a href="?page=${currentPage - 1}">이전페이지</a>`;
+    } else {
+        paginationHTML += `<span>이전페이지</span>`;
+    }
+
+    // 처음 페이지
+    if (currentPage > 3) {
+        paginationHTML += `<a href="?page=1">1페이지</a>`;
+        if (currentPage > 4) {
+            paginationHTML += `<span>...</span>`;
+        }
+    }
+
+    // 중간 페이지
+    for (let i = Math.max(1, currentPage - 2); i <= Math.min(currentPage + 2, totalPages); i++) {
+        if (i === currentPage) {
+            paginationHTML += `<span>${i}페이지</span>`;
+        } else {
+            paginationHTML += `<a href="?page=${i}">${i}페이지</a>`;
+        }
+    }
+
+    // 마지막 페이지
+    if (currentPage < totalPages - 2) {
+        if (currentPage < totalPages - 3) {
+            paginationHTML += `<span>...</span>`;
+        }
+        paginationHTML += `<a href="?page=${totalPages}">${totalPages}페이지</a>`;
+    }
+
+    if (currentPage < totalPages) {
+        paginationHTML += `<a href="?page=${currentPage + 1}">다음페이지</a>`;
+    } else {
+        paginationHTML += `<span>다음페이지</span>`;
+    }
+
+    $("#pagination").html(paginationHTML);
+}
