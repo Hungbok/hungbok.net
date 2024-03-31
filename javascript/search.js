@@ -84,61 +84,45 @@ window.addEventListener('load', function() {
                 `);
             });
         }
+        // 여기에 페이지 네비게이션 로직 추가
+        const pagination = document.getElementById('pagination'); // pagination 요소의 ID를 확인하세요.
+        pagination.innerHTML = '';
+        
+        const resultsPerPage = 5; // 한 페이지당 결과 수
+        const currentPage = parseInt(new URLSearchParams(window.location.search).get('page') || '1', 10); // 현재 페이지
+        const totalPages = Math.ceil(results.length / resultsPerPage); // 총 페이지 수 계산
+        const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
+        const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
+
+        if (currentPage > 1) {
+            pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
+        } else {
+            pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
+        }
+
+        if (maxLeft > 1) {
+            pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
+            pagination.innerHTML += `<span>...</span>`;
+        }
+
+        for (let i = maxLeft; i <= maxRight; i++) {
+            pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
+        }
+
+        if (maxRight < totalPages) {
+            pagination.innerHTML += `<span>...</span>`;
+            pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
+        }
+
+        if (currentPage < totalPages) {
+            pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
+        } else {
+            pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
+        }
+
+        // changePage 함수 구현
+        window.changePage = function(page) {
+            window.location.href = '?q=' + encodeURIComponent(searchValue) + '&page=' + page; // searchValue는 검색어 변수입니다. 적절히 조정하세요.
+        }
     });
 });
-
-let currentPage = 1; // 현재 페이지 초기화
-const resultsPerPage = 5; // 페이지 당 결과 수
-let data = []; // 여기에 실제 데이터를 로드하는 코드를 추가하세요.
-
-function loadData() {
-    // 데이터 로딩 로직 (예시: data = fetchData();)
-    // 데이터 로딩 후 네비게이션을 초기화합니다.
-    updatePagination();
-}
-
-function changePage(page) {
-    currentPage = page;
-    // 페이지 변경에 따른 데이터 로드 또는 표시 업데이트 로직
-    console.log(`현재 페이지: ${currentPage}`);
-    // 페이지 네비게이션 업데이트
-    updatePagination();
-}
-
-function updatePagination() {
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
-    
-    const totalPages = Math.ceil(data.length / resultsPerPage);
-    const maxLeft = (currentPage - 2) > 0 ? (currentPage - 2) : 1;
-    const maxRight = (currentPage + 2) < totalPages ? (currentPage + 2) : totalPages;
-
-    if (currentPage > 1) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage - 1})"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-    } else {
-        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`;
-    }
-
-    if (maxLeft > 1) {
-        pagination.innerHTML += `<button onclick="changePage(1)">1</button>`;
-        pagination.innerHTML += `<span>...</span>`;
-    }
-
-    for (let i = maxLeft; i <= maxRight; i++) {
-        pagination.innerHTML += `<button onclick="changePage(${i})" ${i === currentPage ? 'class="active"' : ''}>${i}</button>`;
-    }
-
-    if (maxRight < totalPages) {
-        pagination.innerHTML += `<span>...</span>`;
-        pagination.innerHTML += `<button onclick="changePage(${totalPages})">${totalPages}</button>`;
-    }
-
-    if (currentPage < totalPages) {
-        pagination.innerHTML += `<button onclick="changePage(${currentPage + 1})"><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-    } else {
-        pagination.innerHTML += `<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`;
-    }
-}
-
-// 페이지 로드 시 데이터 및 네비게이션 초기화
-loadData();
