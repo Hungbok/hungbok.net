@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
         let page = parseInt(urlParams.get('page') || '1', 10); // page가 없으면 1로 설정
-        const itemsPerPage = 10; // 한 페이지에 표시할 아이템 수
+        const itemsPerPage = 5; // 한 페이지에 표시할 아이템 수
 
         // 검색어 출력
         $("#searchingValue").text(searchValue);
