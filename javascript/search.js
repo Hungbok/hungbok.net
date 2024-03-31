@@ -25,9 +25,12 @@ $(document).ready(function() {
         const searchValue = urlParams.get('q').toLowerCase().trim();
         let page = parseInt(urlParams.get('page') || '1', 10); // page가 없으면 1로 설정
         const itemsPerPage = 10; // 한 페이지에 표시할 아이템 수
+        const searchParams = window.location.search;
+        const urlParam = new URLSearchParams(searchParams);
+        const q = urlParam.get('q'); // 'q' 매개변수의 값을 가져옵니다.
     
-        // 'q' 매개변수가 없거나 값이 비어 있는 경우
-        if (searchValue === null || searchValue.trim() === '') {
+        // URL에 쿼리 매개변수 자체가 없거나 'q' 매개변수가 없거나 값이 비어 있는 경우
+        if (searchParams === '' || q === null || q.trim() === '') {
             // 동적으로 error404.js 스크립트를 로드하고 실행합니다.
             const script = document.createElement('script');
             script.src = "//www.hungbok.net/javascript/error404.js";
