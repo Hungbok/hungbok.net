@@ -101,37 +101,8 @@ function changePage(page) {
     history.pushState(null, '', `?page=${currentPage}`);
 }
 
-function searchInstantly() {
-    const inputText = document.getElementById('searchInput').value;
-    const textToSearch = inputText.trim().toLowerCase();
-
-    if (!textToSearch) {
-        filteredData = [];
-        currentPage = 1;
-        paginateData(allData, currentPage);
-        updatePaginationButtons(allData);
-        return;
-    }
-
-    filteredData = allData.filter(item =>
-        item.title.toLowerCase().includes(textToSearch)
-    );
-
-    currentPage = 1;
-    paginateData(filteredData, currentPage);
-    updatePaginationButtons(filteredData);
-}
-
-document.getElementById('searchInput').addEventListener('input', searchInstantly);
-
 loadData().then(data => {
     allData = data;
     paginateData(allData, currentPage);
     updatePaginationButtons(allData);
 });
-
-function searchOnEnter(event) {
-    if (event.key === 'Enter') {
-        searchInstantly();
-    }
-}
