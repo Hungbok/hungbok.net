@@ -155,8 +155,24 @@ loadData().then(() => {
     updatePaginationButtons(allData);
 });
 
-function searchOnEnter(event) {
-    if (event.key === 'Enter') {
-        searchInstantly();
-    }
+// 검색 실행 함수
+function performSearch() {
+    const inputText = document.getElementById('searchInput').value;
+    // URLSearchParams 객체를 사용하여 URL의 쿼리 매개변수 조작
+    const queryParams = new URLSearchParams(window.location.search);
+    queryParams.set('q', inputText); // 'q' 매개변수 업데이트
+    // 현재 페이지를 새로운 URL로 이동시켜 새로고침
+    window.location.href = `${window.location.pathname}?${queryParams.toString()}`;
 }
+
+// #searchInput에서 엔터 키 입력 감지
+document.getElementById('searchInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        performSearch(); // 검색 실행
+    }
+});
+
+// #searchButton 클릭 이벤트 감지
+document.getElementById('searchButton').addEventListener('click', function() {
+    performSearch(); // 검색 실행
+});
