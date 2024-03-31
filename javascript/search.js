@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+$(document).ready(function() {
     // $.when()을 이용하여 여러 JSON 파일을 동시에 불러옵니다.
     $.when(
         $.getJSON("//data.hungbok.net/data/search/data.json"),
@@ -22,108 +22,117 @@ window.addEventListener('load', function() {
 
         // URL에서 q와 page 매개변수의 값을 가져옵니다.
         const urlParams = new URLSearchParams(window.location.search);
+        const q = urlParams.get('q'); // 'q' 매개변수의 값을 가져옵니다.
         const searchValue = urlParams.get('q').toLowerCase().trim();
         let page = parseInt(urlParams.get('page') || '1', 10); // page가 없으면 1로 설정
         const itemsPerPage = 10; // 한 페이지에 표시할 아이템 수
 
-        // 검색어 출력
-        $("#searchingValue").text(searchValue);
-
-        if(searchValue !== '') {
-            let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
-            
-            let results = searchData.filter(item => {
-                return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
-                    let lowerText = text.toLowerCase();
-                    if(lowerText.includes(searchValue)) {
-                        return true;
-                    }
-                    let cleanedText = lowerText.replace(/\s+/g, '');
-                    let cleanedSearchValue = searchValue.replace(/\s+/g, '');
-                    return cleanedText.includes(cleanedSearchValue);
-                });
-            }).map(item => {
-                // 일치율 계산을 위한 로직 추가
-                let maxMatchRate = 0; // 최대 일치율
-                (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
-                    let lowerText = text.toLowerCase();
-                    let cleanedText = lowerText.replace(/\s+/g, '');
-                    let cleanedSearchValue = searchValue.replace(/\s+/g, '');
-                    let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
-                    if(matchRate > maxMatchRate) {
-                        maxMatchRate = matchRate; // 최대 일치율 업데이트
-                    }
-                });
-                return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
-            }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
-
-            let paginatedResults = results.slice((page - 1) * itemsPerPage, page * itemsPerPage);
-
-            $("#searchResults").empty();
-            if(results.length === 0) {
-                $("#searchResults").append(`<div class="no-data">검색 결과가 없습니다.</div>`);
-                $("#searchingValueNumber").text('0'); // 검색 결과 개수를 0으로 설정
-                return;
-            }
-
-            // 검색 결과 개수 출력
-            $("#searchingValueNumber").text(results.length.toString());
-
-            // 검색 결과를 페이지에 맞게 표시
-            paginatedResults.forEach(item => {
-                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-                if (!title) {
-                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+        // 'q' 매개변수가 없거나 값이 비어 있는 경우
+        if (q === null || q.trim() === '') {
+            // 동적으로 error404.js 스크립트를 로드하고 실행합니다.
+            const script = document.createElement('script');
+            script.src = "//www.hungbok.net/javascript/error404.js";
+            document.head.appendChild(script);
+        } else {
+            // 검색어 출력
+            $("#searchingValue").text(searchValue);
+    
+            if(searchValue !== '') {
+                let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
+                
+                let results = searchData.filter(item => {
+                    return (Object.values(item.title).concat(Object.values(item.subtitle))).some(text => {
+                        let lowerText = text.toLowerCase();
+                        if(lowerText.includes(searchValue)) {
+                            return true;
+                        }
+                        let cleanedText = lowerText.replace(/\s+/g, '');
+                        let cleanedSearchValue = searchValue.replace(/\s+/g, '');
+                        return cleanedText.includes(cleanedSearchValue);
+                    });
+                }).map(item => {
+                    // 일치율 계산을 위한 로직 추가
+                    let maxMatchRate = 0; // 최대 일치율
+                    (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+                        let lowerText = text.toLowerCase();
+                        let cleanedText = lowerText.replace(/\s+/g, '');
+                        let cleanedSearchValue = searchValue.replace(/\s+/g, '');
+                        let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
+                        if(matchRate > maxMatchRate) {
+                            maxMatchRate = matchRate; // 최대 일치율 업데이트
+                        }
+                    });
+                    return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
+                }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
+    
+                let paginatedResults = results.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+    
+                $("#searchResults").empty();
+                if(results.length === 0) {
+                    $("#searchResults").append(`<div class="no-data">검색 결과가 없습니다.</div>`);
+                    $("#searchingValueNumber").text('0'); // 검색 결과 개수를 0으로 설정
+                    return;
                 }
-                let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-                $("#searchResults").append(`
-                    <a href="${item.link}">
-                        <img class="searchresultsimage" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                        <div class="searchresultstype">${type ? `<p>${type}</p>` : ""}</div>
-                        <div class="searchresultstitle"><p title="${title}">${title}</p></div>
-                    </a>
-                `);
-            });
-
-            // 페이지네이션 버튼 추가
-            const totalPages = Math.ceil(results.length / itemsPerPage);
-            const paginationContainer = $("#pagination");
-            paginationContainer.empty();
-
-            // 이전 페이지 버튼
-            if(page > 1) {
-                paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${page - 1}'"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`);
-            } else {
-                paginationContainer.append(`<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`);
-            }
-
-            // 페이지 번호 버튼
-            let startPage = Math.max(page - 2, 1);
-            let endPage = Math.min(page + 2, totalPages);
-
-            if(startPage > 1) {
-                paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=1'">1</button>`);
-                if(startPage > 2) paginationContainer.append(`<span>...</span>`);
-            }
-
-            for(let i = startPage; i <= endPage; i++) {
-                if(i === page) {
-                    paginationContainer.append(`<button ${i === page ? 'class="active"' : ''}>${i}</button>`);
+    
+                // 검색 결과 개수 출력
+                $("#searchingValueNumber").text(results.length.toString());
+    
+                // 검색 결과를 페이지에 맞게 표시
+                paginatedResults.forEach(item => {
+                    let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
+                    if (!title) {
+                        title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
+                    }
+                    let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
+                    $("#searchResults").append(`
+                        <a href="${item.link}">
+                            <img class="searchresultsimage" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                            <div class="searchresultstype">${type ? `<p>${type}</p>` : ""}</div>
+                            <div class="searchresultstitle"><p title="${title}">${title}</p></div>
+                        </a>
+                    `);
+                });
+    
+                // 페이지네이션 버튼 추가
+                const totalPages = Math.ceil(results.length / itemsPerPage);
+                const paginationContainer = $("#pagination");
+                paginationContainer.empty();
+    
+                // 이전 페이지 버튼
+                if(page > 1) {
+                    paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${page - 1}'"><img src="//media.hungbok.net/image/icon/prev.svg"></button>`);
                 } else {
-                    paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${i}'" ${i === page ? 'class="active"' : ''}>${i}</button>`);
+                    paginationContainer.append(`<button disabled><img src="//media.hungbok.net/image/icon/prev.svg"></button>`);
                 }
-            }
-
-            if(endPage < totalPages) {
-                if(endPage < totalPages - 1) paginationContainer.append(`<span>...</span>`);
-                paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${totalPages}'">${totalPages}</button>`);
-            }
-
-            // 다음 페이지 버튼
-            if(page < totalPages) {
-                paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${page + 1}'"><img src="//media.hungbok.net/image/icon/next.svg"></button>`);
-            } else {
-                paginationContainer.append(`<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`);
+    
+                // 페이지 번호 버튼
+                let startPage = Math.max(page - 2, 1);
+                let endPage = Math.min(page + 2, totalPages);
+    
+                if(startPage > 1) {
+                    paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=1'">1</button>`);
+                    if(startPage > 2) paginationContainer.append(`<span>...</span>`);
+                }
+    
+                for(let i = startPage; i <= endPage; i++) {
+                    if(i === page) {
+                        paginationContainer.append(`<button ${i === page ? 'class="active"' : ''}>${i}</button>`);
+                    } else {
+                        paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${i}'" ${i === page ? 'class="active"' : ''}>${i}</button>`);
+                    }
+                }
+    
+                if(endPage < totalPages) {
+                    if(endPage < totalPages - 1) paginationContainer.append(`<span>...</span>`);
+                    paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${totalPages}'">${totalPages}</button>`);
+                }
+    
+                // 다음 페이지 버튼
+                if(page < totalPages) {
+                    paginationContainer.append(`<button onclick="location.href='?q=${searchValue}&page=${page + 1}'"><img src="//media.hungbok.net/image/icon/next.svg"></button>`);
+                } else {
+                    paginationContainer.append(`<button disabled><img src="//media.hungbok.net/image/icon/next.svg"></button>`);
+                }
             }
         }
     });
