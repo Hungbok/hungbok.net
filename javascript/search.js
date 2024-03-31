@@ -1,5 +1,10 @@
-// JSON 파일 경로
-const dataUrl = '//data.hungbok.net/data/games/list.json';
+// 여러 JSON 파일 경로
+const dataUrls = [
+    '//data.hungbok.net/data/games/list1.json',
+    '//data.hungbok.net/data/games/list2.json',
+    '//data.hungbok.net/data/games/list3.json'
+    // 필요한 만큼 더 추가할 수 있습니다.
+];
 const resultsPerPage = 5; // 페이지당 결과 수
 
 let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
@@ -8,9 +13,13 @@ let filteredData = []; // 검색된 데이터를 저장하는 배열
 
 async function loadData() {
     try {
-        const response = await fetch(dataUrl);
-        const data = await response.json();
-        return data;
+        let allDataLoaded = [];
+        for (let dataUrl of dataUrls) {
+            const response = await fetch(dataUrl);
+            const data = await response.json();
+            allDataLoaded = allDataLoaded.concat(data); // 데이터를 합칩니다.
+        }
+        return allDataLoaded;
     } catch (error) {
         console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
     }
