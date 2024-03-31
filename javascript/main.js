@@ -456,29 +456,30 @@ window.addEventListener('load', function() {
             }).map(item => {
                 // 일치율 계산을 위한 로직 추가
                 let maxMatchRate = 0; // 최대 일치율
-                (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+                let foundLanguageCode = null; // 검색된 subtitle의 언어 코드
+                (Object.entries(item.subtitle).concat(Object.entries(item.title))).forEach(([key, text]) => {
                     let lowerText = text.toLowerCase();
                     let cleanedText = lowerText.replace(/\s+/g, '');
                     let cleanedSearchValue = searchValue.replace(/\s+/g, '');
                     let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
                     if(matchRate > maxMatchRate) {
                         maxMatchRate = matchRate; // 최대 일치율 업데이트
+                        foundLanguageCode = key.split('-')[0]; // 검색된 subtitle의 언어 코드 추출
                     }
                 });
-                return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
+                return {...item, matchRate: maxMatchRate, foundLanguageCode}; // 일치율과 검색된 언어 코드를 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
             .slice(0, 5); // 상위 5개 결과만 추출
-        
+
             $(".search-results").empty();
             if(results.length === 0) {
                 $(".search-results").hide();
                 return;
             }
             results.forEach(item => {
-                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-                if (!title) {
-                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
-                }
+                // 검색된 subtitle의 언어 코드를 기반으로 title을 찾아 출력
+                let titleLanguageCode = item.foundLanguageCode && item.title[item.foundLanguageCode] ? item.foundLanguageCode : (item.title[languageCode] ? languageCode : "en");
+                let title = item.title[titleLanguageCode];
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
                 $(".search-results").append(`
                     <a href="${item.link}">
@@ -500,24 +501,22 @@ window.addEventListener('load', function() {
             e.stopPropagation(); 
         });
     });
-
-    $(document).ready(function() {
-        function search() {
-            var searchValue = $("#search-value").val().trim();
-            if (searchValue) {
-                window.location.href = `https://www.hungbok.com/search?q=${encodeURIComponent(searchValue)}`;
-            }
+    
+    function search() {
+        var searchValue = $("#search-value").val().trim();
+        if (searchValue) {
+            window.location.href = `https://www.hungbok.com/search?q=${encodeURIComponent(searchValue)}`;
         }
-    
-        $("#search-value").on("keypress", function(e) {
-            if (e.which == 13) { // 엔터키의 키 코드는 13입니다.
-                e.preventDefault(); // 폼 제출을 방지합니다.
-                search();
-            }
-        });
-    
-        $("#searching").on("click", function() {
+    }
+
+    $("#search-value").on("keypress", function(e) {
+        if (e.which == 13) { // 엔터키의 키 코드는 13입니다.
+            e.preventDefault(); // 폼 제출을 방지합니다.
             search();
-        });
+        }
+    });
+
+    $("#searching").on("click", function() {
+        search();
     });
 });
