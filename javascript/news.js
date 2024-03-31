@@ -18,9 +18,6 @@ async function loadData() {
 function getTimeDifference(publishedTime) {
     // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 년, 월, 일, 시, 분, 초로 분해
     const parts = publishedTime.split('-');
-    if (parts.length !== 6) {
-        return "알 수 없음"; // 형식이 올바르지 않은 경우
-    }
     const year = parseInt(parts[0], 10);
     const month = parseInt(parts[1], 10) - 1; // JavaScript의 월은 0부터 시작
     const day = parseInt(parts[2], 10);
@@ -30,29 +27,28 @@ function getTimeDifference(publishedTime) {
 
     // Date 객체 생성
     const publishedDate = new Date(year, month, day, hour, minute, second);
-    if (isNaN(publishedDate.getTime())) {
-        return "알 수 없음"; // 유효하지 않은 날짜인 경우
-    }
-
     const currentDate = new Date();
 
     // 현재 시간과 게시 시간의 차이 계산 (초 단위)
     const diffInSeconds = Math.floor((currentDate.getTime() - publishedDate.getTime()) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
+    const diffInYears = Math.floor(diffInDays / 365);
 
-    if (diffInSeconds < 0) {
-        return "알 수 없음"; // 미래의 날짜인 경우
-    } else if (diffInSeconds < 60) {
+    if (diffInSeconds < 60) {
         return "방금 전";
     } else if (diffInMinutes < 60) {
-        return `${Math.floor(diffInSeconds / 60)}분 전`;
+        return `${diffInMinutes}분 전`;
     } else if (diffInHours < 24) {
-        return `${Math.floor(diffInSeconds / 3600)}시간 전`;
+        return `${diffInHours}시간 전`;
     } else if (diffInDays < 30) {
-        return `${Math.floor(diffInSeconds / 86400)}일 전`;
+        return `${diffInDays}일 전`;
     } else if (diffInMonths < 12) {
-        return `${Math.floor(diffInSeconds / (86400 * 30))}개월 전`;
+        return `${diffInMonths}개월 전`;
     } else {
-        return `${Math.floor(diffInSeconds / (86400 * 365))}년 전`;
+        return `${diffInYears}년 전`;
     }
 }
 
