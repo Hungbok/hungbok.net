@@ -545,7 +545,7 @@
     content: "終了まで";
 }
 
-.body-games.en .middle-content::before {
+body.en .middle-content::before {
     content: "このページは日本語に翻訳されていません。";
     grid-column-start: 1;
     grid-column-end: 3;

@@ -545,7 +545,7 @@
     content: "종료까지";
 }
 
-.body-games.en .middle-content::before {
+body.en .middle-content::before {
     content: "이 페이지는 한국어로 번역되지 않았습니다.";
     grid-column-start: 1;
     grid-column-end: 3;
