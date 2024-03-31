@@ -270,6 +270,28 @@
     user-select: none;
 }
 
+#searchResults .item {
+    display: grid;
+    column-gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: left;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 40px auto;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    align-items: center;
+}
+
+#searchResults .item:hover {
+    background: var(--background-8);
+}
+
+/* page */
+
 button {
     padding: 10px 20px;
     margin: 5px;
