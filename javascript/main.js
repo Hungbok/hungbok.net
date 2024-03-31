@@ -163,6 +163,22 @@ function sidepanel() {
     }
 }
 
+$(document).ready(function(){
+    $('body').on('click', 'summary', function(e) {
+        var details = $(this).parent();
+        if(details.attr('open')) {
+            e.preventDefault();
+            details.find('.franchise-contents, .details-contents').slideUp(function() {
+                details.removeAttr('open');
+            });
+        } else {
+            details.find('.franchise-contents, .details-contents').slideDown(function() {
+                details.attr('open', '');
+            });
+        }
+    });
+});
+
 // 문서 클릭 시 Language 열려있으면 닫기 / .side-panel-overlay 클릭 시 Sidepanel 열려있으면 닫기
 window.onclick = function(event) {
     if (!event.target.matches('.header-button-container .language-selecter') && !event.target.closest('.language-lists')) {
@@ -464,7 +480,7 @@ window.addEventListener('load', function() {
             function getBaseLangCode(langCode) {
                 return langCode.split('-')[0];
             }
-
+            
             results.forEach(item => {
                 let titleMatchLangs = []; // title에서 검색어와 일치하는 언어 코드를 저장할 배열
                 let subtitleMatchLangs = []; // subtitle에서 검색어와 일치하는 언어 코드를 저장할 배열
@@ -490,7 +506,7 @@ window.addEventListener('load', function() {
                 let title = item.title[titleLangCode] || item.title['en'] || Object.values(item.title)[0];
                 let subtitle = item.subtitle ? (item.subtitle[subtitleLangCode] || item.subtitle['en'] || Object.values(item.subtitle)[0]) : "";
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
-
+                
                 $(".search-results").append(`
                     <a href="${item.link}">
                         <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
@@ -511,9 +527,7 @@ window.addEventListener('load', function() {
             e.stopPropagation(); 
         });
     });
-});
-
-$(document).ready(function(){
+    
     function search() {
         var searchValue = $("#search-value").val().trim();
         if (searchValue) {
