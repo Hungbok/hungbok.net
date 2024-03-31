@@ -16,21 +16,22 @@ async function loadData() {
     }
 }
 
-async function fetchTitleByLang(item) {
-    const lang = document.documentElement.lang || 'en'; // 현재 페이지의 lang 값을 가져오거나 기본값으로 'en'을 설정합니다.
-    const url = `//data.hungbok.net/data/news/${item.url}.json`;
-
+async function fetchTitle(url, lang = 'en') {
     try {
-        const response = await fetch(url);
+        // JSON 파일에서 데이터를 불러옵니다.
+        const response = await fetch(`//data.hungbok.net/data/news/${url}.json`);
         const data = await response.json();
+        
+        // 현재 페이지의 언어 설정을 확인하고, 해당 언어로 된 제목을 반환합니다.
+        // 만약 해당 언어의 데이터가 없다면, 영어(en)로 된 제목을 반환합니다.
         return data[lang] ? data[lang].title : data['en'].title;
     } catch (error) {
-        console.error('Error fetching title:', error);
-        return null; // 오류 발생 시 null 반환
+        console.error('데이터를 불러오는 데 실패했습니다.', error);
+        return null;
     }
 }
 
-async function paginateData(data, page, resultsPerPage) {
+async function paginateData(data, page) {
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
     const dataToDisplay = data.slice(startIndex, endIndex);
@@ -41,9 +42,12 @@ async function paginateData(data, page, resultsPerPage) {
     if (dataToDisplay.length === 0) {
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        for (const item of dataToDisplay) {
-            const title = await fetchTitleByLang(item); // 비동기적으로 제목을 가져옵니다.
+        // 현재 페이지의 언어 설정을 가져옵니다.
+        const currentLang = document.documentElement.lang || 'en';
 
+        for (const item of dataToDisplay) {
+            const title = await fetchTitle(item.url, currentLang);
+            
             searchResults.innerHTML += `
             <a class="item" href="${item.link}">
                 <div class="image">
