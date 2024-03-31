@@ -7,20 +7,24 @@
 
 .searchingValue {
     text-align: left;
+    padding: 40px 0px;
 }
 
 #searchingValue {
     font-size: 50px;
-    background-color: var(--background-2);
+    color: var(--text-4);
+    padding: 10px;
 }
 
 #searchingValue::before {
-    background-color: var(--background-4);
+    color: var(--text-6);
+    font-weight: bold;
 }
 
 #searchingValueNumber {
     font-size: 20px;
-    background-color: var(--background-6);
+    color: var(--text-8);
+    padding: 10px;
 }
 
 #searchResults a {
