@@ -45,18 +45,20 @@ $(document).ready(function() {
             }).map(item => {
                 // 일치율 계산을 위한 로직 추가
                 let maxMatchRate = 0; // 최대 일치율
-                (Object.values(item.title).concat(Object.values(item.subtitle))).forEach(text => {
+                let foundLanguageCode = null; // 검색된 subtitle의 언어 코드
+                (Object.entries(item.subtitle).concat(Object.entries(item.title))).forEach(([key, text]) => {
                     let lowerText = text.toLowerCase();
                     let cleanedText = lowerText.replace(/\s+/g, '');
                     let cleanedSearchValue = searchValue.replace(/\s+/g, '');
                     let matchRate = (cleanedText.includes(cleanedSearchValue)) ? (cleanedSearchValue.length / cleanedText.length) : 0;
                     if(matchRate > maxMatchRate) {
                         maxMatchRate = matchRate; // 최대 일치율 업데이트
+                        foundLanguageCode = key.split('-')[0]; // 검색된 subtitle의 언어 코드 추출
                     }
                 });
-                return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
+                return {...item, matchRate: maxMatchRate, foundLanguageCode}; // 일치율과 검색된 언어 코드를 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
-
+            
             let paginatedResults = results.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
             $("#searchResults").empty();
@@ -71,10 +73,9 @@ $(document).ready(function() {
 
             // 검색 결과를 페이지에 맞게 표시
             paginatedResults.forEach(item => {
-                let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
-                if (!title) {
-                    title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
-                }
+                // 검색된 subtitle의 언어 코드를 기반으로 title을 찾아 출력
+                let titleLanguageCode = item.foundLanguageCode && item.title[item.foundLanguageCode] ? item.foundLanguageCode : (item.title[languageCode] ? languageCode : "en");
+                let title = item.title[titleLanguageCode];
                 let type = item.type && langData[languageCode][item.type] ? langData[languageCode][item.type] : "";
                 $("#searchResults").append(`
                     <a href="${item.link}">
