@@ -135,7 +135,7 @@ function renderPagination() {
 // 예시 데이터, 현재 페이지, 페이지 당 결과 수 초기화
 let data = []; // 데이터를 적절하게 로드해야 합니다.
 let currentPage = 1;
-const resultsPerPage = 10; // 한 페이지 당 보여줄 아이템의 수
+const resultsPerPage = 5; // 한 페이지 당 보여줄 아이템의 수
 
 // 페이지네이션 초기화
 renderPagination();
