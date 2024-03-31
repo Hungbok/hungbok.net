@@ -70,36 +70,14 @@ async function paginateData(data, page) {
         searchResults.innerHTML = `<div class="no-date">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
-            const monthNames = ["1", "2", "3", "4", "5", "6",
-                                "7", "8", "9", "10", "11", "12"];
-
-            // item.release_month가 문자열이고 "01", "02" 등의 형태로 되어 있다고 가정합니다.
-            // parseInt를 사용하여 문자열을 정수로 변환하고, 배열의 인덱스는 0부터 시작하기 때문에 1을 빼줍니다.
-            const monthName = monthNames[parseInt(item.release_month, 10) - 1];
-
             // 검색 결과에 추가
             searchResults.innerHTML += `
-            <a class="item" href="${item.link}">
-                <div class="image"><img src="${item.image}"></div>
-                <div class="title" title="${item.title}">${item.title}</div>
-                <div class="platform ${item.platform}"></div>
-                <div class="date">
-                    <p class="grid-date-year">${item.release_year}</p>
-                    <p class="grid-date-month">${monthName}</p>
-                    <p class="grid-date-day">${item.release_day}</p>
-                </div>
+            <a href="${item.link}">
+                <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
             </a>
             `;
         });
-
-        $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
-        $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
-        $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
-        $(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
-        $(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
-        $(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
-        $(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
-        $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');
     }
 }
 
