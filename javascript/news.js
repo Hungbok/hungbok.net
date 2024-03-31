@@ -87,14 +87,14 @@ async function paginateData(data, page) {
                 const timeDifference = getTimeDifference(item.published);
 
                 searchResults.innerHTML += `
-                <a class="item" href="${item.link}">
+                <a class="item" href="${item.link}" title="${title}">
                     <div class="image">
                         <img src="${item.image}">
                     </div>
                     <div class="info">
-                        <div class="type ${item.type}"></div>
-                        <div class="title" title="${title}">${title}</div>
-                        <div class="title" title="${summary}">${summary}</div>
+                        <div class="type ${item.type}">${item.type}</div>
+                        <div class="title">${title}</div>
+                        <div class="subtitle">${summary}</div>
                         <div class="date" settime="${item.published}">${timeDifference}</div>
                     </div>
                 </a>
