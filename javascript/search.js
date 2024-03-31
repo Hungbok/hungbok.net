@@ -115,7 +115,7 @@ function searchInstantly() {
     const inputText = document.getElementById('searchInput').value;
     // URLSearchParams 객체를 사용하여 URL의 쿼리 매개변수 조작
     const queryParams = new URLSearchParams(window.location.search);
-    queryParams.set('p', inputText); // 'p' 매개변수 업데이트
+    queryParams.set('q', inputText); // 'q' 매개변수 업데이트
     history.pushState(null, '', `?${queryParams.toString()}`); // URL 상태 업데이트
 
     if (!textToSearch) {
@@ -132,10 +132,10 @@ function searchInstantly() {
     updatePaginationButtons(filteredData);
 }
 
-// 페이지 로드 시 쿼리 매개변수 'p'를 확인하여 검색어를 입력 필드에 설정하고 검색을 실행
+// 페이지 로드 시 쿼리 매개변수 'q'를 확인하여 검색어를 입력 필드에 설정하고 검색을 실행
 function loadSearchFromQuery() {
     const queryParams = new URLSearchParams(window.location.search);
-    const searchText = queryParams.get('p'); // 'p' 매개변수의 값을 가져옴
+    const searchText = queryParams.get('q'); // 'q' 매개변수의 값을 가져옴
     
     if (searchText) {
         document.getElementById('searchInput').value = searchText; // 검색어를 입력 필드에 설정
