@@ -194,7 +194,7 @@ section > h1 {
     transition: all 0.5s;
 }
 
-.item.trials .timer-container.start::before {
+.item .timer-container.start::before {
     margin-right: 10px;
 }
 
