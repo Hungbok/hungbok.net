@@ -36,11 +36,11 @@
 }
 
 .elevator-up {
-    background: url(//data.hungbok.net/image/icon/up.svg) no-repeat center / 20px 20px;
+    background: url(//media.hungbok.net/image/icon/up.svg) no-repeat center / 20px 20px;
 }
 
 .elevator-down {
-    background: url(//data.hungbok.net/image/icon/down.svg) no-repeat center / 20px 20px;
+    background: url(//media.hungbok.net/image/icon/down.svg) no-repeat center / 20px 20px;
 }
 
 .chapter {
