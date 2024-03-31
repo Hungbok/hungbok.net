@@ -78,7 +78,8 @@
 .middle-content {
     display: grid;
     grid-template-columns: auto 300px;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 40px;
     padding: 40px;
 }
 
@@ -94,6 +95,7 @@
     padding: 20px 0;
     border-radius: 20px;
     text-align: left;
+    position: relative;
 }
 
 .side-content {
@@ -306,7 +308,7 @@
     position: absolute;
     margin: 0px;
     left: -50px;
-    top: 0;
+    top: 10;
 }
 
 .additional-link {
