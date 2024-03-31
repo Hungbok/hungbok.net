@@ -15,6 +15,31 @@ async function loadData() {
     }
 }
 
+function getTimeDifference(publishedTime) {
+    const publishedDate = new Date(publishedTime.replace(/-/g, ':').replace(' ', ''));
+    const currentDate = new Date();
+    const diffInSeconds = Math.floor((currentDate - publishedDate) / 1000);
+    const diffInMinutes = Math.floor(diffInSeconds / 60);
+    const diffInHours = Math.floor(diffInMinutes / 60);
+    const diffInDays = Math.floor(diffInHours / 24);
+    const diffInMonths = Math.floor(diffInDays / 30);
+    const diffInYears = Math.floor(diffInDays / 365);
+
+    if (diffInSeconds < 60) {
+        return "방금 전";
+    } else if (diffInMinutes < 60) {
+        return `${diffInMinutes}분 전`;
+    } else if (diffInHours < 24) {
+        return `${diffInHours}시간 전`;
+    } else if (diffInDays < 30) {
+        return `${diffInDays}일 전`;
+    } else if (diffInMonths < 12) {
+        return `${diffInMonths}개월 전`;
+    } else {
+        return `${diffInYears}년 전`;
+    }
+}
+
 async function paginateData(data, page) {
     const startIndex = (page - 1) * resultsPerPage;
     const endIndex = startIndex + resultsPerPage;
@@ -36,6 +61,8 @@ async function paginateData(data, page) {
                 const detailData = await response.json();
                 const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                 const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+                const summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
+                const timeDifference = getTimeDifference(item.published);
 
                 searchResults.innerHTML += `
                 <a class="item" href="${item.link}">
@@ -45,7 +72,8 @@ async function paginateData(data, page) {
                     <div class="info">
                         <div class="type ${item.type}"></div>
                         <div class="title" title="${title}">${title}</div>
-                        <div class="date" settime="${item.published}"></div>
+                        <div class="title" title="${summary}">${summary}</div>
+                        <div class="date" settime="${item.published}">${timeDifference}</div>
                     </div>
                 </a>
                 `;
