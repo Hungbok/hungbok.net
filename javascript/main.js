@@ -350,9 +350,9 @@ $(document).ready(function() {
     $(".share-content").append('<div class="popup-title text-share-title"></div>'+
     '<div class="share-text text-share-text"></div>'+
     '<div class="external-links">'+
-        '<div class="external-link" ttt="Embed">'+
-            `<a class='external-link-button icon-code' copy-item='<iframe src="https://viewer.hungbok.net/{type}?q={url}" width="100%" height="256" frameBorder="0" loading="lazy"></iframe>' target='_blank'></a>`+
-        '</div>'+
+        // '<div class="external-link" ttt="Embed">'+
+        //     `<a class='external-link-button icon-code' copy-item='<iframe src="https://viewer.hungbok.net/{type}?q={url}" width="100%" height="256" frameBorder="0" loading="lazy"></iframe>' target='_blank'></a>`+
+        // '</div>'+
         '<div class="external-link" ttt="Email">'+
             '<a class="external-link-button icon-mail" href="mailto:?body={title}%0D%0Ahttps://hgbk.me/{share}" target="_blank"></a>'+
         '</div>'+
