@@ -54,7 +54,7 @@
     user-select: none;
 }
 
-#pagination a {
+button {
     padding: 10px 20px;
     margin: 5px;
     display: inline-block;
@@ -73,11 +73,11 @@
     transition: all 0.5s;
 }
 
-#pagination a:hover {
+button:hover {
     background-color: var(--background-8);
 }
 
-#pagination a img {
+button img {
     height: 12px;
 }
 
