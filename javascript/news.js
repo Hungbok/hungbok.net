@@ -4,7 +4,6 @@ const resultsPerPage = 20; // 페이지당 결과 수
 
 let currentPage = parseInt(new URLSearchParams(window.location.search).get('page')) || 1;
 let allData = []; // 모든 데이터를 저장하는 배열
-let filteredData = []; // 검색된 데이터를 저장하는 배열
 
 async function loadData() {
     try {
@@ -24,38 +23,25 @@ async function paginateData(data, page) {
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
-    // 현재 문서의 언어 설정 확인
-    const currentLang = document.documentElement.lang || 'en';
-
     if (dataToDisplay.length === 0) {
+        // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        for (const item of dataToDisplay) {
-            // 언어에 맞는 제목을 불러오기 위한 URL 구성
-            const url = `//data.hungbok.net/data/news/${item.url}.json`;
+        dataToDisplay.forEach(item => {
 
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                // 현재 언어로 된 제목이 있으면 사용, 없으면 기본 언어(en)로 대체
-                const title = data[currentLang]?.title || data.en.title;
-
-                searchResults.innerHTML += `
-                <a class="item" href="${item.link}">
-                    <div class="image">
-                        <img src="${item.image}">
-                    </div>
-                    <div class="info">
-                        <div class="type ${item.type}"></div>
-                        <div class="title" title="${title}">${title}</div>
-                        <div class="date" settime="${item.published}"></div>
-                    </div>
-                </a>
-                `;
-            } catch (error) {
-                console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
-            }
-        }
+            searchResults.innerHTML += `
+            <a class="item" href="${item.link}">
+                <div class="image">
+                    <img src="${item.image}">
+                </div>
+                <div class="info">
+                    <div class="type ${item.type}"></div>
+                    <div class="title" title="${item.title}">${item.title}</div>
+                    <div class="date" settime="${item.published}"></div>
+                </div>
+            </a>
+            `;
+        });
     }
 }
 
@@ -96,8 +82,8 @@ function updatePaginationButtons(data) {
 
 function changePage(page) {
     currentPage = page;
-    paginateData(filteredData.length > 0 ? filteredData : allData, currentPage);
-    updatePaginationButtons(filteredData.length > 0 ? filteredData : allData);
+    paginateData(allData, currentPage);
+    updatePaginationButtons(allData);
     history.pushState(null, '', `?page=${currentPage}`);
 }
 
