@@ -61,7 +61,6 @@ async function paginateData(data, page) {
     }
 }
 
-
 function updatePaginationButtons(data) {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
@@ -98,37 +97,60 @@ function updatePaginationButtons(data) {
 }
 
 function changePage(page) {
+    // 현재 URL에서 쿼리 매개변수를 파싱
+    const queryParams = new URLSearchParams(window.location.search);
+    
+    // 'page' 매개변수를 업데이트 (또는 추가)
+    queryParams.set('page', page);
+    
     currentPage = page;
     paginateData(filteredData.length > 0 ? filteredData : allData, currentPage);
     updatePaginationButtons(filteredData.length > 0 ? filteredData : allData);
-    history.pushState(null, '', `?page=${currentPage}`);
+    
+    // 수정된 쿼리 매개변수와 함께 URL을 업데이트
+    history.pushState(null, '', `?${queryParams.toString()}`);
 }
 
 function searchInstantly() {
     const inputText = document.getElementById('searchInput').value;
-    const textToSearch = inputText.trim().toLowerCase();
+    // URLSearchParams 객체를 사용하여 URL의 쿼리 매개변수 조작
+    const queryParams = new URLSearchParams(window.location.search);
+    queryParams.set('p', inputText); // 'p' 매개변수 업데이트
+    history.pushState(null, '', `?${queryParams.toString()}`); // URL 상태 업데이트
 
     if (!textToSearch) {
         filteredData = [];
         currentPage = 1;
-        paginateData(allData, currentPage);
-        updatePaginationButtons(allData);
-        return;
+    } else {
+        filteredData = allData.filter(item =>
+            item.title.toLowerCase().includes(textToSearch)
+        );
+        currentPage = 1;
     }
-
-    filteredData = allData.filter(item =>
-        item.title.toLowerCase().includes(textToSearch)
-    );
-
-    currentPage = 1;
+    
     paginateData(filteredData, currentPage);
     updatePaginationButtons(filteredData);
 }
 
+// 페이지 로드 시 쿼리 매개변수 'p'를 확인하여 검색어를 입력 필드에 설정하고 검색을 실행
+function loadSearchFromQuery() {
+    const queryParams = new URLSearchParams(window.location.search);
+    const searchText = queryParams.get('p'); // 'p' 매개변수의 값을 가져옴
+    
+    if (searchText) {
+        document.getElementById('searchInput').value = searchText; // 검색어를 입력 필드에 설정
+        searchInstantly(); // 검색 실행
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadSearchFromQuery(); // 페이지 로드 시 실행
+});
+
 document.getElementById('searchInput').addEventListener('input', searchInstantly);
 
-loadData().then(data => {
-    allData = data;
+loadData().then(() => {
+    loadSearchFromQuery(); // 페이지 로드 시 쿼리 매개변수를 기반으로 검색 실행
     paginateData(allData, currentPage);
     updatePaginationButtons(allData);
 });
