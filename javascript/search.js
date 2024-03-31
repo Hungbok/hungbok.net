@@ -52,11 +52,6 @@ window.addEventListener('load', function() {
                 return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
         
-            $("#searchResults").empty();
-            if(results.length === 0) {
-                $("#searchResults").hide();
-                return;
-            }
             results.forEach(item => {
                 let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
                 if (!title) {
@@ -70,7 +65,6 @@ window.addEventListener('load', function() {
                     </a>
                 `);
             });
-            $("#searchResults").show();
         }
     });
 });
