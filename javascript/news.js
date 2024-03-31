@@ -20,28 +20,43 @@ async function paginateData(data, page) {
     const endIndex = startIndex + resultsPerPage;
     const dataToDisplay = data.slice(startIndex, endIndex);
 
+    const currentLang = document.documentElement.lang || "en"; // 현재 페이지의 언어 코드 추출
+
     const searchResults = document.getElementById('searchResults');
     searchResults.innerHTML = '';
 
     if (dataToDisplay.length === 0) {
-        // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         dataToDisplay.forEach(item => {
+            fetchTitleAndUpdateUI(item, currentLang);
+        });
+    }
+}
 
-            searchResults.innerHTML += `
+async function fetchTitleAndUpdateUI(item, lang) {
+    try {
+        const response = await fetch(`//data.hungbok.net/data/news/${item.url}.json`);
+        const jsonData = await response.json();
+        
+        // 현재 페이지의 언어에 맞는 title 또는 기본 영어 title 선택
+        const title = jsonData.find(t => t[lang]) ? jsonData.find(t => t[lang]).title : jsonData.find(t => t["en"]).title;
+
+        const searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML += `
             <a class="item" href="${item.link}">
                 <div class="image">
                     <img src="${item.image}">
                 </div>
                 <div class="info">
                     <div class="type ${item.type}"></div>
-                    <div class="title" title="${item.title}">${item.title}</div>
+                    <div class="title" title="${title}">${title}</div>
                     <div class="date" settime="${item.published}"></div>
                 </div>
             </a>
-            `;
-        });
+        `;
+    } catch (error) {
+        console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
     }
 }
 
