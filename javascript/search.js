@@ -20,9 +20,11 @@ window.addEventListener('load', function() {
         ];
         langData = langData[0]; // langData 역시 같은 방식으로 추출합니다.
 
-        // URL에서 q 매개변수의 값을 검색어로 사용합니다.
+        // URL에서 q와 page 매개변수의 값을 가져옵니다.
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
+        let page = parseInt(urlParams.get('page') || '1'); // page가 없으면 1로 설정
+        const itemsPerPage = 10; // 한 페이지에 표시할 아이템 수
 
         if(searchValue !== '') {
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
@@ -51,8 +53,18 @@ window.addEventListener('load', function() {
                 });
                 return {...item, matchRate: maxMatchRate}; // 일치율을 포함한 객체 반환
             }).sort((a, b) => b.matchRate - a.matchRate) // 일치율이 높은 순으로 정렬
-        
-            results.forEach(item => {
+
+            let paginatedResults = results.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+            $("#searchResults").empty();
+            if(results.length === 0) {
+                $("#searchResults").append(`<p>검색결과가 존재하지 않습니다.</p>`);
+                $("#searchResults").show();
+                return;
+            }
+
+            // 검색 결과를 페이지에 맞게 표시
+            paginatedResults.forEach(item => {
                 let title = Object.values(item.title).find(title => title.toLowerCase().includes(searchValue));
                 if (!title) {
                     title = (item.title[languageCode]) ? item.title[languageCode] : item.title['en'];
@@ -65,6 +77,48 @@ window.addEventListener('load', function() {
                     </a>
                 `);
             });
+            $("#searchResults").show();
+
+            // 페이지네이션 버튼 추가
+            const totalPages = Math.ceil(results.length / itemsPerPage);
+            const paginationContainer = $("#paginationContainer");
+            paginationContainer.empty();
+
+            // 이전 페이지 버튼
+            if(page > 1) {
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${page - 1}">이전페이지</a>`);
+            } else {
+                paginationContainer.append(`<span>이전페이지</span>`);
+            }
+
+            // 페이지 번호 버튼
+            let startPage = Math.max(page - 2, 1);
+            let endPage = Math.min(page + 2, totalPages);
+
+            if(startPage > 1) {
+                paginationContainer.append(`<a href="?q=${searchValue}&page=1">1</a>`);
+                if(startPage > 2) paginationContainer.append(`<span>...</span>`);
+            }
+
+            for(let i = startPage; i <= endPage; i++) {
+                if(i === page) {
+                    paginationContainer.append(`<span>${i}</span>`);
+                } else {
+                    paginationContainer.append(`<a href="?q=${searchValue}&page=${i}">${i}</a>`);
+                }
+            }
+
+            if(endPage < totalPages) {
+                if(endPage < totalPages - 1) paginationContainer.append(`<span>...</span>`);
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${totalPages}">${totalPages}</a>`);
+            }
+
+            // 다음 페이지 버튼
+            if(page < totalPages) {
+                paginationContainer.append(`<a href="?q=${searchValue}&page=${page + 1}">다음페이지</a>`);
+            } else {
+                paginationContainer.append(`<span>다음페이지</span>`);
+            }
         }
     });
 });
