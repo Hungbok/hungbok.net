@@ -23,8 +23,6 @@ window.addEventListener('load', function() {
         // URL에서 q 매개변수의 값을 검색어로 사용합니다.
         const urlParams = new URLSearchParams(window.location.search);
         const searchValue = urlParams.get('q').toLowerCase().trim();
-        const currentPage = parseInt(urlParams.get('page') || '1', 10); // 현재 페이지
-        const itemsPerPage = 10; // 페이지 당 항목 수
 
         if(searchValue !== '') {
             let languageCode = $("html").attr("lang").split(' ').find(cls => cls.length === 2) || "en";
@@ -73,63 +71,6 @@ window.addEventListener('load', function() {
                 `);
             });
             $("#searchResults").show();
-
-            let paginatedResults = results.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-            
-            $("#searchResults").empty();
-            if(paginatedResults.length === 0) {
-                $("#searchResults").append(`<p>검색 결과가 존재하지 않습니다.</p>`).show();
-                return;
-            }
-            paginatedResults.forEach(item => {
-                // 결과 표시 로직은 기존과 동일
-            });
-            $("#searchResults").show();
-
-            // 페이지네이션 로직
-            generatePagination(currentPage, Math.ceil(results.length / itemsPerPage));
         }
     });
 });
-
-function generatePagination(currentPage, totalPages) {
-    let paginationHTML = '';
-    if (currentPage > 1) {
-        paginationHTML += `<a href="?page=${currentPage - 1}">이전페이지</a>`;
-    } else {
-        paginationHTML += `<span>이전페이지</span>`;
-    }
-
-    // 처음 페이지
-    if (currentPage > 3) {
-        paginationHTML += `<a href="?page=1">1페이지</a>`;
-        if (currentPage > 4) {
-            paginationHTML += `<span>...</span>`;
-        }
-    }
-
-    // 중간 페이지
-    for (let i = Math.max(1, currentPage - 2); i <= Math.min(currentPage + 2, totalPages); i++) {
-        if (i === currentPage) {
-            paginationHTML += `<span>${i}페이지</span>`;
-        } else {
-            paginationHTML += `<a href="?page=${i}">${i}페이지</a>`;
-        }
-    }
-
-    // 마지막 페이지
-    if (currentPage < totalPages - 2) {
-        if (currentPage < totalPages - 3) {
-            paginationHTML += `<span>...</span>`;
-        }
-        paginationHTML += `<a href="?page=${totalPages}">${totalPages}페이지</a>`;
-    }
-
-    if (currentPage < totalPages) {
-        paginationHTML += `<a href="?page=${currentPage + 1}">다음페이지</a>`;
-    } else {
-        paginationHTML += `<span>다음페이지</span>`;
-    }
-
-    $("#pagination").html(paginationHTML);
-}
