@@ -91,17 +91,17 @@ $(document).ready(function(){
                             const detailData = await response.json();
                             const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                             const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
-                            const summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
+                            const date = itemLangData[lang] ? itemLangData[lang].date : itemLangData["en"].date;
             
                             searchResults.innerHTML += `
-                            <a class="item" href="${item.link}" title="${title}">
-                                <div class="image">
+                            <a class="side-item" href="${item.link}" title="${title}">
+                                <div class="side-image">
                                     <img src="${item.image}">
                                 </div>
-                                <div class="info">
-                                    <div class="type ${item.type}">${item.type}</div>
-                                    <div class="title">${title}</div>
-                                    <div class="subtitle">${summary}</div>
+                                <div class="side-info">
+                                    <div class="side-type ${item.type}">${item.type}</div>
+                                    <div class="side-title">${title}</div>
+                                    <div class="side-date">${date}</div>
                                 </div>
                             </a>
                             `;
