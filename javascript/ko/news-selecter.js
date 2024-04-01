@@ -60,9 +60,8 @@ $(document).ready(function(){
             // 변경된 HTML 설정
             document.body.innerHTML = htmlContent;
             
+            // JSON 파일 경로
             const dataUrl = '//data.hungbok.net/data/news.json';
-
-            let allData = []; // 모든 데이터를 저장하는 배열
             
             async function loadData() {
                 try {
@@ -74,44 +73,49 @@ $(document).ready(function(){
                 }
             }
             
-            async function displayTopFiveData(data) {
-                const sideContent = document.querySelector('.side-content');
-                sideContent.innerHTML = ''; // 기존 내용을 지우고 새로 시작
+            async function displayData(data) {
+                const dataToDisplay = data.slice(0, 5); // 상위 5개 데이터만 표시
+                const searchResults = document.querySelector('.side-content');
+                searchResults.innerHTML = '';
             
-                // 상위 5개 데이터 추출
-                const topFiveData = data.slice(0, 5);
+                if (dataToDisplay.length === 0) {
+                    searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
+                } else {
+                    // 현재 페이지의 언어 코드를 가져옵니다.
+                    const lang = document.documentElement.lang || "en";
             
-                for (const item of topFiveData) {
-                    const url = `//data.hungbok.net/data/news/${item.url}.json`;
+                    for (const item of dataToDisplay) {
+                        const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
+                        try {
+                            const response = await fetch(detailDataUrl);
+                            const detailData = await response.json();
+                            const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
+                            const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+                            const summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
             
-                    try {
-                        const currentLang = document.documentElement.lang; // HTML의 lang 속성 값
-                        const response = await fetch(url);
-                        const data = await response.json();
-                    
-                        // 여기서 data[currentLang]?.title 또는 data['en']?.title을 안전하게 접근
-                        const title = data[currentLang]?.title ?? data['en']?.title;
-            
-                        sideContent.innerHTML += `
-                        <div class="item">
-                            <div class="image" style="background-image: url('${item.image}');"></div>
-                            <div class="info">
-                                <div class="title" title="${title}">${title}</div>
-                                <div class="date" settime="${item.published}"></div>
-                            </div>
-                        </div>
-                        `;
-                    } catch (error) {
-                        console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
+                            searchResults.innerHTML += `
+                            <a class="item" href="${item.link}" title="${title}">
+                                <div class="image">
+                                    <img src="${item.image}">
+                                </div>
+                                <div class="info">
+                                    <div class="type ${item.type}">${item.type}</div>
+                                    <div class="title">${title}</div>
+                                    <div class="subtitle">${summary}</div>
+                                </div>
+                            </a>
+                            `;
+                        } catch (error) {
+                            console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
+                        }
                     }
                 }
             }
             
-            // 데이터 로드 및 상위 5개 데이터 출력
             loadData().then(data => {
-                allData = data;
-                displayTopFiveData(allData);
-            });            
+                displayData(data);
+            });
+            
         });
     } else {
         $('body').addClass('ko');
