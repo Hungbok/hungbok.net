@@ -128,5 +128,5 @@ async function displayTopFiveRecentData(data) {
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
-    displayTopFiveRecentData();
+    displayTopFiveRecentData(data);
 });
