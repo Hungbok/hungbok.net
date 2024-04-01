@@ -89,6 +89,7 @@ $(document).ready(function(){
     }
 });
 
+// JSON 파일 경로
 const dataUrl = '//data.hungbok.net/data/news.json';
 
 async function loadData() {
@@ -140,5 +141,9 @@ async function displayTopFiveRecentData(data) {
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
-    displayTopFiveRecentData();
+
+    loadData().then(data => {
+        allData = data;
+        displayTopFiveRecentData(date);
+    });
 });
