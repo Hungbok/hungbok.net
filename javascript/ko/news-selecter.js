@@ -59,11 +59,7 @@ $(document).ready(function(){
             
             // 변경된 HTML 설정
             document.body.innerHTML = htmlContent;
-            
-            const dataUrl = '//data.hungbok.net/data/news.json';
 
-            let allData = []; // 모든 데이터를 저장하는 배열
-            
             async function loadData() {
                 try {
                     const response = await fetch(dataUrl);
@@ -74,27 +70,26 @@ $(document).ready(function(){
                 }
             }
             
-            // .side-content에 최근 상위 5개 데이터 출력
-            async function displayTopFive(data) {
+            // 기존의 paginateData 함수 및 기타 필요한 함수들은 변경 없이 유지합니다.
+            
+            // 새로운 함수: .side-content에 최근 상위 5개 데이터 출력
+            async function displayTopFiveData(data) {
                 const sideContent = document.querySelector('.side-content');
-                sideContent.innerHTML = ''; // 기존 내용 초기화
+                sideContent.innerHTML = ''; // 기존 내용을 지우고 새로 시작
             
-                // 상위 5개 데이터만 추출
+                // 상위 5개 데이터 추출
                 const topFiveData = data.slice(0, 5);
-            
-                // 현재 문서의 언어 설정 확인
-                const currentLang = document.documentElement.lang || 'en';
             
                 for (const item of topFiveData) {
                     const url = `//data.hungbok.net/data/news/${item.url}.json`;
-            
+                    
                     try {
                         const response = await fetch(url);
                         const data = await response.json();
                         const title = data[currentLang]?.title || data.en.title;
             
                         sideContent.innerHTML += `
-                        <a class="item" href="${item.link}">
+                        <div class="item">
                             <div class="image">
                                 <img src="${item.image}">
                             </div>
@@ -103,7 +98,7 @@ $(document).ready(function(){
                                 <div class="title" title="${title}">${title}</div>
                                 <div class="date" settime="${item.published}"></div>
                             </div>
-                        </a>
+                        </div>
                         `;
                     } catch (error) {
                         console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
@@ -111,9 +106,10 @@ $(document).ready(function(){
                 }
             }
             
+            // loadData 함수가 데이터를 로드한 후에 displayTopFiveData 함수를 호출
             loadData().then(data => {
                 allData = data;
-                displayTopFive(allData);
+                displayTopFiveData(allData); // .side-content에 상위 5개 데이터 출력
             });            
         });
     } else {
