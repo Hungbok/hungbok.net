@@ -314,10 +314,6 @@
     align-items: center;
 }
 
-.side-content .side-item:hover {
-    background: var(--background-6);
-}
-
 .side-content .side-image {
     display: flex;
     overflow: hidden;
