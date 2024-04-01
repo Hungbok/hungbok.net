@@ -143,7 +143,6 @@ window.addEventListener('load', function() {
     loadAsyncScripts();
 
     loadData().then(data => {
-        allData = data;
-        displayTopFiveRecentData(date);
+        displayTopFiveRecentData(data);
     });
 });
