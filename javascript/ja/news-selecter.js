@@ -59,6 +59,87 @@ $(document).ready(function(){
             
             // 변경된 HTML 설정
             document.body.innerHTML = htmlContent;
+            
+            // JSON 파일 경로
+            const dataUrl = '//data.hungbok.net/data/news.json';
+            
+            async function loadData() {
+                try {
+                    const response = await fetch(dataUrl);
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
+                }
+            }
+            
+            async function displayData(data) {
+                const dataToDisplay = data.slice(0, 5); // 상위 5개 데이터만 표시
+                const searchResults = document.querySelector('.side-content');
+                searchResults.innerHTML = '';
+            
+                if (dataToDisplay.length === 0) {
+                    searchResults.innerHTML = `<div class="no-data">検索結果がありません。</div>`;
+                } else {
+                    // 현재 페이지의 언어 코드를 가져옵니다.
+                    const lang = document.documentElement.lang || "en";
+            
+                    for (const item of dataToDisplay) {
+                        const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
+                        try {
+                            const response = await fetch(detailDataUrl);
+                            const detailData = await response.json();
+                            const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
+                            const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+                            const date = itemLangData.date;
+
+                            function formatDate(dateString) {
+                                // 'yyyy-mm-dd' 형식의 문자열을 '-'로 분리
+                                const parts = dateString.split('-');
+                                if (parts.length !== 3) {
+                                    return "無効な形式";
+                                }
+
+                                const year = parts[0];
+                                const month = parseInt(parts[1], 10); // 숫자로 변환
+                                const day = parts[2];
+                            
+                                // 월을 숫자에서 영어로 매핑
+                                const months = [
+                                    "１", "２", "３", "４",
+                                    "５", "６", "７", "８",
+                                    "９", "１０", "１１", "１２"
+                                ];
+
+                                // 숫자 월을 영어 월로 변환
+                                const monthName = months[month - 1]; // 배열은 0부터 시작하므로 -1
+                            
+                                // 'yyyy년 mm월 dd일' 형식으로 재구성
+                                return `${year}年${monthName}月${day}日`;
+                            }
+            
+                            searchResults.innerHTML += `
+                            <a class="side-item" href="${item.link}" title="${title}">
+                                <div class="side-image">
+                                    <img src="${item.image}">
+                                </div>
+                                <div class="side-info">
+                                    <div class="side-type ${item.type}">${item.type}</div>
+                                    <div class="side-title">${title}</div>
+                                    <div class="side-date">${formatDate(date)}</div>
+                                </div>
+                            </a>
+                            `;
+                        } catch (error) {
+                            console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
+                        }
+                    }
+                }
+            }
+            
+            loadData().then(data => {
+                displayData(data);
+            });
         });
     } else {
         $('body').addClass('ja');

@@ -99,13 +99,23 @@ $(document).ready(function(){
                                 if (parts.length !== 3) {
                                     return "잘못된 형식";
                                 }
-                            
+
                                 const year = parts[0];
-                                const month = parts[1];
+                                const month = parseInt(parts[1], 10); // 숫자로 변환
                                 const day = parts[2];
                             
+                                // 월을 숫자에서 영어로 매핑
+                                const months = [
+                                    "1", "2", "3", "4",
+                                    "5", "6", "7", "8",
+                                    "9", "10", "11", "12"
+                                ];
+
+                                // 숫자 월을 영어 월로 변환
+                                const monthName = months[month - 1]; // 배열은 0부터 시작하므로 -1
+                            
                                 // 'yyyy년 mm월 dd일' 형식으로 재구성
-                                return `${year}년 ${month}월 ${day}일`;
+                                return `${year}년 ${monthName}월 ${day}일`;
                             }
             
                             searchResults.innerHTML += `
@@ -130,7 +140,6 @@ $(document).ready(function(){
             loadData().then(data => {
                 displayData(data);
             });
-            
         });
     } else {
         $('body').addClass('ko');
