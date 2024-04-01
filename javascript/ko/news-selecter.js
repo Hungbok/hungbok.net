@@ -59,7 +59,11 @@ $(document).ready(function(){
             
             // 변경된 HTML 설정
             document.body.innerHTML = htmlContent;
+            
+            const dataUrl = '//data.hungbok.net/data/news.json';
 
+            let allData = []; // 모든 데이터를 저장하는 배열
+            
             async function loadData() {
                 try {
                     const response = await fetch(dataUrl);
@@ -70,19 +74,17 @@ $(document).ready(function(){
                 }
             }
             
-            // 기존의 paginateData 함수 및 기타 필요한 함수들은 변경 없이 유지합니다.
-            
-            // 새로운 함수: .side-content에 최근 상위 5개 데이터 출력
             async function displayTopFiveData(data) {
                 const sideContent = document.querySelector('.side-content');
                 sideContent.innerHTML = ''; // 기존 내용을 지우고 새로 시작
+                const currentLang = document.documentElement.lang || 'en'; // 현재 문서의 언어 설정 확인
             
                 // 상위 5개 데이터 추출
                 const topFiveData = data.slice(0, 5);
             
                 for (const item of topFiveData) {
                     const url = `//data.hungbok.net/data/news/${item.url}.json`;
-                    
+            
                     try {
                         const response = await fetch(url);
                         const data = await response.json();
@@ -90,11 +92,8 @@ $(document).ready(function(){
             
                         sideContent.innerHTML += `
                         <div class="item">
-                            <div class="image">
-                                <img src="${item.image}">
-                            </div>
+                            <div class="image" style="background-image: url('${item.image}');"></div>
                             <div class="info">
-                                <div class="type ${item.type}"></div>
                                 <div class="title" title="${title}">${title}</div>
                                 <div class="date" settime="${item.published}"></div>
                             </div>
@@ -106,10 +105,10 @@ $(document).ready(function(){
                 }
             }
             
-            // loadData 함수가 데이터를 로드한 후에 displayTopFiveData 함수를 호출
+            // 데이터 로드 및 상위 5개 데이터 출력
             loadData().then(data => {
                 allData = data;
-                displayTopFiveData(allData); // .side-content에 상위 5개 데이터 출력
+                displayTopFiveData(allData);
             });            
         });
     } else {
