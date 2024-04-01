@@ -59,8 +59,8 @@ $(document).ready(function(){
             
             // 변경된 HTML 설정
             document.body.innerHTML = htmlContent;
-            
-            async function displayTopFiveRecentData(data) {
+
+            window.onload = async function displayTopFiveRecentData(data) {
                 // 데이터에서 상위 5개 아이템만 선택
                 const topFiveData = data.slice(0, 5);
             
