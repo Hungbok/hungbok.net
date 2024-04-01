@@ -77,7 +77,6 @@ $(document).ready(function(){
             async function displayTopFiveData(data) {
                 const sideContent = document.querySelector('.side-content');
                 sideContent.innerHTML = ''; // 기존 내용을 지우고 새로 시작
-                const currentLang = document.documentElement.lang || 'en'; // 현재 문서의 언어 설정 확인
             
                 // 상위 5개 데이터 추출
                 const topFiveData = data.slice(0, 5);
@@ -86,9 +85,12 @@ $(document).ready(function(){
                     const url = `//data.hungbok.net/data/news/${item.url}.json`;
             
                     try {
+                        const currentLang = document.documentElement.lang; // HTML의 lang 속성 값
                         const response = await fetch(url);
                         const data = await response.json();
-                        const title = data[currentLang]?.title || data.en.title;
+                    
+                        // 여기서 data[currentLang]?.title 또는 data['en']?.title을 안전하게 접근
+                        const title = data[currentLang]?.title ?? data['en']?.title;
             
                         sideContent.innerHTML += `
                         <div class="item">
