@@ -89,6 +89,21 @@ $(document).ready(function(){
     }
 });
 
+async function fetchTopFiveRecentData() {
+    const dataUrl = '//data.hungbok.net/data/news.json';
+
+    try {
+        const response = await fetch(dataUrl);
+        if (!response.ok) {
+            throw new Error('데이터를 불러오는 데 실패하였습니다.');
+        }
+        const data = await response.json();
+        displayTopFiveRecentData(data); // 전체 데이터를 displayTopFiveRecentData 함수로 전달
+    } catch (error) {
+        console.error('데이터 불러오기 오류:', error);
+    }
+}
+
 async function displayTopFiveRecentData(data) {
     // 데이터에서 상위 5개 아이템만 선택
     const topFiveData = data.slice(0, 5);
@@ -100,14 +115,10 @@ async function displayTopFiveRecentData(data) {
     const currentLang = document.documentElement.lang || 'en';
 
     for (const item of topFiveData) {
-        // 언어에 맞는 제목을 불러오기 위한 URL 구성
-        const url = `//data.hungbok.net/data/news/${item.url}.json`;
-
         try {
-            const response = await fetch(url);
-            const data = await response.json();
+            // 상위 5개 데이터는 이미 불러온 상태이므로 추가적인 fetch 없이 처리
             // 현재 언어로 된 제목이 있으면 사용, 없으면 기본 언어(en)로 대체
-            const title = data[currentLang]?.title || data.en.title;
+            const title = item.titles[currentLang] || item.titles['en'];
 
             sideContent.innerHTML += `
             <div class="side-item">
@@ -121,13 +132,12 @@ async function displayTopFiveRecentData(data) {
             </div>
             `;
         } catch (error) {
-            console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
+            console.error('데이터 처리 중 오류가 발생했습니다.', error);
         }
     }
 }
 
 window.addEventListener('load', function() {
-    const dataUrl = '//data.hungbok.net/data/news.json';
     loadAsyncScripts();
-    displayTopFiveRecentData(dataUrl);
+    fetchTopFiveRecentData();
 });
