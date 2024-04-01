@@ -232,6 +232,11 @@
 .description .strike {
     text-decoration-line: line-through;
     color: var(--text-8);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .description .strike:hover {
@@ -267,6 +272,30 @@
 .description a:hover {
     text-decoration-line: none;
     color: var(--text-2);
+}
+
+.video-container {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+  
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.image-container img {
+    width: 100%;
 }
 
 /* report & share */
