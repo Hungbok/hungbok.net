@@ -89,44 +89,41 @@ $(document).ready(function(){
     }
 });
 
-async function displayTopFiveRecentData(data) {
-    // 데이터에서 상위 5개 아이템만 선택
-    const topFiveData = data.slice(0, 5);
+async function fetchTopFiveRecentData() {
+    const dataUrl = '//data.hungbok.net/data/news.json';
 
+    try {
+        const response = await fetch(dataUrl);
+        if (!response.ok) {
+            throw new Error('데이터를 불러오는 데 실패하였습니다.');
+        }
+        const data = await response.json();
+        displayTopFiveRecentData(data.slice(0, 5)); // 데이터에서 상위 5개 항목만 선택하여 표시
+    } catch (error) {
+        console.error('데이터 불러오기 오류:', error);
+    }
+}
+
+function displayTopFiveRecentData(topFiveData) {
     const sideContent = document.querySelector('.side-content');
-    sideContent.innerHTML = ''; // 기존 내용을 초기화
-
-    // 현재 문서의 언어 설정 확인
-    const currentLang = document.documentElement.lang || 'en';
+    sideContent.innerHTML = ''; // 기존 내용 초기화
 
     for (const item of topFiveData) {
-        // 언어에 맞는 제목을 불러오기 위한 URL 구성
-        const url = `//data.hungbok.net/data/news/${item.url}.json`;
-
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            // 현재 언어로 된 제목이 있으면 사용, 없으면 기본 언어(en)로 대체
-            const title = data[currentLang]?.title || data.en.title;
-
-            sideContent.innerHTML += `
-            <div class="side-item">
-                <a href="${item.link}">
-                    <img src="${item.image}" alt="${title}">
-                    <div class="side-info">
-                        <div class="side-title">${title}</div>
-                        <div class="side-date">${item.published}</div>
-                    </div>
-                </a>
-            </div>
-            `;
-        } catch (error) {
-            console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
-        }
+        sideContent.innerHTML += `
+        <div class="side-item">
+            <a href="${item.link}">
+                <img src="${item.image}" alt="${item.title}">
+                <div class="side-info">
+                    <div class="side-title">${item.title}</div>
+                    <div class="side-date">${item.published}</div>
+                </div>
+            </a>
+        </div>
+        `;
     }
 }
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
-    displayTopFiveRecentData(data);
+    fetchTopFiveRecentData();
 });
