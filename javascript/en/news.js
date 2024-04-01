@@ -89,7 +89,7 @@ async function paginateData(data, page) {
                 searchResults.innerHTML += `
                 <a class="item" href="${item.link}" title="${title}">
                     <div class="image">
-                        <img src="${item.image}">
+                        <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
                     </div>
                     <div class="info">
                         <div class="type ${item.type}">${item.type}</div>
