@@ -2,7 +2,7 @@ async function loadAsyncScripts() {
     // 이미지 팝업 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
-    await loadScript('//www.hungbok.net/javascript/ko/error404.js');
+    await loadScript('//www.hungbok.net/javascript/en/error404.js');
 }
 
 function loadScript(src) {
@@ -28,7 +28,7 @@ $(document).ready(function(){
         
             // en 또는 ko 데이터에 접근하는 함수
             function getLocalizedData(data, key) {
-                return data['en'] && data['en'][key] ? data['en'][key] : data['en'][key];
+                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
@@ -61,7 +61,7 @@ $(document).ready(function(){
             document.body.innerHTML = htmlContent;
         });
     } else {
-        $('body').addClass('ko');
+        $('body').addClass('en');
         $('.section').remove();
         $('.top-backgrounds').remove();
 
@@ -80,7 +80,7 @@ $(document).ready(function(){
             }
         }
         
-        loadResource('js', '//www.hungbok.net/javascript/news.js');
+        loadResource('js', '//www.hungbok.net/javascript/en/news.js');
 
         $('main').append(`<section class="section">
             <div id="searchResults"></div>
