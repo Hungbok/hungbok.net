@@ -91,7 +91,7 @@ $(document).ready(function(){
                             const detailData = await response.json();
                             const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                             const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
-                            const date = itemLangData[lang] ? itemLangData[lang].date : itemLangData["en"].date;
+                            const date = itemLangData[lang] ? itemLangData[lang].date : itemLangData.date;
             
                             searchResults.innerHTML += `
                             <a class="side-item" href="${item.link}" title="${title}">
