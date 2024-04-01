@@ -265,6 +265,10 @@
     align-items: center;
 }
 
+.side-content .side-item:hover {
+    background: var(--background-8);
+}
+
 .side-content .side-image {
     display: flex;
 }
