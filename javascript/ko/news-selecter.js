@@ -91,7 +91,22 @@ $(document).ready(function(){
                             const detailData = await response.json();
                             const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                             const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
-                            const date = itemLangData[lang] ? itemLangData[lang].date : itemLangData.date;
+                            const date = itemLangData.date;
+
+                            function formatDate(dateString) {
+                                // 'yyyy-mm-dd' 형식의 문자열을 '-'로 분리
+                                const parts = dateString.split('-');
+                                if (parts.length !== 3) {
+                                    return "잘못된 형식";
+                                }
+                            
+                                const year = parts[0];
+                                const month = parts[1];
+                                const day = parts[2];
+                            
+                                // 'yyyy년 mm월 dd일' 형식으로 재구성
+                                return `${year}년 ${month}월 ${day}일`;
+                            }
             
                             searchResults.innerHTML += `
                             <a class="side-item" href="${item.link}" title="${title}">
@@ -101,7 +116,7 @@ $(document).ready(function(){
                                 <div class="side-info">
                                     <div class="side-type ${item.type}">${item.type}</div>
                                     <div class="side-title">${title}</div>
-                                    <div class="side-date">${date}</div>
+                                    <div class="side-date">${formatDate(date)}</div>
                                 </div>
                             </a>
                             `;
