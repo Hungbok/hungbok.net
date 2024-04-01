@@ -118,7 +118,7 @@ async function displayTopFiveRecentData(data) {
         try {
             // 상위 5개 데이터는 이미 불러온 상태이므로 추가적인 fetch 없이 처리
             // 현재 언어로 된 제목이 있으면 사용, 없으면 기본 언어(en)로 대체
-            const title = item.titles[currentLang] || item.titles['en'];
+            const title = item.title[currentLang] || item.title['en'];
 
             sideContent.innerHTML += `
             <div class="side-item">
