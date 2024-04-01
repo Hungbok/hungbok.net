@@ -59,6 +59,62 @@ $(document).ready(function(){
             
             // 변경된 HTML 설정
             document.body.innerHTML = htmlContent;
+            
+            const dataUrl = '//data.hungbok.net/data/news.json';
+
+            let allData = []; // 모든 데이터를 저장하는 배열
+            
+            async function loadData() {
+                try {
+                    const response = await fetch(dataUrl);
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
+                }
+            }
+            
+            // .side-content에 최근 상위 5개 데이터 출력
+            async function displayTopFive(data) {
+                const sideContent = document.querySelector('.side-content');
+                sideContent.innerHTML = ''; // 기존 내용 초기화
+            
+                // 상위 5개 데이터만 추출
+                const topFiveData = data.slice(0, 5);
+            
+                // 현재 문서의 언어 설정 확인
+                const currentLang = document.documentElement.lang || 'en';
+            
+                for (const item of topFiveData) {
+                    const url = `//data.hungbok.net/data/news/${item.url}.json`;
+            
+                    try {
+                        const response = await fetch(url);
+                        const data = await response.json();
+                        const title = data[currentLang]?.title || data.en.title;
+            
+                        sideContent.innerHTML += `
+                        <a class="item" href="${item.link}">
+                            <div class="image">
+                                <img src="${item.image}">
+                            </div>
+                            <div class="info">
+                                <div class="type ${item.type}"></div>
+                                <div class="title" title="${title}">${title}</div>
+                                <div class="date" settime="${item.published}"></div>
+                            </div>
+                        </a>
+                        `;
+                    } catch (error) {
+                        console.error('데이터를 불러오는 중 오류가 발생했습니다.', error);
+                    }
+                }
+            }
+            
+            loadData().then(data => {
+                allData = data;
+                displayTopFive(allData);
+            });            
         });
     } else {
         $('body').addClass('ko');
