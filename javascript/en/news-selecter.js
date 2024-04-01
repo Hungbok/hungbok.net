@@ -31,6 +31,32 @@ $(document).ready(function(){
                 return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
             }
 
+            function formatDate(dateString) {
+                // 'yyyy-mm-dd' 형식의 문자열을 '-'로 분리
+                const parts = dateString.split('-');
+                if (parts.length !== 3) {
+                    return "Incorrect Format";
+                }
+
+                const year = parts[0];
+                const month = parseInt(parts[1], 10); // 숫자로 변환
+                const day = parts[2];
+            
+                // 월을 숫자에서 영어로 매핑
+                const months = [
+                    "January", "February", "March", "April",
+                    "May", "June", "July", "August",
+                    "September", "October", "November", "December"
+                ];
+
+                // 숫자 월을 영어 월로 변환
+                const monthName = months[month - 1]; // 배열은 0부터 시작하므로 -1
+            
+            
+                // 'yyyy년 mm월 dd일' 형식으로 재구성
+                return `${monthName} ${day}, ${year}`;
+            }
+
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
             $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang'));
             $('#report-title').attr('value', 'https://www.hungbok.com/news?q=' + data[0].url);
@@ -44,7 +70,7 @@ $(document).ready(function(){
                 '{url}': data[0].url,
                 '{image}': data[0].image,
                 '{share}': data[0].link,
-                '{date}': data[0].date,
+                '{date}': formatDate(data[0].date), // 여기서 날짜 형식을 변환합니다.
                 '{writer}': data[0].writer,
             };
             

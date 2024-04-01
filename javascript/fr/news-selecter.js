@@ -2,7 +2,7 @@ async function loadAsyncScripts() {
     // 이미지 팝업 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
-    await loadScript('//www.hungbok.net/javascript/en/error404.js');
+    await loadScript('//www.hungbok.net/javascript/fr/error404.js');
 }
 
 function loadScript(src) {
@@ -28,7 +28,33 @@ $(document).ready(function(){
         
             // en 또는 ko 데이터에 접근하는 함수
             function getLocalizedData(data, key) {
-                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+                return data['fr'] && data['fr'][key] ? data['fr'][key] : data['en'][key];
+            }
+
+            function formatDate(dateString) {
+                // 'yyyy-mm-dd' 형식의 문자열을 '-'로 분리
+                const parts = dateString.split('-');
+                if (parts.length !== 3) {
+                    return "Incorrect Format";
+                }
+
+                const year = parts[0];
+                const month = parseInt(parts[1], 10); // 숫자로 변환
+                const day = parts[2];
+            
+                // 월을 숫자에서 영어로 매핑
+                const months = [
+                    "January", "February", "March", "April",
+                    "May", "June", "July", "August",
+                    "September", "October", "November", "December"
+                ];
+
+                // 숫자 월을 영어 월로 변환
+                const monthName = months[month - 1]; // 배열은 0부터 시작하므로 -1
+            
+            
+                // 'yyyy년 mm월 dd일' 형식으로 재구성
+                return `${day} ${monthName} ${year}`;
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
@@ -44,7 +70,7 @@ $(document).ready(function(){
                 '{url}': data[0].url,
                 '{image}': data[0].image,
                 '{share}': data[0].link,
-                '{date}': data[0].date,
+                '{date}': formatDate(data[0].date), // 여기서 날짜 형식을 변환합니다.
                 '{writer}': data[0].writer,
             };
             
@@ -143,7 +169,7 @@ $(document).ready(function(){
             });
         });
     } else {
-        $('body').addClass('en');
+        $('body').addClass('fr');
         $('.section').remove();
         $('.top-backgrounds').remove();
 
@@ -162,7 +188,7 @@ $(document).ready(function(){
             }
         }
         
-        loadResource('js', '//www.hungbok.net/javascript/en/news.js');
+        loadResource('js', '//www.hungbok.net/javascript/fr/news.js');
 
         $('main').append(`<section class="section">
             <div id="searchResults"></div>
