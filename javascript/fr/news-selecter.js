@@ -147,8 +147,10 @@ $(document).ready(function(){
             
                             searchResults.innerHTML += `
                             <a class="side-item" href="${item.link}" title="${title}">
-                                <div class="side-image">
-                                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                                <div class="side-media">
+                                    <div class="side-image">
+                                        <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                                    </div>
                                 </div>
                                 <div class="side-info">
                                     <div class="side-type ${item.type}">${item.type}</div>
