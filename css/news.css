@@ -384,8 +384,6 @@
     top: 50%;
     transform: translate(-50%, -50%);
     border: 5px solid transparent;
-    z-index: 10;
-    aspect-ratio: 200 / 300;
     border-radius: 20px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
