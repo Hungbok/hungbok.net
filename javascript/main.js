@@ -509,8 +509,9 @@ window.addEventListener('load', function() {
                 
                 $(".search-results").append(`
                     <a href="${item.link}">
-                        <img class="search-results-image" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                        ${type ? `<p class="search-results-type">${type}</p>` : ""}<p class="search-results-title" title="${title}">${title}</p>
+                        <div class="search-results-image"><img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';"></div>
+                        <div class="search-results-type">${type ? `<p>${type}</p>` : ""}</div>
+                        <div class="search-results-title"><p title="${title}">${title}</p></div>
                     </a>
                 `);
             });
