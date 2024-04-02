@@ -155,7 +155,7 @@ $(document).ready(function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     const searchParams = window.location.search;
     const urlParam = new URLSearchParams(searchParams);
     const q = urlParam.get('q'); // 'q' 매개변수의 값을 가져옵니다.
