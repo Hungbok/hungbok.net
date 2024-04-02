@@ -84,6 +84,7 @@ div#calendar > div > div {
 .calendar-item-background img {
     height: auto;
     width: 100%;
+    filter: blur(10px);
     position: absolute;
 }
 
