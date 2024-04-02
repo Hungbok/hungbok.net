@@ -144,6 +144,7 @@ $(document).ready(function(){
   
                 '{attention}': data[0].attention,
                 '{plot}': getLocalizedData(data[0], 'plot'),
+                '{description}': getLocalizedData(data[0], 'description'),
                 '{source}': getLocalizedData(data[0], 'source'),
                 '{update}': getLocalizedData(data[0], 'update'),
   
@@ -277,21 +278,6 @@ $(document).ready(function(){
                         '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
-            });
-
-            var description_value = getLocalizedData(data[0], 'descriptioncount'); // description 수
-            var descriptionData = [];
-            for (var i = 1; i <= description_value; i++) {
-                var desClass = getLocalizedData(data[0], 'pclass' + i);
-                var desText = getLocalizedData(data[0], 'ptext' + i);
-                descriptionData.push({
-                    class: desClass,
-                    text: desText,
-                });
-            }
-            // description 생성
-            descriptionData.forEach(function(item) {
-                $(".description-content").append('<p class="' + item.class + '">' + item.text + '</p>');
             });
 
             // 틀 생성
