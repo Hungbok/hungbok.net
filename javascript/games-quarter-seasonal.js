@@ -97,6 +97,7 @@ if (year && season && monthRange) {
           appendData(item, targetDayDiv);
         }
       });
+      
       async function appendData(item, parentDiv) {
         const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정 또는 기본값으로 "en"을 사용
       
