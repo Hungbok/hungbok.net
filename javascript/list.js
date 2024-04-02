@@ -39,25 +39,27 @@ async function paginateData(data, page) {
                 const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                 const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
                 
-                const monthNames = ["1", "2", "3", "4", "5", "6",
-                                    "7", "8", "9", "10", "11", "12"];
-
-                const monthName = item.release_month ? monthNames[parseInt(item.release_month, 10) - 1] : '';
-                const displayMonth = monthName ? `<p class="grid-date-month">${monthName}</p>` : '';
-                const displayDay = item.release_day ? `<p class="grid-date-day">${item.release_day}</p>` : '';
-
-                searchResults.innerHTML += `
-                <a class="item" href="${item.link}">
-                    <div class="image"><img src="${item.image}"></div>
-                    <div class="title" title="${title}">${title}</div>
-                    <div class="platform ${item.platform}"></div>
-                    <div class="date">
-                        <p class="grid-date-year">${item.release_year}</p>
-                        ${displayMonth}
-                        ${displayDay}
-                    </div>
-                </a>
-                `;
+                dataToDisplay.forEach(item => {
+                    const monthNames = ["1", "2", "3", "4", "5", "6",
+                                        "7", "8", "9", "10", "11", "12"];
+        
+                    const monthName = item.release_month ? monthNames[parseInt(item.release_month, 10) - 1] : '';
+                    const displayMonth = monthName ? `<p class="grid-date-month">${monthName}</p>` : '';
+                    const displayDay = item.release_day ? `<p class="grid-date-day">${item.release_day}</p>` : '';
+        
+                    searchResults.innerHTML += `
+                    <a class="item" href="${item.link}">
+                        <div class="image"><img src="${item.image}"></div>
+                        <div class="title" title="${title}">${title}</div>
+                        <div class="platform ${item.platform}"></div>
+                        <div class="date">
+                            <p class="grid-date-year">${item.release_year}</p>
+                            ${displayMonth}
+                            ${displayDay}
+                        </div>
+                    </a>
+                    `;
+                });
             } catch (error) {
                 console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
             }
