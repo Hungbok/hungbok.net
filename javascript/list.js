@@ -28,24 +28,22 @@ async function paginateData(data, page) {
         // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        // 현재 페이지의 언어 코드를 가져옵니다.
-        const lang = document.documentElement.lang || "en";
-
-        for (const item of dataToDisplay) {
-            const detailDataUrl = `//data.hungbok.net/data/games/${item.url}.json`;
-            try {
-                
-                dataToDisplay.forEach(item => {
+        dataToDisplay.forEach(item => {
+            const lang = document.documentElement.lang || "en";
+    
+            for (const item of dataToDisplay) {
+                const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
+                try {
+                    const response = fetch(detailDataUrl);
+                    const detailData = response.json();
+                    const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
+                    const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
                     const monthNames = ["1", "2", "3", "4", "5", "6",
                                         "7", "8", "9", "10", "11", "12"];
         
                     const monthName = item.release_month ? monthNames[parseInt(item.release_month, 10) - 1] : '';
                     const displayMonth = monthName ? `<p class="grid-date-month">${monthName}</p>` : '';
                     const displayDay = item.release_day ? `<p class="grid-date-day">${item.release_day}</p>` : '';
-                    const response = fetch(detailDataUrl);
-                    const detailData = response.json();
-                    const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
-                    const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
         
                     searchResults.innerHTML += `
                     <a class="item" href="${item.link}">
@@ -59,11 +57,11 @@ async function paginateData(data, page) {
                         </div>
                     </a>
                     `;
-                });
-            } catch (error) {
-                console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
+                } catch (error) {
+                    console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
+                }
             }
-        }
+        });
 
         $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
         $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
