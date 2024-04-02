@@ -32,7 +32,7 @@ async function paginateData(data, page) {
             const lang = document.documentElement.lang || "en";
     
             for (const item of dataToDisplay) {
-                const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
+                const detailDataUrl = `//data.hungbok.net/data/games/${item.url}.json`;
                 try {
                     const response = fetch(detailDataUrl);
                     const detailData = response.json();
