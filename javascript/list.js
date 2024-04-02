@@ -28,30 +28,8 @@ async function paginateData(data, page) {
         // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
-        function generatePlatformHtml(platforms) {
-            const platformHtmlMappings = {
-                pc: '<div class="icon-pc" ttt="PC"></div>',
-                playstation: '<div class="icon-playstation" ttt="PlayStation"></div>',
-                xbox: '<div class="icon-xbox" ttt="Xbox"></div>',
-                nintendo: '<div class="icon-nintendo" ttt="Nintendo"></div>',
-                console: '<div class="icon-console" ttt="Console"></div>',
-                arcade: '<div class="icon-arcade" ttt="Arcade"></div>',
-                mobile: '<div class="icon-mobile" ttt="Mobile"></div>',
-                cloud: '<div class="icon-cloud" ttt="Cloud"></div>'
-            };
-        
-            let html = '';
-            const platformsArray = platforms.split(','); // 가정: platform 값이 쉼표로 구분되어 있다고 가정
-            platformsArray.forEach(platform => {
-                if(platformHtmlMappings[platform.trim()]) {
-                    html += platformHtmlMappings[platform.trim()];
-                }
-            });
-            return html;
-        }
-
-        (async function() {
-            const lang = document.documentElement.lang || "en";
+        (async function() { // 비동기 처리를 위한 즉시 실행 함수
+            const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
         
             for (const item of dataToDisplay) {
                 const monthNames = ["1", "2", "3", "4", "5", "6",
@@ -63,8 +41,6 @@ async function paginateData(data, page) {
         
                 let title = item.title; // 초기 제목 설정
                 const detailDataUrl = `//data.hungbok.net/data/games/${item.url}.json`;
-
-                const platformHtml = generatePlatformHtml(item.platform); // 플랫폼 HTML 생성
         
                 try {
                     const response = await fetch(detailDataUrl);
@@ -80,7 +56,7 @@ async function paginateData(data, page) {
                 <a class="item" href="${item.link}">
                     <div class="image"><img src="${item.image}"></div>
                     <div class="title" title="${title}">${title}</div>
-                    <div class="platform ${item.platform}">${platformHtml}</div>
+                    <div class="platform ${item.platform}"></div>
                     <div class="date">
                         <p class="grid-date-year">${item.release_year}</p>
                         ${displayMonth}
@@ -89,7 +65,16 @@ async function paginateData(data, page) {
                 </a>
                 `;
             }
+            $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
+            $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
+            $(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
+            $(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
+            $(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
+            $(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
+            $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');
         })();
+
     }
 }
 
