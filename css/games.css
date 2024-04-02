@@ -227,7 +227,7 @@
     transition: all 0.5s;
 }
 
-.slider-background:last-child(2) {
+.slider-background:nth-child(2) {
     position: relative;
     height: 100%;
     width: auto;
