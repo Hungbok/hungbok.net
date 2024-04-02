@@ -383,8 +383,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 5px solid transparent;
+    border: 0px solid transparent;
     border-radius: 20px;
+    pointer-events: none;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
