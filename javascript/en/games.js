@@ -76,8 +76,47 @@ $(document).ready(function(){
                 '{language}': data[0].language,
                 '{language_supported}': data[0].language_supported,
   
-                '{social}': data[0].social,
-                '{store}': data[0].store,
+                '{social_class1}': data[0].social_class1,
+                '{social_link1}': data[0].social_link1,
+                '{social_class2}': data[0].social_class2,
+                '{social_link2}': data[0].social_link2,
+                '{social_class3}': data[0].social_class3,
+                '{social_link3}': data[0].social_link3,
+                '{social_class4}': data[0].social_class4,
+                '{social_link4}': data[0].social_link4,
+                '{social_class5}': data[0].social_class5,
+                '{social_link5}': data[0].social_link5,
+                '{social_class6}': data[0].social_class6,
+                '{social_link6}': data[0].social_link6,
+                '{social_class7}': data[0].social_class7,
+                '{social_link7}': data[0].social_link7,
+                '{social_class8}': data[0].social_class8,
+                '{social_link8}': data[0].social_link8,
+                '{social_class9}': data[0].social_class9,
+                '{social_link9}': data[0].social_link9,
+                '{social_class10}': data[0].social_class10,
+                '{social_link10}': data[0].social_link10,
+
+                '{store_class1}': data[0].store_class1,
+                '{store_link1}': data[0].store_link1,
+                '{store_class2}': data[0].store_class2,
+                '{store_link2}': data[0].store_link2,
+                '{store_class3}': data[0].store_class3,
+                '{store_link3}': data[0].store_link3,
+                '{store_class4}': data[0].store_class4,
+                '{store_link4}': data[0].store_link4,
+                '{store_class5}': data[0].store_class5,
+                '{store_link5}': data[0].store_link5,
+                '{store_class6}': data[0].store_class6,
+                '{store_link6}': data[0].store_link6,
+                '{store_class7}': data[0].store_class7,
+                '{store_link7}': data[0].store_link7,
+                '{store_class8}': data[0].store_class8,
+                '{store_link8}': data[0].store_link8,
+                '{store_class9}': data[0].store_class9,
+                '{store_link9}': data[0].store_link9,
+                '{store_class10}': data[0].store_class10,
+                '{store_link10}': data[0].store_link10,
   
                 '{attention}': data[0].attention,
                 '{plot}': getLocalizedData(data[0], 'plot'),
@@ -129,7 +168,6 @@ $(document).ready(function(){
                 '{top_critic_average}': data[0].top_critic_average,
                 '{critics_recommend}': data[0].critics_recommend,
                 
-                '{system_requirements}': data[0].system_requirements,
                 '{system_requirements_tab1}': data[0].system_requirements_tab1,
                 '{system_requirements_tab2}': data[0].system_requirements_tab2,
                 '{system_requirements_tab3}': data[0].system_requirements_tab3,
@@ -145,6 +183,30 @@ $(document).ready(function(){
                 '{recommended_graphics}': data[0].recommended_graphics,
                 '{recommended_storage}': data[0].recommended_storage,
                 '{recommended_other}': data[0].recommended_other,
+                '{minimum_os2}': data[0].minimum_os2,
+                '{minimum_processor2}': data[0].minimum_processor2,
+                '{minimum_memory2}': data[0].minimum_memory2,
+                '{minimum_graphics2}': data[0].minimum_graphics2,
+                '{minimum_storage2}': data[0].minimum_storage2,
+                '{minimum_other2}': data[0].minimum_other2,
+                '{recommended_os2}': data[0].recommended_os2,
+                '{recommended_processor2}': data[0].recommended_processor2,
+                '{recommended_memory2}': data[0].recommended_memory2,
+                '{recommended_graphics2}': data[0].recommended_graphics2,
+                '{recommended_storage2}': data[0].recommended_storage2,
+                '{recommended_other2}': data[0].recommended_other2,
+                '{minimum_os3}': data[0].minimum_os3,
+                '{minimum_processor3}': data[0].minimum_processor3,
+                '{minimum_memory3}': data[0].minimum_memory3,
+                '{minimum_graphics3}': data[0].minimum_graphics3,
+                '{minimum_storage3}': data[0].minimum_storage3,
+                '{minimum_other3}': data[0].minimum_other3,
+                '{recommended_os3}': data[0].recommended_os3,
+                '{recommended_processor3}': data[0].recommended_processor3,
+                '{recommended_memory3}': data[0].recommended_memory3,
+                '{recommended_graphics3}': data[0].recommended_graphics3,
+                '{recommended_storage3}': data[0].recommended_storage3,
+                '{recommended_other3}': data[0].recommended_other3,
             };
             
             // body의 HTML 가져오기
@@ -216,516 +278,6 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>');
             });
-
-            // 틀 생성
-
-            // 소셜 const
-            const websiteurl = data[0].website;
-            const facebookurl = data[0].facebook;
-            const instagramurl = data[0].instagram;
-            const threadsurl = data[0].threads;
-            const twitterurl = data[0].twitter;
-            const waibourl = data[0].waibo;
-            const mastodonurl = data[0].mastodon;
-            const discordurl = data[0].discord;
-            const vkurl = data[0].vk;
-            const tumblrurl = data[0].tumblr;
-            const navercafeurl = data[0].navercafe;
-            const youtubeurl = data[0].youtube;
-            const twitchurl = data[0].twitch;
-            const tiktokurl = data[0].tiktok;
-            const douyinurl = data[0].douyin;
-            const niconicodougaurl = data[0].niconicodouga;
-            const bilibiliurl = data[0].bilibili;
-            const kakaotalkurl = data[0].kakaotalk;
-            const lineurl = data[0].line;
-            const whatsappurl = data[0].whatsapp;
-            const linkedinurl = data[0].linkedin;
-            const wikipediaurl = data[0].wikipedia;
-            const wikipediaenurl = data[0].wikipediaen;
-            const wikipediajaurl = data[0].wikipediaja;
-            const fandomurl = data[0].fandom;
-            const namuwikiurl = data[0].namuwiki;
-            const niconicodaihyakkaurl = data[0].niconicodaihyakka;
-            const pixivhyakkajitenurl = data[0].pixivhyakkajiten;
-            const baidubaikeurl = data[0].baidubaike;
-            const kickurl = data[0].kick;
-            const kakaostoryurl = data[0].kakaostory;
-            const telegramurl = data[0].telegram;
-            const snapchaturl = data[0].snapchat;
-            const wechaturl = data[0].wechat;
-            const qqurl = data[0].qq;
-            const redditurl = data[0].reddit;
-
-            // 소셜 링크
-
-            // https://www.example.com
-            $(".website").append('<div class="external-link" ttt="Official Website">'+
-                '<a class="external-link-button icon-website" href="' + websiteurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.facebook.com/FortniteGame
-            $(".facebook").append('<div class="external-link" ttt="facebook">'+
-                '<a class="external-link-button icon-facebook" href="https://www.facebook.com/' + facebookurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.instagram.com/rockstargames
-            $(".instagram").append('<div class="external-link" ttt="Instagram">'+
-                '<a class="external-link-button icon-instagram" href="https://www.instagram.com/' + instagramurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://x.com/CyberpunkGame
-            $(".x").append('<div class="external-link" ttt="X">'+
-                '<a class="external-link-button icon-x" href="https://x.com/' + twitterurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.threads.net/@rockstargames
-            $(".threads").append('<div class="external-link" ttt="Threads">'+
-                '<a class="external-link-button icon-threads" href="https://www.threads.net/' + threadsurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://weibo.com/ysmihoyo
-            $(".waibo").append('<div class="external-link" ttt="Weibo">'+
-                '<a class="external-link-button icon-waibo" href="https://weibo.com/' + waibourl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://mastodon.social/@SteamDB@infosec.exchange
-            $(".mastodon").append('<div class="external-link" ttt="Mastodon">'+
-                '<a class="external-link-button icon-mastodon" href="https://mastodon.social/' + mastodonurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://discord.gg/genshinimpact
-            $(".discord").append('<div class="external-link" ttt="Discord">'+
-                '<a class="external-link-button icon-discord" href="https://discord.gg/' + discordurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://vk.com/genshinimpact
-            $(".vk").append('<div class="external-link" ttt="VK">'+
-                '<a class="external-link-button icon-vk" href="https://vk.com/' + vkurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.tumblr.com/cyberpunkgame
-            $(".tumblr").append('<div class="external-link" ttt="Tumblr">'+
-                '<a class="external-link-button icon-tumblr" href="https://www.tumblr.com/' + tumblrurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://cafe.naver.com/genshin
-            $(".navercafe").append('<div class="external-link" ttt="Naver Cafe">'+
-                '<a class="external-link-button icon-navercafe" href="https://cafe.naver.com/' + navercafeurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.youtube.com/@CyberpunkGame
-            $(".youtube").append('<div class="external-link" ttt="YouTube">'+
-                '<a class="external-link-button icon-youtube" href="https://www.youtube.com/' + youtubeurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.twitch.tv/cdprojektred
-            $(".twitch").append('<div class="external-link" ttt="Twitch">'+
-                '<a class="external-link-button icon-twitch" href="https://www.twitch.tv/' + twitchurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://kick.com/ninja
-            $(".kick").append('<div class="external-link" ttt="Kick">'+
-                '<a class="external-link-button icon-kick" href="https://kick.com/' + kickurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.tiktok.com/@Xbox
-            $(".tiktok").append('<div class="external-link" ttt="TikTok">'+
-                '<a class="external-link-button icon-tiktok" href="https://www.tiktok.com/' + tiktokurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://v.douyin.com/iNkT3QN7/
-            $(".douyin").append('<div class="external-link" ttt="抖音">'+
-                '<a class="external-link-button icon-tiktok" href="https://v.douyin.com/' + douyinurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // http://www.nicovideo.jp/user/15426275
-            $(".niconicodouga").append('<div class="external-link" ttt="ニコニコ動画">'+
-                '<a class="external-link-button icon-niconicodouga" href="https://www.nicovideo.jp/user/' + niconicodougaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://space.bilibili.com/3461579184015582
-            $(".bilibili").append('<div class="external-link" ttt="bìlibìli">'+
-                '<a class="external-link-button icon-bilibili" href="https://space.bilibili.com/' + bilibiliurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://pf.kakao.com/_DzxjIb
-            $(".kakaotalk").append('<div class="external-link" ttt="KakaoTalk">'+
-                '<a class="external-link-button icon-kakaotalk" href="https://pf.kakao.com/' + kakaotalkurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://story.kakao.com/ch/nintendokorea
-            $(".kakaostory").append('<div class="external-link" ttt="KakaoStory">'+
-                '<a class="external-link-button icon-kakaostory" href="https://story.kakao.com/ch/' + kakaostoryurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://line.me/ti/p/@playstation
-            $(".line").append('<div class="external-link" ttt="LINE">'+
-                '<a class="external-link-button icon-line" href="https://line.me/ti/p/' + lineurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".telegram").append('<div class="external-link" ttt="Telegram">'+
-                '<a class="external-link-button icon-telegram" href="' + telegramurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".snapchat").append('<div class="external-link" ttt="Snapchat">'+
-                '<a class="external-link-button icon-snapchat" href="' + snapchaturl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.whatsapp.com/channel/0029Va4J1hI5a248Y7hu6A2Y
-            $(".whatsapp").append('<div class="external-link" ttt="WhatsApp">'+
-                '<a class="external-link-button icon-whatsapp" href="https://www.whatsapp.com/channel/' + whatsappurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".wechat").append('<div class="external-link" ttt="WeChat">'+
-                '<a class="external-link-button icon-wechat" href="' + wechaturl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".qq").append('<div class="external-link" ttt="QQ">'+
-                '<a class="external-link-button icon-qq" href="' + qqurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".reddit").append('<div class="external-link" ttt="reddit">'+
-                '<a class="external-link-button icon-reddit" href="' + redditurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.linkedin.com/company/iointeractive/
-            $(".linkedin").append('<div class="external-link" ttt="LinkedIn">'+
-                '<a class="external-link-button icon-linkedin" href="https://www.linkedin.com/company/' + linkedinurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://en.wikipedia.org/wiki/Counter-Strike
-            $(".wikipedia").append('<div class="external-link" ttt="Wikipedia">'+
-                '<a class="external-link-button icon-wikipedia" href="https://en.wikipedia.org/wiki/' + wikipediaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://en.wikipedia.org/wiki/Counter-Strike_2
-            $(".wikipediaen").append('<div class="external-link us" ttt="Wikipedia">'+
-                '<a class="external-link-button icon-wikipedia" href="https://en.wikipedia.org/wiki/' + wikipediaenurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://ja.wikipedia.org/wiki/カウンターストライク
-            $(".wikipediaja").append('<div class="external-link jp" ttt="Wikipedia">'+
-                '<a class="external-link-button icon-wikipedia" href="https://ja.wikipedia.org/wiki/' + wikipediajaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://counterstrike.fandom.com/
-            $(".fandom").append('<div class="external-link" ttt="FANDOM">'+
-                '<a class="external-link-button icon-fandom" href="https://' + fandomurl + '.fandom.com" target="_blank"></a>'+
-            '</div>');
-            
-            // https://namu.wiki/w/사이버펑크%202077
-            $(".namuwiki").append('<div class="external-link" ttt="나무위키">'+
-                '<a class="external-link-button icon-namuwiki" href="https://namu.wiki/w/' + namuwikiurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://dic.nicovideo.jp/a/steam
-            $(".niconicodaihyakka").append('<div class="external-link" ttt="ニコニコ大百科">'+
-                '<a class="external-link-button icon-niconicodaihyakka" href="https://dic.nicovideo.jp/a/' + niconicodaihyakkaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://dic.pixiv.net/a/Steam
-            $(".pixivhyakkajiten").append('<div class="external-link" ttt="ピクシブ百科事典">'+
-                '<a class="external-link-button icon-pixivhyakkajiten" href="https://dic.pixiv.net/a/' + pixivhyakkajitenurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://baike.baidu.com/item/Steam/10092959
-            $(".baidubaike").append('<div class="external-link" ttt="百度百科">'+
-                '<a class="external-link-button icon-baidubaike" href="https://baike.baidu.com/item/' + baidubaikeurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // ESD const
-            const steamurl = data[0].steam;
-            const epicgamesstoreurl = data[0].epicgamesstore;
-            const gogcomurl = data[0].gog;
-            const eaappurl = data[0].ea;
-            const ubisoftconnecturl = data[0].ubisoft;
-            const rockstargameslauncherurl = data[0].rockstargames;
-            const stoveurl = data[0].stove;
-            const metastoreurl = data[0].metastore;
-            const googleplayurl = data[0].googleplay;
-            const appstoreurl = data[0].appstore;
-            const galaxystoreurl = data[0].galaxystore;
-            const microsoftstoreurl = data[0].msstore;
-            const dmmgamesurl = data[0].dmm;
-            const dlsiteurl = data[0].dlsite;
-            const amazonlunaurl = data[0].amazonluna;
-            const geforcenowurl = data[0].geforcenow;
-            const xboxcloudgamingurl = data[0].xboxcloudgaming;
-            const stadiaurl = data[0].stadia;
-
-            // ESD 링크
-            $(".external-store-link.steam").append('<div class="external-link" ttt="Steam">'+
-                '<a class="external-link-button icon-steam" href="https://store.steampowered.com/app/' + steamurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.epicgamesstore").append('<div class="external-link" ttt="Epic Games Store">'+
-                '<a class="external-link-button icon-epicgamesstore" href="https://store.epicgames.com/p/' + epicgamesstoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.gog").append('<div class="external-link" ttt="GOG.com">'+
-                '<a class="external-link-button icon-gogcom" href="https://www.gog.com/game/' + gogcomurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.ea").append('<div class="external-link" ttt="EA">'+
-                '<a class="external-link-button icon-eaapp" href="https://www.ea.com/games/' + eaappurl + '/buy/pc" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.ubisoft").append('<div class="external-link" ttt="Ubisoft Store">'+
-                '<a class="external-link-button icon-ubisoftconnect" href="https://store.ubisoft.com/' + ubisoftconnecturl + '.html" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.msstore").append('<div class="external-link" ttt="Microsoft Store">'+
-                '<a class="external-link-button icon-microsoftstore" href="https://apps.microsoft.com/detail/' + microsoftstoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // battle.net
-            const battleneturl = data[0].battlenet;
-            const battlenetusurl = data[0].battlenetus;
-            const battleneteuurl = data[0].battleneteu;
-            const battlenetkrurl = data[0].battlenetkr;
-            const battlenettwurl = data[0].battlenettw;
-            $(".external-store-link.battlenet").append('<div class="external-link" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://shop.battle.net/product/' + battleneturl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.battlenetus").append('<div class="external-link region_001" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://us.shop.battle.net/product/' + battlenetusurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.battleneteu").append('<div class="external-link region_003" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://eu.shop.battle.net/product/' + battleneteuurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            $(".external-store-link.rockstargames").append('<div class="external-link" ttt="Rockstar Games Store">'+
-                '<a class="external-link-button icon-rockstargameslauncher" href="https://store.rockstargames.com/game/buy-' + rockstargameslauncherurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.stove").append('<div class="external-link" ttt="STOVE">'+
-                '<a class="external-link-button icon-stove" href="https://store.onstove.com/games/' + stoveurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.metastore").append('<div class="external-link" ttt="Meta Store">'+
-                '<a class="external-link-button icon-metastore" href="https://www.meta.com/experiences/' + metastoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.dmm").append('<div class="external-link" ttt="DMM GAMES">'+
-                '<a class="external-link-button icon-dmmgames" href="https://' + dmmgamesurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.dlsite").append('<div class="external-link" ttt="DLsite">'+
-                '<a class="external-link-button icon-dlsite" href="https://' + dlsiteurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // xbox store
-            const xboxgamesstoreurl = data[0].xboxstore;
-            const xboxgamesstorexbourl = data[0].xboxstorexbo;
-            const xboxgamesstorexsxurl = data[0].xboxstorexsx;
-            $(".external-store-link.xboxstore").append('<div class="external-link" ttt="Xbox Store">'+
-                '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstoreurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.xboxstorexbo").append('<div class="external-link" ttt="Xbox One | Xbox Store">'+
-                '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstorexbourl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.xboxstorexsx").append('<div class="external-link" ttt="Xbox Series X|S | Xbox Store">'+
-                '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstorexsxurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            // playstation store
-            const playstationstoreurl = data[0].psstore;
-            const playstationstoreps4url = data[0].psstoreps4;
-            const playstationstoreps5url = data[0].psstoreps5;
-            const playstationstorejpurl = data[0].psstorejp;
-            const playstationstorenaurl = data[0].psstorena;
-            const playstationstoreeuurl = data[0].psstoreeu;
-            const playstationstoreusurl = data[0].psstoreus;
-            const playstationstorecaurl = data[0].psstoreca;
-            const playstationstoremxurl = data[0].psstoremx;
-            const playstationstoreukurl = data[0].psstoreuk;
-            const playstationstorefrurl = data[0].psstorefr;
-            const playstationstoredeurl = data[0].psstorede;
-            const playstationstoreiturl = data[0].psstoreit;
-            const playstationstorenlurl = data[0].psstorenl;
-            const playstationstorebeurl = data[0].psstorebe;
-            const playstationstoreplurl = data[0].psstorepl;
-            const playstationstoreczurl = data[0].psstorecz;
-            const playstationstoreesurl = data[0].psstorees;
-            const playstationstorepturl = data[0].psstorept;
-            const playstationstorekrurl = data[0].psstorekr;
-            const playstationstorehkurl = data[0].psstorehk;
-            const playstationstoretwurl = data[0].psstoretw;
-            const playstationstoreauurl = data[0].psstoreau;
-            const playstationstorenzurl = data[0].psstorenz;
-            const playstationstorebrurl = data[0].psstorebr;
-            const playstationstorearurl = data[0].psstorear;
-            const playstationstorezaurl = data[0].psstoreza;
-            const playstationstoreuscamxurl = data[0].psstoreuscamx;
-            const playstationstoreukfrdeurl = data[0].psstoreukfrde;
-            const playstationstorekrhktwurl = data[0].psstorekrhktw;
-            const playstationstorehktwurl = data[0].psstorehktw;
-            const playstationstoreaunzurl = data[0].psstoreaunz;
-            const playstationstorebrarurl = data[0].psstorebrar;
-            const playstationstorenaeuurl = data[0].psstorenaeu;
-            const playstationstorenajpurl = data[0].psstorenajp;
-            $(".external-store-link.psstore").append('<div class="external-link" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreps4").append('<div class="external-link" ttt="PlayStation 4 | PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps4url + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreps5").append('<div class="external-link" ttt="PlayStation 5 | PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps5url + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstorenaeu").append('<div class="external-link region_901" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenaeuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstorenajp").append('<div class="external-link region_902" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenajpurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreuscamx").append('<div class="external-link region_701" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreuscamxurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreukfrde").append('<div class="external-link region_702" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreukfrdeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreaunz").append('<div class="external-link region_802" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreaunzurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstorena").append('<div class="external-link region_001" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreeu").append('<div class="external-link region_003" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreeuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreus").append('<div class="external-link region_101" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreusurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreca").append('<div class="external-link region_102" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorecaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreuk").append('<div class="external-link region_201" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreukurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.psstoreau").append('<div class="external-link region_401" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreauurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            // nintendo eshop
-            const nintendoeshopurl = data[0].eshop;
-            const nintendoeshopjpurl = data[0].eshopjp;
-            const nintendoeshopnaurl = data[0].eshopna;
-            const nintendoeshopeuurl = data[0].eshopeu;
-            const nintendoeshopusurl = data[0].eshopus;
-            const nintendoeshopcaurl = data[0].eshopca;
-            const nintendoeshopmxurl = data[0].eshopmx;
-            const nintendoeshopukurl = data[0].eshopuk;
-            const nintendoeshopfrurl = data[0].eshopfr;
-            const nintendoeshopdeurl = data[0].eshopde;
-            const nintendoeshopiturl = data[0].eshopit;
-            const nintendoeshopnlurl = data[0].eshopnl;
-            const nintendoeshopbeurl = data[0].eshopbe;
-            const nintendoeshopplurl = data[0].eshoppl;
-            const nintendoeshopczurl = data[0].eshopcz;
-            const nintendoeshopesurl = data[0].eshopes;
-            const nintendoeshoppturl = data[0].eshoppt;
-            const nintendoeshopkrurl = data[0].eshopkr;
-            const nintendoeshophkurl = data[0].eshophk;
-            const nintendoeshoptwurl = data[0].eshoptw;
-            const nintendoeshopauurl = data[0].eshopau;
-            const nintendoeshopnzurl = data[0].eshopnz;
-            const nintendoeshopbrurl = data[0].eshopbr;
-            const nintendoeshoparurl = data[0].eshopar;
-            const nintendoeshopzaurl = data[0].eshopza;
-            const nintendoeshopuscamxurl = data[0].eshopuscamx;
-            const nintendoeshopukfrdeurl = data[0].eshopukfrde;
-            const nintendoeshopkrhktwurl = data[0].eshopkrhktw;
-            const nintendoeshophktwurl = data[0].eshophktw;
-            const nintendoeshopaunzurl = data[0].eshopaunz;
-            const nintendoeshopbrarurl = data[0].eshopbrar;
-            const nintendoeshopnaeuurl = data[0].eshopnaeu;
-            const nintendoeshopnajpurl = data[0].eshopnajp;
-            $(".external-store-link.eshop").append('<div class="external-link" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopurl + '" target="_blank"></a>'+
-            '</div>');
-            // top multiple
-            $(".external-store-link.eshopnaeu").append('<div class="external-link region_901" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnaeuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.eshopnajp").append('<div class="external-link region_902" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnajpurl + '" target="_blank"></a>'+
-            '</div>');
-            // multiple
-            $(".external-store-link.eshopuscamx").append('<div class="external-link region_701" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopuscamxurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.eshopukfrde").append('<div class="external-link region_702" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopukfrdeurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.eshopaunz").append('<div class="external-link region_802" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopaunzurl + '" target="_blank"></a>'+
-            '</div>');
-            // top
-            $(".external-store-link.eshopna").append('<div class="external-link region_001" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.eshopeu").append('<div class="external-link region_003" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopeuurl + '" target="_blank"></a>'+
-            '</div>');
-            // na
-            $(".external-store-link.eshopus").append('<div class="external-link region_101" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopusurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".external-store-link.eshopca").append('<div class="external-link region_102" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/en-ca/store/products/' + nintendoeshopcaurl + '" target="_blank"></a>'+
-            '</div>');
-            // eu
-            $(".external-store-link.eshopuk").append('<div class="external-link region_201" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/GB/en/titles/' + nintendoeshopukurl + '" target="_blank"></a>'+
-            '</div>');
-            // oc
-            $(".external-store-link.eshopau").append('<div class="external-link region_401" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/AU/en/titles/' + nintendoeshopauurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            $(".external-store-link.googleplay").append('<div class="external-link" ttt="Google Play">'+
-                '<a class="external-link-button icon-googleplay" href="https://play.google.com/store/apps/details?id=' + googleplayurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.appstore").append('<div class="external-link" ttt="App Store">'+
-                '<a class="external-link-button icon-appstore" href="https://apps.apple.com/app/id' + appstoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".external-store-link.galaxystore").append('<div class="external-link" ttt="Galaxy Store">'+
-                '<a class="external-link-button icon-galaxystore" href="https://galaxystore.samsung.com/detail/' + galaxystoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://luna.amazon.com/detail/B0BTRVRN6M
-            $(".external-store-link.luna").append('<div class="external-link" ttt="Amazon Luna">'+
-                '<a class="external-link-button icon-amazonluna" href="https://luna.amazon.com/detail/' + amazonlunaurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://nvda.ws/3Qee2Mx
-            $(".external-store-link.geforcenow").append('<div class="external-link" ttt="GeForce NOW">'+
-                '<a class="external-link-button icon-geforcenow" href="https://nvda.ws/' + geforcenowurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.xbox.com/play/games/BT5P2X999VH2
-            $(".external-store-link.xboxcloud").append('<div class="external-link" ttt="Xbox Cloud Gaming">'+
-                '<a class="external-link-button icon-xboxcloudgaming" href="https://www.xbox.com/play/games/' + xboxcloudgamingurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://stadia.google.com/store/details/990ec302c2cd4ba7817cedcf633ab20frcp1/sku/7ac7671e9f4342bd8c55ca140cf94138p
-            $(".external-store-link.stadia").append('<div class="external-link" ttt="Stadia">'+
-                '<a class="external-link-button icon-stadia" href="https://stadia.google.com/store/details/' + stadiaurl + '" target="_blank"></a>'+
-            '</div>');
 
             // 얼리엑세스 틀
             $(".early-access").append('<p class="description-title">This Game is an Early Access Game.</p>'+
