@@ -82,17 +82,9 @@ div#calendar > div > div {
 }
 
 .calendar-item-background img {
-    height: auto;
-    width: 100%;
-    filter: blur(10px);
-    position: absolute;
-}
-
-.calendar-item-background img:nth-child(2) {
-    position: relative;
     height: 100%;
     width: auto;
-    filter: unset;
+    border-radius: 10px;
 }
 
 .calendar-item-info {

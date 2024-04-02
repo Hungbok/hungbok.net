@@ -127,7 +127,6 @@ if (year && season && monthRange) {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
               <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
-              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
               <div class="calendar-item-title">
@@ -154,7 +153,6 @@ if (year && season && monthRange) {
           } else if (mm === '13') {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
-              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
               <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
@@ -183,7 +181,6 @@ if (year && season && monthRange) {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
               <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
-              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">
               <div class="calendar-item-title">
@@ -211,7 +208,6 @@ if (year && season && monthRange) {
           } else {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
             <div class="calendar-item-background">
-              <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
               <img src="https://media.hungbok.net/image/games/${url}/hb_capsule.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg'">
             </div>
             <div class="calendar-item-info">

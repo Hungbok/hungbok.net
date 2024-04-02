@@ -197,8 +197,6 @@ div#calendar > div > div {
     aspect-ratio: 16 / 9;
     align-items: center;
     justify-content: center;
-    position: relative;
-    height: 100%;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -207,22 +205,13 @@ div#calendar > div > div {
 }
 
 .calendar-item-background img {
-    height: auto;
-    width: 100%;
-    position: absolute;
-    filter: blur(10px);
+    height: 100%;
+    border-radius: 10px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-.calendar-item-background img:nth-child(2) {
-    position: relative;
-    height: 100%;
-    width: auto;
-    filter: unset;
 }
 
 .calendar-item:hover .calendar-item-background img {
