@@ -484,6 +484,7 @@
     width: auto;
     height: 100%;
     position: absolute;
+    border-radius: 10px;
 }
 
 .info-table {
