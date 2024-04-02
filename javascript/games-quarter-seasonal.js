@@ -97,7 +97,7 @@ if (year && season && monthRange) {
           appendData(item, targetDayDiv);
         }
       });
-      
+
       async function appendData(item, parentDiv) {
         const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정 또는 기본값으로 "en"을 사용
       
@@ -115,6 +115,8 @@ if (year && season && monthRange) {
       
           var url = item.url || 'Unknown';
           var platform = item.platform || 'Unknown';
+          var dev = gameData[0][languageCode]?.info_developer || 'Unknown';
+          var pub = gameData[0][languageCode]?.info_publisher || 'Unknown';
       
           var dateParts = item.date.split('-');
           var yyyy = dateParts[0] || 'Unknown';
