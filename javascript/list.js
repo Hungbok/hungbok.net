@@ -54,7 +54,7 @@ async function paginateData(data, page) {
                 // HTML 요소에 데이터 추가하기
                 searchResults.innerHTML += `
                 <a class="item" href="${item.link}">
-                    <div class="image"><img src="${item.image}"></div>
+                    <div class="image"><img src="${item.image}" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'"></div>
                     <div class="title" title="${title}">${title}</div>
                     <div class="platform ${item.platform}"></div>
                     <div class="date">
