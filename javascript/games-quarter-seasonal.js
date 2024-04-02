@@ -109,14 +109,14 @@ if (year && season && monthRange) {
           // 현재 언어(lang)에 맞는 게임 데이터 찾기
           const itemLangData = gameData.find(d => d.hasOwnProperty(lang)) || gameData.find(d => d.hasOwnProperty("en"));
           const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+          const dev = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+          const pub = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
       
           var div = document.createElement('div');
           div.className = 'calendar-item';
       
           var url = item.url || 'Unknown';
           var platform = item.platform || 'Unknown';
-          var dev = gameData[0][languageCode]?.info_developer || 'Unknown';
-          var pub = gameData[0][languageCode]?.info_publisher || 'Unknown';
       
           var dateParts = item.date.split('-');
           var yyyy = dateParts[0] || 'Unknown';
