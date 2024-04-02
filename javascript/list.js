@@ -65,6 +65,7 @@ async function paginateData(data, page) {
                 </a>
                 `;
             }
+            
             $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
             $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
             $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');

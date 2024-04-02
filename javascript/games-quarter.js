@@ -97,29 +97,30 @@ if (year && season && monthRange) {
           appendData(item, targetDayDiv);
         }
       });
-    
-      // 데이터 출력 함수
-      function appendData(item, parentDiv) {
-        fetch('//data.hungbok.net/data/games/' + item.url + '.json')
-        .then(response => {
+
+      async function appendData(item, parentDiv) {
+        const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정 또는 기본값으로 "en"을 사용
+      
+        try {
+          const response = await fetch('//data.hungbok.net/data/games/' + item.url + '.json');
           if (!response.ok) throw new Error('Not Found');
-          return response.json();
-        })
-        .then(gameData => {
+          const gameData = await response.json();
+      
+          // 현재 언어(lang)에 맞는 게임 데이터 찾기
+          const itemLangData = gameData.find(d => d.hasOwnProperty(lang)) || gameData.find(d => d.hasOwnProperty("en"));
+          const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+      
           var div = document.createElement('div');
           div.className = 'calendar-item';
       
-          // 값이 없는 경우 'Unknown'으로 대체
           var url = item.url || 'Unknown';
           var platform = item.platform || 'Unknown';
-          var title = item.title || 'Unknown';
-
-          // yyyy, mm, dd 값 추가
+      
           var dateParts = item.date.split('-');
           var yyyy = dateParts[0] || 'Unknown';
           var mm = dateParts[1] || 'Unknown';
           var dd = dateParts[2] || 'Unknown';
-  
+      
           let template = '';
           if (dd === '32' && mm === '13') {
             template = `<a href="https://www.hungbok.com/games?q=${url}">
@@ -213,13 +214,13 @@ if (year && season && monthRange) {
             </div>
           </a>`; // 그 외의 경우의 템플릿
           }
-  
+      
           div.innerHTML = template;
           parentDiv.appendChild(div);
-        })
-        .catch(error => {
-          // '/games/[url값].json' 파일이 없는 경우
-        });
+        } catch (error) {
+          console.error('데이터를 불러오는 중 오류가 발생했습니다:', error);
+          // 오류 처리 로직
+        }
       }
     })
     .catch(error => {
