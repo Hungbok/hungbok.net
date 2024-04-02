@@ -458,13 +458,13 @@
     min-height: 200px;
     position: relative;
     align-items: center;
+    justify-content: center;
 }
 
 .key-art img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     position: absolute;
-    left: 0;
 }
 
 .info-table {
