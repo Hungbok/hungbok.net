@@ -1599,7 +1599,7 @@ div.opencritic-reviews {
     font-size: 14px;
 }
 
-.info-language-popup > div > p:not([class]) {
+.info-language-popup > div > p[class] {
     filter: brightness(0.25);
     background: url(//media.hungbok.net/image/icon/close.svg) no-repeat center / 20px 20px;
 }
