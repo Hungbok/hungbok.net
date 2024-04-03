@@ -30,11 +30,12 @@ async function paginateData(data, page) {
     } else {
         (async function() { // 비동기 처리를 위한 즉시 실행 함수
             const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
+            let htmlToAdd = ""; // 모든 데이터를 저장할 HTML 문자열 초기화
         
             for (const item of dataToDisplay) {
                 const monthNames = ["1", "2", "3", "4", "5", "6",
                                     "7", "8", "9", "10", "11", "12"];
-    
+        
                 const monthName = item.release_month ? monthNames[parseInt(item.release_month, 10) - 1] : '';
                 const displayMonth = monthName ? `<p class="grid-date-month">${monthName}</p>` : '';
                 const displayDay = item.release_day ? `<p class="grid-date-day">${item.release_day}</p>` : '';
@@ -51,8 +52,8 @@ async function paginateData(data, page) {
                     console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
                 }
         
-                // HTML 요소에 데이터 추가하기
-                searchResults.innerHTML += `
+                // HTML 문자열을 누적하여 추가
+                htmlToAdd += `
                 <a class="item" href="${item.link}">
                     <div class="image"><img src="${item.image}" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'"></div>
                     <div class="title" title="${title}">${title}</div>
@@ -65,6 +66,9 @@ async function paginateData(data, page) {
                 </a>
                 `;
             }
+            
+            // 루프가 끝난 후, 모든 HTML을 한 번에 추가
+            searchResults.innerHTML = htmlToAdd;
             
             $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
             $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
