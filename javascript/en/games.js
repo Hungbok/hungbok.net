@@ -60,6 +60,7 @@ $(document).ready(function(){
                 '{esd}': data[0].esd,
                 '{release_date}': getLocalizedData(data[0], 'release_date'),
                 '{engine}': getLocalizedData(data[0], 'engine'),
+                '{age_check}': data[0].age_check,
                 '{age}': data[0].age,
                 '{esrb}': data[0].esrb,
                 '{pegi}': data[0].pegi,
