@@ -6,7 +6,7 @@ async function loadAsyncScripts() {
     // 이미지 및 동영상 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/slick.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
-    await loadScript('//www.hungbok.net/javascript/en/error404.js');
+    await loadScript('//www.hungbok.net/javascript/fr/error404.js');
 }
 
 function loadScript(src) {
@@ -492,6 +492,75 @@ $(document).ready(function(){
             
             dataImportElements.forEach(function (element) {
                 updateElementWithData(element);
+            });
+            
+            $(document).ready(function() {
+            
+                // 쿠키를 설정하는 함수
+                function setCookie(name, value, hours) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+                    const expires = "expires=" + date.toUTCString();
+                    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+                }
+            
+                // 쿠키를 가져오는 함수
+                function getCookie(name) {
+                    const cname = name + "=";
+                    const decodedCookie = decodeURIComponent(document.cookie);
+                    const ca = decodedCookie.split(';');
+                    for (let i = 0; i < ca.length; i++) {
+                        let c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(cname) == 0) {
+                            return c.substring(cname.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+            
+                // 페이지 로드 시 실행되는 로직
+                if ($('body').hasClass('adult')) {
+                    const ageCheck = getCookie('agecheck');
+                    if (!ageCheck) {
+                        $('#warning').show();
+                    }
+                }
+            
+                // 나이 확인 버튼 클릭 이벤트
+                $('#age-checking').click(function() {
+                    const year = document.getElementById('age-check-year').value;
+                    const month = document.getElementById('age-check-month').value;
+                    const day = document.getElementById('age-check-day').value;
+                    const selectedDate = new Date(year, month, day);
+                    const today = new Date();
+                    const age = today.getFullYear() - selectedDate.getFullYear();
+            
+                    // 만약 사용자가 만 19세 이상이라면
+                    if (age >= 19) {
+                        setCookie('agecheck', 'success', 24);
+                        location.reload();
+                    } else {
+                        // 만 19세 미만이거나 나이를 확인할 수 없는 경우
+                        setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
+                        $('#warning').show(); // #warning 요소 보이기
+                        $('.age-check-container').remove(); // #warning 요소 숨기기
+                        $('#warning').append('<div id="child">Désolé, vous ne pouvez pas accéder à ce contenu.</div><a class="age-check-back" onclick="window.history.back()">Retourner</a>'); // #child 요소 추가
+                    }
+                });
+            
+                // 쿠키 'agecheck'의 값에 따라 초기 로직 처리
+                const ageCheck = getCookie('agecheck');
+                if (ageCheck === 'success') {
+                    $('body').removeClass('adult'); // 'adult' 클래스 제거
+                    $('#warning').remove(); // #warning 요소 숨기기
+                } else if (ageCheck === 'fail') {
+                    $('#warning').show(); // #warning 요소 보이기
+                    $('.age-check-container').remove(); // #warning 요소 숨기기
+                    $('#warning').append('<div id="child">Désolé, vous ne pouvez pas accéder à ce contenu.</div><a class="age-check-back" onclick="window.history.back()">Retourner</a>'); // #child 요소 추가
+                }
             });
         });
     } else {
@@ -1099,3 +1168,124 @@ changeTab({currentTarget: document.getElementsByClassName("more-info-tab")[0]}, 
 window.addEventListener('load', function() {
     loadAsyncScripts();
 });
+
+function completeYear(input) {
+    let yearValue = input.value;
+    if (yearValue.length === 2) {
+        // 입력된 연도가 2자리 숫자일 때
+        if (parseInt(yearValue) <= 30) {
+            input.value = '20' + yearValue;
+        } else if (parseInt(yearValue) >= 31) {
+            input.value = '19' + yearValue;
+        }
+    } else if (yearValue.length === 1) {
+        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+        input.value = '200' + yearValue;
+    } else if (yearValue.length === 4) {
+        // 입력된 연도가 3자리 숫자일 때 처리 로직 추가 가능
+        if (parseInt(yearValue) <= 1900) {
+            input.value = '1900';
+        } else if (parseInt(yearValue) >= 2030) {
+            input.value = '2030';
+        }
+    }
+    // 4자리 숫자일 때는 변경하지 않음
+    const year = document.getElementById('age-check-year').value;
+    const month = document.getElementById('age-check-month').value;
+    const day = document.getElementById('age-check-day').value;
+    const btn = document.getElementById('age-checking');
+
+    // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
+    if (year.length === 4 && month.length === 2 && day.length === 2) {
+        // 모든 필드가 채워져 있으면 버튼 활성화
+        btn.disabled = false;
+    } else {
+        // 하나라도 빈 필드가 있으면 버튼 비활성화
+        btn.disabled = true;
+    }
+}
+
+function completeMonth(input) {
+    let monthValue = input.value;
+    if (monthValue.length === 1) {
+        // 입력된 월 또는 일이 1자리 숫자일 때
+        if (parseInt(monthValue) <= 0) {
+            input.value = '01';
+        } else if (parseInt(monthValue) >= 1) {
+            input.value = '0' + monthValue;
+        }
+    } else if (monthValue.length === 2) {
+        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+        if (parseInt(monthValue) <= 0) {
+            input.value = monthValue;
+            input.value = '01';
+        }  else if (parseInt(monthValue) <= 12) {
+            input.value = monthValue;
+        } else if (parseInt(monthValue) >= 13) {
+            input.value = '12';
+        }
+    }
+    // 2자리 숫자일 때는 변경하지 않음
+    const year = document.getElementById('age-check-year').value;
+    const month = document.getElementById('age-check-month').value;
+    const day = document.getElementById('age-check-day').value;
+    const btn = document.getElementById('age-checking');
+
+    // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
+    if (year.length === 4 && month.length === 2 && day.length === 2) {
+        // 모든 필드가 채워져 있으면 버튼 활성화
+        btn.disabled = false;
+    } else {
+        // 하나라도 빈 필드가 있으면 버튼 비활성화
+        btn.disabled = true;
+    }
+}
+
+function completeDay(input) {
+    let dayValue = input.value;
+    if (dayValue.length === 1) {
+        // 입력된 월 또는 일이 1자리 숫자일 때
+        if (parseInt(dayValue) <= 0) {
+            input.value = '01';
+        } else if (parseInt(dayValue) >= 1) {
+            input.value = '0' + dayValue;
+        }
+    } else if (dayValue.length === 2) {
+        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+        if (parseInt(dayValue) <= 0) {
+            input.value = '01';
+        } else if (parseInt(dayValue) <= 31) {
+            input.value = dayValue;
+        } else if (parseInt(dayValue) >= 32) {
+            input.value = '31';
+        }
+    }
+    // 2자리 숫자일 때는 변경하지 않음
+    const year = document.getElementById('age-check-year').value;
+    const month = document.getElementById('age-check-month').value;
+    const day = document.getElementById('age-check-day').value;
+    const btn = document.getElementById('age-checking');
+
+    // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
+    if (year.length === 4 && month.length === 2 && day.length === 2) {
+        // 모든 필드가 채워져 있으면 버튼 활성화
+        btn.disabled = false;
+    } else {
+        // 하나라도 빈 필드가 있으면 버튼 비활성화
+        btn.disabled = true;
+    }
+}
+
+function moveFocusToNextInput(input, requiredLength) {
+    if (input.value.length === requiredLength) {
+        // 다음 입력 필드로 포커스 이동
+        let next = input.nextElementSibling;
+        // 다음 요소가 input 요소인지 확인하고, 아니면 그 다음 요소를 찾음
+        while (next && next.tagName !== 'INPUT') {
+            next = next.nextElementSibling;
+        }
+        if (next) {
+            next.focus();
+        }
+    }
+}
