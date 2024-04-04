@@ -92,7 +92,7 @@ body.adult > main > .top-backgrounds > div {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 50px;
-    margin: 0px 10px;
+    margin: 20px 10px 0px;
     cursor: pointer;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
