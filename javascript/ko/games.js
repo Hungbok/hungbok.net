@@ -602,18 +602,22 @@ $(document).ready(function(){
             }
             
             function completeMonth(input) {
-                let value = input.value;
-                if (value.length === 1) {
+                let monthValue = input.value;
+                if (monthValue.length === 1) {
                     // 입력된 월 또는 일이 1자리 숫자일 때
-                    if (parseInt(yearValue) <= 0) {
+                    if (parseInt(monthValue) <= 0) {
                         input.value = '01';
-                    } else if (parseInt(yearValue) >= 1) {
+                    } else if (parseInt(monthValue) >= 1) {
                         input.value = '0' + value;
                     }
-                } else if (yearValue.length === 2) {
+                } else if (monthValue.length === 2) {
                     // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-                    if (parseInt(yearValue) <= 12) {
-                    } else if (parseInt(yearValue) >= 13) {
+                    if (parseInt(monthValue) <= 0) {
+                        input.value = monthValue;
+                        input.value = '01';
+                    } else if (parseInt(monthValue) <= 12) {
+                        input.value = monthValue;
+                    } else if (parseInt(monthValue) >= 13) {
                         input.value = '12';
                     }
                 }
@@ -634,18 +638,21 @@ $(document).ready(function(){
             }
             
             function completeDay(input) {
-                let value = input.value;
-                if (value.length === 1) {
+                let dayValue = input.value;
+                if (dayValue.length === 1) {
                     // 입력된 월 또는 일이 1자리 숫자일 때
-                    if (parseInt(yearValue) <= 0) {
+                    if (parseInt(dayValue) <= 0) {
                         input.value = '01';
-                    } else if (parseInt(yearValue) >= 1) {
+                    } else if (parseInt(dayValue) >= 1) {
                         input.value = '0' + value;
                     }
-                } else if (yearValue.length === 2) {
+                } else if (dayValue.length === 2) {
                     // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-                    if (parseInt(yearValue) <= 31) {
-                    } else if (parseInt(yearValue) >= 32) {
+                    if (parseInt(dayValue) <= 0) {
+                        input.value = '01';
+                    } else if (parseInt(dayValue) <= 31) {
+                        input.value = dayValue;
+                    } else if (parseInt(dayValue) >= 32) {
                         input.value = '31';
                     }
                 }
