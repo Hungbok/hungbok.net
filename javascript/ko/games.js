@@ -1215,7 +1215,7 @@ function completeMonth(input) {
             input.value = monthValue;
             input.value = '01';
         } else if (parseInt(monthValue) <= 9) {
-            input.value = '0' + value;
+            input.value = '0' + monthValue;
         }  else if (parseInt(monthValue) <= 12) {
             input.value = monthValue;
         } else if (parseInt(monthValue) >= 13) {
@@ -1226,7 +1226,7 @@ function completeMonth(input) {
         if (parseInt(monthValue) <= 0) {
             input.value = '01';
         } else if (parseInt(monthValue) >= 1) {
-            input.value = '0' + value;
+            input.value = '0' + monthValue;
         }
     }
     // 2자리 숫자일 때는 변경하지 않음
@@ -1252,7 +1252,7 @@ function completeDay(input) {
         if (parseInt(dayValue) <= 0) {
             input.value = '01';
         } else if (parseInt(monthValue) <= 9) {
-            input.value = '0' + value;
+            input.value = '0' + dayValue;
         } else if (parseInt(dayValue) <= 31) {
             input.value = dayValue;
         } else if (parseInt(dayValue) >= 32) {
@@ -1263,7 +1263,7 @@ function completeDay(input) {
         if (parseInt(dayValue) <= 0) {
             input.value = '01';
         } else if (parseInt(dayValue) >= 1) {
-            input.value = '0' + value;
+            input.value = '0' + dayValue;
         }
     }
     // 2자리 숫자일 때는 변경하지 않음
