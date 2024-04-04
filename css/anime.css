@@ -110,12 +110,20 @@
 
 /* middle */
 
-.middle-content {
+.slider-middle-content {
     min-height: 447.5px;
     display: block;
     padding: 40px;
 }
 
+.middle-content {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 640px auto;
+    column-gap: 40px;
+    row-gap: 20px;
+    padding: 40px;
+}
 /* top path & title */
 
 .content-name {
