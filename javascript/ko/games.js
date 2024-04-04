@@ -493,6 +493,77 @@ $(document).ready(function(){
             dataImportElements.forEach(function (element) {
                 updateElementWithData(element);
             });
+            
+            $(document).ready(function() {
+            
+                // 쿠키를 설정하는 함수
+                function setCookie(name, value, hours) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+                    const expires = "expires=" + date.toUTCString();
+                    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+                }
+            
+                // 쿠키를 가져오는 함수
+                function getCookie(name) {
+                    const cname = name + "=";
+                    const decodedCookie = decodeURIComponent(document.cookie);
+                    const ca = decodedCookie.split(';');
+                    for (let i = 0; i < ca.length; i++) {
+                        let c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                            c = c.substring(1);
+                        }
+                        if (c.indexOf(cname) == 0) {
+                            return c.substring(cname.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+            
+                // 페이지 로드 시 실행되는 로직
+                if ($('body').hasClass('adult')) {
+                    const ageCheck = getCookie('agecheck');
+                    if (!ageCheck) {
+                        $('#warning').show();
+                    }
+                }
+            
+                // 나이 확인 버튼 클릭 이벤트
+                $('#age-checking').click(function() {
+                    const year = document.getElementById('age-check-year').value;
+                    const month = document.getElementById('age-check-month').value;
+                    const day = document.getElementById('age-check-day').value;
+                    const selectedDate = new Date(year, month, day);
+                    const today = new Date();
+                    const age = today.getFullYear() - selectedDate.getFullYear();
+                    const m = today.getMonth() - selectedDate.getMonth();
+            
+                    // 만약 사용자가 만 19세 이상이라면
+                    if (age >= 19) {
+                        setCookie('agecheck', 'success', 24); // 'agecheck' 쿠키를 'success'로 설정하고, 24시간 동안 유지
+                        $('body').removeClass('adult'); // 'adult' 클래스를 body에서 제거
+                        $('#warning').remove(); // #warning 요소 숨기기
+                    } else {
+                        // 만 19세 미만이거나 나이를 확인할 수 없는 경우
+                        setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
+                        $('#warning').show(); // #warning 요소 보이기
+                        $('.age-check-container').remove(); // #warning 요소 숨기기
+                        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
+                    }
+                });
+            
+                // 쿠키 'agecheck'의 값에 따라 초기 로직 처리
+                const ageCheck = getCookie('agecheck');
+                if (ageCheck === 'success') {
+                    $('body').removeClass('adult'); // 'adult' 클래스 제거
+                    $('#warning').remove(); // #warning 요소 숨기기
+                } else if (ageCheck === 'fail') {
+                    $('#warning').show(); // #warning 요소 보이기
+                    $('.age-check-container').remove(); // #warning 요소 숨기기
+                    $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
+                }
+            });
         });
     } else {
         $('body').addClass('en');
@@ -1098,77 +1169,6 @@ changeTab({currentTarget: document.getElementsByClassName("more-info-tab")[0]}, 
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
-});
-            
-$(document).ready(function() {
-
-    // 쿠키를 설정하는 함수
-    function setCookie(name, value, hours) {
-        const date = new Date();
-        date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
-        const expires = "expires=" + date.toUTCString();
-        document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
-
-    // 쿠키를 가져오는 함수
-    function getCookie(name) {
-        const cname = name + "=";
-        const decodedCookie = decodeURIComponent(document.cookie);
-        const ca = decodedCookie.split(';');
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(cname) == 0) {
-                return c.substring(cname.length, c.length);
-            }
-        }
-        return "";
-    }
-
-    // 페이지 로드 시 실행되는 로직
-    if ($('body').hasClass('adult')) {
-        const ageCheck = getCookie('agecheck');
-        if (!ageCheck) {
-            $('#warning').show();
-        }
-    }
-
-    // 나이 확인 버튼 클릭 이벤트
-    $('#age-checking').click(function() {
-        const year = document.getElementById('age-check-year').value;
-        const month = document.getElementById('age-check-month').value;
-        const day = document.getElementById('age-check-day').value;
-        const selectedDate = new Date(year, month, day);
-        const today = new Date();
-        const age = today.getFullYear() - selectedDate.getFullYear();
-        const m = today.getMonth() - selectedDate.getMonth();
-
-        // 만약 사용자가 만 19세 이상이라면
-        if (age >= 19) {
-            setCookie('agecheck', 'success', 24); // 'agecheck' 쿠키를 'success'로 설정하고, 24시간 동안 유지
-            $('body').removeClass('adult'); // 'adult' 클래스를 body에서 제거
-            $('#warning').remove(); // #warning 요소 숨기기
-        } else {
-            // 만 19세 미만이거나 나이를 확인할 수 없는 경우
-            setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
-            $('#warning').show(); // #warning 요소 보이기
-            $('.age-check-container').remove(); // #warning 요소 숨기기
-            $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
-        }
-    });
-
-    // 쿠키 'agecheck'의 값에 따라 초기 로직 처리
-    const ageCheck = getCookie('agecheck');
-    if (ageCheck === 'success') {
-        $('body').removeClass('adult'); // 'adult' 클래스 제거
-        $('#warning').remove(); // #warning 요소 숨기기
-    } else if (ageCheck === 'fail') {
-        $('#warning').show(); // #warning 요소 보이기
-        $('.age-check-container').remove(); // #warning 요소 숨기기
-        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
-    }
 });
 
 function completeYear(input) {
