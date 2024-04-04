@@ -537,13 +537,11 @@ $(document).ready(function(){
                     const selectedDate = new Date(year, month, day);
                     const today = new Date();
                     const age = today.getFullYear() - selectedDate.getFullYear();
-                    const m = today.getMonth() - selectedDate.getMonth();
             
                     // 만약 사용자가 만 19세 이상이라면
                     if (age >= 19) {
-                        setCookie('agecheck', 'success', 24); // 'agecheck' 쿠키를 'success'로 설정하고, 24시간 동안 유지
-                        $('body').removeClass('adult'); // 'adult' 클래스를 body에서 제거
-                        $('#warning').remove(); // #warning 요소 숨기기
+                        setCookie('agecheck', 'success', 24);
+                        location.reload();
                     } else {
                         // 만 19세 미만이거나 나이를 확인할 수 없는 경우
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
