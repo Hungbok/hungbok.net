@@ -7,6 +7,7 @@ body.adult > main > .section {
 body.adult > main > .top-backgrounds {
     filter: blur(100px);
     height: 100%;
+    top: 0;
 }
 
 body.adult > main > .top-backgrounds > div {
@@ -17,6 +18,12 @@ body.adult > main > .top-backgrounds > div {
 #warning {
     z-index: 1;
     position: relative;
+    height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 /* top background image */
@@ -28,6 +35,11 @@ body.adult > main > .top-backgrounds > div {
     position: absolute;
     transform: translate(0px, -90px);
     pointer-events: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .top-backgrounds:after {
