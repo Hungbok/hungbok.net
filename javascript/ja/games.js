@@ -1119,7 +1119,7 @@ function showError(image) {
         .then(data => {
             // 'title'값을 가져와서 div에 설정
             var div = document.createElement('div');
-            div.innerHTML = data[0]['ja'].title;
+            div.innerHTML = getLocalizedData(data[0], 'title');
 
             // 기존 이미지 대신 div 삽입
             image.parentNode.insertBefore(div, image);
