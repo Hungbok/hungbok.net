@@ -1,11 +1,12 @@
 async function loadAsyncScripts() {
     // 동영상 팝업 재생
-    await loadScript('/www.hungbok.net/javascript/youtube-popup.js');
+    await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
-    await loadScript('/www.hungbok.net/javascript/lightbox.js');
+    await loadScript('//www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
-    await loadScript('/www.hungbok.net/javascript/slick.js');
-    await loadScript('/www.hungbok.net/javascript/html_loader.js');
+    await loadScript('//www.hungbok.net/javascript/slick.js');
+    await loadScript('//www.hungbok.net/javascript/html_loader.js');
+    await loadScript('//www.hungbok.net/javascript/en/error404.js');
 }
 
 function loadScript(src) {
@@ -19,73 +20,218 @@ function loadScript(src) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function(){
     // 파라미터에서 'q' 값을 가져옴
     const params = new URLSearchParams(window.location.search);
     const queryParam = params.get("q");
     
     if (queryParam) {
         // JSON 파일 가져오기
-        $.getJSON(`/data.hungbok.net/data/anime/${queryParam}.json`, function (data) {
+        $.getJSON(`//data.hungbok.net/data/anime/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
+        
+            // en 또는 ko 데이터에 접근하는 함수
+            function getLocalizedData(data, key) {
+                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+            }
 
-            $("#page_title").text(data.title + ' | HungBok');
-            $('body').addClass('body-' + data.type);
+            $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
+            $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang'));
+            $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
+    
 
-            document.body.innerHTML = document.body.innerHTML.replace(/{title}/g, data.title);
-            document.body.innerHTML = document.body.innerHTML.replace(/{developer}/g, data.developer);
-            document.body.innerHTML = document.body.innerHTML.replace(/{more_developer}/g, data.more_developer);
-            document.body.innerHTML = document.body.innerHTML.replace(/{publisher}/g, data.publisher);
-            document.body.innerHTML = document.body.innerHTML.replace(/{more_publisher}/g, data.more_publisher);
-            document.body.innerHTML = document.body.innerHTML.replace(/{platform}/g, data.platform);
-            document.body.innerHTML = document.body.innerHTML.replace(/{release}/g, data.release);
+            // 대체할 값들을 저장한 객체
+            var replacement = {
+                '{type}': data[0].type,
+                '{title}': getLocalizedData(data[0], 'title'),
+                '{developer}': data[0].developer,
+                '{info_developer}': getLocalizedData(data[0], 'info_developer'),
+                '{publisher}': data[0].publisher,
+                '{info_publisher}': getLocalizedData(data[0], 'info_publisher'),
+                '{platform}': data[0].platform,
+                '{release}': getLocalizedData(data[0], 'release'),
+                '{genre}': getLocalizedData(data[0], 'genre'),
+                '{mode}': getLocalizedData(data[0], 'mode'),
+                '{franchise}': getLocalizedData(data[0], 'franchise'),
+  
+                '{pc}': data[0].pc,
+                '{console}': data[0].console,
+                '{mobile}': data[0].mobile,
+                '{esd}': data[0].esd,
+                '{release_date}': getLocalizedData(data[0], 'release_date'),
+                '{engine}': getLocalizedData(data[0], 'engine'),
+                '{age}': data[0].age,
+                '{esrb}': data[0].esrb,
+                '{pegi}': data[0].pegi,
+                '{iarc}': data[0].iarc,
+                '{cero}': data[0].cero,
+                '{grac}': data[0].grac,
+                '{usk}': data[0].usk,
+                '{acb}': data[0].acb,
+                '{gsrr}': data[0].gsrr,
+                '{rars}': data[0].rars,
+                '{classind}': data[0].classind,
+                '{appstoreage}': data[0].appstoreage,
+  
+                '{language}': data[0].language,
+                '{language_supported}': data[0].language_supported,
+  
+                '{social_class1}': data[0].social_class1,
+                '{social_link1}': data[0].social_link1,
+                '{social_class2}': data[0].social_class2,
+                '{social_link2}': data[0].social_link2,
+                '{social_class3}': data[0].social_class3,
+                '{social_link3}': data[0].social_link3,
+                '{social_class4}': data[0].social_class4,
+                '{social_link4}': data[0].social_link4,
+                '{social_class5}': data[0].social_class5,
+                '{social_link5}': data[0].social_link5,
+                '{social_class6}': data[0].social_class6,
+                '{social_link6}': data[0].social_link6,
+                '{social_class7}': data[0].social_class7,
+                '{social_link7}': data[0].social_link7,
+                '{social_class8}': data[0].social_class8,
+                '{social_link8}': data[0].social_link8,
+                '{social_class9}': data[0].social_class9,
+                '{social_link9}': data[0].social_link9,
+                '{social_class10}': data[0].social_class10,
+                '{social_link10}': data[0].social_link10,
 
-            document.body.innerHTML = document.body.innerHTML.replace(/{pc}/g, data.pc);
-            document.body.innerHTML = document.body.innerHTML.replace(/{console}/g, data.console);
-            document.body.innerHTML = document.body.innerHTML.replace(/{mobile}/g, data.mobile);
-            document.body.innerHTML = document.body.innerHTML.replace(/{esd}/g, data.esd);
-            document.body.innerHTML = document.body.innerHTML.replace(/{release_date}/g, data.release_date);
-            document.body.innerHTML = document.body.innerHTML.replace(/{engine}/g, data.engine);
-            document.body.innerHTML = document.body.innerHTML.replace(/{age}/g, data.age);
-            document.body.innerHTML = document.body.innerHTML.replace(/{esrb}/g, data.esrb);
-            document.body.innerHTML = document.body.innerHTML.replace(/{pegi}/g, data.pegi);
-            document.body.innerHTML = document.body.innerHTML.replace(/{iarc}/g, data.iarc);
-            document.body.innerHTML = document.body.innerHTML.replace(/{cero}/g, data.cero);
-            document.body.innerHTML = document.body.innerHTML.replace(/{grac}/g, data.grac);
-            document.body.innerHTML = document.body.innerHTML.replace(/{usk}/g, data.usk);
-            document.body.innerHTML = document.body.innerHTML.replace(/{acb}/g, data.acb);
-            document.body.innerHTML = document.body.innerHTML.replace(/{gsrr}/g, data.gsrr);
-            document.body.innerHTML = document.body.innerHTML.replace(/{rars}/g, data.rars);
-            document.body.innerHTML = document.body.innerHTML.replace(/{classind}/g, data.classind);
-            document.body.innerHTML = document.body.innerHTML.replace(/{appstoreage}/g, data.appstoreage);
+                '{store_class1}': data[0].store_class1,
+                '{store_link1}': data[0].store_link1,
+                '{store_class2}': data[0].store_class2,
+                '{store_link2}': data[0].store_link2,
+                '{store_class3}': data[0].store_class3,
+                '{store_link3}': data[0].store_link3,
+                '{store_class4}': data[0].store_class4,
+                '{store_link4}': data[0].store_link4,
+                '{store_class5}': data[0].store_class5,
+                '{store_link5}': data[0].store_link5,
+                '{store_class6}': data[0].store_class6,
+                '{store_link6}': data[0].store_link6,
+                '{store_class7}': data[0].store_class7,
+                '{store_link7}': data[0].store_link7,
+                '{store_class8}': data[0].store_class8,
+                '{store_link8}': data[0].store_link8,
+                '{store_class9}': data[0].store_class9,
+                '{store_link9}': data[0].store_link9,
+                '{store_class10}': data[0].store_class10,
+                '{store_link10}': data[0].store_link10,
+  
+                '{attention}': data[0].attention,
+                '{plot}': getLocalizedData(data[0], 'plot'),
+                '{description}': getLocalizedData(data[0], 'description'),
+                '{source}': getLocalizedData(data[0], 'source'),
+                '{update}': getLocalizedData(data[0], 'update'),
+  
+                '{url}': data[0].url,
+                '{share}': data[0].share,
+                '{page}': data[0].page,
+                '{logo}': data[0].logo,
+                '{capsule}': data[0].capsule,
+                '{poster}': data[0].poster,
+                '{thumbnail}': data[0].thumbnail,
+                '{franchise1}': data[0].franchise1,
+                '{franchise2}': data[0].franchise2,
+                '{franchise3}': data[0].franchise3,
+                '{franchise4}': data[0].franchise4,
+                '{franchise5}': data[0].franchise5,
 
-            document.body.innerHTML = document.body.innerHTML.replace(/{social}/g, data.social);
-            document.body.innerHTML = document.body.innerHTML.replace(/{store}/g, data.store);
-
-            document.body.innerHTML = document.body.innerHTML.replace(/{attention}/g, data.attention);
-            document.body.innerHTML = document.body.innerHTML.replace(/{plot}/g, data.plot);
-            document.body.innerHTML = document.body.innerHTML.replace(/{ptext}/g, data.ptext);
-            document.body.innerHTML = document.body.innerHTML.replace(/{source}/g, data.source);
-            document.body.innerHTML = document.body.innerHTML.replace(/{update}/g, data.update);
-
-            document.body.innerHTML = document.body.innerHTML.replace(/{url}/g, data.url);
-            document.body.innerHTML = document.body.innerHTML.replace(/{franchise1}/g, data.franchise1);
-            document.body.innerHTML = document.body.innerHTML.replace(/{franchise2}/g, data.franchise2);
-            document.body.innerHTML = document.body.innerHTML.replace(/{franchise3}/g, data.franchise3);
-            document.body.innerHTML = document.body.innerHTML.replace(/{franchise4}/g, data.franchise4);
-            document.body.innerHTML = document.body.innerHTML.replace(/{franchise5}/g, data.franchise5);
+                '{review}': data[0].review,
+                '{metacritic}': data[0].metacritic,
+                '{opencritic}': data[0].opencritic,
+                '{metacritic1}': data[0].metacritic1,
+                '{metacritic2}': data[0].metacritic2,
+                '{metacritic3}': data[0].metacritic3,
+                '{metacritic4}': data[0].metacritic4,
+                '{metacritic5}': data[0].metacritic5,
+                '{metacritic6}': data[0].metacritic6,
+                '{metacritic7}': data[0].metacritic7,
+                '{metacritic8}': data[0].metacritic8,
+                '{metacritic9}': data[0].metacritic9,
+                '{metacritic10}': data[0].metacritic10,
+                '{metacritic11}': data[0].metacritic11,
+                '{metacritic12}': data[0].metacritic12,
+                '{metacritic_class1}': data[0].metacritic_class1,
+                '{metacritic_class2}': data[0].metacritic_class2,
+                '{metacritic_class3}': data[0].metacritic_class3,
+                '{metacritic_class4}': data[0].metacritic_class4,
+                '{metacritic_class5}': data[0].metacritic_class5,
+                '{metacritic_class6}': data[0].metacritic_class6,
+                '{metacritic_class7}': data[0].metacritic_class7,
+                '{metacritic_class8}': data[0].metacritic_class8,
+                '{metacritic_class9}': data[0].metacritic_class9,
+                '{metacritic_class10}': data[0].metacritic_class10,
+                '{metacritic_class11}': data[0].metacritic_class11,
+                '{metacritic_class12}': data[0].metacritic_class12,
+                '{opencritic_rating}': data[0].opencritic_rating,
+                '{top_critic_average}': data[0].top_critic_average,
+                '{critics_recommend}': data[0].critics_recommend,
+                
+                '{system_requirements_tab1}': data[0].system_requirements_tab1,
+                '{system_requirements_tab2}': data[0].system_requirements_tab2,
+                '{system_requirements_tab3}': data[0].system_requirements_tab3,
+                '{minimum_os}': data[0].minimum_os,
+                '{minimum_processor}': data[0].minimum_processor,
+                '{minimum_memory}': data[0].minimum_memory,
+                '{minimum_graphics}': data[0].minimum_graphics,
+                '{minimum_storage}': data[0].minimum_storage,
+                '{minimum_other}': data[0].minimum_other,
+                '{recommended_os}': data[0].recommended_os,
+                '{recommended_processor}': data[0].recommended_processor,
+                '{recommended_memory}': data[0].recommended_memory,
+                '{recommended_graphics}': data[0].recommended_graphics,
+                '{recommended_storage}': data[0].recommended_storage,
+                '{recommended_other}': data[0].recommended_other,
+                '{minimum_os2}': data[0].minimum_os2,
+                '{minimum_processor2}': data[0].minimum_processor2,
+                '{minimum_memory2}': data[0].minimum_memory2,
+                '{minimum_graphics2}': data[0].minimum_graphics2,
+                '{minimum_storage2}': data[0].minimum_storage2,
+                '{minimum_other2}': data[0].minimum_other2,
+                '{recommended_os2}': data[0].recommended_os2,
+                '{recommended_processor2}': data[0].recommended_processor2,
+                '{recommended_memory2}': data[0].recommended_memory2,
+                '{recommended_graphics2}': data[0].recommended_graphics2,
+                '{recommended_storage2}': data[0].recommended_storage2,
+                '{recommended_other2}': data[0].recommended_other2,
+                '{minimum_os3}': data[0].minimum_os3,
+                '{minimum_processor3}': data[0].minimum_processor3,
+                '{minimum_memory3}': data[0].minimum_memory3,
+                '{minimum_graphics3}': data[0].minimum_graphics3,
+                '{minimum_storage3}': data[0].minimum_storage3,
+                '{minimum_other3}': data[0].minimum_other3,
+                '{recommended_os3}': data[0].recommended_os3,
+                '{recommended_processor3}': data[0].recommended_processor3,
+                '{recommended_memory3}': data[0].recommended_memory3,
+                '{recommended_graphics3}': data[0].recommended_graphics3,
+                '{recommended_storage3}': data[0].recommended_storage3,
+                '{recommended_other3}': data[0].recommended_other3,
+            };
+            
+            // body의 HTML 가져오기
+            var htmlContent = document.body.innerHTML;
+            
+            // 각 키에 대응하는 값을 대체
+            for (var key in replacement) {
+              var re = new RegExp(key, 'g');
+              htmlContent = htmlContent.replace(re, replacement[key]);
+            }
+            
+            // 변경된 HTML 설정
+            document.body.innerHTML = htmlContent;
 
             // 통합 const
-            const url = data.url;
+            const url = data[0].url;
     
             // 반복생성
 
-            var video_value = data.videocount; // video 수
+            var video_value = data[0].videocount; // video 수
             var videoData = [];
             for (var i = 1; i <= video_value; i++) {
-                var videoId = data['videoid' + i];
-                var videoTitle = data['videotitle' + i];
-                var videoServer = data['videoserver' + i];
+                var videoId = data[0]['videoid' + i];
+                var videoTitle = getLocalizedData(data[0], 'videotitle' + i);
+                var videoServer = data[0]['videoserver' + i];
                 videoData.push({
                     id: videoId,
                     title: videoTitle,
@@ -94,15 +240,22 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             // video 생성
             videoData.forEach(function(item) {
-                $(".slider").append('<div class="slider-item">'+
+                $(".slider-main").append('<div class="slider-item">'+
                     '<div class="video-play-button youtube-link" videoid="' + item.id + '">'+
-                        '<img class="slider-background" src="/media.hungbok.net/image/anime/' + url + '/hb_' + item.id + '.jpg" onerror="this.src=`/media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '<div class="youtube-title">' + item.title + '</div>'+
+                    '</div>'+
+                '</div>');
+                $(".slider-nav").append('<div class="slider-item">'+
+                    '<div class="video-play-button">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</div>'+
                 '</div>');
             });
     
-            var image_value = data.imagecount; // image 수
+            var image_value = data[0].imagecount; // image 수
             var imageData = [];
             for (var i = 1; i <= image_value; i++) {
                 var imageImage = 'image_' + i;
@@ -112,699 +265,772 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             // image 생성
             imageData.forEach(function(item) {
-                $(".slider").append('<div class="slider-item">'+
-                    '<a class="slider-image" href="/media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
-                        '<img class="slider-background" src="/media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`/media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                $(".slider-main").append('<div class="slider-item">'+
+                    '<a class="slider-image" href="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '</a>'+
+                '</div>');
+                $(".slider-nav").append('<div class="slider-item">'+
+                    '<a class="slider-image">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
             });
 
-            var episode_value = data.episodecount; // episode 수
-            var episodeData = [];
-            for (var i = 1; i <= episode_value; i++) {
-                var epClass = data['epclass' + i];
-                var epText = data['eptext' + i];
-                episodeData.push({
-                    class: epClass,
-                    text: epText,
-                });
-            }
-            // episode 생성
-            episodeData.forEach(function(item) {
-                $(".episode-content").append('<p class="' + item.class + '">' + item.text + '</p>');
-            });
-
-            // 틀 생성
-
-            // 소셜 const
-            const websiteurl = data.website;
-            const facebookurl = data.facebook;
-            const instagramurl = data.instagram;
-            const threadsurl = data.threads;
-            const twitterurl = data.twitter;
-            const waibourl = data.waibo;
-            const mastodonurl = data.mastodon;
-            const discordurl = data.discord;
-            const vkurl = data.vk;
-            const tumblrurl = data.tumblr;
-            const navercafeurl = data.navercafe;
-            const youtubeurl = data.youtube;
-            const twitchurl = data.twitch;
-            const tiktokurl = data.tiktok;
-            const douyinurl = data.douyin;
-            const niconicodougaurl = data.niconicodouga;
-            const bilibiliurl = data.bilibili;
-            const kakaotalkurl = data.kakaotalk;
-            const lineurl = data.line;
-            const whatsappurl = data.whatsapp;
-            const linkedinurl = data.linkedin;
-            const wikipediaurl = data.wikipedia;
-            const wikipediaenurl = data.wikipediaen;
-            const wikipediajaurl = data.wikipediaja;
-            const fandomurl = data.fandom;
-            const namuwikiurl = data.namuwiki;
-            const niconicodaihyakkaurl = data.niconicodaihyakka;
-            const pixivhyakkajitenurl = data.pixivhyakkajiten;
-            const baidubaikeurl = data.baidubaike;
-            const kickurl = data.kick;
-            const kakaostoryurl = data.kakaostory;
-            const telegramurl = data.telegram;
-            const snapchaturl = data.snapchat;
-            const wechaturl = data.wechat;
-            const qqurl = data.qq;
-            const redditurl = data.reddit;
-
-            // 소셜 링크
-
-            // https://www.example.com
-            $(".website").append('<div class="external-link" ttt="Official Website">'+
-                '<a class="external-link-button icon-website" href="' + websiteurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.facebook.com/FortniteGame
-            $(".facebook").append('<div class="external-link" ttt="facebook">'+
-                '<a class="external-link-button icon-facebook" href="https://www.facebook.com/' + facebookurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.instagram.com/rockstargames
-            $(".instagram").append('<div class="external-link" ttt="Instagram">'+
-                '<a class="external-link-button icon-instagram" href="https://www.instagram.com/' + instagramurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://x.com/CyberpunkGame
-            $(".x").append('<div class="external-link" ttt="X">'+
-                '<a class="external-link-button icon-x" href="https://x.com/' + twitterurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.threads.net/@rockstargames
-            $(".threads").append('<div class="external-link" ttt="Threads">'+
-                '<a class="external-link-button icon-threads" href="https://www.threads.net/' + threadsurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://weibo.com/ysmihoyo
-            $(".waibo").append('<div class="external-link" ttt="Weibo">'+
-                '<a class="external-link-button icon-waibo" href="https://weibo.com/' + waibourl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://infosec.exchange/@SteamDB
-            $(".mastodon").append('<div class="external-link" ttt="Mastodon">'+
-                '<a class="external-link-button icon-mastodon" href="https://' + mastodonurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://discord.gg/genshinimpact
-            $(".discord").append('<div class="external-link" ttt="Discord">'+
-                '<a class="external-link-button icon-discord" href="https://discord.gg/' + discordurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://vk.com/genshinimpact
-            $(".vk").append('<div class="external-link" ttt="VK">'+
-                '<a class="external-link-button icon-vk" href="https://vk.com/' + vkurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.tumblr.com/cyberpunkgame
-            $(".tumblr").append('<div class="external-link" ttt="Tumblr">'+
-                '<a class="external-link-button icon-tumblr" href="https://www.tumblr.com/' + tumblrurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://cafe.naver.com/genshin
-            $(".navercafe").append('<div class="external-link" ttt="Naver Cafe">'+
-                '<a class="external-link-button icon-navercafe" href="https://cafe.naver.com/' + navercafeurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.youtube.com/@CyberpunkGame
-            $(".youtube").append('<div class="external-link" ttt="YouTube">'+
-                '<a class="external-link-button icon-youtube" href="https://www.youtube.com/' + youtubeurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.twitch.tv/cdprojektred
-            $(".twitch").append('<div class="external-link" ttt="Twitch">'+
-                '<a class="external-link-button icon-twitch" href="https://www.twitch.tv/' + twitchurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".kick").append('<div class="external-link" ttt="Kick">'+
-                '<a class="external-link-button icon-kick" href="' + kickurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.tiktok.com/@Xbox
-            $(".tiktok").append('<div class="external-link" ttt="TikTok">'+
-                '<a class="external-link-button icon-tiktok" href="https://www.tiktok.com/' + tiktokurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://v.douyin.com/iNkT3QN7/
-            $(".douyin").append('<div class="external-link" ttt="抖音">'+
-                '<a class="external-link-button icon-tiktok" href="https://v.douyin.com/' + douyinurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // http://www.nicovideo.jp/user/15426275
-            $(".niconicodouga").append('<div class="external-link" ttt="ニコニコ動画">'+
-                '<a class="external-link-button icon-niconicodouga" href="https://www.nicovideo.jp/user/' + niconicodougaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://space.bilibili.com/3461579184015582
-            $(".bilibili").append('<div class="external-link" ttt="bìlibìli">'+
-                '<a class="external-link-button icon-bilibili" href="https://space.bilibili.com/' + bilibiliurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://pf.kakao.com/_DzxjIb
-            $(".kakaotalk").append('<div class="external-link" ttt="KakaoTalk">'+
-                '<a class="external-link-button icon-kakaotalk" href="https://pf.kakao.com/' + kakaotalkurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".kakaostory").append('<div class="external-link" ttt="KakaoStory">'+
-                '<a class="external-link-button icon-kakaostory" href="' + kakaostoryurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://line.me/ti/p/@playstation
-            $(".line").append('<div class="external-link" ttt="LINE">'+
-                '<a class="external-link-button icon-line" href="https://line.me/ti/p/' + lineurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".telegram").append('<div class="external-link" ttt="Telegram">'+
-                '<a class="external-link-button icon-telegram" href="' + telegramurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".snapchat").append('<div class="external-link" ttt="Snapchat">'+
-                '<a class="external-link-button icon-snapchat" href="' + snapchaturl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.whatsapp.com/channel/0029Va4J1hI5a248Y7hu6A2Y
-            $(".whatsapp").append('<div class="external-link" ttt="WhatsApp">'+
-                '<a class="external-link-button icon-whatsapp" href="https://www.whatsapp.com/channel/' + whatsappurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".wechat").append('<div class="external-link" ttt="WeChat">'+
-                '<a class="external-link-button icon-wechat" href="' + wechaturl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".qq").append('<div class="external-link" ttt="QQ">'+
-                '<a class="external-link-button icon-qq" href="' + qqurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // 
-            $(".reddit").append('<div class="external-link" ttt="reddit">'+
-                '<a class="external-link-button icon-reddit" href="' + redditurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://www.linkedin.com/company/iointeractive/
-            $(".linkedin").append('<div class="external-link" ttt="LinkedIn">'+
-                '<a class="external-link-button icon-linkedin" href="https://www.linkedin.com/company/' + linkedinurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://en.wikipedia.org/wiki/Counter-Strike
-            $(".wikipedia").append('<div class="external-link" ttt="Wikipedia">'+
-                '<a class="external-link-button icon-wikipedia" href="https://en.wikipedia.org/wiki/' + wikipediaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://en.wikipedia.org/wiki/Counter-Strike_2
-            $(".wikipediaen").append('<div class="external-link us" ttt="Wikipedia">'+
-                '<a class="external-link-button icon-wikipedia" href="https://en.wikipedia.org/wiki/' + wikipediaenurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://ja.wikipedia.org/wiki/カウンターストライク
-            $(".wikipediaja").append('<div class="external-link jp" ttt="Wikipedia">'+
-                '<a class="external-link-button icon-wikipedia" href="https://ja.wikipedia.org/wiki/' + wikipediajaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://counterstrike.fandom.com/
-            $(".fandom").append('<div class="external-link" ttt="FANDOM">'+
-                '<a class="external-link-button icon-fandom" href="https://' + fandomurl + '.fandom.com" target="_blank"></a>'+
-            '</div>');
-            
-            // https://namu.wiki/w/사이버펑크%202077
-            $(".namuwiki").append('<div class="external-link" ttt="나무위키">'+
-                '<a class="external-link-button icon-namuwiki" href="https://namu.wiki/w/' + namuwikiurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://dic.nicovideo.jp/a/steam
-            $(".niconicodaihyakka").append('<div class="external-link" ttt="ニコニコ大百科">'+
-                '<a class="external-link-button icon-niconicodaihyakka" href="https://dic.nicovideo.jp/a/' + niconicodaihyakkaurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://dic.pixiv.net/a/Steam
-            $(".pixivhyakkajiten").append('<div class="external-link" ttt="ピクシブ百科事典">'+
-                '<a class="external-link-button icon-pixivhyakkajiten" href="https://dic.pixiv.net/a/' + pixivhyakkajitenurl + '" target="_blank"></a>'+
-            '</div>');
-            
-            // https://baike.baidu.com/item/Steam/10092959
-            $(".baidubaike").append('<div class="external-link" ttt="百度百科">'+
-                '<a class="external-link-button icon-baidubaike" href="https://baike.baidu.com/item/' + baidubaikeurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // ESD const
-            const steamurl = data.steam;
-            const epicgamesstoreurl = data.epicgamesstore;
-            const gogcomurl = data.gog;
-            const eaappurl = data.ea;
-            const ubisoftconnecturl = data.ubisoft;
-            const rockstargameslauncherurl = data.rockstargames;
-            const stoveurl = data.stove;
-            const metastoreurl = data.metastore;
-            const googleplayurl = data.googleplay;
-            const appstoreurl = data.appstore;
-            const galaxystoreurl = data.galaxystore;
-            const microsoftstoreurl = data.msstore;
-            const dmmgamesurl = data.dmm;
-            const dlsiteurl = data.dlsite;
-            const amazonlunaurl = data.amazonluna;
-            const geforcenowurl = data.geforcenow;
-            const xboxcloudgamingurl = data.xboxcloudgaming;
-            const stadiaurl = data.stadia;
-
-            // ESD 링크
-            $(".steam").append('<div class="external-link" ttt="Steam">'+
-                '<a class="external-link-button icon-steam" href="https://store.steampowered.com/app/' + steamurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".epicgamesstore").append('<div class="external-link" ttt="Epic Games Store">'+
-                '<a class="external-link-button icon-epicgamesstore" href="https://store.epicgames.com/p/' + epicgamesstoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".gog").append('<div class="external-link" ttt="GOG.com">'+
-                '<a class="external-link-button icon-gogcom" href="https://www.gog.com/game/' + gogcomurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".ea").append('<div class="external-link" ttt="EA">'+
-                '<a class="external-link-button icon-eaapp" href="https://www.ea.com/anime/' + eaappurl + '/buy/pc" target="_blank"></a>'+
-            '</div>');
-
-            $(".ubisoft").append('<div class="external-link" ttt="Ubisoft Store">'+
-                '<a class="external-link-button icon-ubisoftconnect" href="https://store.ubisoft.com/' + ubisoftconnecturl + '.html" target="_blank"></a>'+
-            '</div>');
-
-            $(".msstore").append('<div class="external-link" ttt="Microsoft Store">'+
-                '<a class="external-link-button icon-microsoftstore" href="https://apps.microsoft.com/detail/' + microsoftstoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // battle.net
-            const battleneturl = data.battlenet;
-            const battlenetusurl = data.battlenetus;
-            const battleneteuurl = data.battleneteu;
-            const battlenetkrurl = data.battlenetkr;
-            const battlenettwurl = data.battlenettw;
-            $(".battlenet").append('<div class="external-link" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://shop.battle.net/product/' + battleneturl + '" target="_blank"></a>'+
-            '</div>');
-            $(".battlenetus").append('<div class="external-link region_002" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://us.shop.battle.net/product/' + battlenetusurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".battleneteu").append('<div class="external-link region_003" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://eu.shop.battle.net/product/' + battleneteuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".battlenetkr").append('<div class="external-link region_301" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://kr.shop.battle.net/product/' + battlenetkrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".battlenettw").append('<div class="external-link region_303" ttt="Battle.net">'+
-                '<a class="external-link-button icon-battlenet" href="https://tw.shop.battle.net/product/' + battlenettwurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            $(".rockstargames").append('<div class="external-link" ttt="Rockstar Games Store">'+
-                '<a class="external-link-button icon-rockstargameslauncher" href="https://store.rockstargames.com/game/buy-' + rockstargameslauncherurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".stove").append('<div class="external-link" ttt="STOVE">'+
-                '<a class="external-link-button icon-stove" href="https://store.onstove.com/anime/' + stoveurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".metastore").append('<div class="external-link" ttt="Meta Store">'+
-                '<a class="external-link-button icon-metastore" href="https://www.meta.com/experiences/' + metastoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".dmm").append('<div class="external-link" ttt="DMM GAMES">'+
-                '<a class="external-link-button icon-dmmgames" href="https://' + dmmgamesurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".dlsite").append('<div class="external-link" ttt="DLsite">'+
-                '<a class="external-link-button icon-dlsite" href="https://' + dlsiteurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // xbox store
-            const xboxgamesstoreurl = data.xboxstore;
-            const xboxgamesstorexbourl = data.xboxstorexbo;
-            const xboxgamesstorexsxurl = data.xboxstorexsx;
-            $(".xboxstore").append('<div class="external-link" ttt="Xbox Store">'+
-                '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstoreurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".xboxstorexbo").append('<div class="external-link" ttt="Xbox One | Xbox Store">'+
-                '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstorexbourl + '" target="_blank"></a>'+
-            '</div>');
-            $(".xboxstorexsx").append('<div class="external-link" ttt="Xbox Series X|S | Xbox Store">'+
-                '<a class="external-link-button icon-xboxgamesstore" href="https://www.microsoft.com/store/productid/' + xboxgamesstorexsxurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            // playstation store
-            const playstationstoreurl = data.psstore;
-            const playstationstoreps4url = data.psstoreps4;
-            const playstationstoreps5url = data.psstoreps5;
-            const playstationstorejpurl = data.psstorejp;
-            const playstationstorenaurl = data.psstorena;
-            const playstationstoreeuurl = data.psstoreeu;
-            const playstationstoreusurl = data.psstoreus;
-            const playstationstorecaurl = data.psstoreca;
-            const playstationstoremxurl = data.psstoremx;
-            const playstationstoreukurl = data.psstoreuk;
-            const playstationstorefrurl = data.psstorefr;
-            const playstationstoredeurl = data.psstorede;
-            const playstationstoreiturl = data.psstoreit;
-            const playstationstorenlurl = data.psstorenl;
-            const playstationstorebeurl = data.psstorebe;
-            const playstationstoreplurl = data.psstorepl;
-            const playstationstoreczurl = data.psstorecz;
-            const playstationstoreesurl = data.psstorees;
-            const playstationstorepturl = data.psstorept;
-            const playstationstorekrurl = data.psstorekr;
-            const playstationstorehkurl = data.psstorehk;
-            const playstationstoretwurl = data.psstoretw;
-            const playstationstoreauurl = data.psstoreau;
-            const playstationstorenzurl = data.psstorenz;
-            const playstationstorebrurl = data.psstorebr;
-            const playstationstorearurl = data.psstorear;
-            const playstationstorezaurl = data.psstoreza;
-            const playstationstoreuscamxurl = data.psstoreuscamx;
-            const playstationstoreukfrdeurl = data.psstoreukfrde;
-            const playstationstorekrhktwurl = data.psstorekrhktw;
-            const playstationstorehktwurl = data.psstorehktw;
-            const playstationstoreaunzurl = data.psstoreaunz;
-            const playstationstorebrarurl = data.psstorebrar;
-            const playstationstorenaeuurl = data.psstorenaeu;
-            const playstationstorenajpurl = data.psstorenajp;
-            $(".psstore").append('<div class="external-link" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreps4").append('<div class="external-link" ttt="PlayStation 4 | PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps4url + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreps5").append('<div class="external-link" ttt="PlayStation 5 | PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreps5url + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorenaeu").append('<div class="external-link region_901" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenaeuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorenajp").append('<div class="external-link region_902" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenajpurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreuscamx").append('<div class="external-link region_701" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreuscamxurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreukfrde").append('<div class="external-link region_702" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreukfrdeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorekrhktw").append('<div class="external-link region_703" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorekrhktwurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorehktw").append('<div class="external-link region_801" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorehktwurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreaunz").append('<div class="external-link region_802" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreaunzurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorebrar").append('<div class="external-link region_803" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorebrarurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorena").append('<div class="external-link region_001" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorejp").append('<div class="external-link region_002" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorejpurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreeu").append('<div class="external-link region_003" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreeuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreus").append('<div class="external-link region_101" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreusurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreca").append('<div class="external-link region_102" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorecaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoremx").append('<div class="external-link region_103" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoremxurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreuk").append('<div class="external-link region_201" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreukurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorefr").append('<div class="external-link region_202" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorefrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorede").append('<div class="external-link region_203" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoredeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreit").append('<div class="external-link region_204" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreiturl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorenl").append('<div class="external-link region_205" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenlurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorebe").append('<div class="external-link region_206" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorebeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorepl").append('<div class="external-link region_207" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreplurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorecz").append('<div class="external-link region_208" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreczurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorees").append('<div class="external-link region_209" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreesurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorept").append('<div class="external-link region_210" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorepturl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorekr").append('<div class="external-link region_301" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorekrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorehk").append('<div class="external-link region_302" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorehkurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoretw").append('<div class="external-link region_303" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoretwurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreau").append('<div class="external-link region_401" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstoreauurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorenz").append('<div class="external-link region_402" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorenzurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorebr").append('<div class="external-link region_501" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorebrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstorear").append('<div class="external-link region_502" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorearurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".psstoreza").append('<div class="external-link region_601" ttt="PlayStation Store">'+
-                '<a class="external-link-button icon-playstationstore" href="https://store.playstation.com/concept/' + playstationstorezaurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            // nintendo eshop
-            const nintendoeshopurl = data.eshop;
-            const nintendoeshopjpurl = data.eshopjp;
-            const nintendoeshopnaurl = data.eshopna;
-            const nintendoeshopeuurl = data.eshopeu;
-            const nintendoeshopusurl = data.eshopus;
-            const nintendoeshopcaurl = data.eshopca;
-            const nintendoeshopmxurl = data.eshopmx;
-            const nintendoeshopukurl = data.eshopuk;
-            const nintendoeshopfrurl = data.eshopfr;
-            const nintendoeshopdeurl = data.eshopde;
-            const nintendoeshopiturl = data.eshopit;
-            const nintendoeshopnlurl = data.eshopnl;
-            const nintendoeshopbeurl = data.eshopbe;
-            const nintendoeshopplurl = data.eshoppl;
-            const nintendoeshopczurl = data.eshopcz;
-            const nintendoeshopesurl = data.eshopes;
-            const nintendoeshoppturl = data.eshoppt;
-            const nintendoeshopkrurl = data.eshopkr;
-            const nintendoeshophkurl = data.eshophk;
-            const nintendoeshoptwurl = data.eshoptw;
-            const nintendoeshopauurl = data.eshopau;
-            const nintendoeshopnzurl = data.eshopnz;
-            const nintendoeshopbrurl = data.eshopbr;
-            const nintendoeshoparurl = data.eshopar;
-            const nintendoeshopzaurl = data.eshopza;
-            const nintendoeshopuscamxurl = data.eshopuscamx;
-            const nintendoeshopukfrdeurl = data.eshopukfrde;
-            const nintendoeshopkrhktwurl = data.eshopkrhktw;
-            const nintendoeshophktwurl = data.eshophktw;
-            const nintendoeshopaunzurl = data.eshopaunz;
-            const nintendoeshopbrarurl = data.eshopbrar;
-            const nintendoeshopnaeuurl = data.eshopnaeu;
-            const nintendoeshopnajpurl = data.eshopnajp;
-            $(".eshop").append('<div class="external-link" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopurl + '" target="_blank"></a>'+
-            '</div>');
-            // top multiple
-            $(".eshopnaeu").append('<div class="external-link region_901" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnaeuurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopnajp").append('<div class="external-link region_902" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnajpurl + '" target="_blank"></a>'+
-            '</div>');
-            // multiple
-            $(".eshopuscamx").append('<div class="external-link region_701" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopuscamxurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopukfrde").append('<div class="external-link region_702" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopukfrdeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopkrhktw").append('<div class="external-link region_703" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopkrhktwurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".eshophktw").append('<div class="external-link region_801" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshophktwurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopaunz").append('<div class="external-link region_802" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopaunzurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopbrar").append('<div class="external-link region_803" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopbrarurl + '" target="_blank"></a>'+
-            '</div>');
-            // top
-            $(".eshopna").append('<div class="external-link region_001" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopnaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopjp").append('<div class="external-link region_002" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/JP/ja/titles/' + nintendoeshopjpurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopeu").append('<div class="external-link region_003" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopeuurl + '" target="_blank"></a>'+
-            '</div>');
-            // na
-            $(".eshopus").append('<div class="external-link region_101" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/store/products/' + nintendoeshopusurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopca").append('<div class="external-link region_102" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/en-ca/store/products/' + nintendoeshopcaurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopmx").append('<div class="external-link region_103" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://www.nintendo.com/es-mx/store/products/' + nintendoeshopmxurl + '" target="_blank"></a>'+
-            '</div>');
-            // eu
-            $(".eshopuk").append('<div class="external-link region_201" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/GB/en/titles/' + nintendoeshopukurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopfr").append('<div class="external-link region_202" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/FR/fr/titles/' + nintendoeshopfrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopde").append('<div class="external-link region_203" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/DE/de/titles/' + nintendoeshopdeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopit").append('<div class="external-link region_204" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshopiturl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopnl").append('<div class="external-link region_205" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshopnlurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopbe").append('<div class="external-link region_206" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshopbeurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshoppl").append('<div class="external-link region_207" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshopplurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopcz").append('<div class="external-link region_208" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshopczurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopes").append('<div class="external-link region_209" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshopesurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshoppt").append('<div class="external-link region_210" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com///titles/' + nintendoeshoppturl + '" target="_blank"></a>'+
-            '</div>');
-            // as
-            $(".eshopkr").append('<div class="external-link region_301" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://store.nintendo.co.kr/' + nintendoeshopkrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshophk").append('<div class="external-link region_302" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/HK/zh/titles/' + nintendoeshophkurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshoptw").append('<div class="external-link region_303" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshoptwurl + '" target="_blank"></a>'+
-            '</div>');
-            // oc
-            $(".eshopau").append('<div class="external-link region_401" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/AU/en/titles/' + nintendoeshopauurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopnz").append('<div class="external-link region_402" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="https://ec.nintendo.com/NZ/en/titles/' + nintendoeshopnzurl + '" target="_blank"></a>'+
-            '</div>');
-            // sa
-            $(".eshopbr").append('<div class="external-link region_501" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopbrurl + '" target="_blank"></a>'+
-            '</div>');
-            $(".eshopar").append('<div class="external-link region_502" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshoparurl + '" target="_blank"></a>'+
-            '</div>');
-            // af
-            $(".eshopza").append('<div class="external-link region_601" ttt="Nintendo eShop">'+
-                '<a class="external-link-button icon-nintendoeshop" href="' + nintendoeshopzaurl + '" target="_blank"></a>'+
-            '</div>');
-            //
-
-            $(".googleplay").append('<div class="external-link" ttt="Google Play">'+
-                '<a class="external-link-button icon-googleplay" href="https://play.google.com/store/apps/details?id=' + googleplayurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".appstore").append('<div class="external-link" ttt="App Store">'+
-                '<a class="external-link-button icon-appstore" href="https://apps.apple.com/app/id' + appstoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            $(".galaxystore").append('<div class="external-link" ttt="Galaxy Store">'+
-                '<a class="external-link-button icon-galaxystore" href="https://galaxystore.samsung.com/detail/' + galaxystoreurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://luna.amazon.com/detail/B0BTRVRN6M
-            $(".luna").append('<div class="external-link" ttt="Amazon Luna">'+
-                '<a class="external-link-button icon-amazonluna" href="https://luna.amazon.com/detail/' + amazonlunaurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://nvda.ws/3Qee2Mx
-            $(".geforcenow").append('<div class="external-link" ttt="GeForce NOW">'+
-                '<a class="external-link-button icon-geforcenow" href="https://nvda.ws/' + geforcenowurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://www.xbox.com/play/anime/BT5P2X999VH2
-            $(".xboxcloud").append('<div class="external-link" ttt="Xbox Cloud Gaming">'+
-                '<a class="external-link-button icon-xboxcloudgaming" href="https://www.xbox.com/play/anime/' + xboxcloudgamingurl + '" target="_blank"></a>'+
-            '</div>');
-
-            // https://stadia.google.com/store/details/990ec302c2cd4ba7817cedcf633ab20frcp1/sku/7ac7671e9f4342bd8c55ca140cf94138p
-            $(".stadia").append('<div class="external-link" ttt="Stadia">'+
-                '<a class="external-link-button icon-stadia" href="https://stadia.google.com/store/details/' + stadiaurl + '" target="_blank"></a>'+
-            '</div>');
-
             // 얼리엑세스 틀
-            $(".early-access.en").append('<p class="description-title">This Game is an Early Access Game</p>'+
-            '<p>Early Access games are still under development and may change significantly over time. As a result, you may experience unforeseen issues or completely new gameplay elements while playing this game.</p>'+
-            '<p>You can play now to experience the game while it\'s being built or wait until it offers a more complete experience.</p>'+
-            '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">Learn More</a></p>');
-    
-            $(".early-access.ja").append('<p class="description-title">このゲームは早期アクセスゲームです</p>'+
-            '<p>早期アクセスゲームは開発中であり、今後大幅に変更される場合があります。その結果、このゲームをプレイ中に予期せぬ問題や、完全に新しいゲームプレイ要素に遭遇する場合があります。</p>'+
-            '<p>開発途中のゲームを今すぐプレイするか、あるいはより完成されたゲーム体験が提供されるまで待つことができます。</p>'+
-            '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">さらに詳しく</a></p>');
-    
-            $(".early-access.ko").append('<p class="description-title">이 게임은 앞서 해보기 게임입니다</p>'+
+            $(".early-access").append('<p class="description-title">이 게임은 앞서 해보기 게임입니다.</p>'+
             '<p>앞서 해보기 게임은 현재 개발 중인 게임으로 개발 중간에 많은 것이 변경될 수 있습니다. 앞서 해보기 게임을 플레이할 때 전혀 예측하지 못한 이슈가 발생하거나 완전히 새로운 게임플레이 요소를 경험할 수 있습니다.</p>'+
             '<p>현재 개발 중인 게임을 바로 플레이하거나 더 완전한 게임 경험을 제공할 때까지 기다릴 수 있습니다.</p>'+
             '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">자세히 보기</a></p>');
+
+            // Platform
+            $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
+            $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
+            $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
+            $(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
+            $(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
+            $(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
+            $(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
+            $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');
+
+            // Store
+            $(".platform.steam").append('<div class="icon-steam" ttt="Steam"></div>');
+            $(".platform.epicanimestore").append('<div class="icon-epicanimestore" ttt="Epic anime Store"></div>');
+            $(".platform.gogcom").append('<div class="icon-gogcom" ttt="GOG.com"></div>');
+            $(".platform.microsoftstore").append('<div class="icon-microsoftstore" ttt="Microsoft Store"></div>');
+            $(".platform.eaapp").append('<div class="icon-eaapp" ttt="EA"></div>');
+            $(".platform.ubisoftstore").append('<div class="icon-ubisoftstore" ttt="Ubisoft Store"></div>');
+            $(".platform.battlenet").append('<div class="icon-battlenet" ttt="Battle.net"></div>');
+            $(".platform.rockstaranimestore").append('<div class="icon-rockstaranimestore" ttt="Rockstar anime Store"></div>');
+            $(".platform.stove").append('<div class="icon-stove" ttt="Stove"></div>');
+            $(".platform.xboxstore").append('<div class="icon-xboxanimestore" ttt="Xbox anime Store"></div>');
+            $(".platform.playstationstore").append('<div class="icon-playstationstore" ttt="PlayStation Store"></div>');
+            $(".platform.nintendoeshop").append('<div class="icon-nintendoeshop" ttt="Nintendo eShop"></div>');
+            $(".platform.metastore").append('<div class="icon-metastore" ttt="Meta Store"></div>');
+            $(".platform.googleplay").append('<div class="icon-googleplay" ttt="Google Play"></div>');
+            $(".platform.appstore").append('<div class="icon-appstore" ttt="App Store"></div>');
+            $(".platform.galaxystore").append('<div class="icon-galaxystore" ttt="Galaxy Store"></div>');
+            $(".platform.dmmanime").append('<div class="icon-dmmanime" ttt="DMM anime"></div>');
+            $(".platform.dlsite").append('<div class="icon-dlsite" ttt="DLsite"></div>');
+            
+            $(".platform.windows").append('<div class="icon-windows" ttt="Windows"></div>');
+            $(".platform.mac").append('<div class="icon-mac" ttt="macOS"></div>');
+            $(".platform.macos").append('<div class="icon-macos" ttt="macOS"></div>');
+            $(".platform.linux").append('<div class="icon-linux" ttt="Linux"></div>');
+
+            $(".platform.playstationvr2").append('<div class="icon-playstationvr2" ttt="PlayStation VR2"></div>');
+            $(".platform.playstation5").append('<div class="icon-playstation5" ttt="PlayStation 5"></div>');
+            $(".platform.playstationvr").append('<div class="icon-playstationvr" ttt="PlayStation VR"></div>');
+            $(".platform.playstation4pro").append('<div class="icon-playstation4pro" ttt="PlayStation 4 Pro"></div>');
+            $(".platform.playstation4").append('<div class="icon-playstation4" ttt="PlayStation 4"></div>');
+            $(".platform.playstationvita").append('<div class="icon-playstationvita" ttt="PlayStation Vita"></div>');
+            $(".platform.playstation3").append('<div class="icon-playstation3" ttt="PlayStation 3"></div>');
+            $(".platform.playstationportable").append('<div class="icon-playstationportable" ttt="PlayStation Portable"></div>');
+            $(".platform.playstation2").append('<div class="icon-playstation2" ttt="PlayStation 2"></div>');
+            $(".platform.playstation1").append('<div class="icon-playstation1" ttt="PlayStation"></div>');
+
+            $(".platform.xboxseriesxs").append('<div class="icon-xboxseriesxs" ttt="Xbox Series X|S"></div>');
+            $(".platform.xboxseriesx").append('<div class="icon-xboxseriesx" ttt="Xbox Series X"></div>');
+            $(".platform.xboxseriess").append('<div class="icon-xboxseriess" ttt="Xbox Series S"></div>');
+            $(".platform.xboxonex").append('<div class="icon-xboxonex" ttt="Xbox One X"></div>');
+            $(".platform.xboxone").append('<div class="icon-xboxone" ttt="Xbox One"></div>');
+            $(".platform.xbox360").append('<div class="icon-xbox360" ttt="Xbox 360"></div>');
+            $(".platform.xbox1").append('<div class="icon-xbox1" ttt="Xbox"></div>');
+
+            $(".platform.nintendoswitch").append('<div class="icon-nintendoswitch" ttt="Nintendo Switch"></div>');
+            $(".platform.newnintendo3ds").append('<div class="icon-newnintendo3ds" ttt="New Nintendo 3DS"></div>');
+            $(".platform.wiiu").append('<div class="icon-wiiu" ttt="Wii U"></div>');
+            $(".platform.nintendo3ds").append('<div class="icon-nintendo3ds" ttt="Nintendo 3DS"></div>');
+            $(".platform.nintendodsi").append('<div class="icon-nintendodsi" ttt="Nintendo DSi"></div>');
+            $(".platform.wii").append('<div class="icon-wii" ttt="Wii"></div>');
+            $(".platform.nintendods").append('<div class="icon-nintendods" ttt="Nintendo DS"></div>');
+            $(".platform.nintendogamecube").append('<div class="icon-nintendogamecube" ttt="Nintendo Gamecube"></div>');
+            $(".platform.gameboyadvance").append('<div class="icon-gameboyadvance" ttt="Game Boy Advance"></div>');
+            $(".platform.gameboycolor").append('<div class="icon-gameboycolor" ttt="Game Boy Color"></div>');
+            $(".platform.nintendo64").append('<div class="icon-nintendo64" ttt="Nintendo 64"></div>');
+            $(".platform.virtualboy").append('<div class="icon-virtualboy" ttt="Virtual Boy"></div>');
+            $(".platform.superfamicom").append('<div class="icon-superfamicom" ttt="Super Famicom"></div>');
+            $(".platform.gameboy").append('<div class="icon-gameboy" ttt="Game Boy"></div>');
+            $(".platform.familycomputer").append('<div class="icon-familycomputer" ttt="Family Computer"></div>');
+            $(".platform.gameandwatch").append('<div class="icon-gameandwatch" ttt="GAME & WATCH"></div>');
+
+            $(".platform.ios").append('<div class="icon-ios" ttt="iOS"></div>');
+            $(".platform.ipados").append('<div class="icon-ipados" ttt="iPadOS"></div>');
+            $(".platform.android").append('<div class="icon-android" ttt="Android"></div>');
+
+            $(".platform.xboxcloudgaming").append('<div class="icon-xboxcloudgaming" ttt="Xbox Cloud Gaming"></div>');
+            $(".platform.amazonluna").append('<div class="icon-amazonluna" ttt="Amazon Luna"></div>');
+            $(".platform.geforcenow").append('<div class="icon-geforcenow" ttt="Geforce Now"></div>');
+            $(".platform.stadia").append('<div class="icon-stadia" ttt="Stadia"></div>');
     
             var description = document.querySelector('.description');
             var showMore = document.querySelector('.show-more');
             
-            if(description.offsetHeight > 1000){
-                description.style.maxHeight = "1000px";
+            if(description.offsetHeight > 500){
+                description.style.maxHeight = "500px";
                 showMore.style.display = "block";
             }
+
+            const data_import_type_first = data[0].data_import_type_first;
+            const data_import_first = data[0].data_import_first;
+            const data_import_type_second = data[0].data_import_type_second;
+            const data_import_second = data[0].data_import_second;
+            const data_import_type_third = data[0].data_import_type_third;
+            const data_import_third = data[0].data_import_third;
+
+            $(".dlc").append('<p class="description-title">이 제품은 확장팩 혹은 다운로드 가능한 콘텐츠입니다.</p>'+
+            '<p>플레이하려면 다음 제품 중 하나가 필요합니다.</p>'+
+            '<div>'+
+                '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '</a>'+
+                    '<a data-placeholder="title"></a>'+
+                '</p>'+
+                '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '</a>'+
+                        '<a data-placeholder="title"></a>'+
+                '</p>'+
+                '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '</a>'+
+                        '<a data-placeholder="title"></a>'+
+                '</p>'+
+            '</div>');
+
+            $(".mod").append('<p class="description-title">이 제품은 2차 창작 모드 혹은 애드온입니다.</p>'+
+            '<p>플레이하려면 다음 제품이 필요합니다.</p>'+
+            '<div>'+
+                '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '</a>'+
+                    '<a data-placeholder="title"></a>'+
+                '</p>'+
+                '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '</a>'+
+                        '<a data-placeholder="title"></a>'+
+                '</p>'+
+                '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '</a>'+
+                        '<a data-placeholder="title"></a>'+
+                '</p>'+
+            '</div>');
+
+            $(".mode").append('<p class="description-title">이 콘텐츠는 게임 모드입니다.</p>'+
+            '<p>다음 제품에 포함되어 있습니다.</p>'+
+            '<div>'+
+                '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '</a>'+
+                    '<a data-placeholder="title"></a>'+
+                '</p>'+
+                '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '</a>'+
+                        '<a data-placeholder="title"></a>'+
+                '</p>'+
+                '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
+                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '</a>'+
+                        '<a data-placeholder="title"></a>'+
+                '</p>'+
+            '</div>');
+
+            document.body.innerHTML = document.body.innerHTML
+            .replace(/{data_import_type_first}/g, data[0].data_import_type_first)
+            .replace(/{data_import_first}/g, data[0].data_import_first)
+            .replace(/{data_import_type_second}/g, data[0].data_import_type_second)
+            .replace(/{data_import_second}/g, data[0].data_import_second)
+            .replace(/{data_import_type_third}/g, data[0].data_import_type_third)
+            .replace(/{data_import_third}/g, data[0].data_import_third);
+
+            
+            function loadJSON(file, callback) {
+                var xhr = new XMLHttpRequest();
+                xhr.overrideMimeType("application/json");
+                xhr.open('GET', file, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        callback(xhr.responseText);
+                    }
+                };
+                xhr.send(null);
+            }
+            
+            function updateElementWithData(element) {
+                var elementType = element.getAttribute('data-type');
+                var elementId = element.getAttribute('data-file');
+                var jsonFile = '//data.hungbok.net/data/' + elementType + '/' + elementId + '.json';
+            
+                loadJSON(jsonFile, function (response) {
+                    var jsonData = JSON.parse(response);
+                    var placeholders = element.querySelectorAll('[data-placeholder]');
+            
+                    placeholders.forEach(function (placeholder) {
+                        var key = placeholder.getAttribute('data-placeholder');
+                        if (jsonData.hasOwnProperty('ko') && jsonData['ko'].hasOwnProperty(key)) {
+                            placeholder.innerText = jsonData['ko'][key];
+                        }
+                    });
+                });
+            }
+            
+            var dataImportElements = document.querySelectorAll('.data-import');
+            
+            dataImportElements.forEach(function (element) {
+                updateElementWithData(element);
+            });
         });
     } else {
-        $('body').addClass('no-query')
+        $('body').addClass('en');
+        $('.section').remove();
+        $('.top-backgrounds').remove();
+        $('main').append('<div class="game-section">'+
+            '<div class="owl-carousel custom-carousel owl-theme">'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7);">'+
+                    '<div class="item-desc">'+
+                        '<h3>Cyberpunk 2077</h3>'+
+                        '<p>Cyberpunk 2077 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f);">'+
+                    '<div class="item-desc">'+
+                        '<h3>The Witcher 3: Wild Hunt</h3>'+
+                        '<p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/epic/offer/RDR2PC1227_Epic%20anime_860x1148-860x1148-b4c2210ee0c3c3b843a8de399bfe7f5c.jpg);">'+
+                    '<div class="item-desc">'+
+                        '<h3>Red Dead Redemption 2</h3>'+
+                        '<p>Red Dead Redemption 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1lbll.jpg?h=2560&quality=high&resize=1&w=1440);">'+
+                    '<div class="item-desc">'+
+                        '<h3>PUBG: BATTLEGROUNDS</h3>'+
+                        '<p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb);">'+
+                    '<div class="item-desc">'+
+                        '<h3>Fortnite</h3>'+
+                        '<p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/offer/611482b8586142cda48a0786eb8a127c/EGS_DeadbyDaylight_BehaviourInteractive_S1_2560x1440-a32581cf9948a9a2e24b2ff15c1577c7);">'+
+                    '<div class="item-desc">'+
+                        '<h3>Dead by Daylight</h3>'+
+                        '<p>Dead by Daylight is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/offer/0c05e0889c3e42a4be1d81077d6e653a/SAB_Store_Landscape_2560x1440_2560x1440-00b4029199a7a6778fd27dec96f08a28);">'+
+                    '<div class="item-desc">'+
+                        '<h3>SKULL AND BONES™</h3>'+
+                        '<p>SKULL AND BONES™ is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_Riotanime_S1_2560x1440-055bbe0f10c1778fcbd134f2de02daf6);">'+
+                    '<div class="item-desc">'+
+                        '<h3>VALORANT</h3>'+
+                        '<p>VALORANT is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/271590/hero_capsule.jpg?t=1671484916);">'+
+                    '<div class="item-desc">'+
+                        '<h3>Grand Theft Auto V: Premium Edition</h3>'+
+                        '<p>Grand Theft Auto V: Premium Edition is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item" style="background-image: url(https://cdn1.epicanime.com/salesEvent/salesEvent/Landscape%20Product%20image-JAP_2560x1440-e038a07c8f4ced528ff97619017058e5);">'+
+                    '<div class="item-desc">'+
+                        '<h3>Genshin Impact</h3>'+
+                        '<p>Genshin Impact is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
+                        '<div class="slide-progress-main">'+
+                            '<div class="progressBar"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="item eleven">'+
+                    '<div class="item-desc">'+
+                        '<h3></h3>'+
+                        '<p></p>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+        '<div class="discover-section">'+
+            '<div class="discover-title">'+
+                '<div class="discover-text">New Added</div>'+
+            '</div>'+
+            '<div class="discover-container">'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="discover-title">'+
+                '<div class="discover-text">Coming Soon</div>'+
+            '</div>'+
+            '<div class="discover-container">'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="discover-title">'+
+                '<div class="discover-text">Steam</div>'+
+            '</div>'+
+            '<div class="discover-container">'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="discover-title">'+
+                '<div class="discover-text">Epic anime Store</div>'+
+            '</div>'+
+            '<div class="discover-container">'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div class="discover-title">'+
+                '<div class="discover-text">Console</div>'+
+            '</div>'+
+            '<div class="discover-container">'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="discover-content">'+
+                    '<div class="discover-item">'+
+                        '<div class="discover-title-time">01 : 30</div>'+
+                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
+                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
+                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/anime/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
+                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
+                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
+                            '</a>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>');
+        $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
+            // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
+            // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
+            var $owl = $('.owl-carousel');
+
+            $owl.children().each( function( index ) {
+              $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+            });
+
+            $(document).ready(function() {
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    autoWidth: true,
+                    loop: true,
+                    merge: true,
+                    center: true,
+                    autoplay: true,
+                    autoplayHoverPause: true,
+                    autoplayTimeout: 6000,
+                    autoplaySpeed: 1000,
+                    items: 1,
+                    onInitialized: startProgressBar,
+                    onTranslate: resetProgressBar,
+                    onTranslated: startProgressBar
+                });
+            
+                function startProgressBar() {
+                    $(".progressBar").css({
+                        width: "100%",
+                        transition: "width 5000ms linear"
+                    });
+                }
+            
+                function resetProgressBar() {
+                    $(".progressBar").css({
+                        width: 0,
+                        transition: "width 0ms"
+                    });
+                }
+            
+                owl.on('mouseover',function(e){
+                    owl.trigger('stop.owl.autoplay');
+                    var progressBar = $(".progressBar");
+                    var width = progressBar.width();
+                    progressBar.stop(true, true).css({
+                        width: width,
+                        transition: "width 0s"
+                    });
+                });
+            
+                owl.on('mouseleave',function(e){
+                    owl.trigger('play.owl.autoplay');
+                    startProgressBar();
+                });
+
+                owl.on('changed.owl.carousel', function(event) {
+                    var item = event.item.index;   // 현재 아이템 위치
+            
+                    // 11번째 아이템에 도달했을 때 즉시 다음 아이템으로 이동
+                    if($('.owl-item').eq(item).find('.item.eleven').length > 0) {
+                        setTimeout(function() {
+                            owl.trigger('next.owl.carousel');
+                        }, 500);
+                    }
+                });
+            });
+
+            $(window).on('resize', function() {
+                owl.trigger('next.owl.carousel');
+            });
+
+            $(document).ready(function () {
+                // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
+                $('.owl-stage .owl-item.center .item').addClass('active');
+            
+                // 슬라이드 이동 이벤트가 발생할 때마다 실행
+                $('.owl-carousel').on('translated.owl.carousel', function(e) {
+                    // 기존에 .active가 있던 .item에서 .active 제거
+                    $('.owl-stage .owl-item .item.active').removeClass('active');
+            
+                    // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+                    $('.owl-stage .owl-item.center .item').addClass('active');
+                });
+
+                $(document).on('click', '.owl-item > div', function() {
+                    // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+                    var $speed = 300;  // in ms
+                    $owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                });
+            });
+        });
+    }
+});
+
+window.addEventListener("scroll", function() {
+    var scrolledHeight= window.pageYOffset;
+    var newPosition = -(scrolledHeight * 0.5);
+    var newPosition2 = (scrolledHeight * 0.5);
+  
+    if (newPosition >= -250 && newPosition <= 0) {
+        document.getElementsByClassName("top-background")[0].style.backgroundPosition = "center " + newPosition + "px";
+        document.getElementsByClassName("top-background-mirror")[0].style.backgroundPosition = "center " + newPosition + "px";
+    }
+  
+    if (newPosition2 >= 0 && newPosition2 <= 250) {
+        document.getElementsByClassName("top-background-shadow")[0].style.transform = "scaleX(1) scaleY(-1) translate(-50%, " + newPosition2 + "px)";
     }
 });
 
@@ -814,7 +1040,7 @@ function showError(image) {
     var q = urlParams.get('q');
 
     // JSON 파일 불러오기
-    fetch(`/data.hungbok.net/data/anime/${q}.json`)
+    fetch(`//data.hungbok.net/data/anime/${q}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -824,7 +1050,7 @@ function showError(image) {
         .then(data => {
             // 'title'값을 가져와서 div에 설정
             var div = document.createElement('div');
-            div.innerHTML = data.title;
+            div.innerHTML = data[0]['ko'].title;
 
             // 기존 이미지 대신 div 삽입
             image.parentNode.insertBefore(div, image);
@@ -836,7 +1062,7 @@ function showError(image) {
 }
 
 function hideError(image) {
-    image.src = "/media.hungbok.net/image/hb/hb_error_horizontal.svg";
+    image.src = "//media.hungbok.net/image/hb/hb_error_horizontal.svg";
 }
 
 $(document).ready(function(){
@@ -852,6 +1078,24 @@ $(document).ready(function(){
       }
     });
 });
-  
 
-loadAsyncScripts();
+function changeTab(evt, tabIndex) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("more-info-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("more-info-tab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
+    }
+    document.getElementById("tab-content-" + tabIndex).style.display = "block";
+    evt.currentTarget.className += " active-tab";
+}
+
+// 초기 탭 설정 (예: 첫 번째 탭 활성화)
+changeTab({currentTarget: document.getElementsByClassName("more-info-tab")[0]}, 0);
+
+window.addEventListener('load', function() {
+    loadAsyncScripts();
+});
