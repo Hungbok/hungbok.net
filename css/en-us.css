@@ -484,7 +484,7 @@
     content: "Ubisoft Store";
 }
 
-#dataContainer .item.from-battlenet a.item-link::before {
+#dataContainer .item.from-battlenet a.item-link::after {
     content: "Battle.net";
 }
 
