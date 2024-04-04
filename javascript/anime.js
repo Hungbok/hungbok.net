@@ -1,11 +1,11 @@
 async function loadAsyncScripts() {
     // 동영상 팝업 재생
-    await loadScript('/data.hungbok.net/javascript/youtube-popup.js');
+    await loadScript('/www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
-    await loadScript('/data.hungbok.net/javascript/lightbox.js');
+    await loadScript('/www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
-    await loadScript('/data.hungbok.net/javascript/slick.js');
-    await loadScript('/data.hungbok.net/javascript/html_loader.js');
+    await loadScript('/www.hungbok.net/javascript/slick.js');
+    await loadScript('/www.hungbok.net/javascript/html_loader.js');
 }
 
 function loadScript(src) {
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             videoData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
                     '<div class="video-play-button youtube-link" videoid="' + item.id + '">'+
-                        '<img class="slider-background" src="/data.hungbok.net/image/anime/' + url + '/hb_' + item.id + '.jpg" onerror="this.src=`/data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="/media.hungbok.net/image/anime/' + url + '/hb_' + item.id + '.jpg" onerror="this.src=`/media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '<div class="youtube-title">' + item.title + '</div>'+
                     '</div>'+
                 '</div>');
@@ -113,8 +113,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // image 생성
             imageData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
-                    '<a class="slider-image" href="/data.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
-                        '<img class="slider-background" src="/data.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`/data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '<a class="slider-image" href="/media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
+                        '<img class="slider-background" src="/media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`/media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
             });
@@ -836,7 +836,7 @@ function showError(image) {
 }
 
 function hideError(image) {
-    image.src = "/data.hungbok.net/image/hb/hb_error_horizontal.svg";
+    image.src = "/media.hungbok.net/image/hb/hb_error_horizontal.svg";
 }
 
 $(document).ready(function(){
