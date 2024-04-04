@@ -329,6 +329,10 @@ section > h1 {
     background-image: url(//media.hungbok.net/image/icon/ubisoft.svg);
 }
 
+.esd-battlenet::after {
+    background-image: url(//media.hungbok.net/image/icon/battlenet.svg);
+}
+
 .esd-xboxstore::after {
     background-image: url(//media.hungbok.net/image/icon/xbox.svg);
 }
@@ -475,6 +479,7 @@ section > h1 {
 .filter-content.bundle > .filterPlatformBtn[data-platform="microsoftstore"],
 .filter-content.bundle > .filterPlatformBtn[data-platform="eaapp"],
 .filter-content.bundle > .filterPlatformBtn[data-platform="ubisoftstore"],
+.filter-content.bundle > .filterPlatformBtn[data-platform="battlenet"],
 .filter-content.bundle > .filterPlatformBtn[data-platform="xboxstore"],
 .filter-content.bundle > .filterPlatformBtn[data-platform="playstationstore"],
 .filter-content.bundle > .filterPlatformBtn[data-platform="nintendoeshop"],
@@ -489,6 +494,7 @@ section > h1 {
 .filter-content.subscription > .filterPlatformBtn[data-platform="microsoftstore"],
 .filter-content.subscription > .filterPlatformBtn[data-platform="eaapp"],
 .filter-content.subscription > .filterPlatformBtn[data-platform="ubisoftstore"],
+.filter-content.subscription > .filterPlatformBtn[data-platform="battlenet"],
 .filter-content.subscription > .filterPlatformBtn[data-platform="xboxstore"],
 .filter-content.subscription > .filterPlatformBtn[data-platform="playstationstore"],
 .filter-content.subscription > .filterPlatformBtn[data-platform="nintendoeshop"],
