@@ -6,7 +6,7 @@ async function loadAsyncScripts() {
     // 이미지 및 동영상 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/slick.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
-    await loadScript('//www.hungbok.net/javascript/en/error404.js');
+    await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
 
 function loadScript(src) {
@@ -549,7 +549,7 @@ $(document).ready(function(){
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
                         $('#warning').show(); // #warning 요소 보이기
                         $('.age-check-container').remove(); // #warning 요소 숨기기
-                        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
+                        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a><a class="age-check-home" href="https://www.hungbok.com">메인으로</a>'); // #child 요소 추가
                     }
                 });
             
@@ -561,7 +561,7 @@ $(document).ready(function(){
                 } else if (ageCheck === 'fail') {
                     $('#warning').show(); // #warning 요소 보이기
                     $('.age-check-container').remove(); // #warning 요소 숨기기
-                    $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
+                    $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a><a class="age-check-home" href="https://www.hungbok.com">메인으로</a>'); // #child 요소 추가
                 }
             });
         });
