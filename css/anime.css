@@ -113,7 +113,7 @@
 .slider-middle-content {
     min-height: 447.5px;
     display: block;
-    padding: 40px;
+    padding: 0 40px;
 }
 
 .middle-content {
