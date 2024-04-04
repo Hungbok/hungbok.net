@@ -538,9 +538,6 @@ $(document).ready(function(){
                     const today = new Date();
                     const age = today.getFullYear() - selectedDate.getFullYear();
                     const m = today.getMonth() - selectedDate.getMonth();
-                    if (m < 0 || (m === 0 && today.getDate() < selectedDate.getDate())) {
-                        age--;
-                    }
             
                     // 만약 사용자가 만 19세 이상이라면
                     if (age >= 19) {
@@ -552,7 +549,7 @@ $(document).ready(function(){
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
                         $('#warning').show(); // #warning 요소 보이기
                         $('.age-check-container').remove(); // #warning 요소 숨기기
-                        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div><button id="age-back">돌아가기</button>'); // #child 요소 추가
+                        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
                     }
                 });
             
@@ -564,7 +561,7 @@ $(document).ready(function(){
                 } else if (ageCheck === 'fail') {
                     $('#warning').show(); // #warning 요소 보이기
                     $('.age-check-container').remove(); // #warning 요소 숨기기
-                    $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div><button id="age-back">돌아가기</button>'); // #child 요소 추가
+                    $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div>'); // #child 요소 추가
                 }
             });
             
@@ -580,9 +577,13 @@ $(document).ready(function(){
                 } else if (yearValue.length === 1) {
                     // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
                     input.value = '200' + yearValue;
-                } else if (yearValue.length === 3) {
+                } else if (yearValue.length === 4) {
                     // 입력된 연도가 3자리 숫자일 때 처리 로직 추가 가능
-                    // 예제에서는 3자리 숫자 입력을 고려하지 않음
+                    if (parseInt(yearValue) <= 1900) {
+                        input.value = '1900';
+                    } else if (parseInt(yearValue) >= 2030) {
+                        input.value = '2030';
+                    }
                 }
                 // 4자리 숫자일 때는 변경하지 않음
                 const year = document.getElementById('age-check-year').value;
@@ -600,11 +601,53 @@ $(document).ready(function(){
                 }
             }
             
-            function completeMonthDay(input) {
+            function completeMonth(input) {
                 let value = input.value;
                 if (value.length === 1) {
                     // 입력된 월 또는 일이 1자리 숫자일 때
-                    input.value = '0' + value;
+                    if (parseInt(yearValue) <= 0) {
+                        input.value = '01';
+                    } else if (parseInt(yearValue) >= 1) {
+                        input.value = '0' + value;
+                    }
+                } else if (yearValue.length === 2) {
+                    // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+                    if (parseInt(yearValue) <= 12) {
+                    } else if (parseInt(yearValue) >= 13) {
+                        input.value = '12';
+                    }
+                }
+                // 2자리 숫자일 때는 변경하지 않음
+                const year = document.getElementById('age-check-year').value;
+                const month = document.getElementById('age-check-month').value;
+                const day = document.getElementById('age-check-day').value;
+                const btn = document.getElementById('age-checking');
+            
+                // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
+                if (year.length === 4 && month.length === 2 && day.length === 2) {
+                    // 모든 필드가 채워져 있으면 버튼 활성화
+                    btn.disabled = false;
+                } else {
+                    // 하나라도 빈 필드가 있으면 버튼 비활성화
+                    btn.disabled = true;
+                }
+            }
+            
+            function completeDay(input) {
+                let value = input.value;
+                if (value.length === 1) {
+                    // 입력된 월 또는 일이 1자리 숫자일 때
+                    if (parseInt(yearValue) <= 0) {
+                        input.value = '01';
+                    } else if (parseInt(yearValue) >= 1) {
+                        input.value = '0' + value;
+                    }
+                } else if (yearValue.length === 2) {
+                    // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+                    if (parseInt(yearValue) <= 31) {
+                    } else if (parseInt(yearValue) >= 32) {
+                        input.value = '31';
+                    }
                 }
                 // 2자리 숫자일 때는 변경하지 않음
                 const year = document.getElementById('age-check-year').value;

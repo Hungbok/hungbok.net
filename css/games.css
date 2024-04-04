@@ -4,6 +4,21 @@ body.adult > main > .section {
     display: none;
 }
 
+body.adult > main > .top-backgrounds {
+    filter: blur(100px);
+    height: 100%;
+}
+
+body.adult > main > .top-backgrounds > div {
+    background-position: center center!important;
+    transform: translate(0, 0)!important;
+}
+
+#warning {
+    z-index: 1;
+    position: relative;
+}
+
 /* top background image */
 
 .top-backgrounds {
