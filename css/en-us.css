@@ -484,6 +484,10 @@
     content: "Ubisoft Store";
 }
 
+#dataContainer .item.from-battlenet a.item-link::before {
+    content: "Battle.net";
+}
+
 #dataContainer .item.from-xboxstore a.item-link::after {
     content: "Xbox Store";
 }

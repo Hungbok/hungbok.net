@@ -484,6 +484,10 @@
     content: "유비소프트 스토어";
 }
 
+#dataContainer .item.from-battlenet a.item-link::before {
+    content: "배틀넷";
+}
+
 #dataContainer .item.from-xboxstore a.item-link::before {
     content: "엑스박스 스토어";
 }
