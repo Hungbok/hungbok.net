@@ -83,8 +83,8 @@ body.adult > main > .top-backgrounds > div {
 
 #age-checking:disabled {
     cursor: not-allowed;
-    background-color: var(--background-6);
-    color: var(--background-4);
+    background-color: var(--background-6-opacity-75);
+    color: var(--background-2);
     filter: brightness(0.75);
 }
 
