@@ -36,7 +36,7 @@ $(document).ready(function(){
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
-            $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang'));
+            $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang') + ' ' + data[0].age_check);
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
     
 
@@ -60,7 +60,6 @@ $(document).ready(function(){
                 '{esd}': data[0].esd,
                 '{release_date}': getLocalizedData(data[0], 'release_date'),
                 '{engine}': getLocalizedData(data[0], 'engine'),
-                '{age_check}': data[0].age_check,
                 '{age}': data[0].age,
                 '{esrb}': data[0].esrb,
                 '{pegi}': data[0].pegi,
