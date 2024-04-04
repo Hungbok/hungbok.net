@@ -111,11 +111,8 @@
 /* middle */
 
 .middle-content {
-    min-height: 400px;
-    display: grid;
-    grid-template-columns: 640px auto;
-    column-gap: 40px;
-    row-gap: 20px;
+    min-height: 447.5px;
+    display: block;
     padding: 40px;
 }
 
@@ -180,9 +177,14 @@
 /* slider */
 
 #slider {
+    position: absolute;
+    width: 800px;
+    height: 434.5px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    display: inline-table;
     overflow: hidden;
-    position: relative;
-    max-height: 450px;
 }
 
 .slider-main img {
