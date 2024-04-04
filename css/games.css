@@ -1,3 +1,9 @@
+/* Age Check */
+
+body.adult > main > .section {
+    display: none;
+}
+
 /* top background image */
 
 .top-backgrounds {
