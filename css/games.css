@@ -26,6 +26,62 @@ body.adult > main > .top-backgrounds > div {
     flex-direction: column;
 }
 
+.age-check-container {
+    max-width: 500px;
+}
+
+#age-checking {
+    width: 100%;
+}
+
+#age-check-none {
+    display: none;
+}
+
+.age-check-container input {
+    width: 80px;
+    border: none;
+    padding: 10px;
+    margin: 0;
+    color: var(--text-2);
+    background-color: transparent;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#age-checking {
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: var(--text-4);
+    background-color: var(--background-6);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#age-checking:hover {
+    background-color: var(--background-8);
+}
+
+#age-checking:disabled {
+    cursor: not-allowed;
+    background-color: var(--background-8);
+    color: var(--background-4);
+    filter: brightness(0.75);
+}
+
 /* top background image */
 
 .top-backgrounds {
