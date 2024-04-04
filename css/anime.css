@@ -187,6 +187,27 @@
     overflow: hidden;
 }
 
+.slider {
+    width: 2370px;
+}
+
+.slider .slick-list {
+    margin: 10px 0px;
+}
+
+.slick-slide, .slick-active {
+    opacity: 0.25;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.slick-slide {
+    pointer-events: none;
+}
+
 .slider-main img {
     width: 640px;
 }
