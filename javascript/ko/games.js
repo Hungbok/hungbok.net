@@ -549,7 +549,7 @@ $(document).ready(function(){
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
                         $('#warning').show(); // #warning 요소 보이기
                         $('.age-check-container').remove(); // #warning 요소 숨기기
-                        $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
+                        $('#warning').append('<div id="child">죄송합니다. 이 콘텐츠에 액세스할 수 없습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
                     }
                 });
             
@@ -561,7 +561,7 @@ $(document).ready(function(){
                 } else if (ageCheck === 'fail') {
                     $('#warning').show(); // #warning 요소 보이기
                     $('.age-check-container').remove(); // #warning 요소 숨기기
-                    $('#warning').append('<div id="child">이 페이지는 만 19세 이상만 볼 수 있습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
+                    $('#warning').append('<div id="child">죄송합니다. 이 콘텐츠에 액세스할 수 없습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
                 }
             });
         });
