@@ -1209,24 +1209,22 @@ function completeYear(input) {
 
 function completeMonth(input) {
     let monthValue = input.value;
-    if (monthValue.length === 2) {
-        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-        if (parseInt(monthValue) <= 0) {
-            input.value = monthValue;
-            input.value = '01';
-        } else if (parseInt(monthValue) <= 9) {
-            input.value = '0' + monthValue;
-        }  else if (parseInt(monthValue) <= 12) {
-            input.value = monthValue;
-        } else if (parseInt(monthValue) >= 13) {
-            input.value = '12';
-        }
-    } else if (monthValue.length === 1) {
+    if (monthValue.length === 1) {
         // 입력된 월 또는 일이 1자리 숫자일 때
         if (parseInt(monthValue) <= 0) {
             input.value = '01';
         } else if (parseInt(monthValue) >= 1) {
             input.value = '0' + monthValue;
+        }
+    } else if (monthValue.length === 2) {
+        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+        if (parseInt(monthValue) <= 0) {
+            input.value = monthValue;
+            input.value = '01';
+        }  else if (parseInt(monthValue) <= 12) {
+            input.value = monthValue;
+        } else if (parseInt(monthValue) >= 13) {
+            input.value = '12';
         }
     }
     // 2자리 숫자일 때는 변경하지 않음
@@ -1247,23 +1245,21 @@ function completeMonth(input) {
 
 function completeDay(input) {
     let dayValue = input.value;
-    if (dayValue.length === 2) {
-        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-        if (parseInt(dayValue) <= 0) {
-            input.value = '01';
-        } else if (parseInt(monthValue) <= 9) {
-            input.value = '0' + dayValue;
-        } else if (parseInt(dayValue) <= 31) {
-            input.value = dayValue;
-        } else if (parseInt(dayValue) >= 32) {
-            input.value = '31';
-        }
-    } else if (dayValue.length === 1) {
+    if (dayValue.length === 1) {
         // 입력된 월 또는 일이 1자리 숫자일 때
         if (parseInt(dayValue) <= 0) {
             input.value = '01';
         } else if (parseInt(dayValue) >= 1) {
             input.value = '0' + dayValue;
+        }
+    } else if (dayValue.length === 2) {
+        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
+        if (parseInt(dayValue) <= 0) {
+            input.value = '01';
+        } else if (parseInt(dayValue) <= 31) {
+            input.value = dayValue;
+        } else if (parseInt(dayValue) >= 32) {
+            input.value = '31';
         }
     }
     // 2자리 숫자일 때는 변경하지 않음
