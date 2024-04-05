@@ -531,15 +531,23 @@ $(document).ready(function(){
             
                 // 나이 확인 버튼 클릭 이벤트
                 $('#age-checking').click(function() {
-                    const year = document.getElementById('age-check-year').value;
-                    const month = document.getElementById('age-check-month').value;
-                    const day = document.getElementById('age-check-day').value;
+                    const year = parseInt(document.getElementById('age-check-year').value);
+                    const month = parseInt(document.getElementById('age-check-month').value) - 1; // JavaScript의 Date 객체는 월을 0부터 시작하므로 1을 빼줍니다.
+                    const day = parseInt(document.getElementById('age-check-day').value);
                     const selectedDate = new Date(year, month, day);
                     const today = new Date();
                     const age = today.getFullYear() - selectedDate.getFullYear();
-            
-                    // 만약 사용자가 만 19세 이상이라면
-                    if (age >= 19) {
+                    const monthDiff = today.getMonth() - selectedDate.getMonth();
+                    const dayDiff = today.getDate() - selectedDate.getDate();
+                
+                    // 만 나이 계산
+                    let adjustedAge = age;
+                    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                        adjustedAge--; // 생일이 지나지 않았다면 나이에서 1을 뺍니다.
+                    }
+                
+                    // 만 19세 이상이라면
+                    if (adjustedAge >= 19) {
                         setCookie('agecheck', 'success', 24);
                         location.reload();
                     } else {

@@ -531,22 +531,30 @@ $(document).ready(function(){
             
                 // 나이 확인 버튼 클릭 이벤트
                 $('#age-checking').click(function() {
-                    const year = document.getElementById('age-check-year').value;
-                    const month = document.getElementById('age-check-month').value;
-                    const day = document.getElementById('age-check-day').value;
+                    const year = parseInt(document.getElementById('age-check-year').value);
+                    const month = parseInt(document.getElementById('age-check-month').value) - 1; // JavaScript의 Date 객체는 월을 0부터 시작하므로 1을 빼줍니다.
+                    const day = parseInt(document.getElementById('age-check-day').value);
                     const selectedDate = new Date(year, month, day);
                     const today = new Date();
                     const age = today.getFullYear() - selectedDate.getFullYear();
-            
-                    // 만약 사용자가 만 19세 이상이라면
-                    if (age >= 19) {
+                    const monthDiff = today.getMonth() - selectedDate.getMonth();
+                    const dayDiff = today.getDate() - selectedDate.getDate();
+                
+                    // 만 나이 계산
+                    let adjustedAge = age;
+                    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                        adjustedAge--; // 생일이 지나지 않았다면 나이에서 1을 뺍니다.
+                    }
+                
+                    // 만 19세 이상이라면
+                    if (adjustedAge >= 19) {
                         setCookie('agecheck', 'success', 24);
                         location.reload();
                     } else {
                         // 만 19세 미만이거나 나이를 확인할 수 없는 경우
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
                         $('#warning').show(); // #warning 요소 보이기
-                        $('.age-check-container').remove(); // #warning 요소 숨기기
+                        $('.age-check-container').remove(); // .age-check-container 요소 제거
                         $('#warning').append('<div id="child">죄송합니다. 이 콘텐츠에 액세스할 수 없습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
                     }
                 });
