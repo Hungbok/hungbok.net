@@ -547,7 +547,7 @@ $(document).ready(function(){
                     }
                 
                     // 만 19세 이상이라면
-                    if (adjustedAge >= 19) {
+                    if (adjustedAge >= 18) {
                         setCookie('agecheck', 'success', 24);
                         location.reload();
                     } else {

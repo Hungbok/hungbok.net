@@ -547,14 +547,14 @@ $(document).ready(function(){
                     }
                 
                     // 만 19세 이상이라면
-                    if (adjustedAge >= 19) {
+                    if (adjustedAge >= 18) {
                         setCookie('agecheck', 'success', 24);
                         location.reload();
                     } else {
                         // 만 19세 미만이거나 나이를 확인할 수 없는 경우
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
                         $('#warning').show(); // #warning 요소 보이기
-                        $('.age-check-container').remove(); // #warning 요소 숨기기
+                        $('.age-check-container').remove(); // .age-check-container 요소 제거
                         $('#warning').append('<div id="child">Sorry, you may not access this content.</div><a class="age-check-back" onclick="window.history.back()">Back</a>'); // #child 요소 추가
                     }
                 });
