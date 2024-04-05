@@ -51,15 +51,21 @@ body.adult > main > .top-backgrounds > div {
     width: 80px;
     border: none;
     padding: 10px;
-    margin: 40px 0;
+    margin: 40px 5px;
     color: var(--text-2);
     background-color: transparent;
     text-align: center;
+    border-radius: 5px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.age-check-container input:hover,
+.age-check-container input:focus {
+    background-color: var(--background-10-opacity-50);
 }
 
 .age-check-container p {
