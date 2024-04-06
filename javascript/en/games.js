@@ -555,6 +555,7 @@ $(document).ready(function(){
                         setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
                         $('#warning').show(); // #warning 요소 보이기
                         $('.age-check-container').remove(); // .age-check-container 요소 제거
+                        $('body.adult > main > .section').remove();
                         $('#warning').append('<div id="child">Sorry, you may not access this content.</div><a class="age-check-back" onclick="window.history.back()">Back</a>'); // #child 요소 추가
                     }
                 });
@@ -566,7 +567,8 @@ $(document).ready(function(){
                     $('#warning').remove(); // #warning 요소 숨기기
                 } else if (ageCheck === 'fail') {
                     $('#warning').show(); // #warning 요소 보이기
-                    $('.age-check-container').remove(); // #warning 요소 숨기기
+                    $('.age-check-container').remove(); // .age-check-container 요소 제거
+                    $('body.adult > main > .section').remove();
                     $('#warning').append('<div id="child">Sorry, you may not access this content.</div><a class="age-check-back" onclick="window.history.back()">Back</a>'); // #child 요소 추가
                 }
             });
