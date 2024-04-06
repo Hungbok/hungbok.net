@@ -526,6 +526,7 @@ $(document).ready(function(){
                     const ageCheck = getCookie('agecheck');
                     if (!ageCheck) {
                         $('#warning').show();
+                        $('body.adult > main > .section').remove();
                     }
                 }
             
