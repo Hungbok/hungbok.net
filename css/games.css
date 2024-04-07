@@ -1,5 +1,9 @@
 /* Age Check */
 
+body.adult > main > .section {
+    display: none;
+}
+
 body.adult > main > .top-backgrounds {
     filter: blur(100px);
     height: 100%;
