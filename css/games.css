@@ -1066,6 +1066,7 @@ div.system-requirements-title {
     text-wrap: balance;
     display: inline-block;
     z-index: 1;
+    height: 17px;
 }
 
 .more-info .release p:first-child {
