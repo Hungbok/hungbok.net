@@ -9,11 +9,11 @@
 }
 
 .list-loading {
-    position: absolute;
+    position: relative;
+    display: block;
     width: 50px;
     height: 50px;
-    left: 402px;
-    top: 215px;
+    margin: 50px auto;
     background: url(//media.hungbok.net/image/icon/progress.svg) no-repeat;
     background-size: 50px;
     animation: loading 2s linear infinite;
