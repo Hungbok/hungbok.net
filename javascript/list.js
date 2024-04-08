@@ -31,6 +31,8 @@ async function paginateData(data, page) {
         (async function() { // 비동기 처리를 위한 즉시 실행 함수
             const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
             let htmlToAdd = ""; // 모든 데이터를 저장할 HTML 문자열 초기화
+
+            document.querySelector('.list-loading').style.display = 'block';
         
             for (const item of dataToDisplay) {
                 const monthNames = ["1", "2", "3", "4", "5", "6",
@@ -69,6 +71,8 @@ async function paginateData(data, page) {
             
             // 루프가 끝난 후, 모든 HTML을 한 번에 추가
             searchResults.innerHTML = htmlToAdd;
+
+            document.querySelector('.list-loading').style.display = 'none';
             
             $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
             $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');

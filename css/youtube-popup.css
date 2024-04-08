@@ -87,7 +87,7 @@
 .grtyoutube-popup-close {
     width: 30px;
     height: 30px;
-    background: url(//data.hungbok.net/image/icon/close.svg) center no-repeat;
+    background: url(//media.hungbok.net/image/icon/close.svg) center no-repeat;
     background-size: 40px;
 }
 
@@ -97,7 +97,7 @@
     height: 50px;
     left: 402px;
     top: 215px;
-    background: url(//data.hungbok.net/image/icon/progress.svg) no-repeat;
+    background: url(//media.hungbok.net/image/icon/progress.svg) no-repeat;
     background-size: 50px;
     animation: loading 2s linear infinite;
     z-index: 1;

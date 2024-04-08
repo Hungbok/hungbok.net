@@ -8,6 +8,18 @@
     border-radius: 20px;
 }
 
+.list-loading {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 402px;
+    top: 215px;
+    background: url(//media.hungbok.net/image/icon/progress.svg) no-repeat;
+    background-size: 50px;
+    animation: loading 2s linear infinite;
+    z-index: 1;
+}
+
 #searchResults {
     max-width: 1100px;
     margin: 0 auto;
