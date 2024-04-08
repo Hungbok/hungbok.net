@@ -573,7 +573,7 @@ $(document).ready(function(){
                         $('body.adult > main > .section').remove();
                         $('#warning').append('<div id="child">죄송합니다. 이 콘텐츠에 액세스할 수 없습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
                     } else {
-                        $('body.adult > main > #warning').remove();
+                        $('#warning').remove();
                     }
                 }
             });
