@@ -958,7 +958,8 @@
 }
 
 .icon-disneyplus {
-    background: url(//media.hungbok.net/image/icon/disneyplus.svg) no-repeat center / 30px 30px, linear-gradient(#071240, #175ec3);
+    background: url(//media.hungbok.net/image/icon/disneyplus.svg) no-repeat center / 30px 30px, linear-gradient(200deg, #032335, #084758, #70e0ea);
+    /* background: url(//media.hungbok.net/image/icon/disneyplus.svg) no-repeat center / 30px 30px, linear-gradient(#071240, #175ec3); */
 }
 
 .icon-paramountplus {
