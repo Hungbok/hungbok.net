@@ -264,92 +264,743 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>');
             });
-
-            // 얼리엑세스 틀
-            $(".early-access").append('<p class="description-title">이 게임은 앞서 해보기 게임입니다.</p>'+
-            '<p>앞서 해보기 게임은 현재 개발 중인 게임으로 개발 중간에 많은 것이 변경될 수 있습니다. 앞서 해보기 게임을 플레이할 때 전혀 예측하지 못한 이슈가 발생하거나 완전히 새로운 게임플레이 요소를 경험할 수 있습니다.</p>'+
-            '<p>현재 개발 중인 게임을 바로 플레이하거나 더 완전한 게임 경험을 제공할 때까지 기다릴 수 있습니다.</p>'+
-            '<p class="description-link"><a href="https://www.hungbok.com/" target="_blank">자세히 보기</a></p>');
-
-            // Platform
-            $(".platform.pc").append('<div class="icon-pc" ttt="PC"></div>');
-            $(".platform.playstation").append('<div class="icon-playstation" ttt="PlayStation"></div>');
-            $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
-            $(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
-            $(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
-            $(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
-            $(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
-            $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');
-
-            // Store
-            $(".platform.steam").append('<div class="icon-steam" ttt="Steam"></div>');
-            $(".platform.epicanimestore").append('<div class="icon-epicanimestore" ttt="Epic anime Store"></div>');
-            $(".platform.gogcom").append('<div class="icon-gogcom" ttt="GOG.com"></div>');
-            $(".platform.microsoftstore").append('<div class="icon-microsoftstore" ttt="Microsoft Store"></div>');
-            $(".platform.eaapp").append('<div class="icon-eaapp" ttt="EA"></div>');
-            $(".platform.ubisoftstore").append('<div class="icon-ubisoftstore" ttt="Ubisoft Store"></div>');
-            $(".platform.battlenet").append('<div class="icon-battlenet" ttt="Battle.net"></div>');
-            $(".platform.rockstaranimestore").append('<div class="icon-rockstaranimestore" ttt="Rockstar anime Store"></div>');
-            $(".platform.stove").append('<div class="icon-stove" ttt="Stove"></div>');
-            $(".platform.xboxstore").append('<div class="icon-xboxanimestore" ttt="Xbox anime Store"></div>');
-            $(".platform.playstationstore").append('<div class="icon-playstationstore" ttt="PlayStation Store"></div>');
-            $(".platform.nintendoeshop").append('<div class="icon-nintendoeshop" ttt="Nintendo eShop"></div>');
-            $(".platform.metastore").append('<div class="icon-metastore" ttt="Meta Store"></div>');
-            $(".platform.googleplay").append('<div class="icon-googleplay" ttt="Google Play"></div>');
-            $(".platform.appstore").append('<div class="icon-appstore" ttt="App Store"></div>');
-            $(".platform.galaxystore").append('<div class="icon-galaxystore" ttt="Galaxy Store"></div>');
-            $(".platform.dmmanime").append('<div class="icon-dmmanime" ttt="DMM anime"></div>');
-            $(".platform.dlsite").append('<div class="icon-dlsite" ttt="DLsite"></div>');
+    
+            var story_value = data.storycount; // story 수
+            var storyData = [];
+            for (var i = 1; i <= story_value; i++) {
+                var storyText = data['storytext' + i];
+                var storyTitle = data['storytitle' + i];
+                var storyTitleOriginal = data['storytitle_og' + i];
+                var storyEpisode = data['storyepisode' + i];
+                var storyDate = data['storydate' + i];
+                var storyId = data['storyid' + i];
+                var storyImage = 'story_' + i;
+                var storyTime = data['storytime' + i];
+                storyData.push({
+                    text: storyText,
+                    title: storyTitle,
+                    titleog: storyTitleOriginal,
+                    epi: storyEpisode,
+                    date: storyDate,
+                    id: storyId,
+                    img: storyImage,
+                    time: storyTime,
+                });
+            }
+            // story 생성
+            storyData.forEach(function(item) {
+                $(".story").append('<div class="story-card">'+
+                    '<div class="story-episode">'+
+                        '<p>' + item.epi + '</p>'+
+                    '</div>'+
+                    '<div class="story-title">'+
+                        '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
+                    '</div>'+
+                    '<div class="story-date">'+
+                        '<p>' + item.date + '</p>'+
+                    '</div>'+
+                    '<div class="story-image">'+
+                        '<img class="story-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
+                        '<img class="story-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                    '</div>'+
+                    '<div class="story-description">'+
+                        '<p>' + item.text + '</p>'+
+                    '</div>'+
+                '</div>');
+            });
             
-            $(".platform.windows").append('<div class="icon-windows" ttt="Windows"></div>');
-            $(".platform.mac").append('<div class="icon-mac" ttt="macOS"></div>');
-            $(".platform.macos").append('<div class="icon-macos" ttt="macOS"></div>');
-            $(".platform.linux").append('<div class="icon-linux" ttt="Linux"></div>');
-
-            $(".platform.playstationvr2").append('<div class="icon-playstationvr2" ttt="PlayStation VR2"></div>');
-            $(".platform.playstation5").append('<div class="icon-playstation5" ttt="PlayStation 5"></div>');
-            $(".platform.playstationvr").append('<div class="icon-playstationvr" ttt="PlayStation VR"></div>');
-            $(".platform.playstation4pro").append('<div class="icon-playstation4pro" ttt="PlayStation 4 Pro"></div>');
-            $(".platform.playstation4").append('<div class="icon-playstation4" ttt="PlayStation 4"></div>');
-            $(".platform.playstationvita").append('<div class="icon-playstationvita" ttt="PlayStation Vita"></div>');
-            $(".platform.playstation3").append('<div class="icon-playstation3" ttt="PlayStation 3"></div>');
-            $(".platform.playstationportable").append('<div class="icon-playstationportable" ttt="PlayStation Portable"></div>');
-            $(".platform.playstation2").append('<div class="icon-playstation2" ttt="PlayStation 2"></div>');
-            $(".platform.playstation1").append('<div class="icon-playstation1" ttt="PlayStation"></div>');
-
-            $(".platform.xboxseriesxs").append('<div class="icon-xboxseriesxs" ttt="Xbox Series X|S"></div>');
-            $(".platform.xboxseriesx").append('<div class="icon-xboxseriesx" ttt="Xbox Series X"></div>');
-            $(".platform.xboxseriess").append('<div class="icon-xboxseriess" ttt="Xbox Series S"></div>');
-            $(".platform.xboxonex").append('<div class="icon-xboxonex" ttt="Xbox One X"></div>');
-            $(".platform.xboxone").append('<div class="icon-xboxone" ttt="Xbox One"></div>');
-            $(".platform.xbox360").append('<div class="icon-xbox360" ttt="Xbox 360"></div>');
-            $(".platform.xbox1").append('<div class="icon-xbox1" ttt="Xbox"></div>');
-
-            $(".platform.nintendoswitch").append('<div class="icon-nintendoswitch" ttt="Nintendo Switch"></div>');
-            $(".platform.newnintendo3ds").append('<div class="icon-newnintendo3ds" ttt="New Nintendo 3DS"></div>');
-            $(".platform.wiiu").append('<div class="icon-wiiu" ttt="Wii U"></div>');
-            $(".platform.nintendo3ds").append('<div class="icon-nintendo3ds" ttt="Nintendo 3DS"></div>');
-            $(".platform.nintendodsi").append('<div class="icon-nintendodsi" ttt="Nintendo DSi"></div>');
-            $(".platform.wii").append('<div class="icon-wii" ttt="Wii"></div>');
-            $(".platform.nintendods").append('<div class="icon-nintendods" ttt="Nintendo DS"></div>');
-            $(".platform.nintendogamecube").append('<div class="icon-nintendogamecube" ttt="Nintendo Gamecube"></div>');
-            $(".platform.gameboyadvance").append('<div class="icon-gameboyadvance" ttt="Game Boy Advance"></div>');
-            $(".platform.gameboycolor").append('<div class="icon-gameboycolor" ttt="Game Boy Color"></div>');
-            $(".platform.nintendo64").append('<div class="icon-nintendo64" ttt="Nintendo 64"></div>');
-            $(".platform.virtualboy").append('<div class="icon-virtualboy" ttt="Virtual Boy"></div>');
-            $(".platform.superfamicom").append('<div class="icon-superfamicom" ttt="Super Famicom"></div>');
-            $(".platform.gameboy").append('<div class="icon-gameboy" ttt="Game Boy"></div>');
-            $(".platform.familycomputer").append('<div class="icon-familycomputer" ttt="Family Computer"></div>');
-            $(".platform.gameandwatch").append('<div class="icon-gameandwatch" ttt="GAME & WATCH"></div>');
-
-            $(".platform.ios").append('<div class="icon-ios" ttt="iOS"></div>');
-            $(".platform.ipados").append('<div class="icon-ipados" ttt="iPadOS"></div>');
-            $(".platform.android").append('<div class="icon-android" ttt="Android"></div>');
-
-            $(".platform.xboxcloudgaming").append('<div class="icon-xboxcloudgaming" ttt="Xbox Cloud Gaming"></div>');
-            $(".platform.amazonluna").append('<div class="icon-amazonluna" ttt="Amazon Luna"></div>');
-            $(".platform.geforcenow").append('<div class="icon-geforcenow" ttt="Geforce Now"></div>');
-            $(".platform.stadia").append('<div class="icon-stadia" ttt="Stadia"></div>');
+            var setting_value = data.settingcount; // 설정 카드 수
+            var settingData = [];
+            for (var i = 1; i <= setting_value; i++) {
+                var settingText = data['settingtext' + i];
+                var settingTitle = data['settingtitle' + i];
+                var settingTitleOriginal = data['settingtitle_og' + i];
+                var settingImage = 'setting_' + i;
+                settingData.push({
+                    text: settingText,
+                    title: settingTitle,
+                    titleog: settingTitleOriginal,
+                    img: settingImage,
+                });
+            }
+            // 설정 카드 생성
+            settingData.forEach(function(item) {
+                $(".setting").append('<div class="setting-card">'+
+                    '<div class="setting-image">'+
+                        '<img class="setting-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
+                        '<img class="setting-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                    '</div>'+
+                    '<div class="setting-title">'+
+                        '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
+                    '</div>'+
+                    '<div class="setting-description">'+
+                        '<p>' + item.text + '</p>'+
+                    '</div>'+
+                '</div>');
+            });
+            
+            var character_value = data.charcount; // character 수
+            var characterCounts = [
+                data.char1count,
+                data.char2count,
+                data.char3count,
+                data.char4count,
+                data.char5count,
+                data.char6count,
+                data.char7count,
+                data.char8count,
+                data.char9count,
+                data.char10count,
+                data.char11count,
+                data.char12count,
+                data.char13count,
+                data.char14count,
+                data.char15count,
+                data.char16count,
+                data.char17count,
+                data.char18count,
+                data.char19count,
+                data.char20count,
+                data.char21count,
+                data.char22count,
+                data.char23count,
+                data.char24count,
+                data.char25count,
+                data.char26count,
+                data.char27count,
+                data.char28count,
+                data.char29count,
+                data.char30count,
+                data.char31count,
+                data.char32count,
+                data.char33count,
+                data.char34count,
+                data.char35count,
+                data.char36count,
+                data.char37count,
+                data.char38count,
+                data.char39count,
+                data.char40count,
+                data.char41count,
+                data.char42count,
+                data.char43count,
+                data.char44count,
+                data.char45count,
+                data.char46count,
+                data.char47count,
+                data.char48count,
+                data.char49count,
+                data.char50count,
+                data.char51count,
+                data.char52count,
+                data.char53count,
+                data.char54count,
+                data.char55count,
+                data.char56count,
+                data.char57count,
+                data.char58count,
+                data.char59count,
+                data.char60count,
+                data.char61count,
+                data.char62count,
+                data.char63count,
+                data.char64count,
+                data.char65count,
+                data.char66count,
+                data.char67count,
+                data.char68count,
+                data.char69count,
+                data.char70count,
+                data.char71count,
+                data.char72count,
+                data.char73count,
+                data.char74count,
+                data.char75count,
+                data.char76count,
+                data.char77count,
+                data.char78count,
+                data.char79count,
+                data.char80count,
+                data.char81count,
+                data.char82count,
+                data.char83count,
+                data.char84count,
+                data.char85count,
+                data.char86count,
+                data.char87count,
+                data.char88count,
+                data.char89count,
+                data.char90count,
+                data.char91count,
+                data.char92count,
+                data.char93count,
+                data.char94count,
+                data.char95count,
+                data.char96count,
+                data.char97count,
+                data.char98count,
+                data.char99count,
+                data.char100count,
+            ];
+            var characterData = [];
+            for (var i = 1; i <= character_value; i++) {
+                var characterText = data['chartext' + i];
+                var characterName = data['charname' + i];
+                var characterNameOriginal = data['charname_og' + i];
+                var characterImage = 'character_' + i;
+                var characterVoice = 'voice' + i;
+                characterData.push({
+                    text: characterText,
+                    name: characterName,
+                    nameog: characterNameOriginal,
+                    img: characterImage,
+                    vo: characterVoice,
+                });
+            }
+            // character 생성
+            characterData.forEach(function(item) {
+                $(".character").append('<div class="character-card">'+
+                    '<div class="character-image">'+
+                        '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '</div>'+
+                    '<div class="character-info">'+
+                        '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
+                        '<div class="character-voice ' + item.vo + '"></div>'+
+                    '</div>'+
+                    '<div class="character-description">'+
+                        '<p>' + item.text + '</p>'+
+                    '</div>'+
+                '</div>');
+            });
+            // voicer 생성
+            characterCounts.forEach(function (characterCount, countIndex) {
+                for (var j = 1; j <= characterCount; j++) {
+                    var cLang = data['char' + (countIndex + 1) + 'lang' + j];
+                    var cName = data['char' + (countIndex + 1) + 'name' + j];
+                    var cNameog = data['char' + (countIndex + 1) + 'name_og' + j];
+        
+                    $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
+                        '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
+                    '</div>');
+                }
+            });
+            
+            var music_value = data.musiccount; // music 수
+            var musicData = [];
+            for (var i = 1; i <= music_value; i++) {
+                var musicType = data['musictype' + i];
+                var musicTitle = data['musictitle' + i];
+                var musicTitleOriginal = data['musictitle_og' + i];
+                var musicUrl = data['musicurl' + i];
+                var musicVideoId = data['musicvideoid' + i];
+                var musicSing = data['musicsing' + i];
+                var musicSingOriginal = data['musicsing_og' + i];
+                var musicWrite = data['musicwrite' + i];
+                var musicWriteOriginal = data['musicwrite_og' + i];
+                var musicProduce = data['musicproduce' + i];
+                var musicProduceOriginal = data['musicproduce_og' + i];
+                var musicArrange = data['musicarrange' + i];
+                var musicArrangeOriginal = data['musicarrange_og' + i];
+                var musicImage = 'music_' + i;
+                musicData.push({
+                    type: musicType,
+                    title: musicTitle,
+                    titleog: musicTitleOriginal,
+                    url: musicUrl,
+                    videoid: musicVideoId,
+                    sing: musicSing,
+                    singog: musicSingOriginal,
+                    write: musicWrite,
+                    writeog: musicWriteOriginal,
+                    produce: musicProduce,
+                    produceog: musicProduceOriginal,
+                    arrange: musicArrange,
+                    arrangeog: musicArrangeOriginal,
+                    img: musicImage,
+                });
+            }
+            // music 생성
+            musicData.forEach(function(item) {
+                $(".music").append('<div class="music-card">'+
+                    '<div class="music-title">'+
+                        '<p>' + item.type + '</p>'+
+                        '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
+                    '</div>'+
+                    '<div class="music-video">'+
+                        '<div class="youtube-link" youtubeid="' + item.videoid + '">'+
+                            '<img src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
+                            '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.videoid + '.avif" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="music-image">'+
+                        '<a href="' + item.url + '" target="_blank">'+
+                            '<img class="music-background" src="//media.hungbok.net/image/hb/hb_error_square.svg">'+
+                            '<img class="music-cover" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '</a>'+
+                        '<img class="music-lp" src="//media.hungbok.net/image/icon/recode.png">'+
+                    '</div>'+
+                    '<div class="music-text">'+
+                        '<p>노래</p>' + item.sing + '</div>'+
+                    '<div class="music-text">'+
+                        '<p>작사</p>' + item.write + '</div>'+
+                    '<div class="music-text">'+
+                        '<p>작곡</p>' + item.produce + '</div>'+
+                    '<div class="music-text">'+
+                        '<p>편곡</p>' + item.arrange + '</div>'+
+                '</div>');
+            });
+            
+            // 평가 틀 생성
+            $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Metacritic" src="//media.hungbok.net/image/logo/metacritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">메타스코어</div>'+
+                    "<a href='" + metascore_link + "' class='rating-star' target='_blank' ttt='" + metascore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + metascore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + metacritic_userscore_link + "' class='rating-star' target='_blank' ttt='" + metacritic_userscore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + metacritic_userscore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.rottentomatoes").append('<div class="rating-card rottentomatoes rating-two-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Rotten Tomatoes" src="//media.hungbok.net/image/logo/rottentomatoes.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">토마토미터</div>'+
+                    "<a href='" + tomatometer_link + "' class='rating-star' target='_blank' ttt='" + tomatometer_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + tomatometer_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">관객 점수</div>'+
+                    "<a href='" + rottentomatoes_audience_link + "' class='rating-star' target='_blank' ttt='" + rottentomatoes_audience_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + rottentomatoes_audience_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.imdb").append('<div class="rating-card imdb rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="IMDb" src="//media.hungbok.net/image/logo/imdb.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + imdb_link + "' class='rating-star' target='_blank' ttt='" + imdb_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + imdb_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.letterboxd").append('<div class="rating-card letterboxd rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Letterboxd" src="//media.hungbok.net/image/logo/letterboxd.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + letterboxd_link + "' class='rating-star' target='_blank' ttt='" + letterboxd_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + letterboxd_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.tmdb").append('<div class="rating-card tmdb rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="The Movie Database" src="//media.hungbok.net/image/logo/tmdb.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + tmdb_link + "' class='rating-star' target='_blank' ttt='" + tmdb_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + tmdb_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.filmarks").append('<div class="rating-card filmarks rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Filmarks" src="//media.hungbok.net/image/logo/filmarks.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + filmarks_link + "' class='rating-star' target='_blank' ttt='" + filmarks_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + filmarks_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.yahoojapan").append('<div class="rating-card yahoojapan rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Yahoo Japan" src="//media.hungbok.net/image/logo/yahoojapan.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + yahoojp_link + "' class='rating-star' target='_blank' ttt='" + yahoojp_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + yahoojp_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.google").append('<div class="rating-card google rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Google" src="//media.hungbok.net/image/logo/google.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + google_link + "' class='rating-star' target='_blank' ttt='" + google_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + google_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.eiga").append('<div class="rating-card eiga rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Eiga.com" src="//media.hungbok.net/image/logo/eiga.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + eiga_link + "' class='rating-star' target='_blank' ttt='" + eiga_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + eiga_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.douban").append('<div class="rating-card douban rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Douban" src="//media.hungbok.net/image/logo/douban.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + douban_link + "' class='rating-star' target='_blank' ttt='" + douban_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + douban_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.bilibili").append('<div class="rating-card bilibili rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="BiliBili" src="//media.hungbok.net/image/logo/bilibili.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + bilibili_link + "' class='rating-star' target='_blank' ttt='" + bilibili_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + bilibili_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.myanimelist").append('<div class="rating-card myanimelist rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="MyAnimeList" src="//media.hungbok.net/image/logo/myanimelist.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + myanimelist_link + "' class='rating-star' target='_blank' ttt='" + myanimelist_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + myanimelist_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.mydramalist").append('<div class="rating-card mydramalist rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="MyDramaList" src="//media.hungbok.net/image/logo/mydramalist.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + mydramalist_link + "' class='rating-star' target='_blank' ttt='" + mydramalist_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + mydramalist_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.anikore").append('<div class="rating-card anikore rating-two-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Anikore" src="//media.hungbok.net/image/logo/anikore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">종합 점수</div>'+
+                    "<a href='" + anikore_link + "' class='rating-star' target='_blank' ttt='" + anikore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + anikore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + anikore_userscore_link + "' class='rating-star' target='_blank' ttt='" + anikore_userscore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + anikore_userscore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.anilist").append('<div class="rating-card anilist rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Anilist" src="//media.hungbok.net/image/logo/anilist.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + anilist_link + "' class='rating-star' target='_blank' ttt='" + anilist_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + anilist_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.watchapedia").append('<div class="rating-card watchapedia rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Watchapedia" src="//media.hungbok.net/image/logo/watchapedia.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + watchapedia_link + "' class='rating-star' target='_blank' ttt='" + watchapedia_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + watchapedia_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.kinolights").append('<div class="rating-card kinolights rating-two-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Kinolights" src="//media.hungbok.net/image/logo/kinolights.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">신호등 평점</div>'+
+                    "<a href='" + kinolights_link + "' class='rating-star' target='_blank' ttt='" + kinolights_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + kinolights_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + kinolights_userscore_link + "' class='rating-star' target='_blank' ttt='" + kinolights_userscore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + kinolights_userscore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.primevideo").append('<div class="rating-card primevideo rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Prime Video" src="//media.hungbok.net/image/logo/primevideo.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + primevideo_link + "' class='rating-star' target='_blank' ttt='" + primevideo_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + primevideo_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.unext").append('<div class="rating-card unext rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="U-Next" src="//media.hungbok.net/image/logo/unext.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + unext_link + "' class='rating-star' target='_blank' ttt='" + unext_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + unext_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.crunchyroll").append('<div class="rating-card crunchyroll rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Crunchyroll" src="//media.hungbok.net/image/logo/crunchyroll.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + crunchyroll_link + "' class='rating-star' target='_blank' ttt='" + crunchyroll_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + crunchyroll_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.laftel").append('<div class="rating-card laftel rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Laftel" src="//media.hungbok.net/image/logo/laftel.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + laftel_link + "' class='rating-star' target='_blank' ttt='" + laftel_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + laftel_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
     
             var description = document.querySelector('.description');
             var showMore = document.querySelector('.show-more');
@@ -358,90 +1009,6 @@ $(document).ready(function(){
                 description.style.maxHeight = "500px";
                 showMore.style.display = "block";
             }
-
-            const data_import_type_first = data[0].data_import_type_first;
-            const data_import_first = data[0].data_import_first;
-            const data_import_type_second = data[0].data_import_type_second;
-            const data_import_second = data[0].data_import_second;
-            const data_import_type_third = data[0].data_import_type_third;
-            const data_import_third = data[0].data_import_third;
-
-            $(".dlc").append('<p class="description-title">이 제품은 확장팩 혹은 다운로드 가능한 콘텐츠입니다.</p>'+
-            '<p>플레이하려면 다음 제품 중 하나가 필요합니다.</p>'+
-            '<div>'+
-                '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</a>'+
-                    '<a data-placeholder="title"></a>'+
-                '</p>'+
-                '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
-                '</p>'+
-                '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
-                '</p>'+
-            '</div>');
-
-            $(".mod").append('<p class="description-title">이 제품은 2차 창작 모드 혹은 애드온입니다.</p>'+
-            '<p>플레이하려면 다음 제품이 필요합니다.</p>'+
-            '<div>'+
-                '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</a>'+
-                    '<a data-placeholder="title"></a>'+
-                '</p>'+
-                '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
-                '</p>'+
-                '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
-                '</p>'+
-            '</div>');
-
-            $(".mode").append('<p class="description-title">이 콘텐츠는 게임 모드입니다.</p>'+
-            '<p>다음 제품에 포함되어 있습니다.</p>'+
-            '<div>'+
-                '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</a>'+
-                    '<a data-placeholder="title"></a>'+
-                '</p>'+
-                '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
-                '</p>'+
-                '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
-                '</p>'+
-            '</div>');
-
-            document.body.innerHTML = document.body.innerHTML
-            .replace(/{data_import_type_first}/g, data[0].data_import_type_first)
-            .replace(/{data_import_first}/g, data[0].data_import_first)
-            .replace(/{data_import_type_second}/g, data[0].data_import_type_second)
-            .replace(/{data_import_second}/g, data[0].data_import_second)
-            .replace(/{data_import_type_third}/g, data[0].data_import_type_third)
-            .replace(/{data_import_third}/g, data[0].data_import_third);
 
             
             function loadJSON(file, callback) {
