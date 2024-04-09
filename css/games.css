@@ -2190,7 +2190,8 @@ div.opencritic-reviews {
     border-radius: 20px;
 } */
 
-.icon-none {
+.icon-none,
+.icon-undefined {
     display: none;
 }
 
