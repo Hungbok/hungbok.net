@@ -165,12 +165,12 @@
 }
 
 .middle-content {
-    min-height: 400px;
     display: grid;
-    grid-template-columns: 640px auto;
+    grid-template-columns: 380px auto;
+    grid-template-rows: auto auto auto auto;
     column-gap: 40px;
-    row-gap: 20px;
-    padding: 40px;
+    row-gap: 40px;
+    padding: 0px 40px;
 }
 /* top path & title */
 
@@ -563,17 +563,14 @@
 
 .info {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     position: relative;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    gap: 20px;
 }
 
 .key-art {
-    max-width: 300px;
-    height: 450px;
+    max-width: 100%;
     width: 100%;
     display: flex;
     border-radius: 20px;
