@@ -1001,6 +1001,18 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
             '</div>');
+            
+            $(document).ready(function() {
+                // .rating-star.none 클래스를 찾아서 처리합니다.
+                $('.rating-star.none').each(function() {
+                  // 하위 .star-ratings 클래스를 삭제하고 '-'로 대체
+                  $(this).find('.star-ratings').remove();
+                  $(this).text('-');
+                  
+                  // .none 클래스를 삭제
+                  $(this).removeClass('none');
+                });
+            });
     
             var description = document.querySelector('.description');
             var showMore = document.querySelector('.show-more');
@@ -1009,7 +1021,6 @@ $(document).ready(function(){
                 description.style.maxHeight = "500px";
                 showMore.style.display = "block";
             }
-
             
             function loadJSON(file, callback) {
                 var xhr = new XMLHttpRequest();
