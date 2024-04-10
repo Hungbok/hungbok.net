@@ -1716,21 +1716,6 @@ $(document).ready(function(){
     }
 });
 
-window.addEventListener("scroll", function() {
-    var scrolledHeight= window.pageYOffset;
-    var newPosition = -(scrolledHeight * 0.5);
-    var newPosition2 = (scrolledHeight * 0.5);
-  
-    if (newPosition >= -250 && newPosition <= 0) {
-        document.getElementsByClassName("top-background")[0].style.backgroundPosition = "center " + newPosition + "px";
-        document.getElementsByClassName("top-background-mirror")[0].style.backgroundPosition = "center " + newPosition + "px";
-    }
-  
-    if (newPosition2 >= 0 && newPosition2 <= 250) {
-        document.getElementsByClassName("top-background-shadow")[0].style.transform = "scaleX(1) scaleY(-1) translate(-50%, " + newPosition2 + "px)";
-    }
-});
-
 function showError(image) {
     // URL의 쿼리 매개변수에서 'q'값을 가져옴
     var urlParams = new URLSearchParams(window.location.search);
@@ -1775,23 +1760,6 @@ $(document).ready(function(){
       }
     });
 });
-
-function changeTab(evt, tabIndex) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("more-info-tab-content");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("more-info-tab");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active-tab", "");
-    }
-    document.getElementById("tab-content-" + tabIndex).style.display = "block";
-    evt.currentTarget.className += " active-tab";
-}
-
-// 초기 탭 설정 (예: 첫 번째 탭 활성화)
-changeTab({currentTarget: document.getElementsByClassName("more-info-tab")[0]}, 0);
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
