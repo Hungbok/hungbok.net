@@ -549,6 +549,139 @@ $(document).ready(function(){
                         '<p>편곡</p>' + item.arrange + '</div>'+
                 '</div>');
             });
+    
+            const metascore_score = data.metasc;
+            const metascore_link = data.metalink;
+            const metascore_percent = data.metaper;
+            const metacritic_userscore_score = data.metausersc;
+            const metacritic_userscore_link = data.metauserlink;
+            const metacritic_userscore_percent = data.metauserper;
+    
+            const tomatometer_score = data.tomatosc;
+            const tomatometer_link = data.tomatolink;
+            const tomatometer_percent = data.tomatoper;
+            const rottentomatoes_audience_score = data.tomatousersc;
+            const rottentomatoes_audience_link = data.tomatouserlink;
+            const rottentomatoes_audience_percent = data.tomatouserper;
+    
+            const imdb_score = data.imdbsc;
+            const imdb_link = data.imdblink;
+            const imdb_percent = data.imdbper;
+    
+            const letterboxd_score = data.lettersc;
+            const letterboxd_link = data.letterlink;
+            const letterboxd_percent = data.letterper;
+    
+            const tmdb_score = data.tmdbsc;
+            const tmdb_link = data.tmdblink;
+            const tmdb_percent = data.tmdbper;
+    
+            const filmarks_score = data.filmarkssc;
+            const filmarks_link = data.filmarkslink;
+            const filmarks_percent = data.filmarksper;
+    
+            const yahoojp_score = data.yahoosc;
+            const yahoojp_link = data.yahoolink;
+            const yahoojp_percent = data.yahooper;
+    
+            const google_score = data.googlesc;
+            const google_link = data.googlelink;
+            const google_percent = data.googleper;
+    
+            const eiga_score = data.eigasc;
+            const eiga_link = data.eigalink;
+            const eiga_percent = data.eigaper;
+    
+            const douban_score = data.doubansc;
+            const douban_link = data.doubanlink;
+            const douban_percent = data.doubanper;
+    
+            const bilibili_score = data.bilisc;
+            const bilibili_link = data.bililink;
+            const bilibili_percent = data.biliper;
+    
+            const myanimelist_score = data.malsc;
+            const myanimelist_link = data.mallink;
+            const myanimelist_percent = data.malper;
+    
+            const mydramalist_score = data.mdlsc;
+            const mydramalist_link = data.mdllink;
+            const mydramalist_percent = data.mdlper;
+    
+            const anikore_score = data.anikoresc;
+            const anikore_link = data.anikorelink;
+            const anikore_percent = data.anikoreper;
+            const anikore_userscore_score = data.anikoreusersc;
+            const anikore_userscore_link = data.anikoreuserlink;
+            const anikore_userscore_percent = data.anikoreuserper;
+    
+            const anilist_score = data.anilistsc;
+            const anilist_link = data.anilistlink;
+            const anilist_percent = data.anilistper;
+    
+            const watchapedia_score = data.watchasc;
+            const watchapedia_link = data.watchalink;
+            const watchapedia_percent = data.watchaper;
+    
+            const kinolights_score = data.kinosc;
+            const kinolights_link = data.kinolink;
+            const kinolights_percent = data.kinoper;
+            const kinolights_userscore_score = data.kinousersc;
+            const kinolights_userscore_link = data.kinouserlink;
+            const kinolights_userscore_percent = data.kinouserper;
+    
+            const primevideo_score = data.primesc;
+            const primevideo_link = data.primelink;
+            const primevideo_percent = data.primeper;
+    
+            const unext_score = data.unextsc;
+            const unext_link = data.unextlink;
+            const unext_percent = data.unextper;
+    
+            const crunchyroll_score = data.crunchysc;
+            const crunchyroll_link = data.crunchylink;
+            const crunchyroll_percent = data.crunchyper;
+    
+            const laftel_score = data.laftelsc;
+            const laftel_link = data.laftellink;
+            const laftel_percent = data.laftelper;
+    
+            const opencritic_rating_score = data.openrasc;
+            const opencritic_rating_link = data.openralink;
+            const opencritic_rating_image = data.openraimg;
+            const opencritic_score = data.opensc;
+            const opencritic_link = data.openlink;
+            const opencritic_percent = data.openper;
+            const opencritic_recommend_score = data.openresc;
+            const opencritic_recommend_link = data.openrelink;
+            const opencritic_recommend_percent = data.openreper;
+    
+            const appstore_score = data.appstoresc;
+            const appstore_link = data.appstorelink;
+            const appstore_percent = data.appstoreper;
+    
+            const googleplay_score = data.googleplaysc;
+            const googleplay_link = data.googleplaylink;
+            const googleplay_percent = data.googleplayper;
+    
+            const steam_score = data.steamsc;
+            const steam_link = data.steamlink;
+            const steam_percent = data.steamper;
+            const steam_userscore_score = data.steamusersc;
+            const steam_userscore_link = data.steamuserlink;
+            const steam_userscore_percent = data.steamuserper;
+    
+            const epicgames_score = data.epicsc;
+            const epicgames_link = data.epiclink;
+            const epicgames_percent = data.epicper;
+    
+            const gog_score = data.gogsc;
+            const gog_link = data.goglink;
+            const gog_percent = data.gogper;
+    
+            const microsoft_score = data.mssc;
+            const microsoft_link = data.mslink;
+            const microsoft_percent = data.msper;
             
             // 평가 틀 생성
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
@@ -1001,7 +1134,7 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
             '</div>');
-            
+
             $(document).ready(function() {
                 // .rating-star.none 클래스를 찾아서 처리합니다.
                 $('.rating-star.none').each(function() {
