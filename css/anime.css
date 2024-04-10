@@ -45,6 +45,10 @@
     padding: 0px;
     margin: 0px;
     position: relative;
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: flex-start;
 }
 
 .top-title img {
@@ -2131,8 +2135,14 @@ div.opencritic-reviews {
     margin: 0px 0px 40px;
 }
 
+.external-links {
+    justify-content: center;
+    gap: 20px;
+}
+
 .external-link {
     border-radius: 10px;
+    margin: 0;
 }
 
 .external-link:hover {
