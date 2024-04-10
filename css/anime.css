@@ -196,7 +196,7 @@
 }
 
 .content-path a {
-    color: var(--text-6);
+    color: var(--text-4-6);
     position: relative;
     line-height: 24px;
     -webkit-transition: all 0.5s;
@@ -207,17 +207,17 @@
 }
 
 .content-path a:hover {
-    color: var(--text-2);
+    color: var(--text-4-2);
 }
 
 .content-path a:last-child {
-    color: var(--text-3);
+    color: var(--text-4-3);
 }
 
 .content-path a:after {
     content: ">";
     pointer-events: none;
-    color: var(--text-8);
+    color: var(--text-4-8);
     position: absolute;
     top: 50%;
     left: calc(100% + 10px);
@@ -625,7 +625,7 @@
     position: relative;
     margin: 0;
     display: inline-block;
-    color: var(--text-8);
+    color: var(--text-4-8);
     vertical-align: middle;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -638,7 +638,7 @@
     display: flex;
     margin: 0;
     vertical-align: middle;
-    color: var(--text-5);
+    color: var(--text-4-5);
     padding: 5px 10px;
     border-radius: 20px;
     min-height: 20px;
@@ -741,7 +741,7 @@
     display: inline-table;
     font-weight: 700;
     padding: 0px;
-    color: var(--text-6);
+    color: var(--text-4-6);
     width: 100%;
     border-radius: 20px;
     margin: 0px;
@@ -798,7 +798,7 @@
 .more-info-language {
     padding: 30px;
     background-color: var(--background-8);
-    color: var(--text-4);
+    color: var(--text-4-4);
     border-radius: 20px;
     max-width: calc(100% - 80px);
     display: flex;
@@ -811,19 +811,19 @@
 }
 
 .more-info-item-title {
-    color: var(--text-2);
+    color: var(--text-4-2);
     font-weight: bold;
     margin: 0px 0px 5px;
     text-align: left;
 }
 
 .more-info-item-text {
-    color: var(--text-4);
+    color: var(--text-4-4);
     margin: 0;
 }
 
 .system-requirements {
-    color: var(--text-4);
+    color: var(--text-4-4);
     margin: 0;
     display: inline-block;
     text-align: left;
@@ -838,15 +838,15 @@
 
 .system-requirements > div > p {
     margin: 0;
-    color: var(--text-4);
+    color: var(--text-4-4);
 }
 
 .system-requirements > div > p:first-child {
-    color: var(--text-6);
+    color: var(--text-4-6);
 }
 
 .section-info-item-title {
-    color: var(--text-2);
+    color: var(--text-4-2);
     font-weight: bold;
     margin: 0 0 20px;
     text-align: left;
@@ -856,7 +856,7 @@
 
 div.system-requirements-title {
     display: inline-block;
-    background-color: var(--text-3);
+    background-color: var(--text-4-3);
     color: var(--background-8);
     border-radius: 5px;
     padding: 2.5px 5px;
@@ -889,7 +889,7 @@ div.system-requirements-title {
     outline: none;
     cursor: pointer;
     padding: 10px 20px;
-    color: var(--text-6);
+    color: var(--text-4-6);
     z-index: 1;
     position: relative;
     -webkit-transition: all 0.5s;
@@ -900,7 +900,7 @@ div.system-requirements-title {
 }
 
 .more-info-tab:hover {
-    color: var(--text-4);
+    color: var(--text-4-4);
 }
 
 .more-info-tab.none {
@@ -918,14 +918,14 @@ div.system-requirements-title {
 }
 
 .active-tab {
-    color: var(--text-2);
-    border-bottom: var(--text-2) 3px solid;
+    color: var(--text-4-2);
+    border-bottom: var(--text-4-2) 3px solid;
 }
 
 .more-info-item-text.release > div::before,
 .more-info-item-text.release > .release-type {
     display: inline-block;
-    background-color: var(--text-3);
+    background-color: var(--text-4-3);
     color: var(--background-8);
     border-radius: 5px;
     padding: 2.5px 5px;
@@ -948,7 +948,7 @@ div.system-requirements-title {
 }
 
 .more-info .info-left p {
-    color: var(--text-2);
+    color: var(--text-4-2);
     line-height: 21px;
     font-size: 14px;
     transform: translate(0px, 0px);
@@ -972,7 +972,7 @@ div.system-requirements-title {
     display: inline-block;
     margin: 0;
     vertical-align: middle;
-    color: var(--text-5);
+    color: var(--text-4-5);
     padding: 0px;
     border-radius: 20px;
     line-height: 21px;
@@ -1016,7 +1016,7 @@ div.system-requirements-title {
     content: "";
     width: 100%;
     height: 1px;
-    background-color: var(--text-4);
+    background-color: var(--text-4-4);
     position: absolute;
     top: 50%;
     transform: translate(0px, -50%);
@@ -1091,7 +1091,7 @@ div.system-requirements-title {
 
 .reviews .release-type {
     display: inline-block;
-    background-color: var(--text-3);
+    background-color: var(--text-4-3);
     color: var(--background-8);
     border-radius: 5px;
     padding: 2.5px 5px;
@@ -1688,7 +1688,7 @@ div.opencritic-reviews {
     height: auto;
     grid-template-columns: 50% 50%;
     justify-items: center;
-    color: var(--text-6);
+    color: var(--text-4-6);
 }
 
 .more-info .info-right .info-language p,
@@ -1846,7 +1846,7 @@ div.opencritic-reviews {
 }
 
 .description p {
-    color: var(--text-6);
+    color: var(--text-4-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -1859,7 +1859,7 @@ div.opencritic-reviews {
 }
 
 .description > .description-attention {
-    color: var(--text-5);
+    color: var(--text-4-5);
     padding: 4px 20px;
     border-radius: 20px;
     margin: 0px 0px 40px;
@@ -1882,7 +1882,7 @@ div.opencritic-reviews {
 }
 
 .description > p.description-plot {
-    color: var(--text-5);
+    color: var(--text-4-5);
     padding: 20px;
     background-color: var(--background-8);
     border-radius: 20px;
@@ -1897,7 +1897,7 @@ div.opencritic-reviews {
 
 .description-attention > p.description-title,
 .description-content > p.description-title {
-    color: var(--text-4);
+    color: var(--text-4-4);
     font-weight: bold;
 }
 
@@ -1988,7 +1988,7 @@ div.opencritic-reviews {
 
 .description-link a:hover {
     text-decoration: none;
-    color: var(--text-4);
+    color: var(--text-4-4);
 }
 
 .description-image {
@@ -2020,7 +2020,7 @@ div.opencritic-reviews {
 
 .description-content {
     font-size: 18px;
-    color: var(--text-4);
+    color: var(--text-4-4);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -2038,12 +2038,12 @@ div.opencritic-reviews {
 
 .description .h1 {
     font-size: 24px;
-    color: var(--text-1);
+    color: var(--text-4-1);
 }
 
 .description .bold {
     font-weight: bold;
-    color: var(--text-3);
+    color: var(--text-4-3);
 }
 
 .description .underbar {
@@ -2052,12 +2052,12 @@ div.opencritic-reviews {
 
 .description .italic {
     font-style: italic;
-    color: var(--text-5);
+    color: var(--text-4-5);
 }
 
 .description .strike {
     text-decoration-line: line-through;
-    color: var(--text-8);
+    color: var(--text-4-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2067,7 +2067,7 @@ div.opencritic-reviews {
 
 .description .strike:hover {
     text-decoration-line: none;
-    color: var(--text-7);
+    color: var(--text-4-7);
 }
 
 .description .spoiler {
@@ -2083,12 +2083,12 @@ div.opencritic-reviews {
 
 .description .spoiler:hover {
     background-color: var(--black);
-    color: var(--text-2);
+    color: var(--text-4-2);
     filter: blur(0px);
 }
 
 .description a {
-    color: var(--text-3);
+    color: var(--text-4-3);
     text-decoration-line: underline;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2099,7 +2099,7 @@ div.opencritic-reviews {
 
 .description a:hover {
     text-decoration-line: none;
-    color: var(--text-2);
+    color: var(--text-4-2);
 }
 
 .video-container {
@@ -2186,7 +2186,7 @@ div.opencritic-reviews {
     margin: 20px 0px;
     border-radius: 20px;
     overflow: hidden;
-    background-color: var(--section);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2195,7 +2195,7 @@ div.opencritic-reviews {
 }
 
 .story-card:hover {
-    background-color: var(--box);
+    background-color: var(--background-6);
     transform: scale(1.025);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2213,7 +2213,7 @@ div.opencritic-reviews {
     display: grid;
     grid-template-columns: 100%;
     padding: 10px 0px;
-    background-color: var(--container);
+    background-color: var(--background-7);
     border-radius: 20px 0px 0px 20px;
     margin: 0px 0px 20px;
     -webkit-transition: all 0.5s;
@@ -2227,7 +2227,7 @@ div.opencritic-reviews {
     display: grid;
     grid-template-columns: 100%;
     padding: 10px 0px;
-    background-color: var(--container);
+    background-color: var(--background-7);
     border-radius: 0px 20px 20px 0px;
     margin: 0px 0px 20px;
     -webkit-transition: all 0.5s;
@@ -2243,7 +2243,7 @@ div.opencritic-reviews {
     display: flex;
     grid-column-start: 2;
     grid-column-end: 4;
-    background-color: var(--container);
+    background-color: var(--background-7);
     margin: 0px 0px 20px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2255,7 +2255,7 @@ div.opencritic-reviews {
 .story-card:hover .story-episode,
 .story-card:hover .story-date,
 .story-card:hover .story-title {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2300,7 +2300,6 @@ div.opencritic-reviews {
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
     user-select: none;
-    background-image: url(/image/error-vertical.svg);
 }
 
 .story-image .story-background {
@@ -2328,7 +2327,7 @@ div.opencritic-reviews {
     margin: 20px 0px;
     border-radius: 20px;
     overflow: hidden;
-    background-color: var(--section);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2337,7 +2336,7 @@ div.opencritic-reviews {
 }
 
 .setting-card:hover {
-    background-color: var(--box);
+    background-color: var(--background-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2356,7 +2355,7 @@ div.opencritic-reviews {
     font-weight: bold;
     border-radius: 20px;
     margin: 20px 0px 20px;
-    background-color: var(--container);
+    background-color: var(--background-7);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2365,7 +2364,7 @@ div.opencritic-reviews {
 }
 
 .setting-card:hover .setting-title {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2400,7 +2399,6 @@ div.opencritic-reviews {
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
     user-select: none;
-    background-image: url(/image/error-vertical.svg);
 }
 
 .setting-image .setting-background {
@@ -2449,7 +2447,7 @@ div.opencritic-reviews {
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
-    background-color: var(--section);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2458,7 +2456,7 @@ div.opencritic-reviews {
 }
 
 .character-card:hover {
-    background-color: var(--box);
+    background-color: var(--background-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2483,7 +2481,6 @@ div.opencritic-reviews {
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
     user-select: none;
-    background-image: url(/image/error-vertical.svg);
 }
 
 .character-image .character-background {
@@ -2535,7 +2532,7 @@ div.opencritic-reviews {
 
 .character-voice {
     border-radius: 20px;
-    background-color: var(--container);
+    background-color: var(--background-7);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2544,7 +2541,7 @@ div.opencritic-reviews {
 }
 
 .character-card:hover .character-voice {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2576,7 +2573,7 @@ div.opencritic-reviews {
 }
 
 .character-voicer:hover {
-    background-color: var(--btn);
+    background-color: var(--background-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2634,7 +2631,7 @@ div.opencritic-reviews {
     border-radius: 20px;
     padding: 20px;
     margin: 20px 0px;
-    background-color: var(--section);
+    background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2643,7 +2640,7 @@ div.opencritic-reviews {
 }
 
 .music-card:hover {
-    background-color: var(--box);
+    background-color: var(--background-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2678,7 +2675,7 @@ div.opencritic-reviews {
     grid-column-start: 1;
     grid-column-end: 6;
     margin: 20px 0px;
-    background-color: var(--container);
+    background-color: var(--background-7);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2691,7 +2688,7 @@ div.opencritic-reviews {
 }
 
 .music-card:hover .music-subtitle {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2735,7 +2732,6 @@ div.opencritic-reviews {
     -webkit-touch-callout: none;
     -webkit-user-drag: none;
     user-select: none;
-    background-image: url(/image/error-vertical.svg);
     -webkit-transition: all 0.25s;
     -moz-transition: all 0.25s;
     -o-transition: all 0.25s;
@@ -2830,12 +2826,12 @@ div.opencritic-reviews {
 }
 
 .music-text p:first-child {
-    background-color: var(--container);
+    background-color: var(--background-7);
     margin: 0px 0px 10px;
     padding: 10px;
     display: block;
     height: 24px;
-    color: var(--text);
+    color: var(--text-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2844,7 +2840,7 @@ div.opencritic-reviews {
 }
 
 .music-card:hover .music-text p:first-child {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2853,7 +2849,7 @@ div.opencritic-reviews {
 }
 
 .music-card:hover .music-text p:not(:first-child):hover {
-    color: var(--texthover);
+    color: var(--text-4-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2873,7 +2869,7 @@ div.opencritic-reviews {
     left: 50%;
     transform: translate(-50%, 0px);
     padding: 20px;
-    background-color: var(--section);
+    background-color: var(--background-8);
     border-radius: 20px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2883,7 +2879,7 @@ div.opencritic-reviews {
 }
 
 .episode-tables:hover {
-    background-color: var(--box);
+    background-color: var(--background-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2911,11 +2907,11 @@ div.opencritic-reviews {
 }
 
 .episode-tables:hover #table-multi-hover {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
 }
 
 .episode-tables:hover #table-multi-hover p {
-    color: var(--text);
+    color: var(--text-4);
 }
 
 .episode-table > thead > tr > th {
@@ -2999,7 +2995,7 @@ div.opencritic-reviews {
 }
 
 .episode-tables:hover #table-multi-hover p:hover {
-    color: var(--texthover);
+    color: var(--text-4-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -3066,7 +3062,7 @@ div.opencritic-reviews {
 }
 
 .table-bg {
-    background-color: var(--btn);
+    background-color: var(--background-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -3117,7 +3113,7 @@ div.opencritic-reviews {
     display: grid;
     grid-template-rows: 50% 50%;
     vertical-align: middle;
-    background-color: var(--section);
+    background-color: var(--background-8);
     margin: 20px 20px 20px 0px;
     border-radius: 20px;
     padding: 20px 20px 25px;
@@ -3130,7 +3126,7 @@ div.opencritic-reviews {
 }
 
 .rating-card:hover > .rating-score {
-    background-color: var(--box);
+    background-color: var(--background-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -3139,7 +3135,7 @@ div.opencritic-reviews {
 }
 
 .rating-card .rating-score:hover {
-    background-color: var(--btnactive);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -3389,7 +3385,7 @@ div.opencritic-reviews {
 }
 
 .rating-star:hover {
-    background-color: var(--btn);
+    background-color: var(--background-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
