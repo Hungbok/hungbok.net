@@ -1742,11 +1742,10 @@ div.system-requirements-title {
 
 .story-card {
     display: grid;
-    grid-template-columns: 15% 25% 35% 25%;
-    grid-template-rows: auto 168.75px auto;
+    grid-template-columns: 30% 45% 25%;
+    grid-template-rows: auto 182.25px auto;
     position: relative;
     padding: 20px;
-    margin: 20px 0px;
     border-radius: 20px;
     overflow: hidden;
     background-color: var(--background-8);
@@ -1804,8 +1803,6 @@ div.system-requirements-title {
     padding: 10px 0px;
     z-index: 2;
     display: flex;
-    grid-column-start: 2;
-    grid-column-end: 4;
     background-color: var(--background-7);
     margin: 0px 0px 20px;
     -webkit-transition: all 0.5s;
@@ -1836,8 +1833,8 @@ div.system-requirements-title {
 .story-description {
     grid-row-start: 2;
     grid-row-end: 5;
-    grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 4;
     padding: 0px 0px 0px 20px;
     text-align: left;
 }
@@ -1849,12 +1846,10 @@ div.system-requirements-title {
 
 .story-image {
     width: auto;
-    height: 168.75px;
+    height: 182.25px;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    grid-column-start: 1;
-    grid-column-end: 3;
     border-radius: 20px;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
