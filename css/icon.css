@@ -36,14 +36,17 @@
 
 /* 활성 언어 */
 
+.character-voicer.en > .character-lang,
 .language-select[data-lang="en"] .language-flag {
     background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center / 30px 20px;
 }
 
+.character-voicer.ja > .character-lang,
 .language-select[data-lang="ja"] .language-flag {
     background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center / 30px 20px;
 }
 
+.character-voicer.ko > .character-lang,
 .language-select[data-lang="ko"] .language-flag {
     background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center / 30px 20px;
 }
