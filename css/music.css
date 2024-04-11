@@ -1699,12 +1699,14 @@ div.system-requirements-title {
     gap: 20px;
 }
 
+.music-link,
 .external-link {
     border-radius: 10px;
     margin: 0;
     cursor: pointer;
 }
 
+.music-link:hover,
 .external-link:hover {
     transform: scale(1.125);
     box-shadow: 0px 0px 5px #000000;
@@ -2507,17 +2509,20 @@ div.system-requirements-title {
 .music-table > thead > tr > th:nth-child(3),
 .music-table > thead > tr > th:nth-child(4),
 .music-table > thead > tr > th:nth-child(5),
-.music-table > thead > tr > th:nth-child(6),
 .music-table > tbody > tr > td:nth-child(3),
 .music-table > tbody > tr > td:nth-child(4),
-.music-table > tbody > tr > td:nth-child(5),
-.music-table > tbody > tr > td:nth-child(6) {
+.music-table > tbody > tr > td:nth-child(5) {
     width: 15%;
+}
+
+.music-table > thead > tr > th:nth-child(6),
+.music-table > tbody > tr > td:nth-child(6) {
+    width: 7.5%;
 }
 
 .music-table > thead > tr > th:last-child,
 .music-table > tbody > tr > td:last-child {
-    width: 12.5%;
+    width: 20%;
 }
 
 .music-table > thead > tr > th:first-child {
@@ -2565,6 +2570,14 @@ div.system-requirements-title {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.music-link {
+    width: 20px;
+    height: 20px;
+    background-size: 10px 10px, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .music-table > tbody > tr > td[rep="1"] > p:last-child {
