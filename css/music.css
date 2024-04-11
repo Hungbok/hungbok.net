@@ -603,6 +603,10 @@
 .info-table .info-tr:last-child .info-left {
     grid-column-start: 1;
     grid-column-end: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .info .info-left p {
@@ -2592,9 +2596,9 @@ div.system-requirements-title {
 }
 
 .album-link {
-    width: 25px;
-    height: 25px;
-    background-size: 15px 15px, 25px 25px, 25px 25px, 25px 25px, 25px 25px;
+    width: 40px;
+    height: 40px;
+    background-size: 25px 25px, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
     border-radius: 5px;
     cursor: pointer;
 }
