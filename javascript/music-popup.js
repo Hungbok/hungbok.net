@@ -75,9 +75,9 @@ $(document).ready(function() {
     function openTrack(e, videoID, url, width, height) {
         e.preventDefault();
 
-        var $popup = $('<div class="music-popup" style="display: none;"></div>');
-        var $content = $('<div class="music-popup-content"></div>');
-        $content.append('<span class="music-popup-close"></span><span class="music-loading"></span><iframe class="music-iframe" src="' + url + videoID + '?width=' + width + '&height=' + height + '&isPC=true&autoPlay=false" width="' + width + '" height="' + height + '" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
+        var $popup = $('<div class="music-track-popup" style="display: none;"></div>');
+        var $content = $('<div class="music-track-popup-content"></div>');
+        $content.append('<span class="music-track-popup-close"></span><span class="music-track-loading"></span><iframe class="music-track-iframe" src="' + url + videoID + '?width=' + width + '&height=' + height + '&isPC=true&autoPlay=false" width="' + width + '" height="' + height + '" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
         $popup.append($content);
         $("body").append($popup);
 
@@ -90,8 +90,8 @@ $(document).ready(function() {
             return false;
         });
 
-        $(".music-popup-close, .music-popup").click(function() {
-            var $popup = $(".music-popup");
+        $(".music-track-popup-close, .music-track-popup").click(function() {
+            var $popup = $(".music-track-popup");
 
             $popup.fadeOut(400, function() {
                 $(this).remove();
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
         $(document).keyup(function(event) {
             if (event.keyCode == 27) {
-                var $popup = $(".music-popup");
+                var $popup = $(".music-track-popup");
                 
                 $popup.fadeOut(400, function() {
                     $(this).remove();
@@ -117,17 +117,17 @@ $(document).ready(function() {
 
     $(document).on('click', '.spotify-track', function(e) {
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://open.spotify.com/embed/track/', '500', '152');
+        openTrack(e, videoID, 'https://open.spotify.com/embed/track/', '750', '152');
     });
 
     $(document).on('click', '.apple-track', function(e) {
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://embed.music.apple.com/album/', '500', '175');
+        openTrack(e, videoID, 'https://embed.music.apple.com/album/', '750', '175');
     });
 
     $(document).on('click', '.amazon-track', function(e) {
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://music.amazon.com/embed/', '500', '300');
+        openTrack(e, videoID, 'https://music.amazon.com/embed/', '750', '300');
     });
 
     $(document).on('click', '.deezer-track', function(e) {

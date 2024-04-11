@@ -101,6 +101,7 @@
     background-size: 50px;
     animation: loading 2s linear infinite;
     z-index: 1;
+    pointer-events: none;
 }
 
 .grtyoutube-popup a {
