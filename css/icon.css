@@ -1164,6 +1164,18 @@
     background: url(//media.hungbok.net/image/icon/googleplaymusic.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
+.icon-deezer {
+    background: url(//media.hungbok.net/image/icon/deezer.svg) no-repeat center / 30px 30px, #a238ff;
+}
+
+.icon-vibe {
+    background: url(//media.hungbok.net/image/icon/vibe.svg) no-repeat center / 30px 30px, linear-gradient(160deg, #ff0c28, #7200ff);
+}
+
+.icon-linemusic {
+    background: url(//media.hungbok.net/image/icon/linemusic.svg) no-repeat center / 30px 30px, linear-gradient(#0ee071, #03b363);
+}
+
 /* os */
 
 .icon-windows {
