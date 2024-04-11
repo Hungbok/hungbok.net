@@ -2,9 +2,9 @@ $(document).ready(function() {
     function openVideo(e, videoID, url) {
         e.preventDefault();
 
-        var $popup = $('<div class="grtyoutube-popup" style="display: none;"></div>');
-        var $content = $('<div class="grtyoutube-popup-content"></div>');
-        $content.append('<span class="grtyoutube-popup-close"></span><span class="grtyoutube-loading"></span><iframe class="grtyoutube-iframe" src="' + url + videoID + '?width=750&height=450&isPC=true&autoPlay=false" width="750" height="300" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
+        var $popup = $('<div class="music-popup" style="display: none;"></div>');
+        var $content = $('<div class="music-popup-content"></div>');
+        $content.append('<span class="music-popup-close"></span><span class="music-loading"></span><iframe class="music-iframe" src="' + url + videoID + '?width=750&height=450&isPC=true&autoPlay=false" width="750" height="450" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
         $popup.append($content);
         $("body").append($popup);
 
@@ -17,8 +17,8 @@ $(document).ready(function() {
             return false;
         });
 
-        $(".grtyoutube-popup-close, .grtyoutube-popup").click(function() {
-            var $popup = $(".grtyoutube-popup");
+        $(".music-popup-close, .music-popup").click(function() {
+            var $popup = $(".music-popup");
 
             $popup.fadeOut(400, function() {
                 $(this).remove();
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
         $(document).keyup(function(event) {
             if (event.keyCode == 27) {
-                var $popup = $(".grtyoutube-popup");
+                var $popup = $(".music-popup");
                 
                 $popup.fadeOut(400, function() {
                     $(this).remove();
