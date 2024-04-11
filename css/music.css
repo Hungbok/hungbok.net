@@ -805,7 +805,6 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    align-items: center;
     justify-content: center;
 }
 
@@ -2051,6 +2050,7 @@ div.system-requirements-title {
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
+    gap: 20px;
     background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2163,7 +2163,7 @@ div.system-requirements-title {
     font-weight: bold;
     padding: 10px;
     border-radius: 20px;
-    margin: 20px 0px;
+    margin: 0px 0px 20px;
 }
 
 .character-name[ttt]:hover::after {
