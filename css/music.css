@@ -158,6 +158,7 @@
     row-gap: 40px;
     padding: 0px 40px;
 }
+
 /* top path & title */
 
 .content-name {
@@ -692,6 +693,10 @@
 }
 
 /* bottom */
+
+iframe {
+    border-radius: 20px;
+}
 
 .bottom-content {
     display: grid;
