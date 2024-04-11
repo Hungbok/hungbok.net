@@ -785,7 +785,11 @@
 
 .more-info-release,
 .more-info-language,
-.more-info-reviews {
+.more-info-reviews,
+.story,
+.setting,
+.character,
+.music {
     width: 100%;
     max-width: calc(100% - 20px);
     margin: 10px;
@@ -1994,7 +1998,6 @@ div.system-requirements-title {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 40px 0px;
 }
 
 .character-card {
@@ -2180,7 +2183,6 @@ div.system-requirements-title {
 .music {
     position: relative;
     border-radius: 5px;
-    margin: 50px 0px 40px;
     overflow: hidden;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
