@@ -46,14 +46,10 @@
     margin: 0px;
     width: 100%;
     color: white;
-    text-overflow: ellipsis;
-    display: -webkit-box;
+    display: inline-block;
     position: relative;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
     z-index: 2;
-    bottom: -80px;
-    overflow: hidden;
+    bottom: -70px;
     text-shadow: 0 10px 20px rgb(0 0 0 / 60%);
     font-weight: bold;
     text-align: left;
