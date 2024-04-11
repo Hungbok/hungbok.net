@@ -1936,7 +1936,7 @@ div.system-requirements-title {
     z-index: 2;
     font-weight: bold;
     border-radius: 20px;
-    margin: 0px 0px 20px;
+    margin: 20px 0px 20px;
     background-color: var(--background-7);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
