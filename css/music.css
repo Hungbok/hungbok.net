@@ -772,7 +772,6 @@ iframe {
 .more-info-language,
 .more-info-reviews,
 .story,
-.setting,
 .character,
 .music {
     width: 100%;
@@ -1896,10 +1895,17 @@ div.system-requirements-title {
 
 /* setting */
 
+.setting {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .setting-card {
     display: grid;
-    grid-template-columns: 50% calc(50% - 20px);
     position: relative;
+    max-width: 450px;
+    width: 100%;
     padding: 20px;
     border-radius: 20px;
     column-gap: 20px;
@@ -1949,28 +1955,21 @@ div.system-requirements-title {
 }
 
 .setting-description {
-    grid-row-start: 2;
-    grid-row-end: 4;
     text-align: left;
 }
 
 .setting-card p {
     margin: 0px;
-    vertical-align: middle;
     position: relative;
-    display: inline-block;
-    top: 50%;
-    transform: translate(0%, -50%);
+    display: block;
 }
 
 .setting-image {
     width: auto;
-    height: 303.75px;
+    height: 450px;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
     border-radius: 20px;
     background: url(//media.hungbok.net/image/hb/hb_error_horizontal.svg) center;
     -ms-user-select: none;
