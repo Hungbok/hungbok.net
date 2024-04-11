@@ -2181,14 +2181,9 @@ div.system-requirements-title {
 /* music */
 
 .music {
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .music-card {
@@ -2197,7 +2192,7 @@ div.system-requirements-title {
     position: relative;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px 0px;
+    width: 760px;
     background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2580,34 +2575,6 @@ div.system-requirements-title {
 
 .episode-table > tbody > tr > td[rep="7"] > p:last-child {
     max-width: 125px;
-}
-
-.episode-table > thead > tr > th:nth-child(1):before {
-    content: "회차";
-}
-
-.episode-table > thead > tr > th:nth-child(2)::before {
-    content: "제목";
-}
-
-.episode-table > thead > tr > th:nth-child(3)::before {
-    content: "각본";
-}
-
-.episode-table > thead > tr > th:nth-child(4)::before {
-    content: "콘티";
-}
-
-.episode-table > thead > tr > th:nth-child(5)::before {
-    content: "연출";
-}
-
-.episode-table > thead > tr > th:nth-child(6)::before {
-    content: "작화감독";
-}
-
-.episode-table > thead > tr > th:nth-child(7)::before {
-    content: "방영일";
 }
 
 .table-bg {

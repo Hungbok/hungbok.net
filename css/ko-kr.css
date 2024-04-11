@@ -570,3 +570,31 @@ body.en .middle-content::before {
 .searchingValue > #searchingValueNumber::after {
     content: "개 검색됨";
 }
+
+.episode-table > thead > tr > th:nth-child(1):before {
+    content: "회차";
+}
+
+.episode-table > thead > tr > th:nth-child(2)::before {
+    content: "제목";
+}
+
+.episode-table > thead > tr > th:nth-child(3)::before {
+    content: "각본";
+}
+
+.episode-table > thead > tr > th:nth-child(4)::before {
+    content: "콘티";
+}
+
+.episode-table > thead > tr > th:nth-child(5)::before {
+    content: "연출";
+}
+
+.episode-table > thead > tr > th:nth-child(6)::before {
+    content: "작화감독";
+}
+
+.episode-table > thead > tr > th:nth-child(7)::before {
+    content: "방영일";
+}
