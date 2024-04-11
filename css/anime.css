@@ -2450,6 +2450,7 @@ div.system-requirements-title {
 
 #table-multi-hover {
     margin-top: 20px;
+    overflow: hidden;
     border-radius: 20px;
 }
 
@@ -2502,13 +2503,11 @@ div.system-requirements-title {
     width: 12.5%;
 }
 
-.episode-table > thead > tr > th:first-child,
-.episode-table > tbody > tr > td:first-child {
+.episode-table > thead > tr > th:first-child {
     border-radius: 20px 0px 0px 20px;
 }
 
-.episode-table > thead > tr > th:last-child,
-.episode-table > tbody > tr > td:last-child {
+.episode-table > thead > tr > th:last-child {
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -2575,6 +2574,22 @@ div.system-requirements-title {
 
 .episode-table > tbody > tr > td[rep="7"] > p:last-child {
     max-width: 125px;
+}
+
+.episode-table .episode-tr > td > p[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: calc(100% + 10px);
+    bottom: unset;
+    opacity: 1;
+}
+
+.episode-table .episode-tr:last-child > td > p[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: unset;
+    bottom: calc(100% + 10px);
+    opacity: 1;
 }
 
 .table-bg {
