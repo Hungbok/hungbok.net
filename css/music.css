@@ -85,15 +85,6 @@
     transition: all 0.5s;
 }
 
-.item:hover {
-    transform: scale(1.025);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
 .item-thumbnail {
     width: 300px;
     height: 300px;
@@ -117,6 +108,15 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item:hover .item-thumbnail a {
+    transform: scale(1.025);
 }
 
 .item-thumbnail .thumbnail-background {
