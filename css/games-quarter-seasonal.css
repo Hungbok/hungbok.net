@@ -186,7 +186,6 @@ div#calendar > div > div {
 
 .calendar-item a {
     display: flex;
-    gap: 10px;
 }
 
 .calendar-item-background {
@@ -194,6 +193,7 @@ div#calendar > div > div {
     overflow: hidden;
     max-width: 300px;
     border-radius: 10px;
+    margin: 10px;
     aspect-ratio: 16 / 9;
     align-items: center;
     justify-content: center;
