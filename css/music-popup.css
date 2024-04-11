@@ -49,25 +49,6 @@
     opacity: 1;
 }
 
-.attention.music-popup-close {
-    right: unset;
-    left: 4px;
-    width: auto;
-    background: url(https://icons.getbootstrap.com/assets/icons/exclamation-circle-fill.svg) left center no-repeat;
-    background-size: 20px 20px;
-    padding-left: 25px;
-    font-size: 18px;
-    color: black;
-    filter: invert(23%) sepia(90%) saturate(3256%) hue-rotate(341deg) brightness(95%) contrast(81%);
-    pointer-events: none;
-    text-align: left;
-}
-
-.attention.music-popup-close:after {
-    content: "음악 재생 시 일부 사용자에게 굉장히 큰 볼륨으로 재생될 수 있습니다.\A또한 볼륨 조절이 불가능 하므로, 원활한 청취를 위해서는 가급적 해당 서비스에서 청취해 주시기바랍니다.";
-    white-space: pre;
-}
-
 .music-title {
     text-align: left;
     font-weight: bold;
@@ -173,15 +154,9 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
     text-align: center;
-}
-
-.music-track-popup-content:first-child {
-    margin-top: 150px;
-}
-
-.music-track-popup-content:last-child {
-    margin-bottom: 150px;
 }
 
 .music-track-popup-close {
@@ -202,25 +177,6 @@
 
 .music-track-popup-close:hover {
     opacity: 1;
-}
-
-.attention.music-track-popup-close {
-    right: unset;
-    left: 4px;
-    width: auto;
-    background: url(https://icons.getbootstrap.com/assets/icons/exclamation-circle-fill.svg) left center no-repeat;
-    background-size: 20px 20px;
-    padding-left: 25px;
-    font-size: 18px;
-    color: black;
-    filter: invert(23%) sepia(90%) saturate(3256%) hue-rotate(341deg) brightness(95%) contrast(81%);
-    pointer-events: none;
-    text-align: left;
-}
-
-.attention.music-track-popup-close:after {
-    content: "음악 재생 시 일부 사용자에게 굉장히 큰 볼륨으로 재생될 수 있습니다.\A또한 볼륨 조절이 불가능 하므로, 원활한 청취를 위해서는 가급적 해당 서비스에서 청취해 주시기바랍니다.";
-    white-space: pre;
 }
 
 .music-track-title {
@@ -305,4 +261,23 @@
         height: calc(100% - 37px);
         vertical-align: bottom;
     }
+}
+
+.music-attention {
+    right: unset;
+    left: 4px;
+    width: auto;
+    background: url(https://icons.getbootstrap.com/assets/icons/exclamation-circle-fill.svg) left center no-repeat;
+    background-size: 20px 20px;
+    padding-left: 25px;
+    font-size: 18px;
+    color: black;
+    filter: invert(23%) sepia(90%) saturate(3256%) hue-rotate(341deg) brightness(95%) contrast(81%);
+    pointer-events: none;
+    text-align: left;
+}
+
+.music-attention:after {
+    content: "음악 재생 시 일부 사용자에게 굉장히 큰 볼륨으로 재생될 수 있습니다.\A또한 볼륨 조절이 불가능 하므로, 원활한 청취를 위해서는 가급적 해당 서비스에서 청취해 주시기바랍니다.";
+    white-space: pre;
 }

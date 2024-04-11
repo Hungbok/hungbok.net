@@ -1967,13 +1967,14 @@ div.system-requirements-title {
 }
 
 .setting-description {
-    text-align: left;
+    text-align: center;
 }
 
 .setting-card p {
     margin: 0px;
     position: relative;
     display: block;
+    line-height: 24px;
 }
 
 .setting-image {
@@ -1983,7 +1984,7 @@ div.system-requirements-title {
     position: relative;
     z-index: 1;
     border-radius: 20px;
-    background: url(//media.hungbok.net/image/hb/hb_error_horizontal.svg) center;
+    background: url(//media.hungbok.net/image/hb/hb_error_square.svg) center;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -2601,6 +2602,11 @@ div.system-requirements-title {
     background-size: 25px 25px, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .music-table > tbody > tr > td[rep="1"] > p:last-child {
