@@ -1747,7 +1747,6 @@ div.system-requirements-title {
     position: relative;
     padding: 20px;
     border-radius: 20px;
-    overflow: hidden;
     background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1878,13 +1877,12 @@ div.system-requirements-title {
 
 .setting-card {
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 405px auto auto;
+    grid-template-columns: 50% calc(50% - 20px);
+    grid-template-rows: 64px auto auto;
     position: relative;
     padding: 20px;
-    margin: 20px 0px;
     border-radius: 20px;
-    overflow: hidden;
+    column-gap: 20px;
     background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1912,7 +1910,7 @@ div.system-requirements-title {
     z-index: 2;
     font-weight: bold;
     border-radius: 20px;
-    margin: 20px 0px 20px;
+    margin: 0px 0px 20px;
     background-color: var(--background-7);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1931,7 +1929,9 @@ div.system-requirements-title {
 }
 
 .setting-description {
-    text-align: center;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    text-align: left;
 }
 
 .setting-card p {
@@ -1945,10 +1945,12 @@ div.system-requirements-title {
 
 .setting-image {
     width: auto;
-    height: 405px;
+    height: 303.75px;
     overflow: hidden;
     position: relative;
     z-index: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
     border-radius: 20px;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
