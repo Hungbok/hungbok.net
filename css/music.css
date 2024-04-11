@@ -1447,7 +1447,6 @@ div.system-requirements-title {
     background-color: var(--background-8);
     border-radius: 20px;
     text-align: center;
-    margin: 0px 0px 40px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -1703,6 +1702,7 @@ div.system-requirements-title {
 .external-link {
     border-radius: 10px;
     margin: 0;
+    cursor: pointer;
 }
 
 .external-link:hover {
@@ -1740,7 +1740,7 @@ div.system-requirements-title {
 .character [ttt]:hover::after,
 .music [ttt]:hover::after,
 .rating-star[ttt]:hover::after,
-.episode-table .episode-tr > td > p[ttt]:hover::after {
+.music-table .music-tr > td > p[ttt]:hover::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: calc(100% + 10px);
@@ -2443,9 +2443,9 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-/* episode */
+/* music */
 
-.episode-tables {
+.music-tables {
     position: relative;
     width: 100%;
     left: 50%;
@@ -2459,7 +2459,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.episode-table {
+.music-table {
     margin: 0;
     width: 100%;
     font-size: 14px;
@@ -2479,7 +2479,7 @@ div.system-requirements-title {
     background-color: var(--background-6);
 }
 
-.episode-table > thead > tr > th {
+.music-table > thead > tr > th {
     position: relative;
     color: transparent;
     padding: 5px 30px;
@@ -2494,41 +2494,41 @@ div.system-requirements-title {
     user-select: none;
 }
 
-.episode-table > thead > tr > th:first-child,
-.episode-table > tbody > tr > td:first-child {
+.music-table > thead > tr > th:first-child,
+.music-table > tbody > tr > td:first-child {
     width: 7.5%;
 }
 
-.episode-table > thead > tr > th:nth-child(2),
-.episode-table > tbody > tr > td:nth-child(2) {
+.music-table > thead > tr > th:nth-child(2),
+.music-table > tbody > tr > td:nth-child(2) {
     width: 20%;
 }
 
-.episode-table > thead > tr > th:nth-child(3),
-.episode-table > thead > tr > th:nth-child(4),
-.episode-table > thead > tr > th:nth-child(5),
-.episode-table > thead > tr > th:nth-child(6),
-.episode-table > tbody > tr > td:nth-child(3),
-.episode-table > tbody > tr > td:nth-child(4),
-.episode-table > tbody > tr > td:nth-child(5),
-.episode-table > tbody > tr > td:nth-child(6) {
+.music-table > thead > tr > th:nth-child(3),
+.music-table > thead > tr > th:nth-child(4),
+.music-table > thead > tr > th:nth-child(5),
+.music-table > thead > tr > th:nth-child(6),
+.music-table > tbody > tr > td:nth-child(3),
+.music-table > tbody > tr > td:nth-child(4),
+.music-table > tbody > tr > td:nth-child(5),
+.music-table > tbody > tr > td:nth-child(6) {
     width: 15%;
 }
 
-.episode-table > thead > tr > th:last-child,
-.episode-table > tbody > tr > td:last-child {
+.music-table > thead > tr > th:last-child,
+.music-table > tbody > tr > td:last-child {
     width: 12.5%;
 }
 
-.episode-table > thead > tr > th:first-child {
+.music-table > thead > tr > th:first-child {
     border-radius: 20px 0px 0px 20px;
 }
 
-.episode-table > thead > tr > th:last-child {
+.music-table > thead > tr > th:last-child {
     border-radius: 0px 20px 20px 0px;
 }
 
-.episode-table > thead > tr > th::before {
+.music-table > thead > tr > th::before {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2537,7 +2537,7 @@ div.system-requirements-title {
     color: #222222;
 }
 
-.episode-table > tbody > tr > td {
+.music-table > tbody > tr > td {
     padding: 10px 0px;
     min-height: 42px;
     -webkit-transition: all 0.5s;
@@ -2547,7 +2547,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.episode-table > tbody > tr > td > p {
+.music-table > tbody > tr > td > p {
     display: inline-block;
     margin: 0px 7.5px;
     color: #aaaaaa;
@@ -2558,7 +2558,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.episode-tables:hover #table-multi-hover p:hover {
+.music-tables:hover #table-multi-hover p:hover {
     color: var(--text-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2567,26 +2567,26 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.episode-table > tbody > tr > td[rep="1"] > p:last-child {
+.music-table > tbody > tr > td[rep="1"] > p:last-child {
     max-width: 75px;
 }
 
-.episode-table > tbody > tr > td[rep="2"] > p:last-child {
+.music-table > tbody > tr > td[rep="2"] > p:last-child {
     max-width: 200px;
 }
 
-.episode-table > tbody > tr > td[rep="3"] > p:last-child,
-.episode-table > tbody > tr > td[rep="4"] > p:last-child,
-.episode-table > tbody > tr > td[rep="5"] > p:last-child,
-.episode-table > tbody > tr > td[rep="6"] > p:last-child {
+.music-table > tbody > tr > td[rep="3"] > p:last-child,
+.music-table > tbody > tr > td[rep="4"] > p:last-child,
+.music-table > tbody > tr > td[rep="5"] > p:last-child,
+.music-table > tbody > tr > td[rep="6"] > p:last-child {
     max-width: 150px;
 }
 
-.episode-table > tbody > tr > td[rep="7"] > p:last-child {
+.music-table > tbody > tr > td[rep="7"] > p:last-child {
     max-width: 125px;
 }
 
-.episode-table .episode-tr:last-child > td > p[ttt]:hover::after {
+.music-table .music-tr:last-child > td > p[ttt]:hover::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;

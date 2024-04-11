@@ -598,3 +598,31 @@ body.en .middle-content::before {
 .episode-table > thead > tr > th:nth-child(7)::before {
     content: "방영일";
 }
+
+.music-table > thead > tr > th:nth-child(1):before {
+    content: "트랙";
+}
+
+.music-table > thead > tr > th:nth-child(2)::before {
+    content: "곡명";
+}
+
+.music-table > thead > tr > th:nth-child(3)::before {
+    content: "작사";
+}
+
+.music-table > thead > tr > th:nth-child(4)::before {
+    content: "작곡";
+}
+
+.music-table > thead > tr > th:nth-child(5)::before {
+    content: "편곡";
+}
+
+.music-table > thead > tr > th:nth-child(6)::before {
+    content: "길이";
+}
+
+.music-table > thead > tr > th:nth-child(7)::before {
+    content: "듣기";
+}
