@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         var $popup = $('<div class="music-popup" style="display: none;"></div>');
         var $content = $('<div class="music-popup-content"></div>');
-        $content.append('<span class="music-popup-close"></span><span class="music-loading"></span><iframe class="music-iframe" src="' + url + videoID + '?width=750&height=450&isPC=true&autoPlay=false" width="750" height="450" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
+        $content.append('<span class="music-popup-close"></span><span class="music-loading"></span><iframe class="music-iframe" src="' + url + videoID + '?width=1000&height=450&isPC=true&autoPlay=false" width="1000" height="450" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
         $popup.append($content);
         $("body").append($popup);
 
