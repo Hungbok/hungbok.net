@@ -301,7 +301,7 @@ $(document).ready(function(){
             $(".platform.gogcom").append('<div class="icon-gogcom" ttt="GOG.com"></div>');
             $(".platform.microsoftstore").append('<div class="icon-microsoftstore" ttt="Microsoft Store"></div>');
             $(".platform.eaapp").append('<div class="icon-eaapp" ttt="EA"></div>');
-            $(".platform.ubisoftstore").append('<div class="icon-ubisoftstore" ttt="Ubisoft Store"></div>');
+            $(".platform.ubisoftstore").append('<div class="icon-ubisoftconnect" ttt="Ubisoft Store"></div>');
             $(".platform.battlenet").append('<div class="icon-battlenet" ttt="Battle.net"></div>');
             $(".platform.rockstargamesstore").append('<div class="icon-rockstargamesstore" ttt="Rockstar Games Store"></div>');
             $(".platform.stove").append('<div class="icon-stove" ttt="Stove"></div>');
