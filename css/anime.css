@@ -2428,7 +2428,7 @@ div.system-requirements-title {
 
 .episode-tables {
     position: relative;
-    width: 1000px;
+    width: 100%;
     left: 50%;
     transform: translate(-50%, 0px);
     background-color: var(--background-8);
@@ -2440,18 +2440,9 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.episode-tables:hover {
-    background-color: var(--background-6);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
 .episode-table {
     margin: 0;
-    width: 1000px;
+    width: 100%;
     font-size: 14px;
     border-spacing: 0px;
     border-collapse: separate;
@@ -2464,12 +2455,11 @@ div.system-requirements-title {
 
 #table-multi-hover {
     margin-top: 20px;
-    overflow: hidden;
     border-radius: 20px;
 }
 
 .episode-tables:hover #table-multi-hover {
-    background-color: var(--background-4);
+    background-color: var(--background-6);
 }
 
 .episode-tables:hover #table-multi-hover p {
@@ -2517,11 +2507,13 @@ div.system-requirements-title {
     width: 12.5%;
 }
 
-.episode-table > thead > tr > th:first-child {
+.episode-table > thead > tr > th:first-child,
+.episode-table > tbody > tr > td:first-child {
     border-radius: 20px 0px 0px 20px;
 }
 
-.episode-table > thead > tr > th:last-child {
+.episode-table > thead > tr > th:last-child,
+.episode-table > tbody > tr > td:last-child {
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -2531,7 +2523,7 @@ div.system-requirements-title {
     left: 50%;
     transform: translate(-50%, -50%);
     text-wrap: nowrap;
-    color: var(--title);
+    color: var(--text-1);
     color: #222222;
 }
 
@@ -2566,7 +2558,6 @@ div.system-requirements-title {
 }
 
 .episode-table > tbody > tr:last-child > td > p:last-child {
-    position: absolute;
     display: block;
     width: 100%;
     margin: 0;
@@ -2589,10 +2580,6 @@ div.system-requirements-title {
 
 .episode-table > tbody > tr > td[rep="7"] > p:last-child {
     max-width: 125px;
-}
-
-.episode-table > tbody > tr:last-child > td {
-    padding: 10px 0px 34px;
 }
 
 .episode-table > thead > tr > th:nth-child(1):before {
@@ -2624,7 +2611,7 @@ div.system-requirements-title {
 }
 
 .table-bg {
-    background-color: var(--background-2);
+    background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;

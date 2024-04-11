@@ -5,8 +5,9 @@ async function loadAsyncScripts() {
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/slick.js');
+    await loadScript('./www.hungbok.net/javascript/table-multi-hover.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
-    await loadScript('//www.hungbok.net/javascript/en/error404.js');
+    await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
 
 function loadScript(src) {
@@ -1732,7 +1733,10 @@ function showError(image) {
         .then(data => {
             // 'title'값을 가져와서 div에 설정
             var div = document.createElement('div');
-            div.innerHTML = data[0]['ko'].title;
+            function getLocalizedData(data, key) {
+                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+            }
+            div.innerHTML = getLocalizedData(data[0], 'title');
 
             // 기존 이미지 대신 div 삽입
             image.parentNode.insertBefore(div, image);
