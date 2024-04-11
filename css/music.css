@@ -600,7 +600,7 @@
     transition: all 0.5s;
 }
 
-.info-table .info-tr:last-child {
+.info-table .info-tr:last-child .info-left {
     grid-column-start: 1;
     grid-column-end: 3;
 }
@@ -1904,8 +1904,9 @@ div.system-requirements-title {
 
 .setting {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .setting-card {
