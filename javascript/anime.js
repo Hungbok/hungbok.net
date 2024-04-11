@@ -1763,6 +1763,18 @@ $(document).ready(function(){
         $this.addClass('open');
       }
     });
+    
+    $(document).on('mousemove', '.music-image', function(e){
+        var x = e.offsetX;
+        var y = e.offsetY;
+        var rotateY = -0.4 * x + 20;
+        var rotateX = 0.4 * y - 20;
+        $(this).css('transform', `perspective(350px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+    });
+
+    $(document).on('mouseout', '.music-image', function(){
+        $(this).css('transform', 'perspective(350px) rotateY(0deg) rotateX(0deg)');
+    });
 });
 
 window.addEventListener('load', function() {
