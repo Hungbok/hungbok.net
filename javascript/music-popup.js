@@ -51,9 +51,4 @@ $(document).ready(function() {
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://player.vimeo.com/video/');
     });
-
-    $(document).on('click', '.video-link', function(e) {
-        var videoID = $(this).attr("videoid");
-        openVideo(e, videoID, '');
-    });
 });
