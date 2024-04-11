@@ -58,7 +58,7 @@
 
 .contents-top-thumbnail {
     position: relative;
-    width: 220px;
+    width: 320px;
     height: 320px;
     display: inline-block;
     grid-column-start: 1;
@@ -70,7 +70,7 @@
 /* item */
 
 .item {
-    width: 200px;
+    width: 300px;
     height: auto;
     margin: 10px;
     display: inline-block;
@@ -94,7 +94,7 @@
 }
 
 .item-thumbnail {
-    width: 200px;
+    width: 300px;
     height: 300px;
     overflow: hidden;
     position: relative;
@@ -109,35 +109,6 @@
     -webkit-user-drag: none;
     user-select: none;
     background-image: url(/image/error-vertical.svg);
-}
-
-.item-thumbnail::before {
-    content: "";
-    width: 100%;
-    display: block;
-    height: 100%;
-    position: absolute;
-    background-color: rgb(255 255 255 / 10%);
-    top: -75%;
-    left: 15%;
-    z-index: 1;
-    pointer-events: none;
-    transform: rotate(300deg);
-    filter: blur(10px);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.item-thumbnail:hover::before {
-    top: -50%;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
 }
 
 .item-thumbnail a {
@@ -158,6 +129,23 @@
 .item-thumbnail img {
     position: absolute;
     transform: translate(-50%);
+}
+
+.item-lp {
+    z-index: -1;
+    width: auto;
+    height: 100%;
+    top: 0%;
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%);
+    animation: loading 10s linear infinite;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 /* middle */
