@@ -1866,6 +1866,7 @@ div.system-requirements-title {
     position: relative;
     z-index: 1;
     border-radius: 20px;
+    background: url(//media.hungbok.net/image/hb/hb_error_horizontal.svg) center;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -1882,6 +1883,11 @@ div.system-requirements-title {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .story-image img {
@@ -1891,11 +1897,6 @@ div.system-requirements-title {
 
 .story-card:hover .story-background {
     transform: translate(-50%, -50%) scale(1.05);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
 }
 
 /* setting */
@@ -1976,6 +1977,7 @@ div.system-requirements-title {
     grid-row-start: 1;
     grid-row-end: 3;
     border-radius: 20px;
+    background: url(//media.hungbok.net/image/hb/hb_error_horizontal.svg) center;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
