@@ -2045,9 +2045,8 @@ div.system-requirements-title {
 
 .character-card {
     display: grid;
-    grid-template-rows: 200px auto auto;
     position: relative;
-    max-width: 330px;
+    width: calc(50% - 80px);
     margin: 10px;
     border-radius: 20px;
     padding: 20px;
@@ -2067,6 +2066,10 @@ div.system-requirements-title {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.character-card > .video-play-button {
+    aspect-ratio: 16 / 9;
 }
 
 .character-image {
