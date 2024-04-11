@@ -5,7 +5,7 @@ async function loadAsyncScripts() {
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/slick.js');
-    await loadScript('./www.hungbok.net/javascript/table-multi-hover.js');
+    await loadScript('//www.hungbok.net/javascript/table-multi-hover.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
     await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
