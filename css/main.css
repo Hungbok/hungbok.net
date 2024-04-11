@@ -838,6 +838,10 @@ details {
     background-color: var(--background-4);
 }
 
+.report-item::after {
+    white-space: pre;
+}
+
 .report-item p {
     margin: 0;
     font-weight: bold;
