@@ -600,6 +600,11 @@
     transition: all 0.5s;
 }
 
+.info-table .info-tr:last-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
 .info .info-left p {
     top: 50%;
     transform: translate(0%,-50%);
@@ -1698,6 +1703,7 @@ div.system-requirements-title {
     gap: 20px;
 }
 
+.album-link,
 .music-link,
 .external-link {
     border-radius: 10px;
@@ -1705,6 +1711,7 @@ div.system-requirements-title {
     cursor: pointer;
 }
 
+.album-link:hover,
 .music-link:hover,
 .external-link:hover {
     transform: scale(1.125);
@@ -2576,6 +2583,14 @@ div.system-requirements-title {
 }
 
 .music-link {
+    width: 25px;
+    height: 25px;
+    background-size: 15px 15px, 25px 25px, 25px 25px, 25px 25px, 25px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.album-link {
     width: 25px;
     height: 25px;
     background-size: 15px 15px, 25px 25px, 25px 25px, 25px 25px, 25px 25px;
