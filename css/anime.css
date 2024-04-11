@@ -1746,6 +1746,7 @@ div.system-requirements-title {
 .setting [ttt]:hover::after,
 .character [ttt]:hover::after,
 .music [ttt]:hover::after,
+.rating-star[ttt]:hover::after,
 .episode-table .episode-tr > td > p[ttt]:hover::after {
     left: 50%;
     transform: translate(-50%, 0px);
@@ -2130,6 +2131,14 @@ div.system-requirements-title {
     padding: 10px;
     border-radius: 20px;
     margin: 20px 0px;
+}
+
+.character-name[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: unset;
+    bottom: calc(100% + 10px);
+    opacity: 1;
 }
 
 .character-voicer {
