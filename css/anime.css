@@ -1742,6 +1742,18 @@ div.system-requirements-title {
     display: none;
 }
 
+.story [ttt]:hover::after,
+.setting [ttt]:hover::after,
+.character [ttt]:hover::after,
+.music [ttt]:hover::after,
+.episode-table .episode-tr > td > p[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: calc(100% + 10px);
+    bottom: unset;
+    opacity: 1;
+}
+
 /* story */
 
 .story-card {
@@ -2340,11 +2352,11 @@ div.system-requirements-title {
     left: 0%;
     pointer-events: none;
     animation: loading 10s linear infinite;
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    -o-transition: all 0.25s;
-    -ms-transition: all 0.25s;
-    transition: all 0.25s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .music-image:hover .music-lp {
@@ -2574,14 +2586,6 @@ div.system-requirements-title {
 
 .episode-table > tbody > tr > td[rep="7"] > p:last-child {
     max-width: 125px;
-}
-
-.episode-table .episode-tr > td > p[ttt]:hover::after {
-    left: 50%;
-    transform: translate(-50%, 0px);
-    top: calc(100% + 10px);
-    bottom: unset;
-    opacity: 1;
 }
 
 .episode-table .episode-tr:last-child > td > p[ttt]:hover::after {
