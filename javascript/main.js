@@ -287,13 +287,13 @@ $(document).ready(function() {
                 '<input id="report-title" name="이름" value="">'+
             '</fieldset>'+
             '<fieldset class="pure-group">'+
-                '<div id="option1" class="report-item"><p></p></div>'+
-                '<div id="option2" class="report-item"><p></p></div>'+
-                '<div id="option3" class="report-item"><p></p></div>'+
-                '<div id="option4" class="report-item"><p></p></div>'+
-                '<div id="option5" class="report-item"><p></p></div>'+
-                '<div id="option6" class="report-item"><p></p></div>'+
-                '<div id="option7" class="report-item"><p></p></div>'+
+                '<div id="option1" class="report-item" ttt><p></p></div>'+
+                '<div id="option2" class="report-item" ttt><p></p></div>'+
+                '<div id="option3" class="report-item" ttt><p></p></div>'+
+                '<div id="option4" class="report-item" ttt><p></p></div>'+
+                '<div id="option5" class="report-item" ttt><p></p></div>'+
+                '<div id="option6" class="report-item" ttt><p></p></div>'+
+                '<div id="option7" class="report-item" ttt><p></p></div>'+
             '</fieldset>'+
             '<fieldset class="pure-group type">'+
                 '<label for="report-type"></label>'+

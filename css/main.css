@@ -822,6 +822,7 @@ details {
     cursor: pointer;
     border-radius: 20px;
     text-align: left;
+    min-width: 500px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -840,12 +841,13 @@ details {
 .report-item p {
     margin: 0;
     font-weight: bold;
+    pointer-events: none;
 }
 
 .text-report-help {
     margin: 5px;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     color: var(--text-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -856,10 +858,11 @@ details {
 
 .text-report-help:hover {
     background-color: var(--background-10-opacity-50);
+    color: var(--text-6);
 }
 
 .report-button {
-    padding: 10px 20px;
+    padding: 0px 20px;
     cursor: pointer;
     border-radius: 20px;
     background-color: var(--background-6);
@@ -868,6 +871,7 @@ details {
     width: 100%;
     text-align: center;
     color: var(--text-2);
+    font-weight: bold;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -884,8 +888,6 @@ details {
 }
 
 .form-elements {
-    overflow-x: hidden;
-    overflow-y: scroll;
     max-height: calc(100vh - 500px);
 }
 
