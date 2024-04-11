@@ -2473,9 +2473,6 @@ div.system-requirements-title {
     margin-top: 20px;
     overflow: hidden;
     border-radius: 20px;
-}
-
-.episode-tables:hover #table-multi-hover {
     background-color: var(--background-6);
 }
 
