@@ -92,6 +92,10 @@
 .item-hover {
     z-index: 1;
     position: relative;
+    width: 220px;
+    height: 320px;
+    display: block;
+    left: 50px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -105,12 +109,11 @@
 }
 
 .item-hover .item:first-child {
-    left: 50px;
     z-index: 2;
 }
 
 .item-hover .item:last-child {
-    left: 100px;
+    left: 50px;
     z-index: 1;
 }
 
