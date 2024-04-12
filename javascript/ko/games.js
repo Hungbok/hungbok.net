@@ -756,10 +756,13 @@ $(document).ready(function(){
             
                     placeholders.forEach(function (placeholder) {
                         var key = placeholder.getAttribute('data-placeholder');
-                        // getLocalizedData 함수를 사용하여 로컬라이즈된 데이터를 가져옵니다.
-                        placeholder.innerText = getLocalizedData(jsonData, key);
+                        placeholder.innerText = getLocalizedPlaceholderData(jsonData, key);
                     });
                 });
+            }
+
+            function getLocalizedPlaceholderData(data, key) {
+                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
             }
             
             var dataImportElements = document.querySelectorAll('.data-import');
