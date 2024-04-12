@@ -1931,8 +1931,23 @@ div.opencritic-reviews {
     z-index: 1;
 }
 
-.rating-card.opencritic .rating-star {
-    position: unset;
+.metacritic.rating-three-score .rating-card.rating-two-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.metacritic.rating-three-score .rating-card.rating-two-score img {
+    top: unset;
+    left: unset;
+    transform: unset;
+}
+
+.metacritic.rating-three-score .rating-card.rating-two-score .rating-score {
+    margin: 0;
+    width: calc(100% - 40px);
 }
 
 .rating-card.opencritic .rating-score img {
