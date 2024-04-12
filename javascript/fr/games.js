@@ -663,42 +663,42 @@ $(document).ready(function(){
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
-                    '<a data-placeholder="title"></a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
+                    '</a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
+                    '</a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
             '</div>');
 
-            $(".mod").append('<p class="description-title">This product is an Mod or Add-on.</p>'+
+            $(".add-on").append('<p class="description-title">This product is an Mod or Add-on.</p>'+
             '<p>This content requires the following product to play.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
-                    '<a data-placeholder="title"></a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
+                    '</a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
+                    '</a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
             '</div>');
 
@@ -709,19 +709,19 @@ $(document).ready(function(){
                     '<a href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
-                    '<a data-placeholder="title"></a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
+                    '</a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
                     '<a href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '</a>'+
-                        '<a data-placeholder="title"></a>'+
+                    '</a>'+
+                    '<div data-placeholder="title"></div>'+
                 '</p>'+
             '</div>');
 
