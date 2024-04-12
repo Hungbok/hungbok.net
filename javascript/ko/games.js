@@ -756,13 +756,11 @@ $(document).ready(function(){
             
                     placeholders.forEach(function (placeholder) {
                         var key = placeholder.getAttribute('data-placeholder');
-                        placeholder.innerText = getLocalizedPlaceholderData(jsonData, key);
+                        if (jsonData[0]) { // jsonData가 배열이고 최소 하나의 요소를 포함하는지 확인합니다.
+                            placeholder.innerText = getLocalizedData(jsonData[0], key);
+                        }
                     });
                 });
-            }
-
-            function getLocalizedPlaceholderData(data, key) {
-                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
             }
             
             var dataImportElements = document.querySelectorAll('.data-import');

@@ -756,8 +756,9 @@ $(document).ready(function(){
             
                     placeholders.forEach(function (placeholder) {
                         var key = placeholder.getAttribute('data-placeholder');
-                        // getLocalizedData 함수를 사용하여 로컬라이즈된 데이터를 가져옵니다.
-                        placeholder.innerText = getLocalizedData(jsonData, key);
+                        if (jsonData[0]) { // jsonData가 배열이고 최소 하나의 요소를 포함하는지 확인합니다.
+                            placeholder.innerText = getLocalizedData(jsonData[0], key);
+                        }
                     });
                 });
             }
