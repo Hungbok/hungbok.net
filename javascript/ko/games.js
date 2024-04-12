@@ -660,19 +660,19 @@ $(document).ready(function(){
             '<p>플레이하려면 다음 제품 중 하나가 필요합니다.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                     '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
@@ -683,19 +683,19 @@ $(document).ready(function(){
             '<p>플레이하려면 다음 제품이 필요합니다.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                     '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
@@ -706,19 +706,19 @@ $(document).ready(function(){
             '<p>다음 제품에 포함되어 있습니다.</p>'+
             '<div>'+
                 '<p class="data-import" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?p=' + data_import_first + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                     '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?p=' + data_import_second + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
                 '</p>'+
                 '<p class="data-import" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?p=' + data_import_third + '" target="_blank">'+
+                    '<a href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank">'+
                         '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//data.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '</a>'+
                         '<a data-placeholder="title"></a>'+
