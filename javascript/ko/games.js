@@ -1285,65 +1285,59 @@ $(document).ready(function(){
             });
 
             $(document).ready(function() {
-                var owl = $('.owl-carousel');
-                owl.owlCarousel({
-                    autoWidth: true,
+                var $progressBar = $('.progressBar');
+                var $carousel = $('.owl-carousel');
+
+                $carousel.owlCarousel({
+                    items: 1,
                     loop: true,
                     merge: true,
                     center: true,
                     autoplay: true,
+                    autoWidth: true,
                     autoplayHoverPause: true,
-                    autoplayTimeout: 6000,
-                    autoplaySpeed: 1000,
-                    items: 1,
+                    autoplayTimeout: 5000, // 5초
                     onInitialized: startProgressBar,
                     onTranslate: resetProgressBar,
                     onTranslated: startProgressBar
                 });
-            
+
                 function startProgressBar() {
-                    $(".progressBar").css({
-                        width: "100%",
-                        transition: "width 5000ms linear"
-                    });
+                    // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
+                    $progressBar.css({width: '100%', transition: 'width 5000ms'});
                 }
             
                 function resetProgressBar() {
-                    $(".progressBar").css({
-                        width: 0,
-                        transition: "width 0ms"
-                    });
+                    // 진행 바를 즉시 0%로 초기화합니다.
+                    $progressBar.css({width: '0%', transition: 'none'});
                 }
             
-                owl.on('mouseover',function(e){
-                    owl.trigger('stop.owl.autoplay');
-                    var progressBar = $(".progressBar");
-                    var width = progressBar.width();
-                    progressBar.stop(true, true).css({
-                        width: width,
-                        transition: "width 0s"
-                    });
+                // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
+                $carousel.on('mouseover', function() {
+                    $carousel.trigger('stop.owl.autoplay');
+                    $progressBar.css({width: $progressBar.width(), transition: 'none'});
                 });
             
-                owl.on('mouseleave',function(e){
-                    owl.trigger('play.owl.autoplay');
+                // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
+                $carousel.on('mouseleave', function() {
+                    $carousel.trigger('play.owl.autoplay');
                     startProgressBar();
                 });
 
-                owl.on('changed.owl.carousel', function(event) {
+                $carousel.on('changed.owl.carousel', function(event) {
                     var item = event.item.index;   // 현재 아이템 위치
             
                     // 11번째 아이템에 도달했을 때 즉시 다음 아이템으로 이동
                     if($('.owl-item').eq(item).find('.item.eleven').length > 0) {
                         setTimeout(function() {
-                            owl.trigger('next.owl.carousel');
+                            $carousel.trigger('next.owl.carousel');
                         }, 500);
                     }
                 });
             });
 
             $(window).on('resize', function() {
-                owl.trigger('next.owl.carousel');
+                $carousel.trigger('next.owl.carousel');
             });
 
             $(document).ready(function () {
@@ -1362,7 +1356,7 @@ $(document).ready(function(){
                 $(document).on('click', '.owl-item > div', function() {
                     // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
                     var $speed = 300;  // in ms
-                    $owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                    $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
                 });
             });
         });

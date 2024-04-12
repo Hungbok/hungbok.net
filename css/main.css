@@ -1585,6 +1585,7 @@ fieldset.pure-group.honeypot-field {
 .mobile-search,
 .mobile-menu-logo {
     display: none;
+    cursor: pointer;
 }
 
 .header-footer-menu {
