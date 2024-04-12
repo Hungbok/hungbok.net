@@ -131,7 +131,7 @@ body.adult > main > .top-backgrounds > div {
 /* top background image */
 
 .top-backgrounds {
-    width: 100vw;
+    width: calc(100vw - 12px);
     height: 490px;
     overflow: hidden;
     position: absolute;
