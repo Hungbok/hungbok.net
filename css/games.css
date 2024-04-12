@@ -1964,7 +1964,7 @@ div.opencritic-reviews {
     color: #cccccc;
 }
 
-.description-attention.mod {
+.description-attention.add-on {
     background: linear-gradient(135deg, rgba(190, 150, 25, 0.6) 10%, rgba(224, 177, 29, 0.8) 100%);
 }
 
@@ -1973,7 +1973,7 @@ div.opencritic-reviews {
 }
 
 .description .dlc > div,
-.description .mod > div,
+.description .add-on > div,
 .description .mode > div {
     display: flex;
     width: 100%;
@@ -1984,7 +1984,7 @@ div.opencritic-reviews {
 }
 
 .description .dlc > div:before,
-.description .mod > div:before,
+.description .add-on > div:before,
 .description .mode > div:before {
     content: "";
     width: 100%;
