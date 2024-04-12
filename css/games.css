@@ -1117,7 +1117,7 @@ div.system-requirements-title {
     grid-column-end: 2;
 }
 
-.reviews {
+/* .reviews {
     display: flex;
     flex-wrap: wrap;
     height: calc(100% - 20px);
@@ -1137,7 +1137,7 @@ div.system-requirements-title {
     width: 100%;
 }
 
-/* .metacritic-reviews {
+.metacritic-reviews {
     background-color: var(--background-8);
     border-radius: 20px;
     padding: 20px;
