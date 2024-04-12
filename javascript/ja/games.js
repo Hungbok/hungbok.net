@@ -433,8 +433,8 @@ $(document).ready(function(){
                 });
             }
             metacriticData.forEach(function(item) {
-                $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.class + '">'+
-                    '<img title="' + item.ttt + '" class="rating-platform" src="//media.hungbok.net/image/icon/' + item.img + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.class + '" ttt="' + item.ttt + '">'+
+                    '<img class="rating-platform" src="//media.hungbok.net/image/icon/' + item.img + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;" loading="lazy">'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">메타스코어</div>'+
                         "<a href='" + item.link + "' class='rating-star' target='_blank' ttt='" + item.score + "'>"+
