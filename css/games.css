@@ -1895,7 +1895,7 @@ div.opencritic-reviews {
 
 .description > .description-attention {
     color: var(--text-5);
-    padding: 10px 20px;
+    padding: 20px;
     border-radius: 20px;
     margin: 0px 0px 40px;
     line-height: 19px;
@@ -1978,7 +1978,7 @@ div.opencritic-reviews {
     display: flex;
     width: 100%;
     margin-bottom: 0px;
-    padding: 10px 0 0;
+    padding: 0;
     position: relative;
     justify-content: space-between;
 }
@@ -2012,6 +2012,10 @@ div.opencritic-reviews {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.data-import div {
+    margin: 10px 10px 0;
 }
 
 .data-import a:hover {
