@@ -819,6 +819,12 @@ iframe {
     justify-content: center;
 }
 
+.music-player-video {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
 .more-info-release.none {
     display: none;
 }
@@ -2080,7 +2086,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.character-card > .video-play-button {
+.character-card > .music-player-video > .video-play-button {
     aspect-ratio: 16 / 9;
 }
 
