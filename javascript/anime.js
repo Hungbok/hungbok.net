@@ -1103,7 +1103,7 @@ $(document).ready(function(){
 
             $(document).ready(function() {
                 // .rating-star.none 클래스를 찾아서 처리합니다.
-                $('.rating-star.none').each(function() {
+                $('.rating-star[ttt="undefined"], .rating-star[ttt="none"]').each(function() {
                   // 하위 .star-ratings 클래스를 삭제하고 '-'로 대체
                   $(this).find('.star-ratings').remove();
                   $(this).text('-');
@@ -1144,8 +1144,8 @@ $(document).ready(function(){
             
                     placeholders.forEach(function (placeholder) {
                         var key = placeholder.getAttribute('data-placeholder');
-                        if (jsonData.hasOwnProperty('ko') && jsonData['ko'].hasOwnProperty(key)) {
-                            placeholder.innerText = jsonData['ko'][key];
+                        if (jsonData[0]) { // jsonData가 배열이고 최소 하나의 요소를 포함하는지 확인합니다.
+                            placeholder.innerText = getLocalizedData(jsonData[0], key);
                         }
                     });
                 });
