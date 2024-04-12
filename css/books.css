@@ -59,6 +59,7 @@
     position: relative;
     height: 320px;
     display: inline-block;
+    width: 100%;
 }
 
 /* item */
@@ -80,7 +81,6 @@
 }
 
 .item:hover {
-    z-index: 3!important;
     transform: scale(1.025);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -113,6 +113,11 @@
 .item-hover .item-thumbnail {
     width: 180px;
     height: 270px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .item-hover .item:first-child {
@@ -133,6 +138,28 @@
 .item-hover .item:last-child {
     left: 150px;
     z-index: 1;
+}
+
+.contents-top-thumbnail:hover .item-hover .item,
+.contents-top-thumbnail:hover .item-hover .item-thumbnail {
+    width: auto;
+    height: auto;
+}
+
+.contents-top-thumbnail:hover .item-hover .item:first-child {
+    left: 20px;
+}
+
+.contents-top-thumbnail:hover .item-hover .item:nth-child(2) {
+    left: 110px;
+}
+
+.contents-top-thumbnail:hover .item-hover .item:nth-child(3) {
+    left: 200px;
+}
+
+.contents-top-thumbnail:hover .item-hover .item:last-child {
+    left: 290px;
 }
 
 .item-thumbnail {
@@ -836,6 +863,7 @@
 .story,
 .setting,
 .character,
+.books,
 .music {
     width: 100%;
     max-width: calc(100% - 20px);
@@ -1792,6 +1820,7 @@ div.system-requirements-title {
 .story [ttt]:hover::after,
 .setting [ttt]:hover::after,
 .character [ttt]:hover::after,
+.books [ttt]:hover::after,
 .music [ttt]:hover::after,
 .rating-star[ttt]:hover::after,
 .episode-table .episode-tr > td > p[ttt]:hover::after {
@@ -2064,12 +2093,14 @@ div.system-requirements-title {
 
 /* character */
 
+.books,
 .character {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+.books-card,
 .character-card {
     display: grid;
     grid-template-rows: 200px auto auto;
@@ -2087,6 +2118,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-card:hover,
 .character-card:hover {
     background-color: var(--background-6);
     -webkit-transition: all 0.5s;
@@ -2096,6 +2128,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-image,
 .character-image {
     grid-row-start: 1;
     grid-row-end: 2;
@@ -2115,6 +2148,7 @@ div.system-requirements-title {
     user-select: none;
 }
 
+.books-image .books-background,
 .character-image .character-background {
     z-index: 0;
     width: auto;
@@ -2129,11 +2163,13 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-image img,
 .character-image img {
     position: absolute;
     transform: translate(-50%);
 }
 
+.books-card:hover .books-background,
 .character-card:hover .character-background {
     transform: translate(-50%, -50%) scale(1.05);
     -webkit-transition: all 0.5s;
@@ -2143,12 +2179,14 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-image .onerror,
 .character-image .onerror {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.books-info img,
 .character-info img {
     height: 20px;
     max-height: 50px;
@@ -2162,6 +2200,7 @@ div.system-requirements-title {
     position: relative;
 }
 
+.books-voice,
 .character-voice {
     border-radius: 20px;
     background-color: var(--background-7);
@@ -2172,6 +2211,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-card:hover .books-voice,
 .character-card:hover .character-voice {
     background-color: var(--background-4);
     -webkit-transition: all 0.5s;
@@ -2181,6 +2221,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-name,
 .character-name {
     background-color: #dddddd;
     color: #222222;
@@ -2190,6 +2231,7 @@ div.system-requirements-title {
     margin: 20px 0px;
 }
 
+.books-name[ttt]:hover::after,
 .character-name[ttt]:hover::after {
     left: 50%;
     transform: translate(-50%, 0px);
@@ -2198,6 +2240,7 @@ div.system-requirements-title {
     opacity: 1;
 }
 
+.books-voicer,
 .character-voicer {
     display: grid;
     grid-template-columns: 20% 80%;
@@ -2212,6 +2255,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-voicer:hover,
 .character-voicer:hover {
     background-color: var(--background-2);
     -webkit-transition: all 0.5s;
@@ -2221,6 +2265,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-lang,
 .character-lang {
     width: 30px;
     height: 20px;
@@ -2241,12 +2286,14 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.books-voicername,
 .character-voicername {
     margin: auto;
     min-height: 24px;
     padding: 10px 0px;
 }
 
+.books-description p,
 .character-description p {
     vertical-align: middle;
     text-align: center;
