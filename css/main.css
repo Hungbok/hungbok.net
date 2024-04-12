@@ -823,6 +823,7 @@ details {
     border-radius: 20px;
     text-align: left;
     min-width: 500px;
+    position: relative;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -840,6 +841,14 @@ details {
 
 .report-item::after {
     white-space: pre;
+}
+
+.report-item[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: calc(100% + 10px);
+    bottom: unset;
+    opacity: 1;
 }
 
 .report-item p {
