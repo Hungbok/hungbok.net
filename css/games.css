@@ -1895,7 +1895,7 @@ div.opencritic-reviews {
 
 .description > .description-attention {
     color: var(--text-5);
-    padding: 4px 20px;
+    padding: 10px 20px;
     border-radius: 20px;
     margin: 0px 0px 40px;
     line-height: 19px;
@@ -1936,6 +1936,10 @@ div.opencritic-reviews {
     font-weight: bold;
 }
 
+.description-attention > p {
+    margin: 10px;
+}
+
 .description-attention.early-access {
     background: linear-gradient(135deg, rgba(23, 23, 23, 0.8) 10%, rgba(84, 84, 84, 0.8) 100%);
 }
@@ -1973,9 +1977,10 @@ div.opencritic-reviews {
 .description .mode > div {
     display: flex;
     width: 100%;
-    justify-content: center;
     margin-bottom: 0px;
+    padding: 10px 0 0;
     position: relative;
+    justify-content: space-between;
 }
 
 .description .dlc > div:before,
@@ -2001,17 +2006,12 @@ div.opencritic-reviews {
 .data-import a,
 .data-import div {
     display: flex;
-    justify-content: center;
     margin: 10px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-.data-import a:last-child {
-    pointer-events: none;
 }
 
 .data-import a:hover {
