@@ -81,6 +81,7 @@
 }
 
 .item:hover {
+    z-index: 3!important;
     transform: scale(1.025);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -92,11 +93,6 @@
 .item-hover {
     z-index: 1;
     position: relative;
-    width: 220px;
-    height: 320px;
-    display: flex;
-    align-items: flex-end;
-    left: 70px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -109,57 +105,14 @@
     position: relative;
 }
 
-.item-hover .item,
-.item-hover .item-thumbnail {
-    width: 180px;
-    height: 270px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
 .item-hover .item:first-child {
-    left: 0px;
-    z-index: 4;
-}
-
-.item-hover .item:nth-child(2) {
     left: 50px;
-    z-index: 3;
-}
-
-.item-hover .item:nth-child(3) {
-    left: 100px;
     z-index: 2;
 }
 
 .item-hover .item:last-child {
-    left: 150px;
+    left: 100px;
     z-index: 1;
-}
-
-.contents-top-thumbnail:hover .item-hover .item,
-.contents-top-thumbnail:hover .item-hover .item-thumbnail {
-    width: auto;
-    height: auto;
-}
-
-.contents-top-thumbnail:hover .item-hover .item:first-child {
-    left: 20px;
-}
-
-.contents-top-thumbnail:hover .item-hover .item:nth-child(2) {
-    left: 110px;
-}
-
-.contents-top-thumbnail:hover .item-hover .item:nth-child(3) {
-    left: 200px;
-}
-
-.contents-top-thumbnail:hover .item-hover .item:last-child {
-    left: 290px;
 }
 
 .item-thumbnail {
