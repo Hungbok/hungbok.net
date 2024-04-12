@@ -1278,9 +1278,9 @@ $(document).ready(function(){
         $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
             // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
             // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
-            var $owl = $('.owl-carousel');
+            var $carousel = $('.owl-carousel');
 
-            $owl.children().each( function( index ) {
+            $carousel.children().each( function( index ) {
               $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
             });
 
@@ -1297,6 +1297,7 @@ $(document).ready(function(){
                     autoWidth: true,
                     autoplayHoverPause: true,
                     autoplayTimeout: 5000, // 5초
+                    autoplaySpeed: 1000,
                     onInitialized: startProgressBar,
                     onTranslate: resetProgressBar,
                     onTranslated: startProgressBar
