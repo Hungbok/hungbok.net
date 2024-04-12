@@ -1298,10 +1298,6 @@ fieldset.pure-group.honeypot-field {
     background-color: var(--background-10-opacity-50);
 }
 
-.mobile-menu-logo {
-    display: none;
-}
-
 .search-container {
     width: 100%;
     max-width: 400px;
@@ -1586,7 +1582,8 @@ fieldset.pure-group.honeypot-field {
     transition: all 0.5s;
 }
 
-.mobile-search {
+.mobile-search,
+.mobile-menu-logo {
     display: none;
 }
 
