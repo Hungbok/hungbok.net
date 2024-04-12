@@ -1798,8 +1798,6 @@ div.opencritic-reviews {
     background-color: #111111;
     font-weight: bold;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 .rating .ps {
@@ -1807,8 +1805,6 @@ div.opencritic-reviews {
     background-color: #013791;
     font-weight: bold;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 .rating .xb {
@@ -1816,8 +1812,6 @@ div.opencritic-reviews {
     background-color: #107c11;
     font-weight: bold;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 .rating .nt {
@@ -1825,8 +1819,6 @@ div.opencritic-reviews {
     background-color: #e60012;
     font-weight: bold;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 .rating .mb {
@@ -1834,8 +1826,6 @@ div.opencritic-reviews {
     background-color: #111111;
     font-weight: bold;
     margin: 10px;
-    grid-column-start: 1;
-    grid-column-end: 4;
 }
 
 .rating-one-score {
