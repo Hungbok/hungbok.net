@@ -1137,7 +1137,7 @@ div.system-requirements-title {
     width: 100%;
 }
 
-.metacritic-reviews {
+/* .metacritic-reviews {
     background-color: var(--background-8);
     border-radius: 20px;
     padding: 20px;
@@ -1572,7 +1572,7 @@ div.opencritic-reviews {
 
 .critics-recommend .inner-orb p:after {
     content: "%";
-}
+} */
 
 /* rating */
 
