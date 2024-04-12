@@ -107,7 +107,7 @@ $(document).ready(function() {
                             // '<img class="header-logo" src="//media.hungbok.net/image/hb/hb_symbol.svg">'+
                             '<div class="header-title logo">HUNGBOK</div>'+
                         '</a>'+
-                        '<a class="header-button" href="/">'+
+                        '<a class="header-button mobile-menu-logo" href="/">'+
                             '<img class="header-button-icon" src="//media.hungbok.net/image/hb/hb_symbol_light.svg">'+
                         '</a>'+
                     '</div>'+
@@ -281,7 +281,7 @@ $(document).ready(function() {
                         '<a class="header-button theme-dark" onclick="setTheme(`light`)">'+
                             '<img class="header-button-icon" src="//media.hungbok.net/image/icon/dark_mode.svg">'+
                         '</a>'+
-                        '<a class="header-button">'+
+                        '<a class="header-button mobile-search">'+
                             '<img class="header-button-icon" src="//media.hungbok.net/image/icon/search.svg">'+
                         '</a>'+
                     '</div>'+
