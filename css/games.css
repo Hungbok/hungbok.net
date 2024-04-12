@@ -1989,12 +1989,12 @@ div.opencritic-reviews {
     top: 0px;
 }
 
-.description p.data-import {
+.description .data-import {
     flex: 0 0 33%;
     margin: 0px;
 }
 
-.description p.data-import[data-type="none"] {
+.description .data-import[data-type="none"] {
     display: none;
 }
 
