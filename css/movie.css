@@ -185,6 +185,7 @@
     column-gap: 40px;
     row-gap: 40px;
     padding: 40px 40px 0;
+    align-items: start;
 }
 /* top path & title */
 
@@ -2330,6 +2331,11 @@ div.system-requirements-title {
 .music-video img {
     max-width: 760px;
     max-height: 427.5px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .music-image {
