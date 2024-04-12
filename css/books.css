@@ -2061,13 +2061,27 @@ div.system-requirements-title {
     justify-content: center;
     flex-wrap: wrap;
 }
-
-.books-card,
 .character-card {
     display: grid;
     grid-template-rows: 200px auto auto;
     position: relative;
     max-width: 330px;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    background-color: var(--background-8);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.books-card {
+    display: grid;
+    position: relative;
+    max-width: 200px;
     margin: 10px;
     border-radius: 20px;
     padding: 20px;
@@ -2090,12 +2104,30 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.books-image,
 .character-image {
     grid-row-start: 1;
     grid-row-end: 2;
     width: 330px;
     height: auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    background-color: #dddddd;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.books-image {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 200px;
+    height: 300px;
     overflow: hidden;
     position: relative;
     z-index: 1;
