@@ -2386,9 +2386,10 @@ div.opencritic-reviews {
 }
 
 .description .data-import {
-    flex: 0 0 33%;
-    margin: 0px;
-    border-radius: 10px;
+    flex: 0 0 calc(33% - 20px);
+    margin: 10px;
+    border-radius: 20px;
+    outline: solid 0 transparent;
     text-decoration-line: none;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2402,14 +2403,14 @@ div.opencritic-reviews {
 }
 
 .data-import:hover {
-    background-color: var(--background-8-opacity-75);
+    outline: solid 5px white;
 }
 
 .data-import div {
     display: flex;
-    margin: 10px;
+    margin: 5px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
