@@ -648,43 +648,6 @@ $(document).ready(function(){
             const laftel_score = data.laftelsc;
             const laftel_link = data.laftellink;
             const laftel_percent = data.laftelper;
-    
-            const opencritic_rating_score = data.openrasc;
-            const opencritic_rating_link = data.openralink;
-            const opencritic_rating_image = data.openraimg;
-            const opencritic_score = data.opensc;
-            const opencritic_link = data.openlink;
-            const opencritic_percent = data.openper;
-            const opencritic_recommend_score = data.openresc;
-            const opencritic_recommend_link = data.openrelink;
-            const opencritic_recommend_percent = data.openreper;
-    
-            const appstore_score = data.appstoresc;
-            const appstore_link = data.appstorelink;
-            const appstore_percent = data.appstoreper;
-    
-            const googleplay_score = data.googleplaysc;
-            const googleplay_link = data.googleplaylink;
-            const googleplay_percent = data.googleplayper;
-    
-            const steam_score = data.steamsc;
-            const steam_link = data.steamlink;
-            const steam_percent = data.steamper;
-            const steam_userscore_score = data.steamusersc;
-            const steam_userscore_link = data.steamuserlink;
-            const steam_userscore_percent = data.steamuserper;
-    
-            const epicgames_score = data.epicsc;
-            const epicgames_link = data.epiclink;
-            const epicgames_percent = data.epicper;
-    
-            const gog_score = data.gogsc;
-            const gog_link = data.goglink;
-            const gog_percent = data.gogper;
-    
-            const microsoft_score = data.mssc;
-            const microsoft_link = data.mslink;
-            const microsoft_percent = data.msper;
             
             // 평가 틀 생성
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
