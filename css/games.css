@@ -1921,6 +1921,16 @@ div.opencritic-reviews {
     z-index: 1;
 }
 
+.metacritic.rating-three-score {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.metacritic.rating-three-score > div:first-child {
+    width: 100%;
+}
+
 .metacritic.rating-three-score .rating-card.rating-two-score {
     display: flex;
     flex-direction: column;
@@ -1928,6 +1938,7 @@ div.opencritic-reviews {
     padding: 20px;
     gap: 20px;
     margin: 0 10px 20px;
+    width: calc(33.33% - 60px);
 }
 
 .metacritic.rating-three-score .rating-card.rating-two-score img {
