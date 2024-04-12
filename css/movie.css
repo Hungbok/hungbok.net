@@ -30,6 +30,7 @@
 
 .top-content {
     min-height: 400px;
+    max-width: 800px;
     display: grid;
     grid-template-columns: 220px auto;
     grid-template-rows: auto auto 80px;

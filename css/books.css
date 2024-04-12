@@ -573,6 +573,8 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    background-color: var(--background-8);
+    border-radius: 20px;
 }
 
 .key-art {
@@ -600,7 +602,7 @@
     flex-wrap: wrap;
     font-size: 14px;
     max-width: 720px;
-    padding: 10px 0;
+    padding: 20px 0;
     gap: 10px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1457,7 +1459,7 @@ div.system-requirements-title {
     background-color: var(--background-8);
     border-radius: 20px;
     text-align: center;
-    margin: 0px 0px 40px;
+    margin-top: 0;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
