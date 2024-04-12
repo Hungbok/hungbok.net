@@ -163,6 +163,13 @@ function sidepanel() {
     }
 }
 
+// mobileSearch 토글 함수
+function mobileSearch() {
+    var element = document.querySelector(".header-menu.search-container");
+    // "mobile-search-toggle" 클래스를 토글합니다.
+    element.classList.toggle("mobile-search-toggle");
+}
+
 $(document).ready(function(){
     $('body').on('click', 'summary', function(e) {
         var details = $(this).parent();

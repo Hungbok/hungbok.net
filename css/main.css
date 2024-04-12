@@ -1298,6 +1298,10 @@ fieldset.pure-group.honeypot-field {
     background-color: var(--background-10-opacity-50);
 }
 
+.mobile-menu-logo {
+    display: none;
+}
+
 .search-container {
     width: 100%;
     max-width: 400px;
@@ -1580,6 +1584,10 @@ fieldset.pure-group.honeypot-field {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.mobile-search {
+    display: none;
 }
 
 .header-footer-menu {
@@ -2167,8 +2175,30 @@ fieldset.pure-group.honeypot-field {
         margin: 0px 10px;
     }
 
+    .mobile-menu-logo {
+        display: block;
+    }
+
     .search-container {
         display: none;
+    }
+
+    .mobile-search {
+        display: block;
+    }
+
+    .mobile-search-toggle {
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        top: 0;
+        left: 0;
+        max-width: 100%;
+        background-color: var(--background-8);
+        height: 90px;
+        align-items: center;
+        justify-content: center;
     }
 }
 
