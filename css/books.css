@@ -93,13 +93,18 @@
     position: relative;
 }
 
+.item-hover:hover {
+    z-index: 3;
+    position: relative;
+}
+
 .item-hover .item:first-child {
-    left: 25px;
+    left: 50px;
     z-index: 2;
 }
 
 .item-hover .item:last-child {
-    left: 50px;
+    left: 100px;
     z-index: 1;
 }
 
