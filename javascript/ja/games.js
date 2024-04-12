@@ -756,9 +756,8 @@ $(document).ready(function(){
             
                     placeholders.forEach(function (placeholder) {
                         var key = placeholder.getAttribute('data-placeholder');
-                        if (jsonData.hasOwnProperty('ko') && jsonData['ja'].hasOwnProperty(key)) {
-                            placeholder.innerText = jsonData['ja'][key];
-                        }
+                        // getLocalizedData 함수를 사용하여 로컬라이즈된 데이터를 가져옵니다.
+                        placeholder.innerText = getLocalizedData(jsonData, key);
                     });
                 });
             }
