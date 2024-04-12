@@ -107,6 +107,9 @@ $(document).ready(function() {
                             // '<img class="header-logo" src="//media.hungbok.net/image/hb/hb_symbol.svg">'+
                             '<div class="header-title logo">HUNGBOK</div>'+
                         '</a>'+
+                        '<a class="header-button" href="/">'+
+                            '<img class="header-button-icon" src="//media.hungbok.net/image/hb/hb_symbol_light.svg">'+
+                        '</a>'+
                     '</div>'+
                     '<div class="header-menu search-container">'+
                         '<div class="search">'+

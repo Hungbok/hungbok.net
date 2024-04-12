@@ -2151,21 +2151,22 @@ fieldset.pure-group.honeypot-field {
 }
 
 @media (max-width: 767px) {
-    .header .header-title.logo {
-        font-size: 0;
-    }
-
-    .header .header-title.logo::after {
-        content: "H";
-        font-size: 35px;
+    .logo-container .menu-logo {
+        display: none;
     }
 
     .header-menu {
         min-width: 100px;
     }
+
     .header-menu.logo-container {
         text-align: right;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin: 0px 10px;
     }
+
     .search-container {
         display: none;
     }
