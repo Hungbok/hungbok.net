@@ -2234,7 +2234,6 @@ div.system-requirements-title {
     opacity: 1;
 }
 
-.books-voicer,
 .character-voicer {
     display: grid;
     grid-template-columns: 20% 80%;
@@ -2249,7 +2248,6 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.books-voicer:hover,
 .character-voicer:hover {
     background-color: var(--background-2);
     -webkit-transition: all 0.5s;
@@ -2259,7 +2257,6 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.books-lang,
 .character-lang {
     width: 30px;
     height: 20px;
