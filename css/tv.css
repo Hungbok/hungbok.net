@@ -1341,7 +1341,6 @@ div.system-requirements-title {
 
 .description {
     text-align: left;
-    min-height: 300px;
     overflow: hidden;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;

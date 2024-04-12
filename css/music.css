@@ -2192,6 +2192,7 @@ div.system-requirements-title {
     padding-right: 10px;
     min-height: 44px;
     border-radius: 20px;
+    line-height: 24px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2210,7 +2211,7 @@ div.system-requirements-title {
 
 .character-lang {
     width: 30px;
-    height: 20px;
+    height: 24px;
     overflow: hidden;
     left: 50%;
     top: 50%;
@@ -2230,7 +2231,6 @@ div.system-requirements-title {
 
 .character-voicername {
     margin: auto;
-    min-height: 24px;
     padding: 10px 0px;
 }
 
