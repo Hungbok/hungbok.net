@@ -2030,14 +2030,13 @@ div.system-requirements-title {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .character-card {
     display: grid;
-    grid-template-rows: 200px auto auto;
     position: relative;
-    max-width: 330px;
-    margin: 10px;
+    max-width: calc(50% - 50px);
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
@@ -2061,12 +2060,13 @@ div.system-requirements-title {
 .character-image {
     grid-row-start: 1;
     grid-row-end: 2;
-    width: 330px;
+    width: 100%;
     height: auto;
     overflow: hidden;
     position: relative;
     z-index: 1;
     border-radius: 20px;
+    aspect-ratio: 16 / 9;
     background-color: #dddddd;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
