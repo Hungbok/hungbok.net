@@ -1657,6 +1657,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
+.onerror,
 .rating-platform {
     max-height: 50px;
     max-width: 150px;
@@ -1670,6 +1671,7 @@ div.opencritic-reviews {
     -ms-transition: all 0.5s;
     transition: all 0.5s;
 }
+
 .rating-card:hover > .rating-platform {
     transform: translate(-50%, -50%);
     -webkit-transition: all 0.5s;
@@ -1887,6 +1889,14 @@ div.opencritic-reviews {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.rating-star[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: calc(100% + 10px);
+    bottom: unset;
+    opacity: 1;
 }
 
 .star-ratings {
