@@ -496,14 +496,12 @@ $(document).ready(function(){
             
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-three-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Metacritic" src="../img/logo/metacritic.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Metacritic" src="//media.hungbok.net/image/logo/metacritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
             '</div>');
     
             var metacritic_value = data.metacount;
-    
             var metacriticData = [];
-            
             for (var i = 1; i <= metacritic_value; i++) {
                 var metaClass = data['metaclass' + i];
                 var metaTtt = data['metattt' + i];
@@ -514,7 +512,6 @@ $(document).ready(function(){
                 var metaUserScore = data['metausersc' + i];
                 var metaUserLink = data['metauserlink' + i];
                 var metaUserPercent = data['metauserper' + i];
-                
                 metacriticData.push({
                     class: metaClass,
                     ttt: metaTtt,
@@ -527,10 +524,9 @@ $(document).ready(function(){
                     userscore_percent: metaUserPercent,
                 });
             }
-    
             metacriticData.forEach(function(item) {
                 $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.class + '">'+
-                    '<img title="' + item.ttt + '" class="rating-platform" src="../img/icon/' + item.img + '.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="' + item.ttt + '" class="rating-platform" src="//media.hungbok.net/image/icon/' + item.img + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">메타스코어</div>'+
                         "<a href='" + item.link + "' class='rating-star' target='_blank' ttt='" + item.score + "'>"+
@@ -562,12 +558,12 @@ $(document).ready(function(){
             
             $(".rating.opencritic").append('<div class="rating-card opencritic rating-three-score">'+
                 '<div class="rating-image">'+
-                    '<img title="OpenCritic" src="../img/logo/opencritic.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="OpenCritic" src="//media.hungbok.net/image/logo/opencritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">오픈크리틱 평가</div>'+
                     "<a href='" + opencritic_rating_link + "' class='rating-star' target='_blank' ttt='" + opencritic_rating_score + "'>"+
-                        '<img src="../img/icon/' + opencritic_rating_image + '.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                        '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_image + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
@@ -600,7 +596,7 @@ $(document).ready(function(){
     
             $(".rating.googleplay").append('<div class="rating-card googleplay rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Google Play" src="../img/logo/googleplay.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Google Play" src="//media.hungbok.net/image/logo/googleplay.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
@@ -619,7 +615,7 @@ $(document).ready(function(){
     
             $(".rating.appstore").append('<div class="rating-card appstore rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="App Store" src="../img/logo/appstore.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="App Store" src="//media.hungbok.net/image/logo/appstore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
@@ -638,7 +634,7 @@ $(document).ready(function(){
     
             $(".rating.microsoft").append('<div class="rating-card microsoft rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Microsoft Store" src="../img/logo/microsoft.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Microsoft Store" src="//media.hungbok.net/image/logo/microsoft.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
@@ -657,7 +653,7 @@ $(document).ready(function(){
     
             $(".rating.steam").append('<div class="rating-card steam rating-two-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Steam" src="../img/logo/steam.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Steam" src="//media.hungbok.net/image/logo/steam.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">모든 평가</div>'+
@@ -689,7 +685,7 @@ $(document).ready(function(){
     
             $(".rating.epicgames").append('<div class="rating-card epicgames rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Epic Games Store" src="../img/logo/epicgamesstore.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Epic Games Store" src="//media.hungbok.net/image/logo/epicgamesstore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
@@ -708,7 +704,7 @@ $(document).ready(function(){
     
             $(".rating.gog").append('<div class="rating-card gog rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="GOG.com" src="../img/logo/gog.svg" onerror="this.src=`../img/icon/image_not_found.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="GOG.com" src="//media.hungbok.net/image/logo/gog.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
@@ -724,6 +720,18 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
             '</div>');
+
+            $(document).ready(function() {
+                // .rating-star.none 클래스를 찾아서 처리합니다.
+                $('.rating-star.none').each(function() {
+                  // 하위 .star-ratings 클래스를 삭제하고 '-'로 대체
+                  $(this).find('.star-ratings').remove();
+                  $(this).text('-');
+                  
+                  // .none 클래스를 삭제
+                  $(this).removeClass('none');
+                });
+            });
             
             function loadJSON(file, callback) {
                 var xhr = new XMLHttpRequest();
