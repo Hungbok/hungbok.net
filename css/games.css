@@ -1998,7 +1998,8 @@ div.opencritic-reviews {
     display: none;
 }
 
-.data-import a {
+.data-import a,
+.data-import div {
     display: flex;
     justify-content: center;
     margin: 10px;
