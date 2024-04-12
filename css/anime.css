@@ -326,6 +326,25 @@
     filter: drop-shadow(0px 0px 2.5px var(--shadow));
 }
 
+.slider-background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    filter: blur(10px) brightness(0.5);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.slider-background:nth-child(2) {
+    position: relative;
+    height: 100%;
+    width: auto;
+    filter: unset;
+}
+
 .video-play-button {
     position: relative;
     cursor: pointer;
