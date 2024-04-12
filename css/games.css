@@ -1286,7 +1286,7 @@ div.opencritic-reviews {
 
 .top-critic-average-100 .score-orb svg, .critics-recommend-100 .score-orb svg { transform: rotate(0deg); }
 .top-critic-average-100 .top-critic-average-circle, .critics-recommend-100 .critics-recommend-circle {stroke-dasharray: 0, 100; }
-/* 90 */
+
 .top-critic-average-99 .score-orb svg, .critics-recommend-99 .score-orb svg { transform: rotate(-1.8deg); }
 .top-critic-average-99 .top-critic-average-circle, .critics-recommend-99 .critics-recommend-circle { stroke-dasharray: 1, 100; }
 .top-critic-average-98 .score-orb svg, .critics-recommend-98 .score-orb svg { transform: rotate(-3.6deg); }
@@ -1307,7 +1307,7 @@ div.opencritic-reviews {
 .top-critic-average-91 .top-critic-average-circle, .critics-recommend-91 .critics-recommend-circle { stroke-dasharray: 9, 100; }
 .top-critic-average-90 .score-orb svg, .critics-recommend-90 .score-orb svg { transform: rotate(-18deg); }
 .top-critic-average-90 .top-critic-average-circle, .critics-recommend-90 .critics-recommend-circle { stroke-dasharray: 10, 100; }
-/* 80 */
+
 .top-critic-average-89 .score-orb svg, .critics-recommend-89 .score-orb svg { transform: rotate(-19.8deg); }
 .top-critic-average-89 .top-critic-average-circle, .critics-recommend-89 .critics-recommend-circle { stroke-dasharray: 11, 100; }
 .top-critic-average-88 .score-orb svg, .critics-recommend-88 .score-orb svg { transform: rotate(-21.6deg); }
@@ -1328,7 +1328,7 @@ div.opencritic-reviews {
 .top-critic-average-81 .top-critic-average-circle, .critics-recommend-81 .critics-recommend-circle { stroke-dasharray: 19, 100; }
 .top-critic-average-80 .score-orb svg, .critics-recommend-80 .score-orb svg { transform: rotate(-36deg); }
 .top-critic-average-80 .top-critic-average-circle, .critics-recommend-80 .critics-recommend-circle { stroke-dasharray: 20, 100; }
-/* 70 */
+
 .top-critic-average-79 .score-orb svg, .critics-recommend-79 .score-orb svg { transform: rotate(-37.8deg); }
 .top-critic-average-79 .top-critic-average-circle, .critics-recommend-79 .critics-recommend-circle { stroke-dasharray: 21, 100; }
 .top-critic-average-78 .score-orb svg, .critics-recommend-78 .score-orb svg { transform: rotate(-39.6deg); }
@@ -1349,7 +1349,7 @@ div.opencritic-reviews {
 .top-critic-average-71 .top-critic-average-circle, .critics-recommend-71 .critics-recommend-circle { stroke-dasharray: 29, 100; }
 .top-critic-average-70 .score-orb svg, .critics-recommend-70 .score-orb svg { transform: rotate(-54deg); }
 .top-critic-average-70 .top-critic-average-circle, .critics-recommend-70 .critics-recommend-circle { stroke-dasharray: 30, 100; }
-/* 60 */
+
 .top-critic-average-69 .score-orb svg, .critics-recommend-69 .score-orb svg { transform: rotate(-55.8deg); }
 .top-critic-average-69 .top-critic-average-circle, .critics-recommend-69 .critics-recommend-circle { stroke-dasharray: 31, 100; }
 .top-critic-average-68 .score-orb svg, .critics-recommend-68 .score-orb svg { transform: rotate(-57.6deg); }
@@ -1370,7 +1370,7 @@ div.opencritic-reviews {
 .top-critic-average-61 .top-critic-average-circle, .critics-recommend-61 .critics-recommend-circle { stroke-dasharray: 39, 100; }
 .top-critic-average-60 .score-orb svg, .critics-recommend-60 .score-orb svg { transform: rotate(-72deg); }
 .top-critic-average-60 .top-critic-average-circle, .critics-recommend-60 .critics-recommend-circle { stroke-dasharray: 40, 100; }
-/* 50 */
+
 .top-critic-average-59 .score-orb svg, .critics-recommend-59 .score-orb svg { transform: rotate(-73.8deg); }
 .top-critic-average-59 .top-critic-average-circle, .critics-recommend-59 .critics-recommend-circle { stroke-dasharray: 41, 100; }
 .top-critic-average-58 .score-orb svg, .critics-recommend-58 .score-orb svg { transform: rotate(-75.6deg); }
@@ -1391,7 +1391,7 @@ div.opencritic-reviews {
 .top-critic-average-51 .top-critic-average-circle, .critics-recommend-51 .critics-recommend-circle { stroke-dasharray: 49, 100; }
 .top-critic-average-50 .score-orb svg, .critics-recommend-50 .score-orb svg { transform: rotate(-90deg); }
 .top-critic-average-50 .top-critic-average-circle, .critics-recommend-50 .critics-recommend-circle { stroke-dasharray: 50, 100; }
-/* 40 */
+
 .top-critic-average-49 .score-orb svg, .critics-recommend-49 .score-orb svg { transform: rotate(-91.8deg); }
 .top-critic-average-49 .top-critic-average-circle, .critics-recommend-49 .critics-recommend-circle { stroke-dasharray: 51, 100; }
 .top-critic-average-48 .score-orb svg, .critics-recommend-48 .score-orb svg { transform: rotate(-93.6deg); }
@@ -1412,7 +1412,7 @@ div.opencritic-reviews {
 .top-critic-average-41 .top-critic-average-circle, .critics-recommend-41 .critics-recommend-circle { stroke-dasharray: 59, 100; }
 .top-critic-average-40 .score-orb svg, .critics-recommend-40 .score-orb svg { transform: rotate(-108deg); }
 .top-critic-average-40 .top-critic-average-circle, .critics-recommend-40 .critics-recommend-circle { stroke-dasharray: 60, 100; }
-/* 30 */
+
 .top-critic-average-39 .score-orb svg, .critics-recommend-39 .score-orb svg { transform: rotate(-109.8deg); }
 .top-critic-average-39 .top-critic-average-circle, .critics-recommend-39 .critics-recommend-circle { stroke-dasharray: 61, 100; }
 .top-critic-average-38 .score-orb svg, .critics-recommend-38 .score-orb svg { transform: rotate(-111.6deg); }
@@ -1433,7 +1433,7 @@ div.opencritic-reviews {
 .top-critic-average-31 .top-critic-average-circle, .critics-recommend-31 .critics-recommend-circle { stroke-dasharray: 69, 100; }
 .top-critic-average-30 .score-orb svg, .critics-recommend-30 .score-orb svg { transform: rotate(-126deg); }
 .top-critic-average-30 .top-critic-average-circle, .critics-recommend-30 .critics-recommend-circle { stroke-dasharray: 70, 100; }
-/* 20 */
+
 .top-critic-average-29 .score-orb svg, .critics-recommend-29 .score-orb svg { transform: rotate(-127.8deg); }
 .top-critic-average-29 .top-critic-average-circle, .critics-recommend-29 .critics-recommend-circle { stroke-dasharray: 71, 100; }
 .top-critic-average-28 .score-orb svg, .critics-recommend-28 .score-orb svg { transform: rotate(-129.6deg); }
@@ -1454,7 +1454,7 @@ div.opencritic-reviews {
 .top-critic-average-21 .top-critic-average-circle, .critics-recommend-21 .critics-recommend-circle { stroke-dasharray: 79, 100; }
 .top-critic-average-20 .score-orb svg, .critics-recommend-20 .score-orb svg { transform: rotate(-144deg); }
 .top-critic-average-20 .top-critic-average-circle, .critics-recommend-20 .critics-recommend-circle { stroke-dasharray: 80, 100; }
-/* 10 */
+
 .top-critic-average-19 .score-orb svg, .critics-recommend-19 .score-orb svg { transform: rotate(-145.8deg); }
 .top-critic-average-19 .top-critic-average-circle, .critics-recommend-19 .critics-recommend-circle { stroke-dasharray: 81, 100; }
 .top-critic-average-18 .score-orb svg, .critics-recommend-18 .score-orb svg { transform: rotate(-147.6deg); }
@@ -1475,7 +1475,7 @@ div.opencritic-reviews {
 .top-critic-average-11 .top-critic-average-circle, .critics-recommend-11 .critics-recommend-circle { stroke-dasharray: 89, 100; }
 .top-critic-average-10 .score-orb svg, .critics-recommend-10 .score-orb svg { transform: rotate(-162deg); }
 .top-critic-average-10 .top-critic-average-circle, .critics-recommend-10 .critics-recommend-circle { stroke-dasharray: 90, 100; }
-/* 0 */
+
 .top-critic-average-9 .score-orb svg, .critics-recommend-9 .score-orb svg { transform: rotate(-163.8deg); }
 .top-critic-average-9 .top-critic-average-circle, .critics-recommend-9 .critics-recommend-circle { stroke-dasharray: 91, 100; }
 .top-critic-average-8 .score-orb svg, .critics-recommend-8 .score-orb svg { transform: rotate(-165.6deg); }
