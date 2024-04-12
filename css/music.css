@@ -1,7 +1,7 @@
 /* top background image */
 
 .top-backgrounds {
-    width: calc(100vw - 12px);
+    width: 100vw;
     height: 490px;
     position: absolute;
     transform: translate(0px, -90px);
