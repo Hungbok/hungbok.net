@@ -68,8 +68,9 @@
     height: auto;
     margin: 10px;
     display: inline-block;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 2;
+    left: 0;
     text-decoration-line: none;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -85,6 +86,21 @@
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.item-hover {
+    z-index: 1;
+    position: relative;
+}
+
+.item-hover .item:first-child {
+    left: 25px;
+    z-index: 2;
+}
+
+.item-hover .item:last-child {
+    left: 50px;
+    z-index: 1;
 }
 
 .item-thumbnail {
