@@ -31,7 +31,7 @@
 .top-content {
     min-height: 400px;
     display: grid;
-    grid-template-columns: auto 220px;
+    grid-template-columns: auto 554px;
     grid-template-rows: auto auto 80px;
     column-gap: 40px;
     row-gap: 20px;
