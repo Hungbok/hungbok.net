@@ -2086,6 +2086,7 @@ div.system-requirements-title {
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
+    gap: 20px;
     background-color: var(--background-8);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2215,7 +2216,6 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.books-name,
 .character-name {
     background-color: #dddddd;
     color: #222222;
@@ -2223,6 +2223,14 @@ div.system-requirements-title {
     padding: 10px;
     border-radius: 20px;
     margin: 20px 0px;
+}
+
+.books-name {
+    background-color: #222222;
+    color: #dddddd;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
 }
 
 .books-name[ttt]:hover::after,
