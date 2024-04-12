@@ -652,9 +652,9 @@
     margin: 0;
     vertical-align: middle;
     color: var(--text-5);
-    padding: 5px 10px;
+    padding: 0px 10px;
     border-radius: 20px;
-    min-height: 20px;
+    min-height: 30px;
     justify-content: center;
     align-items: center;
     -webkit-transition: all 0.5s;
@@ -763,6 +763,10 @@
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.info-th > p {
+    margin: 10px;
 }
 
 .info-th > p::after {
