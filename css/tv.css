@@ -151,7 +151,7 @@
 .middle-content {
     display: grid;
     row-gap: 40px;
-    padding: 0px 40px;
+    padding: 40px 40px 0;
 }
 /* top path & title */
 
