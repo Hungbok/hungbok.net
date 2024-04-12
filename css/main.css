@@ -2192,13 +2192,23 @@ fieldset.pure-group.honeypot-field {
         position: fixed;
         z-index: 999;
         width: 100%;
-        top: 0;
+        top: 90px;
         left: 0;
         max-width: 100%;
         background-color: var(--background-8);
         height: 90px;
         align-items: center;
         justify-content: center;
+    }
+
+    .mobile-search-toggle .search {
+        width: 90%;
+    }
+
+    .mobile-search-toggle .search-results {
+        top: 90px;
+        margin: 0;
+        border-radius: 0;
     }
 }
 
