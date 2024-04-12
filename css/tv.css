@@ -553,7 +553,7 @@
 
 .info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     position: relative;
     grid-column-start: 1;
@@ -565,9 +565,7 @@
 }
 
 .key-art {
-    max-width: 300px;
     width: 100%;
-    height: 100%;
     display: flex;
     border-radius: 20px;
     overflow: hidden;
@@ -575,6 +573,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 2 / 3;
 }
 
 .key-art img {
@@ -599,7 +598,9 @@
     flex-wrap: wrap;
     font-size: 14px;
     max-width: 720px;
+    height: 100%;
     gap: 10px;
+    align-items: stretch;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -1346,6 +1347,11 @@ div.system-requirements-title {
 .info-language-popup.twT .zh_tw_text {
     filter: brightness(0.75);
     background: url(//media.hungbok.net/image/icon/done.svg) no-repeat center / 20px 20px;
+}
+
+.descriptions {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .description {
