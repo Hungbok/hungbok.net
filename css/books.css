@@ -2133,7 +2133,6 @@ div.system-requirements-title {
     position: relative;
     z-index: 1;
     border-radius: 20px;
-    background-color: #dddddd;
     -ms-user-select: none;
     -moz-user-select: -moz-none;
     -webkit-user-select: none;
@@ -2174,7 +2173,6 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.books-image .onerror,
 .character-image .onerror {
     top: 50%;
     left: 50%;
