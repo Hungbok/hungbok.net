@@ -1657,7 +1657,6 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.onerror,
 .rating-platform {
     max-height: 50px;
     max-width: 150px;
