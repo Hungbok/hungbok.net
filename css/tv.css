@@ -58,7 +58,7 @@
 
 .contents-top-thumbnail {
     position: relative;
-    width: 220px;
+    width: 554px;
     height: 320px;
     display: inline-block;
     grid-column-start: 2;
@@ -70,7 +70,7 @@
 /* item */
 
 .item {
-    width: 200px;
+    width: 534px;
     height: auto;
     margin: 10px;
     display: inline-block;
@@ -94,7 +94,7 @@
 }
 
 .item-thumbnail {
-    width: 200px;
+    width: 534px;
     height: 300px;
     overflow: hidden;
     position: relative;
