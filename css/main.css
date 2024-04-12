@@ -749,7 +749,7 @@ details {
     transition: all 0.5s;
 }
 
-.popup:hover {
+.popup > div:first-child:hover {
     background-color: var(--background-6);
 }
 
