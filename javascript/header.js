@@ -278,6 +278,9 @@ $(document).ready(function() {
                         '<a class="header-button theme-dark" onclick="setTheme(`light`)">'+
                             '<img class="header-button-icon" src="//media.hungbok.net/image/icon/dark_mode.svg">'+
                         '</a>'+
+                        '<a class="header-button">'+
+                            '<img class="header-button-icon" src="//media.hungbok.net/image/icon/search.svg">'+
+                        '</a>'+
                     '</div>'+
                 '</div>'+
             '</div>'+
