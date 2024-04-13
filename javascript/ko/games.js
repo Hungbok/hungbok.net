@@ -1258,6 +1258,12 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var isMouseOver = false;
+                var defaultTimeout = 6000;
+
+                function setAutoplayTimeout(timeout) {
+                    $carousel.trigger('stop.owl.autoplay'); // autoplay를 멈춥니다.
+                    $carousel.trigger('play.owl.autoplay', [timeout]); // 새 timeout으로 autoplay를 다시 시작합니다.
+                }
 
                 $carousel.owlCarousel({
                     items: 1,
@@ -1267,7 +1273,7 @@ $(document).ready(function(){
                     autoplay: true,
                     autoWidth: true,
                     autoplayHoverPause: true,
-                    autoplayTimeout: 5000, // 5초
+                    autoplayTimeout: defaultTimeout,
                     autoplaySpeed: 1000,
                     onInitialized: function() {
                         startProgressBar();
@@ -1288,7 +1294,7 @@ $(document).ready(function(){
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
+                    $progressBar.css({width: '100%', transition: 'width ' + timeout + 'ms linear'});
                 }
             
                 function resetProgressBar() {
@@ -1304,16 +1310,16 @@ $(document).ready(function(){
             
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
-                    $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
+                    setAutoplayTimeout(5000);
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
                 $carousel.on('mouseleave', function() {
-                    $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
-                    startProgressBar();
+                    setAutoplayTimeout(defaultTimeout); // 마우스가 벗어나면 다시 6초로 설정
+                    startProgressBar(defaultTimeout);
                 });
             });
 
