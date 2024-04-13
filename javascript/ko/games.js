@@ -1254,6 +1254,7 @@ $(document).ready(function(){
             $(document).ready(function() {
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
+                var isMouseOver = false;
 
                 $carousel.owlCarousel({
                     items: 1,
@@ -1267,7 +1268,7 @@ $(document).ready(function(){
                     autoplaySpeed: 1000,
                     onInitialized: startProgressBar,
                     onTranslate: resetProgressBar,
-                    onTranslated: startProgressBar
+                    onTranslated: checkMouseAndStartProgressBar
                 });
 
                 function startProgressBar() {
@@ -1279,16 +1280,24 @@ $(document).ready(function(){
                     // 진행 바를 즉시 0%로 초기화합니다.
                     $progressBar.css({width: '0%', transition: 'none'});
                 }
+
+                function checkMouseAndStartProgressBar() {
+                    if (!isMouseOver) {
+                        startProgressBar();
+                    }
+                }
             
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
                     $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
+                    isMouseOver = true;
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
                 $carousel.on('mouseleave', function() {
                     $carousel.trigger('play.owl.autoplay');
+                    isMouseOver = false;
                     startProgressBar();
                 });
             });
