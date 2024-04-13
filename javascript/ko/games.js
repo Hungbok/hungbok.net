@@ -1278,6 +1278,7 @@ $(document).ready(function(){
                     smartSpeed: 1000,
                     onInitialized: function() {
                         startProgressBar();
+                        autoSlide();
                         $progressBarContainer.css('bottom', '12px');
                         $progressBar.css('opacity', '1');
                     },
@@ -1296,7 +1297,6 @@ $(document).ready(function(){
                     $progressBarContainer.css('bottom', '12px');
                     $progressBar.css('opacity', '1');
                     checkMouseAndStartProgressBar();
-                    autoSlide();
                 });
 
                 function startProgressBar() {
@@ -1312,6 +1312,7 @@ $(document).ready(function(){
                 function checkMouseAndStartProgressBar() {
                     if (!isMouseOver) {
                         startProgressBar();
+                        autoSlide();
                     }
                 }
             
@@ -1326,8 +1327,6 @@ $(document).ready(function(){
                     startProgressBar();
                     autoSlide();
                 });
-
-                autoSlide();
             });
 
             $(window).on('resize', function() {
