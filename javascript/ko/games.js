@@ -1305,7 +1305,7 @@ $(document).ready(function(){
                 function startAutoSlide() {
                     slideInterval = setInterval(function() {
                         $carousel.trigger('next.owl.carousel');
-                    }, 6000);
+                    }, 5000);
                 }
             
                 function stopAutoSlide() {
