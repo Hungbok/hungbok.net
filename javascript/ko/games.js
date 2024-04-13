@@ -1258,7 +1258,7 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var autoSlideTimeout;
-                var autoSlideInterval = 5000 + 1000;
+                var waitTime = 5000;
                 var isMouseOver = false;
 
                 $carousel.owlCarousel({
@@ -1287,10 +1287,12 @@ $(document).ready(function(){
                 });
 
                 function autoSlide() {
+                    // 다음 슬라이드로 넘어가기 전 대기
                     autoSlideTimeout = setTimeout(function() {
                         $carousel.trigger('next.owl.carousel');
-                        autoSlide(); // 다음 슬라이드로 넘어간 후 다시 autoSlide 함수를 호출하여 반복
-                    }, autoSlideInterval);
+                        // 다음 슬라이드로 넘어간 후에도 autoSlide 함수를 재귀적으로 호출
+                        autoSlide();
+                    }, waitTime);
                 }
             
                 function stopAutoSlide() {
