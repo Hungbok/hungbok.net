@@ -1258,37 +1258,33 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var isMouseOver = false;
-                var autoplayTimeoutDefault = 6000; // 자동으로 슬라이드가 넘어갈 때 기본 시간
-                var autoplayTimeoutOnHover = 5000; // 마우스 오버/아웃 시 시간
-                
-                function initCarousel(autoplayTimeout) {
-                    $carousel.owlCarousel({
-                        items: 1,
-                        loop: true,
-                        merge: true,
-                        center: true,
-                        autoplay: true,
-                        autoWidth: true,
-                        autoplayHoverPause: true,
-                        autoplayTimeout: autoplayTimeout,
-                        autoplaySpeed: 1000,
-                        onInitialized: function() {
-                            startProgressBar();
-                            $progressBarContainer.css('bottom', '12px');
-                            $progressBar.css('opacity', '1');
-                        },
-                        onTranslate: function() {
-                            $progressBarContainer.css('bottom', '-20px');
-                            $progressBar.css('opacity', '0');
-                            resetProgressBar();
-                        },
-                        onTranslated: function() {
-                            $progressBarContainer.css('bottom', '12px');
-                            $progressBar.css('opacity', '1');
-                            checkMouseAndStartProgressBar();
-                        }
-                    });
-                };
+
+                $carousel.owlCarousel({
+                    items: 1,
+                    loop: true,
+                    merge: true,
+                    center: true,
+                    autoplay: true,
+                    autoWidth: true,
+                    autoplayHoverPause: true,
+                    autoplayTimeout: 6000,
+                    autoplaySpeed: 1000,
+                    onInitialized: function() {
+                        startProgressBar();
+                        $progressBarContainer.css('bottom', '12px');
+                        $progressBar.css('opacity', '1');
+                    },
+                    onTranslate: function() {
+                        $progressBarContainer.css('bottom', '-20px');
+                        $progressBar.css('opacity', '0');
+                        resetProgressBar();
+                    },
+                    onTranslated: function() {
+                        $progressBarContainer.css('bottom', '12px');
+                        $progressBar.css('opacity', '1');
+                        checkMouseAndStartProgressBar();
+                    }
+                });
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
@@ -1305,19 +1301,20 @@ $(document).ready(function(){
                         startProgressBar();
                     }
                 }
-
-                $('.owl-carousel').on('mouseover', function() {
-                    $(this).trigger('stop.owl.autoplay'); // 자동 재생 중지
-                    initCarousel(autoplayTimeoutOnHover); // 마우스 오버 시 autoplayTimeout 조정하여 재초기화
+            
+                // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
+                $carousel.on('mouseover', function() {
+                    $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
-                }).on('mouseleave', function() {
-                    $(this).trigger('stop.owl.autoplay'); // 자동 재생 중지
-                    initCarousel(autoplayTimeoutDefault); // 마우스 아웃 시 기본 autoplayTimeout으로 재초기화
-                    isMouseOver = false;
                 });
-
-                initCarousel(autoplayTimeoutDefault);
+            
+                // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
+                $carousel.on('mouseleave', function() {
+                    $carousel.trigger('play.owl.autoplay');
+                    isMouseOver = false;
+                    startProgressBar();
+                });
             });
 
             $(window).on('resize', function() {
