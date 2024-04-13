@@ -1258,8 +1258,7 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var autoSlideTimeout;
-                var initialWaitTime = 5000;
-                var waitTime = 4000;
+                var waitTime = 5000;
                 var isMouseOver = false;
 
                 $carousel.owlCarousel({
@@ -1290,14 +1289,12 @@ $(document).ready(function(){
                 });
 
                 function autoSlide() {
+                    // 다음 슬라이드로 넘어가기 전 대기
                     autoSlideTimeout = setTimeout(function() {
                         $carousel.trigger('next.owl.carousel');
-                        // 첫 번째 이동 후, waitTime을 4초로 조정하여 슬라이드 이동 시간을 고려
-                        clearTimeout(autoSlideTimeout);
-                        autoSlideTimeout = setTimeout(autoSlide, waitTime);
-                    }, initialWaitTime);
-                    // 첫 이동 후 initialWaitTime을 waitTime으로 조정
-                    initialWaitTime = waitTime;
+                        // 다음 슬라이드로 넘어간 후에도 autoSlide 함수를 재귀적으로 호출
+                        autoSlide();
+                    }, waitTime);
                 }
             
                 function stopAutoSlide() {
@@ -1333,7 +1330,7 @@ $(document).ready(function(){
                     $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
                     startProgressBar();
-                    stopAutoSlide();
+                    clearTimeout(autoSlideTimeout);
                     autoSlide();
                 });
 
