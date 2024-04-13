@@ -2830,6 +2830,7 @@ div.opencritic-reviews {
     display: flex;
     width: 100%;
     max-width: 852px;
+    min-width: 5%;
     position: absolute;
     left: 50%;
     bottom: 52px;
@@ -2838,11 +2839,11 @@ div.opencritic-reviews {
     transform: translate(-50%, 0px);
     pointer-events: none;
     justify-content: center;
-    -webkit-transition: all 0.5s ease-in-out 1s;
-    -moz-transition: all 0.5s ease-in-out 1s;
-    -o-transition: all 0.5s ease-in-out 1s;
-    -ms-transition: all 0.5s ease-in-out 1s;
-    transition: all 0.5s ease-in-out 1s;
+    -webkit-transition: all 0.5s ease-in-out 0.5s;
+    -moz-transition: all 0.5s ease-in-out 0.5s;
+    -o-transition: all 0.5s ease-in-out 0.5s;
+    -ms-transition: all 0.5s ease-in-out 0.5s;
+    transition: all 0.5s ease-in-out 0.5s;
 }
 
 .owl-item .item.active .slide-progress-main {
