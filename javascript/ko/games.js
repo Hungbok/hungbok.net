@@ -1258,6 +1258,8 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var isMouseOver = false;
+                var autoSlideTimeout;
+                var waitTime = 5000; // 슬라이드를 넘기기 전 대기 시간
 
                 $carousel.owlCarousel({
                     nav: false,
