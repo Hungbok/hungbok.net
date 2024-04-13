@@ -1258,7 +1258,6 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var isMouseOver = false;
-                var isInitialized = false;
 
                 $carousel.owlCarousel({
                     items: 1,
@@ -1271,10 +1270,9 @@ $(document).ready(function(){
                     autoplayTimeout: 5000, // 5초
                     autoplaySpeed: 1000,
                     onInitialized: function() {
+                        startProgressBar();
                         $progressBarContainer.css('bottom', '12px');
                         $progressBar.css('opacity', '1');
-                        isInitialized = true; // 초기화 완료
-                        startProgressBar(5000); // 5초 동안 진행 바 시작
                     },
                     onTranslate: function() {
                         $progressBarContainer.css('bottom', '-20px');
@@ -1284,15 +1282,13 @@ $(document).ready(function(){
                     onTranslated: function() {
                         $progressBarContainer.css('bottom', '12px');
                         $progressBar.css('opacity', '1');
-                        if (isInitialized) {
-                            checkMouseAndStartProgressBar(6000); // 자동 슬라이드일 경우 6초 동안 진행 바 시작
-                        }
+                        checkMouseAndStartProgressBar();
                     }
                 });
 
-                function startProgressBar(duration) {
+                function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBar.css({width: '100%', transition: 'width ' + duration + 'ms linear'});
+                    $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
                 }
             
                 function resetProgressBar() {
@@ -1300,33 +1296,24 @@ $(document).ready(function(){
                     $progressBar.css({width: '0%', transition: 'none'});
                 }
 
-                function checkMouseAndStartProgressBar(time) {
+                function checkMouseAndStartProgressBar() {
                     if (!isMouseOver) {
-                        startProgressBar(time);
+                        startProgressBar();
                     }
                 }
             
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
+                    $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
-                    $carousel.trigger('stop.owl.autoplay'); // 자동 재생 멈춤
-                    resetProgressBar();
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
                 $carousel.on('mouseleave', function() {
+                    $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
-                    $carousel.trigger('play.owl.autoplay', [5000]); // 마우스를 벗어날 때 5초에 한 번씩 자동 재생
-                    startProgressBar(5000); // 진행 바 다시 시작
-                });
-                
-                $carousel.on('translated.owl.carousel', function(event) {
-                    if (isInitialized) {
-                        $carousel.trigger('play.owl.autoplay', [6000]);
-                        resetProgressBar();
-                        startProgressBar(6000); // 진행 바를 6초 동안 채웁니다.
-                    }
+                    startProgressBar();
                 });
             });
 
