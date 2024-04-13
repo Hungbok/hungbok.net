@@ -910,12 +910,6 @@ $(document).ready(function(){
                         '<p>Genshin Impact is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
                     '</div>'+
                 '</div>'+
-                '<div class="item eleven">'+
-                    '<div class="item-desc">'+
-                        '<h3></h3>'+
-                        '<p></p>'+
-                    '</div>'+
-                '</div>'+
             '</div>'+
             '<div class="slide-progress-main">'+
                 '<div class="progressBar"></div>'+
@@ -1296,17 +1290,6 @@ $(document).ready(function(){
                 $carousel.on('mouseleave', function() {
                     $carousel.trigger('play.owl.autoplay');
                     startProgressBar();
-                });
-
-                $carousel.on('changed.owl.carousel', function(event) {
-                    var item = event.item.index;   // 현재 아이템 위치
-            
-                    // 11번째 아이템에 도달했을 때 즉시 다음 아이템으로 이동
-                    if($('.owl-item').eq(item).find('.item.eleven').length > 0) {
-                        setTimeout(function() {
-                            $carousel.trigger('next.owl.carousel');
-                        }, 500);
-                    }
                 });
             });
 
