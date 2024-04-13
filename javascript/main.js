@@ -207,6 +207,15 @@ window.onclick = function(event) {
         sidepanel.classList.remove('open');
         body.classList.remove('overflow-hidden'); // 스크롤 가능하게 설정
     }
+    
+    // '.header-menu.search-container' 요소를 선택합니다.
+    var container = document.querySelector('.header-menu.search-container');
+
+    // 클릭된 요소가 container 또는 그 하위 요소가 아닌 경우,
+    // '.mobile-search-toggle' 클래스를 제거합니다.
+    if (!container.contains(event.target)) {
+        container.classList.remove('mobile-search-toggle');
+    }
 }
 
 $(document).ready(function() {
