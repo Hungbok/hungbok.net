@@ -1257,6 +1257,9 @@ $(document).ready(function(){
                 var $progressBarContainer = $('.slide-progress-main');
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
+                var autoSlideInterval;
+                var autoSlideTime = 5000; // 5초 후 다음 슬라이드로 넘어갑니다.
+                var transitionSpeed = 1000; // 넘어가는 속도는 1초입니다.
                 var isMouseOver = false;
 
                 $carousel.owlCarousel({
@@ -1266,9 +1269,7 @@ $(document).ready(function(){
                     center: true,
                     autoplay: true,
                     autoWidth: true,
-                    autoplayHoverPause: true,
-                    autoplayTimeout: 6000,
-                    autoplaySpeed: 1000,
+                    smartSpeed: transitionSpeed,
                     onInitialized: function() {
                         startProgressBar();
                         $progressBarContainer.css('bottom', '12px');
@@ -1285,6 +1286,16 @@ $(document).ready(function(){
                         checkMouseAndStartProgressBar();
                     }
                 });
+
+                function startAutoSlide() {
+                    autoSlideInterval = setInterval(function() {
+                        $carousel.trigger('next.owl.carousel');
+                    }, autoSlideTime);
+                }
+            
+                function stopAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                }
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
@@ -1307,6 +1318,7 @@ $(document).ready(function(){
                     $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
+                    stopAutoSlide(); // 마우스를 올렸을 때 슬라이드 멈춤
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
@@ -1314,7 +1326,10 @@ $(document).ready(function(){
                     $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
                     startProgressBar();
+                    startAutoSlide(); // 마우스를 뗐을 때 다시 시작
                 });
+                
+                startAutoSlide(); // 페이지 로드 시 자동 슬라이드 시작
             });
 
             $(window).on('resize', function() {
