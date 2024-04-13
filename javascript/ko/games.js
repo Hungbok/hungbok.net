@@ -1279,13 +1279,13 @@ $(document).ready(function(){
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBarContainer.css({bottom: '52px'});
+                    $progressBarContainer.css({transform: 'translate(-50%, 0px)'});
                     $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
                 }
             
                 function resetProgressBar() {
                     // 진행 바를 즉시 0%로 초기화합니다.
-                    $progressBarContainer.css({bottom: '20px'});
+                    $progressBarContainer.css({transform: 'translate(-50%, -32px)'});
                     $progressBar.css({width: '0%', transition: 'none'});
                 }
             
