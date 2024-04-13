@@ -1300,19 +1300,60 @@ $(document).ready(function(){
                         startProgressBar();
                     }
                 }
+
+                function autoSlide() {
+                    // 다음 슬라이드로 넘어가기 전 대기
+                    autoSlideTimeout = setTimeout(function() {
+                        $carousel.trigger('next.owl.carousel');
+                        // 다음 슬라이드로 넘어간 후에도 autoSlide 함수를 재귀적으로 호출
+                        autoSlide();
+                    }, waitTime);
+                }
+            
+                function stopAutoSlide() {
+                    clearTimeout(autoSlideTimeout);
+                }
             
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
-                    $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
+                    stopAutoSlide();
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
                 $carousel.on('mouseleave', function() {
-                    $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
                     startProgressBar();
+                    clearTimeout(autoSlideTimeout); // 이전 타이머를 초기화
+                    autoSlide(); // 새로운 대기 시간 후에 자동 슬라이드 시작
+                });
+
+                // 페이지 로드 시 자동 슬라이드 시작
+                autoSlide();
+            });
+
+            $(window).on('resize', function() {
+                $carousel.trigger('next.owl.carousel');
+            });
+
+            $(document).ready(function () {
+                // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
+                $('.owl-stage .owl-item.center .item').addClass('active');
+            
+                // 슬라이드 이동 이벤트가 발생할 때마다 실행
+                $('.owl-carousel').on('translated.owl.carousel', function(e) {
+                    // 기존에 .active가 있던 .item에서 .active 제거
+                    $('.owl-stage .owl-item .item.active').removeClass('active');
+            
+                    // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+                    $('.owl-stage .owl-item.center .item').addClass('active');
+                });
+
+                $(document).on('click', '.owl-item > div', function() {
+                    // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+                    var $speed = 300;  // in ms
+                    $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
                 });
             });
         });
