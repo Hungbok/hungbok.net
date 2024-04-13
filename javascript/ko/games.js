@@ -1304,7 +1304,7 @@ $(document).ready(function(){
 
                 function checkMouseAndStartProgressBar() {
                     if (!isMouseOver) {
-                        startProgressBar();
+                        startProgressBar(defaultTimeout);
                     }
                 }
             
