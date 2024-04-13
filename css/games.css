@@ -2830,7 +2830,6 @@ div.opencritic-reviews {
     display: flex;
     width: 100%;
     max-width: 852px;
-    min-width: 5%;
     position: absolute;
     left: 50%;
     bottom: 52px;
@@ -2853,6 +2852,7 @@ div.opencritic-reviews {
 .progressBar {
     width: 0%;
     max-width: 100%;
+    min-width: 5%;
     height: 5px;
     background: #D6D6D6;
     border-radius: 10px;
