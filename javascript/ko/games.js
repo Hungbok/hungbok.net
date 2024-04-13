@@ -1258,8 +1258,7 @@ $(document).ready(function(){
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var isMouseOver = false;
-                var autoSlideTimeout;
-                var waitTime = 5000; // 슬라이드를 넘기기 전 대기 시간
+                var slideInterval;
 
                 $carousel.owlCarousel({
                     nav: false,
@@ -1303,17 +1302,14 @@ $(document).ready(function(){
                     }
                 }
 
-                function autoSlide() {
-                    // 다음 슬라이드로 넘어가기 전 대기
-                    autoSlideTimeout = setTimeout(function() {
+                function startAutoSlide() {
+                    slideInterval = setInterval(function() {
                         $carousel.trigger('next.owl.carousel');
-                        // 다음 슬라이드로 넘어간 후에도 autoSlide 함수를 재귀적으로 호출
-                        autoSlide();
                     }, 6000);
                 }
             
                 function stopAutoSlide() {
-                    clearTimeout(autoSlideTimeout);
+                    clearInterval(slideInterval);
                 }
             
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
@@ -1327,12 +1323,12 @@ $(document).ready(function(){
                 $carousel.on('mouseleave', function() {
                     isMouseOver = false;
                     startProgressBar();
-                    clearTimeout(autoSlideTimeout); // 이전 타이머를 초기화
-                    autoSlide(); // 새로운 대기 시간 후에 자동 슬라이드 시작
+                    stopAutoSlide(); // 기존 타이머 정지
+                    startAutoSlide(); // 새로운 타이머 시작
                 });
 
                 // 페이지 로드 시 자동 슬라이드 시작
-                autoSlide();
+                startAutoSlide();
             });
 
             $(window).on('resize', function() {
