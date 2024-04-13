@@ -1293,7 +1293,7 @@ $(document).ready(function(){
                         checkMouseAndStartProgressBar();
                     }
                 }).on('translated.owl.carousel', function(e) {
-                    startProgressBar();
+                    checkMouseAndStartProgressBar();
                     autoSlide();
                 });
 
