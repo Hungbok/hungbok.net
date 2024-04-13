@@ -2856,7 +2856,6 @@ div.opencritic-reviews {
     height: 5px;
     background: #D6D6D6;
     border-radius: 10px;
-    opacity: 0;
     -webkit-transition: width 5000ms linear;
     -moz-transition: width 5000ms linear;
     -o-transition: width 5000ms linear;
