@@ -1257,12 +1257,9 @@ $(document).ready(function(){
                 var $progressBarContainer = $('.slide-progress-main');
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
-                var autoSlideTimeout;
-                var waitTime = 5000;
                 var isMouseOver = false;
 
                 $carousel.owlCarousel({
-                    items: 1,
                     nav: false,
                     loop: true,
                     dots: true,
@@ -1288,19 +1285,6 @@ $(document).ready(function(){
                     }
                 });
 
-                function autoSlide() {
-                    // 다음 슬라이드로 넘어가기 전 대기
-                    autoSlideTimeout = setTimeout(function() {
-                        $carousel.trigger('next.owl.carousel');
-                        // 다음 슬라이드로 넘어간 후에도 autoSlide 함수를 재귀적으로 호출
-                        autoSlide();
-                    }, waitTime);
-                }
-            
-                function stopAutoSlide() {
-                    clearTimeout(autoSlideTimeout);
-                }
-
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
                     $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
@@ -1322,7 +1306,6 @@ $(document).ready(function(){
                     $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
-                    stopAutoSlide();
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
@@ -1330,11 +1313,7 @@ $(document).ready(function(){
                     $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
                     startProgressBar();
-                    clearTimeout(autoSlideTimeout);
-                    autoSlide();
                 });
-
-                autoSlide();
             });
 
             $(window).on('resize', function() {
