@@ -1267,7 +1267,7 @@ $(document).ready(function(){
                     autoplay: true,
                     autoWidth: true,
                     autoplayHoverPause: true,
-                    autoplayTimeout: 6000,
+                    autoplayTimeout: 5000,
                     autoplaySpeed: 1000,
                     onInitialized: function() {
                         startProgressBar();
