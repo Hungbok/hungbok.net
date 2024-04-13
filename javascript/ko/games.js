@@ -1260,6 +1260,13 @@ $(document).ready(function(){
                 var isMouseOver = false;
                 var autoSlideTimeout;
 
+                function autoSlide() {
+                    clearTimeout(autoSlideTimeout);
+                    autoSlideTimeout = setTimeout(function() {
+                        $carousel.trigger('next.owl.carousel');
+                    }, 5000);
+                }
+
                 $carousel.owlCarousel({
                     nav: false,
                     loop: true,
@@ -1285,6 +1292,8 @@ $(document).ready(function(){
                         $progressBar.css('opacity', '1');
                         checkMouseAndStartProgressBar();
                     }
+                }).on('translated.owl.carousel', function(e) {
+                    autoSlide();
                 });
 
                 function startProgressBar() {
@@ -1302,35 +1311,20 @@ $(document).ready(function(){
                         startProgressBar();
                     }
                 }
-
-                function autoSlide() {
-                    // 다음 슬라이드로 넘어가기 전 대기
-                    autoSlideTimeout = setTimeout(function() {
-                        $carousel.trigger('next.owl.carousel');
-                    }, 5000); // 5초 대기 후 다음 슬라이드로 이동
-                }
             
-                function resetAutoSlide() {
-                    clearTimeout(autoSlideTimeout); // 이전 타이머를 초기화
-                    autoSlide(); // 새로운 타이머 설정
-                }
-            
-                // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
                     clearTimeout(autoSlideTimeout);
                 });
             
-                // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
                 $carousel.on('mouseleave', function() {
                     isMouseOver = false;
                     startProgressBar();
-                    resetAutoSlide(); // 타이머 초기화 및 재설정
+                    autoSlide();
                 });
 
-                // 페이지 로드 시 자동 슬라이드 시작
-                resetAutoSlide();
+                autoSlide();
             });
 
             $(window).on('resize', function() {
