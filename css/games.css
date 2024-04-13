@@ -2827,7 +2827,7 @@ div.opencritic-reviews {
 }
   
 .slide-progress-main {
-    display: none;
+    display: flex;
     width: 100%;
     max-width: 852px;
     position: absolute;
@@ -2864,7 +2864,7 @@ div.opencritic-reviews {
 }
 
 .owl-grab + .slide-progress-main {
-    display: none;
+    display: none!important;
 }
 
 /* .owl-grab > div > .owl-stage > .owl-item > .item {

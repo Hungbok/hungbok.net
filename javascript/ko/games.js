@@ -1270,16 +1270,13 @@ $(document).ready(function(){
                     onInitialized: function() {
                         startProgressBar();
                         $progressBarContainer.css('bottom', '52px');
-                        $progressBarContainer.css('display', 'flex');
                     },
                     onTranslate: function() {
                         $progressBarContainer.css('bottom', '20px');
-                        $progressBarContainer.css('display', 'none');
                         resetProgressBar();
                     },
                     onTranslated: function() {
                         $progressBarContainer.css('bottom', '52px');
-                        $progressBarContainer.css('display', 'flex');
                         checkMouseAndStartProgressBar();
                     }
                 });
