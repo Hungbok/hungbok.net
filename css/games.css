@@ -2786,10 +2786,6 @@ div.opencritic-reviews {
     zoom: 1;
 }
 
-.owl-theme .owl-dots .owl-dot:last-child {
-    display: none;
-}
-
 .owl-theme .owl-dots .owl-dot span {
     width: 10px;
     height: 10px;
