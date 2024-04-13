@@ -1270,23 +1270,23 @@ $(document).ready(function(){
                     onInitialized: function() {
                         startProgressBar();
                         $progressBarContainer.css('bottom', '52px');
-                        $progressBarContainer.css('opacity', '1');
+                        $progressBarContainer.css('display', 'flex');
                     },
                     onTranslate: function() {
                         $progressBarContainer.css('bottom', '20px');
-                        $progressBarContainer.css('opacity', '0');
+                        $progressBarContainer.css('display', 'none');
                         resetProgressBar();
                     },
                     onTranslated: function() {
                         $progressBarContainer.css('bottom', '52px');
-                        $progressBarContainer.css('opacity', '1');
+                        $progressBarContainer.css('display', 'flex');
                         checkMouseAndStartProgressBar();
                     }
                 });
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
+                    $progressBar.css({width: '100%', transition: 'width 5000ms linear', opacity: '1'});
                 }
             
                 function resetProgressBar() {

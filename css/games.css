@@ -2827,7 +2827,7 @@ div.opencritic-reviews {
 }
   
 .slide-progress-main {
-    display: flex;
+    display: none;
     width: 100%;
     max-width: 852px;
     position: absolute;
@@ -2856,11 +2856,16 @@ div.opencritic-reviews {
     height: 5px;
     background: #D6D6D6;
     border-radius: 10px;
+    opacity: 0;
     -webkit-transition: width 5000ms linear;
     -moz-transition: width 5000ms linear;
     -o-transition: width 5000ms linear;
     -ms-transition: width 5000ms linear;
     transition: width 5000ms linear;
+}
+
+.owl-grab + .slide-progress-main {
+    display: none;
 }
 
 /* .owl-grab > div > .owl-stage > .owl-item > .item {
