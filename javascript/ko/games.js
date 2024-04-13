@@ -1282,34 +1282,38 @@ $(document).ready(function(){
                     onTranslated: function() {
                         $progressBarContainer.css('bottom', '12px');
                         $progressBar.css('opacity', '1');
-                        startProgressBar();
+                        checkMouseAndStartProgressBar();
                     }
                 });
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBar.css({width: '0%'}).animate({width: '100%'}, 5000, 'linear');
+                    $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
                 }
             
                 function resetProgressBar() {
                     // 진행 바를 즉시 0%로 초기화합니다.
-                    $progressBar.stop(true).css({width: '0%'}).animate({width: '100%'}, 5000, 'linear');
+                    $progressBar.css({width: '0%', transition: 'none'});
+                }
+
+                function checkMouseAndStartProgressBar() {
+                    if (!isMouseOver) {
+                        startProgressBar();
+                    }
                 }
             
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
                     $carousel.trigger('stop.owl.autoplay');
-                    $progressBar.stop(true);
+                    $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
                 $carousel.on('mouseleave', function() {
-                    if(isMouseOver) {
-                        $carousel.trigger('play.owl.autoplay');
-                        resetProgressBar();
-                        isMouseOver = false;
-                    }
+                    $carousel.trigger('play.owl.autoplay');
+                    isMouseOver = false;
+                    startProgressBar();
                 });
             });
 
