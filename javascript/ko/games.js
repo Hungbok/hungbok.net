@@ -1257,9 +1257,8 @@ $(document).ready(function(){
                 var $progressBarContainer = $('.slide-progress-main');
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
-                var autoSlideInterval;
-                var autoSlideTime = 5000; // 5초 후 다음 슬라이드로 넘어갑니다.
-                var transitionSpeed = 1000; // 넘어가는 속도는 1초입니다.
+                var autoSlideTimeout;
+                var autoSlideInterval = 5000 + 1000;
                 var isMouseOver = false;
 
                 $carousel.owlCarousel({
@@ -1269,7 +1268,7 @@ $(document).ready(function(){
                     center: true,
                     autoplay: true,
                     autoWidth: true,
-                    smartSpeed: transitionSpeed,
+                    smartSpeed: 1000,
                     onInitialized: function() {
                         startProgressBar();
                         $progressBarContainer.css('bottom', '12px');
@@ -1287,14 +1286,15 @@ $(document).ready(function(){
                     }
                 });
 
-                function startAutoSlide() {
-                    autoSlideInterval = setInterval(function() {
+                function autoSlide() {
+                    autoSlideTimeout = setTimeout(function() {
                         $carousel.trigger('next.owl.carousel');
-                    }, autoSlideTime);
+                        autoSlide(); // 다음 슬라이드로 넘어간 후 다시 autoSlide 함수를 호출하여 반복
+                    }, autoSlideInterval);
                 }
             
                 function stopAutoSlide() {
-                    clearInterval(autoSlideInterval);
+                    clearTimeout(autoSlideTimeout);
                 }
 
                 function startProgressBar() {
@@ -1318,7 +1318,7 @@ $(document).ready(function(){
                     $carousel.trigger('stop.owl.autoplay');
                     $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
-                    stopAutoSlide(); // 마우스를 올렸을 때 슬라이드 멈춤
+                    stopAutoSlide();
                 });
             
                 // 마우스 아웃 시 자동 재생을 재개하고 진행 바 애니메이션을 다시 시작합니다.
@@ -1326,10 +1326,10 @@ $(document).ready(function(){
                     $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
                     startProgressBar();
-                    startAutoSlide(); // 마우스를 뗐을 때 다시 시작
+                    autoSlide();
                 });
-                
-                startAutoSlide(); // 페이지 로드 시 자동 슬라이드 시작
+
+                autoSlide();
             });
 
             $(window).on('resize', function() {
