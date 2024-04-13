@@ -1309,7 +1309,7 @@ $(document).ready(function(){
                         $carousel.trigger('next.owl.carousel');
                         // 다음 슬라이드로 넘어간 후에도 autoSlide 함수를 재귀적으로 호출
                         autoSlide();
-                    }, waitTime);
+                    }, 6000);
                 }
             
                 function stopAutoSlide() {
