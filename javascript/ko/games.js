@@ -1315,30 +1315,6 @@ $(document).ready(function(){
                     startProgressBar();
                 });
             });
-
-            $(window).on('resize', function() {
-                $carousel.trigger('next.owl.carousel');
-            });
-
-            $(document).ready(function () {
-                // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
-                $('.owl-stage .owl-item.center .item').addClass('active');
-            
-                // 슬라이드 이동 이벤트가 발생할 때마다 실행
-                $('.owl-carousel').on('translated.owl.carousel', function(e) {
-                    // 기존에 .active가 있던 .item에서 .active 제거
-                    $('.owl-stage .owl-item .item.active').removeClass('active');
-            
-                    // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
-                    $('.owl-stage .owl-item.center .item').addClass('active');
-                });
-
-                $(document).on('click', '.owl-item > div', function() {
-                    // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
-                    var $speed = 300;  // in ms
-                    $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
-                });
-            });
         });
     }
 });
