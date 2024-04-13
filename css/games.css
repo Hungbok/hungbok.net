@@ -2636,6 +2636,7 @@ div.opencritic-reviews {
     max-width: 2370px;
     width: 90%;
     margin: 0 auto;
+    position: relative;
 }
 
 .owl-carousel {
@@ -2746,6 +2747,10 @@ div.opencritic-reviews {
 .game-section .owl-theme.custom-carousel .owl-dots {
     position: relative;
     z-index: 5;
+    display: flex;
+    margin: 10px 0;
+    justify-content: center;
+    align-items: center;
 }
 
 /* added */
@@ -2829,11 +2834,12 @@ div.opencritic-reviews {
     display: flex;
     width: 100%;
     max-width: 852px;
-    position: relative;
+    position: absolute;
     left: 50%;
+    bottom: 52px;
     border-radius: 10px;
     overflow: hidden;
-    transform: translate(-50%, 32px);
+    transform: translate(-50%, 0px);
     pointer-events: none;
     justify-content: center;
     -webkit-transition: all 0.5s ease-in-out 1s;
