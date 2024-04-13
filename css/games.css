@@ -2863,8 +2863,8 @@ div.opencritic-reviews {
     transition: width 5000ms linear;
 }
 
-.owl-grab + .slide-progress-main {
-    display: none!important;
+.owl-grab + .progress-container {
+    display: none;
 }
 
 /* .owl-grab > div > .owl-stage > .owl-item > .item {

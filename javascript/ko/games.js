@@ -911,8 +911,10 @@ $(document).ready(function(){
                     '</div>'+
                 '</a>'+
             '</div>'+
-            '<div class="slide-progress-main">'+
-                '<div class="progressBar"></div>'+
+            '<div class="progress-container">'+
+                '<div class="slide-progress-main">'+
+                    '<div class="progressBar"></div>'+
+                '</div>'+
             '</div>'+
         '</div>'+
         '<div class="discover-section">'+
