@@ -2653,7 +2653,7 @@ div.opencritic-reviews {
 
 .game-section .item {
     margin: 0px 15px;
-    width: 400px;
+    width: 900px;
     height: 600px;
     display: flex;
     display: -webkit-flex;
@@ -2815,7 +2815,7 @@ div.opencritic-reviews {
 }
 
 .owl-stage .owl-item:not(.center) > .item {
-    width: 400px;
+    width: 900px;
     box-shadow: 0 0 5px #000;
 }
 
@@ -2866,9 +2866,9 @@ div.opencritic-reviews {
     transition: width 5000ms linear;
 }
 
-.owl-grab > div > .owl-stage > .owl-item > .item {
+/* .owl-grab > div > .owl-stage > .owl-item > .item {
     width: 400px;
-}
+} */
 
 /* more showcase */
 
