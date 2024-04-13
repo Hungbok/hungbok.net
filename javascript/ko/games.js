@@ -1252,6 +1252,7 @@ $(document).ready(function(){
             });
 
             $(document).ready(function() {
+                var $progressBarContainer = $('.slide-progress-main');
                 var $progressBar = $('.progressBar');
                 var $carousel = $('.owl-carousel');
                 var isMouseOver = false;
@@ -1266,9 +1267,18 @@ $(document).ready(function(){
                     autoplayHoverPause: true,
                     autoplayTimeout: 5000, // 5초
                     autoplaySpeed: 1000,
-                    onInitialized: startProgressBar,
-                    onTranslate: resetProgressBar,
-                    onTranslated: checkMouseAndStartProgressBar
+                    onInitialized: function() {
+                        startProgressBar();
+                        $progressBarContainer.css('bottom', '52px');
+                    },
+                    onTranslate: function() {
+                        $progressBarContainer.css('bottom', '20px');
+                        resetProgressBar();
+                    },
+                    onTranslated: function() {
+                        $progressBarContainer.css('bottom', '52px');
+                        checkMouseAndStartProgressBar();
+                    }
                 });
 
                 function startProgressBar() {
