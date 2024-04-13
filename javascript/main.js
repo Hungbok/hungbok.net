@@ -168,6 +168,7 @@ function mobileSearch() {
     var element = document.querySelector(".header-menu.search-container");
     // "mobile-search-toggle" 클래스를 토글합니다.
     element.classList.toggle("mobile-search-toggle");
+    document.getElementById("search-value").focus();
 }
 
 $(document).ready(function(){
