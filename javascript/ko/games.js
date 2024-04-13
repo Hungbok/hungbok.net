@@ -1328,6 +1328,7 @@ $(document).ready(function(){
                     $carousel.trigger('play.owl.autoplay');
                     isMouseOver = false;
                     startProgressBar();
+                    clearTimeout(autoSlideTimeout);
                     autoSlide();
                 });
 
