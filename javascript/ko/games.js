@@ -1315,17 +1315,6 @@ $(document).ready(function(){
                     isMouseOver = false;
                     startProgressBar();
                 });
-
-                $carousel.on('changed.owl.carousel', function(event) {
-                    var item = event.item.index;   // 현재 아이템 위치
-            
-                    // 11번째 아이템에 도달했을 때 즉시 다음 아이템으로 이동
-                    if($('.owl-item').eq(item).find('.item').length > 0) {
-                        setTimeout(function() {
-                            $carousel.trigger('next.owl.carousel');
-                        }, 5000);
-                    }
-                });
             });
 
             $(window).on('resize', function() {
