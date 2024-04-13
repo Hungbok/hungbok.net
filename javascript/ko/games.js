@@ -1276,7 +1276,7 @@ $(document).ready(function(){
                     autoplayTimeout: defaultTimeout,
                     autoplaySpeed: 1000,
                     onInitialized: function() {
-                        startProgressBar();
+                        startProgressBar(defaultTimeout);
                         $progressBarContainer.css('bottom', '12px');
                         $progressBar.css('opacity', '1');
                     },
@@ -1288,12 +1288,14 @@ $(document).ready(function(){
                     onTranslated: function() {
                         $progressBarContainer.css('bottom', '12px');
                         $progressBar.css('opacity', '1');
-                        checkMouseAndStartProgressBar();
+                        if (!isMouseOver) {
+                            startProgressBar(defaultTimeout);
+                        }
                     }
                 });
 
-                function startProgressBar() {
-                    // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
+                function startProgressBar(timeout) {
+                    // 진행 바를 0에서 100%까지 timeout에 맞춰 채웁니다.
                     $progressBar.css({width: '100%', transition: 'width ' + timeout + 'ms linear'});
                 }
             
@@ -1302,16 +1304,10 @@ $(document).ready(function(){
                     $progressBar.css({width: '0%', transition: 'none'});
                 }
 
-                function checkMouseAndStartProgressBar() {
-                    if (!isMouseOver) {
-                        startProgressBar(defaultTimeout);
-                    }
-                }
-            
                 // 마우스 오버 시 자동 재생을 멈추고 진행 바의 애니메이션도 멈춥니다.
                 $carousel.on('mouseover', function() {
-                    $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     isMouseOver = true;
+                    $progressBar.css({width: $progressBar.width(), transition: 'none'});
                     setAutoplayTimeout(5000);
                 });
             
