@@ -1278,7 +1278,7 @@ $(document).ready(function(){
 
                 function startProgressBar() {
                     // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBar.css({width: '100%', transition: 'width 5000ms'});
+                    $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
                 }
             
                 function resetProgressBar() {

@@ -2853,11 +2853,11 @@ div.opencritic-reviews {
     height: 5px;
     background: #D6D6D6;
     border-radius: 10px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: width 5000ms linear;
+    -moz-transition: width 5000ms linear;
+    -o-transition: width 5000ms linear;
+    -ms-transition: width 5000ms linear;
+    transition: width 5000ms linear;
 }
 
 .owl-grab > div > .owl-stage > .owl-item > .item {
