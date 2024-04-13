@@ -1293,8 +1293,9 @@ $(document).ready(function(){
                         checkMouseAndStartProgressBar();
                     }
                 }).on('translated.owl.carousel', function(e) {
-                    checkMouseAndStartProgressBar();
                     $progressBarContainer.css('bottom', '12px');
+                    $progressBar.css('opacity', '1');
+                    checkMouseAndStartProgressBar();
                     autoSlide();
                 });
 
