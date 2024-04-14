@@ -1273,27 +1273,16 @@ $(document).ready(function(){
         // 현재 연도 및 날짜 계산
         const today = new Date();
         const currentYear = today.getFullYear();
-        const apiUrl = `//data.hungbok.net/data/games/${currentYear}.json`;
-        
-        function getLocalizedData(data, key) {
-            // 먼저 'ko'와 해당 key가 존재하는지 확인
-            if (data['ko'] && key in data['ko'] && data['ko'][key] !== undefined) {
-                return data['ko'][key];
-            }
-            // 'ko'에 해당하는 정보가 없거나 key가 없는 경우, 'en'을 확인
-            else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
-                return data['en'][key];
-            }
-            // 'ko'와 'en' 모두에서 해당 key에 대한 데이터를 찾을 수 없는 경우
-            else {
-                return undefined;
-            }
-        }       
+        const apiUrl = `//data.hungbok.net/data/games/${currentYear}.json`;       
 
         // JSON 데이터 불러오기
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
+                function getLocalizedData(data, key) {
+                    return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+                }
+                
                 // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
                 const validGames = data.filter(game => {
                     const dateParts = game.date.split('-');
@@ -1311,7 +1300,7 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            const title = getLocalizedData(gameData, 'title') || '제목 없음';
+                            const title = getLocalizedData(gameData, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
@@ -1348,7 +1337,7 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            const title = getLocalizedData(gameData, 'title') || '제목 없음';
+                            const title = getLocalizedData(gameData, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
