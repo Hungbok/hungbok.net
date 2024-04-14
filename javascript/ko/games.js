@@ -1397,7 +1397,7 @@ $(document).ready(function(){
         let upcomingData = [];
         let filteredUpcomingData = [];
         let upcomingStart = 0;
-        let upcomingLimit = 6;
+        let upcomingLimit = 9;
         
         // 데이터를 가져오는 부분은 변경하지 않았습니다.
         Promise.all([

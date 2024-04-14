@@ -619,8 +619,8 @@ section > h1 {
 #upcomingContainer {
     width: auto;
     max-width: 1445px;
-    min-height: 351px;
-    gap: 40px;
+    min-height: 415px;
+    gap: 15px;
     display: flex;
     flex-direction: row;
     justify-content: center;
