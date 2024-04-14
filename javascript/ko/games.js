@@ -1270,6 +1270,67 @@ $(document).ready(function(){
                 });
             });
         };
+
+        function formatDateToKR(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            const month = parts[1];
+            const day = parts[2];
+        
+            const months = ["1", "2", "3", "4",
+                            "5", "6", "7", "8",
+                            "9", "10", "11", "12"];
+        
+            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+        
+            return `${year}년 ${monthStr}월 ${day}일`;
+        }
+        
+        function formatDateToJP(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            const month = parts[1];
+            const day = parts[2];
+        
+            const months = ["1", "2", "3", "4",
+                            "5", "6", "7", "8",
+                            "9", "10", "11", "12"];
+        
+            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+        
+            return `${year}年${monthStr}月${day}日`;
+        }
+        
+        function formatDateToUS(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            const month = parts[1];
+            const day = parts[2];
+        
+            const months = ["January", "February", "March", "April",
+                            "May", "June", "July", "August",
+                            "September", "October", "November", "December"];
+        
+            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+        
+            return `${monthStr} ${day}, ${year}`;
+        }
+        
+        function formatDateToUK(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            const month = parts[1];
+            const day = parts[2];
+        
+            const months = ["January", "February", "March", "April",
+                            "May", "June", "July", "August",
+                            "September", "October", "November", "December"];
+        
+            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+        
+            return `${day} ${monthStr} ${year}`;
+        }
+
         // 현재 연도 및 날짜 계산
         const today = new Date();
         const currentYear = today.getFullYear();
@@ -1290,10 +1351,11 @@ $(document).ready(function(){
                         .then(response => response.json())
                         .then(gameData => {
                             const title = gameData.ko || gameData.en; // ko 값이 없으면 en 값 사용
+                            const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
                                     <div class="discover-item">
-                                        <div class="discover-title-time">${game.date}</div>
+                                        <div class="discover-title-time">${formattedDate}</div>
                                         <div class="discover-item-thumbnail discover-thumbnail-hover">
                                             <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
                                                 <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.src='/image/error-icon.svg'" loading="lazy">
