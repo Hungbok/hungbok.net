@@ -3544,6 +3544,7 @@ div.opencritic-reviews {
     max-width: 1200px;
     gap: 15px;
     display: flex;
+    padding: 10px;
     flex-wrap: wrap;
     flex-direction: row;
     align-content: center;
