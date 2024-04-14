@@ -868,7 +868,7 @@ $(document).ready(function(){
             '<div class="discover-title">'+
                 '<div class="discover-text">최신 할인</div>'+
             '</div>'+
-            '<div class="discover-container games-sale"></div>'+
+            '<div class="discover-container" id="games-sale"></div>'+
             '<div class="discover-title">'+
                 '<div class="discover-text">Epic Games Store</div>'+
             '</div>'+
