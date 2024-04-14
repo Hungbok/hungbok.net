@@ -2804,6 +2804,13 @@ div.opencritic-reviews {
 
 .owl-nav {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.owl-nav button {
+    position: absolute;
     z-index: 1;
     top: 50%;
     transform: translate(0%, -50%);
@@ -2824,7 +2831,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.owl-carousel:hover .owl-nav {
+.owl-carousel:hover .owl-nav button {
     opacity: 0.8;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2833,7 +2840,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.owl-nav:hover {
+.owl-nav button:hover {
     background-color: #aaaaaa;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
