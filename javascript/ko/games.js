@@ -1280,9 +1280,9 @@ $(document).ready(function(){
             .then(response => response.json())
             .then(data => {
                 function getLocalizedData(data, key) {
-                    return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+                    return gameData['ko'] && gameData['ko'][key] ? gameData['ko'][key] : gameData['en'][key];
                 }
-                
+
                 // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
                 const validGames = data.filter(game => {
                     const dateParts = game.date.split('-');
