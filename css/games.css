@@ -3535,6 +3535,357 @@ div.opencritic-reviews {
     color: var(--white);
 }
 
+.item {
+    width: 30%;
+    max-width: 350px;
+    padding: 20px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    padding: 0px 50px;
+    border-radius: 50px;
+    font-size: 175px;
+    font-weight: bold;
+    left: 52.5%;
+    top: 25%;
+    text-wrap: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: rotate(340deg) translate(-50%, -50%);
+    background-color: black;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item::after {
+    content: "";
+    width: 500px;
+    height: 500px;
+    background-size: 150px 150px;
+    display: inline-block;
+    position: absolute;
+    padding: 49px;
+    background-repeat: space;
+    top: -90px;
+    right: -110px;
+    z-index: -1;
+    transform: rotate(25deg);
+    opacity: 0.5;
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.item-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 10px var(--shadow));
+    position: relative;
+}
+
+.item-image img {
+    height: auto;
+    width: 100%;
+    filter: blur(10px) brightness(0.75) grayscale(0.5);
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item-image img:first-child {
+    position: relative;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+    filter: unset;
+}
+
+.item:hover .item-image img {
+    transform: scale(1.05);
+}
+
+.item-image:before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    pointer-events: none;
+}
+
+.item.jp .item-image:before {
+    background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
+}
+
+.item.us .item-image:before {
+    background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
+}
+
+.item.eu .item-image:before {
+    background: url(//media.hungbok.net/image/flag/eu.svg) no-repeat center;
+}
+
+.item.gb .item-image:before {
+    background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat center;
+}
+
+.item.fr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center;
+}
+
+.item.de .item-image:before {
+    background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center;
+}
+
+.item.kr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
+}
+
+.info {
+    height: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item h1 {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    width: calc(100% - 20px);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-wrap: balance;
+}
+
+.item h3 {
+    display: none;
+}
+
+.timer-container {
+    font-size: 24px;
+    font-weight: bold;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item .timer-container.start::before {
+    margin-right: 10px;
+}
+
+.timer-container.start.expired,
+.timer-container.end {
+    display: none;
+}
+
+.timer-container.start.expired + .timer-container.end {
+    display: block;
+}
+
+.item.unknown .timer-container.end {
+    font-size: 0;
+    color: transparent;
+}
+
+.item.unknown .timer-container.end::after {
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--text-1);
+}
+
+.item-link {
+    background: linear-gradient(90deg, rgb(230, 195, 0), 60%, rgb(247, 229, 137));
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item-link:hover {
+    opacity: 0.5;
+}
+
+.item-background {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    filter: blur(50px) brightness(0.5);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.timer-container.end.one-day-left {
+    color: #ffcd39;
+}
+
+.timer-container.end.twelve-hours-left {
+    color: #cc9a06;
+}
+
+.timer-container.end.six-hours-left {
+    color: #fd9843;
+}
+
+.timer-container.end.three-hours-left {
+    color: #ca6510;
+}
+
+.timer-container.end.one-hour-left {
+    color: #e35d6a;
+}
+
+.timer-container.end.one-minute-left {
+    color: #b02a37;
+}
+
+.expired.item {
+    filter: grayscale(0.75) brightness(0.25);
+    opacity: 0.5;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.expired.item:hover {
+    filter: grayscale(0.25) brightness(0.5);
+    opacity: 1;
+}
+
+.expired.item::before {
+    font-size: 75px;
+    left: 52.5%;
+    top: 35%;
+    opacity: 1;
+    transform: rotate(340deg) translate(-50%, -50%);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.expired.item:hover::before {
+    opacity: 0.25;
+}
+
+.esd-steam::after {
+    background-image: url(//media.hungbok.net/image/icon/steam.svg);
+}
+
+.esd-epicgamesstore::after {
+    background-image: url(//media.hungbok.net/image/icon/epicgamesstore.svg);
+}
+
+.esd-gogcom::after {
+    background-image: url(//media.hungbok.net/image/icon/gogcom.svg);
+}
+
+.esd-microsoftstore::after {
+    background-image: url(//media.hungbok.net/image/icon/microsoftstore.svg);
+}
+
+.esd-eaapp::after {
+    background-image: url(//media.hungbok.net/image/icon/ea.svg);
+}
+
+.esd-ubisoftconnect::after {
+    background-image: url(//media.hungbok.net/image/icon/ubisoft.svg);
+}
+
+.esd-battlenet::after {
+    background-image: url(//media.hungbok.net/image/icon/battlenet.svg);
+}
+
+.esd-xboxstore::after {
+    background-image: url(//media.hungbok.net/image/icon/xbox.svg);
+}
+
+.esd-playstationstore::after {
+    background-image: url(//media.hungbok.net/image/icon/playstation.svg);
+}
+
+.esd-humblebundle::after {
+    background-image: url(//media.hungbok.net/image/icon/humblebundle.svg);
+}
+
+.esd-amazongamesapp::after {
+    background-image: url(//media.hungbok.net/image/icon/primegaming.svg);
+}
+
+.esd-playstationplus::after {
+    background-image: url(//media.hungbok.net/image/icon/playstationplus.svg);
+}
+
+.esd-fanatical::after {
+    background-image: url(//media.hungbok.net/image/icon/fanatical.svg);
+}
+
+.esd-humblechoice::after {
+    background-image: url(//media.hungbok.net/image/icon/humblechoice.svg);
+}
+
+.esd-indiegala::after {
+    background-image: url(//media.hungbok.net/image/icon/indiegala.svg);
+}
+
+.esd-itchio::after {
+    background-image: url(//media.hungbok.net/image/icon/itchio.svg);
+}
+
+.esd-legacygames::after {
+    background-image: url(//media.hungbok.net/image/icon/legacygames.svg);
+}
+
+.esd-nintendoeshop::after {
+    background-image: url(//media.hungbok.net/image/icon/nintendo.svg);
+}
+
+.esd-drmfree::after {
+    background-image: url(//media.hungbok.net/image/icon/unlock.svg);
+}
+
+.hide-expired .item.expired {
+    display: none;
+}
+
 #dataContainer {
     margin: 50px 0 100px;
     width: auto;
