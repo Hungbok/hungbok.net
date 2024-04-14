@@ -257,7 +257,8 @@
     height: 427.5px;
     overflow: hidden;
     position: relative;
-    display: none;
+    display: flex!important;
+    justify-content: center;
 }
 
 .slider-image {

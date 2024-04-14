@@ -585,8 +585,7 @@
             _.$slider.children().children().children()
                 .css({
                     'width':(100 / _.options.slidesPerRow) + '%',
-                    'display': 'flex',
-                    'justify-content': 'center'
+                    'display': 'inline-block'
                 });
 
         }
