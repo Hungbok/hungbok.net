@@ -3054,7 +3054,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.discover-text:hover:after {
+.discover-title:hover .discover-text:after {
+    opacity: 0.5;
+    margin: 0 0 0 10px;
+}
+
+.discover-title:hover .discover-text:hover:after {
     opacity: 1;
     margin: 0 0 0 20px;
 }
@@ -3064,7 +3069,6 @@ div.opencritic-reviews {
     right: 0;
     bottom: 0;
     opacity: 0;
-    padding: 10px 15px;
     border-radius: 10px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -3075,10 +3079,11 @@ div.opencritic-reviews {
 
 .discover-title:hover .discover-button {
     opacity: 1;
+    color: var(--text-6);
 }
 
-.discover-button:hover {
-    background-color: var(--background-8);
+.discover-title:hover .discover-button:hover {
+    color: var(--text-2);
 }
 
 .discover-container {
