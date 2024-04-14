@@ -858,15 +858,18 @@ $(document).ready(function(){
         '</div>'+
         '<div class="discover-section">'+
             '<div class="discover-title">'+
-                '<div class="discover-text">신규 출시</div>'+
+                '<a class="discover-text" href="https://www.hungbok.com/ko/games/calendar">신규 출시</a>'+
+                '<a class="discover-button" href="https://www.hungbok.com/ko/games/calendar">모두 보기</a>'+
             '</div>'+
             '<div class="discover-container new-release"></div>'+
             '<div class="discover-title">'+
-                '<div class="discover-text">출시 예정</div>'+
+                '<a class="discover-text" href="https://www.hungbok.com/ko/games/calendar">출시 예정</a>'+
+                '<a class="discover-button" href="https://www.hungbok.com/ko/games/calendar">모두 보기</a>'+
             '</div>'+
             '<div class="discover-container upcoming-release"></div>'+
             '<div class="discover-title">'+
-                '<div class="discover-text">최신 할인</div>'+
+                '<a class="discover-text" href="https://www.hungbok.com/ko/games/sales">최신 할인</a>'+
+                '<a class="discover-button" href="https://www.hungbok.com/ko/games/sales">모두 보기</a>'+
             '</div>'+
             '<div class="discover-container" id="upcomingContainer"></div>'+
             '<div class="discover-title">'+

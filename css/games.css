@@ -2899,6 +2899,7 @@ div.opencritic-reviews {
     margin: 25px 10px;
     font-weight: bold;
     color: #ffffff;
+    position: relative;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2917,6 +2918,42 @@ div.opencritic-reviews {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.discover-text:after {
+    content: "❯";
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0;
+    vertical-align: text-top;
+    margin: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.discover-text:hover:after {
+    opacity: 1;
+    margin: 0 0 0 20px;
+}
+
+.discover-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.discover-button:hover {
+    background-color: var(--background-8);
 }
 
 .discover-container {
@@ -3114,7 +3151,7 @@ div.opencritic-reviews {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: stretch;
     position: relative;
     flex-wrap: wrap;
