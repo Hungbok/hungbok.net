@@ -1358,8 +1358,8 @@ $(document).ready(function(){
                                         <div class="discover-title-time">${formattedDate}</div>
                                         <div class="discover-item-thumbnail discover-thumbnail-hover">
                                             <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
-                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.src='/image/error-icon.svg'" loading="lazy">
-                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/thumbnail.jpg" onerror="this.style.display='none';" loading="lazy">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
                                                 <div class="discover-title-name" title="${title}">${title}</div>
                                             </a>
                                         </div>
