@@ -167,6 +167,10 @@ function sidepanel() {
 function mobileSearch() {
     var element = document.querySelector(".header-menu.search-container");
     element.classList.toggle("mobile-search-toggle");
+    var headerButton = document.querySelector('.header-button.mobile-search');
+    if (headerButton) {
+        headerButton.classList.toggle("mobile-search-toggle-button");
+    }
     var sideHeader = document.querySelector('.side-header');
     if (sideHeader) {
         sideHeader.classList.toggle("mobile-search-toggle-side");
@@ -220,6 +224,10 @@ window.onclick = function(event) {
         var toggleElement = document.querySelector('.mobile-search-toggle');
         if (toggleElement) {
             toggleElement.classList.remove('mobile-search-toggle');
+            var headerButton = document.querySelector('.header-button.mobile-search');
+            if (headerButton) {
+                headerButton.classList.remove("mobile-search-toggle-button");
+            }
             var sideHeader = document.querySelector('.side-header');
             if (sideHeader) {
                 sideHeader.classList.remove("mobile-search-toggle-side");

@@ -2198,10 +2198,15 @@ fieldset.pure-group.honeypot-field {
 
     .search-container .search {
         width: 90%;
+        margin: 0 70px 0 20px;
     }
 
     .mobile-search {
         display: block;
+    }
+
+    .mobile-search img:last-child {
+        display: none;
     }
 
     .mobile-search-toggle {
@@ -2219,6 +2224,20 @@ fieldset.pure-group.honeypot-field {
 
     .mobile-search-toggle-side.side-header {
         z-index: -1;
+    }
+
+    .mobile-search.mobile-search-toggle-button {
+        z-index: 999;
+        position: fixed;
+        right: 10px;
+    }
+
+    .mobile-search.mobile-search-toggle-button img:first-child {
+        display: none;
+    }
+
+    .mobile-search.mobile-search-toggle-button img:last-child {
+        display: block;
     }
 }
 

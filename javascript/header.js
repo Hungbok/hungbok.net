@@ -283,6 +283,7 @@ $(document).ready(function() {
                         '</a>'+
                         '<a class="header-button mobile-search" onclick="mobileSearch()">'+
                             '<img class="header-button-icon" src="//media.hungbok.net/image/icon/search.svg">'+
+                            '<img class="header-button-icon" src="//media.hungbok.net/image/icon/close.svg">'+
                         '</a>'+
                     '</div>'+
                 '</div>'+
