@@ -1217,118 +1217,120 @@ $(document).ready(function(){
                 console.error('오류가 발생했습니다:', error);
             }
         }
-        
+
         loadGameData();
 
-        $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
-            // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
-            // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
-            var $carousel = $('.owl-carousel');
-
-            $carousel.children().each( function( index ) {
-              $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
-            });
-
-            $(document).ready(function() {
-                var $progressBarContainer = $('.slide-progress-main');
-                var $progressBar = $('.progressBar');
+        window.onload = function() {
+            $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
+                // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
+                // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
                 var $carousel = $('.owl-carousel');
-                var isMouseOver = false;
-                var autoSlideTimeout;
-
-                function autoSlide() {
-                    clearTimeout(autoSlideTimeout);
-                    autoSlideTimeout = setTimeout(function() {
-                        $carousel.trigger('next.owl.carousel');
-                    }, 5000);
-                }
-
-                $carousel.owlCarousel({
-                    nav: false,
-                    loop: true,
-                    dots: true,
-                    merge: true,
-                    center: true,
-                    autoplay: false,
-                    autoWidth: true,
-                    smartSpeed: 1000,
-                    onInitialized: function() {
-                        startProgressBar();
-                        autoSlide();
-                        $progressBarContainer.css('bottom', '17.5px');
-                        $progressBar.css('opacity', '1');
-                    },
-                    onTranslate: function() {
-                        $progressBarContainer.css('bottom', '-14.5px');
-                        $progressBar.css('opacity', '0');
-                        resetProgressBar();
-                    },
-                    onTranslated: function() {
-                        resetAutoSlide;
+    
+                $carousel.children().each( function( index ) {
+                  $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+                });
+    
+                $(document).ready(function() {
+                    var $progressBarContainer = $('.slide-progress-main');
+                    var $progressBar = $('.progressBar');
+                    var $carousel = $('.owl-carousel');
+                    var isMouseOver = false;
+                    var autoSlideTimeout;
+    
+                    function autoSlide() {
+                        clearTimeout(autoSlideTimeout);
+                        autoSlideTimeout = setTimeout(function() {
+                            $carousel.trigger('next.owl.carousel');
+                        }, 5000);
+                    }
+    
+                    $carousel.owlCarousel({
+                        nav: false,
+                        loop: true,
+                        dots: true,
+                        merge: true,
+                        center: true,
+                        autoplay: false,
+                        autoWidth: true,
+                        smartSpeed: 1000,
+                        onInitialized: function() {
+                            startProgressBar();
+                            autoSlide();
+                            $progressBarContainer.css('bottom', '17.5px');
+                            $progressBar.css('opacity', '1');
+                        },
+                        onTranslate: function() {
+                            $progressBarContainer.css('bottom', '-14.5px');
+                            $progressBar.css('opacity', '0');
+                            resetProgressBar();
+                        },
+                        onTranslated: function() {
+                            resetAutoSlide;
+                            $progressBarContainer.css('bottom', '17.5px');
+                            $progressBar.css('opacity', '1');
+                            checkMouseAndStartProgressBar();
+                        }
+                    }).on('translated.owl.carousel', function(e) {
                         $progressBarContainer.css('bottom', '17.5px');
                         $progressBar.css('opacity', '1');
                         checkMouseAndStartProgressBar();
+                    });
+    
+                    function startProgressBar() {
+                        // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
+                        $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
                     }
-                }).on('translated.owl.carousel', function(e) {
-                    $progressBarContainer.css('bottom', '17.5px');
-                    $progressBar.css('opacity', '1');
-                    checkMouseAndStartProgressBar();
-                });
-
-                function startProgressBar() {
-                    // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
-                    $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
-                }
-            
-                function resetProgressBar() {
-                    // 진행 바를 즉시 0%로 초기화합니다.
-                    $progressBar.css({width: '0%', transition: 'none'});
-                }
-
-                function checkMouseAndStartProgressBar() {
-                    if (!isMouseOver) {
+                
+                    function resetProgressBar() {
+                        // 진행 바를 즉시 0%로 초기화합니다.
+                        $progressBar.css({width: '0%', transition: 'none'});
+                    }
+    
+                    function checkMouseAndStartProgressBar() {
+                        if (!isMouseOver) {
+                            startProgressBar();
+                            autoSlide();
+                        }
+                    }
+                
+                    $carousel.on('mouseover', function() {
+                        $progressBar.css({width: $progressBar.width(), transition: 'none'});
+                        isMouseOver = true;
+                        clearTimeout(autoSlideTimeout);
+                    });
+                
+                    $carousel.on('mouseleave', function() {
+                        isMouseOver = false;
                         startProgressBar();
                         autoSlide();
-                    }
-                }
-            
-                $carousel.on('mouseover', function() {
-                    $progressBar.css({width: $progressBar.width(), transition: 'none'});
-                    isMouseOver = true;
-                    clearTimeout(autoSlideTimeout);
+                    });
                 });
-            
-                $carousel.on('mouseleave', function() {
-                    isMouseOver = false;
-                    startProgressBar();
-                    autoSlide();
+    
+                $(window).on('resize', function() {
+                    $carousel.trigger('next.owl.carousel');
                 });
-            });
-
-            $(window).on('resize', function() {
-                $carousel.trigger('next.owl.carousel');
-            });
-
-            $(document).ready(function () {
-                // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
-                $('.owl-stage .owl-item.center .item').addClass('active');
-            
-                // 슬라이드 이동 이벤트가 발생할 때마다 실행
-                $('.owl-carousel').on('translated.owl.carousel', function(e) {
-                    // 기존에 .active가 있던 .item에서 .active 제거
-                    $('.owl-stage .owl-item .item.active').removeClass('active');
-            
-                    // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+    
+                $(document).ready(function () {
+                    // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
                     $('.owl-stage .owl-item.center .item').addClass('active');
-                });
-
-                $(document).on('click', '.owl-item > div', function() {
-                    // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
-                    var $speed = 300;  // in ms
-                    $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                
+                    // 슬라이드 이동 이벤트가 발생할 때마다 실행
+                    $('.owl-carousel').on('translated.owl.carousel', function(e) {
+                        // 기존에 .active가 있던 .item에서 .active 제거
+                        $('.owl-stage .owl-item .item.active').removeClass('active');
+                
+                        // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+                        $('.owl-stage .owl-item.center .item').addClass('active');
+                    });
+    
+                    $(document).on('click', '.owl-item > div', function() {
+                        // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+                        var $speed = 300;  // in ms
+                        $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                    });
                 });
             });
-        });
+        };
     }
 });
 
