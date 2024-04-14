@@ -571,6 +571,10 @@ body.en .middle-content::before {
     content: "개 검색됨";
 }
 
+.game-section .item-desc p:after {
+    content: "자세히 보기";
+}
+
 .episode-table > thead > tr > th:nth-child(1):before {
     content: "회차";
 }

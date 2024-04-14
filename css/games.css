@@ -2729,6 +2729,9 @@ div.opencritic-reviews {
     opacity: 0;
     margin: 20px 0px 0px;
     max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     -webkit-transform: translateY(32px);
     transform: translateY(32px);
     -webkit-transition: all 0.5s ease-in-out 0.5s;
@@ -2736,6 +2739,21 @@ div.opencritic-reviews {
     -o-transition: all 0.5s ease-in-out 0.5s;
     -ms-transition: all 0.5s ease-in-out 0.5s;
     transition: all 0.5s ease-in-out 0.5s;
+}
+
+.game-section .item-desc p:after {
+    display: block;
+    padding: 5px 10px;
+    margin: 20px 0 0;
+    background-color: var(--text-2);
+    color: var(--background-10);
+    border-radius: 10px;
+    font-weight: bold;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .game-section .owl-item .item.active .item-desc p {
