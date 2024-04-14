@@ -2785,7 +2785,7 @@ div.opencritic-reviews {
     -webkit-tap-highlight-color: transparent;
 }
 
-.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
+.owl-carousel .owl-dot {
     cursor: pointer;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -2794,7 +2794,7 @@ div.opencritic-reviews {
     user-select: none;
 }
 
-.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+.owl-carousel button.owl-dot {
     background: 0 0;
     color: inherit;
     border: none;
@@ -2804,6 +2804,8 @@ div.opencritic-reviews {
 
 .owl-nav {
     position: absolute;
+    width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
