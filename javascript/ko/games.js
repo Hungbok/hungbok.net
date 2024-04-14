@@ -881,12 +881,12 @@ $(document).ready(function(){
                 '<a class="discover-text" href="https://www.hungbok.com/ko/free-games?category=bundle">신규 번들</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/free-games?category=bundle">모두 보기</a>'+
             '</div>'+
-            '<div class="discover-container"></div>'+
+            '<div class="discover-container" id="bundleContainer"></div>'+
             '<div class="discover-title">'+
                 '<a class="discover-text" href="https://www.hungbok.com/ko/games/list">신규 추가</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/games/list">모두 보기</a>'+
             '</div>'+
-            '<div class="discover-container"></div>'+
+            '<div class="discover-container new-added"></div>'+
         '</div>');
         // JSON 파일에서 데이터를 불러오는 함수
         async function loadGameData() {
@@ -1218,38 +1218,32 @@ $(document).ready(function(){
         function createAndAppendfreegamesItem(item) {
             let now = new Date();
         
-            // 시작 시간 파싱
-            let startParts = item.start.split('-');
-            let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+            // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
+            let parts = item.end.split('-');
+            let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
         
-            // 종료 시간 파싱
-            let endParts = item.end.split('-');
-            let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+            let isExpired = now > itemEnd; // 만료 여부 판단
+            let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
         
-            // 현재 시간이 시작 시간 이후이고 종료 시간 이전인지 확인
-            if (now > itemStart && now < itemEnd) {
-                let div = document.createElement('div');
-                div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd}`;
-                div.innerHTML = `
-                    <a class="item-link" href="${item.link}" target="_blank">
-                        <div class="item-image">
-                            <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                        </div>
-                        <h1 class="from-${item.from}">${item.title}</h1>
-                        <div class="sale-info">
-                            <div class="sale-timer-container">
-                                <div class="sale-timer timer-container start" settime="${item.start}"></div>
-                                <div class="sale-timer timer-container end" settime="${item.end}"></div>
-                            </div>
-                        </div>
-                        <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
-                    </a>
-                `;
+            let div = document.createElement('div');
+            div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+            div.innerHTML = `
+                <a class="item-image" href="${item.link}">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                </a>
+                <div class="info">
+                    <h1>${item.title}</h1>
+                    <div class="timer-container start" settime="${item.start}"></div>
+                    <div class="timer-container end" settime="${item.end}"></div>
+                    <a class="item-link" href="${item.link}" target="_blank"></a>
+                </div>
+                <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            `;
+            document.getElementById('freegamesContainer').appendChild(div);
         
-                document.getElementById('freegamesContainer').appendChild(div);
-        
-                startTimer();
-            }
+            // 아이템을 추가한 후에 타이머를 시작합니다.
+            startTimer();
         }
         
         // 'loadMorefreegamesData' 함수 수정
@@ -1259,6 +1253,71 @@ $(document).ready(function(){
                 let item = filteredfreegamesData[freegamesStart];
                 createAndAppendfreegamesItem(item);
                 freegamesStart++;
+                loadedItems++;
+            }
+        }
+
+        let bundleData = [];
+        let filteredbundleData = [];
+        let bundleStart = 0;
+        let bundleLimit = 6;
+        
+        // 데이터를 가져오는 부분은 변경하지 않았습니다.
+        Promise.all([
+            fetch('//data.hungbok.net/data/free-games/bundle.json').then(response => response.json())
+        ]).then(results => {
+            bundleData = results.flat();
+            // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+            filteredbundleData = bundleData.filter(item => {
+                let now = new Date();
+                let startParts = item.start.split('-');
+                let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+                let endParts = item.end.split('-');
+                let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+                return now > itemStart && now < itemEnd;
+            });
+            loadMorebundleData();
+        });
+        
+        // 아이템을 생성하고 추가하는 함수
+        function createAndAppendbundleItem(item) {
+            let now = new Date();
+        
+            // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
+            let parts = item.end.split('-');
+            let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+        
+            let isExpired = now > itemEnd; // 만료 여부 판단
+            let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
+        
+            let div = document.createElement('div');
+            div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+            div.innerHTML = `
+                <a class="item-image" href="${item.link}">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                </a>
+                <div class="info">
+                    <h1>${item.title}</h1>
+                    <div class="timer-container start" settime="${item.start}"></div>
+                    <div class="timer-container end" settime="${item.end}"></div>
+                    <a class="item-link" href="${item.link}" target="_blank"></a>
+                </div>
+                <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            `;
+            document.getElementById('bundleContainer').appendChild(div);
+        
+            // 아이템을 추가한 후에 타이머를 시작합니다.
+            startTimer();
+        }
+        
+        // 'loadMorebundleData' 함수 수정
+        function loadMorebundleData() {
+            let loadedItems = 0;
+            while (loadedItems < bundleLimit && bundleStart < filteredbundleData.length) {
+                let item = filteredbundleData[bundleStart];
+                createAndAppendbundleItem(item);
+                bundleStart++;
                 loadedItems++;
             }
         }
