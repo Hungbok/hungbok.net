@@ -2852,7 +2852,7 @@ div.opencritic-reviews {
 }
 
 .owl-prev {
-    left: 30%;
+    left: 25%;
     position: absolute;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2874,7 +2874,7 @@ div.opencritic-reviews {
 }
 
 .owl-next {
-    right: 30%;
+    right: 25%;
     position: absolute;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
