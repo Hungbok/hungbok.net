@@ -3886,21 +3886,6 @@ div.opencritic-reviews {
     display: none;
 }
 
-#dataContainer {
-    margin: 50px 0 100px;
-    width: auto;
-    max-width: 1200px;
-    min-height: 430px;
-    gap: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    align-items: stretch;
-    position: relative;
-}
-
 #dataContainer .item a.item-link {
     color: black;
     font-weight: bold;
