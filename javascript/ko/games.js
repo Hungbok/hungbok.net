@@ -1282,10 +1282,6 @@ $(document).ready(function(){
             // UTC+09:00 기준의 서버 시간을 계산하고 UTC 형식으로 변환합니다.
             let serverTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60 * 1000) + (9 * 60 * 60 * 1000));
             serverTime = serverTime.toISOString().slice(0,19).replace('T', ' ');
-        
-            // HTML 요소에 시간을 표시합니다.
-            document.getElementById('serverTime').textContent = serverTime + ' UTC+09:00'; // 서버 시간을 표시합니다.
-            document.getElementById('localTime').textContent = localTime + ' ' + timeZone; // 로컬 시간을 표시합니다.
         }
         
         setInterval(displayTime, 1000); // 1초마다 함수를 반복 실행하여 시간을 업데이트합니다.

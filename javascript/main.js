@@ -208,13 +208,18 @@ window.onclick = function(event) {
         body.classList.remove('overflow-hidden'); // 스크롤 가능하게 설정
     }
     
-    // '.header-menu.search-container' 요소를 선택합니다.
-    var container = document.querySelector('.mobile-search, .search-container');
+    // '.mobile-search'와 '.search-container' 요소들을 선택합니다.
+    var mobileSearch = document.querySelector('.mobile-search');
+    var searchContainer = document.querySelector('.search-container');
 
-    // 클릭된 요소가 container 또는 그 하위 요소가 아닌 경우,
+    // 클릭된 요소가 'mobileSearch' 또는 'searchContainer' 또는 그 하위 요소가 아닌 경우,
     // '.mobile-search-toggle' 클래스를 제거합니다.
-    if (!container.contains(event.target)) {
-        container.classList.remove('mobile-search-toggle');
+    if (mobileSearch && !mobileSearch.contains(event.target) &&
+        searchContainer && !searchContainer.contains(event.target)) {
+        var toggleElement = document.querySelector('.mobile-search-toggle');
+        if (toggleElement) {
+            toggleElement.classList.remove('mobile-search-toggle');
+        }
     }
 }
 
