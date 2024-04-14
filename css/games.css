@@ -3535,6 +3535,71 @@ div.opencritic-reviews {
     color: var(--white);
 }
 
+#dataContainer {
+    margin: 50px 0 100px;
+    width: auto;
+    max-width: 1200px;
+    min-height: 430px;
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    position: relative;
+}
+
+#dataContainer .item a.item-link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    line-height: 24px;
+}
+
+#dataContainer .item.games a.item-link {
+    background: linear-gradient(90deg, #e6c300, 60%, #f7e589);
+}
+
+#dataContainer .item.bundle a.item-link {
+    background: url(//media.hungbok.net/image/icon/bag.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #e67300, 60%, #f4bd85);
+    padding: 10px 45px 10px 15px;
+}
+
+#dataContainer .item.trials a.item-link {
+    background: url(//media.hungbok.net/image/icon/trials.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00e6a1, 60%, #90fddc);
+    padding: 10px 45px 10px 15px;
+}
+
+#dataContainer .item.subscription a.item-link {
+    background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #ec5151, 60%, #fd9090);
+    padding: 10px 45px 10px 15px;
+}
+
+#dataContainer .item.subscription.from-primegaming a.item-link {
+    background: url(//media.hungbok.net/image/icon/primegaming_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #9146ff, 60%, #bf99f8);
+}
+
+#dataContainer .item.subscription.from-humblechoice a.item-link {
+    background: url(//media.hungbok.net/image/icon/humblechoice_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #45e600, 60%, #a5ee86);
+}
+
+#dataContainer .item.subscription.from-playstationplus a.item-link {
+    background: url(//media.hungbok.net/image/icon/playstationplus_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00b8e6, 60%, #89e2f8);
+}
+
+#dataContainer .item.subscription.from-nintendoswitchonline a.item-link::before,
+#dataContainer .item.subscription.from-nintendoswitchonline a.item-link::after,
+#dataContainer .item.trials.from-playstationstore a.item-link::before,
+#dataContainer .item.trials.from-playstationstore a.item-link::after {
+    font-size: 14px;
+    font-weight: bold;
+}
+
 /* region 000 - Top */
 
 .region_001::before {
