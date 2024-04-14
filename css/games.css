@@ -3272,7 +3272,7 @@ div.opencritic-reviews {
     width: auto;
     max-width: 1445px;
     min-height: 351px;
-    gap: 40px;
+    gap: 15px;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -3284,7 +3284,6 @@ div.opencritic-reviews {
 
 #upcomingContainer .item {
     padding: unset;
-    width: 30%;
     max-width: 350px;
     margin: 0;
     overflow: hidden;
@@ -3602,7 +3601,7 @@ div.opencritic-reviews {
 }
 
 #dataContainer > .free-games .item-image {
-    width: 100%;
+    min-width: 350px;
     height: 200px;
     overflow: hidden;
     display: flex;
