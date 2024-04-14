@@ -1279,6 +1279,18 @@ $(document).ready(function(){
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
+                let title = game.title; // 초기 제목 설정
+                const detailDataUrl = `//data.hungbok.net/data/games/${item.url}.json`;
+        
+                try {
+                    const response = fetch(detailDataUrl);
+                    const detailData = response.json();
+                    const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
+                    title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title; // 언어에 맞는 제목으로 업데이트
+                } catch (error) {
+                    console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
+                }
+
                 // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
                 const validGames = data.filter(game => {
                     const dateParts = game.date.split('-');
@@ -1286,15 +1298,12 @@ $(document).ready(function(){
                 })
                 .sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜가 큰 데이터부터 정렬
                 
-                // 최근 5개 데이터 추출
                 const recentGames = validGames.slice(0, 5);
         
-                // 출력될 데이터가 5개 미만이거나 오류 발생 시 처리
                 if (recentGames.length < 5) {
                     document.querySelector('.discover-container.new-release').classList.add('disabled');
                 }
                 
-                // 각 게임 데이터 처리
                 recentGames.forEach(game => {
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
@@ -1308,7 +1317,7 @@ $(document).ready(function(){
                                             <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
                                                 <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
                                                 <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
-                                                <div class="discover-title-name" title="${game.title}">${game.title}</div>
+                                                <div class="discover-title-name" title="${title}">${title}</div>
                                             </a>
                                         </div>
                                     </div>
@@ -1323,17 +1332,14 @@ $(document).ready(function(){
                     const dateParts = game.date.split('-');
                     return dateParts.length === 3 && new Date(game.date) > today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
                 })
-                .sort((a, b) => new Date(a.date) - new Date(b.date)); // 날짜가 큰 데이터부터 정렬
+                .sort((a, b) => new Date(a.date) - new Date(b.date)); // 날짜가 작은 데이터부터 정렬
                 
-                // 최근 5개 데이터 추출
                 const upcomingGames = validupcomingGames.slice(0, 5);
         
-                // 출력될 데이터가 5개 미만이거나 오류 발생 시 처리
                 if (upcomingGames.length < 5) {
                     document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
                 }
                 
-                // 각 게임 데이터 처리
                 upcomingGames.forEach(game => {
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
@@ -1347,7 +1353,7 @@ $(document).ready(function(){
                                             <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
                                                 <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
                                                 <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
-                                                <div class="discover-title-name" title="${game.title}">${game.title}</div>
+                                                <div class="discover-title-name" title="${title}">${title}</div>
                                             </a>
                                         </div>
                                     </div>

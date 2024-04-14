@@ -2930,6 +2930,10 @@ div.opencritic-reviews {
     justify-content: space-between;
 }
 
+.discover-container.disabled {
+    justify-content: flex-start;
+}
+
 .discover-content {
     position: relative;
     float: left;
