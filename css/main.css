@@ -2178,7 +2178,17 @@ fieldset.pure-group.honeypot-field {
     }
 
     .search-container {
+        display: flex;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
         top: -100%;
+        left: 0;
+        max-width: 100%;
+        background-color: var(--background-8);
+        height: 90px;
+        align-items: center;
+        justify-content: center;
         -webkit-transition: all 0.5s;
         -moz-transition: all 0.5s;
         -o-transition: all 0.5s;
@@ -2186,34 +2196,25 @@ fieldset.pure-group.honeypot-field {
         transition: all 0.5s;
     }
 
+    .search-container .search {
+        width: 90%;
+    }
+
     .mobile-search {
         display: block;
     }
 
     .mobile-search-toggle {
-        display: flex;
-        position: fixed;
-        z-index: 999;
-        width: 100%;
         top: 0;
-        left: 0;
-        max-width: 100%;
-        background-color: var(--background-8);
-        height: 90px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .mobile-search-toggle .search {
-        width: 90%;
     }
 
     .mobile-search-toggle .search-results {
         top: 90px;
         margin: 0;
         border-radius: 0;
-        height: 700px;
+        height: 100vh;
         display: block!important;
+        background: var(--background-8-opacity-75);
     }
 
     .mobile-search-toggle-side.side-header {
