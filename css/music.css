@@ -232,7 +232,7 @@
 /* slider */
 
 .slider > .slider-item {
-    display: none;
+    display: none!important;
 }
 
 .slider-item {
