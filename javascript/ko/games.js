@@ -1280,9 +1280,16 @@ $(document).ready(function(){
             .then(response => response.json())
             .then(data => {
                 function getLocalizedData(data, key) {
-                    return gameData['ko'] && gameData['ko'][key] ? gameData['ko'][key] : gameData['en'][key];
+                    if (data['ko'] && key in data['ko'] && data['ko'][key] !== undefined) {
+                        return data['ko'][key];
+                    } else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
+                        return data['en'][key];
+                    } else {
+                        // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
+                        return '제목 없음';
+                    }
                 }
-
+                
                 // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
                 const validGames = data.filter(game => {
                     const dateParts = game.date.split('-');
@@ -1300,7 +1307,8 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            const title = getLocalizedData(gameData, 'title');
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
@@ -1337,7 +1345,8 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            const title = getLocalizedData(gameData, 'title');
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
