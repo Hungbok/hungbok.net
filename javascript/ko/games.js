@@ -1279,18 +1279,6 @@ $(document).ready(function(){
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                let title = game.title; // 초기 제목 설정
-                const detailDataUrl = `//data.hungbok.net/data/games/${item.url}.json`;
-        
-                try {
-                    const response = fetch(detailDataUrl);
-                    const detailData = response.json();
-                    const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
-                    title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title; // 언어에 맞는 제목으로 업데이트
-                } catch (error) {
-                    console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
-                }
-
                 // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
                 const validGames = data.filter(game => {
                     const dateParts = game.date.split('-');
@@ -1308,6 +1296,8 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
+                            // ko 값이 있으면 ko의 title을 사용, 없으면 en의 title을 사용
+                            const title = gameData.ko && gameData.ko.title ? gameData.ko.title : gameData.en.title;
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
@@ -1344,6 +1334,8 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
+                            // ko 값이 있으면 ko의 title을 사용, 없으면 en의 title을 사용
+                            const title = gameData.ko && gameData.ko.title ? gameData.ko.title : gameData.en.title;
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
