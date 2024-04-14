@@ -3054,12 +3054,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.discover-content:hover .discover-title .discover-text:after {
+.discover-contents:hover .discover-title .discover-text:after {
     opacity: 0.5;
     margin: 0 0 0 10px;
 }
 
-.discover-content:hover .discover-title .discover-text:hover:after {
+.discover-contents:hover .discover-title .discover-text:hover:after {
     opacity: 1;
     margin: 0 0 0 20px;
 }
@@ -3077,12 +3077,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.discover-content:hover .discover-title .discover-button {
+.discover-contents:hover .discover-title .discover-button {
     opacity: 1;
     color: var(--text-6);
 }
 
-.discover-content:hover .discover-title .discover-button:hover {
+.discover-contents:hover .discover-title .discover-button:hover {
     color: var(--text-2);
 }
 
