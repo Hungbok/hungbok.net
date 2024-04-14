@@ -2809,6 +2809,7 @@ div.opencritic-reviews {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: contents;
 }
 
 .owl-nav button {

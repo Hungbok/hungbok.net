@@ -209,7 +209,7 @@ window.onclick = function(event) {
     }
     
     // '.header-menu.search-container' 요소를 선택합니다.
-    var container = document.querySelector('.header-menu.search-container');
+    var container = document.querySelector('.mobile-search, .search-container');
 
     // 클릭된 요소가 container 또는 그 하위 요소가 아닌 경우,
     // '.mobile-search-toggle' 클래스를 제거합니다.
