@@ -166,8 +166,11 @@ function sidepanel() {
 // mobileSearch 토글 함수
 function mobileSearch() {
     var element = document.querySelector(".header-menu.search-container");
-    // "mobile-search-toggle" 클래스를 토글합니다.
     element.classList.toggle("mobile-search-toggle");
+    var sideHeader = document.querySelector('.side-header');
+    if (sideHeader) {
+        sideHeader.classList.toggle("mobile-search-toggle-side");
+    }
     document.getElementById("search-value").focus();
 }
 
@@ -212,13 +215,15 @@ window.onclick = function(event) {
     var mobileSearch = document.querySelector('.mobile-search');
     var searchContainer = document.querySelector('.search-container');
 
-    // 클릭된 요소가 'mobileSearch' 또는 'searchContainer' 또는 그 하위 요소가 아닌 경우,
-    // '.mobile-search-toggle' 클래스를 제거합니다.
     if (mobileSearch && !mobileSearch.contains(event.target) &&
         searchContainer && !searchContainer.contains(event.target)) {
         var toggleElement = document.querySelector('.mobile-search-toggle');
         if (toggleElement) {
             toggleElement.classList.remove('mobile-search-toggle');
+            var sideHeader = document.querySelector('.side-header');
+            if (sideHeader) {
+                sideHeader.classList.remove("mobile-search-toggle-side");
+            }
         }
     }
 }
