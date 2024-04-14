@@ -1299,7 +1299,6 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            const title = gameData.ko || gameData.en; // ko 값이 없으면 en 값 사용
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
@@ -1309,7 +1308,7 @@ $(document).ready(function(){
                                             <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
                                                 <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
                                                 <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
-                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                                <div class="discover-title-name" title="${game.title}">${game.title}</div>
                                             </a>
                                         </div>
                                     </div>
@@ -1339,7 +1338,6 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            const title = gameData.ko || gameData.en; // ko 값이 없으면 en 값 사용
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
@@ -1349,7 +1347,7 @@ $(document).ready(function(){
                                             <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
                                                 <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
                                                 <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
-                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                                <div class="discover-title-name" title="${game.title}">${game.title}</div>
                                             </a>
                                         </div>
                                     </div>
