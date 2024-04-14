@@ -3054,12 +3054,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.discover-title:hover .discover-text:after {
+.discover-content:hover .discover-title .discover-text:after {
     opacity: 0.5;
     margin: 0 0 0 10px;
 }
 
-.discover-title:hover .discover-text:hover:after {
+.discover-content:hover .discover-title .discover-text:hover:after {
     opacity: 1;
     margin: 0 0 0 20px;
 }
@@ -3077,12 +3077,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.discover-title:hover .discover-button {
+.discover-content:hover .discover-title .discover-button {
     opacity: 1;
     color: var(--text-6);
 }
 
-.discover-title:hover .discover-button:hover {
+.discover-content:hover .discover-title .discover-button:hover {
     color: var(--text-2);
 }
 
@@ -3539,7 +3539,7 @@ div.opencritic-reviews {
     color: var(--white);
 }
 
-#dataContainer > .free-games {
+#dataContainer > .discover-content > .free-games {
     width: auto;
     max-width: 1200px;
     gap: 15px;
@@ -3553,7 +3553,7 @@ div.opencritic-reviews {
     justify-content: flex-start;
 }
 
-#dataContainer > .free-games .item {
+#dataContainer > .discover-content > .free-games .item {
     max-width: 350px;
     margin: 0;
     overflow: hidden;
@@ -3566,7 +3566,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .item::before {
+#dataContainer > .discover-content > .free-games .item::before {
     content: "";
     position: absolute;
     z-index: 10;
@@ -3588,7 +3588,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .item::after {
+#dataContainer > .discover-content > .free-games .item::after {
     content: "";
     width: 500px;
     height: 500px;
@@ -3606,7 +3606,7 @@ div.opencritic-reviews {
     pointer-events: none;
 }
 
-#dataContainer > .free-games .item-image {
+#dataContainer > .discover-content > .free-games .item-image {
     min-width: 350px;
     height: 200px;
     overflow: hidden;
@@ -3616,7 +3616,7 @@ div.opencritic-reviews {
     position: relative;
 }
 
-#dataContainer > .free-games .item-image img {
+#dataContainer > .discover-content > .free-games .item-image img {
     height: auto;
     width: 100%;
     filter: blur(10px) brightness(0.75) grayscale(0.5);
@@ -3628,7 +3628,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .item-image img:first-child {
+#dataContainer > .discover-content > .free-games .item-image img:first-child {
     position: relative;
     height: 100%;
     width: auto;
@@ -3636,11 +3636,11 @@ div.opencritic-reviews {
     filter: unset;
 }
 
-#dataContainer > .free-games .item:hover .item-image img {
+#dataContainer > .discover-content > .free-games .item:hover .item-image img {
     transform: scale(1.05);
 }
 
-#dataContainer > .free-games .item-image::after {
+#dataContainer > .discover-content > .free-games .item-image::after {
     content: "";
     display: block;
     position: absolute;
@@ -3652,7 +3652,7 @@ div.opencritic-reviews {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 }
 
-#dataContainer > .free-games .item-image:before {
+#dataContainer > .discover-content > .free-games .item-image:before {
     content: "";
     width: 30px;
     height: 20px;
@@ -3663,40 +3663,40 @@ div.opencritic-reviews {
     pointer-events: none;
 }
 
-#dataContainer > .free-games .item.jp .item-image:before {
+#dataContainer > .discover-content > .free-games .item.jp .item-image:before {
     background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item.us .item-image:before {
+#dataContainer > .discover-content > .free-games .item.us .item-image:before {
     background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item.eu .item-image:before {
+#dataContainer > .discover-content > .free-games .item.eu .item-image:before {
     background: url(//media.hungbok.net/image/flag/eu.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item.gb .item-image:before {
+#dataContainer > .discover-content > .free-games .item.gb .item-image:before {
     background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item.fr .item-image:before {
+#dataContainer > .discover-content > .free-games .item.fr .item-image:before {
     background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item.de .item-image:before {
+#dataContainer > .discover-content > .free-games .item.de .item-image:before {
     background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item.kr .item-image:before {
+#dataContainer > .discover-content > .free-games .item.kr .item-image:before {
     background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
 }
 
-#dataContainer > .free-games .item .info {
+#dataContainer > .discover-content > .free-games .item .info {
     background-color: transparent;
     border-radius: 0;
 }
 
-#dataContainer > .free-games .item h1 {
+#dataContainer > .discover-content > .free-games .item h1 {
     width: calc(100% - 40px);
     text-wrap: balance;
     position: absolute;
@@ -3708,11 +3708,11 @@ div.opencritic-reviews {
     pointer-events: none;
 }
 
-#dataContainer > .free-games .item h3 {
+#dataContainer > .discover-content > .free-games .item h3 {
     display: none;
 }
 
-#dataContainer > .free-games .timer-container {
+#dataContainer > .discover-content > .free-games .timer-container {
     font-size: 24px;
     font-weight: bold;
     -webkit-transition: all 0.5s;
@@ -3722,31 +3722,31 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .item .timer-container.start::before {
+#dataContainer > .discover-content > .free-games .item .timer-container.start::before {
     margin-right: 10px;
 }
 
-#dataContainer > .free-games .timer-container.start.expired,
-#dataContainer > .free-games .timer-container.end {
+#dataContainer > .discover-content > .free-games .timer-container.start.expired,
+#dataContainer > .discover-content > .free-games .timer-container.end {
     display: none;
 }
 
-#dataContainer > .free-games .timer-container.start.expired + .timer-container.end {
+#dataContainer > .discover-content > .free-games .timer-container.start.expired + .timer-container.end {
     display: block;
 }
 
-#dataContainer > .free-games .item.unknown .timer-container.end {
+#dataContainer > .discover-content > .free-games .item.unknown .timer-container.end {
     font-size: 0;
     color: transparent;
 }
 
-#dataContainer > .free-games .item.unknown .timer-container.end::after {
+#dataContainer > .discover-content > .free-games .item.unknown .timer-container.end::after {
     font-size: 24px;
     line-height: 29px;
     color: var(--text-1);
 }
 
-#dataContainer > .free-games .item-link {
+#dataContainer > .discover-content > .free-games .item-link {
     background: linear-gradient(90deg, rgb(230, 195, 0), 60%, rgb(247, 229, 137));
     color: black;
     font-weight: bold;
@@ -3762,11 +3762,11 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .item-link:hover {
+#dataContainer > .discover-content > .free-games .item-link:hover {
     opacity: 0.5;
 }
 
-#dataContainer > .free-games .item-background {
+#dataContainer > .discover-content > .free-games .item-background {
     position: absolute;
     height: 100%;
     top: 0px;
@@ -3777,31 +3777,31 @@ div.opencritic-reviews {
     pointer-events: none;
 }
 
-#dataContainer > .free-games .timer-container.end.one-day-left {
+#dataContainer > .discover-content > .free-games .timer-container.end.one-day-left {
     color: #ffcd39;
 }
 
-#dataContainer > .free-games .timer-container.end.twelve-hours-left {
+#dataContainer > .discover-content > .free-games .timer-container.end.twelve-hours-left {
     color: #cc9a06;
 }
 
-#dataContainer > .free-games .timer-container.end.six-hours-left {
+#dataContainer > .discover-content > .free-games .timer-container.end.six-hours-left {
     color: #fd9843;
 }
 
-#dataContainer > .free-games .timer-container.end.three-hours-left {
+#dataContainer > .discover-content > .free-games .timer-container.end.three-hours-left {
     color: #ca6510;
 }
 
-#dataContainer > .free-games .timer-container.end.one-hour-left {
+#dataContainer > .discover-content > .free-games .timer-container.end.one-hour-left {
     color: #e35d6a;
 }
 
-#dataContainer > .free-games .timer-container.end.one-minute-left {
+#dataContainer > .discover-content > .free-games .timer-container.end.one-minute-left {
     color: #b02a37;
 }
 
-#dataContainer > .free-games .expired.item {
+#dataContainer > .discover-content > .free-games .expired.item {
     filter: grayscale(0.75) brightness(0.25);
     opacity: 0.5;
     -webkit-transition: all 0.5s;
@@ -3811,12 +3811,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .expired.item:hover {
+#dataContainer > .discover-content > .free-games .expired.item:hover {
     filter: grayscale(0.25) brightness(0.5);
     opacity: 1;
 }
 
-#dataContainer > .free-games .expired.item::before {
+#dataContainer > .discover-content > .free-games .expired.item::before {
     font-size: 75px;
     left: 52.5%;
     top: 35%;
@@ -3829,91 +3829,91 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-#dataContainer > .free-games .expired.item:hover::before {
+#dataContainer > .discover-content > .free-games .expired.item:hover::before {
     opacity: 0.25;
 }
 
-#dataContainer > .free-games .esd-steam::after {
+#dataContainer > .discover-content > .free-games .esd-steam::after {
     background-image: url(//media.hungbok.net/image/icon/steam.svg);
 }
 
-#dataContainer > .free-games .esd-epicgamesstore::after {
+#dataContainer > .discover-content > .free-games .esd-epicgamesstore::after {
     background-image: url(//media.hungbok.net/image/icon/epicgamesstore.svg);
 }
 
-#dataContainer > .free-games .esd-gogcom::after {
+#dataContainer > .discover-content > .free-games .esd-gogcom::after {
     background-image: url(//media.hungbok.net/image/icon/gogcom.svg);
 }
 
-#dataContainer > .free-games .esd-microsoftstore::after {
+#dataContainer > .discover-content > .free-games .esd-microsoftstore::after {
     background-image: url(//media.hungbok.net/image/icon/microsoftstore.svg);
 }
 
-#dataContainer > .free-games .esd-eaapp::after {
+#dataContainer > .discover-content > .free-games .esd-eaapp::after {
     background-image: url(//media.hungbok.net/image/icon/ea.svg);
 }
 
-#dataContainer > .free-games .esd-ubisoftconnect::after {
+#dataContainer > .discover-content > .free-games .esd-ubisoftconnect::after {
     background-image: url(//media.hungbok.net/image/icon/ubisoft.svg);
 }
 
-#dataContainer > .free-games .esd-battlenet::after {
+#dataContainer > .discover-content > .free-games .esd-battlenet::after {
     background-image: url(//media.hungbok.net/image/icon/battlenet.svg);
 }
 
-#dataContainer > .free-games .esd-xboxstore::after {
+#dataContainer > .discover-content > .free-games .esd-xboxstore::after {
     background-image: url(//media.hungbok.net/image/icon/xbox.svg);
 }
 
-#dataContainer > .free-games .esd-playstationstore::after {
+#dataContainer > .discover-content > .free-games .esd-playstationstore::after {
     background-image: url(//media.hungbok.net/image/icon/playstation.svg);
 }
 
-#dataContainer > .free-games .esd-humblebundle::after {
+#dataContainer > .discover-content > .free-games .esd-humblebundle::after {
     background-image: url(//media.hungbok.net/image/icon/humblebundle.svg);
 }
 
-#dataContainer > .free-games .esd-amazongamesapp::after {
+#dataContainer > .discover-content > .free-games .esd-amazongamesapp::after {
     background-image: url(//media.hungbok.net/image/icon/primegaming.svg);
 }
 
-#dataContainer > .free-games .esd-playstationplus::after {
+#dataContainer > .discover-content > .free-games .esd-playstationplus::after {
     background-image: url(//media.hungbok.net/image/icon/playstationplus.svg);
 }
 
-#dataContainer > .free-games .esd-fanatical::after {
+#dataContainer > .discover-content > .free-games .esd-fanatical::after {
     background-image: url(//media.hungbok.net/image/icon/fanatical.svg);
 }
 
-#dataContainer > .free-games .esd-humblechoice::after {
+#dataContainer > .discover-content > .free-games .esd-humblechoice::after {
     background-image: url(//media.hungbok.net/image/icon/humblechoice.svg);
 }
 
-#dataContainer > .free-games .esd-indiegala::after {
+#dataContainer > .discover-content > .free-games .esd-indiegala::after {
     background-image: url(//media.hungbok.net/image/icon/indiegala.svg);
 }
 
-#dataContainer > .free-games .esd-itchio::after {
+#dataContainer > .discover-content > .free-games .esd-itchio::after {
     background-image: url(//media.hungbok.net/image/icon/itchio.svg);
 }
 
-#dataContainer > .free-games .esd-legacygames::after {
+#dataContainer > .discover-content > .free-games .esd-legacygames::after {
     background-image: url(//media.hungbok.net/image/icon/legacygames.svg);
 }
 
-#dataContainer > .free-games .esd-nintendoeshop::after {
+#dataContainer > .discover-content > .free-games .esd-nintendoeshop::after {
     background-image: url(//media.hungbok.net/image/icon/nintendo.svg);
 }
 
-#dataContainer > .free-games .esd-drmfree::after {
+#dataContainer > .discover-content > .free-games .esd-drmfree::after {
     background-image: url(//media.hungbok.net/image/icon/unlock.svg);
 }
 
-#dataContainer > .free-games .hide-expired .item.expired {
+#dataContainer > .discover-content > .free-games .hide-expired .item.expired {
     display: none;
 }
 
-#dataContainer > .free-games .item a.item-link {
+#dataContainer > .discover-content > .free-games .item a.item-link {
     color: black;
     font-weight: bold;
     text-decoration: none;
@@ -3924,41 +3924,41 @@ div.opencritic-reviews {
     line-height: 24px;
 }
 
-#dataContainer > .free-games .item.games a.item-link {
+#dataContainer > .discover-content > .free-games .item.games a.item-link {
     background: linear-gradient(90deg, #e6c300, 60%, #f7e589);
 }
 
-#dataContainer > .free-games .item.bundle a.item-link {
+#dataContainer > .discover-content > .free-games .item.bundle a.item-link {
     background: url(//media.hungbok.net/image/icon/bag.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #e67300, 60%, #f4bd85);
     padding: 10px 45px 10px 15px;
 }
 
-#dataContainer > .free-games .item.trials a.item-link {
+#dataContainer > .discover-content > .free-games .item.trials a.item-link {
     background: url(//media.hungbok.net/image/icon/trials.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00e6a1, 60%, #90fddc);
     padding: 10px 45px 10px 15px;
 }
 
-#dataContainer > .free-games .item.subscription a.item-link {
+#dataContainer > .discover-content > .free-games .item.subscription a.item-link {
     background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #ec5151, 60%, #fd9090);
     padding: 10px 45px 10px 15px;
 }
 
-#dataContainer > .free-games .item.subscription.from-primegaming a.item-link {
+#dataContainer > .discover-content > .free-games .item.subscription.from-primegaming a.item-link {
     background: url(//media.hungbok.net/image/icon/primegaming_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #9146ff, 60%, #bf99f8);
 }
 
-#dataContainer > .free-games .item.subscription.from-humblechoice a.item-link {
+#dataContainer > .discover-content > .free-games .item.subscription.from-humblechoice a.item-link {
     background: url(//media.hungbok.net/image/icon/humblechoice_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #45e600, 60%, #a5ee86);
 }
 
-#dataContainer > .free-games .item.subscription.from-playstationplus a.item-link {
+#dataContainer > .discover-content > .free-games .item.subscription.from-playstationplus a.item-link {
     background: url(//media.hungbok.net/image/icon/playstationplus_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00b8e6, 60%, #89e2f8);
 }
 
-#dataContainer > .free-games .item.subscription.from-nintendoswitchonline a.item-link::before,
-#dataContainer > .free-games .item.subscription.from-nintendoswitchonline a.item-link::after,
-#dataContainer > .free-games .item.trials.from-playstationstore a.item-link::before,
-#dataContainer > .free-games .item.trials.from-playstationstore a.item-link::after {
+#dataContainer > .discover-content > .free-games .item.subscription.from-nintendoswitchonline a.item-link::before,
+#dataContainer > .discover-content > .free-games .item.subscription.from-nintendoswitchonline a.item-link::after,
+#dataContainer > .discover-content > .free-games .item.trials.from-playstationstore a.item-link::before,
+#dataContainer > .discover-content > .free-games .item.trials.from-playstationstore a.item-link::after {
     font-size: 14px;
     font-weight: bold;
 }
