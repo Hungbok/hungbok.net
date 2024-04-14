@@ -2820,7 +2820,7 @@ div.opencritic-reviews {
 .owl-nav button {
     position: absolute;
     z-index: 1;
-    top: 50%;
+    top: calc(50% - 20px);
     transform: translate(0%, -50%);
     height: 150px;
     width: 50px;

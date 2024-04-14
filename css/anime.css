@@ -252,7 +252,7 @@
     width: 2370px;
 }
 
-#slider > .slider-item {
+.slider > .slider-item {
     display: none;
 }
 
