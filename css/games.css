@@ -2698,8 +2698,8 @@ div.opencritic-reviews {
     color: #fff;
     position: relative;
     z-index: 1;
-    -webkit-transform: translateY(calc(100% - 70px));
-    transform: translateY(calc(100% - 70px));
+    -webkit-transform: translateY(calc(100% - 40px));
+    transform: translateY(calc(100% - 40px));
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -2713,18 +2713,18 @@ div.opencritic-reviews {
 }
 
 .game-section .item-desc h3 {
-    margin: 0 0 10px;
+    margin: 0;
     font-size: 28px;
     line-height: 36px;
     max-width: calc(100% - 80px);
-    display: block;
+    display: flex;
     bottom: 100%;
     position: absolute;
 }
 
 .game-section .item-desc img {
     max-height: 100px;
-    max-width: 50%;
+    max-width: 200px;
 }
 
 .game-section .item-desc p {

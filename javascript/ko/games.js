@@ -950,7 +950,7 @@ $(document).ready(function(){
                     }
     
                     $carousel.owlCarousel({
-                        nav: false,
+                        nav: true,
                         loop: true,
                         dots: true,
                         merge: true,
