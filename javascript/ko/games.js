@@ -1262,6 +1262,16 @@ $(document).ready(function(){
                 let endParts = item.end.split('-');
                 let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
                 return now > itemStart && now < itemEnd;
+            })
+            // 종료 시간이 현재 시간에 가까운 순으로 정렬
+            .sort((a, b) => {
+                let now = new Date();
+                let aEndParts = a.end.split('-');
+                let aItemEnd = new Date(aEndParts[0], aEndParts[1] - 1, aEndParts[2], aEndParts[3], aEndParts[4], aEndParts[5]);
+                let bEndParts = b.end.split('-');
+                let bItemEnd = new Date(bEndParts[0], bEndParts[1] - 1, bEndParts[2], bEndParts[3], bEndParts[4], bEndParts[5]);
+                // a가 b보다 종료 시간이 더 가까우면 음수, 더 멀면 양수를 반환
+                return aItemEnd - bItemEnd;
             });
             loadMorefreegamesData();
         });
@@ -1328,6 +1338,16 @@ $(document).ready(function(){
                 let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
                 return now > itemStart && now < itemEnd;
             });
+            
+            // 'published' 값을 기준으로 정렬합니다. 가장 최근에 추가된 순으로 정렬
+            filteredbundleData.sort((a, b) => {
+                let aParts = a.published.split('-');
+                let aPublished = new Date(aParts[0], aParts[1] - 1, aParts[2], aParts[3], aParts[4], aParts[5]);
+                let bParts = b.published.split('-');
+                let bPublished = new Date(bParts[0], bParts[1] - 1, bParts[2], bParts[3], bParts[4], bParts[5]);
+                return bPublished - aPublished;
+            });
+        
             loadMorebundleData();
         });
         
