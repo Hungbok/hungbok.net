@@ -315,6 +315,11 @@ body.adult > main > .top-backgrounds > div {
     max-height: 450px;
 }
 
+.slider-main > .slider-item,
+.slider-nav > .slider-item {
+    display: none;
+}
+
 .slider-main img {
     width: 640px;
 }
@@ -2853,7 +2858,7 @@ div.opencritic-reviews {
 }
 
 .owl-prev {
-    left: 25%;
+    left: 0%;
     position: absolute;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2875,7 +2880,7 @@ div.opencritic-reviews {
 }
 
 .owl-next {
-    right: 25%;
+    right: 0%;
     position: absolute;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
