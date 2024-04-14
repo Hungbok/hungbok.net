@@ -856,7 +856,7 @@ $(document).ready(function(){
                 '</div>'+
             '</div>'+
         '</div>'+
-        '<div class="discover-section">'+
+        '<div class="discover-section" id="dataContainer">'+
             '<div class="discover-title">'+
                 '<a class="discover-text" href="https://www.hungbok.com/ko/games/calendar">신규 출시</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/games/calendar">모두 보기</a>'+
