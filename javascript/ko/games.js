@@ -1034,61 +1034,101 @@ $(document).ready(function(){
         function formatDateToKR(dateStr) {
             const parts = dateStr.split('-');
             const year = parts[0];
-            const month = parts[1];
-            const day = parts[2];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
         
             const months = ["1", "2", "3", "4",
                             "5", "6", "7", "8",
                             "9", "10", "11", "12"];
         
-            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
         
-            return `${year}년 ${monthStr}월 ${day}일`;
+            if (year && month && day) {
+                return `${year}년 ${month}월 ${day}일`;
+            } else if (year && month) {
+                return `${year}년 ${month}월`;
+            } else if (year) {
+                return `${year}년`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
         }
         
         function formatDateToJP(dateStr) {
             const parts = dateStr.split('-');
             const year = parts[0];
-            const month = parts[1];
-            const day = parts[2];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
         
             const months = ["1", "2", "3", "4",
                             "5", "6", "7", "8",
                             "9", "10", "11", "12"];
         
-            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
         
-            return `${year}年${monthStr}月${day}日`;
+            if (year && month && day) {
+                return `${year}年${month}月${day}日`;
+            } else if (year && month) {
+                return `${year}年${month}月`;
+            } else if (year) {
+                return `${year}年`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
         }
         
         function formatDateToUS(dateStr) {
             const parts = dateStr.split('-');
             const year = parts[0];
-            const month = parts[1];
-            const day = parts[2];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
         
             const months = ["January", "February", "March", "April",
                             "May", "June", "July", "August",
                             "September", "October", "November", "December"];
         
-            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
         
-            return `${monthStr} ${day}, ${year}`;
+            if (year && month && day) {
+                return `${month} ${day}, ${year}`;
+            } else if (year && month) {
+                return `${month} ${year}`;
+            } else if (year) {
+                return `${year}`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
         }
         
         function formatDateToUK(dateStr) {
             const parts = dateStr.split('-');
             const year = parts[0];
-            const month = parts[1];
-            const day = parts[2];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
         
             const months = ["January", "February", "March", "April",
                             "May", "June", "July", "August",
                             "September", "October", "November", "December"];
         
-            const monthStr = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
         
-            return `${day} ${monthStr} ${year}`;
+            if (year && month && day) {
+                return `${day} ${month} ${year}`;
+            } else if (year && month) {
+                return `${month} ${year}`;
+            } else if (year) {
+                return `${year}`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
         }
 
         // 현재 연도 및 날짜 계산
