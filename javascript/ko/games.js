@@ -871,7 +871,7 @@ $(document).ready(function(){
                 '<a class="discover-text" href="https://www.hungbok.com/ko/free-games?category=games">무료 배포</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/free-games?category=games">모두 보기</a>'+
             '</div>'+
-            '<div class="discover-container"></div>'+
+            '<div class="discover-container" id="freegamesContainer"></div>'+
             '<div class="discover-title">'+
                 '<a class="discover-text" href="https://www.hungbok.com/ko/games/sales">최신 할인</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/games/sales">모두 보기</a>'+
@@ -1191,6 +1191,77 @@ $(document).ready(function(){
                 console.error('Error:', error);
                 document.querySelector('.discover-container').classList.add('disabled');
             });
+
+        let freegamesData = [];
+        let filteredfreegamesData = [];
+        let freegamesStart = 0;
+        let freegamesLimit = 6;
+        
+        // 데이터를 가져오는 부분은 변경하지 않았습니다.
+        Promise.all([
+            fetch('//data.hungbok.net/data/free-games/games.json').then(response => response.json())
+        ]).then(results => {
+            freegamesData = results.flat();
+            // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+            filteredfreegamesData = freegamesData.filter(item => {
+                let now = new Date();
+                let startParts = item.start.split('-');
+                let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+                let endParts = item.end.split('-');
+                let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+                return now > itemStart && now < itemEnd;
+            });
+            loadMorefreegamesData();
+        });
+        
+        // 아이템을 생성하고 추가하는 함수
+        function createAndAppendfreegamesItem(item) {
+            let now = new Date();
+        
+            // 시작 시간 파싱
+            let startParts = item.start.split('-');
+            let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+        
+            // 종료 시간 파싱
+            let endParts = item.end.split('-');
+            let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+        
+            // 현재 시간이 시작 시간 이후이고 종료 시간 이전인지 확인
+            if (now > itemStart && now < itemEnd) {
+                let div = document.createElement('div');
+                div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd}`;
+                div.innerHTML = `
+                    <a class="item-link" href="${item.link}" target="_blank">
+                        <div class="item-image">
+                            <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                        </div>
+                        <h1 class="from-${item.from}">${item.title}</h1>
+                        <div class="sale-info">
+                            <div class="sale-timer-container">
+                                <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                            </div>
+                        </div>
+                        <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    </a>
+                `;
+        
+                document.getElementById('freegamesContainer').appendChild(div);
+        
+                startTimer();
+            }
+        }
+        
+        // 'loadMorefreegamesData' 함수 수정
+        function loadMorefreegamesData() {
+            let loadedItems = 0;
+            while (loadedItems < freegamesLimit && freegamesStart < filteredfreegamesData.length) {
+                let item = filteredfreegamesData[freegamesStart];
+                createAndAppendfreegamesItem(item);
+                freegamesStart++;
+                loadedItems++;
+            }
+        }
 
         let upcomingData = [];
         let filteredUpcomingData = [];
