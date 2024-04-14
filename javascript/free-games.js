@@ -43,9 +43,17 @@ Promise.all([
 });
 
 // 필터링 기능
-function filterData(typeValue) {
+function filterData(typeValue, category = '') {
     start = 0;
     type = typeValue;
+    // category가 주어졌을 때, 해당 카테고리와 일치하는 필터 버튼을 찾아 필터링 적용
+    if (category) {
+        const filterButton = document.querySelector(`.filterDataBtn[data-type="${category}"]`);
+        if (filterButton) {
+            // 일치하는 필터 버튼이 있다면, 필터링 로직을 적용
+            type = category; // 매개변수 type을 category 값으로 설정
+        }
+    }
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
     } else if (type === 'all') {
