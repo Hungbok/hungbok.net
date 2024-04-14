@@ -866,70 +866,9 @@ $(document).ready(function(){
             '</div>'+
             '<div class="discover-container upcoming-release"></div>'+
             '<div class="discover-title">'+
-                '<div class="discover-text">Steam</div>'+
+                '<div class="discover-text">최신 할인</div>'+
             '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'+
+            '<div class="discover-container games-sale"></div>'+
             '<div class="discover-title">'+
                 '<div class="discover-text">Epic Games Store</div>'+
             '</div>'+
@@ -1370,6 +1309,158 @@ $(document).ready(function(){
                 console.error('Error:', error);
                 document.querySelector('.discover-container').classList.add('disabled');
             });
+
+        let upcomingData = [];
+        let filteredUpcomingData = [];
+        let upcomingStart = 0;
+        let upcomingLimit = 6;
+        
+        // 데이터를 가져오는 부분은 변경하지 않았습니다.
+        Promise.all([
+            fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
+        ]).then(results => {
+            upcomingData = results.flat();
+            // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+            filteredUpcomingData = upcomingData.filter(item => {
+                let now = new Date();
+                let startParts = item.start.split('-');
+                let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+                let endParts = item.end.split('-');
+                let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+                return now > itemStart && now < itemEnd;
+            });
+            loadMoreUpcomingData();
+        });
+        
+        // 아이템을 생성하고 추가하는 함수
+        function createAndAppendUpcomingItem(item) {
+            let now = new Date();
+        
+            // 시작 시간 파싱
+            let startParts = item.start.split('-');
+            let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+        
+            // 종료 시간 파싱
+            let endParts = item.end.split('-');
+            let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+        
+            // 현재 시간이 시작 시간 이후이고 종료 시간 이전인지 확인
+            if (now > itemStart && now < itemEnd) {
+                let div = document.createElement('div');
+                div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd}`;
+                div.innerHTML = `
+                    <a class="item-link" href="${item.link}" target="_blank">
+                        <div class="item-image">
+                            <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                        </div>
+                        <h1 class="from-${item.from}">${item.title}</h1>
+                        <div class="sale-info">
+                            <div class="sale-timer-container">
+                                <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                            </div>
+                        </div>
+                        <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    </a>
+                `;
+        
+                document.getElementById('games-sale').appendChild(div);
+        
+                startTimer();
+            }
+        }
+        
+        // 'loadMoreUpcomingData' 함수 수정
+        function loadMoreUpcomingData() {
+            let loadedItems = 0;
+            while (loadedItems < upcomingLimit && upcomingStart < filteredUpcomingData.length) {
+                let item = filteredUpcomingData[upcomingStart];
+                createAndAppendUpcomingItem(item);
+                upcomingStart++;
+                loadedItems++;
+            }
+        }
+        
+        // 서버 시간과 로컬 시간 표시 함수
+        function displayTime() {
+            let now = new Date(); // 현재 시간을 받아옵니다.
+        
+            // 컴퓨터의 로컬 시간을 UTC 형식으로 변환합니다.
+            let localTime = now.toISOString().slice(0,19).replace('T', ' ');
+        
+            // 사용자의 시간대를 얻습니다.
+            let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+            // UTC+09:00 기준의 서버 시간을 계산하고 UTC 형식으로 변환합니다.
+            let serverTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60 * 1000) + (9 * 60 * 60 * 1000));
+            serverTime = serverTime.toISOString().slice(0,19).replace('T', ' ');
+        
+            // HTML 요소에 시간을 표시합니다.
+            document.getElementById('serverTime').textContent = serverTime + ' UTC+09:00'; // 서버 시간을 표시합니다.
+            document.getElementById('localTime').textContent = localTime + ' ' + timeZone; // 로컬 시간을 표시합니다.
+        }
+        
+        setInterval(displayTime, 1000); // 1초마다 함수를 반복 실행하여 시간을 업데이트합니다.
+        
+        // 타이머 기능
+        function startTimer() {
+            let timerElements = document.querySelectorAll('.timer-container'); // 타이머를 적용할 요소를 선택합니다.
+        
+            timerElements.forEach(element => { // 각 요소에 대해 반복합니다.
+                let setTime = element.getAttribute('settime'); // settime 속성 값을 가져옵니다.
+                let setTimeArray = setTime.split('-'); // '-'로 구분된 setTime 값을 배열로 변환합니다.
+        
+                // setTime 값이 yyyy-mm-dd-hh-mm-ss 형식이므로, Date 객체를 이 형식에 맞게 생성합니다.
+                let endDate = new Date(setTimeArray[0], setTimeArray[1] - 1, setTimeArray[2], setTimeArray[3], setTimeArray[4], setTimeArray[5]);
+        
+                let interval = setInterval(function() { // setInterval 함수로 1초마다 반복합니다.
+                    let now = new Date(); // 현재 시간을 가져옵니다.
+                    let distance = endDate - now; // 남은 시간을 계산합니다.
+        
+                    // 시간, 분, 초를 계산합니다.
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+                    // 시간, 분, 초를 항상 두 자리 숫자로 표시합니다.
+                    hours = hours.toString().padStart(2, '0');
+                    minutes = minutes.toString().padStart(2, '0');
+                    seconds = seconds.toString().padStart(2, '0');
+        
+                    // 남은 시간에 따른 클래스를 추가합니다.
+                    if (distance <= 0) {
+                        element.classList.add('expired');
+                    } else if (distance <= 60000 && !element.classList.contains('one-minute-left')) {
+                        element.classList.add('one-minute-left');
+                    } else if (distance <= 3600000 && !element.classList.contains('one-hour-left')) {
+                        element.classList.add('one-hour-left');
+                    } else if (distance <= 10800000 && !element.classList.contains('three-hours-left')) {
+                        element.classList.add('three-hours-left');
+                    } else if (distance <= 21600000 && !element.classList.contains('six-hours-left')) {
+                        element.classList.add('six-hours-left');
+                    } else if (distance <= 43200000 && !element.classList.contains('twelve-hours-left')) {
+                        element.classList.add('twelve-hours-left');
+                    } else if (distance <= 86400000 && !element.classList.contains('one-day-left')) {
+                        element.classList.add('one-day-left');
+                    }
+        
+                    // 남은 시간이 24시간 미만인 경우에는 'hh:mm:ss' 형식으로, 그 이상인 경우에는 'dd:hh:mm:ss' 형식으로 표시합니다.
+                    if (days > 0) {
+                        days = days.toString().padStart(2, '0');
+                        element.textContent = `${days}:${hours}:${minutes}:${seconds}`;
+                    } else {
+                        element.textContent = `${hours}:${minutes}:${seconds}`;
+                    }
+        
+                    // 남은 시간이 없으면 타이머를 멈춥니다.
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        element.textContent = "00:00:00";
+                    }
+                }, 100);
+            });
+        }
     }
 });
 
