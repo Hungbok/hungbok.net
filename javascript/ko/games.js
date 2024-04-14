@@ -968,12 +968,6 @@ $(document).ready(function(){
                             $progressBarContainer.css('bottom', '-14.5px');
                             $progressBar.css('opacity', '0');
                             resetProgressBar();
-                        },
-                        onTranslated: function() {
-                            resetAutoSlide;
-                            $progressBarContainer.css('bottom', '17.5px');
-                            $progressBar.css('opacity', '1');
-                            checkMouseAndStartProgressBar();
                         }
                     }).on('translated.owl.carousel', function(e) {
                         $progressBarContainer.css('bottom', '17.5px');
