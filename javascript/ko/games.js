@@ -845,72 +845,11 @@ $(document).ready(function(){
             });
         });
     } else {
-        $('body').addClass('en');
+        $('body').addClass('ko');
         $('.section').remove();
         $('.top-backgrounds').remove();
         $('main').append('<div class="game-section">'+
-            '<div class="owl-carousel custom-carousel owl-theme">'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Cyberpunk 2077</h3>'+
-                        '<p>Cyberpunk 2077 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f);">'+
-                    '<div class="item-desc">'+
-                        '<h3>The Witcher 3: Wild Hunt</h3>'+
-                        '<p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/epic/offer/RDR2PC1227_Epic%20Games_860x1148-860x1148-b4c2210ee0c3c3b843a8de399bfe7f5c.jpg);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Red Dead Redemption 2</h3>'+
-                        '<p>Red Dead Redemption 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1lbll.jpg?h=2560&quality=high&resize=1&w=1440);">'+
-                    '<div class="item-desc">'+
-                        '<h3>PUBG: BATTLEGROUNDS</h3>'+
-                        '<p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Fortnite</h3>'+
-                        '<p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/offer/611482b8586142cda48a0786eb8a127c/EGS_DeadbyDaylight_BehaviourInteractive_S1_2560x1440-a32581cf9948a9a2e24b2ff15c1577c7);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Dead by Daylight</h3>'+
-                        '<p>Dead by Daylight is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/offer/0c05e0889c3e42a4be1d81077d6e653a/SAB_Store_Landscape_2560x1440_2560x1440-00b4029199a7a6778fd27dec96f08a28);">'+
-                    '<div class="item-desc">'+
-                        '<h3>SKULL AND BONES™</h3>'+
-                        '<p>SKULL AND BONES™ is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-055bbe0f10c1778fcbd134f2de02daf6);">'+
-                    '<div class="item-desc">'+
-                        '<h3>VALORANT</h3>'+
-                        '<p>VALORANT is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/271590/hero_capsule.jpg?t=1671484916);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Grand Theft Auto V: Premium Edition</h3>'+
-                        '<p>Grand Theft Auto V: Premium Edition is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-                '<a href="#" tabindex="0" class="item" style="background-image: url(https://cdn1.epicgames.com/salesEvent/salesEvent/Landscape%20Product%20image-JAP_2560x1440-e038a07c8f4ced528ff97619017058e5);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Genshin Impact</h3>'+
-                        '<p>Genshin Impact is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                    '</div>'+
-                '</a>'+
-            '</div>'+
+            '<div class="owl-carousel custom-carousel owl-theme"></div>'+
             '<div class="progress-container">'+
                 '<div class="slide-progress-main">'+
                     '<div class="progressBar"></div>'+
@@ -1244,6 +1183,45 @@ $(document).ready(function(){
                 '</div>'+
             '</div>'+
         '</div>');
+        // JSON 파일에서 데이터를 불러오는 함수
+        async function loadGameData() {
+            try {
+                // JSON 파일 불러오기
+                const response = await fetch('//data.hungbok.net/data/discover/games.json');
+                if (!response.ok) {
+                    throw new Error('데이터를 불러오는 데 실패했습니다.');
+                }
+                const games = await response.json();
+        
+                // 상위 10개의 데이터를 가져옴
+                const topGames = games.slice(0, 10);
+        
+                // 데이터를 HTML로 변환하여 페이지에 추가
+                const container = document.querySelector('.owl-carousel.custom-carousel.owl-theme');
+                topGames.forEach(game => {
+                    // ko 값이 있으면 그 값을, 없으면 en 값을 사용
+                    const title = game.ko ? game.ko.title : game.en.title;
+                    const summary = game.ko ? game.ko.summary : game.en.summary;
+        
+                    const gameElement = `
+                        <a href="https://www.hungbok.com/${game.type}?q=${game.url}" tabindex="0" class="item" style="background-image: url(${game.image});">
+                            <div class="item-desc">
+                                <h3>${title}</h3>
+                                <p>${summary}</p>
+                            </div>
+                        </a>
+                    `;
+                    container.innerHTML += gameElement;
+                });
+            } catch (error) {
+                console.error('오류가 발생했습니다:', error);
+            }
+        }
+        
+        // 페이지가 로드될 때 함수 실행
+        window.onload = function() {
+            loadGameData();
+        };
         $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
             // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
             // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
@@ -1279,22 +1257,22 @@ $(document).ready(function(){
                     onInitialized: function() {
                         startProgressBar();
                         autoSlide();
-                        $progressBarContainer.css('bottom', '12px');
+                        $progressBarContainer.css('bottom', '17.5px');
                         $progressBar.css('opacity', '1');
                     },
                     onTranslate: function() {
-                        $progressBarContainer.css('bottom', '-20px');
+                        $progressBarContainer.css('bottom', '-14.5px');
                         $progressBar.css('opacity', '0');
                         resetProgressBar();
                     },
                     onTranslated: function() {
                         resetAutoSlide;
-                        $progressBarContainer.css('bottom', '12px');
+                        $progressBarContainer.css('bottom', '17.5px');
                         $progressBar.css('opacity', '1');
                         checkMouseAndStartProgressBar();
                     }
                 }).on('translated.owl.carousel', function(e) {
-                    $progressBarContainer.css('bottom', '12px');
+                    $progressBarContainer.css('bottom', '17.5px');
                     $progressBar.css('opacity', '1');
                     checkMouseAndStartProgressBar();
                 });
