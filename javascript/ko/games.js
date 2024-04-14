@@ -864,68 +864,7 @@ $(document).ready(function(){
             '<div class="discover-title">'+
                 '<div class="discover-text">Coming Soon</div>'+
             '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'+
+            '<div class="discover-container upcoming-release"></div>'+
             '<div class="discover-title">'+
                 '<div class="discover-text">Steam</div>'+
             '</div>'+
@@ -1367,6 +1306,35 @@ $(document).ready(function(){
                                 </div>`;
                             
                             document.querySelector('.discover-container.new-release').innerHTML += gameElement;
+                        });
+                });
+                // 날짜 기준으로 정렬 후 최근 5개 데이터 추출
+                const upcomingGames = data.filter(game => new Date(game.date) > today)
+                                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                                        .slice(0, 5);
+                
+                // 각 게임 데이터 처리
+                upcomingGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const title = gameData.ko || gameData.en; // ko 값이 없으면 en 값 사용
+                            const formattedDate = formatDateToKR(game.date);
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${formattedDate}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.upcoming-release').innerHTML += gameElement;
                         });
                 });
             })

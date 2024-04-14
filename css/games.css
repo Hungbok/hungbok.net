@@ -2956,6 +2956,7 @@ div.opencritic-reviews {
     top: 0;
     left: 50%;
     border-radius: 5px;
+    text-wrap: nowrap;
     color: #bbbbbb;
     opacity: 0;
     pointer-events: none;
