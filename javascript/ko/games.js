@@ -1289,6 +1289,12 @@ $(document).ready(function(){
                         return '제목 없음';
                     }
                 }
+                
+                const recentGames = validGames.slice(0, 5);
+        
+                if (recentGames.length < 5) {
+                    document.querySelector('.discover-container.new-release').classList.add('disabled');
+                }
 
                 Promise.all(recentGames.map(game => 
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
@@ -1325,14 +1331,20 @@ $(document).ready(function(){
                         document.querySelector('.discover-container.new-release').innerHTML += gameElement;
                     });
                 });
+                
+                const upcomingGames = validGames.slice(0, 5);
+        
+                if (upcomingGames.length < 5) {
+                    document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
+                }
 
                 Promise.all(upcomingGames.map(game => 
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                     .then(response => response.json())
-                )).then(gamesData => {
+                )).then(upcomingGames => {
                     // gamesData는 각 게임에 대한 데이터 배열
                     // 각 게임 데이터 배열을 날짜 기준으로 정렬
-                    const sortedGamesData = gamesData.flat().sort((a, b) => {
+                    const sortedGamesData = upcomingGames.flat().sort((a, b) => {
                         // 날짜를 비교하기 위해 Date 객체로 변환
                         const dateA = new Date(a.published);
                         const dateB = new Date(b.published);
