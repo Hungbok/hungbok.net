@@ -2745,7 +2745,8 @@ div.opencritic-reviews {
 
 .game-section .item-desc p:after {
     display: block;
-    padding: 5px 10px;
+    padding: 10px 30px;
+    font-size: 12px;
     margin: 20px 0 0;
     background-color: var(--text-2);
     color: var(--background-10);
@@ -2799,6 +2800,90 @@ div.opencritic-reviews {
     border: none;
     padding: 0!important;
     font: inherit;
+}
+
+.owl-nav {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 150px;
+    width: 50px;
+    font-size: 0;
+    border: 0;
+    cursor: pointer;
+    opacity: 0;
+    background-color: #ffffff;
+    border-radius: 50px;
+    text-align: center;
+    vertical-align: bottom;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.owl-carousel:hover .owl-nav {
+    opacity: 0.8;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.owl-nav:hover {
+    background-color: #aaaaaa;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.owl-prev {
+    left: 30%;
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.owl-prev::before {
+    content: "❮";
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.owl-next {
+    right: 30%;
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.owl-next::before {
+    content: "❯";
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .owl-theme .owl-dots .owl-dot {
