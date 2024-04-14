@@ -1274,15 +1274,25 @@ $(document).ready(function(){
         const today = new Date();
         const currentYear = today.getFullYear();
         const apiUrl = `//data.hungbok.net/data/games/${currentYear}.json`;
-        
+
         // JSON 데이터 불러오기
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
-                // 날짜 기준으로 정렬 후 최근 5개 데이터 추출
-                const recentGames = data.filter(game => new Date(game.date) < today)
-                                        .sort((a, b) => new Date(b.date) - new Date(a.date))
-                                        .slice(0, 5);
+                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                const validGames = data.filter(game => {
+                    const dateParts = game.date.split('-');
+                    return dateParts.length === 3 && new Date(game.date) < today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
+                })
+                .sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜가 큰 데이터부터 정렬
+                
+                // 최근 5개 데이터 추출
+                const recentGames = validGames.slice(0, 5);
+        
+                // 출력될 데이터가 5개 미만이거나 오류 발생 시 처리
+                if (recentGames.length < 5) {
+                    document.querySelector('.discover-container.new-release').classList.add('disabled');
+                }
                 
                 // 각 게임 데이터 처리
                 recentGames.forEach(game => {
@@ -1308,10 +1318,21 @@ $(document).ready(function(){
                             document.querySelector('.discover-container.new-release').innerHTML += gameElement;
                         });
                 });
-                // 날짜 기준으로 정렬 후 최근 5개 데이터 추출
-                const upcomingGames = data.filter(game => new Date(game.date) > today)
-                                        .sort((a, b) => new Date(b.date) - new Date(a.date))
-                                        .slice(0, 5);
+
+                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                const validupcomingGames = data.filter(game => {
+                    const dateParts = game.date.split('-');
+                    return dateParts.length === 3 && new Date(game.date) > today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
+                })
+                .sort((a, b) => new Date(a.date) - new Date(b.date)); // 날짜가 큰 데이터부터 정렬
+                
+                // 최근 5개 데이터 추출
+                const upcomingGames = validupcomingGames.slice(0, 5);
+        
+                // 출력될 데이터가 5개 미만이거나 오류 발생 시 처리
+                if (upcomingGames.length < 5) {
+                    document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
+                }
                 
                 // 각 게임 데이터 처리
                 upcomingGames.forEach(game => {
@@ -1338,7 +1359,10 @@ $(document).ready(function(){
                         });
                 });
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                document.querySelector('.discover-container').classList.add('disabled');
+            });
     }
 });
 

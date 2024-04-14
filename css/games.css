@@ -2936,6 +2936,11 @@ div.opencritic-reviews {
     margin: 5px;
 }
 
+.discover-content.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .discover-item {
     width: 200px;
     height: auto;
