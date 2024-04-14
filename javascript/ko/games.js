@@ -858,11 +858,11 @@ $(document).ready(function(){
         '</div>'+
         '<div class="discover-section">'+
             '<div class="discover-title">'+
-                '<div class="discover-text">New Added</div>'+
+                '<div class="discover-text">신규 출시</div>'+
             '</div>'+
             '<div class="discover-container new-release"></div>'+
             '<div class="discover-title">'+
-                '<div class="discover-text">Coming Soon</div>'+
+                '<div class="discover-text">출시 예정</div>'+
             '</div>'+
             '<div class="discover-container upcoming-release"></div>'+
             '<div class="discover-title">'+
@@ -1274,6 +1274,10 @@ $(document).ready(function(){
         const today = new Date();
         const currentYear = today.getFullYear();
         const apiUrl = `//data.hungbok.net/data/games/${currentYear}.json`;
+        
+        function getLocalizedData(data, key) {
+            return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+        }        
 
         // JSON 데이터 불러오기
         fetch(apiUrl)
@@ -1296,8 +1300,7 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            // ko 값이 있으면 ko의 title을 사용, 없으면 en의 title을 사용
-                            const title = gameData.ko && gameData.ko.title ? gameData.ko.title : gameData.en.title;
+                            const title = getLocalizedData(gameData, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
@@ -1334,8 +1337,7 @@ $(document).ready(function(){
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
-                            // ko 값이 있으면 ko의 title을 사용, 없으면 en의 title을 사용
-                            const title = gameData.ko && gameData.ko.title ? gameData.ko.title : gameData.en.title;
+                            const title = getLocalizedData(gameData, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
                                 <div class="discover-content">
