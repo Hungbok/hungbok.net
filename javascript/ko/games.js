@@ -1206,27 +1206,21 @@ $(document).ready(function(){
                         return '제목 없음';
                     }
                 }
-                
-                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
-                const validGames = data.filter(game => {
-                    const dateParts = game.release_year + "-" + game.release_month + "-" + game.release_day.split('-');
-                    return dateParts.length === 3 && new Date(game.date) < today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
-                })
-                .sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜가 큰 데이터부터 정렬
-                
-                const recentGames = validGames.slice(0, 5);
+
+                const topGames = data.slice(0, 5);
         
-                if (recentGames.length < 5) {
+                if (topGames.length < 5) {
                     document.querySelector('.discover-container.new-added').classList.add('disabled');
                 }
                 
-                recentGames.forEach(game => {
+                topGames.forEach(game => {
                     fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
                             const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
                             const title = getLocalizedData(dataToUse, 'title');
-                            const formattedDate = formatDateToKR(game.date);
+                            const date = `${game.release_year}-${game.release_month}-${game.release_day}`;
+                            const formattedDate = formatDateToKR(date); // 수정된 date 값을 포매팅 함수에 전달
                             const gameElement = `
                                 <div class="discover-content">
                                     <div class="discover-item">
@@ -1241,7 +1235,7 @@ $(document).ready(function(){
                                     </div>
                                 </div>`;
                             
-                            document.querySelector('.discover-container.new-release').innerHTML += gameElement;
+                            document.querySelector('.discover-container.new-added').innerHTML += gameElement;
                         });
                 });
             })
