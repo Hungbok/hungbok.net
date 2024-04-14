@@ -848,6 +848,7 @@ $(document).ready(function(){
         $('body').addClass('ko');
         $('.section').remove();
         $('.top-backgrounds').remove();
+        $('head').append('<link rel="stylesheet" type="text/css" href="//www.hungbok.net/css/free-games.css">');        
         $('main').append('<div class="game-section">'+
             '<div class="owl-carousel custom-carousel owl-theme"></div>'+
             '<div class="progress-container">'+
