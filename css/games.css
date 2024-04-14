@@ -3233,6 +3233,8 @@ div.opencritic-reviews {
     transform: translate(0, 0%);
 }
 
+#freegamesContainer .item-background,
+#bundleContainer .item-background,
 #upcomingContainer .item-background {
     position: absolute;
     height: 100%;
@@ -3268,6 +3270,8 @@ div.opencritic-reviews {
     color: #b02a37;
 }
 
+#freegamesContainer,
+#bundleContainer,
 #upcomingContainer {
     width: auto;
     max-width: 1445px;
@@ -3282,6 +3286,8 @@ div.opencritic-reviews {
     flex-wrap: wrap;
 }
 
+#freegamesContainer .item,
+#bundleContainer .item,
 #upcomingContainer .item {
     padding: unset;
     width: 30%;
@@ -3304,15 +3310,23 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
+#freegamesContainer .item:hover,
+#bundleContainer .item:hover,
 #upcomingContainer .item:hover {
     transform: translate(0px, -5px);
 }
 
+#freegamesContainer .item::before,
+#freegamesContainer .item::after,
+#bundleContainer .item::before,
+#bundleContainer .item::after,
 #upcomingContainer .item::before,
 #upcomingContainer .item::after {
     content: unset;
 }
 
+#freegamesContainer .item .item-link,
+#bundleContainer .item .item-link,
 #upcomingContainer .item .item-link {
     background: unset;
     color: unset;
@@ -3325,10 +3339,14 @@ div.opencritic-reviews {
     height: 100%;
 }
 
+#freegamesContainer .item .item-link:hover,
+#bundleContainer .item .item-link:hover,
 #upcomingContainer .item .item-link:hover {
     opacity: 1;
 }
 
+#freegamesContainer .item .item-image,
+#bundleContainer .item .item-image,
 #upcomingContainer .item .item-image {
     border-radius: unset;
     filter: unset;
@@ -3340,6 +3358,8 @@ div.opencritic-reviews {
     position: relative;
 }
 
+#freegamesContainer .item .item-image:before,
+#bundleContainer .item .item-image:before,
 #upcomingContainer .item .item-image:before {
     content: "";
     width: 30px;
@@ -3352,6 +3372,8 @@ div.opencritic-reviews {
     filter: drop-shadow(0px 0px 20px black);
 }
 
+#freegamesContainer .item-image::after,
+#bundleContainer .item-image::after,
 #upcomingContainer .item-image::after {
     content: "";
     display: block;
@@ -3364,6 +3386,8 @@ div.opencritic-reviews {
     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 }
 
+#freegamesContainer .item:hover .item-image img,
+#bundleContainer .item:hover .item-image img,
 #upcomingContainer .item:hover .item-image img {
     transform: scale(1);
 }
