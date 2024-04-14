@@ -2635,6 +2635,8 @@ div.opencritic-reviews {
     text-align: left;
     max-width: 2370px;
     width: 90%;
+    max-height: 650px;
+    overflow: hidden;
     margin: 0 auto;
     position: relative;
 }
