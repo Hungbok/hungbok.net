@@ -56,9 +56,13 @@ function filterData(typeValue) {
         const filterButton = document.querySelector(`.filterDataBtn[data-type="${category}"]`);
         if (filterButton) {
             type = category;
+            // URL에서 category 매개변수 제거
+            urlParams.delete('category');
+            // 변경된 URL 상태를 history에 반영하여 URL을 업데이트하지만 페이지는 새로고침하지 않음
+            history.pushState(null, '', '?' + urlParams.toString() + window.location.hash);
         }
     }
-    
+
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
     } else if (type === 'all') {
