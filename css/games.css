@@ -2698,7 +2698,6 @@ div.opencritic-reviews {
     color: #fff;
     position: relative;
     z-index: 1;
-    overflow: hidden;
     -webkit-transform: translateY(calc(100% - 70px));
     transform: translateY(calc(100% - 70px));
     -webkit-transition: all 0.5s ease-in-out;
@@ -2717,12 +2716,15 @@ div.opencritic-reviews {
     margin: 0 0 10px;
     font-size: 28px;
     line-height: 36px;
-    text-wrap: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    max-width: calc(100% - 80px);
     display: block;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    bottom: 100%;
+    position: absolute;
+}
+
+.game-section .item-desc img {
+    max-height: 100px;
+    max-width: 50%;
 }
 
 .game-section .item-desc p {
@@ -2834,8 +2836,8 @@ div.opencritic-reviews {
 }
 
 .owl-stage .owl-item:not(.center) > .item > .item-desc {
-    -webkit-transform: translateY(calc(100% - 70px));
-    transform: translateY(calc(100% - 70px));
+    -webkit-transform: translateY(calc(100% - 40px));
+    transform: translateY(calc(100% - 40px));
 }
 
 .owl-stage .owl-item:not(.center) > .item > .item-desc p {
