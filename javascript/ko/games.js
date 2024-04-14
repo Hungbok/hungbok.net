@@ -1158,64 +1158,6 @@ $(document).ready(function(){
         }
 
         loadGameData();
-        
-        function formatDateToKorean(dateStr) {
-            const parts = dateStr.split('-');
-            return `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
-        }
-        
-        function formatDateToJapanese(dateStr) {
-            const parts = dateStr.split('-');
-            return `${parts[0]}年${parts[1]}月${parts[2]}日`;
-        }
-        
-        function formatDateToUS(dateStr) {
-            const parts = dateStr.split('-');
-            return `${parts[1]} ${parts[2]}, ${parts[0]}`;
-        }
-        
-        function formatDateToUK(dateStr) {
-            const parts = dateStr.split('-');
-            return `${parts[2]} ${parts[1]} ${parts[0]}`;
-        }
-
-        const now = new Date();
-        const currentDateStr = now.toISOString().substring(0, 10); // 'yyyy-mm-dd' 형식
-
-        const apiUrl = `//data.hungbok.net/data/games/${now.getFullYear()}.json`;
-
-        // JSON 데이터 불러오기
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                // 날짜 기준으로 필터링 후 데이터 추출
-                const relevantGames = data.filter(game => {
-                    return game.date === currentDateStr; // 현재 날짜와 동일한 데이터만 필터링
-                });
-
-                // 각 게임 데이터 처리
-                relevantGames.forEach(game => {
-                    // 날짜를 'yyyy년 mm월 dd일' 형식으로 변환
-                    const formattedDate = formatDateToKorean(game.date);
-
-                    const gameElement = `
-                        <div class="discover-content">
-                            <div class="discover-item">
-                                <div class="discover-title-time">${formattedDate}</div>
-                                <div class="discover-item-thumbnail discover-thumbnail-hover">
-                                    <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
-                                        <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.src='/image/error-icon.svg'" loading="lazy">
-                                        <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/thumbnail.jpg" onerror="this.style.display='none';" loading="lazy">
-                                        <div class="discover-title-name" title="${game.title}">${game.title}</div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>`;
-                    
-                    document.querySelector('.discover-container.new-release').innerHTML += gameElement;
-                });
-            })
-            .catch(error => console.error('Error:', error));
 
         window.onload = function() {
             $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
@@ -1328,6 +1270,45 @@ $(document).ready(function(){
                 });
             });
         };
+        // 현재 연도 및 날짜 계산
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const apiUrl = `//data.hungbok.net/data/games/${currentYear}.json`;
+        
+        // JSON 데이터 불러오기
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // 날짜 기준으로 정렬 후 최근 5개 데이터 추출
+                const recentGames = data.filter(game => new Date(game.date) < today)
+                                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                                        .slice(0, 5);
+                
+                // 각 게임 데이터 처리
+                recentGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const title = gameData.ko || gameData.en; // ko 값이 없으면 en 값 사용
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${game.date}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.src='/image/error-icon.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/thumbnail.jpg" onerror="this.style.display='none';" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.new-release').innerHTML += gameElement;
+                        });
+                });
+            })
+            .catch(error => console.error('Error:', error));
     }
 });
 
