@@ -3071,6 +3071,41 @@ div.opencritic-reviews {
     transform: translate(0, 0%);
 }
 
+#upcomingContainer .item-background {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    filter: blur(50px) brightness(0.5);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.timer-container.end.one-day-left {
+    color: #ffcd39;
+}
+
+.timer-container.end.twelve-hours-left {
+    color: #cc9a06;
+}
+
+.timer-container.end.six-hours-left {
+    color: #fd9843;
+}
+
+.timer-container.end.three-hours-left {
+    color: #ca6510;
+}
+
+.timer-container.end.one-hour-left {
+    color: #e35d6a;
+}
+
+.timer-container.end.one-minute-left {
+    color: #b02a37;
+}
+
 #upcomingContainer {
     width: auto;
     max-width: 1445px;
