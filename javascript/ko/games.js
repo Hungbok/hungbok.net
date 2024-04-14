@@ -1310,8 +1310,8 @@ $(document).ready(function(){
                     // 각 게임 데이터 배열을 날짜 기준으로 정렬
                     const sortedGamesData = gamesData.flat().sort((a, b) => {
                         // 날짜를 비교하기 위해 Date 객체로 변환
-                        const dateA = new Date(a.date);
-                        const dateB = new Date(b.date);
+                        const dateA = new Date(a.published);
+                        const dateB = new Date(b.published);
                         return dateB - dateA; // 내림차순 정렬
                     });
                 
@@ -1358,8 +1358,8 @@ $(document).ready(function(){
                     // 각 게임 데이터 배열을 날짜 기준으로 정렬
                     const sortedGamesData = upcomingGames.flat().sort((a, b) => {
                         // 날짜를 비교하기 위해 Date 객체로 변환
-                        const dateA = new Date(a.date);
-                        const dateB = new Date(b.date);
+                        const dateA = new Date(a.published);
+                        const dateB = new Date(b.published);
                         return dateA - dateB; // 내림차순 정렬
                     });
                 
