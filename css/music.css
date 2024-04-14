@@ -231,6 +231,9 @@
 
 /* slider */
 
+.slider > .slider-item {
+    display: none;
+}
 
 .slider-item {
     width: calc(50% - 10px);

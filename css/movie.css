@@ -262,6 +262,10 @@
     width: 2370px;
 }
 
+.slider > .slider-item {
+    display: none;
+}
+
 .slider-item {
     width: 760px;
     height: 427.5px;
