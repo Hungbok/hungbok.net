@@ -2643,6 +2643,10 @@ div.opencritic-reviews {
     position: relative;
 }
 
+.owl-carousel.custom-carousel.owl-theme > a {
+    display: none;
+}
+
 .game-section .owl-stage {
     margin: 0;
     padding: 10px 0px;
@@ -2670,11 +2674,6 @@ div.opencritic-reviews {
     -ms-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
-}
-
-.game-section .owl-item .item.eleven {
-    width: 0px!important;
-    margin: 0px!important;
 }
 
 .game-section .owl-item .item.active {
