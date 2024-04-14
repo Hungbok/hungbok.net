@@ -871,7 +871,7 @@ $(document).ready(function(){
                 '<a class="discover-text" href="https://www.hungbok.com/ko/free-games?category=games">무료 배포</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/free-games?category=games">모두 보기</a>'+
             '</div>'+
-            '<div class="discover-container" id="freegamesContainer"></div>'+
+            '<div class="discover-container free-games" id="freegamesContainer"></div>'+
             '<div class="discover-title">'+
                 '<a class="discover-text" href="https://www.hungbok.com/ko/games/sales">최신 할인</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/games/sales">모두 보기</a>'+
@@ -881,7 +881,7 @@ $(document).ready(function(){
                 '<a class="discover-text" href="https://www.hungbok.com/ko/free-games?category=bundle">신규 번들</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/free-games?category=bundle">모두 보기</a>'+
             '</div>'+
-            '<div class="discover-container" id="bundleContainer"></div>'+
+            '<div class="discover-container free-games" id="bundleContainer"></div>'+
             '<div class="discover-title">'+
                 '<a class="discover-text" href="https://www.hungbok.com/ko/games/list">신규 추가</a>'+
                 '<a class="discover-button" href="https://www.hungbok.com/ko/games/list">모두 보기</a>'+
