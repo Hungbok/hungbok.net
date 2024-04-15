@@ -1254,8 +1254,7 @@ $(document).ready(function(){
                 } else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
                     return data['en'][key];
                 } else {
-                    // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
-                    return '제목 없음';
+                    return '제목 없음'; // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
                 }
             }
     
@@ -1263,17 +1262,20 @@ $(document).ready(function(){
     
             if (topGames.length < 5) {
                 document.querySelector('.discover-container.new-added').classList.add('disabled');
+                return;
             }
-            
-            topGames.forEach((game, index) => {
+    
+            const fetchPromises = topGames.map((game, index) => 
                 fetch(`//data.hungbok.net/data/games/${game.url}.json`)
-                    .then(response => response.json())
-                    .then(gameData => {
-                        const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
-                        const title = getLocalizedData(dataToUse, 'title');
-                        const date = `${game.release_year}-${game.release_month}-${game.release_day}`;
-                        const formattedDate = formatDateToKR(date); // 수정된 date 값을 포매팅 함수에 전달
-                        const gameElement = `
+                .then(response => response.json())
+                .then(gameData => {
+                    const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                    const title = getLocalizedData(dataToUse, 'title');
+                    const date = `${game.release_year}-${game.release_month}-${game.release_day}`;
+                    const formattedDate = formatDateToKR(date);
+                    return {
+                        index,
+                        gameElement: `
                             <div class="discover-content data-${index+1}">
                                 <div class="discover-item">
                                     <div class="discover-title-time">${formattedDate}</div>
@@ -1285,11 +1287,16 @@ $(document).ready(function(){
                                         </a>
                                     </div>
                                 </div>
-                            </div>`;
-                        
-                        document.querySelector('.discover-container.new-added').insertAdjacentHTML('beforeend', gameElement);
-                        // CSS를 사용하여 .data-1 ~ .data-5 클래스에 따라 순서를 결정
-                    });
+                            </div>`
+                    };
+                })
+            );
+    
+            Promise.all(fetchPromises).then(results => {
+                results.sort((a, b) => a.index - b.index); // 인덱스로 정렬하여 순서대로 출력
+                results.forEach(result => {
+                    document.querySelector('.discover-container.new-added').innerHTML += result.gameElement;
+                });
             });
         })
         .catch(error => {
