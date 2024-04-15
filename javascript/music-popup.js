@@ -90,12 +90,19 @@ $(document).ready(function() {
             return false;
         });
 
-        $(".music-track-popup-close, .music-track-popup").click(function() {
+        $(".music-track-popup-close").click(function() {
             var $popup = $(".music-track-popup");
 
             $popup.fadeOut(400, function() {
                 $(this).remove();
             });
+
+            $('body').removeClass('lb-disable-scrolling');
+            $('#element').off('scroll touchmove mousewheel');
+        });
+
+        $(".music-track-popup").click(function() {
+            $('.music-track-popup').addClass('picture-in-picture-music');
 
             $('body').removeClass('lb-disable-scrolling');
             $('#element').off('scroll touchmove mousewheel');
