@@ -197,7 +197,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://music.amazon.com/embed/', '380', '380');
+        openTrack(e, videoID, 'https://music.amazon.com/embed/', '380', '300');
     });
 
     $(document).on('click', '.deezer-track', function(e) {
@@ -207,7 +207,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://widget.deezer.com/widget/auto/track/', '380', '380');
+        openTrack(e, videoID, 'https://widget.deezer.com/widget/auto/track/', '300', '300');
     });
 
     $(document).on('click', '.naver-track', function(e) {
@@ -217,7 +217,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://vibe.naver.com/embed/track/', '500', '154');
+        openTrack(e, videoID, 'https://vibe.naver.com/embed/track/', '750', '154');
     });
 
     $(document).on('click', '.line-track', function(e) {
