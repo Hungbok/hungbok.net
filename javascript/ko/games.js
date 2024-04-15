@@ -1248,7 +1248,7 @@ $(document).ready(function(){
                 });
                 
                 Promise.all(upcominggameFetchPromises).then(gameElements => {
-                    const container = document.querySelector('.discover-container.new-release');
+                    const container = document.querySelector('.discover-container.upcoming-release');
                     gameElements.forEach(element => {
                         container.innerHTML += element;
                     });
