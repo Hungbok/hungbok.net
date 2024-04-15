@@ -26,7 +26,7 @@ $(document).ready(function(){
         $.getJSON(`//data.hungbok.net/data/news/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
         
-            // en 또는 ko 데이터에 접근하는 함수
+            // en 또는 ja 데이터에 접근하는 함수
             function getLocalizedData(data, key) {
                 return data['ja'] && data['ja'][key] ? data['ja'][key] : data['en'][key];
             }

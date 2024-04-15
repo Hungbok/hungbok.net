@@ -26,9 +26,9 @@ $(document).ready(function(){
         $.getJSON(`//data.hungbok.net/data/news/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
         
-            // en 또는 ko 데이터에 접근하는 함수
+            // en 또는 en 데이터에 접근하는 함수
             function getLocalizedData(data, key) {
-                return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
+                return data['en'] && data['en'][key] ? data['en'][key] : data['en'][key];
             }
 
             function formatDate(dateString) {
