@@ -3675,6 +3675,8 @@ div.system-requirements-title {
 }
 
 #upcomingContainer .item {
+    width: auto;
+    height: auto;
     padding: unset;
     max-width: 350px;
     margin: 0;
