@@ -178,6 +178,8 @@
 
 .picture-in-picture-music .music-track-popup-content {
     width: 100%;
+    top: 0;
+    transform: unset;
 }
 
 .music-track-popup-close {
