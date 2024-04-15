@@ -180,6 +180,7 @@
     width: 100%;
 }
 
+.music-track-popup-pip,
 .music-track-popup-close {
 	position:absolute;
     bottom: -50px;
@@ -202,6 +203,11 @@
     right: -50px;
 }
 
+.picture-in-picture-music .music-track-popup-pip {
+    display: none;
+}
+
+.music-track-popup-pip:hover,
 .music-track-popup-close:hover {
     opacity: 1;
 }
@@ -235,6 +241,13 @@
 }
 
 .music-track-popup-close {
+    width: 30px;
+    height: 30px;
+    background: url(//media.hungbok.net/image/icon/home.svg) center no-repeat;
+    background-size: 40px;
+}
+
+.music-track-popup-pip {
     width: 30px;
     height: 30px;
     background: url(//media.hungbok.net/image/icon/close.svg) center no-repeat;
