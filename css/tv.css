@@ -304,3 +304,165 @@
     border-radius: 5px;
     transform: translate(-50%, -50%);
 }
+
+/* bottom */
+
+.descriptions {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/* tv */
+
+.tv-tables {
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    background-color: var(--background-8);
+    border-radius: 20px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.tv-table {
+    margin: 0;
+    width: 100%;
+    font-size: 14px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#table-multi-hover {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--background-7);
+}
+
+.tv-table > thead > tr > th {
+    position: relative;
+    color: transparent;
+    padding: 5px 30px;
+    background-color: #dddddd;
+    pointer-events: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.tv-table > thead > tr > th:first-child,
+.tv-table > tbody > tr > td:first-child {
+    width: 7.5%;
+}
+
+.tv-table > thead > tr > th:nth-child(2),
+.tv-table > tbody > tr > td:nth-child(2) {
+    width: 20%;
+}
+
+.tv-table > thead > tr > th:nth-child(3),
+.tv-table > tbody > tr > td:nth-child(3) {
+    width: 30%;
+}
+
+.tv-table > thead > tr > th:nth-child(4),
+.tv-table > tbody > tr > td:nth-child(4) {
+    width: 15%;
+}
+
+.tv-table > thead > tr > th:nth-child(5),
+.tv-table > tbody > tr > td:nth-child(5) {
+    width: 15%;
+}
+
+.tv-table > thead > tr > th:last-child,
+.tv-table > tbody > tr > td:last-child {
+    width: 12.5%;
+}
+
+.tv-table > thead > tr > th:first-child {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.tv-table > thead > tr > th:last-child {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.tv-table > thead > tr > th::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+    color: #222222;
+}
+
+.tv-table > tbody > tr > td {
+    padding: 10px 0px;
+    min-height: 42px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.tv-table > tbody > tr > td > p {
+    display: inline-block;
+    margin: 0px 7.5px;
+    color: #aaaaaa;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.tv-tables:hover #table-multi-hover p:hover {
+    color: var(--text-2);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.tv-table > tbody > tr > td[rep="1"] > p:last-child {
+    max-width: 75px;
+}
+
+.tv-table > tbody > tr > td[rep="2"] > p:last-child {
+    max-width: 200px;
+}
+
+.tv-table > tbody > tr > td[rep="3"] > p:last-child,
+.tv-table > tbody > tr > td[rep="4"] > p:last-child,
+.tv-table > tbody > tr > td[rep="5"] > p:last-child,
+.tv-table > tbody > tr > td[rep="6"] > p:last-child {
+    max-width: 150px;
+}
+
+.tv-table > tbody > tr > td[rep="7"] > p:last-child {
+    max-width: 125px;
+}
+
+.tv-table .tv-tr:last-child > td > p[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: unset;
+    bottom: calc(100% + 10px);
+    opacity: 1;
+}
