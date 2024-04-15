@@ -203,8 +203,8 @@
 
 .music-track-popup-close {
 	position:absolute;
-    bottom: -50px;
-    left: 4px;
+    top: 4px;
+    right: -50px;
 	color:#FFF;
 	font-size:25px;
 	width:30px;
