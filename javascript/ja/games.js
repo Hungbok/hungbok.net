@@ -859,43 +859,43 @@ $(document).ready(function(){
         '<div class="discover-section" id="dataContainer">'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/calendar">신규 출시</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/calendar">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/calendar">新規リリース</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/calendar">全て表示</a>'+
                 '</div>'+
                 '<div class="discover-container new-release"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/calendar">출시 예정</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/calendar">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/calendar">今後のリリース</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/calendar">全て表示</a>'+
                 '</div>'+
                 '<div class="discover-container upcoming-release"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/ja/free-games?category=games">무료 배포</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/ja/free-games?category=games">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/ja/free-games?category=games">無料配布</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/ja/free-games?category=games">全て表示</a>'+
                 '</div>'+
                 '<div class="discover-container free-games" id="freegamesContainer"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/sales">최신 할인</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/sales">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/sales">最新の割引</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/sales">全て表示</a>'+
                 '</div>'+
                 '<div class="discover-container" id="upcomingContainer"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/ja/free-games?category=bundle">신규 번들</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/ja/free-games?category=bundle">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/ja/free-games?category=bundle">新規バンドル</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/ja/free-games?category=bundle">全て表示</a>'+
                 '</div>'+
                 '<div class="discover-container free-games" id="bundleContainer"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/list">신규 추가</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/list">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/ja/games/list">新規追加</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/ja/games/list">全て表示</a>'+
                 '</div>'+
                 '<div class="discover-container new-added"></div>'+
             '</div>'+

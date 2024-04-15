@@ -859,43 +859,43 @@ $(document).ready(function(){
         '<div class="discover-section" id="dataContainer">'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/calendar">신규 출시</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/calendar">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/calendar">Nouvelles sorties</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/calendar">Tout voir</a>'+
                 '</div>'+
                 '<div class="discover-container new-release"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/calendar">출시 예정</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/calendar">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/calendar">Prochaines sorties</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/calendar">Tout voir</a>'+
                 '</div>'+
                 '<div class="discover-container upcoming-release"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/fr/free-games?category=games">무료 배포</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/fr/free-games?category=games">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/free-games?category=games">Distribution gratuite</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/free-games?category=games">Tout voir</a>'+
                 '</div>'+
                 '<div class="discover-container free-games" id="freegamesContainer"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/sales">최신 할인</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/sales">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/sales">Dernières réductions</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/sales">Tout voir</a>'+
                 '</div>'+
                 '<div class="discover-container" id="upcomingContainer"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/fr/free-games?category=bundle">신규 번들</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/fr/free-games?category=bundle">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/free-games?category=bundle">Nouveaux packs</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/free-games?category=bundle">Tout voir</a>'+
                 '</div>'+
                 '<div class="discover-container free-games" id="bundleContainer"></div>'+
             '</div>'+
             '<div class="discover-contents">'+
                 '<div class="discover-title">'+
-                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/list">신규 추가</a>'+
-                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/list">모두 보기</a>'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/list">Nouveautés</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/list">Tout voir</a>'+
                 '</div>'+
                 '<div class="discover-container new-added"></div>'+
             '</div>'+
