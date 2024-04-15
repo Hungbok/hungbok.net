@@ -1479,6 +1479,7 @@ div.system-requirements-title {
 .books [ttt]:hover::after,
 .music [ttt]:hover::after,
 .rating-star[ttt]:hover::after,
+.music-table .music-tr > td > p[ttt]:hover::after,
 .episode-table .episode-tr > td > p[ttt]:hover::after {
     left: 50%;
     transform: translate(-50%, 0px);

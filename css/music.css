@@ -346,6 +346,140 @@
     gap: 10px;
 }
 
+.album-link,
+.music-link,
+.external-link {
+    border-radius: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.album-link:hover,
+.music-link:hover,
+.external-link:hover {
+    transform: scale(1.125);
+    box-shadow: 0px 0px 5px #000000;
+    z-index: 11;
+}
+
+/* setting */
+
+.setting {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.setting-card {
+    display: grid;
+    position: relative;
+    max-width: 450px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    column-gap: 20px;
+    background-color: var(--background-8);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.setting-card:hover {
+    background-color: var(--background-6);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.setting-card::after {
+    content: "";
+    border: 5px white;
+}
+
+.setting-title {
+    padding: 10px 0px;
+    z-index: 2;
+    font-weight: bold;
+    border-radius: 20px;
+    margin: 20px 0px 20px;
+    background-color: var(--background-7);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.setting-card:hover .setting-title {
+    background-color: var(--background-4);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.setting-description {
+    text-align: center;
+}
+
+.setting-card p {
+    margin: 0px;
+    position: relative;
+    display: block;
+    line-height: 24px;
+}
+
+.setting-image {
+    width: auto;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    background: url(//media.hungbok.net/image/hb/hb_error_square.svg) center;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.setting-image .setting-background {
+    z-index: 0;
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.setting-image img {
+    position: absolute;
+    transform: translate(-50%);
+}
+
+.setting-card:hover .setting-background {
+    transform: translate(-50%, -50%) scale(1.05);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 /* character */
 
 .character {
@@ -542,4 +676,194 @@
     display: inline-block;
     margin: 0px;
     padding: 20px 0px 0px;
+}
+
+/* music */
+
+.music-tables {
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    background-color: var(--background-8);
+    border-radius: 20px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.music-table {
+    margin: 0;
+    width: 100%;
+    font-size: 14px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#table-multi-hover {
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--background-7);
+}
+
+.music-table > thead > tr > th {
+    position: relative;
+    color: transparent;
+    padding: 5px 0px;
+    background-color: #dddddd;
+    pointer-events: none;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.music-table > thead > tr > th:first-child,
+.music-table > tbody > tr > td:first-child {
+    width: 5%;
+}
+
+.music-table > thead > tr > th:nth-child(2),
+.music-table > tbody > tr > td:nth-child(2) {
+    width: 20%;
+}
+
+.music-table > thead > tr > th:nth-child(3),
+.music-table > thead > tr > th:nth-child(4),
+.music-table > thead > tr > th:nth-child(5),
+.music-table > tbody > tr > td:nth-child(3),
+.music-table > tbody > tr > td:nth-child(4),
+.music-table > tbody > tr > td:nth-child(5) {
+    width: 15%;
+}
+
+.music-table > thead > tr > th:nth-child(6),
+.music-table > tbody > tr > td:nth-child(6) {
+    width: 5%;
+}
+
+.music-table > thead > tr > th:last-child,
+.music-table > tbody > tr > td:last-child {
+    width: 25%;
+}
+
+.music-table > thead > tr > th:first-child {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.music-table > thead > tr > th:last-child {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.music-table > thead > tr > th::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+    color: #222222;
+}
+
+.music-table > tbody > tr > td {
+    padding: 10px 0px;
+    min-height: 42px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.music-table > tbody > tr > td > p {
+    display: inline-block;
+    margin: 0px 7.5px;
+    color: #aaaaaa;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.music-tables:hover #table-multi-hover p:hover {
+    color: var(--text-2);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.music-table > tbody > tr > td[rep="7"] > p {
+    margin: 0px;
+    vertical-align: middle;
+}
+
+.music-link {
+    width: 25px;
+    height: 25px;
+    background-size: 15px 15px, 25px 25px, 25px 25px, 25px 25px, 25px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.album-link {
+    width: 40px;
+    height: 40px;
+    background-size: 25px 25px, 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.music-table > tbody > tr > td[rep="1"] > p:last-child {
+    max-width: 75px;
+}
+
+.music-table > tbody > tr > td[rep="2"] > p:last-child {
+    max-width: 200px;
+}
+
+.music-table > tbody > tr > td[rep="3"] > p:last-child,
+.music-table > tbody > tr > td[rep="4"] > p:last-child,
+.music-table > tbody > tr > td[rep="5"] > p:last-child,
+.music-table > tbody > tr > td[rep="6"] > p:last-child {
+    max-width: 150px;
+}
+
+.music-table > tbody > tr > td[rep="7"] > p:last-child {
+    max-width: 125px;
+}
+
+.music-table .music-tr:last-child > td > p[ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: unset;
+    bottom: calc(100% + 10px);
+    opacity: 1;
+}
+
+.table-bg {
+    color: var(--text-4);
+    background-color: var(--background-4);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
