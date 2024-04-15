@@ -143,7 +143,12 @@ $(document).ready(function() {
                 });
                 $('.music-track-popup-content').css({
                     'top': '0',
-                    'transform': 'unset'
+                    'transform': 'unset',
+                    '-webkit-transition': 'unset',
+                    '-moz-transition': 'unset',
+                    '-o-transition': 'unset',
+                    '-ms-transition': 'unset',
+                    'transition': 'unset'
                 });
             }, 500);
 

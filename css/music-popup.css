@@ -202,7 +202,7 @@
 .picture-in-picture-music .music-track-popup-content {
     width: 100%;
     top: 100%;
-    transform: translate(0, -100%);
+    transform: translate(0, calc(-100% - 10px));
 }
 
 .music-track-popup-close {
