@@ -141,6 +141,10 @@ $(document).ready(function() {
                     'width': 'unset',
                     'height': 'unset'
                 });
+                $('.music-track-popup-content').css({
+                    'top': '0',
+                    'transform': 'unset'
+                });
             }, 500);
 
             $('body').removeClass('lb-disable-scrolling');

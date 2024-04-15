@@ -156,16 +156,16 @@
     left: 0;
     top: 0;
     z-index: -1;
-}
-
-.picture-in-picture-music .music-track-popup-overlay {
-    background-color: transparent;
-    backdrop-filter: blur(0px);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.picture-in-picture-music .music-track-popup-overlay {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
 }
 
 .music-track-popup.picture-in-picture-music {
@@ -201,8 +201,8 @@
 
 .picture-in-picture-music .music-track-popup-content {
     width: 100%;
-    top: 0;
-    transform: unset;
+    top: 100%;
+    transform: translate(0, -100%);
 }
 
 .music-track-popup-close {
