@@ -157,7 +157,7 @@
     top: 0;
 }
 
-.picture-in-picture-music span.music-track-popup-overlay {
+.picture-in-picture-music .music-track-popup-overlay {
     display: none;
 }
 
