@@ -71,7 +71,7 @@
     margin: 10px;
     display: inline-block;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     left: 0;
     text-decoration-line: none;
     -webkit-transition: all 0.5s;
@@ -81,47 +81,92 @@
     transition: all 0.5s;
 }
 
+.item-hover-first {
+    z-index: 9;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item-hover-first:hover {
+    z-index: 11;
+}
+
+.item-hover-first > .item:first-child {
+    left: 50px;
+    z-index: 8;
+}
+
+.contents-top-thumbnail:hover .item-hover-first > .item:first-child {
+    left: 100px;
+}
+
+.item-hover-middle {
+    z-index: 7;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item-hover-middle:hover {
+    z-index: 9;
+}
+
+.item-hover-middle > .item:first-child {
+    left: 100px;
+    z-index: 6;
+}
+
+.contents-top-thumbnail:hover .item-hover-middle > .item:first-child {
+    left: 200px;
+}
+
+.item-hover-last {
+    z-index: 5;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.item-hover-last:hover {
+    z-index: 7;
+}
+
+.item-hover-last > .item:first-child {
+    left: 150px;
+    z-index: 4;
+}
+
+.item-hover-last > .item:last-child {
+    left: 200px;
+    z-index: 3;
+}
+
+.contents-top-thumbnail:hover .item-hover-last > .item:first-child {
+    left: 300px;
+}
+
+.contents-top-thumbnail:hover .item-hover-last > .item:last-child {
+    left: 400px;
+}
+
 .item:hover {
-    z-index: 3!important;
+    z-index: 20;
     transform: scale(1.025);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
-}
-
-.item-hover {
-    z-index: 1;
-    position: relative;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.item-hover:hover {
-    z-index: 3;
-    position: relative;
-}
-
-.item-hover > div:first-child {
-    left: 50px;
-    z-index: 2;
-}
-
-.item-hover > div:last-child {
-    left: 100px;
-    z-index: 1;
-}
-
-.contents-top-thumbnail:hover .item-hover > div:first-child {
-    left: 100px;
-}
-
-.contents-top-thumbnail:hover .item-hover > div:last-child {
-    left: 200px;
 }
 
 .item-thumbnail {
