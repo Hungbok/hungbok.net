@@ -178,6 +178,22 @@ function mobileSearch() {
     document.getElementById("search-value").focus();
 }
 
+// 닫는 기능을 담당하는 함수
+function closeSearch() {
+    var element = document.querySelector(".header-menu.search-container");
+    var headerButton = document.querySelector('.header-button.mobile-search');
+    var sideHeader = document.querySelector('.side-header');
+    if (element.classList.contains('mobile-search-toggle')) {
+        element.classList.remove('mobile-search-toggle');
+    }
+    if (headerButton && headerButton.classList.contains('mobile-search-toggle-button')) {
+        headerButton.classList.remove('mobile-search-toggle-button');
+    }
+    if (sideHeader && sideHeader.classList.contains('mobile-search-toggle-side')) {
+        sideHeader.classList.remove('mobile-search-toggle-side');
+    }
+}
+
 $(document).ready(function(){
     $('body').on('click', 'summary', function(e) {
         var details = $(this).parent();
@@ -214,27 +230,20 @@ window.onclick = function(event) {
         sidepanel.classList.remove('open');
         body.classList.remove('overflow-hidden'); // 스크롤 가능하게 설정
     }
-    
-    // '.mobile-search'와 '.search-container' 요소들을 선택합니다.
+
     var mobileSearch = document.querySelector('.mobile-search');
     var searchContainer = document.querySelector('.search-container');
-
     if (mobileSearch && !mobileSearch.contains(event.target) &&
         searchContainer && !searchContainer.contains(event.target)) {
-        var toggleElement = document.querySelector('.mobile-search-toggle');
-        if (toggleElement) {
-            toggleElement.classList.remove('mobile-search-toggle');
-            var headerButton = document.querySelector('.header-button.mobile-search');
-            if (headerButton) {
-                headerButton.classList.remove("mobile-search-toggle-button");
-            }
-            var sideHeader = document.querySelector('.side-header');
-            if (sideHeader) {
-                sideHeader.classList.remove("mobile-search-toggle-side");
-            }
-        }
+        closeSearch();
     }
 }
+
+document.querySelector('.header-button.mobile-search').addEventListener('click', function(event) {
+    if (event.currentTarget.classList.contains('mobile-search-toggle-button')) {
+        closeSearch();
+    }
+});
 
 $(document).ready(function() {
 
