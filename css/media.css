@@ -69,7 +69,7 @@
 
 /* item */
 
-.item {
+.contents-top-thumbnail .item {
     width: 200px;
     height: auto;
     margin: 10px;
@@ -84,7 +84,7 @@
     transition: all 0.5s;
 }
 
-.item:hover {
+.contents-top-thumbnail .item:hover {
     transform: scale(1.025);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -93,7 +93,7 @@
     transition: all 0.5s;
 }
 
-.item-thumbnail {
+.contents-top-thumbnail .item-thumbnail {
     width: 200px;
     height: 300px;
     overflow: hidden;
@@ -111,7 +111,7 @@
     background-image: url(/image/error-vertical.svg);
 }
 
-.item-thumbnail::before {
+.contents-top-thumbnail .item-thumbnail::before {
     content: "";
     width: 100%;
     display: block;
@@ -131,7 +131,7 @@
     transition: all 0.5s;
 }
 
-.item-thumbnail:hover::before {
+.contents-top-thumbnail .item-thumbnail:hover::before {
     top: -50%;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -140,13 +140,13 @@
     transition: all 0.5s;
 }
 
-.item-thumbnail a {
+.contents-top-thumbnail .item-thumbnail a {
     display: inline-block;
     width: 100%;
     height: 100%;
 }
 
-.item-thumbnail .thumbnail-background {
+.contents-top-thumbnail .item-thumbnail .thumbnail-background {
     z-index: 0;
     width: auto;
     height: 100%;
@@ -155,7 +155,7 @@
     transform: translate(-50%, -50%);
 }
 
-.item-thumbnail img {
+.contents-top-thumbnail .item-thumbnail img {
     position: absolute;
     transform: translate(-50%);
 }
