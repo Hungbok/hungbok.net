@@ -1151,110 +1151,99 @@ $(document).ready(function(){
 
         // JSON 데이터 불러오기
         fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            function getLocalizedData(data, key) {
-                if (data['ko'] && key in data['ko'] && data['ko'][key] !== undefined) {
-                    return data['ko'][key];
-                } else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
-                    return data['en'][key];
-                } else {
-                    return '제목 없음'; // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
+            .then(response => response.json())
+            .then(data => {
+                function getLocalizedData(data, key) {
+                    if (data['ko'] && key in data['ko'] && data['ko'][key] !== undefined) {
+                        return data['ko'][key];
+                    } else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
+                        return data['en'][key];
+                    } else {
+                        // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
+                        return '제목 없음';
+                    }
                 }
-            }
-
-            const validGames = data.filter(game => {
-                const dateParts = game.date.split('-');
-                return dateParts.length === 3 && new Date(game.date) < new Date(); // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
-            })
-            .sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜가 큰 데이터부터 정렬
-            
-            const recentGames = validGames.slice(0, 5);
-    
-            if (recentGames.length < 5) {
-                document.querySelector('.discover-container.new-release').classList.add('disabled');
-                return;
-            }
-            
-            const fetchPromises = recentGames.map(game => 
-                fetch(`//data.hungbok.net/data/games/${game.url}.json`)
-                    .then(response => response.json())
-                    .then(gameData => {
-                        const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
-                        const title = getLocalizedData(dataToUse, 'title');
-                        const formattedDate = formatDateToKR(game.date);
-                        return `
-                            <div class="discover-content data-${index+1}">
-                                <div class="discover-item">
-                                    <div class="discover-title-time">${formattedDate}</div>
-                                    <div class="discover-item-thumbnail discover-thumbnail-hover">
-                                        <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
-                                            <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
-                                            <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
-                                            <div class="discover-title-name" title="${title}">${title}</div>
-                                        </a>
+                
+                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                const validGames = data.filter(game => {
+                    const dateParts = game.date.split('-');
+                    return dateParts.length === 3 && new Date(game.date) < today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
+                })
+                .sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜가 큰 데이터부터 정렬
+                
+                const recentGames = validGames.slice(0, 5);
+        
+                if (recentGames.length < 5) {
+                    document.querySelector('.discover-container.new-release').classList.add('disabled');
+                }
+                
+                recentGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
+                            const formattedDate = formatDateToKR(game.date);
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${formattedDate}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>`;
-                    })
-            );
-            
-            Promise.all(fetchPromises).then(results => {
-                const container = document.querySelector('.discover-container.new-release');
-                container.innerHTML = ''; // 기존 내용을 지우고 새로운 게임 정보로 채웁니다.
-                results.forEach(gameElement => {
-                    container.innerHTML += gameElement;
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.new-release').innerHTML += gameElement;
+                        });
                 });
-            });
 
-            const validupcomingGames = data.filter(game => {
-                const dateParts = game.date.split('-');
-                return dateParts.length === 3 && new Date(game.date) > new Date(); // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
-            })
-            .sort((a, b) => new Date(a.date) - new Date(b.date)); // 날짜가 큰 데이터부터 정렬
-            
-            const upcomingGames = validupcomingGames.slice(0, 5);
-    
-            if (upcomingGames.length < 5) {
-                document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
-                return;
-            }
-            
-            const fetchupcomingPromises = upcomingGames.map(game => 
-                fetch(`//data.hungbok.net/data/games/${game.url}.json`)
-                    .then(response => response.json())
-                    .then(gameData => {
-                        const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
-                        const title = getLocalizedData(dataToUse, 'title');
-                        const formattedDate = formatDateToKR(game.date);
-                        return `
-                            <div class="discover-content data-${index+1}">
-                                <div class="discover-item">
-                                    <div class="discover-title-time">${formattedDate}</div>
-                                    <div class="discover-item-thumbnail discover-thumbnail-hover">
-                                        <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
-                                            <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
-                                            <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
-                                            <div class="discover-title-name" title="${title}">${title}</div>
-                                        </a>
+                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                const validupcomingGames = data.filter(game => {
+                    const dateParts = game.date.split('-');
+                    return dateParts.length === 3 && new Date(game.date) > today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
+                })
+                .sort((a, b) => new Date(a.date) - new Date(b.date)); // 날짜가 작은 데이터부터 정렬
+                
+                const upcomingGames = validupcomingGames.slice(0, 5);
+        
+                if (upcomingGames.length < 5) {
+                    document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
+                }
+                
+                upcomingGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
+                            const formattedDate = formatDateToKR(game.date);
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${formattedDate}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>`;
-                    })
-            );
-            
-            Promise.all(fetchupcomingPromises).then(results => {
-                const container = document.querySelector('.discover-container.upcoming-release');
-                container.innerHTML = ''; // 기존 내용을 지우고 새로운 게임 정보로 채웁니다.
-                results.forEach(gameElement => {
-                    container.innerHTML += gameElement;
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.upcoming-release').innerHTML += gameElement;
+                        });
                 });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.querySelector('.discover-container').classList.add('disabled');
             });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            document.querySelector('.discover-container').classList.add('disabled');
-        });
 
         fetch(newaddUrl)
         .then(response => response.json())
