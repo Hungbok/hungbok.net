@@ -143,11 +143,6 @@
     z-index: 9999;
     background-color: rgb(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
 }
 
 .music-track-popup.picture-in-picture-music {
@@ -267,7 +262,7 @@
 .music-track-popup-pip {
     width: 30px;
     height: 30px;
-    background: url(//media.hungbok.net/image/icon/home.svg) center no-repeat;
+    background: url(//media.hungbok.net/image/icon/expand_more.svg) center no-repeat;
     background-size: 40px;
 }
 

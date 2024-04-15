@@ -90,7 +90,7 @@ $(document).ready(function() {
             return false;
         });
 
-        $(".music-track-popup-close, .music-track-popup").click(function() {
+        $(".music-track-popup-close").click(function() {
             var $popup = $(".music-track-popup");
 
             $popup.fadeOut(400, function() {
@@ -101,7 +101,7 @@ $(document).ready(function() {
             $('#element').off('scroll touchmove mousewheel');
         });
 
-        $(".music-track-popup-pip").click(function() {
+        $(".music-track-popup-pip, .music-track-popup").click(function() {
             $('.music-track-popup').addClass('picture-in-picture-music');
 
             $('body').removeClass('lb-disable-scrolling');
