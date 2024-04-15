@@ -81,6 +81,16 @@
     transition: all 0.5s;
 }
 
+.item:hover {
+    z-index: 20;
+    transform: scale(1.025);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 .item-hover-first {
     z-index: 9;
     position: relative;
@@ -98,6 +108,10 @@
 .item-hover-first > .item:first-child {
     left: 50px;
     z-index: 8;
+}
+
+.item-hover-first > .item:first-child:hover {
+    z-index: 10;
 }
 
 .contents-top-thumbnail:hover .item-hover-first > .item:first-child {
@@ -121,6 +135,10 @@
 .item-hover-middle > .item:first-child {
     left: 100px;
     z-index: 6;
+}
+
+.item-hover-middle > .item:first-child:hover {
+    z-index: 8;
 }
 
 .contents-top-thumbnail:hover .item-hover-middle > .item:first-child {
@@ -151,22 +169,20 @@
     z-index: 3;
 }
 
+.item-hover-last > .item:first-child:hover {
+    z-index: 6;
+}
+
+.item-hover-last > .item:last-child:hover {
+    z-index: 7;
+}
+
 .contents-top-thumbnail:hover .item-hover-last > .item:first-child {
     left: 300px;
 }
 
 .contents-top-thumbnail:hover .item-hover-last > .item:last-child {
     left: 400px;
-}
-
-.item:hover {
-    z-index: 20;
-    transform: scale(1.025);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
 }
 
 .item-thumbnail {
