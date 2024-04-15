@@ -234,15 +234,15 @@ $('.calendar-day').on('mouseup', function() {
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
-    
-    window.onload = function() {
-        $(".pc").append('<img ttt="PC" src="https://media.hungbok.net/image/icon/display.svg">');
-        $(".ps").append('<img ttt="PlayStation" src="https://media.hungbok.net/image/icon/playstation.svg">');
-        $(".xb").append('<img ttt="Xbox" src="https://media.hungbok.net/image/icon/xbox.svg">');
-        $(".ns").append('<img ttt="Nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg">');
-        $(".co").append('<img ttt="Console" src="https://media.hungbok.net/image/icon/gamepad.svg">');
-        $(".ar").append('<img ttt="Arcade" src="https://media.hungbok.net/image/icon/arcade.svg">');
-        $(".mo").append('<img ttt="Mobile" src="https://media.hungbok.net/image/icon/phone.svg">');
-        $(".cl").append('<img ttt="Cloud" src="https://media.hungbok.net/image/icon/cloud.svg">');
-    };
 });
+    
+window.onload = function() {
+    $(".pc").append('<img ttt="PC" src="https://media.hungbok.net/image/icon/display.svg">');
+    $(".ps").append('<img ttt="PlayStation" src="https://media.hungbok.net/image/icon/playstation.svg">');
+    $(".xb").append('<img ttt="Xbox" src="https://media.hungbok.net/image/icon/xbox.svg">');
+    $(".ns").append('<img ttt="Nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg">');
+    $(".co").append('<img ttt="Console" src="https://media.hungbok.net/image/icon/gamepad.svg">');
+    $(".ar").append('<img ttt="Arcade" src="https://media.hungbok.net/image/icon/arcade.svg">');
+    $(".mo").append('<img ttt="Mobile" src="https://media.hungbok.net/image/icon/phone.svg">');
+    $(".cl").append('<img ttt="Cloud" src="https://media.hungbok.net/image/icon/cloud.svg">');
+};
