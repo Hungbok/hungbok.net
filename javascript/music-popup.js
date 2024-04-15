@@ -217,7 +217,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://vibe.naver.com/embed/track/', '750', '154');
+        openTrack(e, videoID, 'https://vibe.naver.com/embed/track/', '500', '154');
     });
 
     $(document).on('click', '.line-track', function(e) {
@@ -227,6 +227,6 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://music.line.me/webapp/embed/track/', '500', '214');
+        openTrack(e, videoID, 'https://music.line.me/webapp/embed/track/', '750', '214');
     });
 });
