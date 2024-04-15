@@ -19,11 +19,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
-    -webkit-transition: all 0.5s ease-out;
-    -moz-transition: all 0.5s ease-out;
-    -o-transition: all 0.5s ease-out;
-    -ms-transition: all 0.5s ease-out;
-    transition: all 0.5s ease-out;
 }
 
 /* top path & title */
