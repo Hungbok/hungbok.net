@@ -76,7 +76,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         var $popup = $('<div class="music-track-popup" style="display: none;"></div>');
-        var $content = $('<div class="music-track-popup-content"></div>');
+        var $content = $('<div class="music-track-popup-content"></div><span class="music-track-popup-overlay"></span>');
         $content.append('<span class="music-track-popup-pip"></span><span class="music-track-popup-close"></span><span class="music-track-loading"></span><iframe class="music-track-iframe" src="' + url + videoID + '?width=' + width + '&height=' + height + '&isPC=true&autoPlay=false" width="' + width + '" height="' + height + '" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
         $popup.append($content);
         $("body").append($popup);
@@ -90,7 +90,7 @@ $(document).ready(function() {
             return false;
         });
 
-        $(".music-track-popup-close").click(function() {
+        $(".music-track-popup-close, .music-track-popup-overlay").click(function() {
             var $popup = $(".music-track-popup");
 
             $popup.fadeOut(400, function() {
@@ -101,7 +101,7 @@ $(document).ready(function() {
             $('#element').off('scroll touchmove mousewheel');
         });
 
-        $(".music-track-popup-pip, .music-track-popup").click(function() {
+        $(".music-track-popup-pip").click(function() {
             $('.music-track-popup').addClass('picture-in-picture-music');
 
             $('body').removeClass('lb-disable-scrolling');
