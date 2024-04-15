@@ -31,7 +31,7 @@
 .top-content {
     min-height: 400px;
     display: grid;
-    grid-template-columns: auto 554px;
+    grid-template-columns: auto 420px;
     grid-template-rows: auto auto 80px;
     column-gap: 40px;
     row-gap: 20px;
@@ -58,8 +58,8 @@
 
 .contents-top-thumbnail {
     position: relative;
-    width: 554px;
-    height: 320px;
+    width: 420px;
+    height: 245px;
     display: inline-block;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -70,7 +70,7 @@
 /* item */
 
 .item {
-    width: 534px;
+    width: 400px;
     height: auto;
     margin: 10px;
     display: inline-block;
@@ -94,8 +94,8 @@
 }
 
 .item-thumbnail {
-    width: 534px;
-    height: 300px;
+    width: 400px;
+    height: 225px;
     overflow: hidden;
     position: relative;
     filter: drop-shadow(0px 0px 5px var(--shadow));

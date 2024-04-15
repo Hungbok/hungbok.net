@@ -2,7 +2,7 @@
 
 .top-backgrounds {
     width: 100vw;
-    height: 490px;
+    height: 590px;
     position: absolute;
     transform: translate(0px, -90px);
     pointer-events: none;
@@ -11,7 +11,7 @@
 
 .top-background {
     width: 100vw;
-    height: 490px;
+    height: 590px;
     position: absolute;
     top: 0;
     z-index: -10;
