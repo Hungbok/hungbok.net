@@ -159,7 +159,13 @@
 }
 
 .picture-in-picture-music .music-track-popup-overlay {
-    display: none;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .music-track-popup.picture-in-picture-music {
@@ -172,8 +178,6 @@
     transform: translate(-50%, 0);
     background-color: transparent;
     backdrop-filter: unset;
-    width: unset;
-    height: unset;
 }
 
 .music-track-popup-content {

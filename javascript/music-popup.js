@@ -136,6 +136,13 @@ $(document).ready(function() {
         $(".music-track-popup-pip").click(function() {
             $('.music-track-popup').addClass('picture-in-picture-music');
 
+            setTimeout(function() {
+                $('.music-track-popup').css({
+                    'width': 'unset',
+                    'height': 'unset'
+                });
+            }, 500);
+
             $('body').removeClass('lb-disable-scrolling');
             $('#element').off('scroll touchmove mousewheel');
         });
