@@ -30,7 +30,7 @@ $(document).ready(function(){
         $.getJSON(`//data.hungbok.net/data/games/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
         
-            // en 또는 ko 데이터에 접근하는 함수
+            // en 또는 fr 데이터에 접근하는 함수
             function getLocalizedData(data, key) {
                 return data['fr'] && data['fr'][key] ? data['fr'][key] : data['en'][key];
             }
@@ -845,527 +845,754 @@ $(document).ready(function(){
             });
         });
     } else {
-        $('body').addClass('en');
+        $('body').addClass('fr');
         $('.section').remove();
         $('.top-backgrounds').remove();
         $('main').append('<div class="game-section">'+
-            '<div class="owl-carousel custom-carousel owl-theme">'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Cyberpunk 2077</h3>'+
-                        '<p>Cyberpunk 2077 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/offer/14ee004dadc142faaaece5a6270fb628/EGS_TheWitcher3WildHuntCompleteEdition_CDPROJEKTRED_S1_2560x1440-82eb5cf8f725e329d3194920c0c0b64f);">'+
-                    '<div class="item-desc">'+
-                        '<h3>The Witcher 3: Wild Hunt</h3>'+
-                        '<p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/epic/offer/RDR2PC1227_Epic%20Games_860x1148-860x1148-b4c2210ee0c3c3b843a8de399bfe7f5c.jpg);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Red Dead Redemption 2</h3>'+
-                        '<p>Red Dead Redemption 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1lbll.jpg?h=2560&quality=high&resize=1&w=1440);">'+
-                    '<div class="item-desc">'+
-                        '<h3>PUBG: BATTLEGROUNDS</h3>'+
-                        '<p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the Ancients, which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/offer/fn/Blade_2560x1440_2560x1440-95718a8046a942675a0bc4d27560e2bb);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Fortnite</h3>'+
-                        '<p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/offer/611482b8586142cda48a0786eb8a127c/EGS_DeadbyDaylight_BehaviourInteractive_S1_2560x1440-a32581cf9948a9a2e24b2ff15c1577c7);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Dead by Daylight</h3>'+
-                        '<p>Dead by Daylight is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/offer/0c05e0889c3e42a4be1d81077d6e653a/SAB_Store_Landscape_2560x1440_2560x1440-00b4029199a7a6778fd27dec96f08a28);">'+
-                    '<div class="item-desc">'+
-                        '<h3>SKULL AND BONES™</h3>'+
-                        '<p>SKULL AND BONES™ is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/EGS_VALORANT_RiotGames_S1_2560x1440-055bbe0f10c1778fcbd134f2de02daf6);">'+
-                    '<div class="item-desc">'+
-                        '<h3>VALORANT</h3>'+
-                        '<p>VALORANT is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn.cloudflare.steamstatic.com/steam/apps/271590/hero_capsule.jpg?t=1671484916);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Grand Theft Auto V: Premium Edition</h3>'+
-                        '<p>Grand Theft Auto V: Premium Edition is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item" style="background-image: url(https://cdn1.epicgames.com/salesEvent/salesEvent/Landscape%20Product%20image-JAP_2560x1440-e038a07c8f4ced528ff97619017058e5);">'+
-                    '<div class="item-desc">'+
-                        '<h3>Genshin Impact</h3>'+
-                        '<p>Genshin Impact is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment\'s Warcraft III.</p>'+
-                        '<div class="slide-progress-main">'+
-                            '<div class="progressBar"></div>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="item eleven">'+
-                    '<div class="item-desc">'+
-                        '<h3></h3>'+
-                        '<p></p>'+
-                    '</div>'+
+            '<div class="owl-carousel custom-carousel owl-theme"></div>'+
+            '<div class="progress-container">'+
+                '<div class="slide-progress-main">'+
+                    '<div class="progressBar"></div>'+
                 '</div>'+
             '</div>'+
         '</div>'+
-        '<div class="discover-section">'+
-            '<div class="discover-title">'+
-                '<div class="discover-text">New Added</div>'+
+        '<div class="discover-section" id="dataContainer">'+
+            '<div class="discover-contents">'+
+                '<div class="discover-title">'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/calendar">신규 출시</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/calendar">모두 보기</a>'+
+                '</div>'+
+                '<div class="discover-container new-release"></div>'+
             '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
+            '<div class="discover-contents">'+
+                '<div class="discover-title">'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/calendar">출시 예정</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/calendar">모두 보기</a>'+
                 '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
+                '<div class="discover-container upcoming-release"></div>'+
             '</div>'+
-            '<div class="discover-title">'+
-                '<div class="discover-text">Coming Soon</div>'+
+            '<div class="discover-contents">'+
+                '<div class="discover-title">'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/free-games?category=games">무료 배포</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/free-games?category=games">모두 보기</a>'+
+                '</div>'+
+                '<div class="discover-container free-games" id="freegamesContainer"></div>'+
             '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
+            '<div class="discover-contents">'+
+                '<div class="discover-title">'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/sales">최신 할인</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/sales">모두 보기</a>'+
                 '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
+                '<div class="discover-container" id="upcomingContainer"></div>'+
             '</div>'+
-            '<div class="discover-title">'+
-                '<div class="discover-text">Steam</div>'+
+            '<div class="discover-contents">'+
+                '<div class="discover-title">'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/free-games?category=bundle">신규 번들</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/free-games?category=bundle">모두 보기</a>'+
+                '</div>'+
+                '<div class="discover-container free-games" id="bundleContainer"></div>'+
             '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/detroit-become-human/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
+            '<div class="discover-contents">'+
+                '<div class="discover-title">'+
+                    '<a class="discover-text" href="https://www.hungbok.com/fr/games/list">신규 추가</a>'+
+                    '<a class="discover-button" href="https://www.hungbok.com/fr/games/list">모두 보기</a>'+
                 '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/cyberpunk-2077/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'+
-            '<div class="discover-title">'+
-                '<div class="discover-text">Epic Games Store</div>'+
-            '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/stray/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/journey/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-            '</div>'+
-            '<div class="discover-title">'+
-                '<div class="discover-text">Console</div>'+
-            '</div>'+
-            '<div class="discover-container">'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/minecraft/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/portal-2/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/inside/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/grand-theft-auto-5/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="discover-content">'+
-                    '<div class="discover-item">'+
-                        '<div class="discover-title-time">01 : 30</div>'+
-                        '<div class="discover-item-thumbnail discover-thumbnail-hover">'+
-                            '<a href="/anime/cool-doji-danshi/home" tabindex="0" target="_blank">'+
-                                '<img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/fortnite/hb_logo.png" onerror="this.src=`/image/error-icon.svg`" loading="lazy">'+
-                                '<img class="discover-thumbnail-background" src="https://www.heungbok.kro.kr/game/biohazard-7-resident-evil/thumbnail.jpg" onerror="this.style.display=`none``;" loading="lazy">'+
-                                '<div class="discover-title-name" title="クールドジ男子">쿨하고 바보 같은 남자</div>'+
-                            '</a>'+
-                        '</div>'+
-                    '</div>'+
-                '</div>'+
+                '<div class="discover-container new-added"></div>'+
             '</div>'+
         '</div>');
-        $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
-            // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
-            // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
-            var $owl = $('.owl-carousel');
-
-            $owl.children().each( function( index ) {
-              $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
-            });
-
-            $(document).ready(function() {
-                var owl = $('.owl-carousel');
-                owl.owlCarousel({
-                    autoWidth: true,
-                    loop: true,
-                    merge: true,
-                    center: true,
-                    autoplay: true,
-                    autoplayHoverPause: true,
-                    autoplayTimeout: 6000,
-                    autoplaySpeed: 1000,
-                    items: 1,
-                    onInitialized: startProgressBar,
-                    onTranslate: resetProgressBar,
-                    onTranslated: startProgressBar
-                });
-            
-                function startProgressBar() {
-                    $(".progressBar").css({
-                        width: "100%",
-                        transition: "width 5000ms linear"
-                    });
+        // JSON 파일에서 데이터를 불러오는 함수
+        async function loadGameData() {
+            try {
+                // JSON 파일 불러오기
+                const response = await fetch('//data.hungbok.net/data/discover/games.json');
+                if (!response.ok) {
+                    throw new Error('데이터를 불러오는 데 실패했습니다.');
                 }
-            
-                function resetProgressBar() {
-                    $(".progressBar").css({
-                        width: 0,
-                        transition: "width 0ms"
-                    });
-                }
-            
-                owl.on('mouseover',function(e){
-                    owl.trigger('stop.owl.autoplay');
-                    var progressBar = $(".progressBar");
-                    var width = progressBar.width();
-                    progressBar.stop(true, true).css({
-                        width: width,
-                        transition: "width 0s"
-                    });
+                const games = await response.json();
+        
+                // 상위 10개의 데이터를 가져옴
+                const topGames = games.slice(0, 10);
+        
+                // 데이터를 HTML로 변환하여 페이지에 추가
+                const container = document.querySelector('.owl-carousel.custom-carousel.owl-theme');
+                topGames.forEach(game => {
+                    // fr 값이 있으면 그 값을, 없으면 en 값을 사용
+                    const title = game.fr ? game.fr.title : game.en.title;
+                    const summary = game.fr ? game.fr.summary : game.en.summary;
+        
+                    const gameElement = `
+                        <a href="https://www.hungbok.com/${game.type}?q=${game.url}" tabindex="0" class="item" style="background-image: url(${game.image});">
+                            <div class="item-desc">
+                                <h3>${title}</h3>
+                                <p>${summary}</p>
+                            </div>
+                        </a>
+                    `;
+                    container.innerHTML += gameElement;
                 });
-            
-                owl.on('mouseleave',function(e){
-                    owl.trigger('play.owl.autoplay');
-                    startProgressBar();
-                });
+            } catch (error) {
+                console.error('오류가 발생했습니다:', error);
+            }
+        }
 
-                owl.on('changed.owl.carousel', function(event) {
-                    var item = event.item.index;   // 현재 아이템 위치
-            
-                    // 11번째 아이템에 도달했을 때 즉시 다음 아이템으로 이동
-                    if($('.owl-item').eq(item).find('.item.eleven').length > 0) {
-                        setTimeout(function() {
-                            owl.trigger('next.owl.carousel');
-                        }, 500);
+        loadGameData();
+
+        window.onload = function() {
+            $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
+                // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
+                // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
+                var $carousel = $('.owl-carousel');
+    
+                $carousel.children().each( function( index ) {
+                  $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+                });
+    
+                $(document).ready(function() {
+                    var $progressBarContainer = $('.slide-progress-main');
+                    var $progressBar = $('.progressBar');
+                    var $carousel = $('.owl-carousel');
+                    var isMouseOver = false;
+                    var autoSlideTimeout;
+    
+                    function autoSlide() {
+                        clearTimeout(autoSlideTimeout);
+                        autoSlideTimeout = setTimeout(function() {
+                            $carousel.trigger('next.owl.carousel');
+                        }, 5000);
                     }
+    
+                    $carousel.owlCarousel({
+                        nav: true,
+                        loop: true,
+                        dots: true,
+                        merge: true,
+                        center: true,
+                        autoplay: false,
+                        autoWidth: true,
+                        smartSpeed: 1000,
+                        onInitialized: function() {
+                            startProgressBar();
+                            autoSlide();
+                            $progressBarContainer.css('bottom', '17.5px');
+                            $progressBar.css('opacity', '1');
+                        },
+                        onTranslate: function() {
+                            $progressBarContainer.css('bottom', '-14.5px');
+                            $progressBar.css('opacity', '0');
+                            resetProgressBar();
+                        }
+                    }).on('translated.owl.carousel', function(e) {
+                        $progressBarContainer.css('bottom', '17.5px');
+                        $progressBar.css('opacity', '1');
+                        checkMouseAndStartProgressBar();
+                    });
+    
+                    function startProgressBar() {
+                        // 진행 바를 0에서 100%까지 5초 동안 채웁니다.
+                        $progressBar.css({width: '100%', transition: 'width 5000ms linear'});
+                    }
+                
+                    function resetProgressBar() {
+                        // 진행 바를 즉시 0%로 초기화합니다.
+                        $progressBar.css({width: '0%', transition: 'none'});
+                    }
+    
+                    function checkMouseAndStartProgressBar() {
+                        if (!isMouseOver) {
+                            startProgressBar();
+                            autoSlide();
+                        }
+                    }
+                
+                    $carousel.on('mouseover', function() {
+                        $progressBar.css({width: $progressBar.width(), transition: 'none'});
+                        isMouseOver = true;
+                        clearTimeout(autoSlideTimeout);
+                    });
+                
+                    $carousel.on('mouseleave', function() {
+                        isMouseOver = false;
+                        startProgressBar();
+                        autoSlide();
+                    });
                 });
-            });
-
-            $(window).on('resize', function() {
-                owl.trigger('next.owl.carousel');
-            });
-
-            $(document).ready(function () {
-                // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
-                $('.owl-stage .owl-item.center .item').addClass('active');
-            
-                // 슬라이드 이동 이벤트가 발생할 때마다 실행
-                $('.owl-carousel').on('translated.owl.carousel', function(e) {
-                    // 기존에 .active가 있던 .item에서 .active 제거
-                    $('.owl-stage .owl-item .item.active').removeClass('active');
-            
-                    // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+    
+                $(window).on('resize', function() {
+                    $carousel.trigger('next.owl.carousel');
+                });
+    
+                $(document).ready(function () {
+                    // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
                     $('.owl-stage .owl-item.center .item').addClass('active');
-                });
-
-                $(document).on('click', '.owl-item > div', function() {
-                    // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
-                    var $speed = 300;  // in ms
-                    $owl.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                
+                    // 슬라이드 이동 이벤트가 발생할 때마다 실행
+                    $('.owl-carousel').on('translated.owl.carousel', function(e) {
+                        // 기존에 .active가 있던 .item에서 .active 제거
+                        $('.owl-stage .owl-item .item.active').removeClass('active');
+                
+                        // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+                        $('.owl-stage .owl-item.center .item').addClass('active');
+                    });
+    
+                    $(document).on('click', '.owl-item > div', function() {
+                        // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+                        var $speed = 300;  // in ms
+                        $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                    });
                 });
             });
+        };
+
+        function formatDateToKR(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
+        
+            const months = ["1", "2", "3", "4",
+                            "5", "6", "7", "8",
+                            "9", "10", "11", "12"];
+        
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
+        
+            if (year && month && day) {
+                return `${year}년 ${month}월 ${day}일`;
+            } else if (year && month) {
+                return `${year}년 ${month}월`;
+            } else if (year) {
+                return `${year}년`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
+        }
+        
+        function formatDateToJP(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
+        
+            const months = ["1", "2", "3", "4",
+                            "5", "6", "7", "8",
+                            "9", "10", "11", "12"];
+        
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
+        
+            if (year && month && day) {
+                return `${year}年${month}月${day}日`;
+            } else if (year && month) {
+                return `${year}年${month}月`;
+            } else if (year) {
+                return `${year}年`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
+        }
+        
+        function formatDateToUS(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
+        
+            const months = ["January", "February", "March", "April",
+                            "May", "June", "July", "August",
+                            "September", "October", "November", "December"];
+        
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
+        
+            if (year && month && day) {
+                return `${month} ${day}, ${year}`;
+            } else if (year && month) {
+                return `${month} ${year}`;
+            } else if (year) {
+                return `${year}`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
+        }
+        
+        function formatDateToUK(dateStr) {
+            const parts = dateStr.split('-');
+            const year = parts[0];
+            let month = parts.length > 1 ? parts[1] : "";
+            let day = parts.length > 2 ? parts[2] : "";
+        
+            const months = ["January", "February", "March", "April",
+                            "May", "June", "July", "August",
+                            "September", "October", "November", "December"];
+        
+            if (month) { // 월 정보가 있을 경우에만 월 문자열을 처리
+                month = months[parseInt(month, 10) - 1]; // 배열은 0부터 시작하므로 1을 빼줌
+            }
+        
+            if (year && month && day) {
+                return `${day} ${month} ${year}`;
+            } else if (year && month) {
+                return `${month} ${year}`;
+            } else if (year) {
+                return `${year}`;
+            } else {
+                return ""; // 연도 정보조차 없는 경우 빈 문자열 반환
+            }
+        }
+
+        // 현재 연도 및 날짜 계산
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const apiUrl = `//data.hungbok.net/data/games/${currentYear}.json`;
+        const newaddUrl = `//data.hungbok.net/data/games/list.json`;
+
+        // JSON 데이터 불러오기
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                function getLocalizedData(data, key) {
+                    if (data['fr'] && key in data['fr'] && data['fr'][key] !== undefined) {
+                        return data['fr'][key];
+                    } else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
+                        return data['en'][key];
+                    } else {
+                        // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
+                        return '제목 없음';
+                    }
+                }
+                
+                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                const validGames = data.filter(game => {
+                    const dateParts = game.date.split('-');
+                    return dateParts.length === 3 && new Date(game.date) < today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
+                })
+                .sort((a, b) => new Date(b.date) - new Date(a.date)); // 날짜가 큰 데이터부터 정렬
+                
+                const recentGames = validGames.slice(0, 5);
+        
+                if (recentGames.length < 5) {
+                    document.querySelector('.discover-container.new-release').classList.add('disabled');
+                }
+                
+                recentGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
+                            const formattedDate = formatDateToUK(game.date);
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${formattedDate}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.new-release').innerHTML += gameElement;
+                        });
+                });
+
+                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                const validupcomingGames = data.filter(game => {
+                    const dateParts = game.date.split('-');
+                    return dateParts.length === 3 && new Date(game.date) > today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
+                })
+                .sort((a, b) => new Date(a.date) - new Date(b.date)); // 날짜가 작은 데이터부터 정렬
+                
+                const upcomingGames = validupcomingGames.slice(0, 5);
+        
+                if (upcomingGames.length < 5) {
+                    document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
+                }
+                
+                upcomingGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
+                            const formattedDate = formatDateToUK(game.date);
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${formattedDate}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.upcoming-release').innerHTML += gameElement;
+                        });
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.querySelector('.discover-container').classList.add('disabled');
+            });
+
+        fetch(newaddUrl)
+            .then(response => response.json())
+            .then(data => {
+                function getLocalizedData(data, key) {
+                    if (data['fr'] && key in data['fr'] && data['fr'][key] !== undefined) {
+                        return data['fr'][key];
+                    } else if (data['en'] && key in data['en'] && data['en'][key] !== undefined) {
+                        return data['en'][key];
+                    } else {
+                        // 데이터가 누락되었거나 해당 언어 설정이 없는 경우
+                        return '제목 없음';
+                    }
+                }
+
+                const topGames = data.slice(0, 5);
+        
+                if (topGames.length < 5) {
+                    document.querySelector('.discover-container.new-added').classList.add('disabled');
+                }
+                
+                topGames.forEach(game => {
+                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                        .then(response => response.json())
+                        .then(gameData => {
+                            const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
+                            const title = getLocalizedData(dataToUse, 'title');
+                            const date = `${game.release_year}-${game.release_month}-${game.release_day}`;
+                            const formattedDate = formatDateToUK(date); // 수정된 date 값을 포매팅 함수에 전달
+                            const gameElement = `
+                                <div class="discover-content">
+                                    <div class="discover-item">
+                                        <div class="discover-title-time">${formattedDate}</div>
+                                        <div class="discover-item-thumbnail discover-thumbnail-hover">
+                                            <a href="https://www.hungbok.com/games?q=${game.url}" tabindex="0">
+                                                <img class="discover-thumbnail-logo" src="//media.hungbok.net/image/games/${game.url}/hb_logo.png" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error.svg'" loading="lazy">
+                                                <img class="discover-thumbnail-background" src="//media.hungbok.net/image/games/${game.url}/hb_thumbnail.jpg" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'" loading="lazy">
+                                                <div class="discover-title-name" title="${title}">${title}</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            
+                            document.querySelector('.discover-container.new-added').innerHTML += gameElement;
+                        });
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.querySelector('.discover-container').classList.add('disabled');
+            });
+
+        let freegamesData = [];
+        let filteredfreegamesData = [];
+        let freegamesStart = 0;
+        let freegamesLimit = 6;
+        
+        // 데이터를 가져오는 부분은 변경하지 않았습니다.
+        Promise.all([
+            fetch('//data.hungbok.net/data/free-games/games.json').then(response => response.json())
+        ]).then(results => {
+            freegamesData = results.flat();
+            // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+            filteredfreegamesData = freegamesData.filter(item => {
+                let now = new Date();
+                let startParts = item.start.split('-');
+                let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+                let endParts = item.end.split('-');
+                let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+                return now > itemStart && now < itemEnd;
+            })
+            // 종료 시간이 현재 시간에 가까운 순으로 정렬
+            .sort((a, b) => {
+                let now = new Date();
+                let aEndParts = a.end.split('-');
+                let aItemEnd = new Date(aEndParts[0], aEndParts[1] - 1, aEndParts[2], aEndParts[3], aEndParts[4], aEndParts[5]);
+                let bEndParts = b.end.split('-');
+                let bItemEnd = new Date(bEndParts[0], bEndParts[1] - 1, bEndParts[2], bEndParts[3], bEndParts[4], bEndParts[5]);
+                // a가 b보다 종료 시간이 더 가까우면 음수, 더 멀면 양수를 반환
+                return aItemEnd - bItemEnd;
+            });
+            loadMorefreegamesData();
         });
+        
+        // 아이템을 생성하고 추가하는 함수
+        function createAndAppendfreegamesItem(item) {
+            let now = new Date();
+        
+            // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
+            let parts = item.end.split('-');
+            let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+        
+            let isExpired = now > itemEnd; // 만료 여부 판단
+            let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
+        
+            let div = document.createElement('div');
+            div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+            div.innerHTML = `
+                <a class="item-image" href="${item.link}">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                </a>
+                <div class="info">
+                    <h1>${item.title}</h1>
+                    <div class="timer-container start" settime="${item.start}"></div>
+                    <div class="timer-container end" settime="${item.end}"></div>
+                    <a class="item-link" href="${item.link}" target="_blank"></a>
+                </div>
+                <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            `;
+            document.getElementById('freegamesContainer').appendChild(div);
+        
+            // 아이템을 추가한 후에 타이머를 시작합니다.
+            startTimer();
+        }
+        
+        // 'loadMorefreegamesData' 함수 수정
+        function loadMorefreegamesData() {
+            let loadedItems = 0;
+            while (loadedItems < freegamesLimit && freegamesStart < filteredfreegamesData.length) {
+                let item = filteredfreegamesData[freegamesStart];
+                createAndAppendfreegamesItem(item);
+                freegamesStart++;
+                loadedItems++;
+            }
+        }
+
+        let bundleData = [];
+        let filteredbundleData = [];
+        let bundleStart = 0;
+        let bundleLimit = 6;
+        
+        // 데이터를 가져오는 부분은 변경하지 않았습니다.
+        Promise.all([
+            fetch('//data.hungbok.net/data/free-games/bundle.json').then(response => response.json())
+        ]).then(results => {
+            bundleData = results.flat();
+            // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+            filteredbundleData = bundleData.filter(item => {
+                let now = new Date();
+                let startParts = item.start.split('-');
+                let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+                let endParts = item.end.split('-');
+                let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+                return now > itemStart && now < itemEnd;
+            });
+            
+            // 'published' 값을 기준으로 정렬합니다. 가장 최근에 추가된 순으로 정렬
+            filteredbundleData.sort((a, b) => {
+                let aParts = a.published.split('-');
+                let aPublished = new Date(aParts[0], aParts[1] - 1, aParts[2], aParts[3], aParts[4], aParts[5]);
+                let bParts = b.published.split('-');
+                let bPublished = new Date(bParts[0], bParts[1] - 1, bParts[2], bParts[3], bParts[4], bParts[5]);
+                return bPublished - aPublished;
+            });
+        
+            loadMorebundleData();
+        });
+        
+        // 아이템을 생성하고 추가하는 함수
+        function createAndAppendbundleItem(item) {
+            let now = new Date();
+        
+            // 'yyyy-mm-dd-hh-mm-ss' 형식의 문자열을 Date 객체로 변환
+            let parts = item.end.split('-');
+            let itemEnd = new Date(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+        
+            let isExpired = now > itemEnd; // 만료 여부 판단
+            let expiredClass = isExpired ? 'expired' : ''; // 만료되었다면 'expired' 클래스를, 아니라면 빈 문자열을 할당
+        
+            let div = document.createElement('div');
+            div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd} ${expiredClass}`;
+            div.innerHTML = `
+                <a class="item-image" href="${item.link}">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                </a>
+                <div class="info">
+                    <h1>${item.title}</h1>
+                    <div class="timer-container start" settime="${item.start}"></div>
+                    <div class="timer-container end" settime="${item.end}"></div>
+                    <a class="item-link" href="${item.link}" target="_blank"></a>
+                </div>
+                <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+            `;
+            document.getElementById('bundleContainer').appendChild(div);
+        
+            // 아이템을 추가한 후에 타이머를 시작합니다.
+            startTimer();
+        }
+        
+        // 'loadMorebundleData' 함수 수정
+        function loadMorebundleData() {
+            let loadedItems = 0;
+            while (loadedItems < bundleLimit && bundleStart < filteredbundleData.length) {
+                let item = filteredbundleData[bundleStart];
+                createAndAppendbundleItem(item);
+                bundleStart++;
+                loadedItems++;
+            }
+        }
+
+        let upcomingData = [];
+        let filteredUpcomingData = [];
+        let upcomingStart = 0;
+        let upcomingLimit = 9;
+        
+        // 데이터를 가져오는 부분은 변경하지 않았습니다.
+        Promise.all([
+            fetch('//data.hungbok.net/data/games/sales.json').then(response => response.json())
+        ]).then(results => {
+            upcomingData = results.flat();
+            // 필터링 로직을 추가하여 조건에 맞는 데이터만 남깁니다.
+            filteredUpcomingData = upcomingData.filter(item => {
+                let now = new Date();
+                let startParts = item.start.split('-');
+                let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+                let endParts = item.end.split('-');
+                let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+                return now > itemStart && now < itemEnd;
+            });
+            loadMoreUpcomingData();
+        });
+        
+        // 아이템을 생성하고 추가하는 함수
+        function createAndAppendUpcomingItem(item) {
+            let now = new Date();
+        
+            // 시작 시간 파싱
+            let startParts = item.start.split('-');
+            let itemStart = new Date(startParts[0], startParts[1] - 1, startParts[2], startParts[3], startParts[4], startParts[5]);
+        
+            // 종료 시간 파싱
+            let endParts = item.end.split('-');
+            let itemEnd = new Date(endParts[0], endParts[1] - 1, endParts[2], endParts[3], endParts[4], endParts[5]);
+        
+            // 현재 시간이 시작 시간 이후이고 종료 시간 이전인지 확인
+            if (now > itemStart && now < itemEnd) {
+                let div = document.createElement('div');
+                div.className = `item ${item.type} ${item.content} from-${item.from} esd-${item.esd}`;
+                div.innerHTML = `
+                    <a class="item-link" href="${item.link}" target="_blank">
+                        <div class="item-image">
+                            <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                        </div>
+                        <h1 class="from-${item.from}">${item.title}</h1>
+                        <div class="sale-info">
+                            <div class="sale-timer-container">
+                                <div class="sale-timer timer-container start" settime="${item.start}"></div>
+                                <div class="sale-timer timer-container end" settime="${item.end}"></div>
+                            </div>
+                        </div>
+                        <img class="item-background" src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
+                    </a>
+                `;
+        
+                document.getElementById('upcomingContainer').appendChild(div);
+        
+                startTimer();
+            }
+        }
+        
+        // 'loadMoreUpcomingData' 함수 수정
+        function loadMoreUpcomingData() {
+            let loadedItems = 0;
+            while (loadedItems < upcomingLimit && upcomingStart < filteredUpcomingData.length) {
+                let item = filteredUpcomingData[upcomingStart];
+                createAndAppendUpcomingItem(item);
+                upcomingStart++;
+                loadedItems++;
+            }
+        }
+        
+        // 서버 시간과 로컬 시간 표시 함수
+        function displayTime() {
+            let now = new Date(); // 현재 시간을 받아옵니다.
+        
+            // 컴퓨터의 로컬 시간을 UTC 형식으로 변환합니다.
+            let localTime = now.toISOString().slice(0,19).replace('T', ' ');
+        
+            // 사용자의 시간대를 얻습니다.
+            let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+            // UTC+09:00 기준의 서버 시간을 계산하고 UTC 형식으로 변환합니다.
+            let serverTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60 * 1000) + (9 * 60 * 60 * 1000));
+            serverTime = serverTime.toISOString().slice(0,19).replace('T', ' ');
+        }
+        
+        setInterval(displayTime, 1000); // 1초마다 함수를 반복 실행하여 시간을 업데이트합니다.
+        
+        // 타이머 기능
+        function startTimer() {
+            let timerElements = document.querySelectorAll('.timer-container'); // 타이머를 적용할 요소를 선택합니다.
+        
+            timerElements.forEach(element => { // 각 요소에 대해 반복합니다.
+                let setTime = element.getAttribute('settime'); // settime 속성 값을 가져옵니다.
+                let setTimeArray = setTime.split('-'); // '-'로 구분된 setTime 값을 배열로 변환합니다.
+        
+                // setTime 값이 yyyy-mm-dd-hh-mm-ss 형식이므로, Date 객체를 이 형식에 맞게 생성합니다.
+                let endDate = new Date(setTimeArray[0], setTimeArray[1] - 1, setTimeArray[2], setTimeArray[3], setTimeArray[4], setTimeArray[5]);
+        
+                let interval = setInterval(function() { // setInterval 함수로 1초마다 반복합니다.
+                    let now = new Date(); // 현재 시간을 가져옵니다.
+                    let distance = endDate - now; // 남은 시간을 계산합니다.
+        
+                    // 시간, 분, 초를 계산합니다.
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+                    // 시간, 분, 초를 항상 두 자리 숫자로 표시합니다.
+                    hours = hours.toString().padStart(2, '0');
+                    minutes = minutes.toString().padStart(2, '0');
+                    seconds = seconds.toString().padStart(2, '0');
+        
+                    // 남은 시간에 따른 클래스를 추가합니다.
+                    if (distance <= 0) {
+                        element.classList.add('expired');
+                    } else if (distance <= 60000 && !element.classList.contains('one-minute-left')) {
+                        element.classList.add('one-minute-left');
+                    } else if (distance <= 3600000 && !element.classList.contains('one-hour-left')) {
+                        element.classList.add('one-hour-left');
+                    } else if (distance <= 10800000 && !element.classList.contains('three-hours-left')) {
+                        element.classList.add('three-hours-left');
+                    } else if (distance <= 21600000 && !element.classList.contains('six-hours-left')) {
+                        element.classList.add('six-hours-left');
+                    } else if (distance <= 43200000 && !element.classList.contains('twelve-hours-left')) {
+                        element.classList.add('twelve-hours-left');
+                    } else if (distance <= 86400000 && !element.classList.contains('one-day-left')) {
+                        element.classList.add('one-day-left');
+                    }
+        
+                    // 남은 시간이 24시간 미만인 경우에는 'hh:mm:ss' 형식으로, 그 이상인 경우에는 'dd:hh:mm:ss' 형식으로 표시합니다.
+                    if (days > 0) {
+                        days = days.toString().padStart(2, '0');
+                        element.textContent = `${days}:${hours}:${minutes}:${seconds}`;
+                    } else {
+                        element.textContent = `${hours}:${minutes}:${seconds}`;
+                    }
+        
+                    // 남은 시간이 없으면 타이머를 멈춥니다.
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        element.textContent = "00:00:00";
+                    }
+                }, 100);
+            });
+        }
     }
 });
 

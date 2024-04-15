@@ -845,7 +845,7 @@ $(document).ready(function(){
             });
         });
     } else {
-        $('body').addClass('en');
+        $('body').addClass('ja');
         $('.section').remove();
         $('.top-backgrounds').remove();
         $('main').append('<div class="game-section">'+
@@ -1183,7 +1183,7 @@ $(document).ready(function(){
                         .then(gameData => {
                             const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
                             const title = getLocalizedData(dataToUse, 'title');
-                            const formattedDate = formatDateToKR(game.date);
+                            const formattedDate = formatDateToJP(game.date);
                             const gameElement = `
                                 <div class="discover-content">
                                     <div class="discover-item">
@@ -1221,7 +1221,7 @@ $(document).ready(function(){
                         .then(gameData => {
                             const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
                             const title = getLocalizedData(dataToUse, 'title');
-                            const formattedDate = formatDateToKR(game.date);
+                            const formattedDate = formatDateToJP(game.date);
                             const gameElement = `
                                 <div class="discover-content">
                                     <div class="discover-item">
