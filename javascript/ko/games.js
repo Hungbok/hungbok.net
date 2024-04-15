@@ -1163,8 +1163,7 @@ $(document).ready(function(){
                         return '제목 없음';
                     }
                 }
-                
-                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+
                 const validGames = data.filter(game => {
                     const dateParts = game.date.split('-');
                     return dateParts.length === 3 && new Date(game.date) < today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
@@ -1177,15 +1176,15 @@ $(document).ready(function(){
                     document.querySelector('.discover-container.new-release').classList.add('disabled');
                 }
                 
-                recentGames.forEach(game => {
-                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                const gameFetchPromises = recentGames.map((game, index) => {
+                    return fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
                             const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
                             const title = getLocalizedData(dataToUse, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
-                                <div class="discover-content">
+                                <div class="discover-content" data-order="${index + 1}">
                                     <div class="discover-item">
                                         <div class="discover-title-time">${formattedDate}</div>
                                         <div class="discover-item-thumbnail discover-thumbnail-hover">
@@ -1197,12 +1196,21 @@ $(document).ready(function(){
                                         </div>
                                     </div>
                                 </div>`;
-                            
-                            document.querySelector('.discover-container.new-release').innerHTML += gameElement;
+                            return gameElement;
                         });
                 });
-
-                // 유효한 날짜 형식 필터링 및 날짜 기준으로 정렬
+                
+                Promise.all(gameFetchPromises).then(gameElements => {
+                    const container = document.querySelector('.discover-container.new-release');
+                    gameElements.forEach(element => {
+                        container.innerHTML += element;
+                    });
+                    
+                    Array.from(container.children)
+                        .sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'))
+                        .forEach(node => container.appendChild(node));
+                });
+                
                 const validupcomingGames = data.filter(game => {
                     const dateParts = game.date.split('-');
                     return dateParts.length === 3 && new Date(game.date) > today; // yyyy-mm-dd 형식이며 오늘 이전인 데이터만 포함
@@ -1215,15 +1223,15 @@ $(document).ready(function(){
                     document.querySelector('.discover-container.upcoming-release').classList.add('disabled');
                 }
                 
-                upcomingGames.forEach(game => {
-                    fetch(`//data.hungbok.net/data/games/${game.url}.json`)
+                const upcominggameFetchPromises = upcomingGames.map((game, index) => {
+                    return fetch(`//data.hungbok.net/data/games/${game.url}.json`)
                         .then(response => response.json())
                         .then(gameData => {
                             const dataToUse = Array.isArray(gameData) && gameData.length > 0 ? gameData[0] : {};
                             const title = getLocalizedData(dataToUse, 'title');
                             const formattedDate = formatDateToKR(game.date);
                             const gameElement = `
-                                <div class="discover-content">
+                                <div class="discover-content" data-order="${index + 1}">
                                     <div class="discover-item">
                                         <div class="discover-title-time">${formattedDate}</div>
                                         <div class="discover-item-thumbnail discover-thumbnail-hover">
@@ -1235,9 +1243,19 @@ $(document).ready(function(){
                                         </div>
                                     </div>
                                 </div>`;
-                            
-                            document.querySelector('.discover-container.upcoming-release').innerHTML += gameElement;
+                            return gameElement;
                         });
+                });
+                
+                Promise.all(upcominggameFetchPromises).then(gameElements => {
+                    const container = document.querySelector('.discover-container.new-release');
+                    gameElements.forEach(element => {
+                        container.innerHTML += element;
+                    });
+                    
+                    Array.from(container.children)
+                        .sort((a, b) => a.getAttribute('data-order') - b.getAttribute('data-order'))
+                        .forEach(node => container.appendChild(node));
                 });
             })
             .catch(error => {
