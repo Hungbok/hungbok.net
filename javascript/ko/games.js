@@ -337,42 +337,42 @@ $(document).ready(function(){
             $(".platform.geforcenow").append('<div class="icon-geforcenow" ttt="Geforce Now"></div>');
             $(".platform.stadia").append('<div class="icon-stadia" ttt="Stadia"></div>');
     
-            const opencritic_rating_score = data.openrasc;
-            const opencritic_rating_link = data.openralink;
-            const opencritic_rating_image = data.openraimg;
-            const opencritic_score = data.opensc;
-            const opencritic_link = data.openlink;
-            const opencritic_percent = data.openper;
-            const opencritic_recommend_score = data.openresc;
-            const opencritic_recommend_link = data.openrelink;
-            const opencritic_recommend_percent = data.openreper;
+            const opencritic_rating_score = data[0].openrasc;
+            const opencritic_rating_link = data[0].openralink;
+            const opencritic_rating_image = data[0].openraimg;
+            const opencritic_score = data[0].opensc;
+            const opencritic_link = data[0].openlink;
+            const opencritic_percent = data[0].openper;
+            const opencritic_recommend_score = data[0].openresc;
+            const opencritic_recommend_link = data[0].openrelink;
+            const opencritic_recommend_percent = data[0].openreper;
     
-            const appstore_score = data.appstoresc;
-            const appstore_link = data.appstorelink;
-            const appstore_percent = data.appstoreper;
+            const appstore_score = data[0].appstoresc;
+            const appstore_link = data[0].appstorelink;
+            const appstore_percent = data[0].appstoreper;
     
-            const googleplay_score = data.googleplaysc;
-            const googleplay_link = data.googleplaylink;
-            const googleplay_percent = data.googleplayper;
+            const googleplay_score = data[0].googleplaysc;
+            const googleplay_link = data[0].googleplaylink;
+            const googleplay_percent = data[0].googleplayper;
     
-            const steam_score = data.steamsc;
-            const steam_link = data.steamlink;
-            const steam_percent = data.steamper;
-            const steam_userscore_score = data.steamusersc;
-            const steam_userscore_link = data.steamuserlink;
-            const steam_userscore_percent = data.steamuserper;
+            const steam_score = data[0].steamsc;
+            const steam_link = data[0].steamlink;
+            const steam_percent = data[0].steamper;
+            const steam_userscore_score = data[0].steamusersc;
+            const steam_userscore_link = data[0].steamuserlink;
+            const steam_userscore_percent = data[0].steamuserper;
     
-            const epicgames_score = data.epicsc;
-            const epicgames_link = data.epiclink;
-            const epicgames_percent = data.epicper;
+            const epicgames_score = data[0].epicsc;
+            const epicgames_link = data[0].epiclink;
+            const epicgames_percent = data[0].epicper;
     
-            const gog_score = data.gogsc;
-            const gog_link = data.goglink;
-            const gog_percent = data.gogper;
+            const gog_score = data[0].gogsc;
+            const gog_link = data[0].goglink;
+            const gog_percent = data[0].gogper;
     
-            const microsoft_score = data.mssc;
-            const microsoft_link = data.mslink;
-            const microsoft_percent = data.msper;
+            const microsoft_score = data[0].mssc;
+            const microsoft_link = data[0].mslink;
+            const microsoft_percent = data[0].msper;
             
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-three-score">'+
                 '<div class="rating-image">'+
@@ -380,7 +380,7 @@ $(document).ready(function(){
                 '</div>'+
             '</div>');
     
-            var metacritic_value = data.metacount;
+            var metacritic_value = data[0].metacount;
             var metacriticData = [];
             for (var i = 1; i <= metacritic_value; i++) {
                 var metaClass = data['metaclass' + i];
