@@ -197,7 +197,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://music.amazon.com/embed/', '380', '300');
+        openTrack(e, videoID, 'https://music.amazon.com/embed/', '300', '380');
     });
 
     $(document).on('click', '.deezer-track', function(e) {
