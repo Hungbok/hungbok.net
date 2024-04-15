@@ -3314,21 +3314,24 @@ div.system-requirements-title {
 
 .discover-section {
     text-align: left;
-    max-width: 1200px;
+    max-width: 1100px;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .discover-title {
-    margin: 25px 20px;
+    margin: 25px 10px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--text-1);
+    position: relative;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
-    transform: translate(0, 9.5px);
 }
 
 .discover-text {
@@ -3344,20 +3347,76 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.discover-text:after {
+    content: "❯";
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 0;
+    vertical-align: text-top;
+    margin: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.discover-contents:hover .discover-title .discover-text:after {
+    opacity: 0.5;
+    margin: 0 0 0 10px;
+}
+
+.discover-contents:hover .discover-title .discover-text:hover:after {
+    opacity: 1;
+    margin: 0 0 0 20px;
+}
+
+.discover-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.discover-contents:hover .discover-title .discover-button {
+    opacity: 1;
+    color: var(--text-6);
+}
+
+.discover-contents:hover .discover-title .discover-button:hover {
+    color: var(--text-2);
+}
+
 .discover-container {
     margin: 0px;
     padding: 0px;
     vertical-align: top;
-    display: inline-block;
+    display: flex;
     text-align: center;
     position: relative;
     color: #ffffff;
+    justify-content: space-between;
+}
+
+.discover-container.disabled {
+    justify-content: flex-start;
 }
 
 .discover-content {
     position: relative;
     float: left;
     margin: 5px;
+}
+
+.discover-content.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .discover-item {
@@ -3374,12 +3433,13 @@ div.system-requirements-title {
 }
 
 .discover-title-time {
-    transform: translate(-50%, -125%);
+    transform: translate(-50%, 0%);
     z-index: -2;
     position: absolute;
-    top: 0;
+    bottom: calc(100% - -10px);
     left: 50%;
     border-radius: 5px;
+    text-wrap: nowrap;
     color: #bbbbbb;
     opacity: 0;
     pointer-events: none;
@@ -3483,6 +3543,736 @@ div.system-requirements-title {
 
 .discover-thumbnail-hover:hover .discover-title-name {
     transform: translate(0, 0%);
+}
+
+#upcomingContainer .item-background {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    filter: blur(50px) brightness(0.5);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.timer-container.end.one-day-left {
+    color: #ffcd39;
+}
+
+.timer-container.end.twelve-hours-left {
+    color: #cc9a06;
+}
+
+.timer-container.end.six-hours-left {
+    color: #fd9843;
+}
+
+.timer-container.end.three-hours-left {
+    color: #ca6510;
+}
+
+.timer-container.end.one-hour-left {
+    color: #e35d6a;
+}
+
+.timer-container.end.one-minute-left {
+    color: #b02a37;
+}
+
+#upcomingContainer {
+    width: auto;
+    max-width: 1445px;
+    min-height: 351px;
+    gap: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#upcomingContainer .item {
+    padding: unset;
+    max-width: 350px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#upcomingContainer .item:hover {
+    transform: translate(0px, -5px);
+}
+
+#upcomingContainer .item::before,
+#upcomingContainer .item::after {
+    content: unset;
+}
+
+#upcomingContainer .item .item-link {
+    background: unset;
+    color: unset;
+    font-weight: unset;
+    text-decoration: unset;
+    padding: unset;
+    margin-top: unset;
+    border-radius: unset;
+    display: block;
+    height: 100%;
+}
+
+#upcomingContainer .item .item-link:hover {
+    opacity: 1;
+}
+
+#upcomingContainer .item .item-image {
+    border-radius: unset;
+    filter: unset;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#upcomingContainer .item .item-image:before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    pointer-events: none;
+    filter: drop-shadow(0px 0px 20px black);
+}
+
+#upcomingContainer .item-image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+#upcomingContainer .item:hover .item-image img {
+    transform: scale(1);
+}
+
+#upcomingContainer .item h1 {
+    background-color: unset;
+    padding: unset;
+    width: unset;
+    border-radius: unset;
+    backdrop-filter: unset;
+    margin: 20px;
+    text-align: left;
+    line-height: 26px;
+    display: grid;
+    align-items: start;
+    justify-content: center;
+    grid-template-columns: 35px auto;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    text-wrap: balance;
+    filter: drop-shadow(0px 0px 5px black);
+    pointer-events: none;
+}
+
+#upcomingContainer .item h1:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+
+#upcomingContainer .from-steam::before {
+    background: url(//media.hungbok.net/image/icon/steam.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-epicgamesstore::before {
+    background: url(//media.hungbok.net/image/icon/epicgamesstore.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-gogcom::before {
+    background: url(//media.hungbok.net/image/icon/gogcom.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-battlenet::before {
+    background: url(//media.hungbok.net/image/icon/battlenet.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-eaapp::before {
+    background: url(//media.hungbok.net/image/icon/ea.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-ubisoftstore::before {
+    background: url(//media.hungbok.net/image/icon/ubisoft.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-xboxstore::before {
+    background: url(//media.hungbok.net/image/icon/xbox.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-playstationstore::before {
+    background: url(//media.hungbok.net/image/icon/playstation.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .from-nintendoeshop::before {
+    background: url(//media.hungbok.net/image/icon/nintendo.svg) no-repeat center / 25px 25px;
+}
+
+#upcomingContainer .sale-info {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 200px);
+    justify-content: space-between;
+}
+
+#upcomingContainer .item h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#upcomingContainer .sale-name {
+    font-size: 18px;
+    text-wrap: balance;
+}
+
+#upcomingContainer .title-steam::before {
+    content: "Steam";
+}
+
+#upcomingContainer .title-epicgamesstore::before {
+    content: "Epic Games Store";
+}
+
+#upcomingContainer .title-gogcom::before {
+    content: "GOG.com";
+}
+
+#upcomingContainer .title-battlenet::before {
+    content: "Battle.net";
+}
+
+#upcomingContainer .title-eaapp::before {
+    content: "EA";
+}
+
+#upcomingContainer .title-ubisoftstore::before {
+    content: "Ubisoft Store";
+}
+
+#upcomingContainer .title-xboxstore::before {
+    content: "Xbox Store";
+}
+
+#upcomingContainer .title-playstationstore::before {
+    content: "PlayStation Store";
+}
+
+#upcomingContainer .title-nintendoeshop::before {
+    content: "Nintendo Switch";
+}
+
+#upcomingContainer .date-container {
+    display: inline-block;
+}
+
+#upcomingContainer .sale-date p {
+    margin: 0px 2.5px;
+    display: inline-block;
+}
+
+#upcomingContainer .sale-timer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: calc(100% - 200px);
+    z-index: 1;
+    width: 100%;
+}
+
+#upcomingContainer .timer-container {
+    font-size: 24px;
+    margin: 0px 10px 20px;
+    font-weight: bold;
+    display: inline-block;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#upcomingContainer .sale-timer.start.expired,
+#upcomingContainer .sale-timer.end.expired {
+    display: none;
+}
+
+#upcomingContainer .timer-container.start::before,
+#upcomingContainer .timer-container.end::before {
+    display: block;
+    color: var(--white);
+}
+
+#dataContainer > .discover-contents > .free-games {
+    width: auto;
+    max-width: 1200px;
+    gap: 15px;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: stretch;
+    position: relative;
+    justify-content: flex-start;
+}
+
+#dataContainer > .discover-contents > .free-games .item {
+    max-width: 350px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .item::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    padding: 0px 50px;
+    border-radius: 50px;
+    font-size: 175px;
+    font-weight: bold;
+    left: 52.5%;
+    top: 25%;
+    text-wrap: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: rotate(340deg) translate(-50%, -50%);
+    background-color: black;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .item::after {
+    content: "";
+    width: 500px;
+    height: 500px;
+    background-size: 150px 150px;
+    display: inline-block;
+    position: absolute;
+    padding: 49px;
+    background-repeat: space;
+    top: -90px;
+    right: -110px;
+    z-index: -1;
+    transform: rotate(25deg);
+    opacity: 0.5;
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+#dataContainer > .discover-contents > .free-games .item-image {
+    min-width: 350px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 10px var(--shadow));
+    position: relative;
+}
+
+#dataContainer > .discover-contents > .free-games .item-image img {
+    height: auto;
+    width: 100%;
+    filter: blur(10px) brightness(0.75) grayscale(0.5);
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .item-image img:first-child {
+    position: relative;
+    height: 100%;
+    width: auto;
+    z-index: 1;
+    filter: unset;
+}
+
+#dataContainer > .discover-contents > .free-games .item:hover .item-image img {
+    transform: scale(1.05);
+}
+
+#dataContainer > .discover-contents > .free-games .item-image::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+#dataContainer > .discover-contents > .free-games .item-image:before {
+    content: "";
+    width: 30px;
+    height: 20px;
+    z-index: 10;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    pointer-events: none;
+}
+
+#dataContainer > .discover-contents > .free-games .item.jp .item-image:before {
+    background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item.us .item-image:before {
+    background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item.eu .item-image:before {
+    background: url(//media.hungbok.net/image/flag/eu.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item.gb .item-image:before {
+    background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item.fr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item.de .item-image:before {
+    background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item.kr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
+}
+
+#dataContainer > .discover-contents > .free-games .item .info {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+#dataContainer > .discover-contents > .free-games .item h1 {
+    width: calc(100% - 40px);
+    text-wrap: balance;
+    position: absolute;
+    margin: 0;
+    bottom: calc(100% - -20px);
+    font-size: 16px;
+    text-align: left;
+    left: 20px;
+    pointer-events: none;
+}
+
+#dataContainer > .discover-contents > .free-games .item h3 {
+    display: none;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container {
+    font-size: 24px;
+    font-weight: bold;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .item .timer-container.start::before {
+    margin-right: 10px;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.start.expired,
+#dataContainer > .discover-contents > .free-games .timer-container.end {
+    display: none;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.start.expired + .timer-container.end {
+    display: block;
+}
+
+#dataContainer > .discover-contents > .free-games .item.unknown .timer-container.end {
+    font-size: 0;
+    color: transparent;
+}
+
+#dataContainer > .discover-contents > .free-games .item.unknown .timer-container.end::after {
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--text-1);
+}
+
+#dataContainer > .discover-contents > .free-games .item-link {
+    background: linear-gradient(90deg, rgb(230, 195, 0), 60%, rgb(247, 229, 137));
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 20px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .item-link:hover {
+    opacity: 0.5;
+}
+
+#dataContainer > .discover-contents > .free-games .item-background {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    filter: blur(50px) brightness(0.5);
+    z-index: -1;
+    pointer-events: none;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.end.one-day-left {
+    color: #ffcd39;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.end.twelve-hours-left {
+    color: #cc9a06;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.end.six-hours-left {
+    color: #fd9843;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.end.three-hours-left {
+    color: #ca6510;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.end.one-hour-left {
+    color: #e35d6a;
+}
+
+#dataContainer > .discover-contents > .free-games .timer-container.end.one-minute-left {
+    color: #b02a37;
+}
+
+#dataContainer > .discover-contents > .free-games .expired.item {
+    filter: grayscale(0.75) brightness(0.25);
+    opacity: 0.5;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .expired.item:hover {
+    filter: grayscale(0.25) brightness(0.5);
+    opacity: 1;
+}
+
+#dataContainer > .discover-contents > .free-games .expired.item::before {
+    font-size: 75px;
+    left: 52.5%;
+    top: 35%;
+    opacity: 1;
+    transform: rotate(340deg) translate(-50%, -50%);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#dataContainer > .discover-contents > .free-games .expired.item:hover::before {
+    opacity: 0.25;
+}
+
+#dataContainer > .discover-contents > .free-games .esd-steam::after {
+    background-image: url(//media.hungbok.net/image/icon/steam.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-epicgamesstore::after {
+    background-image: url(//media.hungbok.net/image/icon/epicgamesstore.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-gogcom::after {
+    background-image: url(//media.hungbok.net/image/icon/gogcom.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-microsoftstore::after {
+    background-image: url(//media.hungbok.net/image/icon/microsoftstore.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-eaapp::after {
+    background-image: url(//media.hungbok.net/image/icon/ea.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-ubisoftconnect::after {
+    background-image: url(//media.hungbok.net/image/icon/ubisoft.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-battlenet::after {
+    background-image: url(//media.hungbok.net/image/icon/battlenet.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-xboxstore::after {
+    background-image: url(//media.hungbok.net/image/icon/xbox.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-playstationstore::after {
+    background-image: url(//media.hungbok.net/image/icon/playstation.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-humblebundle::after {
+    background-image: url(//media.hungbok.net/image/icon/humblebundle.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-amazongamesapp::after {
+    background-image: url(//media.hungbok.net/image/icon/primegaming.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-playstationplus::after {
+    background-image: url(//media.hungbok.net/image/icon/playstationplus.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-fanatical::after {
+    background-image: url(//media.hungbok.net/image/icon/fanatical.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-humblechoice::after {
+    background-image: url(//media.hungbok.net/image/icon/humblechoice.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-indiegala::after {
+    background-image: url(//media.hungbok.net/image/icon/indiegala.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-itchio::after {
+    background-image: url(//media.hungbok.net/image/icon/itchio.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-legacygames::after {
+    background-image: url(//media.hungbok.net/image/icon/legacygames.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-nintendoeshop::after {
+    background-image: url(//media.hungbok.net/image/icon/nintendo.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .esd-drmfree::after {
+    background-image: url(//media.hungbok.net/image/icon/unlock.svg);
+}
+
+#dataContainer > .discover-contents > .free-games .hide-expired .item.expired {
+    display: none;
+}
+
+#dataContainer > .discover-contents > .free-games .item a.item-link {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 0;
+    display: inline-block;
+    border-radius: 20px;
+    line-height: 24px;
+}
+
+#dataContainer > .discover-contents > .free-games .item.games a.item-link {
+    background: linear-gradient(90deg, #e6c300, 60%, #f7e589);
+}
+
+#dataContainer > .discover-contents > .free-games .item.bundle a.item-link {
+    background: url(//media.hungbok.net/image/icon/bag.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #e67300, 60%, #f4bd85);
+    padding: 10px 45px 10px 15px;
+}
+
+#dataContainer > .discover-contents > .free-games .item.trials a.item-link {
+    background: url(//media.hungbok.net/image/icon/trials.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00e6a1, 60%, #90fddc);
+    padding: 10px 45px 10px 15px;
+}
+
+#dataContainer > .discover-contents > .free-games .item.subscription a.item-link {
+    background: url(//media.hungbok.net/image/icon/credit-card.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #ec5151, 60%, #fd9090);
+    padding: 10px 45px 10px 15px;
+}
+
+#dataContainer > .discover-contents > .free-games .item.subscription.from-primegaming a.item-link {
+    background: url(//media.hungbok.net/image/icon/primegaming_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #9146ff, 60%, #bf99f8);
+}
+
+#dataContainer > .discover-contents > .free-games .item.subscription.from-humblechoice a.item-link {
+    background: url(//media.hungbok.net/image/icon/humblechoice_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #45e600, 60%, #a5ee86);
+}
+
+#dataContainer > .discover-contents > .free-games .item.subscription.from-playstationplus a.item-link {
+    background: url(//media.hungbok.net/image/icon/playstationplus_color.svg) no-repeat calc(100% - 15px) center / 20px 20px, linear-gradient(90deg, #00b8e6, 60%, #89e2f8);
+}
+
+#dataContainer > .discover-contents > .free-games .item.subscription.from-nintendoswitchonline a.item-link::before,
+#dataContainer > .discover-contents > .free-games .item.subscription.from-nintendoswitchonline a.item-link::after,
+#dataContainer > .discover-contents > .free-games .item.trials.from-playstationstore a.item-link::before,
+#dataContainer > .discover-contents > .free-games .item.trials.from-playstationstore a.item-link::after {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#dataContainer #upcomingContainer .item a.item-link::before,
+#dataContainer #upcomingContainer .item a.item-link::after {
+    content: unset;
 }
 
 /* region 000 - Top */
