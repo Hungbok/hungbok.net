@@ -227,6 +227,6 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://music.line.me/webapp/embed/track/', '750', '214');
+        openTrack(e, videoID, 'https://music.line.me/webapp/embed/track/', '600', '214');
     });
 });

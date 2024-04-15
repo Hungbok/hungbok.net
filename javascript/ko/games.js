@@ -138,35 +138,7 @@ $(document).ready(function(){
                 '{franchise5}': data[0].franchise5,
 
                 '{review}': data[0].review,
-                '{metacritic}': data[0].metacritic,
-                '{opencritic}': data[0].opencritic,
-                '{metacritic1}': data[0].metacritic1,
-                '{metacritic2}': data[0].metacritic2,
-                '{metacritic3}': data[0].metacritic3,
-                '{metacritic4}': data[0].metacritic4,
-                '{metacritic5}': data[0].metacritic5,
-                '{metacritic6}': data[0].metacritic6,
-                '{metacritic7}': data[0].metacritic7,
-                '{metacritic8}': data[0].metacritic8,
-                '{metacritic9}': data[0].metacritic9,
-                '{metacritic10}': data[0].metacritic10,
-                '{metacritic11}': data[0].metacritic11,
-                '{metacritic12}': data[0].metacritic12,
-                '{metacritic_class1}': data[0].metacritic_class1,
-                '{metacritic_class2}': data[0].metacritic_class2,
-                '{metacritic_class3}': data[0].metacritic_class3,
-                '{metacritic_class4}': data[0].metacritic_class4,
-                '{metacritic_class5}': data[0].metacritic_class5,
-                '{metacritic_class6}': data[0].metacritic_class6,
-                '{metacritic_class7}': data[0].metacritic_class7,
-                '{metacritic_class8}': data[0].metacritic_class8,
-                '{metacritic_class9}': data[0].metacritic_class9,
-                '{metacritic_class10}': data[0].metacritic_class10,
-                '{metacritic_class11}': data[0].metacritic_class11,
-                '{metacritic_class12}': data[0].metacritic_class12,
-                '{opencritic_rating}': data[0].opencritic_rating,
-                '{top_critic_average}': data[0].top_critic_average,
-                '{critics_recommend}': data[0].critics_recommend,
+                '{rating}': data[0].rating,
                 
                 '{system_requirements_tab1}': data[0].system_requirements_tab1,
                 '{system_requirements_tab2}': data[0].system_requirements_tab2,
@@ -413,7 +385,6 @@ $(document).ready(function(){
             for (var i = 1; i <= metacritic_value; i++) {
                 var metaClass = data['metaclass' + i];
                 var metaTtt = data['metattt' + i];
-                var metaImg = data['metaimg' + i];
                 var metaScore = data['metasc' + i];
                 var metaLink = data['metalink' + i];
                 var metaPercent = data['metaper' + i];
@@ -423,7 +394,6 @@ $(document).ready(function(){
                 metacriticData.push({
                     class: metaClass,
                     ttt: metaTtt,
-                    img: metaImg,
                     link: metaLink,
                     score: metaScore,
                     percent: metaPercent,
