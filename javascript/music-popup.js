@@ -43,31 +43,61 @@ $(document).ready(function() {
     }
 
     $(document).on('click', '.spotify-album', function(e) {
+        var $popup = $(".music-track-popup");
+
+        $popup.fadeOut(400, function() {
+            $(this).remove();
+        });
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://open.spotify.com/embed/album/');
     });
 
     $(document).on('click', '.apple-album', function(e) {
+        var $popup = $(".music-track-popup");
+
+        $popup.fadeOut(400, function() {
+            $(this).remove();
+        });
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://embed.music.apple.com/album/');
     });
 
     $(document).on('click', '.amazon-album', function(e) {
+        var $popup = $(".music-track-popup");
+
+        $popup.fadeOut(400, function() {
+            $(this).remove();
+        });
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://music.amazon.com/embed/');
     });
 
     $(document).on('click', '.deezer-album', function(e) {
+        var $popup = $(".music-track-popup");
+
+        $popup.fadeOut(400, function() {
+            $(this).remove();
+        });
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://widget.deezer.com/widget/auto/album/');
     });
 
     $(document).on('click', '.naver-album', function(e) {
+        var $popup = $(".music-track-popup");
+
+        $popup.fadeOut(400, function() {
+            $(this).remove();
+        });
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://vibe.naver.com/embed/album/');
     });
 
     $(document).on('click', '.line-album', function(e) {
+        var $popup = $(".music-track-popup");
+
+        $popup.fadeOut(400, function() {
+            $(this).remove();
+        });
         var videoID = $(this).attr("videoid");
         openVideo(e, videoID, 'https://music.line.me/webapp/embed/album/');
     });
@@ -76,7 +106,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         var $popup = $('<div class="music-track-popup" style="display: none;"></div>');
-        var $content = $('<div class="music-track-popup-content"></div>');
+        var $content = $('<div class="music-track-popup-content" style="width: ' + width + 'px;"></div>');
         var $overlay = $('<span class="music-track-popup-overlay"></span>');
         $content.append('<span class="music-track-popup-pip"></span><span class="music-track-popup-close"></span><span class="music-track-loading"></span><iframe class="music-track-iframe" src="' + url + videoID + '?width=' + width + '&height=' + height + '&isPC=true&autoPlay=false" width="' + width + '" height="' + height + '" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture; clipboard-write"></iframe>');
         $popup.append($content);
