@@ -3126,10 +3126,10 @@ div.opencritic-reviews {
 }
 
 .discover-title-time {
-    transform: translate(-50%, -125%);
+    transform: translate(-50%, 0%);
     z-index: -2;
     position: absolute;
-    top: 0;
+    bottom: calc(100% - -10px);
     left: 50%;
     border-radius: 5px;
     text-wrap: nowrap;
