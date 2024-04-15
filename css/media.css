@@ -492,6 +492,7 @@
 .more-info-reviews,
 .story,
 .setting,
+.mv-player,
 .character,
 .books,
 .music {
@@ -1475,6 +1476,8 @@ div.system-requirements-title {
 
 .story [ttt]:hover::after,
 .setting [ttt]:hover::after,
+.lyrics [ttt]:hover::after,
+.mv-player [ttt]:hover::after,
 .character [ttt]:hover::after,
 .books [ttt]:hover::after,
 .music [ttt]:hover::after,
