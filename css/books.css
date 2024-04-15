@@ -31,7 +31,7 @@
 .top-content {
     min-height: 400px;
     display: grid;
-    grid-template-columns: auto 350px;
+    grid-template-columns: auto 320px;
     column-gap: 40px;
     row-gap: 20px;
     padding: 40px 80px;
@@ -53,6 +53,7 @@
 .top-title img {
     min-height: 50px;
     max-height: 100px;
+    max-width: 320px;
 }
 
 .contents-top-thumbnail {
@@ -105,21 +106,21 @@
     position: relative;
 }
 
-.item-hover .item:first-child {
+.item-hover > div:first-child {
     left: 50px;
     z-index: 2;
 }
 
-.item-hover .item:last-child {
+.item-hover > div:last-child {
     left: 100px;
     z-index: 1;
 }
 
-.contents-top-thumbnail:hover .item-hover .item:first-child {
+.contents-top-thumbnail:hover .item-hover > div:first-child {
     left: 100px;
 }
 
-.contents-top-thumbnail:hover .item-hover .item:last-child {
+.contents-top-thumbnail:hover .item-hover > div:last-child {
     left: 200px;
 }
 
