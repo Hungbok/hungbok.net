@@ -197,7 +197,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://music.amazon.com/embed/', '750', '300');
+        openTrack(e, videoID, 'https://music.amazon.com/embed/', '380', '380');
     });
 
     $(document).on('click', '.deezer-track', function(e) {
@@ -207,7 +207,7 @@ $(document).ready(function() {
             $(this).remove();
         });
         var videoID = $(this).attr("videoid");
-        openTrack(e, videoID, 'https://widget.deezer.com/widget/auto/track/', '500', '300');
+        openTrack(e, videoID, 'https://widget.deezer.com/widget/auto/track/', '380', '380');
     });
 
     $(document).on('click', '.naver-track', function(e) {
