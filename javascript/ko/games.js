@@ -383,33 +383,70 @@ $(document).ready(function(){
             var metacritic_value = data[0].metacount;
             var metacriticData = [];
             for (var i = 1; i <= metacritic_value; i++) {
-                var metaClass = data[0]['metaclass' + i];
-                var metaTtt = data[0]['metattt' + i];
-                var metaScore = data[0]['metasc' + i];
+                var metaPlatform = data[0]['metaplatform' + i];
                 var metaLink = data[0]['metalink' + i];
-                var metaPercent = data[0]['metaper' + i];
+                var metaScore = data[0]['metasc' + i];
                 var metaUserScore = data[0]['metausersc' + i];
-                var metaUserLink = data[0]['metauserlink' + i];
-                var metaUserPercent = data[0]['metauserper' + i];
+                var metaTTT = data[0]['metaplatform' + i];
+                if (metaPlatform === 'pc') {
+                    metaTTT = 'PC';
+                }
+                if (metaPlatform === 'playstation4') {
+                    metaTTT = 'PlayStation 4';
+                }
+                if (metaPlatform === 'playstation5') {
+                    metaTTT = 'PlayStation 5';
+                }
+                if (metaPlatform === 'xboxone') {
+                    metaTTT = 'Xbox One';
+                }
+                if (metaPlatform === 'xboxseriesxs') {
+                    metaTTT = 'Xbox Series X|S';
+                }
+                if (metaPlatform === 'nintendoswitch') {
+                    metaTTT = 'Nintendo Switch';
+                }
+                if (metaPlatform === 'ios') {
+                    metaTTT = 'iOS';
+                }
+                var metaPlatformLink = data[0]['metaplatform' + i];
+                if (metaPlatform === 'ios') {
+                    metaPlatformLink = 'ios-iphoneipad';
+                }
+                if (metaPlatform === 'playstation4') {
+                    metaPlatformLink = 'playstation-4';
+                }
+                if (metaPlatform === 'playstation5') {
+                    metaPlatformLink = 'playstation-5';
+                }
+                if (metaPlatform === 'xboxone') {
+                    metaPlatformLink = 'xbox-one';
+                }
+                if (metaPlatform === 'xboxseriesxs') {
+                    metaPlatformLink = 'xbox-series-x';
+                }
+                if (metaPlatform === 'nintendoswitch') {
+                    metaPlatformLink = 'nintendo-switch';
+                }
+                var metaUserPercent = (metaUserScore * 10).toString();
                 metacriticData.push({
-                    class: metaClass,
-                    ttt: metaTtt,
+                    platform: metaPlatform,
                     link: metaLink,
                     score: metaScore,
-                    percent: metaPercent,
-                    userscore_link: metaUserLink,
                     userscore_score: metaUserScore,
+                    ttt: metaTTT,
+                    platformLink: metaPlatformLink,
                     userscore_percent: metaUserPercent,
                 });
             }
             metacriticData.forEach(function(item) {
-                $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.class + '">'+
-                    '<div class="rating-platform icon-' + item.class + '" ttt="' + item.ttt + '"></div>'+
+                $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.platform + '">'+
+                    '<div class="rating-platform icon-' + item.platform + '" ttt="' + item.ttt + '"></div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">메타스코어</div>'+
-                        "<a href='" + item.link + "' class='rating-star' target='_blank' ttt='" + item.score + "'>"+
+                        "<a href='https://www.metacritic.com/game/" + item.link + "/critic-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.score + " / 100'>"+
                             '<div class="star-ratings">'+
-                                '<div class="fill-ratings" style="width: ' + item.percent + ';">'+
+                                '<div class="fill-ratings" style="width: ' + item.score + '%;">'+
                                     '<span>★★★★★</span>'+
                                 '</div>'+
                                 '<div class="empty-ratings">'+
@@ -420,9 +457,9 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">유저 평점</div>'+
-                        "<a href='" + item.userscore_link + "' class='rating-star' target='_blank' ttt='" + item.userscore_score + "'>"+
+                        "<a href='https://www.metacritic.com/game/" + item.link + "/user-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.userscore_score + " / 10'>"+
                             '<div class="star-ratings">'+
-                                '<div class="fill-ratings" style="width: ' + item.userscore_percent + ';">'+
+                                '<div class="fill-ratings" style="width: ' + item.userscore_percent + '%;">'+
                                     '<span>★★★★★</span>'+
                                 '</div>'+
                                 '<div class="empty-ratings">'+

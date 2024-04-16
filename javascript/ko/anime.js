@@ -271,14 +271,14 @@ $(document).ready(function(){
             var story_value = data[0].storycount; // story 수
             var storyData = [];
             for (var i = 1; i <= story_value; i++) {
-                var storyText = data['storytext' + i];
-                var storyTitle = data['storytitle' + i];
-                var storyTitleOriginal = data['storytitle_og' + i];
-                var storyEpisode = data['storyepisode' + i];
-                var storyDate = data['storydate' + i];
-                var storyId = data['storyid' + i];
+                var storyText = data[0]['storytext' + i];
+                var storyTitle = data[0]['storytitle' + i];
+                var storyTitleOriginal = data[0]['storytitle_og' + i];
+                var storyEpisode = data[0]['storyepisode' + i];
+                var storyDate = data[0]['storydate' + i];
+                var storyId = data[0]['storyid' + i];
                 var storyImage = 'story_' + i;
-                var storyTime = data['storytime' + i];
+                var storyTime = data[0]['storytime' + i];
                 storyData.push({
                     text: storyText,
                     title: storyTitle,
@@ -315,9 +315,9 @@ $(document).ready(function(){
             var setting_value = data[0].settingcount; // 설정 카드 수
             var settingData = [];
             for (var i = 1; i <= setting_value; i++) {
-                var settingText = data['settingtext' + i];
-                var settingTitle = data['settingtitle' + i];
-                var settingTitleOriginal = data['settingtitle_og' + i];
+                var settingText = data[0]['settingtext' + i];
+                var settingTitle = data[0]['settingtitle' + i];
+                var settingTitleOriginal = data[0]['settingtitle_og' + i];
                 var settingImage = 'setting_' + i;
                 settingData.push({
                     text: settingText,
@@ -447,9 +447,9 @@ $(document).ready(function(){
             ];
             var characterData = [];
             for (var i = 1; i <= character_value; i++) {
-                var characterText = data['chartext' + i];
-                var characterName = data['charname' + i];
-                var characterNameOriginal = data['charname_og' + i];
+                var characterText = data[0]['chartext' + i];
+                var characterName = data[0]['charname' + i];
+                var characterNameOriginal = data[0]['charname_og' + i];
                 var characterImage = 'character_' + i;
                 var characterVoice = 'voice' + i;
                 characterData.push({
@@ -478,9 +478,9 @@ $(document).ready(function(){
             // voicer 생성
             characterCounts.forEach(function (characterCount, countIndex) {
                 for (var j = 1; j <= characterCount; j++) {
-                    var cLang = data['char' + (countIndex + 1) + 'lang' + j];
-                    var cName = data['char' + (countIndex + 1) + 'name' + j];
-                    var cNameog = data['char' + (countIndex + 1) + 'name_og' + j];
+                    var cLang = data[0]['char' + (countIndex + 1) + 'lang' + j];
+                    var cName = data[0]['char' + (countIndex + 1) + 'name' + j];
+                    var cNameog = data[0]['char' + (countIndex + 1) + 'name_og' + j];
         
                     $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
                         '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
@@ -491,19 +491,19 @@ $(document).ready(function(){
             var music_value = data[0].musiccount; // music 수
             var musicData = [];
             for (var i = 1; i <= music_value; i++) {
-                var musicType = data['musictype' + i];
-                var musicTitle = data['musictitle' + i];
-                var musicTitleOriginal = data['musictitle_og' + i];
-                var musicUrl = data['musicurl' + i];
-                var musicVideoId = data['musicvideoid' + i];
-                var musicSing = data['musicsing' + i];
-                var musicSingOriginal = data['musicsing_og' + i];
-                var musicWrite = data['musicwrite' + i];
-                var musicWriteOriginal = data['musicwrite_og' + i];
-                var musicProduce = data['musicproduce' + i];
-                var musicProduceOriginal = data['musicproduce_og' + i];
-                var musicArrange = data['musicarrange' + i];
-                var musicArrangeOriginal = data['musicarrange_og' + i];
+                var musicType = data[0]['musictype' + i];
+                var musicTitle = data[0]['musictitle' + i];
+                var musicTitleOriginal = data[0]['musictitle_og' + i];
+                var musicUrl = data[0]['musicurl' + i];
+                var musicVideoId = data[0]['musicvideoid' + i];
+                var musicSing = data[0]['musicsing' + i];
+                var musicSingOriginal = data[0]['musicsing_og' + i];
+                var musicWrite = data[0]['musicwrite' + i];
+                var musicWriteOriginal = data[0]['musicwrite_og' + i];
+                var musicProduce = data[0]['musicproduce' + i];
+                var musicProduceOriginal = data[0]['musicproduce_og' + i];
+                var musicArrange = data[0]['musicarrange' + i];
+                var musicArrangeOriginal = data[0]['musicarrange_og' + i];
                 var musicImage = 'music_' + i;
                 musicData.push({
                     type: musicType,
