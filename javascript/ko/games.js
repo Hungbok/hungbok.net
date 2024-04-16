@@ -339,9 +339,9 @@ $(document).ready(function(){
     
             const opencritic_link = data[0].openlink;
             const opencritic_rating_score = data[0].openrasc;
-            const opencritic_score = data[0].opensc;
+            let opencritic_score = data[0].opensc;
             const opencritic_recommend_score = data[0].openresc;
-            const opencritic_rating = data[0].openrasc;
+            let opencritic_rating = data[0].openrasc;
             if (opencritic_rating_score === 'mighty') {
                 opencritic_rating = 'Mighty';
             }
