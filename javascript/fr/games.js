@@ -138,35 +138,7 @@ $(document).ready(function(){
                 '{franchise5}': data[0].franchise5,
 
                 '{review}': data[0].review,
-                '{metacritic}': data[0].metacritic,
-                '{opencritic}': data[0].opencritic,
-                '{metacritic1}': data[0].metacritic1,
-                '{metacritic2}': data[0].metacritic2,
-                '{metacritic3}': data[0].metacritic3,
-                '{metacritic4}': data[0].metacritic4,
-                '{metacritic5}': data[0].metacritic5,
-                '{metacritic6}': data[0].metacritic6,
-                '{metacritic7}': data[0].metacritic7,
-                '{metacritic8}': data[0].metacritic8,
-                '{metacritic9}': data[0].metacritic9,
-                '{metacritic10}': data[0].metacritic10,
-                '{metacritic11}': data[0].metacritic11,
-                '{metacritic12}': data[0].metacritic12,
-                '{metacritic_class1}': data[0].metacritic_class1,
-                '{metacritic_class2}': data[0].metacritic_class2,
-                '{metacritic_class3}': data[0].metacritic_class3,
-                '{metacritic_class4}': data[0].metacritic_class4,
-                '{metacritic_class5}': data[0].metacritic_class5,
-                '{metacritic_class6}': data[0].metacritic_class6,
-                '{metacritic_class7}': data[0].metacritic_class7,
-                '{metacritic_class8}': data[0].metacritic_class8,
-                '{metacritic_class9}': data[0].metacritic_class9,
-                '{metacritic_class10}': data[0].metacritic_class10,
-                '{metacritic_class11}': data[0].metacritic_class11,
-                '{metacritic_class12}': data[0].metacritic_class12,
-                '{opencritic_rating}': data[0].opencritic_rating,
-                '{top_critic_average}': data[0].top_critic_average,
-                '{critics_recommend}': data[0].critics_recommend,
+                '{rating}': data[0].rating,
                 
                 '{system_requirements_tab1}': data[0].system_requirements_tab1,
                 '{system_requirements_tab2}': data[0].system_requirements_tab2,
@@ -207,6 +179,30 @@ $(document).ready(function(){
                 '{recommended_graphics3}': data[0].recommended_graphics3,
                 '{recommended_storage3}': data[0].recommended_storage3,
                 '{recommended_other3}': data[0].recommended_other3,
+                '{minimum_os4}': data[0].minimum_os4,
+                '{minimum_processor4}': data[0].minimum_processor4,
+                '{minimum_memory4}': data[0].minimum_memory4,
+                '{minimum_graphics4}': data[0].minimum_graphics4,
+                '{minimum_storage4}': data[0].minimum_storage4,
+                '{minimum_other4}': data[0].minimum_other4,
+                '{recommended_os4}': data[0].recommended_os4,
+                '{recommended_processor4}': data[0].recommended_processor4,
+                '{recommended_memory4}': data[0].recommended_memory4,
+                '{recommended_graphics4}': data[0].recommended_graphics4,
+                '{recommended_storage4}': data[0].recommended_storage4,
+                '{recommended_other4}': data[0].recommended_other4,
+                '{minimum_os5}': data[0].minimum_os5,
+                '{minimum_processor5}': data[0].minimum_processor5,
+                '{minimum_memory5}': data[0].minimum_memory5,
+                '{minimum_graphics5}': data[0].minimum_graphics5,
+                '{minimum_storage5}': data[0].minimum_storage5,
+                '{minimum_other5}': data[0].minimum_other5,
+                '{recommended_os5}': data[0].recommended_os5,
+                '{recommended_processor5}': data[0].recommended_processor5,
+                '{recommended_memory5}': data[0].recommended_memory5,
+                '{recommended_graphics5}': data[0].recommended_graphics5,
+                '{recommended_storage5}': data[0].recommended_storage5,
+                '{recommended_other5}': data[0].recommended_other5,
             };
             
             // body의 HTML 가져오기
@@ -365,42 +361,116 @@ $(document).ready(function(){
             $(".platform.geforcenow").append('<div class="icon-geforcenow" ttt="Geforce Now"></div>');
             $(".platform.stadia").append('<div class="icon-stadia" ttt="Stadia"></div>');
     
-            const opencritic_rating_score = data.openrasc;
-            const opencritic_rating_link = data.openralink;
-            const opencritic_rating_image = data.openraimg;
-            const opencritic_score = data.opensc;
-            const opencritic_link = data.openlink;
-            const opencritic_percent = data.openper;
-            const opencritic_recommend_score = data.openresc;
-            const opencritic_recommend_link = data.openrelink;
-            const opencritic_recommend_percent = data.openreper;
+            const opencritic_link = data[0].openlink;
+            const opencritic_rating_score = data[0].openrasc;
+            let opencritic_score = data[0].opensc;
+            const opencritic_recommend_score = data[0].openresc;
+
+            let opencritic_rating = data[0].openrasc;
+            if (opencritic_rating_score === 'mighty') {
+                opencritic_rating = 'Mighty';
+            }
+            if (opencritic_rating_score === 'strong') {
+                opencritic_rating = 'Strong';
+            }
+            if (opencritic_rating_score === 'fair') {
+                opencritic_rating = 'Fair';
+            }
+            if (opencritic_rating_score === 'weak') {
+                opencritic_rating = 'Weak';
+            }
     
-            const appstore_score = data.appstoresc;
-            const appstore_link = data.appstorelink;
-            const appstore_percent = data.appstoreper;
+            const appstore_link = data[0].appstorelink;
+            let appstore_score = data[0].appstoresc;
+            let appstore_percent = appstore_score * 20;
     
-            const googleplay_score = data.googleplaysc;
-            const googleplay_link = data.googleplaylink;
-            const googleplay_percent = data.googleplayper;
+            const googleplay_link = data[0].googleplaylink;
+            let googleplay_score = data[0].googleplaysc;
+            let googleplay_percent = googleplay_score * 20;
     
-            const steam_score = data.steamsc;
-            const steam_link = data.steamlink;
-            const steam_percent = data.steamper;
-            const steam_userscore_score = data.steamusersc;
-            const steam_userscore_link = data.steamuserlink;
-            const steam_userscore_percent = data.steamuserper;
+            const microsoft_link = data[0].mslink;
+            let microsoft_score = data[0].mssc;
+            let microsoft_percent = microsoft_score * 20;
     
-            const epicgames_score = data.epicsc;
-            const epicgames_link = data.epiclink;
-            const epicgames_percent = data.epicper;
+            const xbox_link = data[0].xboxlink;
+            let xbox_score = data[0].xboxsc;
+            let xbox_percent = xbox_score * 20;
     
-            const gog_score = data.gogsc;
-            const gog_link = data.goglink;
-            const gog_percent = data.gogper;
+            const playstation_link = data[0].playstationlink;
+            let playstation_score = data[0].playstationsc;
+            let playstation_percent = playstation_score * 20;
     
-            const microsoft_score = data.mssc;
-            const microsoft_link = data.mslink;
-            const microsoft_percent = data.msper;
+            let steam_link = data[0].steamlink;
+            let steam_score = data[0].steamsc;
+            const steam_percent = data[0].steamper;
+            let steam_userscore_score = data[0].steamusersc;
+            const steam_userscore_percent = data[0].steamuserper;
+            
+            let steam_rating = data[0].steamsc;
+            if (steam_score === 'op') {
+                steam_rating = 'Overwhelming Positive';
+            }
+            if (steam_score === 'vp') {
+                steam_rating = 'Very Positive';
+            }
+            if (steam_score === 'p') {
+                steam_rating = 'Positive';
+            }
+            if (steam_score === 'mp') {
+                steam_rating = 'Mostly Positive';
+            }
+            if (steam_score === 'm') {
+                steam_rating = 'Mixed';
+            }
+            if (steam_score === 'mn') {
+                steam_rating = 'Mostly Negative';
+            }
+            if (steam_score === 'n') {
+                steam_rating = 'Negative';
+            }
+            if (steam_score === 'vn') {
+                steam_rating = 'Very Negative';
+            }
+            if (steam_score === 'on') {
+                steam_rating = 'Overwhelmingly Negative';
+            }
+            
+            let steam_userscore_rating = data[0].steamusersc;
+            if (steam_userscore_score === 'op') {
+                steam_userscore_rating = 'Overwhelming Positive';
+            }
+            if (steam_userscore_score === 'vp') {
+                steam_userscore_rating = 'Very Positive';
+            }
+            if (steam_userscore_score === 'p') {
+                steam_userscore_rating = 'Positive';
+            }
+            if (steam_userscore_score === 'mp') {
+                steam_userscore_rating = 'Mostly Positive';
+            }
+            if (steam_userscore_score === 'm') {
+                steam_userscore_rating = 'Mixed';
+            }
+            if (steam_userscore_score === 'mn') {
+                steam_userscore_rating = 'Mostly Negative';
+            }
+            if (steam_userscore_score === 'n') {
+                steam_userscore_rating = 'Negative';
+            }
+            if (steam_userscore_score === 'vn') {
+                steam_userscore_rating = 'Very Negative';
+            }
+            if (steam_userscore_score === 'on') {
+                steam_userscore_rating = 'Overwhelmingly Negative';
+            }
+    
+            const epicgames_link = data[0].epiclink;
+            let epicgames_score = data[0].epicsc;
+            let epicgames_percent = epicgames_score * 20;
+    
+            const gog_link = data[0].goglink;
+            let gog_score = data[0].gogsc;
+            let gog_percent = gog_score * 20;
             
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-three-score">'+
                 '<div class="rating-image">'+
@@ -408,38 +478,73 @@ $(document).ready(function(){
                 '</div>'+
             '</div>');
     
-            var metacritic_value = data.metacount;
+            var metacritic_value = data[0].metacount;
             var metacriticData = [];
             for (var i = 1; i <= metacritic_value; i++) {
-                var metaClass = data['metaclass' + i];
-                var metaTtt = data['metattt' + i];
-                var metaImg = data['metaimg' + i];
-                var metaScore = data['metasc' + i];
-                var metaLink = data['metalink' + i];
-                var metaPercent = data['metaper' + i];
-                var metaUserScore = data['metausersc' + i];
-                var metaUserLink = data['metauserlink' + i];
-                var metaUserPercent = data['metauserper' + i];
+                var metaPlatform = data[0]['metaplatform' + i];
+                var metaLink = data[0].metalink;
+                var metaScore = data[0]['metasc' + i];
+                var metaUserScore = data[0]['metausersc' + i];
+                var metaTTT = data[0]['metaplatform' + i];
+                if (metaPlatform === 'pc') {
+                    metaTTT = 'PC';
+                }
+                if (metaPlatform === 'playstation4') {
+                    metaTTT = 'PlayStation 4';
+                }
+                if (metaPlatform === 'playstation5') {
+                    metaTTT = 'PlayStation 5';
+                }
+                if (metaPlatform === 'xboxone') {
+                    metaTTT = 'Xbox One';
+                }
+                if (metaPlatform === 'xboxseriesxs') {
+                    metaTTT = 'Xbox Series X|S';
+                }
+                if (metaPlatform === 'nintendoswitch') {
+                    metaTTT = 'Nintendo Switch';
+                }
+                if (metaPlatform === 'ios') {
+                    metaTTT = 'iOS';
+                }
+                var metaPlatformLink = data[0]['metaplatform' + i];
+                if (metaPlatform === 'ios') {
+                    metaPlatformLink = 'ios-iphoneipad';
+                }
+                if (metaPlatform === 'playstation4') {
+                    metaPlatformLink = 'playstation-4';
+                }
+                if (metaPlatform === 'playstation5') {
+                    metaPlatformLink = 'playstation-5';
+                }
+                if (metaPlatform === 'xboxone') {
+                    metaPlatformLink = 'xbox-one';
+                }
+                if (metaPlatform === 'xboxseriesxs') {
+                    metaPlatformLink = 'xbox-series-x';
+                }
+                if (metaPlatform === 'nintendoswitch') {
+                    metaPlatformLink = 'nintendo-switch';
+                }
+                var metaUserPercent = (metaUserScore * 10).toString();
                 metacriticData.push({
-                    class: metaClass,
-                    ttt: metaTtt,
-                    img: metaImg,
+                    platform: metaPlatform,
                     link: metaLink,
                     score: metaScore,
-                    percent: metaPercent,
-                    userscore_link: metaUserLink,
                     userscore_score: metaUserScore,
+                    ttt: metaTTT,
+                    platformLink: metaPlatformLink,
                     userscore_percent: metaUserPercent,
                 });
             }
             metacriticData.forEach(function(item) {
-                $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.class + '">'+
-                    '<div class="rating-platform icon-' + item.class + '" ttt="' + item.ttt + '"></div>'+
+                $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.platform + '">'+
+                    '<div class="rating-platform icon-' + item.platform + '" ttt="' + item.ttt + '"></div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">메타스코어</div>'+
-                        "<a href='" + item.link + "' class='rating-star' target='_blank' ttt='" + item.score + "'>"+
+                        "<a href='https://www.metacritic.com/game/" + item.link + "/critic-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.score + " / 100'>"+
                             '<div class="star-ratings">'+
-                                '<div class="fill-ratings" style="width: ' + item.percent + ';">'+
+                                '<div class="fill-ratings" style="width: ' + item.score + '%;">'+
                                     '<span>★★★★★</span>'+
                                 '</div>'+
                                 '<div class="empty-ratings">'+
@@ -450,9 +555,9 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">유저 평점</div>'+
-                        "<a href='" + item.userscore_link + "' class='rating-star' target='_blank' ttt='" + item.userscore_score + "'>"+
+                        "<a href='https://www.metacritic.com/game/" + item.link + "/user-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.userscore_score + " / 10'>"+
                             '<div class="star-ratings">'+
-                                '<div class="fill-ratings" style="width: ' + item.userscore_percent + ';">'+
+                                '<div class="fill-ratings" style="width: ' + item.userscore_percent + '%;">'+
                                     '<span>★★★★★</span>'+
                                 '</div>'+
                                 '<div class="empty-ratings">'+
@@ -470,15 +575,15 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">오픈크리틱 평가</div>'+
-                    "<a href='" + opencritic_rating_link + "' class='rating-star' target='_blank' ttt='" + opencritic_rating_score + "'>"+
-                        '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_image + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_rating + "' target='_blank' ttt='" + opencritic_rating + "'>"+
+                        '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_score + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">평론가 평점</div>'+
-                    "<a href='" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_score + "'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_score + "' target='_blank' ttt='" + opencritic_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + opencritic_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + opencritic_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -489,66 +594,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">평론가 추천도</div>'+
-                    "<a href='" + opencritic_recommend_link + "' class='rating-star' target='_blank' ttt='" + opencritic_recommend_score + "'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_recommend_score + "' target='_blank' ttt='" + opencritic_recommend_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + opencritic_recommend_percent + ';">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
-                '</div>'+
-            '</div>');
-    
-            $(".rating.googleplay").append('<div class="rating-card googleplay rating-one-score">'+
-                '<div class="rating-image">'+
-                    '<img title="Google Play" src="//media.hungbok.net/image/logo/googleplay.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + googleplay_link + "' class='rating-star' target='_blank' ttt='" + googleplay_score + "'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + googleplay_percent + ';">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
-                '</div>'+
-            '</div>');
-    
-            $(".rating.appstore").append('<div class="rating-card appstore rating-one-score">'+
-                '<div class="rating-image">'+
-                    '<img title="App Store" src="//media.hungbok.net/image/logo/appstore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + appstore_link + "' class='rating-star' target='_blank' ttt='" + appstore_score + "'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + appstore_percent + ';">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
-                '</div>'+
-            '</div>');
-    
-            $(".rating.microsoft").append('<div class="rating-card microsoft rating-one-score">'+
-                '<div class="rating-image">'+
-                    '<img title="Microsoft Store" src="//media.hungbok.net/image/logo/microsoft.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + microsoft_link + "' class='rating-star' target='_blank' ttt='" + microsoft_score + "'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + microsoft_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + opencritic_recommend_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -565,9 +613,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">모든 평가</div>'+
-                    "<a href='" + steam_link + "' class='rating-star' target='_blank' ttt='" + steam_score + "'>"+
+                    "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star " + steam_rating + "' target='_blank' ttt='" + steam_rating + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + steam_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + steam_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -578,9 +626,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">최근 평가</div>'+
-                    "<a href='" + steam_userscore_link + "' class='rating-star' target='_blank' ttt='" + steam_userscore_score + "'>"+
+                    "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star " + steam_userscore_rating + "' target='_blank' ttt='" + steam_userscore_rating + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + steam_userscore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + steam_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -597,9 +645,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + epicgames_link + "' class='rating-star' target='_blank' ttt='" + epicgames_score + "'>"+
+                    "<a href='https://store.epicgames.com/p/" + epicgames_link + "' class='rating-star " + epicgames_score + "' target='_blank' ttt='" + epicgames_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + epicgames_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + epicgames_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -616,9 +664,104 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + gog_link + "' class='rating-star' target='_blank' ttt='" + gog_score + "'>"+
+                    "<a href='https://www.gog.com/game/" + gog_link + "#reviews' class='rating-star " + gog_score + "' target='_blank' ttt='★" + gog_score + "/5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + gog_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + gog_percent + '%;">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.microsoft").append('<div class="rating-card microsoft rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Microsoft Store" src="//media.hungbok.net/image/logo/microsoft.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='https://apps.microsoft.com/detail/" + microsoft_link + "' class='rating-star " + microsoft_score + "' target='_blank' ttt='" + microsoft_score + "★ / 5.0★'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + microsoft_percent + '%;">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.playstation").append('<div class="rating-card playstation rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="PlayStation Store" src="//media.hungbok.net/image/logo/playstation.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='https://store.playstation.com/concept/" + playstation_link + "' class='rating-star " + playstation_score + "' target='_blank' ttt='" + playstation_score + "★ / 5.00★'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + playstation_percent + '%;">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.xbox").append('<div class="rating-card xbox rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Xbox Store" src="//media.hungbok.net/image/logo/xbox.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='https://www.microsoft.com/store/productid/" + xbox_link + "' class='rating-star " + xbox_score + "' target='_blank' ttt='" + xbox_score + "★ / 5.0★'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + xbox_percent + '%;">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.appstore").append('<div class="rating-card appstore rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="App Store" src="//media.hungbok.net/image/logo/appstore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='https://apps.apple.com/app/" + appstore_link + "' class='rating-star " + appstore_score + "' target='_blank' ttt='" + appstore_score + " / 5.0'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + appstore_percent + '%;">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.googleplay").append('<div class="rating-card googleplay rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="Google Play" src="//media.hungbok.net/image/logo/googleplay.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='https://play.google.com/store/apps/details?id=" + googleplay_link + "' class='rating-star " + googleplay_score + "' target='_blank' ttt='" + googleplay_score + "★ / 5.0★'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + googleplay_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -631,7 +774,7 @@ $(document).ready(function(){
 
             $(document).ready(function() {
                 // .rating-star.none 클래스를 찾아서 처리합니다.
-                $('.rating-star[ttt="undefined"], .rating-star[ttt="none"]').each(function() {
+                $('.rating-star.undefined, .rating-star.none, .rating-star[ttt="- / 100"], .rating-star[ttt="- / 10"], .rating-star[ttt="- / 5"]').each(function() {
                   // 하위 .star-ratings 클래스를 삭제하고 '-'로 대체
                   $(this).find('.star-ratings').remove();
                   $(this).text('-');
