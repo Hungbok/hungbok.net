@@ -337,15 +337,23 @@ $(document).ready(function(){
             $(".platform.geforcenow").append('<div class="icon-geforcenow" ttt="Geforce Now"></div>');
             $(".platform.stadia").append('<div class="icon-stadia" ttt="Stadia"></div>');
     
-            const opencritic_rating_score = data[0].openrasc;
-            const opencritic_rating_link = data[0].openralink;
-            const opencritic_rating_image = data[0].openraimg;
-            const opencritic_score = data[0].opensc;
             const opencritic_link = data[0].openlink;
-            const opencritic_percent = data[0].openper;
+            const opencritic_rating_score = data[0].openrasc;
+            const opencritic_score = data[0].opensc;
             const opencritic_recommend_score = data[0].openresc;
-            const opencritic_recommend_link = data[0].openrelink;
-            const opencritic_recommend_percent = data[0].openreper;
+            const opencritic_rating = data[0].openrasc;
+            if (opencritic_rating_score === 'mighty') {
+                opencritic_rating = 'Mighty';
+            }
+            if (opencritic_rating_score === 'strong') {
+                opencritic_rating = 'Strong';
+            }
+            if (opencritic_rating_score === 'fair') {
+                opencritic_rating = 'Fair';
+            }
+            if (opencritic_rating_score === 'weak') {
+                opencritic_rating = 'Weak';
+            }
     
             const appstore_score = data[0].appstoresc;
             const appstore_link = data[0].appstorelink;
@@ -477,15 +485,15 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">오픈크리틱 평가</div>'+
-                    "<a href='" + opencritic_rating_link + "' class='rating-star' target='_blank' ttt='" + opencritic_rating_score + "'>"+
-                        '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_image + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_rating + "'>"+
+                        '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_score + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">평론가 평점</div>'+
-                    "<a href='" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_score + "'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + opencritic_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + opencritic_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -496,9 +504,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">평론가 추천도</div>'+
-                    "<a href='" + opencritic_recommend_link + "' class='rating-star' target='_blank' ttt='" + opencritic_recommend_score + "'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_recommend_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + opencritic_recommend_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + opencritic_recommend_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
