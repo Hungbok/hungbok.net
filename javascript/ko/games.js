@@ -383,14 +383,14 @@ $(document).ready(function(){
             var metacritic_value = data[0].metacount;
             var metacriticData = [];
             for (var i = 1; i <= metacritic_value; i++) {
-                var metaClass = data['metaclass' + i];
-                var metaTtt = data['metattt' + i];
-                var metaScore = data['metasc' + i];
-                var metaLink = data['metalink' + i];
-                var metaPercent = data['metaper' + i];
-                var metaUserScore = data['metausersc' + i];
-                var metaUserLink = data['metauserlink' + i];
-                var metaUserPercent = data['metauserper' + i];
+                var metaClass = data[0]['metaclass' + i];
+                var metaTtt = data[0]['metattt' + i];
+                var metaScore = data[0]['metasc' + i];
+                var metaLink = data[0]['metalink' + i];
+                var metaPercent = data[0]['metaper' + i];
+                var metaUserScore = data[0]['metausersc' + i];
+                var metaUserLink = data[0]['metauserlink' + i];
+                var metaUserPercent = data[0]['metauserper' + i];
                 metacriticData.push({
                     class: metaClass,
                     ttt: metaTtt,

@@ -268,7 +268,7 @@ $(document).ready(function(){
                 '</div>');
             });
     
-            var story_value = data.storycount; // story 수
+            var story_value = data[0].storycount; // story 수
             var storyData = [];
             for (var i = 1; i <= story_value; i++) {
                 var storyText = data['storytext' + i];
@@ -312,7 +312,7 @@ $(document).ready(function(){
                 '</div>');
             });
             
-            var setting_value = data.settingcount; // 설정 카드 수
+            var setting_value = data[0].settingcount; // 설정 카드 수
             var settingData = [];
             for (var i = 1; i <= setting_value; i++) {
                 var settingText = data['settingtext' + i];
@@ -342,108 +342,108 @@ $(document).ready(function(){
                 '</div>');
             });
             
-            var character_value = data.charcount; // character 수
+            var character_value = data[0].charcount; // character 수
             var characterCounts = [
-                data.char1count,
-                data.char2count,
-                data.char3count,
-                data.char4count,
-                data.char5count,
-                data.char6count,
-                data.char7count,
-                data.char8count,
-                data.char9count,
-                data.char10count,
-                data.char11count,
-                data.char12count,
-                data.char13count,
-                data.char14count,
-                data.char15count,
-                data.char16count,
-                data.char17count,
-                data.char18count,
-                data.char19count,
-                data.char20count,
-                data.char21count,
-                data.char22count,
-                data.char23count,
-                data.char24count,
-                data.char25count,
-                data.char26count,
-                data.char27count,
-                data.char28count,
-                data.char29count,
-                data.char30count,
-                data.char31count,
-                data.char32count,
-                data.char33count,
-                data.char34count,
-                data.char35count,
-                data.char36count,
-                data.char37count,
-                data.char38count,
-                data.char39count,
-                data.char40count,
-                data.char41count,
-                data.char42count,
-                data.char43count,
-                data.char44count,
-                data.char45count,
-                data.char46count,
-                data.char47count,
-                data.char48count,
-                data.char49count,
-                data.char50count,
-                data.char51count,
-                data.char52count,
-                data.char53count,
-                data.char54count,
-                data.char55count,
-                data.char56count,
-                data.char57count,
-                data.char58count,
-                data.char59count,
-                data.char60count,
-                data.char61count,
-                data.char62count,
-                data.char63count,
-                data.char64count,
-                data.char65count,
-                data.char66count,
-                data.char67count,
-                data.char68count,
-                data.char69count,
-                data.char70count,
-                data.char71count,
-                data.char72count,
-                data.char73count,
-                data.char74count,
-                data.char75count,
-                data.char76count,
-                data.char77count,
-                data.char78count,
-                data.char79count,
-                data.char80count,
-                data.char81count,
-                data.char82count,
-                data.char83count,
-                data.char84count,
-                data.char85count,
-                data.char86count,
-                data.char87count,
-                data.char88count,
-                data.char89count,
-                data.char90count,
-                data.char91count,
-                data.char92count,
-                data.char93count,
-                data.char94count,
-                data.char95count,
-                data.char96count,
-                data.char97count,
-                data.char98count,
-                data.char99count,
-                data.char100count,
+                data[0].char1count,
+                data[0].char2count,
+                data[0].char3count,
+                data[0].char4count,
+                data[0].char5count,
+                data[0].char6count,
+                data[0].char7count,
+                data[0].char8count,
+                data[0].char9count,
+                data[0].char10count,
+                data[0].char11count,
+                data[0].char12count,
+                data[0].char13count,
+                data[0].char14count,
+                data[0].char15count,
+                data[0].char16count,
+                data[0].char17count,
+                data[0].char18count,
+                data[0].char19count,
+                data[0].char20count,
+                data[0].char21count,
+                data[0].char22count,
+                data[0].char23count,
+                data[0].char24count,
+                data[0].char25count,
+                data[0].char26count,
+                data[0].char27count,
+                data[0].char28count,
+                data[0].char29count,
+                data[0].char30count,
+                data[0].char31count,
+                data[0].char32count,
+                data[0].char33count,
+                data[0].char34count,
+                data[0].char35count,
+                data[0].char36count,
+                data[0].char37count,
+                data[0].char38count,
+                data[0].char39count,
+                data[0].char40count,
+                data[0].char41count,
+                data[0].char42count,
+                data[0].char43count,
+                data[0].char44count,
+                data[0].char45count,
+                data[0].char46count,
+                data[0].char47count,
+                data[0].char48count,
+                data[0].char49count,
+                data[0].char50count,
+                data[0].char51count,
+                data[0].char52count,
+                data[0].char53count,
+                data[0].char54count,
+                data[0].char55count,
+                data[0].char56count,
+                data[0].char57count,
+                data[0].char58count,
+                data[0].char59count,
+                data[0].char60count,
+                data[0].char61count,
+                data[0].char62count,
+                data[0].char63count,
+                data[0].char64count,
+                data[0].char65count,
+                data[0].char66count,
+                data[0].char67count,
+                data[0].char68count,
+                data[0].char69count,
+                data[0].char70count,
+                data[0].char71count,
+                data[0].char72count,
+                data[0].char73count,
+                data[0].char74count,
+                data[0].char75count,
+                data[0].char76count,
+                data[0].char77count,
+                data[0].char78count,
+                data[0].char79count,
+                data[0].char80count,
+                data[0].char81count,
+                data[0].char82count,
+                data[0].char83count,
+                data[0].char84count,
+                data[0].char85count,
+                data[0].char86count,
+                data[0].char87count,
+                data[0].char88count,
+                data[0].char89count,
+                data[0].char90count,
+                data[0].char91count,
+                data[0].char92count,
+                data[0].char93count,
+                data[0].char94count,
+                data[0].char95count,
+                data[0].char96count,
+                data[0].char97count,
+                data[0].char98count,
+                data[0].char99count,
+                data[0].char100count,
             ];
             var characterData = [];
             for (var i = 1; i <= character_value; i++) {
@@ -488,7 +488,7 @@ $(document).ready(function(){
                 }
             });
             
-            var music_value = data.musiccount; // music 수
+            var music_value = data[0].musiccount; // music 수
             var musicData = [];
             for (var i = 1; i <= music_value; i++) {
                 var musicType = data['musictype' + i];
@@ -553,101 +553,101 @@ $(document).ready(function(){
                 '</div>');
             });
     
-            const metascore_score = data.metasc;
-            const metascore_link = data.metalink;
-            const metascore_percent = data.metaper;
-            const metacritic_userscore_score = data.metausersc;
-            const metacritic_userscore_link = data.metauserlink;
-            const metacritic_userscore_percent = data.metauserper;
+            const metascore_score = data[0].metasc;
+            const metascore_link = data[0].metalink;
+            const metascore_percent = data[0].metaper;
+            const metacritic_userscore_score = data[0].metausersc;
+            const metacritic_userscore_link = data[0].metauserlink;
+            const metacritic_userscore_percent = data[0].metauserper;
     
-            const tomatometer_score = data.tomatosc;
-            const tomatometer_link = data.tomatolink;
-            const tomatometer_percent = data.tomatoper;
-            const rottentomatoes_audience_score = data.tomatousersc;
-            const rottentomatoes_audience_link = data.tomatouserlink;
-            const rottentomatoes_audience_percent = data.tomatouserper;
+            const tomatometer_score = data[0].tomatosc;
+            const tomatometer_link = data[0].tomatolink;
+            const tomatometer_percent = data[0].tomatoper;
+            const rottentomatoes_audience_score = data[0].tomatousersc;
+            const rottentomatoes_audience_link = data[0].tomatouserlink;
+            const rottentomatoes_audience_percent = data[0].tomatouserper;
     
-            const imdb_score = data.imdbsc;
-            const imdb_link = data.imdblink;
-            const imdb_percent = data.imdbper;
+            const imdb_score = data[0].imdbsc;
+            const imdb_link = data[0].imdblink;
+            const imdb_percent = data[0].imdbper;
     
-            const letterboxd_score = data.lettersc;
-            const letterboxd_link = data.letterlink;
-            const letterboxd_percent = data.letterper;
+            const letterboxd_score = data[0].lettersc;
+            const letterboxd_link = data[0].letterlink;
+            const letterboxd_percent = data[0].letterper;
     
-            const tmdb_score = data.tmdbsc;
-            const tmdb_link = data.tmdblink;
-            const tmdb_percent = data.tmdbper;
+            const tmdb_score = data[0].tmdbsc;
+            const tmdb_link = data[0].tmdblink;
+            const tmdb_percent = data[0].tmdbper;
     
-            const filmarks_score = data.filmarkssc;
-            const filmarks_link = data.filmarkslink;
-            const filmarks_percent = data.filmarksper;
+            const filmarks_score = data[0].filmarkssc;
+            const filmarks_link = data[0].filmarkslink;
+            const filmarks_percent = data[0].filmarksper;
     
-            const yahoojp_score = data.yahoosc;
-            const yahoojp_link = data.yahoolink;
-            const yahoojp_percent = data.yahooper;
+            const yahoojp_score = data[0].yahoosc;
+            const yahoojp_link = data[0].yahoolink;
+            const yahoojp_percent = data[0].yahooper;
     
-            const google_score = data.googlesc;
-            const google_link = data.googlelink;
-            const google_percent = data.googleper;
+            const google_score = data[0].googlesc;
+            const google_link = data[0].googlelink;
+            const google_percent = data[0].googleper;
     
-            const eiga_score = data.eigasc;
-            const eiga_link = data.eigalink;
-            const eiga_percent = data.eigaper;
+            const eiga_score = data[0].eigasc;
+            const eiga_link = data[0].eigalink;
+            const eiga_percent = data[0].eigaper;
     
-            const douban_score = data.doubansc;
-            const douban_link = data.doubanlink;
-            const douban_percent = data.doubanper;
+            const douban_score = data[0].doubansc;
+            const douban_link = data[0].doubanlink;
+            const douban_percent = data[0].doubanper;
     
-            const bilibili_score = data.bilisc;
-            const bilibili_link = data.bililink;
-            const bilibili_percent = data.biliper;
+            const bilibili_score = data[0].bilisc;
+            const bilibili_link = data[0].bililink;
+            const bilibili_percent = data[0].biliper;
     
-            const myanimelist_score = data.malsc;
-            const myanimelist_link = data.mallink;
-            const myanimelist_percent = data.malper;
+            const myanimelist_score = data[0].malsc;
+            const myanimelist_link = data[0].mallink;
+            const myanimelist_percent = data[0].malper;
     
-            const mydramalist_score = data.mdlsc;
-            const mydramalist_link = data.mdllink;
-            const mydramalist_percent = data.mdlper;
+            const mydramalist_score = data[0].mdlsc;
+            const mydramalist_link = data[0].mdllink;
+            const mydramalist_percent = data[0].mdlper;
     
-            const anikore_score = data.anikoresc;
-            const anikore_link = data.anikorelink;
-            const anikore_percent = data.anikoreper;
-            const anikore_userscore_score = data.anikoreusersc;
-            const anikore_userscore_link = data.anikoreuserlink;
-            const anikore_userscore_percent = data.anikoreuserper;
+            const anikore_score = data[0].anikoresc;
+            const anikore_link = data[0].anikorelink;
+            const anikore_percent = data[0].anikoreper;
+            const anikore_userscore_score = data[0].anikoreusersc;
+            const anikore_userscore_link = data[0].anikoreuserlink;
+            const anikore_userscore_percent = data[0].anikoreuserper;
     
-            const anilist_score = data.anilistsc;
-            const anilist_link = data.anilistlink;
-            const anilist_percent = data.anilistper;
+            const anilist_score = data[0].anilistsc;
+            const anilist_link = data[0].anilistlink;
+            const anilist_percent = data[0].anilistper;
     
-            const watchapedia_score = data.watchasc;
-            const watchapedia_link = data.watchalink;
-            const watchapedia_percent = data.watchaper;
+            const watchapedia_score = data[0].watchasc;
+            const watchapedia_link = data[0].watchalink;
+            const watchapedia_percent = data[0].watchaper;
     
-            const kinolights_score = data.kinosc;
-            const kinolights_link = data.kinolink;
-            const kinolights_percent = data.kinoper;
-            const kinolights_userscore_score = data.kinousersc;
-            const kinolights_userscore_link = data.kinouserlink;
-            const kinolights_userscore_percent = data.kinouserper;
+            const kinolights_score = data[0].kinosc;
+            const kinolights_link = data[0].kinolink;
+            const kinolights_percent = data[0].kinoper;
+            const kinolights_userscore_score = data[0].kinousersc;
+            const kinolights_userscore_link = data[0].kinouserlink;
+            const kinolights_userscore_percent = data[0].kinouserper;
     
-            const primevideo_score = data.primesc;
-            const primevideo_link = data.primelink;
-            const primevideo_percent = data.primeper;
+            const primevideo_score = data[0].primesc;
+            const primevideo_link = data[0].primelink;
+            const primevideo_percent = data[0].primeper;
     
-            const unext_score = data.unextsc;
-            const unext_link = data.unextlink;
-            const unext_percent = data.unextper;
+            const unext_score = data[0].unextsc;
+            const unext_link = data[0].unextlink;
+            const unext_percent = data[0].unextper;
     
-            const crunchyroll_score = data.crunchysc;
-            const crunchyroll_link = data.crunchylink;
-            const crunchyroll_percent = data.crunchyper;
+            const crunchyroll_score = data[0].crunchysc;
+            const crunchyroll_link = data[0].crunchylink;
+            const crunchyroll_percent = data[0].crunchyper;
     
-            const laftel_score = data.laftelsc;
-            const laftel_link = data.laftellink;
-            const laftel_percent = data.laftelper;
+            const laftel_score = data[0].laftelsc;
+            const laftel_link = data[0].laftellink;
+            const laftel_percent = data[0].laftelper;
             
             // 평가 틀 생성
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
