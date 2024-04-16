@@ -1797,6 +1797,7 @@ div.opencritic-reviews {
     background-color: #111111;
 }
 
+.rating .ios,
 .rating .pc {
     color: #dddddd;
     background-color: #111111;
@@ -1804,30 +1805,25 @@ div.opencritic-reviews {
     margin: 10px;
 }
 
-.rating .ps {
+.rating .playstation4,
+.rating .playstation5 {
     color: #dddddd;
     background-color: #013791;
     font-weight: bold;
     margin: 10px;
 }
 
-.rating .xb {
+.rating .xboxone,
+.rating .xboxseriesxs {
     color: #dddddd;
     background-color: #107c11;
     font-weight: bold;
     margin: 10px;
 }
 
-.rating .nt {
+.rating .nintendoswitch {
     color: #dddddd;
     background-color: #e60012;
-    font-weight: bold;
-    margin: 10px;
-}
-
-.rating .mb {
-    color: #dddddd;
-    background-color: #111111;
     font-weight: bold;
     margin: 10px;
 }
@@ -1952,7 +1948,7 @@ div.opencritic-reviews {
     width: 50px;
     height: 50px;
     background-color: transparent;
-    background-size: cover;
+    background-size: 50px 50px, 0 0, 0 0, 0 0, 0 0, 0 0;
 }
 
 .metacritic.rating-three-score .rating-card.rating-two-score .rating-score {
