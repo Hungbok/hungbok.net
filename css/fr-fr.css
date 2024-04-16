@@ -460,38 +460,47 @@
     content: "Abonnez-vous à ";
 }
 
+.external-link.icon-steam::after,
 #dataContainer .item.from-steam a.item-link::after {
     content: "Steam";
 }
 
+.external-link.icon-epicgamesstore::after,
 #dataContainer .item.from-epicgamesstore a.item-link::after {
     content: "Epic Games Store";
 }
 
+.external-link.icon-gogcom::after,
 #dataContainer .item.from-gogcom a.item-link::after {
     content: "GOG.com";
 }
 
+.external-link.icon-eaapp::after,
 #dataContainer .item.from-eaapp a.item-link::after {
     content: "EA";
 }
 
+.external-link.icon-microsoftstore::after,
 #dataContainer .item.from-microsoftstore a.item-link::after {
     content: "Microsoft Store";
 }
 
+.external-link.icon-ubisoftconnect::after,
 #dataContainer .item.from-ubisoftstore a.item-link::after {
     content: "Ubisoft Store";
 }
 
+.external-link.icon-battlenet::after,
 #dataContainer .item.from-battlenet a.item-link::after {
     content: "Battle.net";
 }
 
+.external-link.icon-xboxgamesstore::after,
 #dataContainer .item.from-xboxstore a.item-link::after {
     content: "Xbox Store";
 }
 
+.external-link.icon-playstationstore::after,
 #dataContainer .item.from-playstationstore a.item-link::after {
     content: "Playstation Store";
 }
@@ -569,4 +578,484 @@ body.en .middle-content::before {
 
 .searchingValue > #searchingValueNumber::after {
     content: " résultats";
+}
+
+.game-section .item-desc p:after {
+    content: "자세히 보기";
+}
+
+.external-link.icon-rockstargameslauncher::after {
+    content: "Boutique Rockstar";
+}
+
+.external-link.icon-stove::after {
+    content: "Stove";
+}
+
+.external-link.icon-nintendoeshop::after {
+    content: "닌텐도 이숍";
+}
+
+.external-link.icon-metastore::after {
+    content: "메타 스토어";
+}
+
+.external-link.icon-googleplay::after {
+    content: "구글 플레이";
+}
+
+.external-link.icon-appstore::after {
+    content: "앱 스토어";
+}
+
+.external-link.icon-galaxystore::after {
+    content: "갤럭시 스토어";
+}
+
+.external-link.icon-xboxcloudgaming::after {
+    content: "엑스박스 클라우드 게이밍";
+}
+
+.external-link.icon-amazonluna::after {
+    content: "아마존 루나";
+}
+
+.external-link.icon-stadia::after {
+    content: "스테디아";
+}
+
+.external-link.icon-geforcenow::after {
+    content: "지포스 나우";
+}
+
+.external-link.icon-facebook::after {
+    content: "페이스북";
+}
+
+.external-link.icon-instagram::after {
+    content: "인스타그램";
+}
+
+.external-link.icon-x::after {
+    content: "X";
+}
+
+.external-link.icon-threads::after {
+    content: "쓰레드";
+}
+
+.external-link.icon-linkedin::after {
+    content: "링크드인";
+}
+
+.external-link.icon-bluesky::after {
+    content: "블루스카이";
+}
+
+.external-link.icon-kakaostory::after {
+    content: "카카오스토리";
+}
+
+.external-link.icon-tumblr::after {
+    content: "텀블러";
+}
+
+.external-link.icon-pinterest::after {
+    content: "핀터레스트";
+}
+
+.external-link.icon-vk::after {
+    content: "브콘탁테";
+}
+
+.external-link.icon-waibo::after {
+    content: "웨이보";
+}
+
+.external-link.icon-mastodon::after {
+    content: "마스토돈";
+}
+
+.external-link.icon-parler::after {
+    content: "팔러";
+}
+
+.external-link.icon-misskey::after {
+    content: "미스키";
+}
+
+.external-link.icon-truthsocial::after {
+    content: "트루스 소셜";
+}
+
+.external-link.icon-discord::after {
+    content: "디스코드";
+}
+
+.external-link.icon-kakaotalk::after {
+    content: "카카오톡";
+}
+
+.external-link.icon-line::after {
+    content: "라인";
+}
+
+.external-link.icon-skype::after {
+    content: "스카이프";
+}
+
+.external-link.icon-snapchat::after {
+    content: "스냅챗";
+}
+
+.external-link.icon-whatsapp::after {
+    content: "왓츠앱";
+}
+
+.external-link.icon-wechat::after {
+    content: "위챗";
+}
+
+.external-link.icon-telegram::after {
+    content: "텔레그램";
+}
+
+.external-link.icon-qq::after {
+    content: "QQ";
+}
+
+.external-link.icon-viber::after {
+    content: "바이버";
+}
+
+.external-link.icon-messenger::after {
+    content: "메신저";
+}
+
+.external-link.icon-navercafe::after {
+    content: "네이버 카페";
+}
+
+.external-link.icon-reddit::after {
+    content: "레딧";
+}
+
+.external-link.icon-wikipedia::after {
+    content: "위키백과";
+}
+
+.external-link.icon-fandom::after {
+    content: "팬덤";
+}
+
+.external-link.icon-namuwiki::after {
+    content: "나무위키";
+}
+
+.external-link.icon-niconicodaihyakka::after {
+    content: "니코니코 대백과";
+}
+
+.external-link.icon-pixivhyakkajiten::after {
+    content: "픽시브 백과사전";
+}
+
+.external-link.icon-baidubaike::after {
+    content: "바이두 백과";
+}
+
+.external-link.icon-youtube::after {
+    content: "유튜브";
+}
+
+.external-link.icon-tiktok::after {
+    content: "틱톡";
+}
+
+.external-link.icon-chzzk::after {
+    content: "치지직";
+}
+
+.external-link.icon-kick::after {
+    content: "킥";
+}
+
+.external-link.icon-twitch::after {
+    content: "트위치";
+}
+
+.external-link.icon-niconicodouga::after {
+    content: "니코니코 동화";
+}
+
+.external-link.icon-bilibili::after {
+    content: "빌리빌리";
+}
+
+.external-link.icon-spotify::after {
+    content: "스포티파이";
+}
+
+.external-link.icon-applemusic::after {
+    content: "애플 뮤직";
+}
+
+.external-link.icon-youtubemusic::after {
+    content: "유튜브 뮤직";
+}
+
+.external-link.icon-amazonmusic::after {
+    content: "아마존 뮤직";
+}
+
+.external-link.icon-soundcloud::after {
+    content: "사운드클라우드";
+}
+
+.external-link.icon-deezer::after {
+    content: "디저";
+}
+
+.external-link.icon-vibe::after {
+    content: "네이버 바이브";
+}
+
+.external-link.icon-linemusic::after {
+    content: "라인 뮤직";
+}
+
+.external-link.icon-netflix::after {
+    content: "넷플릭스";
+}
+
+.external-link.icon-disneyplus::after {
+    content: "디즈니 플러스";
+}
+
+.external-link.icon-primevideo::after {
+    content: "프라임 비디오";
+}
+
+.external-link.icon-appletv::after {
+    content: "애플 티비";
+}
+
+.external-link.icon-appletvplus::after {
+    content: "애플 티비+";
+}
+
+.external-link.icon-hulu::after {
+    content: "훌루";
+}
+
+.external-link.icon-paramountplus::after {
+    content: "파라마운트+";
+}
+
+.external-link.icon-max::after {
+    content: "맥스";
+}
+
+.external-link.icon-crunchyroll::after {
+    content: "크런치롤";
+}
+
+.external-link.icon-hulujapan::after {
+    content: "훌루";
+}
+
+.external-link.icon-unext::after {
+    content: "유-넥스트";
+}
+
+.external-link.icon-abema::after {
+    content: "아베마";
+}
+
+.external-link.icon-fod::after {
+    content: "FOD";
+}
+
+.external-link.icon-animehodai::after {
+    content: "애니메이션무제한";
+}
+
+.external-link.icon-danimestore::after {
+    content: "d아니메스토어";
+}
+
+.external-link.icon-bandaichannel::after {
+    content: "반다이 채널";
+}
+
+.external-link.icon-dmmtv::after {
+    content: "DMM 티비";
+}
+
+.external-link.icon-jcom::after {
+    content: "J:COM 스트림";
+}
+
+.external-link.icon-telasa::after {
+    content: "테라사";
+}
+
+.external-link.icon-milplus::after {
+    content: "밀플러스";
+}
+
+.external-link.icon-lemino::after {
+    content: "레미노";
+}
+
+.external-link.icon-tver::after {
+    content: "티바";
+}
+
+.external-link.icon-wowow::after {
+    content: "와우와우";
+}
+
+.external-link.icon-wavve::after {
+    content: "웨이브";
+}
+
+.external-link.icon-tving::after {
+    content: "티빙";
+}
+
+.external-link.icon-watcha::after {
+    content: "왓챠";
+}
+
+.external-link.icon-coupangplay::after {
+    content: "쿠팡플레이";
+}
+
+.external-link.icon-serieson::after {
+    content: "시리즈 온";
+}
+
+.external-link.icon-laftel::after {
+    content: "라프텔";
+}
+
+.external-link.icon-aniplus::after {
+    content: "애니플러스";
+}
+
+.external-link.icon-uplusmobiletv::after {
+    content: "U+모바일tv";
+}
+
+.external-link.icon-cinefox::after {
+    content: "씨네폭스";
+}
+
+.external-link.icon-jbox::after {
+    content: "제이박스";
+}
+
+.external-link.icon-googleplaymovies::after {
+    content: "구글 플레이 무비";
+}
+
+.external-link.icon-googletv::after {
+    content: "구글 티비";
+}
+
+.external-link.icon-rakutenviki::after {
+    content: "라쿠텐 비키";
+}
+
+.more-info-tab.windows::after {
+    content: "윈도우";
+}
+
+.more-info-tab.mac::after {
+    content: "맥";
+}
+
+.more-info-tab.linux::after {
+    content: "리눅스";
+}
+
+.episode-table > thead > tr > th:nth-child(1):before {
+    content: "회차";
+}
+
+.episode-table > thead > tr > th:nth-child(2)::before {
+    content: "제목";
+}
+
+.episode-table > thead > tr > th:nth-child(3)::before {
+    content: "각본";
+}
+
+.episode-table > thead > tr > th:nth-child(4)::before {
+    content: "콘티";
+}
+
+.episode-table > thead > tr > th:nth-child(5)::before {
+    content: "연출";
+}
+
+.episode-table > thead > tr > th:nth-child(6)::before {
+    content: "작화감독";
+}
+
+.episode-table > thead > tr > th:nth-child(7)::before {
+    content: "방영일";
+}
+
+.music-table > thead > tr > th:nth-child(1):before {
+    content: "트랙";
+}
+
+.music-table > thead > tr > th:nth-child(2)::before {
+    content: "곡명";
+}
+
+.music-table > thead > tr > th:nth-child(3)::before {
+    content: "작사";
+}
+
+.music-table > thead > tr > th:nth-child(4)::before {
+    content: "작곡";
+}
+
+.music-table > thead > tr > th:nth-child(5)::before {
+    content: "편곡";
+}
+
+.music-table > thead > tr > th:nth-child(6)::before {
+    content: "길이";
+}
+
+.music-table > thead > tr > th:nth-child(7)::before {
+    content: "듣기";
+}
+
+.tv-table > thead > tr > th:nth-child(1):before {
+    content: "회차";
+}
+
+.tv-table > thead > tr > th:nth-child(2)::before {
+    content: "제목";
+}
+
+.tv-table > thead > tr > th:nth-child(3)::before {
+    content: "내용";
+}
+
+.tv-table > thead > tr > th:nth-child(4)::before {
+    content: "연출";
+}
+
+.tv-table > thead > tr > th:nth-child(5)::before {
+    content: "러닝타임";
+}
+
+.tv-table > thead > tr > th:nth-child(6)::before {
+    content: "방영일자";
 }

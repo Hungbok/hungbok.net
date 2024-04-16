@@ -585,7 +585,7 @@ body.en .middle-content::before {
 }
 
 .external-link.icon-rockstargameslauncher::after {
-    content: "락스타 게임즈 스토어";
+    content: "락스타 스토어";
 }
 
 .external-link.icon-stove::after {
