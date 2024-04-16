@@ -541,7 +541,7 @@ $(document).ready(function(){
                 $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.platform + '">'+
                     '<div class="rating-platform icon-' + item.platform + '" ttt="' + item.ttt + '"></div>'+
                     '<div class="rating-score">'+
-                        '<div class="rating-title">메타스코어</div>'+
+                        '<div class="rating-title">Metascore</div>'+
                         "<a href='https://www.metacritic.com/game/" + item.link + "/critic-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.score + " / 100'>"+
                             '<div class="star-ratings">'+
                                 '<div class="fill-ratings" style="width: ' + item.score + '%;">'+
@@ -554,7 +554,7 @@ $(document).ready(function(){
                         '</a>'+
                     '</div>'+
                     '<div class="rating-score">'+
-                        '<div class="rating-title">유저 평점</div>'+
+                        '<div class="rating-title">User Score</div>'+
                         "<a href='https://www.metacritic.com/game/" + item.link + "/user-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.userscore_score + " / 10'>"+
                             '<div class="star-ratings">'+
                                 '<div class="fill-ratings" style="width: ' + item.userscore_percent + '%;">'+
@@ -574,13 +574,13 @@ $(document).ready(function(){
                     '<img title="OpenCritic" src="//media.hungbok.net/image/logo/opencritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">오픈크리틱 평가</div>'+
+                    '<div class="rating-title">OpenCritic Rating</div>'+
                     "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_rating + "' target='_blank' ttt='" + opencritic_rating + "'>"+
                         '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_score + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">평론가 평점</div>'+
+                    '<div class="rating-title">Top Critic Average</div>'+
                     "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_score + "' target='_blank' ttt='" + opencritic_score + " / 100'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + opencritic_score + '%;">'+
@@ -593,7 +593,7 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">평론가 추천도</div>'+
+                    '<div class="rating-title">Critics Recommend</div>'+
                     "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_recommend_score + "' target='_blank' ttt='" + opencritic_recommend_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + opencritic_recommend_score + '%;">'+
@@ -612,7 +612,7 @@ $(document).ready(function(){
                     '<img title="Steam" src="//media.hungbok.net/image/logo/steam.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">모든 평가</div>'+
+                    '<div class="rating-title">ALL REVIEWS</div>'+
                     "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star " + steam_rating + "' target='_blank' ttt='" + steam_rating + "'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + steam_percent + '%;">'+
@@ -625,7 +625,7 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">최근 평가</div>'+
+                    '<div class="rating-title">RECENT REVIEWS</div>'+
                     "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star " + steam_userscore_rating + "' target='_blank' ttt='" + steam_userscore_rating + "'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + steam_userscore_percent + '%;">'+
@@ -644,7 +644,7 @@ $(document).ready(function(){
                     '<img title="Epic Games Store" src="//media.hungbok.net/image/logo/epicgamesstore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://store.epicgames.com/p/" + epicgames_link + "' class='rating-star " + epicgames_score + "' target='_blank' ttt='" + epicgames_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + epicgames_percent + '%;">'+
@@ -663,7 +663,7 @@ $(document).ready(function(){
                     '<img title="GOG.com" src="//media.hungbok.net/image/logo/gog.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://www.gog.com/game/" + gog_link + "#reviews' class='rating-star " + gog_score + "' target='_blank' ttt='★" + gog_score + "/5'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + gog_percent + '%;">'+
@@ -682,7 +682,7 @@ $(document).ready(function(){
                     '<img title="Microsoft Store" src="//media.hungbok.net/image/logo/microsoft.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://apps.microsoft.com/detail/" + microsoft_link + "' class='rating-star " + microsoft_score + "' target='_blank' ttt='" + microsoft_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + microsoft_percent + '%;">'+
@@ -701,7 +701,7 @@ $(document).ready(function(){
                     '<img title="PlayStation Store" src="//media.hungbok.net/image/logo/playstation.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://store.playstation.com/concept/" + playstation_link + "' class='rating-star " + playstation_score + "' target='_blank' ttt='" + playstation_score + "★ / 5.00★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + playstation_percent + '%;">'+
@@ -720,7 +720,7 @@ $(document).ready(function(){
                     '<img title="Xbox Store" src="//media.hungbok.net/image/logo/xbox.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://www.microsoft.com/store/productid/" + xbox_link + "' class='rating-star " + xbox_score + "' target='_blank' ttt='" + xbox_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + xbox_percent + '%;">'+
@@ -739,7 +739,7 @@ $(document).ready(function(){
                     '<img title="App Store" src="//media.hungbok.net/image/logo/appstore.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://apps.apple.com/app/" + appstore_link + "' class='rating-star " + appstore_score + "' target='_blank' ttt='" + appstore_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + appstore_percent + '%;">'+
@@ -758,7 +758,7 @@ $(document).ready(function(){
                     '<img title="Google Play" src="//media.hungbok.net/image/logo/googleplay.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
+                    '<div class="rating-title">User Score</div>'+
                     "<a href='https://play.google.com/store/apps/details?id=" + googleplay_link + "' class='rating-star " + googleplay_score + "' target='_blank' ttt='" + googleplay_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + googleplay_percent + '%;">'+

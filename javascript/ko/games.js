@@ -368,16 +368,16 @@ $(document).ready(function(){
 
             let opencritic_rating = data[0].openrasc;
             if (opencritic_rating_score === 'mighty') {
-                opencritic_rating = 'Mighty';
+                opencritic_rating = '매우 긍정적';
             }
             if (opencritic_rating_score === 'strong') {
-                opencritic_rating = 'Strong';
+                opencritic_rating = '긍정적';
             }
             if (opencritic_rating_score === 'fair') {
-                opencritic_rating = 'Fair';
+                opencritic_rating = '보통';
             }
             if (opencritic_rating_score === 'weak') {
-                opencritic_rating = 'Weak';
+                opencritic_rating = '부정적';
             }
     
             const appstore_link = data[0].appstorelink;
@@ -408,60 +408,60 @@ $(document).ready(function(){
             
             let steam_rating = data[0].steamsc;
             if (steam_score === 'op') {
-                steam_rating = 'Overwhelming Positive';
+                steam_rating = '압도적으로 긍정적';
             }
             if (steam_score === 'vp') {
-                steam_rating = 'Very Positive';
+                steam_rating = '매우 긍정적';
             }
             if (steam_score === 'p') {
-                steam_rating = 'Positive';
+                steam_rating = '긍정적';
             }
             if (steam_score === 'mp') {
-                steam_rating = 'Mostly Positive';
+                steam_rating = '대체로 긍정적';
             }
             if (steam_score === 'm') {
-                steam_rating = 'Mixed';
+                steam_rating = '복합적';
             }
             if (steam_score === 'mn') {
-                steam_rating = 'Mostly Negative';
+                steam_rating = '대체로 부정적';
             }
             if (steam_score === 'n') {
-                steam_rating = 'Negative';
+                steam_rating = '부정적';
             }
             if (steam_score === 'vn') {
-                steam_rating = 'Very Negative';
+                steam_rating = '매우 부정적';
             }
             if (steam_score === 'on') {
-                steam_rating = 'Overwhelmingly Negative';
+                steam_rating = '압도적으로 부정적';
             }
             
             let steam_userscore_rating = data[0].steamusersc;
             if (steam_userscore_score === 'op') {
-                steam_userscore_rating = 'Overwhelming Positive';
+                steam_userscore_rating = '압도적으로 긍정적';
             }
             if (steam_userscore_score === 'vp') {
-                steam_userscore_rating = 'Very Positive';
+                steam_userscore_rating = '매우 긍정적';
             }
             if (steam_userscore_score === 'p') {
-                steam_userscore_rating = 'Positive';
+                steam_userscore_rating = '긍정적';
             }
             if (steam_userscore_score === 'mp') {
-                steam_userscore_rating = 'Mostly Positive';
+                steam_userscore_rating = '대체로 긍정적';
             }
             if (steam_userscore_score === 'm') {
-                steam_userscore_rating = 'Mixed';
+                steam_userscore_rating = '복합적';
             }
             if (steam_userscore_score === 'mn') {
-                steam_userscore_rating = 'Mostly Negative';
+                steam_userscore_rating = '대체로 부정적';
             }
             if (steam_userscore_score === 'n') {
-                steam_userscore_rating = 'Negative';
+                steam_userscore_rating = '부정적';
             }
             if (steam_userscore_score === 'vn') {
-                steam_userscore_rating = 'Very Negative';
+                steam_userscore_rating = '매우 부정적';
             }
             if (steam_userscore_score === 'on') {
-                steam_userscore_rating = 'Overwhelmingly Negative';
+                steam_userscore_rating = '압도적으로 부정적';
             }
     
             const epicgames_link = data[0].epiclink;
