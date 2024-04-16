@@ -460,10 +460,12 @@
     content: " 구독하기";
 }
 
+.external-link.icon-steam::after,
 #dataContainer .item.from-steam a.item-link::before {
     content: "스팀";
 }
 
+.external-link.icon-epicgamesstore::after,
 #dataContainer .item.from-epicgamesstore a.item-link::before {
     content: "에픽게임즈 스토어";
 }
