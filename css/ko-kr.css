@@ -575,6 +575,18 @@ body.en .middle-content::before {
     content: "자세히 보기";
 }
 
+.more-info-tab.windows::after {
+    content: "윈도우";
+}
+
+.more-info-tab.mac::after {
+    content: "맥";
+}
+
+.more-info-tab.linux::after {
+    content: "리눅스";
+}
+
 .episode-table > thead > tr > th:nth-child(1):before {
     content: "회차";
 }
