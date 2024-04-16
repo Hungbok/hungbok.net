@@ -384,7 +384,7 @@ $(document).ready(function(){
             var metacriticData = [];
             for (var i = 1; i <= metacritic_value; i++) {
                 var metaPlatform = data[0]['metaplatform' + i];
-                var metaLink = data[0]['metalink' + i];
+                var metaLink = data[0].metalink;
                 var metaScore = data[0]['metasc' + i];
                 var metaUserScore = data[0]['metausersc' + i];
                 var metaTTT = data[0]['metaplatform' + i];
