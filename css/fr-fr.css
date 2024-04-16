@@ -584,6 +584,10 @@ body.en .middle-content::before {
     content: "Voir Plus";
 }
 
+.external-link.icon-website::after {
+    content: "Site officiel";
+}
+
 .external-link.icon-rockstargameslauncher::after {
     content: "Boutique Rockstar";
 }

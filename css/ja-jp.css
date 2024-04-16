@@ -584,6 +584,10 @@ body.en .middle-content::before {
     content: "詳細を見る";
 }
 
+.external-link.icon-website::after {
+    content: "公式ポータルサイト";
+}
+
 .external-link.icon-rockstargameslauncher::after {
     content: "ロックスターストア";
 }

@@ -584,6 +584,10 @@ body.en .middle-content::before {
     content: "자세히 보기";
 }
 
+.external-link.icon-website::after {
+    content: "공식 홈페이지";
+}
+
 .external-link.icon-rockstargameslauncher::after {
     content: "락스타 스토어";
 }
