@@ -355,26 +355,44 @@ $(document).ready(function(){
             if (opencritic_rating_score === 'weak') {
                 opencritic_rating = 'Weak';
             }
+            if (opencritic_rating_score === 'undefined') {
+                opencritic_rating = 'No Data';
+            }
     
             const appstore_link = data[0].appstorelink;
             let appstore_score = data[0].appstoresc;
             let appstore_percent = appstore_score * 20;
+            if (appstore_score === 'undefined') {
+                appstore_score = '-';
+            }
     
             const googleplay_link = data[0].googleplaylink;
             let googleplay_score = data[0].googleplaysc;
             let googleplay_percent = googleplay_score * 20;
+            if (googleplay_score === 'undefined') {
+                googleplay_score = '-';
+            }
     
             const microsoft_link = data[0].mslink;
             let microsoft_score = data[0].mssc;
             let microsoft_percent = microsoft_score * 20;
+            if (microsoft_score === 'undefined') {
+                microsoft_score = '-';
+            }
     
             const xbox_link = data[0].xboxlink;
             let xbox_score = data[0].xboxsc;
             let xbox_percent = xbox_score * 20;
+            if (xbox_score === 'undefined') {
+                xbox_score = '-';
+            }
     
             const playstation_link = data[0].playstationlink;
             let playstation_score = data[0].playstationsc;
             let playstation_percent = playstation_score * 20;
+            if (playstation_score === 'undefined') {
+                playstation_score = '-';
+            }
     
             let steam_link = data[0].steamlink;
             let steam_score = data[0].steamsc;
@@ -410,6 +428,9 @@ $(document).ready(function(){
             if (steam_score === 'on') {
                 steam_rating = 'Overwhelmingly Negative';
             }
+            if (steam_score === 'undefined') {
+                steam_score = 'No Data';
+            }
             
             let steam_userscore_rating = data[0].steamusersc;
             if (steam_userscore_score === 'op') {
@@ -439,14 +460,23 @@ $(document).ready(function(){
             if (steam_userscore_score === 'on') {
                 steam_userscore_rating = 'Overwhelmingly Negative';
             }
+            if (steam_userscore_score === 'undefined') {
+                steam_userscore_score = 'No Data';
+            }
     
             const epicgames_link = data[0].epiclink;
             let epicgames_score = data[0].epicsc;
             let epicgames_percent = epicgames_score * 20;
+            if (epicgames_score === 'undefined') {
+                epicgames_score = '-';
+            }
     
             const gog_link = data[0].goglink;
             let gog_score = data[0].gogsc;
             let gog_percent = gog_score * 20;
+            if (gog_score === 'undefined') {
+                gog_score = '-';
+            }
             
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-three-score">'+
                 '<div class="rating-image">'+
@@ -697,7 +727,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://microsoft.com/store/productid/" + xbox_link + "' class='rating-star " + xbox_score + "' target='_blank' ttt='" + xbox_score + "★ / 5.0★'>"+
+                    "<a href='https://www.microsoft.com/store/productid/" + xbox_link + "' class='rating-star " + xbox_score + "' target='_blank' ttt='" + xbox_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + xbox_percent + '%;">'+
                                 '<span>★★★★★</span>'+

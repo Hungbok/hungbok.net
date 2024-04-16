@@ -1689,86 +1689,6 @@ div.opencritic-reviews {
     background-color: #2d2f34;
 }
 
-.rating .rottentomatoes {
-    background-color: #f93208;
-}
-
-.rating .imdb {
-    background-color: #f6c700;
-}
-
-.rating .letterboxd {
-    background-color: #14181c;
-}
-
-.rating .tmdb {
-    background-color: #032541;
-}
-
-.rating .filmarks {
-    background-color: #111111;
-}
-
-.rating .yahoojapan {
-    background-color: #ffffff;
-}
-
-.rating .google {
-    background-color: #ffffff;
-}
-
-.rating .eiga {
-    background-color: #ffffff;
-}
-
-.rating .douban {
-    background-color: #edf4ec;
-}
-
-.rating .bilibili {
-    background-color: #07A3D7;
-}
-
-.rating .myanimelist {
-    background-color: #2f51a2;
-}
-
-.rating .mydramalist {
-    background-color: #00619D;
-}
-
-.rating .anikore {
-    background-color: #fff000;
-}
-
-.rating .anilist {
-    background-color: #152232;
-}
-
-.rating .watchapedia {
-    background-color: #ff0558;
-}
-
-.rating .kinolights {
-    background-color: #101322;
-}
-
-.rating .primevideo {
-    background-color: #36a0dd;
-}
-
-.rating .unext {
-    background-color: #000a17;
-}
-
-.rating .crunchyroll {
-    background-color: #ff944d;
-}
-
-.rating .laftel {
-    background-color: #6A5ACD;
-}
-
 .rating .opencritic {
     background-color: #010101;
 }
@@ -1786,7 +1706,7 @@ div.opencritic-reviews {
 }
 
 .rating .epicgames {
-    background-color: #121212;
+    background-color: #202020;
 }
 
 .rating .gog {
@@ -1794,7 +1714,15 @@ div.opencritic-reviews {
 }
 
 .rating .microsoft {
-    background-color: #111111;
+    background-color: #1a1a1e;
+}
+
+.rating .xbox {
+    background-color: #107c11;
+}
+
+.rating .playstation {
+    background-color: #013791;
 }
 
 .rating .ios,
