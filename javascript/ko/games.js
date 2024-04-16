@@ -551,13 +551,13 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">오픈크리틱 평가</div>'+
-                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_rating + "'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_rating + "' target='_blank' ttt='" + opencritic_rating + "'>"+
                         '<img src="//media.hungbok.net/image/icon/' + opencritic_rating_score + '.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">평론가 평점</div>'+
-                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_score + " / 100'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_score + "' target='_blank' ttt='" + opencritic_score + " / 100'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + opencritic_score + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -570,7 +570,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">평론가 추천도</div>'+
-                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star' target='_blank' ttt='" + opencritic_recommend_score + "% / 100%'>"+
+                    "<a href='https://opencritic.com/game/" + opencritic_link + "' class='rating-star " + opencritic_recommend_score + "' target='_blank' ttt='" + opencritic_recommend_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + opencritic_recommend_score + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -589,7 +589,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">모든 평가</div>'+
-                    "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star' target='_blank' ttt='" + steam_rating + "'>"+
+                    "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star " + steam_rating + "' target='_blank' ttt='" + steam_rating + "'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + steam_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -602,7 +602,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">최근 평가</div>'+
-                    "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star' target='_blank' ttt='" + steam_userscore_rating + "'>"+
+                    "<a href='https://store.steampowered.com/app/" + steam_link + "#app_reviews_hash' class='rating-star " + steam_userscore_rating + "' target='_blank' ttt='" + steam_userscore_rating + "'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + steam_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -621,7 +621,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://store.epicgames.com/p/" + epicgames_link + "' class='rating-star' target='_blank' ttt='" + epicgames_score + " / 5.0'>"+
+                    "<a href='https://store.epicgames.com/p/" + epicgames_link + "' class='rating-star " + epicgames_score + "' target='_blank' ttt='" + epicgames_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + epicgames_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -640,7 +640,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.gog.com/game/" + gog_link + "#reviews' class='rating-star' target='_blank' ttt='★" + gog_score + "/5'>"+
+                    "<a href='https://www.gog.com/game/" + gog_link + "#reviews' class='rating-star " + gog_score + "' target='_blank' ttt='★" + gog_score + "/5'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + gog_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -659,7 +659,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://apps.microsoft.com/detail/" + microsoft_link + "' class='rating-star' target='_blank' ttt='" + microsoft_score + "★ / 5.0★'>"+
+                    "<a href='https://apps.microsoft.com/detail/" + microsoft_link + "' class='rating-star " + microsoft_score + "' target='_blank' ttt='" + microsoft_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + microsoft_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -678,7 +678,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://store.playstation.com/concept/" + playstation_link + "' class='rating-star' target='_blank' ttt='" + playstation_score + "★ / 5.00★'>"+
+                    "<a href='https://store.playstation.com/concept/" + playstation_link + "' class='rating-star " + playstation_score + "' target='_blank' ttt='" + playstation_score + "★ / 5.00★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + playstation_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -697,7 +697,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://microsoft.com/store/productid/" + xbox_link + "' class='rating-star' target='_blank' ttt='" + xbox_score + "★ / 5.0★'>"+
+                    "<a href='https://microsoft.com/store/productid/" + xbox_link + "' class='rating-star " + xbox_score + "' target='_blank' ttt='" + xbox_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + xbox_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -716,7 +716,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://apps.apple.com/app/" + appstore_link + "' class='rating-star' target='_blank' ttt='" + appstore_score + " / 5.0'>"+
+                    "<a href='https://apps.apple.com/app/" + appstore_link + "' class='rating-star " + appstore_score + "' target='_blank' ttt='" + appstore_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + appstore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -735,7 +735,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://play.google.com/store/apps/details?id=" + googleplay_link + "' class='rating-star' target='_blank' ttt='" + googleplay_score + "★ / 5.0★'>"+
+                    "<a href='https://play.google.com/store/apps/details?id=" + googleplay_link + "' class='rating-star " + googleplay_score + "' target='_blank' ttt='" + googleplay_score + "★ / 5.0★'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + googleplay_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -750,7 +750,7 @@ $(document).ready(function(){
 
             $(document).ready(function() {
                 // .rating-star.none 클래스를 찾아서 처리합니다.
-                $('.rating-star[ttt="undefined"], .rating-star[ttt="none"], .rating-star[ttt="- / 100"], .rating-star[ttt="- / 10"], .rating-star[ttt="- / 5"]').each(function() {
+                $('.rating-star.undefined, .rating-star.none, .rating-star[ttt="- / 100"], .rating-star[ttt="- / 10"], .rating-star[ttt="- / 5"]').each(function() {
                   // 하위 .star-ratings 클래스를 삭제하고 '-'로 대체
                   $(this).find('.star-ratings').remove();
                   $(this).text('-');
