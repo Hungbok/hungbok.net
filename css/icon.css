@@ -984,6 +984,22 @@
     background: url(//media.hungbok.net/image/icon/hoyolab.svg) no-repeat center / 30px 30px, #556de5;
 }
 
+.icon-ameba {
+    background: url(//media.hungbok.net/image/icon/ameba.svg) no-repeat center / 30px 30px, #ffffff;
+}
+
+.icon-medium {
+    background: url(//media.hungbok.net/image/icon/medium.svg) no-repeat center / 30px 30px, #000000;
+}
+
+.icon-musixmatch {
+    background: url(//media.hungbok.net/image/icon/musixmatch.svg) no-repeat center / 30px 30px, #ff5353;
+}
+
+.icon-slack {
+    background: url(//media.hungbok.net/image/icon/slack.svg) no-repeat center / 30px 30px, #ffffff;
+}
+
 /* service */
 
 .icon-pixiv {
