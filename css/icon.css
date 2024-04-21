@@ -985,7 +985,7 @@
 }
 
 .icon-ameba {
-    background: url(//media.hungbok.net/image/icon/ameba.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/icon/ameba.svg) no-repeat center / 30px 30px, #2d8c3c;
 }
 
 .icon-medium {
@@ -997,6 +997,7 @@
 }
 
 .icon-slack {
+    color: #000000!important;
     background: url(//media.hungbok.net/image/icon/slack.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
