@@ -268,16 +268,20 @@ $(document).ready(function() {
 
     function hasScrolled() {
         var st = $(this).scrollTop();
-        if (Math.abs(lastScrollTop - st) <= delta) {
-            return;
-        }
-        if (st > lastScrollTop && st > navbarHeight) {
-            // Scroll Down
-            $('.site-header-background').removeClass('header-down').addClass('header-up');
+        // 스크롤이 화면 상단에 있을 때
+        if (st <= delta) {
+            // 항상 header-down을 추가하고 header-up을 제거
+            $('.site-header-background').removeClass('header-up').addClass('header-down');
         } else {
-            // Scroll Up
-            if (st + $(window).height() < $(document).height()) {
-                $('.site-header-background').removeClass('header-up').addClass('header-down');
+            // 스크롤이 조금이라도 내려갔을 때
+            if (st > lastScrollTop) {
+                // Scroll Down
+                $('.site-header-background').removeClass('header-down').addClass('header-up');
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $('.site-header-background').removeClass('header-up').addClass('header-down');
+                }
             }
         }
         lastScrollTop = st;
