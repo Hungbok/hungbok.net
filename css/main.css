@@ -1275,8 +1275,10 @@ fieldset.pure-group.honeypot-field {
     margin: 15px 0px;
     padding: 10px 20px;
     height: 40px;
-    display: inline-block;
+    display: flex;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
     border-radius: 50px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
