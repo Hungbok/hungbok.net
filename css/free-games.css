@@ -539,7 +539,9 @@ section > h1 {
 #dataContainer .item.subscription.from-nintendoswitchonline a.item-link::before,
 #dataContainer .item.subscription.from-nintendoswitchonline a.item-link::after,
 #dataContainer .item.trials.from-playstationstore a.item-link::before,
-#dataContainer .item.trials.from-playstationstore a.item-link::after {
+#dataContainer .item.trials.from-playstationstore a.item-link::after,
+#dataContainer .item.trials.from-epicgamesstore a.item-link::before,
+#dataContainer .item.trials.from-epicgamesstore a.item-link::after {
     font-size: 14px;
     font-weight: bold;
 }
