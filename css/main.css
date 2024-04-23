@@ -480,11 +480,11 @@ details {
 }
 
 .header-up {
-    height: 0;
+    height: 90px;
 }
 
 .header-down {
-    height: 90px;
+    height: 0px;
 }
 
 .theme-light,
@@ -1079,8 +1079,6 @@ fieldset.pure-group.honeypot-field {
     left: 0;
     position: absolute;
     width: 100%;
-    background-color: var(--background-8-opacity-80);
-    backdrop-filter: blur(50px);
 }
 
 .site-header {
