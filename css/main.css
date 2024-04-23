@@ -1928,6 +1928,10 @@ fieldset.pure-group.honeypot-field {
     transition: all 0.5s;
 }
 
+.footer-title img {
+    height: 50px;
+}
+
 .footer-site,
 .footer-info {
     margin: 10px;
@@ -1999,6 +2003,10 @@ fieldset.pure-group.honeypot-field {
 .footer-site .footer-menu:hover .footer-menu-button,
 .footer-info .footer-menu:hover .footer-menu-button {
     background-color: var(--background-6);
+}
+
+.footer-top {
+    margin-bottom: 30px;
 }
 
 .footer-bottom {
