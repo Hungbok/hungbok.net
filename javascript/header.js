@@ -101,6 +101,7 @@ $(document).ready(function() {
                 '</div>'+
             '</div>'+
             '<div class="header">'+
+                '<div class="site-header-background"></div>'+
                 '<div class="site-header">'+
                     '<div class="header-menu logo-container">'+
                         '<a class="menu-logo" href="/">'+
