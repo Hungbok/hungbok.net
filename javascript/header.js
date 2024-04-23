@@ -42,7 +42,7 @@ $(document).ready(function() {
                                 '<img class="header-button-icon" src="//media.hungbok.net/image/icon/close.svg">'+
                             '</a>'+
                             '<a class="menu-logo" href="/">'+
-                                '<div class="header-title logo">HUNGBOK</div>'+
+                                '<div class="header-title logo"><img src="//media.hungbok.net/image/hb/hb_logo_light.svg"></div>'+
                             '</a>'+
                         '</div>'+
                         '<div class="side-panel-middle">'+

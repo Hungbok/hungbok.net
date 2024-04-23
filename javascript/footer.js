@@ -34,7 +34,7 @@ $(document).ready(function() {
             '<div class="footer">'+
                 '<div class="footer-top">'+
                     '<a class="footer-menu-logo" onclick="window.location.reload()">'+
-                        '<div class="footer-title logo">HUNGBOK</div>'+
+                        '<div class="footer-title logo"><img src="//media.hungbok.net/image/hb/hb_logo_light.svg"></div>'+
                     '</a>'+
                 '</div>'+
                 '<div class="footer-middle">'+
