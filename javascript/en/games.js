@@ -1816,10 +1816,9 @@ function hideError(image) {
 
 function logoError(image) {
     var altText = image.alt;
-    var div = document.createElement('div');
-    div.appendChild(document.createTextNode(altText));
-    image.parentNode.insertBefore(div, image);
-    image.parentNode.removeChild(image);
+    var parent = image.parentNode;
+    var textNode = document.createTextNode(altText);
+    parent.replaceChild(textNode, image);
 }
 
 $(document).ready(function(){
