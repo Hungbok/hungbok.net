@@ -480,21 +480,11 @@ details {
 }
 
 .header-up {
-    top: -90px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
+    height: 0;
 }
 
 .header-down {
-    top: 0px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
+    height: 90px;
 }
 
 .theme-light,
@@ -1103,6 +1093,18 @@ fieldset.pure-group.honeypot-field {
     justify-content: space-between;
     z-index: 2;
     position: relative;
+}
+
+.site-header-background {
+    width: 100%;
+    background-color: var(--background-8-opacity-80);
+    backdrop-filter: blur(50px);
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .side-header {
