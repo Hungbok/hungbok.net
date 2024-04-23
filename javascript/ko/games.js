@@ -1813,6 +1813,14 @@ function hideError(image) {
     image.src = "//media.hungbok.net/image/hb/hb_error_horizontal.svg";
 }
 
+function logoError(image) {
+    var altText = image.alt;
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(altText));
+    image.parentNode.insertBefore(div, image);
+    image.parentNode.removeChild(image);
+}
+
 $(document).ready(function(){
     $(document).on('click', '.show-more', function(){
       var $this = $(this);

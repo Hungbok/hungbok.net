@@ -623,8 +623,8 @@ body.adult > main > .top-backgrounds > div {
 }
 
 .key-art img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     position: absolute;
     border-radius: 20px;
 }
