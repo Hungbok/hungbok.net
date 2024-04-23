@@ -250,42 +250,20 @@ $(document).ready(function() {
 			$('#top-button').fadeOut(duration);
 		}
 	});
-
-    // Hide Header on on scroll down
-    var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
-    var navbarHeight = $('header').outerHeight();
-    $(window).scroll(function(event) {
-        didScroll = true;
+    
+    // 스크롤 이벤트 리스너를 추가합니다.
+    window.addEventListener('scroll', function() {
+        var header = document.querySelector('.site-header-background');
+        
+        // 페이지가 맨 위에 있을 때
+        if (window.pageYOffset === 0) {
+            header.classList.add('header-down');
+            header.classList.remove('header-up');
+        } else { // 스크롤이 맨 위에서 벗어났을 때
+            header.classList.add('header-up');
+            header.classList.remove('header-down');
+        }
     });
-    setInterval(function() {
-        if (didScroll) {
-            hasScrolled();
-            didScroll = false;
-        }
-    }, 250);
-
-    function hasScrolled() {
-        var st = $(this).scrollTop();
-        // 스크롤이 화면 상단에 있을 때
-        if (st <= delta) {
-            // 항상 header-down을 추가하고 header-up을 제거
-            $('.site-header-background').removeClass('header-up').addClass('header-down');
-        } else {
-            // 스크롤이 조금이라도 내려갔을 때
-            if (st > lastScrollTop) {
-                // Scroll Down
-                $('.site-header-background').removeClass('header-down').addClass('header-up');
-            } else {
-                // Scroll Up
-                if (st + $(window).height() < $(document).height()) {
-                    $('.site-header-background').removeClass('header-up').addClass('header-down');
-                }
-            }
-        }
-        lastScrollTop = st;
-    }
 
     // ---------- Popup
 
