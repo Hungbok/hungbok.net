@@ -1834,7 +1834,7 @@ function logoError(image) {
 $(document).ready(function(){
     $(document).on('click', '.show-more', function(){
       var $this = $(this);
-      var descriptionElement = $this.siblings('.description');
+      var descriptionElement = $this.siblings('.description-content');
       descriptionElement.toggleClass('open');
   
       if ($this.hasClass('open')) {
