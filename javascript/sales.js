@@ -240,34 +240,30 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
-let isWaitingForData = false; // 데이터를 불러오기 위해 대기중인지 확인하는 변수
-let isWaitingForUpcomingData = false; // 다가오는 데이터를 불러오기 위해 대기중인지 확인하는 변수
-
 window.onscroll = function() {
-    if ((hasMoreData && !isLoading && !isWaitingForData) || (hasMoreUpcomingData && !isLoadingUpcoming && !isWaitingForUpcomingData)) {
+    if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming) || isWaiting) {
         const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
         const totalPageHeight = document.body.scrollHeight;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
         if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-            if (hasMoreData && !isLoading && !isWaitingForData) {
-                isWaitingForData = true; // 데이터 로드를 위해 대기 상태로 설정
+            isWaiting = true; // 데이터 로딩 대기 상태를 시작합니다.
+            if (hasMoreData && !isLoading) {
                 const loadingElement = document.getElementById('loading');
                 loadingElement.style.display = 'block';
                 setTimeout(() => {
                     loadMoreData();
                     loadingElement.style.display = 'none';
-                    isWaitingForData = false; // 데이터 로드가 완료되면 대기 상태 해제
+                    isWaiting = false; // 데이터 로딩 대기 상태를 종료합니다.
                 }, 1000);
             }
-            if (hasMoreUpcomingData && !isLoadingUpcoming && !isWaitingForUpcomingData) {
-                isWaitingForUpcomingData = true; // 다가오는 데이터 로드를 위해 대기 상태로 설정
+            if (hasMoreUpcomingData && !isLoadingUpcoming) {
                 const loadingElement = document.getElementById('loading-upcoming');
                 loadingElement.style.display = 'block';
                 setTimeout(() => {
                     loadMoreUpcomingData();
                     loadingElement.style.display = 'none';
-                    isWaitingForUpcomingData = false; // 다가오는 데이터 로드가 완료되면 대기 상태 해제
+                    isWaiting = false; // 데이터 로딩 대기 상태를 종료합니다.
                 }, 1000);
             }
         }
