@@ -270,59 +270,73 @@ window.onscroll = function() {
 function loadMoreData() {
     if (!hasMoreData || isLoading) return;
 
-    isLoading = true; // 데이터 로딩 시작을 표시
+    isLoading = true;
     const loadingElement = document.getElementById('loading');
     loadingElement.style.display = 'block';
 
-    // 데이터 로딩 로직...
-    let slicedData = filteredData.slice(start, start + limit);
-    if (slicedData.length === 0) {
-        hasMoreData = false;
-        isLoading = false;
-        loadingElement.style.display = 'none';
-        console.log('더 이상 로드할 데이터가 없습니다.');
-        return;
-    }
-
-    (async () => {
-        for (let item of slicedData) {
-            await new Promise(resolve => setTimeout(resolve, 1000)); // 1초 딜레이
-            createAndAppendItem(item);
+    function loadDataPortion() {
+        // 데이터 로딩 로직...
+        let slicedData = filteredData.slice(start, start + limit);
+        if (slicedData.length === 0) {
+            hasMoreData = false;
+            isLoading = false;
+            loadingElement.style.display = 'none';
+            console.log('더 이상 로드할 데이터가 없습니다.');
+            return;
         }
 
+        slicedData.forEach(item => {
+            createAndAppendItem(item);
+        });
+
         start += slicedData.length;
-        isLoading = false; // 로딩 상태 종료
-        loadingElement.style.display = 'none';
-    })();
+
+        // 데이터가 더 있고, 사용자가 스크롤을 계속해서 하단으로 내리고 있다면, 1초 후 다시 데이터를 불러온다.
+        if (hasMoreData) {
+            setTimeout(loadDataPortion, 1000); // 1초 후 다시 데이터 불러오기
+        } else {
+            isLoading = false;
+            loadingElement.style.display = 'none';
+        }
+    }
+
+    loadDataPortion(); // 데이터 로딩 시작
 }
 
 function loadMoreUpcomingData() {
     if (!hasMoreUpcomingData || isLoadingUpcoming) return;
 
-    isLoadingUpcoming = true; // 추가 데이터 로딩 시작을 표시
+    isLoadingUpcoming = true;
     const loadingElementUpcoming = document.getElementById('loading-upcoming');
     loadingElementUpcoming.style.display = 'block';
 
-    // 데이터 로딩 로직...
-    let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, upcomingStart + upcomingLimit);
-    if (slicedUpcomingData.length === 0) {
-        hasMoreUpcomingData = false;
-        isLoadingUpcoming = false;
-        loadingElementUpcoming.style.display = 'none';
-        console.log('더 이상 로드할 추가 데이터가 없습니다.');
-        return;
-    }
-
-    (async () => {
-        for (let item of slicedUpcomingData) {
-            await new Promise(resolve => setTimeout(resolve, 1000)); // 1초 딜레이
-            createAndAppendUpcomingItem(item);
+    function loadUpcomingDataPortion() {
+        // 데이터 로딩 로직...
+        let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, upcomingStart + upcomingLimit);
+        if (slicedUpcomingData.length === 0) {
+            hasMoreUpcomingData = false;
+            isLoadingUpcoming = false;
+            loadingElementUpcoming.style.display = 'none';
+            console.log('더 이상 로드할 추가 데이터가 없습니다.');
+            return;
         }
 
+        slicedUpcomingData.forEach(item => {
+            createAndAppendUpcomingItem(item);
+        });
+
         upcomingStart += slicedUpcomingData.length;
-        isLoadingUpcoming = false; // 로딩 상태 종료
-        loadingElementUpcoming.style.display = 'none';
-    })();
+
+        // 추가 데이터가 더 있고, 사용자가 스크롤을 계속해서 하단으로 내리고 있다면, 1초 후 다시 데이터를 불러온다.
+        if (hasMoreUpcomingData) {
+            setTimeout(loadUpcomingDataPortion, 1000); // 1초 후 다시 데이터 불러오기
+        } else {
+            isLoadingUpcoming = false;
+            loadingElementUpcoming.style.display = 'none';
+        }
+    }
+
+    loadUpcomingDataPortion(); // 추가 데이터 로딩 시작
 }
 
 // 서버 시간과 로컬 시간 표시 함수
