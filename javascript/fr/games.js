@@ -143,6 +143,8 @@ $(document).ready(function(){
                 '{system_requirements_tab1}': data[0].system_requirements_tab1,
                 '{system_requirements_tab2}': data[0].system_requirements_tab2,
                 '{system_requirements_tab3}': data[0].system_requirements_tab3,
+                '{system_requirements_tab4}': data[0].system_requirements_tab4,
+                '{system_requirements_tab5}': data[0].system_requirements_tab5,
                 '{minimum_os}': data[0].minimum_os,
                 '{minimum_processor}': data[0].minimum_processor,
                 '{minimum_memory}': data[0].minimum_memory,
@@ -1835,7 +1837,7 @@ function logoError(image) {
 $(document).ready(function(){
     $(document).on('click', '.show-more', function(){
       var $this = $(this);
-      var descriptionElement = $this.siblings('.description-content');
+      var descriptionElement = $this.siblings('.fold');
       descriptionElement.toggleClass('open');
   
       if ($this.hasClass('open')) {
