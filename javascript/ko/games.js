@@ -541,7 +541,7 @@ $(document).ready(function(){
             }
             metacriticData.forEach(function(item) {
                 $(".rating-card.metacritic.rating-three-score").append('<div class="rating-card rating-two-score ' + item.platform + '">'+
-                    '<div class="rating-platform icon-' + item.platform + '" ttt="' + item.ttt + '"></div>'+
+                    '<div class="rating-platform logo-' + item.platform + '" ttt="' + item.ttt + '"></div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">메타스코어</div>'+
                         "<a href='https://www.metacritic.com/game/" + item.link + "/critic-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.score + " / 100'>"+
