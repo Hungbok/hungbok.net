@@ -299,7 +299,7 @@ $(document).ready(function(){
             $(".platform.eaapp").append('<div class="icon-eaapp" ttt="EA"></div>');
             $(".platform.ubisoftstore").append('<div class="icon-ubisoftconnect" ttt="Ubisoft Store"></div>');
             $(".platform.battlenet").append('<div class="icon-battlenet" ttt="Battle.net"></div>');
-            $(".platform.rockstargamesstore").append('<div class="icon-rockstargamesstore" ttt="Rockstar Games Store"></div>');
+            $(".platform.rockstargamesstore").append('<div class="icon-rockstargameslauncher" ttt="Rockstar Games Store"></div>');
             $(".platform.stove").append('<div class="icon-stove" ttt="Stove"></div>');
             $(".platform.xboxstore").append('<div class="icon-xboxgamesstore" ttt="Xbox Games Store"></div>');
             $(".platform.playstationstore").append('<div class="icon-playstationstore" ttt="PlayStation Store"></div>');
@@ -783,14 +783,16 @@ $(document).ready(function(){
                   $(this).removeClass('none');
                 });
             });
-    
-            var description = document.querySelector('.description');
-            var showMore = document.querySelector('.show-more');
-            
-            if(description.offsetHeight > 500){
-                description.style.maxHeight = "500px";
-                showMore.style.display = "block";
-            }
+
+            window.addEventListener('load', function() {
+                var description = document.querySelector('.description');
+                var showMore = document.querySelector('.show-more');
+                
+                if(description.offsetHeight > 500){
+                    description.style.maxHeight = "500px";
+                    showMore.style.display = "block";
+                }
+            });
 
             const data_import_type_first = data[0].data_import_type_first;
             const data_import_first = data[0].data_import_first;
