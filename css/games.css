@@ -2205,7 +2205,7 @@ div.opencritic-reviews {
     font-size: 0px;
 }
 
-.description p {
+.descriptions p {
     color: var(--text-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2214,11 +2214,11 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.description p.undefined {
+.descriptions p.undefined {
     display: none;
 }
 
-.description > .description-attention {
+.descriptions > .description-attention {
     color: var(--text-5);
     padding: 20px;
     border-radius: 20px;
@@ -2231,8 +2231,8 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.description > .description-attention.undefined,
-.description > .description-attention.none {
+.descriptions > .description-attention.undefined,
+.descriptions > .description-attention.none {
     color: transparent;
     padding: 0px;
     border-radius: 0px;
@@ -2241,7 +2241,7 @@ div.opencritic-reviews {
     display: none;
 }
 
-.description > p.description-plot {
+.descriptions > p.description-plot {
     color: var(--text-5);
     padding: 20px;
     background-color: var(--background-8);
@@ -2297,9 +2297,9 @@ div.opencritic-reviews {
     background: linear-gradient(135deg, rgba(25, 78, 190, 0.6) 10%, rgba(29, 169, 224, 0.8) 100%);
 }
 
-.description .dlc > div,
-.description .add-on > div,
-.description .mode > div {
+.descriptions .dlc > div,
+.descriptions .add-on > div,
+.descriptions .mode > div {
     display: flex;
     width: 100%;
     margin: 0;
@@ -2308,9 +2308,9 @@ div.opencritic-reviews {
     justify-content: space-between;
 }
 
-.description .dlc > div:before,
-.description .add-on > div:before,
-.description .mode > div:before {
+.descriptions .dlc > div:before,
+.descriptions .add-on > div:before,
+.descriptions .mode > div:before {
     content: "";
     width: 100%;
     height: 1px;
@@ -2319,7 +2319,7 @@ div.opencritic-reviews {
     top: 0px;
 }
 
-.description .data-import {
+.descriptions .data-import {
     width: 100%;
     max-height: 200px;
     margin: 10px;
@@ -2333,7 +2333,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.description .data-import[data-type="none"] {
+.descriptions .data-import[data-type="none"] {
     display: none;
 }
 
@@ -2447,26 +2447,26 @@ div.opencritic-reviews {
     margin: 0;
 }
 
-.description .h1 {
+.descriptions .h1 {
     font-size: 24px;
     color: var(--text-1);
 }
 
-.description .bold {
+.descriptions .bold {
     font-weight: bold;
     color: var(--text-3);
 }
 
-.description .underbar {
+.descriptions .underbar {
     text-decoration-line: underline;
 }
 
-.description .italic {
+.descriptions .italic {
     font-style: italic;
     color: var(--text-5);
 }
 
-.description .strike {
+.descriptions .strike {
     text-decoration-line: line-through;
     color: var(--text-8);
     -webkit-transition: all 0.5s;
@@ -2476,12 +2476,12 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.description .strike:hover {
+.descriptions .strike:hover {
     text-decoration-line: none;
     color: var(--text-7);
 }
 
-.description .spoiler {
+.descriptions .spoiler {
     background-color: var(--black);
     color: var(--black);
     filter: blur(10px);
@@ -2492,13 +2492,13 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.description .spoiler:hover {
+.descriptions .spoiler:hover {
     background-color: var(--black);
     color: var(--text-2);
     filter: blur(0px);
 }
 
-.description a {
+.descriptions a {
     color: var(--text-3);
     text-decoration-line: underline;
     -webkit-transition: all 0.5s;
@@ -2508,7 +2508,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.description a:hover {
+.descriptions a:hover {
     text-decoration-line: none;
     color: var(--text-2);
 }
