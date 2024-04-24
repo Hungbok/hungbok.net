@@ -2319,7 +2319,8 @@ div.opencritic-reviews {
 }
 
 .description .data-import {
-    flex: 0 0 calc(33% - 20px);
+    width: 100%;
+    max-height: 200px;
     margin: 10px;
     border-radius: 20px;
     outline: solid 0 transparent;
@@ -2344,6 +2345,8 @@ div.opencritic-reviews {
     margin: 5px;
     overflow: hidden;
     border-radius: 20px;
+    max-height: 190px;
+    align-items: center;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -2363,6 +2366,19 @@ div.opencritic-reviews {
 
 .data-import:hover img {
     transform: scale(1.05);
+}
+
+.data-import-logo {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    max-width: 50%;
+    max-height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    filter: drop-shadow(0px 0px 5px var(--shadow));
 }
 
 .description-link a {
