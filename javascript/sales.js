@@ -38,6 +38,23 @@ function filterData(typeValue) {
     start = 0;
     upcomingStart = 0;
     type = typeValue;
+    
+    // URL에서 category 매개변수 값 추출
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category'); // 'category' 매개변수 값 추출
+    
+    // category 값이 있고, 해당 값과 일치하는 필터 버튼이 있다면, type을 해당 값으로 설정
+    if (category) {
+        const filterButton = document.querySelector(`.filterDataBtn[data-type="${category}"]`);
+        if (filterButton) {
+            type = category;
+            // URL에서 category 매개변수 제거
+            urlParams.delete('category');
+            // 변경된 URL 상태를 history에 반영하여 URL을 업데이트하지만 페이지는 새로고침하지 않음
+            history.pushState(null, '', '?' + urlParams.toString() + window.location.hash);
+        }
+    }
+    
     if (type === 'all' && platform === 'all') {
         filteredData = [...data];
         filteredUpcomingData = [...upcomingData];
