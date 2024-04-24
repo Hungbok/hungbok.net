@@ -195,21 +195,25 @@ function createAndAppendUpcomingItem(item) {
     }
 }
 
-// 스크롤 이벤트 핸들러에서도 hasMoreData를 체크합니다.
+let isWaiting = false; // 데이터 로딩 대기 상태를 관리하는 변수입니다.
+
 window.onscroll = function() {
-    if (!hasMoreData || isLoading) return; // 더 이상 로드할 데이터가 없거나, 이미 로딩 중이라면 함수를 종료합니다.
+    if (!hasMoreData || isLoading || isWaiting) return; // 더 이상 로드할 데이터가 없거나, 이미 로딩 중이거나, 대기 중이라면 함수를 종료합니다.
 
     const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     const totalPageHeight = document.body.scrollHeight;
     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    setTimeout(() => {
-        if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-            const loadingElement = document.getElementById('loading');
-            loadingElement.style.display = 'block';
-                loadMoreData();
-                loadingElement.style.display = 'none';
-        }
-    }, 1000);
+
+    if (scrollPosition + windowHeight >= totalPageHeight - 500) {
+        isWaiting = true; // 데이터 로딩 대기 상태를 시작합니다.
+        const loadingElement = document.getElementById('loading');
+        loadingElement.style.display = 'block';
+        setTimeout(() => {
+            loadMoreData();
+            loadingElement.style.display = 'none';
+            isWaiting = false; // 데이터 로딩 대기 상태를 종료합니다.
+        }, 1000); // 1초 후에 데이터 로딩을 시작합니다.
+    }
 };
 
 function loadMoreData() {
