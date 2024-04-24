@@ -1861,7 +1861,7 @@ div.opencritic-reviews {
 
 .metacritic.rating-three-score .rating-card.rating-two-score {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     padding: 20px;
     gap: 20px;
@@ -1873,15 +1873,21 @@ div.opencritic-reviews {
     top: unset;
     left: unset;
     transform: unset;
-    width: 50px;
+    width: 100%;
     height: 50px;
+    max-width: unset;
     background-color: transparent;
     background-size: 50px 50px, 0 0, 0 0, 0 0, 0 0, 0 0;
 }
 
 .metacritic.rating-three-score .rating-card.rating-two-score .rating-score {
     margin: 0;
-    width: calc(100% - 40px);
+    width: calc(50% - 50px);
+    gap: 10px;
+}
+
+.metacritic.rating-three-score .rating-card.rating-two-score .rating-score .star-ratings {
+    font-size: 14px;
 }
 
 .rating-card.opencritic .rating-score {
