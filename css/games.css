@@ -1877,7 +1877,7 @@ div.opencritic-reviews {
     height: 50px;
     max-width: unset;
     background-color: transparent;
-    background-size: 50px 50px, 0 0, 0 0, 0 0, 0 0, 0 0;
+    background-size: auto 30px;
 }
 
 .metacritic.rating-three-score .rating-card.rating-two-score .rating-score {
