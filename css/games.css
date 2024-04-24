@@ -1886,6 +1886,10 @@ div.opencritic-reviews {
     gap: 10px;
 }
 
+.metacritic.rating-three-score .rating-card.rating-two-score .rating-score > a {
+    padding: 5px 10px;
+}
+
 .metacritic.rating-three-score .rating-card.rating-two-score .rating-score .star-ratings {
     font-size: 14px;
 }
