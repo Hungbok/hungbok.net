@@ -976,12 +976,25 @@ body.en .middle-content::before {
     content: "윈도우";
 }
 
-.more-info-tab.mac::after {
+.more-info-tab.mac::after,
+.more-info-tab.macos::after {
     content: "맥";
 }
 
 .more-info-tab.linux::after {
     content: "리눅스";
+}
+
+.more-info-tab.android::after {
+    content: "안드로이드";
+}
+
+.more-info-tab.ios::after {
+    content: "iOS";
+}
+
+.more-info-tab.ipados::after {
+    content: "iPadOS";
 }
 
 .episode-table > thead > tr > th:nth-child(1):before {
