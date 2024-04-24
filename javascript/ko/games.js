@@ -787,7 +787,7 @@ $(document).ready(function(){
             });
 
             window.addEventListener('load', function() {
-                var description = document.querySelector('.description-content');
+                var description = document.querySelector('.description');
                 var showMore = document.querySelector('.show-more');
                 
                 if(description.offsetHeight > 300){
@@ -1836,7 +1836,7 @@ function logoError(image) {
 $(document).ready(function(){
     $(document).on('click', '.show-more', function(){
       var $this = $(this);
-      var descriptionElement = $this.siblings('.fold');
+      var descriptionElement = $this.siblings('.description');
       descriptionElement.toggleClass('open');
   
       if ($this.hasClass('open')) {
