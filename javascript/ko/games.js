@@ -789,7 +789,7 @@ $(document).ready(function(){
                 var showMore = document.querySelector('.show-more');
                 
                 if(description.offsetHeight > 300){
-                    description.style.maxHeight = "500px";
+                    description.style.maxHeight = "300px";
                     showMore.style.display = "block";
                 }
             });
