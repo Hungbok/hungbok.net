@@ -491,17 +491,59 @@ $(document).ready(function(){
                 if (metaPlatform === 'pc') {
                     metaTTT = 'PC';
                 }
+                if (metaPlatform === 'playstation1') {
+                    metaTTT = 'PlayStation';
+                }
+                if (metaPlatform === 'playstation2') {
+                    metaTTT = 'PlayStation 2';
+                }
+                if (metaPlatform === 'playstationportable') {
+                    metaTTT = 'PlayStation Portable';
+                }
+                if (metaPlatform === 'playstation3') {
+                    metaTTT = 'PlayStation 3';
+                }
+                if (metaPlatform === 'playstationvita') {
+                    metaTTT = 'PlayStation Vita';
+                }
                 if (metaPlatform === 'playstation4') {
                     metaTTT = 'PlayStation 4';
                 }
                 if (metaPlatform === 'playstation5') {
                     metaTTT = 'PlayStation 5';
                 }
+                if (metaPlatform === 'xbox1') {
+                    metaTTT = 'Xbox';
+                }
+                if (metaPlatform === 'xbox360') {
+                    metaTTT = 'Xbox 360';
+                }
                 if (metaPlatform === 'xboxone') {
                     metaTTT = 'Xbox One';
                 }
                 if (metaPlatform === 'xboxseriesxs') {
                     metaTTT = 'Xbox Series X|S';
+                }
+                if (metaPlatform === 'nintendo64') {
+                    metaTTT = 'Nintendo 64';
+                }
+                if (metaPlatform === 'gameboyadvance') {
+                    metaTTT = 'Game Boy Advance';
+                }
+                if (metaPlatform === 'nintendogamecube') {
+                    metaTTT = 'Nintendo Gamecube';
+                }
+                if (metaPlatform === 'nintendods') {
+                    metaTTT = 'Nintendo DS';
+                }
+                if (metaPlatform === 'wii') {
+                    metaTTT = 'Wii';
+                }
+                if (metaPlatform === 'nintendo3ds') {
+                    metaTTT = 'Nintendo 3DS';
+                }
+                if (metaPlatform === 'wiiu') {
+                    metaTTT = 'Wii U';
                 }
                 if (metaPlatform === 'nintendoswitch') {
                     metaTTT = 'Nintendo Switch';
@@ -513,17 +555,59 @@ $(document).ready(function(){
                 if (metaPlatform === 'ios') {
                     metaPlatformLink = 'ios-iphoneipad';
                 }
+                if (metaPlatform === 'playstation1') {
+                    metaPlatformLink = 'playstation';
+                }
+                if (metaPlatform === 'playstation2') {
+                    metaPlatformLink = 'playstation-2';
+                }
+                if (metaPlatform === 'playstationportable') {
+                    metaPlatformLink = 'psp';
+                }
+                if (metaPlatform === 'playstation3') {
+                    metaPlatformLink = 'playstation-3';
+                }
+                if (metaPlatform === 'playstationvita') {
+                    metaPlatformLink = 'playstation-vita';
+                }
                 if (metaPlatform === 'playstation4') {
                     metaPlatformLink = 'playstation-4';
                 }
                 if (metaPlatform === 'playstation5') {
                     metaPlatformLink = 'playstation-5';
                 }
+                if (metaPlatform === 'xbox1') {
+                    metaPlatformLink = 'xbox';
+                }
+                if (metaPlatform === 'xbox360') {
+                    metaPlatformLink = 'xbox-360';
+                }
                 if (metaPlatform === 'xboxone') {
                     metaPlatformLink = 'xbox-one';
                 }
                 if (metaPlatform === 'xboxseriesxs') {
                     metaPlatformLink = 'xbox-series-x';
+                }
+                if (metaPlatform === 'nintendo64') {
+                    metaPlatformLink = 'nintendo-64';
+                }
+                if (metaPlatform === 'gameboyadvance') {
+                    metaPlatformLink = 'game-boy-advance';
+                }
+                if (metaPlatform === 'nintendogamecube') {
+                    metaPlatformLink = 'gamecube';
+                }
+                if (metaPlatform === 'nintendods') {
+                    metaPlatformLink = 'ds';
+                }
+                if (metaPlatform === 'wii') {
+                    metaPlatformLink = 'wii';
+                }
+                if (metaPlatform === 'nintendo3ds') {
+                    metaPlatformLink = '3ds';
+                }
+                if (metaPlatform === 'wiiu') {
+                    metaPlatformLink = 'wii-u';
                 }
                 if (metaPlatform === 'nintendoswitch') {
                     metaPlatformLink = 'nintendo-switch';
