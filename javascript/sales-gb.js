@@ -240,26 +240,30 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
-let isWaiting = false; // 데이터 로딩 대기 상태를 관리하는 변수입니다.
-
 window.onscroll = function() {
-    if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming) || isWaiting) return;
+    if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming)) {
+        const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+        const totalPageHeight = document.body.scrollHeight;
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-    const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-    const totalPageHeight = document.body.scrollHeight;
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-    if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-        isWaiting = true; // 데이터 로딩 대기 상태를 시작합니다.
-        setTimeout(() => {
+        if (scrollPosition + windowHeight >= totalPageHeight - 500) {
             if (hasMoreData && !isLoading) {
-                loadMoreData();
+                const loadingElement = document.getElementById('loading');
+                loadingElement.style.display = 'block';
+                setTimeout(() => {
+                    loadMoreData();
+                    loadingElement.style.display = 'none';
+                }, 1000);
             }
             if (hasMoreUpcomingData && !isLoadingUpcoming) {
-                loadMoreUpcomingData();
+                const loadingElement = document.getElementById('loading-upcoming');
+                loadingElement.style.display = 'block';
+                setTimeout(() => {
+                    loadMoreUpcomingData();
+                    loadingElement.style.display = 'none';
+                }, 1000);
             }
-            isWaiting = false; // 데이터 로딩 대기 상태를 종료합니다.
-        }, 1000); // 1초마다 데이터 로딩 실행
+        }
     }
 };
 
