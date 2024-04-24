@@ -2372,7 +2372,7 @@ div.opencritic-reviews {
 .data-import .data-import-logo {
     position: absolute;
     width: auto;
-    height: 100%;
+    height: auto;
     max-width: 50%;
     max-height: 50%;
     top: 50%;
