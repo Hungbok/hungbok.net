@@ -723,7 +723,7 @@ section > h1 {
     width: unset;
     border-radius: unset;
     backdrop-filter: unset;
-    margin: 20px;
+    margin: 20px 60px 20px 20px;
     text-align: left;
     line-height: 26px;
     display: grid;

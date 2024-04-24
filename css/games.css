@@ -3279,6 +3279,34 @@ div.opencritic-reviews {
     filter: drop-shadow(0px 0px 20px black);
 }
 
+#upcomingContainer .item.jp .item-image:before {
+    background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center;
+}
+
+#upcomingContainer .item.us .item-image:before {
+    background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center;
+}
+
+#upcomingContainer .item.eu .item-image:before {
+    background: url(//media.hungbok.net/image/flag/eu.svg) no-repeat center;
+}
+
+#upcomingContainer .item.gb .item-image:before {
+    background: url(//media.hungbok.net/image/flag/gb.svg) no-repeat center;
+}
+
+#upcomingContainer .item.fr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center;
+}
+
+#upcomingContainer .item.de .item-image:before {
+    background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center;
+}
+
+#upcomingContainer .item.kr .item-image:before {
+    background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center;
+}
+
 #upcomingContainer .item-image::after {
     content: "";
     display: block;
@@ -3301,7 +3329,7 @@ div.opencritic-reviews {
     width: unset;
     border-radius: unset;
     backdrop-filter: unset;
-    margin: 20px;
+    margin: 20px 60px 20px 20px;
     text-align: left;
     line-height: 26px;
     display: grid;
@@ -3314,6 +3342,7 @@ div.opencritic-reviews {
     text-wrap: balance;
     filter: drop-shadow(0px 0px 5px black);
     pointer-events: none;
+    font-size: 20px;
 }
 
 #upcomingContainer .item h1:before {
