@@ -270,11 +270,11 @@ window.onscroll = function() {
 function loadMoreData() {
     if (!hasMoreData || isLoading) return;
 
-    isLoading = true;
+    isLoading = true; // 데이터 로딩 시작을 표시
     const loadingElement = document.getElementById('loading');
     loadingElement.style.display = 'block';
 
-    function loadDataPortion() {
+    setTimeout(() => { // 1초의 딜레이 후 데이터 로드
         // 데이터 로딩 로직...
         let slicedData = filteredData.slice(start, start + limit);
         if (slicedData.length === 0) {
@@ -290,27 +290,19 @@ function loadMoreData() {
         });
 
         start += slicedData.length;
-
-        // 데이터가 더 있고, 사용자가 스크롤을 계속해서 하단으로 내리고 있다면, 1초 후 다시 데이터를 불러온다.
-        if (hasMoreData) {
-            setTimeout(loadDataPortion, 1000); // 1초 후 다시 데이터 불러오기
-        } else {
-            isLoading = false;
-            loadingElement.style.display = 'none';
-        }
-    }
-
-    loadDataPortion(); // 데이터 로딩 시작
+        isLoading = false; // 로딩 상태 종료
+        loadingElement.style.display = 'none';
+    }, 1000); // 1초 딜레이 설정
 }
 
 function loadMoreUpcomingData() {
     if (!hasMoreUpcomingData || isLoadingUpcoming) return;
 
-    isLoadingUpcoming = true;
-    const loadingElementUpcoming = document.getElementById('loading-upcoming');
+    isLoadingUpcoming = true; // 추가 데이터 로딩 시작을 표시
+    const loadingElementUpcoming = document.getElementById('loading-upcoming'); // 'loading-upcoming'에 해당하는 요소가 있어야 함
     loadingElementUpcoming.style.display = 'block';
 
-    function loadUpcomingDataPortion() {
+    setTimeout(() => { // 1초의 딜레이 후 데이터 로드
         // 데이터 로딩 로직...
         let slicedUpcomingData = filteredUpcomingData.slice(upcomingStart, upcomingStart + upcomingLimit);
         if (slicedUpcomingData.length === 0) {
@@ -326,17 +318,9 @@ function loadMoreUpcomingData() {
         });
 
         upcomingStart += slicedUpcomingData.length;
-
-        // 추가 데이터가 더 있고, 사용자가 스크롤을 계속해서 하단으로 내리고 있다면, 1초 후 다시 데이터를 불러온다.
-        if (hasMoreUpcomingData) {
-            setTimeout(loadUpcomingDataPortion, 1000); // 1초 후 다시 데이터 불러오기
-        } else {
-            isLoadingUpcoming = false;
-            loadingElementUpcoming.style.display = 'none';
-        }
-    }
-
-    loadUpcomingDataPortion(); // 추가 데이터 로딩 시작
+        isLoadingUpcoming = false; // 로딩 상태 종료
+        loadingElementUpcoming.style.display = 'none';
+    }, 1000); // 1초 딜레이 설정
 }
 
 // 서버 시간과 로컬 시간 표시 함수
