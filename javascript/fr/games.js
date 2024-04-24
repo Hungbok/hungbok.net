@@ -785,10 +785,10 @@ $(document).ready(function(){
             });
 
             window.addEventListener('load', function() {
-                var description = document.querySelector('.description');
+                var description = document.querySelector('.description-content');
                 var showMore = document.querySelector('.show-more');
                 
-                if(description.offsetHeight > 500){
+                if(description.offsetHeight > 300){
                     description.style.maxHeight = "500px";
                     showMore.style.display = "block";
                 }
