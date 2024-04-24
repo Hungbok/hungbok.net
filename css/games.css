@@ -2147,15 +2147,6 @@ div.opencritic-reviews {
     transition: all 1s;
 }
 
-.description.open {
-    max-height: 10000px!important;
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
-    -o-transition: all 1s;
-    -ms-transition: all 1s;
-    transition: all 1s;
-}
-
 .show-more {
     width: 100%;
     background-color: var(--background-8);
@@ -2435,6 +2426,15 @@ div.opencritic-reviews {
     flex-direction: column;
     padding: 20px;
     max-height: 300px;
+}
+
+.description-content.open {
+    max-height: 10000px!important;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -ms-transition: all 1s;
+    transition: all 1s;
 }
 
 .description-content div {
