@@ -2434,6 +2434,7 @@ div.opencritic-reviews {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    max-height: 300px;
 }
 
 .description-content div {
