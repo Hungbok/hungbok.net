@@ -240,23 +240,19 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
-let isWaiting = false; // 데이터 로딩 대기 상태를 관리하는 변수입니다.
-
 window.onscroll = function() {
-    if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming) || isWaiting) {
+    if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming)) {
         const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
         const totalPageHeight = document.body.scrollHeight;
         const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
         if (scrollPosition + windowHeight >= totalPageHeight - 500) {
-            isWaiting = true; // 데이터 로딩 대기 상태를 시작합니다.
             if (hasMoreData && !isLoading) {
                 const loadingElement = document.getElementById('loading');
                 loadingElement.style.display = 'block';
                 setTimeout(() => {
                     loadMoreData();
                     loadingElement.style.display = 'none';
-                    isWaiting = false; // 데이터 로딩 대기 상태를 종료합니다.
                 }, 1000);
             }
             if (hasMoreUpcomingData && !isLoadingUpcoming) {
@@ -265,7 +261,6 @@ window.onscroll = function() {
                 setTimeout(() => {
                     loadMoreUpcomingData();
                     loadingElement.style.display = 'none';
-                    isWaiting = false; // 데이터 로딩 대기 상태를 종료합니다.
                 }, 1000);
             }
         }
@@ -275,7 +270,7 @@ window.onscroll = function() {
 function loadMoreData() {
     if (!hasMoreData || isLoading) return;
 
-    isLoading = true; // 데이터 로딩 시작을 표시
+    isLoading = true;
     const loadingElement = document.getElementById('loading');
     loadingElement.style.display = 'block';
 
@@ -289,20 +284,25 @@ function loadMoreData() {
         return;
     }
 
-    slicedData.forEach(item => {
-        createAndAppendItem(item);
+    // 로딩 딜레이 및 데이터 추가 로직
+    slicedData.forEach((item, index) => {
+        setTimeout(() => {
+            createAndAppendItem(item);
+            if (index === slicedData.length - 1) {
+                isLoading = false;
+                loadingElement.style.display = 'none';
+            }
+        }, 1000 * index);
     });
 
     start += slicedData.length;
-    isLoading = false; // 로딩 상태 종료
-    loadingElement.style.display = 'none';
 }
 
 function loadMoreUpcomingData() {
     if (!hasMoreUpcomingData || isLoadingUpcoming) return;
 
-    isLoadingUpcoming = true; // 추가 데이터 로딩 시작을 표시
-    const loadingElementUpcoming = document.getElementById('loading-upcoming'); // 'loading-upcoming'에 해당하는 요소가 있어야 함
+    isLoadingUpcoming = true;
+    const loadingElementUpcoming = document.getElementById('loading-upcoming');
     loadingElementUpcoming.style.display = 'block';
 
     // 데이터 로딩 로직...
@@ -315,13 +315,18 @@ function loadMoreUpcomingData() {
         return;
     }
 
-    slicedUpcomingData.forEach(item => {
-        createAndAppendUpcomingItem(item);
+    // 로딩 딜레이 및 데이터 추가 로직
+    slicedUpcomingData.forEach((item, index) => {
+        setTimeout(() => {
+            createAndAppendUpcomingItem(item);
+            if (index === slicedUpcomingData.length - 1) {
+                isLoadingUpcoming = false;
+                loadingElementUpcoming.style.display = 'none';
+            }
+        }, 1000 * index);
     });
 
     upcomingStart += slicedUpcomingData.length;
-    isLoadingUpcoming = false; // 로딩 상태 종료
-    loadingElementUpcoming.style.display = 'none';
 }
 
 // 서버 시간과 로컬 시간 표시 함수
