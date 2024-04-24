@@ -240,6 +240,8 @@ function createAndAppendUpcomingItem(item) {
     displayFormattedDate();
 }
 
+let isWaiting = false; // 데이터 로딩 대기 상태를 관리하는 변수입니다.
+
 window.onscroll = function() {
     if ((hasMoreData && !isLoading) || (hasMoreUpcomingData && !isLoadingUpcoming) || isWaiting) {
         const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;

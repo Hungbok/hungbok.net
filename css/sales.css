@@ -489,6 +489,7 @@ section > h1 {
     content: unset!important;
 }
 
+#filter-type > .filterDataBtn[data-type="all"],
 .filter-content.pc > .filterPlatformBtn[data-platform="xboxstore"],
 .filter-content.pc > .filterPlatformBtn[data-platform="playstationstore"],
 .filter-content.pc > .filterPlatformBtn[data-platform="nintendoeshop"],
