@@ -270,7 +270,7 @@ window.onscroll = function() {
 function loadMoreData() {
     if (!hasMoreData || isLoading) return;
 
-    isLoading = true;
+    isLoading = true; // 데이터 로딩 시작을 표시
     const loadingElement = document.getElementById('loading');
     loadingElement.style.display = 'block';
 
@@ -284,24 +284,22 @@ function loadMoreData() {
         return;
     }
 
-    // 로딩 딜레이 및 데이터 추가 로직
-    slicedData.forEach((item, index) => {
-        setTimeout(() => {
+    (async () => {
+        for (let item of slicedData) {
+            await new Promise(resolve => setTimeout(resolve, 1000)); // 1초 딜레이
             createAndAppendItem(item);
-            if (index === slicedData.length - 1) {
-                isLoading = false;
-                loadingElement.style.display = 'none';
-            }
-        }, 1000 * index);
-    });
+        }
 
-    start += slicedData.length;
+        start += slicedData.length;
+        isLoading = false; // 로딩 상태 종료
+        loadingElement.style.display = 'none';
+    })();
 }
 
 function loadMoreUpcomingData() {
     if (!hasMoreUpcomingData || isLoadingUpcoming) return;
 
-    isLoadingUpcoming = true;
+    isLoadingUpcoming = true; // 추가 데이터 로딩 시작을 표시
     const loadingElementUpcoming = document.getElementById('loading-upcoming');
     loadingElementUpcoming.style.display = 'block';
 
@@ -315,18 +313,16 @@ function loadMoreUpcomingData() {
         return;
     }
 
-    // 로딩 딜레이 및 데이터 추가 로직
-    slicedUpcomingData.forEach((item, index) => {
-        setTimeout(() => {
+    (async () => {
+        for (let item of slicedUpcomingData) {
+            await new Promise(resolve => setTimeout(resolve, 1000)); // 1초 딜레이
             createAndAppendUpcomingItem(item);
-            if (index === slicedUpcomingData.length - 1) {
-                isLoadingUpcoming = false;
-                loadingElementUpcoming.style.display = 'none';
-            }
-        }, 1000 * index);
-    });
+        }
 
-    upcomingStart += slicedUpcomingData.length;
+        upcomingStart += slicedUpcomingData.length;
+        isLoadingUpcoming = false; // 로딩 상태 종료
+        loadingElementUpcoming.style.display = 'none';
+    })();
 }
 
 // 서버 시간과 로컬 시간 표시 함수
