@@ -645,7 +645,7 @@ $(document).ready(function(){
                     '<div class="rating-platform logo-' + item.platform + '" ttt="' + item.ttt + '"></div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">메타스코어</div>'+
-                        "<a href='https://www.metacritic.com/game/" + item.link + "/critic-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.score + " / 100'>"+
+                        "<a href='https://www.metacritic.com/game/" + item.link + "/critic-reviews/?platform=" + item.platformLink + "' class='rating-star " + item.score + "' target='_blank' ttt='" + item.score + " / 100'>"+
                             '<div class="star-ratings">'+
                                 '<div class="fill-ratings" style="width: ' + item.score + '%;">'+
                                     '<span>★★★★★</span>'+
@@ -658,7 +658,7 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="rating-score">'+
                         '<div class="rating-title">유저 평점</div>'+
-                        "<a href='https://www.metacritic.com/game/" + item.link + "/user-reviews/?platform=" + item.platformLink + "' class='rating-star' target='_blank' ttt='" + item.userscore_score + " / 10'>"+
+                        "<a href='https://www.metacritic.com/game/" + item.link + "/user-reviews/?platform=" + item.platformLink + "' class='rating-star " + item.userscore_score + "' target='_blank' ttt='" + item.userscore_score + " / 10'>"+
                             '<div class="star-ratings">'+
                                 '<div class="fill-ratings" style="width: ' + item.userscore_percent + '%;">'+
                                     '<span>★★★★★</span>'+

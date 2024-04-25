@@ -72,10 +72,11 @@ $(document).ready(function(){
                 '{info_animation_production}': getLocalizedData(data[0], 'animation_production'),
                 '{info_production}': getLocalizedData(data[0], 'production'),
                 '{broadcast}': getLocalizedData(data[0], 'broadcast'),
-                '{start_airing}': getLocalizedData(data[0], 'start_airing'),
-                '{end_airing}': getLocalizedData(data[0], 'end_airing'),
-                '{runningtime}': getLocalizedData(data[0], 'runningtime'),
-                '{total_episode}': getLocalizedData(data[0], 'total_episode'),
+                '{start_airing}':  data[0].start_airing,
+                '{end_airing}':  data[0].end_airing,
+                '{runningtime}':  data[0].runningtime,
+                '{total_episode}':  data[0].total_episode,
+                '{season}':  data[0].season,
                 '{country}': data[0].country,
                 '{language}': data[0].language,
   
@@ -532,95 +533,88 @@ $(document).ready(function(){
             let meta_userscore_percent = meta_userscore_score * 10;
             let meta_season = data[0].season;
     
-            const letterboxd_score = data[0].lettersc;
-            const letterboxd_link = data[0].letterlink;
-            const letterboxd_percent = data[0].letterper;
+            const letter_link = data[0].letterlink;
+            let letter_score = data[0].lettersc;
+            let letter_percent = letter_score * 20;
     
-            const tmdb_score = data[0].tmdbsc;
             const tmdb_link = data[0].tmdblink;
-            const tmdb_percent = data[0].tmdbper;
+            let tmdb_score = data[0].tmdbsc;
     
-            const filmarks_score = data[0].filmarkssc;
-            const filmarks_link = data[0].filmarkslink;
-            const filmarks_percent = data[0].filmarksper;
+            const filmark_link = data[0].filmarklink;
+            let filmark_score = data[0].filmarksc;
+            let filmark_percent = filmark_score * 20;
     
-            const yahoojp_score = data[0].yahoosc;
-            const yahoojp_link = data[0].yahoolink;
-            const yahoojp_percent = data[0].yahooper;
+            const yahoo_link = data[0].yahoolink;
+            let yahoo_score = data[0].yahoosc;
+            let yahoo_percent = yahoo_score * 20;
     
-            const google_score = data[0].googlesc;
             const google_link = data[0].googlelink;
-            const google_percent = data[0].googleper;
+            let google_score = data[0].googlesc;
     
-            const eiga_score = data[0].eigasc;
             const eiga_link = data[0].eigalink;
-            const eiga_percent = data[0].eigaper;
+            let eiga_score = data[0].eigasc;
+            let eiga_percent = eiga_score * 20;
     
-            const douban_score = data[0].doubansc;
             const douban_link = data[0].doubanlink;
-            const douban_percent = data[0].doubanper;
+            let douban_score = data[0].doubansc;
+            let douban_percent = douban_score * 10;
     
-            const bilibili_score = data[0].bilisc;
-            const bilibili_link = data[0].bililink;
-            const bilibili_percent = data[0].biliper;
+            const bili_link = data[0].bililink;
+            let bili_score = data[0].bilisc;
+            let bili_percent = bili_score * 10;
     
-            const myanimelist_score = data[0].malsc;
-            const myanimelist_link = data[0].mallink;
-            const myanimelist_percent = data[0].malper;
+            const mal_link = data[0].mallink;
+            let mal_score = data[0].malsc;
+            let mal_percent = mal_score * 10;
     
-            const mydramalist_score = data[0].mdlsc;
-            const mydramalist_link = data[0].mdllink;
-            const mydramalist_percent = data[0].mdlper;
+            const mdl_link = data[0].mdllink;
+            let mdl_score = data[0].mdlsc;
+            let mdl_percent = mdl_score * 10;
     
-            const anikore_score = data[0].anikoresc;
             const anikore_link = data[0].anikorelink;
-            const anikore_percent = data[0].anikoreper;
-            const anikore_userscore_score = data[0].anikoreusersc;
-            const anikore_userscore_link = data[0].anikoreuserlink;
-            const anikore_userscore_percent = data[0].anikoreuserper;
+            let anikore_score = data[0].anikoresc;
+            let anikore_userscore_score = data[0].anikoreusersc;
+            let anikore_userscore_percent = anikore_userscore_score * 20;
     
-            const anilist_score = data[0].anilistsc;
             const anilist_link = data[0].anilistlink;
-            const anilist_percent = data[0].anilistper;
+            let anilist_score = data[0].anilistsc;
+            let anilist_percent = anilist_score * 10;
     
-            const watchapedia_score = data[0].watchasc;
-            const watchapedia_link = data[0].watchalink;
-            const watchapedia_percent = data[0].watchaper;
+            const watcha_link = data[0].watchalink;
+            let watcha_score = data[0].watchasc;
+            let watcha_percent = watcha_score * 20;
     
-            const kinolights_score = data[0].kinosc;
-            const kinolights_link = data[0].kinolink;
-            const kinolights_percent = data[0].kinoper;
-            const kinolights_userscore_score = data[0].kinousersc;
-            const kinolights_userscore_link = data[0].kinouserlink;
-            const kinolights_userscore_percent = data[0].kinouserper;
+            const kino_link = data[0].kinolink;
+            let kino_score = data[0].kinosc;
+            let kino_userscore_score = data[0].kinousersc;
+            let kino_userscore_percent = kino_userscore_score * 20;
     
-            const primevideo_score = data[0].primesc;
-            const primevideo_link = data[0].primelink;
-            const primevideo_percent = data[0].primeper;
+            const prime_link = data[0].primelink;
+            let prime_score = data[0].primesc;
+            let prime_percent = prime_score * 20;
     
-            const unext_score = data[0].unextsc;
             const unext_link = data[0].unextlink;
-            const unext_percent = data[0].unextper;
+            let unext_score = data[0].unextsc;
+            let unext_percent = unext_score * 20;
     
-            const crunchyroll_score = data[0].crunchysc;
-            const crunchyroll_link = data[0].crunchylink;
-            const crunchyroll_percent = data[0].crunchyper;
+            const crunchy_link = data[0].crunchylink;
+            let crunchy_score = data[0].crunchysc;
+            let crunchy_percent = crunchy_score * 20;
     
-            const laftel_score = data[0].laftelsc;
             const laftel_link = data[0].laftellink;
-            const laftel_percent = data[0].laftelper;
+            let laftel_score = data[0].laftelsc;
+            let laftel_percent = laftel_score * 20;
     
-            const googletv_score = data[0].googletvsc;
             const googletv_link = data[0].googletvlink;
-            const googletv_percent = data[0].googletvper;
+            let googletv_score = data[0].googletvsc;
+            let googletv_percent = googletv_score * 20;
     
-            const justwatch_score = data[0].justwatchsc;
             const justwatch_link = data[0].justwatchlink;
-            const justwatch_percent = data[0].justwatchper;
+            let justwatch_score = data[0].justwatchsc;
     
-            const rakutenviki_score = data[0].rakutenvikisc;
             const rakutenviki_link = data[0].rakutenvikilink;
-            const rakutenviki_percent = data[0].rakutenvikiper;
+            let rakutenviki_score = data[0].rakutenvikisc;
+            let rakutenviki_percent = rakutenviki_score * 10;
             
             // 평가 틀 생성
             $(".rating.imdb").append('<div class="rating-card imdb rating-one-score">'+
@@ -680,7 +674,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">메타스코어</div>'+
-                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star' target='_blank' ttt='" + meta_score + " / 100'>"+
+                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/critic-reviews/?season=season-" + meta_season + "' class='rating-star " + meta_score + "' target='_blank' ttt='" + meta_score + " / 100'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + meta_score + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -693,7 +687,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star' target='_blank' ttt='" + meta_userscore_score + " / 10'>"+
+                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star " + meta_userscore_score + "' target='_blank' ttt='" + meta_userscore_score + " / 10'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + meta_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -712,9 +706,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + letterboxd_link + "' class='rating-star' target='_blank' ttt='" + letterboxd_score + "'>"+
+                    "<a href='https://letterboxd.com/film/" + letter_link + "' class='rating-star " + letter_score + "' target='_blank' ttt='" + letter_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + letterboxd_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + letter_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -731,9 +725,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + tmdb_link + "' class='rating-star' target='_blank' ttt='" + tmdb_score + "'>"+
+                    "<a href='https://www.themoviedb.org/tv/" + tmdb_link + "' class='rating-star " + tmdb_score + "' target='_blank' ttt='" + tmdb_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + tmdb_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + tmdb_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -750,9 +744,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + filmarks_link + "' class='rating-star' target='_blank' ttt='" + filmarks_score + "'>"+
+                    "<a href='https://filmarks.com/animes/" + filmark_link + "' class='rating-star " + filmark_score + "' target='_blank' ttt='" + filmark_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + filmarks_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + filmark_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -769,9 +763,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + yahoojp_link + "' class='rating-star' target='_blank' ttt='" + yahoojp_score + "'>"+
+                    "<a href='https://search.yahoo.co.jp/movie?ml=prop:movie_revlist;movieCinemaId:" + yahoo_link + "' class='rating-star " + yahoo_score + "' target='_blank' ttt='" + yahoo_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + yahoojp_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + yahoo_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -788,9 +782,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + google_link + "' class='rating-star' target='_blank' ttt='" + google_score + "'>"+
+                    "<a href='https://g.co/kgs/" + google_link + "' class='rating-star " + google_score + "' target='_blank' ttt='" + google_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + google_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + google_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -807,9 +801,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + eiga_link + "' class='rating-star' target='_blank' ttt='" + eiga_score + "'>"+
+                    "<a href='https://eiga.com/movie/" + eiga_link + "' class='rating-star " + eiga_score + "' target='_blank' ttt='" + eiga_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + eiga_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + eiga_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -826,9 +820,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + douban_link + "' class='rating-star' target='_blank' ttt='" + douban_score + "'>"+
+                    "<a href='https://movie.douban.com/subject/" + douban_link + "' class='rating-star " + douban_score + "' target='_blank' ttt='" + douban_score + " / 10.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + douban_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + douban_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -845,9 +839,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + bilibili_link + "' class='rating-star' target='_blank' ttt='" + bilibili_score + "'>"+
+                    "<a href='https://www.bilibili.com/bangumi/media/" + bili_link + "' class='rating-star " + bili_score + "' target='_blank' ttt='" + bili_score + " / 10.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + bilibili_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + bili_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -864,9 +858,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + myanimelist_link + "' class='rating-star' target='_blank' ttt='" + myanimelist_score + "'>"+
+                    "<a href='https://myanimelist.net/anime/" + mal_link + "' class='rating-star " + mal_score + "' target='_blank' ttt='" + mal_score + " / 10'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + myanimelist_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + mal_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -883,9 +877,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + mydramalist_link + "' class='rating-star' target='_blank' ttt='" + mydramalist_score + "'>"+
+                    "<a href='https://mydramalist.com/" + mdl_link + "' class='rating-star " + mdl_score + "' target='_blank' ttt='" + mdl_score + " / 10'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + mydramalist_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + mdl_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -902,9 +896,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">종합 점수</div>'+
-                    "<a href='" + anikore_link + "' class='rating-star' target='_blank' ttt='" + anikore_score + "'>"+
+                    "<a href='https://www.anikore.jp/anime/" + anikore_link + "' class='rating-star " + anikore_score + "' target='_blank' ttt='" + anikore_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anikore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + anikore_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -915,9 +909,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + anikore_userscore_link + "' class='rating-star' target='_blank' ttt='" + anikore_userscore_score + "'>"+
+                    "<a href='https://www.anikore.jp/anime/" + anikore_link + "' class='rating-star " + anikore_userscore_score + "' target='_blank' ttt='" + anikore_userscore_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anikore_userscore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + anikore_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -934,9 +928,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + anilist_link + "' class='rating-star' target='_blank' ttt='" + anilist_score + "'>"+
+                    "<a href='https://anilist.co/anime/" + anilist_link + "' class='rating-star " + anilist_score + "' target='_blank' ttt='" + anilist_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anilist_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + anilist_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -953,9 +947,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + watchapedia_link + "' class='rating-star' target='_blank' ttt='" + watchapedia_score + "'>"+
+                    "<a href='https://pedia.watcha.com/contents/" + watcha_link + "' class='rating-star " + watcha_score + "' target='_blank' ttt='" + watcha_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + watchapedia_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + watcha_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -972,9 +966,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">신호등 평점</div>'+
-                    "<a href='" + kinolights_link + "' class='rating-star' target='_blank' ttt='" + kinolights_score + "'>"+
+                    "<a href='https://kinolights.com/title/" + kino_link + "' class='rating-star " + kino_score + "' target='_blank' ttt='" + kino_score + "% / 100.00%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + kinolights_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + kino_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -985,9 +979,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + kinolights_userscore_link + "' class='rating-star' target='_blank' ttt='" + kinolights_userscore_score + "'>"+
+                    "<a href='https://kinolights.com/title/" + kino_link + "' class='rating-star " + kino_userscore_score + "' target='_blank' ttt='" + kino_userscore_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + kinolights_userscore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + kino_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1004,9 +998,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + primevideo_link + "' class='rating-star' target='_blank' ttt='" + primevideo_score + "'>"+
+                    "<a href='https://www.amazon.com/product-reviews/" + prime_link + "' class='rating-star " + prime_score + "' target='_blank' ttt='" + prime_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + primevideo_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + prime_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1023,9 +1017,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + unext_link + "' class='rating-star' target='_blank' ttt='" + unext_score + "'>"+
+                    "<a href='https://video.unext.jp/title/" + unext_link + "' class='rating-star " + unext_score + "' target='_blank' ttt='" + unext_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + unext_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + unext_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1042,9 +1036,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + crunchyroll_link + "' class='rating-star' target='_blank' ttt='" + crunchyroll_score + "'>"+
+                    "<a href='https://www.crunchyroll.com/series/" + crunchy_link + "' class='rating-star " + crunchy_score + "' target='_blank' ttt='" + crunchy_score + " / 5'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + crunchyroll_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + crunchy_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1061,9 +1055,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + laftel_link + "' class='rating-star' target='_blank' ttt='" + laftel_score + "'>"+
+                    "<a href='https://laftel.net/item/" + laftel_link + "/review' class='rating-star " + laftel_score + "' target='_blank' ttt='" + laftel_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + laftel_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + laftel_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1080,9 +1074,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + googletv_link + "' class='rating-star' target='_blank' ttt='" + googletv_score + "'>"+
+                    "<a href='https://play.google.com/store/tv/show/?id=" + googletv_link + "' class='rating-star " + googletv_score + "' target='_blank' ttt='" + googletv_score + " ★ / 5.0 ★'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + googletv_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + googletv_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1099,9 +1093,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + justwatch_link + "' class='rating-star' target='_blank' ttt='" + justwatch_score + "'>"+
+                    "<a href='https://www.justwatch.com/" + justwatch_link + "' class='rating-star " + justwatch_score + "' target='_blank' ttt='" + justwatch_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + justwatch_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + justwatch_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1118,9 +1112,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + rakutenviki_link + "' class='rating-star' target='_blank' ttt='" + rakutenviki_score + "'>"+
+                    "<a href='https://www.viki.com/tv/" + rakutenviki_link + "#reviews' class='rating-star " + rakutenviki_score + "' target='_blank' ttt='★ " + rakutenviki_score + " / 10'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + rakutenviki_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + rakutenviki_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
