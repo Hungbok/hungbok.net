@@ -1794,6 +1794,7 @@ div.system-requirements-title {
 .character-card {
     display: grid;
     position: relative;
+    width: 100%;
     max-width: calc(50% - 50px);
     border-radius: 20px;
     padding: 20px;

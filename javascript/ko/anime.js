@@ -632,6 +632,18 @@ $(document).ready(function(){
             const laftel_score = data[0].laftelsc;
             const laftel_link = data[0].laftellink;
             const laftel_percent = data[0].laftelper;
+    
+            const googletv_score = data[0].googletvsc;
+            const googletv_link = data[0].googletvlink;
+            const googletv_percent = data[0].googletvper;
+    
+            const justwatch_score = data[0].justwatchsc;
+            const justwatch_link = data[0].justwatchlink;
+            const justwatch_percent = data[0].justwatchper;
+    
+            const rakutenviki_score = data[0].rakutenvikisc;
+            const rakutenviki_link = data[0].rakutenvikilink;
+            const rakutenviki_percent = data[0].rakutenvikiper;
             
             // 평가 틀 생성
             $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
@@ -1075,6 +1087,63 @@ $(document).ready(function(){
                     "<a href='" + laftel_link + "' class='rating-star' target='_blank' ttt='" + laftel_score + "'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + laftel_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.googletv").append('<div class="rating-card googletv rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="googletv" src="//media.hungbok.net/image/logo/googletv.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + googletv_link + "' class='rating-star' target='_blank' ttt='" + googletv_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + googletv_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.justwatch").append('<div class="rating-card justwatch rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="justwatch" src="//media.hungbok.net/image/logo/justwatch.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + justwatch_link + "' class='rating-star' target='_blank' ttt='" + justwatch_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + justwatch_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>'+
+            '</div>');
+    
+            $(".rating.rakutenviki").append('<div class="rating-card rakutenviki rating-one-score">'+
+                '<div class="rating-image">'+
+                    '<img title="rakutenviki" src="//media.hungbok.net/image/logo/rakutenviki.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">유저 평점</div>'+
+                    "<a href='" + rakutenviki_link + "' class='rating-star' target='_blank' ttt='" + rakutenviki_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + rakutenviki_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
