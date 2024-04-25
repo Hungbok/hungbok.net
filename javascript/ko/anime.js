@@ -228,8 +228,8 @@ $(document).ready(function(){
             for (var i = 1; i <= story_value; i++) {
                 var storyTitle = getLocalizedTextData(data[0], ['storytitle' + i]);
                 var storyTitleOriginal = data[0]['storytitle' + i];
-                var storyText = data[0]['storytext' + i];
-                var storyEpisode = data[0]['storyepisode' + i];
+                var storyText = getLocalizedTextData(data[0], ['storytext' + i]);
+                var storyEpisode = i;
                 var storyDate = data[0]['storydate' + i];
                 var storyId = data[0]['storyid' + i];
                 var storyImage = 'story_' + i;
@@ -259,7 +259,7 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="story-image">'+
                         '<img class="story-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                        '<img class="story-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '<img class="story-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="story-description">'+
                         '<p>' + item.text + '</p>'+
@@ -270,9 +270,9 @@ $(document).ready(function(){
             var setting_value = data[0].settingcount; // 설정 카드 수
             var settingData = [];
             for (var i = 1; i <= setting_value; i++) {
-                var settingText = data[0]['settingtext' + i];
-                var settingTitle = data[0]['settingtitle' + i];
-                var settingTitleOriginal = data[0]['settingtitle_og' + i];
+                var settingText = getLocalizedTextData(data[0], ['settingtext' + i]);
+                var settingTitle = getLocalizedTextData(data[0], ['settingtitle' + i]);
+                var settingTitleOriginal = data[0]['settingtitle' + i];
                 var settingImage = 'setting_' + i;
                 settingData.push({
                     text: settingText,
@@ -286,7 +286,7 @@ $(document).ready(function(){
                 $(".setting").append('<div class="setting-card">'+
                     '<div class="setting-image">'+
                         '<img class="setting-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                        '<img class="setting-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '<img class="setting-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="setting-title">'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
@@ -402,9 +402,9 @@ $(document).ready(function(){
             ];
             var characterData = [];
             for (var i = 1; i <= character_value; i++) {
-                var characterText = data[0]['chartext' + i];
-                var characterName = data[0]['charname' + i];
-                var characterNameOriginal = data[0]['charname_og' + i];
+                var characterText = getLocalizedTextData(data[0], ['chartext' + i]);
+                var characterName = getLocalizedTextData(data[0], ['charname' + i]);
+                var characterNameOriginal = data[0]['charname' + i];
                 var characterImage = 'character_' + i;
                 var characterVoice = 'voice' + i;
                 characterData.push({
@@ -438,6 +438,7 @@ $(document).ready(function(){
                     var cNameog = data[0]['char' + (countIndex + 1) + 'name_og' + j];
         
                     $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
+                        '<p class="character-lang"></p>'+
                         '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
                     '</div>');
                 }
