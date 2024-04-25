@@ -47,18 +47,30 @@ $(document).ready(function(){
             }
             
             function formatDate(date) {
-                var parts = date.split('-'); // '-'를 기준으로 문자열을 분리하여 배열 생성
-                var year = parts[0];
-                var month = parts[1];
-                var day = parts[2];
-            
-                if (day) { // yyyy-mm-dd 형식
-                    return year + '년 ' + month + '월 ' + day + '일';
-                } else if (month) { // yyyy-mm 형식
-                    return year + '년 ' + month + '월';
-                } else { // yyyy 형식
-                    return year + '년';
+                // date가 문자열이 아닐 경우 문자열로 변환
+                if (typeof date !== 'string') {
+                    date = String(date);
                 }
+                
+                const parts = date.split('-');
+                let formattedDate = '';
+            
+                // 날짜 형식에 따라 다르게 처리
+                switch (parts.length) {
+                    case 3: // yyyy-mm-dd
+                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
+                        break;
+                    case 2: // yyyy-mm
+                        formattedDate = `${parts[0]}년 ${parts[1]}월`;
+                        break;
+                    case 1: // yyyy
+                        formattedDate = `${parts[0]}년`;
+                        break;
+                    default:
+                        console.error('Invalid date format');
+                }
+            
+                return formattedDate;
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
