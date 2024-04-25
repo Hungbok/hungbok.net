@@ -951,8 +951,13 @@ div.system-requirements-title {
     background-color: var(--text-4);
     color: var(--background-8);
     border-radius: 5px;
-    padding: 0 5px;
+    padding: 2.5px 5px;
     margin-right: 5px;
+    font-weight: bold;
+}
+
+.more-info-item-text p {
+    margin: 0;
 }
 
 .platform,
