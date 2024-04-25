@@ -521,19 +521,16 @@ $(document).ready(function(){
             let imdb_score = data[0].imdbsc;
             let imdb_percent = imdb_score * 10;
     
-            const tomatometer_score = data[0].tomatosc;
-            const tomatometer_link = data[0].tomatolink;
-            const tomatometer_percent = data[0].tomatoper;
-            const rottentomatoes_audience_score = data[0].tomatousersc;
-            const rottentomatoes_audience_link = data[0].tomatouserlink;
-            const rottentomatoes_audience_percent = data[0].tomatouserper;
+            const tomato_link = data[0].tomatolink;
+            let tomato_score = data[0].tomatosc;
+            let tomato_userscore_score = data[0].tomatousersc;
             
-            const metascore_score = data[0].metasc;
-            const metascore_link = data[0].metalink;
-            const metascore_percent = data[0].metaper;
-            const metacritic_userscore_score = data[0].metausersc;
-            const metacritic_userscore_link = data[0].metauserlink;
-            const metacritic_userscore_percent = data[0].metauserper;
+    
+            const meta_link = data[0].metalink;
+            let meta_score = data[0].metasc;
+            let meta_userscore_score = data[0].metausersc;
+            let meta_userscore_percent = meta_userscore_score * 20;
+            let meta_season = data[0].season;
     
             const letterboxd_score = data[0].lettersc;
             const letterboxd_link = data[0].letterlink;
@@ -651,9 +648,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">토마토미터</div>'+
-                    "<a href='" + tomatometer_link + "' class='rating-star' target='_blank' ttt='" + tomatometer_score + "'>"+
+                    "<a href='https://www.rottentomatoes.com/tv/" + tomato_link + "' class='rating-star " + tomato_score + "' target='_blank' ttt='" + tomato_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + tomatometer_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + tomato_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -664,9 +661,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">관객 점수</div>'+
-                    "<a href='" + rottentomatoes_audience_link + "' class='rating-star' target='_blank' ttt='" + rottentomatoes_audience_score + "'>"+
+                    "<a href='https://www.rottentomatoes.com/tv/" + tomato_link + "' class='rating-star " + tomato_userscore_score + "' target='_blank' ttt='" + tomato_userscore_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + rottentomatoes_audience_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + tomato_userscore_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -683,9 +680,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">메타스코어</div>'+
-                    "<a href='" + metascore_link + "' class='rating-star' target='_blank' ttt='" + metascore_score + "'>"+
+                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star' target='_blank' ttt='" + meta_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + metascore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + meta_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -696,9 +693,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + metacritic_userscore_link + "' class='rating-star' target='_blank' ttt='" + metacritic_userscore_score + "'>"+
+                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star' target='_blank' ttt='" + meta_userscore_score + " / 10'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + metacritic_userscore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + meta_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
