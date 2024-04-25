@@ -1135,8 +1135,8 @@ $(document).ready(function(){
             const data_import_type_third = data[0].data_import_type_third;
             const data_import_third = data[0].data_import_third;
 
-            $(".dlc").append('<p class="description-title">이 콘텐츠는</p>'+
-            '<p>다음 콘텐츠</p>'+
+            $(".related").append('<p class="description-title">관련 작품</p>'+
+            '<p>이 콘텐츠는 다음 작품과 관련이 있습니다.</p>'+
             '<div>'+
                 '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<div>'+

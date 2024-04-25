@@ -1184,31 +1184,19 @@ div.system-requirements-title {
     margin: 10px;
 }
 
-.description-attention.early-access {
-    background: linear-gradient(135deg, rgba(23, 23, 23, 0.8) 10%, rgba(84, 84, 84, 0.8) 100%);
+.description-attention.related {
+    background: linear-gradient(135deg, rgba(146, 25, 25, 0.8) 10%, rgba(217, 16, 16, 0.8) 100%);
 }
 
-.description-attention.early-access p {
+.description-attention.related p {
     color: #aaaaaa;
 }
 
-.description-attention.early-access > p.description-title {
+.description-attention.related > p.description-title {
     color: #cccccc;
 }
 
-.description-attention.dlc {
-    background: linear-gradient(135deg, rgba(72, 23, 70, 0.8) 10%, rgba(165, 84, 177, 0.8) 100%);
-}
-
-.description-attention.dlc p {
-    color: #aaaaaa;
-}
-
-.description-attention.dlc > p.description-title {
-    color: #cccccc;
-}
-
-.descriptions .dlc > div {
+.descriptions .related > div {
     display: flex;
     width: 100%;
     margin: 0;
@@ -1217,7 +1205,7 @@ div.system-requirements-title {
     justify-content: space-between;
 }
 
-.descriptions .dlc > div:before {
+.descriptions .related > div:before {
     content: "";
     width: 100%;
     height: 1px;
