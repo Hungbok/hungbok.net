@@ -1632,6 +1632,18 @@ div.system-requirements-title {
     border-radius: 20px;
 } */
 
+.external-links.external-store-link:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 100px;
+    bottom: calc(100% + 5px);
+    left: 0;
+    background-image: url(//media.hungbok.net/image/logo/justwatch.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .icon-none,
 .icon-undefined {
     display: none;
