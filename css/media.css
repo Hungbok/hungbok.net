@@ -946,6 +946,14 @@ div.system-requirements-title {
     width: 100%;
 }
 
+.airing_start,
+.end_start {
+    background-color: var(--text-4);
+    color: var(--background-8);
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
 .platform,
 .age {
     font-size: 0;

@@ -1152,3 +1152,11 @@ body.en .middle-content::before {
 .music-title > .ost::before {
     content: "OST";
 }
+
+.airing_start::before {
+    content: "시작";
+}
+
+.end_start::before {
+    content: "종료";
+}
