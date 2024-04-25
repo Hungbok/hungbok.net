@@ -540,9 +540,9 @@ $(document).ready(function(){
             const tmdb_link = data[0].tmdblink;
             let tmdb_score = data[0].tmdbsc;
     
-            const filmark_link = data[0].filmarklink;
-            let filmark_score = data[0].filmarksc;
-            let filmark_percent = filmark_score * 20;
+            const filmarks_link = data[0].filmarkslink;
+            let filmarks_score = data[0].filmarkssc;
+            let filmarks_percent = filmarks_score * 20;
     
             const yahoo_link = data[0].yahoolink;
             let yahoo_score = data[0].yahoosc;
@@ -578,7 +578,6 @@ $(document).ready(function(){
     
             const anilist_link = data[0].anilistlink;
             let anilist_score = data[0].anilistsc;
-            let anilist_percent = anilist_score * 10;
     
             const watcha_link = data[0].watchalink;
             let watcha_score = data[0].watchasc;
@@ -744,9 +743,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://filmarks.com/animes/" + filmark_link + "' class='rating-star " + filmark_score + "' target='_blank' ttt='" + filmark_score + " / 5.0'>"+
+                    "<a href='https://filmarks.com/animes/" + filmarks_link + "' class='rating-star " + filmarks_score + "' target='_blank' ttt='" + filmarks_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + filmark_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + filmarks_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -930,7 +929,7 @@ $(document).ready(function(){
                     '<div class="rating-title">유저 평점</div>'+
                     "<a href='https://anilist.co/anime/" + anilist_link + "' class='rating-star " + anilist_score + "' target='_blank' ttt='" + anilist_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anilist_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + anilist_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
