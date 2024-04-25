@@ -682,7 +682,7 @@ $(document).ready(function(){
                     '<div class="rating-title">메타스코어</div>'+
                     "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star' target='_blank' ttt='" + meta_score + " / 100'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + meta_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + meta_score + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
