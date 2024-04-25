@@ -419,7 +419,7 @@ $(document).ready(function(){
             characterData.forEach(function(item) {
                 $(".character").append('<div class="character-card">'+
                     '<div class="character-image">'+
-                        '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                        '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="character-info">'+
                         '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
@@ -448,19 +448,30 @@ $(document).ready(function(){
             var musicData = [];
             for (var i = 1; i <= music_value; i++) {
                 var musicType = data[0]['musictype' + i];
-                var musicTitle = data[0]['musictitle' + i];
-                var musicTitleOriginal = data[0]['musictitle_og' + i];
+                var musicTitle = getLocalizedTextData(data[0], ['musictitle' + i]);
+                var musicTitleOriginal = data[0]['musictitle' + i];
                 var musicUrl = data[0]['musicurl' + i];
                 var musicVideoId = data[0]['musicvideoid' + i];
-                var musicSing = data[0]['musicsing' + i];
-                var musicSingOriginal = data[0]['musicsing_og' + i];
-                var musicWrite = data[0]['musicwrite' + i];
-                var musicWriteOriginal = data[0]['musicwrite_og' + i];
-                var musicProduce = data[0]['musicproduce' + i];
-                var musicProduceOriginal = data[0]['musicproduce_og' + i];
-                var musicArrange = data[0]['musicarrange' + i];
-                var musicArrangeOriginal = data[0]['musicarrange_og' + i];
+                var musicSing = getLocalizedTextData(data[0], ['musicsing' + i]);
+                var musicSingOriginal = data[0]['musicsing' + i];
+                var musicWrite = getLocalizedTextData(data[0], ['musicwrite' + i]);
+                var musicWriteOriginal = data[0]['musicwrite' + i];
+                var musicProduce = getLocalizedTextData(data[0], ['musicproduce' + i]);
+                var musicProduceOriginal = data[0]['musicproduce' + i];
+                var musicArrange = getLocalizedTextData(data[0], ['musicarrange' + i]);
+                var musicArrangeOriginal = data[0]['musicarrange' + i];
                 var musicImage = 'music_' + i;
+                var musicvideoServer = data[0]['musicvideoserver' + i];
+                var musicvideoExtension = 'jpg';
+                if (musicvideoServer === 'youtube') {
+                    musicvideoExtension = 'jpg';
+                }
+                if (musicvideoServer === 'video') {
+                    musicvideoExtension = 'jpg';
+                }
+                if (musicvideoServer === 'vimeo') {
+                    musicvideoExtension = 'avif';
+                }
                 musicData.push({
                     type: musicType,
                     title: musicTitle,
@@ -476,25 +487,27 @@ $(document).ready(function(){
                     arrange: musicArrange,
                     arrangeog: musicArrangeOriginal,
                     img: musicImage,
+                    server: musicvideoServer,
+                    extension: musicvideoExtension,
                 });
             }
             // music 생성
             musicData.forEach(function(item) {
                 $(".music").append('<div class="music-card">'+
                     '<div class="music-title">'+
-                        '<p>' + item.type + '</p>'+
+                        '<p ttt="' + item.type + '"></p>'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
                     '</div>'+
                     '<div class="music-video">'+
-                        '<div class="youtube-link" youtubeid="' + item.videoid + '">'+
+                        '<div class="video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
                             '<img src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                            '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.videoid + '.avif" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</div>'+
                     '</div>'+
                     '<div class="music-image">'+
-                        '<a href="' + item.url + '" target="_blank">'+
+                        '<a href="https://www.hungbok.com/music?q=' + item.url + '">'+
                             '<img class="music-background" src="//media.hungbok.net/image/hb/hb_error_square.svg">'+
-                            '<img class="music-cover" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="music-cover" src="//media.hungbok.net/image/anime/' + item.url + '/hb_thumbnail.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</a>'+
                         '<img class="music-lp" src="//media.hungbok.net/image/icon/recode.png">'+
                     '</div>'+
