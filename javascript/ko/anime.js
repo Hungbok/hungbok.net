@@ -238,6 +238,7 @@ $(document).ready(function(){
                 var videoId = data[0]['videoid' + i];
                 var videoTitle = getLocalizedData(data[0], 'videotitle' + i);
                 var videoServer = data[0]['videoserver' + i];
+                var videoExtension = 'jpg';
                 if (videoServer === 'youtube') {
                     videoExtension = 'jpg';
                 }
