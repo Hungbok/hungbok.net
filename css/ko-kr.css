@@ -1077,58 +1077,58 @@ body.en .middle-content::before {
     content: "방영일자";
 }
 
-.more-info-item-text.tva::before {
+.more-info .more-info-item-text.tva::before {
     content: "TV 애니메이션";
 }
 
-.more-info-item-text.movie::before {
+.more-info .more-info-item-text.movie::before {
     content: "애니메이션 영화";
 }
 
-.more-info-item-text.ova::before {
+.more-info .more-info-item-text.ova::before {
     content: "OVA";
 }
 
-.more-info-item-text.web::before {
+.more-info .more-info-item-text.web::before {
     content: "웹 애니메이션";
 }
 
-.more-info-item-text.special::before {
+.more-info .more-info-item-text.special::before {
     content: "스페셜";
 }
 
-.more-info-item-text.series::before {
+.more-info .more-info-item-text.series::before {
     content: "드라마";
 }
 
-.more-info-item-text.show::before {
+.more-info .more-info-item-text.show::before {
     content: "예능 프로그램";
 }
 
-.more-info-item-text.documentary::before {
+.more-info .more-info-item-text.documentary::before {
     content: "다큐멘터리";
 }
 
-.more-info-item-text.film::before {
+.more-info .more-info-item-text.film::before {
     content: "영화";
 }
 
-.more-info-item-text.novel::before {
+.more-info .more-info-item-text.novel::before {
     content: "소설";
 }
 
-.more-info-item-text.manga::before {
+.more-info .more-info-item-text.manga::before {
     content: "만화";
 }
 
-.more-info-item-text.comic::before {
+.more-info .more-info-item-text.comic::before {
     content: "웹툰";
 }
 
-.more-info-item-text.album::before {
+.more-info .more-info-item-text.album::before {
     content: "앨범";
 }
 
-.more-info-item-text.songs::before {
+.more-info .more-info-item-text.songs::before {
     content: "곡";
 }
