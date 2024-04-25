@@ -2121,7 +2121,7 @@ div.opencritic-reviews {
 .description {
     text-align: left;
     overflow: hidden;
-    max-height: 310px;
+    max-height: 301px;
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -o-transition: all 1s;
