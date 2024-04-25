@@ -1034,22 +1034,26 @@ body.en .middle-content::before {
 }
 
 .music-table > thead > tr > th:nth-child(3)::before {
-    content: "작사";
+    content: "노래";
 }
 
 .music-table > thead > tr > th:nth-child(4)::before {
-    content: "작곡";
+    content: "작사";
 }
 
 .music-table > thead > tr > th:nth-child(5)::before {
-    content: "편곡";
+    content: "작곡";
 }
 
 .music-table > thead > tr > th:nth-child(6)::before {
-    content: "길이";
+    content: "편곡";
 }
 
 .music-table > thead > tr > th:nth-child(7)::before {
+    content: "길이";
+}
+
+.music-table > thead > tr > th:nth-child(8)::before {
     content: "듣기";
 }
 
