@@ -1208,17 +1208,7 @@ div.system-requirements-title {
     color: #cccccc;
 }
 
-.description-attention.add-on {
-    background: linear-gradient(135deg, rgba(190, 150, 25, 0.6) 10%, rgba(224, 177, 29, 0.8) 100%);
-}
-
-.description-attention.mode {
-    background: linear-gradient(135deg, rgba(25, 78, 190, 0.6) 10%, rgba(29, 169, 224, 0.8) 100%);
-}
-
-.descriptions .dlc > div,
-.descriptions .add-on > div,
-.descriptions .mode > div {
+.descriptions .dlc > div {
     display: flex;
     width: 100%;
     margin: 0;
@@ -1227,9 +1217,7 @@ div.system-requirements-title {
     justify-content: space-between;
 }
 
-.descriptions .dlc > div:before,
-.descriptions .add-on > div:before,
-.descriptions .mode > div:before {
+.descriptions .dlc > div:before {
     content: "";
     width: 100%;
     height: 1px;

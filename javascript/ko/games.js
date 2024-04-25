@@ -52,6 +52,12 @@ $(document).ready(function(){
                 '{release}': getLocalizedData(data[0], 'release'),
                 '{genre}': getLocalizedData(data[0], 'genre'),
                 '{mode}': getLocalizedData(data[0], 'mode'),
+                '{director}': getLocalizedData(data[0], 'director'),
+                '{producer}': getLocalizedData(data[0], 'producer'),
+                '{designer}': getLocalizedData(data[0], 'designer'),
+                '{programmer}': getLocalizedData(data[0], 'programmer'),
+                '{writer}': getLocalizedData(data[0], 'writer'),
+                '{composer}': getLocalizedData(data[0], 'composer'),
                 '{franchise}': getLocalizedData(data[0], 'franchise'),
   
                 '{pc}': data[0].pc,
