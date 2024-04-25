@@ -705,7 +705,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://letterboxd.com/film/" + letter_link + "' class='rating-star " + letter_score + "' target='_blank' ttt='" + letter_score + " / 5'>"+
+                    "<a href='https://letterboxd.com/film/" + letter_link + "' class='rating-star " + letter_score + "' target='_blank' ttt='" + letter_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + letter_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -927,7 +927,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://anilist.co/anime/" + anilist_link + "' class='rating-star " + anilist_score + "' target='_blank' ttt='" + anilist_score + " / 100'>"+
+                    "<a href='https://anilist.co/anime/" + anilist_link + "' class='rating-star " + anilist_score + "' target='_blank' ttt='" + anilist_score + "% / 100%'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + anilist_score + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -946,7 +946,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://pedia.watcha.com/contents/" + watcha_link + "' class='rating-star " + watcha_score + "' target='_blank' ttt='" + watcha_score + " / 5'>"+
+                    "<a href='https://pedia.watcha.com/contents/" + watcha_link + "' class='rating-star " + watcha_score + "' target='_blank' ttt='" + watcha_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + watcha_percent + '%;">'+
                                 '<span>★★★★★</span>'+
@@ -978,7 +978,7 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://kinolights.com/title/" + kino_link + "' class='rating-star " + kino_userscore_score + "' target='_blank' ttt='" + kino_userscore_score + " / 5.0'>"+
+                    "<a href='https://kinolights.com/title/" + kino_link + "?tab=review' class='rating-star " + kino_userscore_score + "' target='_blank' ttt='" + kino_userscore_score + " / 5.0'>"+
                         '<div class="star-ratings">'+
                             '<div class="fill-ratings" style="width: ' + kino_userscore_percent + '%;">'+
                                 '<span>★★★★★</span>'+

@@ -3077,6 +3077,18 @@ div.system-requirements-title {
     background-color: #6A5ACD;
 }
 
+.rating .googletv {
+    background-color: #ffffff;
+}
+
+.rating .justwatch {
+    background-color: #182531;
+}
+
+.rating .rakutenviki {
+    background-color: #000014;
+}
+
 .rating .opencritic {
     background-color: #010101;
 }
