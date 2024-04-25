@@ -238,7 +238,8 @@ $(document).ready(function(){
                 var storyTitleOriginal = data[0]['storytitle' + i];
                 var storyText = getLocalizedTextData(data[0], ['storytext' + i]);
                 var storyEpisode = i;
-                var storyDate = formatDate(data[0].storydate + i);
+                var storyairingdate = getLocalizedTextData(data[0], ['storydate' + i]);
+                var storyDate = formatDate(storyairingdate);
                 var storyId = data[0]['storyid' + i];
                 var storyImage = 'story_' + i;
                 var storyTime = data[0]['storytime' + i];
