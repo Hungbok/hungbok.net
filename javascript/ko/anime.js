@@ -36,6 +36,16 @@ $(document).ready(function(){
                 return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
             }
 
+            function getLocalizedTextData(data, key) {
+                if (data['ko'] && data['ko'][key]) {
+                    return data['ko'][key];
+                } else if (data['en'] && data['en'][key]) {
+                    return data['en'][key];
+                } else {
+                    return data[key];
+                }
+            }
+
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
             $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang') + ' ' + data[0].age_check);
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
@@ -216,9 +226,9 @@ $(document).ready(function(){
             var story_value = data[0].storycount; // story 수
             var storyData = [];
             for (var i = 1; i <= story_value; i++) {
-                var storyText = data[0]['storytext' + i];
-                var storyTitle = data[0]['storytitle' + i];
-                var storyTitleOriginal = data[0]['storytitle_og' + i];
+                var storyTitle = getLocalizedTextData(data[0], ['storytitle' + i]);
+                var storyTitleOriginal = data[0]['storytitle' + i];
+                var storyText = getLocalizedTextData(data[0]['storytext' + i]);
                 var storyEpisode = data[0]['storyepisode' + i];
                 var storyDate = data[0]['storydate' + i];
                 var storyId = data[0]['storyid' + i];
