@@ -1636,10 +1636,11 @@ div.system-requirements-title {
 .external-links.external-store-link:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 100px;
+    height: 10px;
+    width: 70px;
     bottom: calc(100% + 5px);
     left: 0;
+    pointer-events: none;
     background-image: url(//media.hungbok.net/image/logo/justwatch.svg);
     background-repeat: no-repeat;
     background-size: contain;
