@@ -45,6 +45,11 @@ $(document).ready(function(){
                     return data[key];
                 }
             }
+            
+            function formatDate(dateString) {
+              var dateParts = dateString.split('-'); // yyyy-mm-dd를 '-' 기준으로 분리
+              return dateParts[0] + '년 ' + dateParts[1] + '월 ' + dateParts[2] + '일'; // 변환된 형식 반환
+            }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
             $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang') + ' ' + data[0].age_check);
@@ -72,9 +77,9 @@ $(document).ready(function(){
                 '{info_animation_production}': getLocalizedData(data[0], 'animation_production'),
                 '{info_production}': getLocalizedData(data[0], 'production'),
                 '{broadcast}': getLocalizedData(data[0], 'broadcast'),
-                '{start_airing}':  data[0].start_airing,
-                '{end_airing}':  data[0].end_airing,
-                '{runningtime}':  data[0].runningtime,
+                '{start_airing}': formatDate(data[0].start_airing),
+                '{end_airing}': formatDate(data[0].end_airing),
+                '{runningtime}': data[0].runningtime,
                 '{total_episode}':  data[0].total_episode,
                 '{season}':  data[0].season,
                 '{country}': data[0].country,
@@ -211,7 +216,7 @@ $(document).ready(function(){
                 var storyTitleOriginal = data[0]['storytitle' + i];
                 var storyText = getLocalizedTextData(data[0], ['storytext' + i]);
                 var storyEpisode = i;
-                var storyDate = data[0]['storydate' + i];
+                var storyDate = formatDate(data[0], ['storydate' + i]);
                 var storyId = data[0]['storyid' + i];
                 var storyImage = 'story_' + i;
                 var storyTime = data[0]['storytime' + i];
@@ -230,7 +235,7 @@ $(document).ready(function(){
             storyData.forEach(function(item) {
                 $(".story").append('<div class="story-card">'+
                     '<div class="story-episode">'+
-                        '<p>' + item.epi + '</p>'+
+                        '<p>제' + item.epi + '화</p>'+
                     '</div>'+
                     '<div class="story-title">'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
