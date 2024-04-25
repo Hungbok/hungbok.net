@@ -60,6 +60,8 @@ $(document).ready(function(){
                 '{producer}': getLocalizedData(data[0], 'producer'),
                 '{animation_production}': data[0].animation_production,
                 '{production}': data[0].production,
+                '{info_animation_production}': getLocalizedData(data[0], 'animation_production'),
+                '{info_production}': getLocalizedData(data[0], 'production'),
                 '{broadcast}': getLocalizedData(data[0], 'broadcast'),
                 '{start_airing}': getLocalizedData(data[0], 'start_airing'),
                 '{end_airing}': getLocalizedData(data[0], 'end_airing'),
