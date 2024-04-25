@@ -46,9 +46,19 @@ $(document).ready(function(){
                 }
             }
             
-            function formatDate(dateString) {
-              var dateParts = dateString.split('-'); // yyyy-mm-dd를 '-' 기준으로 분리
-              return dateParts[0] + '년 ' + dateParts[1] + '월 ' + dateParts[2] + '일'; // 변환된 형식 반환
+            function formatDate(date) {
+                var parts = date.split('-'); // '-'를 기준으로 문자열을 분리하여 배열 생성
+                var year = parts[0];
+                var month = parts[1];
+                var day = parts[2];
+            
+                if (day) { // yyyy-mm-dd 형식
+                    return year + '년 ' + month + '월 ' + day + '일';
+                } else if (month) { // yyyy-mm 형식
+                    return year + '년 ' + month + '월';
+                } else { // yyyy 형식
+                    return year + '년';
+                }
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
