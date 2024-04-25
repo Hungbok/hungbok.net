@@ -1135,54 +1135,8 @@ $(document).ready(function(){
             const data_import_type_third = data[0].data_import_type_third;
             const data_import_third = data[0].data_import_third;
 
-            $(".dlc").append('<p class="description-title">이 제품은 확장팩 혹은 다운로드 가능한 콘텐츠입니다.</p>'+
-            '<p>플레이하려면 다음 제품 중 하나가 필요합니다.</p>'+
-            '<div>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-            '</div>');
-
-            $(".add-on").append('<p class="description-title">이 제품은 2차 창작 모드 혹은 애드온입니다.</p>'+
-            '<p>플레이하려면 다음 제품이 필요합니다.</p>'+
-            '<div>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-            '</div>');
-
-            $(".mode").append('<p class="description-title">이 콘텐츠는 게임 모드입니다.</p>'+
-            '<p>다음 제품에 포함되어 있습니다.</p>'+
+            $(".dlc").append('<p class="description-title">이 콘텐츠는</p>'+
+            '<p>다음 콘텐츠</p>'+
             '<div>'+
                 '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank" data-type={data_import_type_first} data-file={data_import_first}>'+
                     '<div>'+
