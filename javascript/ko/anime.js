@@ -238,18 +238,28 @@ $(document).ready(function(){
                 var videoId = data[0]['videoid' + i];
                 var videoTitle = getLocalizedData(data[0], 'videotitle' + i);
                 var videoServer = data[0]['videoserver' + i];
+                if (videoServer === 'youtube') {
+                    videoExtension = 'jpg';
+                }
+                if (videoServer === 'video') {
+                    videoExtension = 'jpg';
+                }
+                if (videoServer === 'vimeo') {
+                    videoExtension = 'avif';
+                }
                 videoData.push({
                     id: videoId,
                     title: videoTitle,
                     server: videoServer,
+                    extension: videoExtension,
                 });
             }
             // video 생성
             videoData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
-                    '<div class="video-play-button youtube-link" videoid="' + item.id + '">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '<div class="video-play-button ' + item.server + '-link" videoid="' + item.id + '">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/games/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '<div class="youtube-title">' + item.title + '</div>'+
                     '</div>'+
                 '</div>');
