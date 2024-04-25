@@ -1511,6 +1511,12 @@ div.system-requirements-title {
 
 /* story */
 
+.story {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .story-card {
     display: grid;
     grid-template-columns: 30% 45% 25%;
@@ -1654,6 +1660,12 @@ div.system-requirements-title {
 }
 
 /* setting */
+
+.setting {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .setting-card {
     display: grid;
@@ -2342,6 +2354,7 @@ div.system-requirements-title {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .music-card {

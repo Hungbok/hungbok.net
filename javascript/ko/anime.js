@@ -510,7 +510,7 @@ $(document).ready(function(){
             }
             // 에피소드 줄 생성
             episodeData.forEach(function(item) {
-                $(".episode tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
+                $(".episode-tables tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
             });
             
             const metascore_score = data[0].metasc;
