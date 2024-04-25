@@ -561,7 +561,7 @@
     transition: all 0.5s;
 }
 
-.music-table > tbody > tr > td[rep="7"] > p {
+.music-table > tbody > tr > td[rep="8"] > p {
     margin: 0px;
     vertical-align: middle;
 }
@@ -603,7 +603,7 @@
 }
 
 .music-table > tbody > tr > td[rep="7"] > p:last-child {
-    max-width: 55px;
+    max-width: 60px;
 }
 
 .music-table > tbody > tr > td[rep="8"] > p:last-child {
