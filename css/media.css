@@ -1,3 +1,133 @@
+/* Age Check */
+
+body.adult > main > .section {
+    display: none;
+}
+
+body.adult > main > .top-backgrounds {
+    filter: blur(100px);
+    height: 100%;
+    top: 0;
+}
+
+body.adult > main > .top-backgrounds > div {
+    background-position: center center!important;
+    transform: translate(0, 0)!important;
+}
+
+#warning {
+    z-index: 1;
+    position: relative;
+    height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+#warning p {
+    margin: 0;
+}
+
+.age-check-container {
+    max-width: 500px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#age-checking {
+    width: 100%;
+}
+
+#age-check-none {
+    display: none;
+}
+
+.age-check-container input {
+    width: 80px;
+    border: none;
+    padding: 10px;
+    margin: 40px 5px;
+    color: var(--text-2);
+    background-color: transparent;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.age-check-container input:hover,
+.age-check-container input:focus {
+    background-color: var(--background-10-opacity-50);
+}
+
+.age-check-container p {
+    width: 100%;
+}
+
+#age-checking {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: var(--background-10);
+    background-color: var(--text-2);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#age-checking:hover {
+    background-color: var(--text-4);
+}
+
+#age-checking:disabled {
+    cursor: not-allowed;
+    background-color: var(--background-6-opacity-50);
+    color: var(--background-2);
+    filter: brightness(0.75);
+}
+
+.age-check-back {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: 0px 10px 0px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.age-check-back:hover {
+    background-color: var(--background-10-opacity-75);
+}
+
+#child {
+    margin: 20px;
+}
+
 /* top background image */
 
 .top-backgrounds {
