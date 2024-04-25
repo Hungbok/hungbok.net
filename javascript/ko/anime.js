@@ -434,8 +434,8 @@ $(document).ready(function(){
             characterCounts.forEach(function (characterCount, countIndex) {
                 for (var j = 1; j <= characterCount; j++) {
                     var cLang = data[0]['char' + (countIndex + 1) + 'lang' + j];
-                    var cName = data[0]['char' + (countIndex + 1) + 'name' + j];
-                    var cNameog = data[0]['char' + (countIndex + 1) + 'name_og' + j];
+                    var cName = getLocalizedTextData(data[0], ['char' + (countIndex + 1) + 'name' + j]);
+                    var cNameog = data[0]['char' + (countIndex + 1) + 'name' + j];
         
                     $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
                         '<p class="character-lang"></p>'+
