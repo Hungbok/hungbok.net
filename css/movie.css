@@ -8,7 +8,7 @@
 /* top */
 
 .top-content {
-    min-height: 400px;
+    min-height: 500px;
     display: grid;
     grid-template-columns: auto 320px;
     grid-template-rows: 40px auto 85px;

@@ -1,3 +1,10 @@
+/* top background image */
+
+.top-backgrounds,
+.top-background {
+    height: 390px;
+}
+
 /* top */
 
 .top-content {
