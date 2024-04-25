@@ -44,7 +44,6 @@ $(document).ready(function(){
             // 대체할 값들을 저장한 객체
             var replacement = {
                 '{type}': data[0].type,
-                '{content_type}': data[0].content_type,
                 '{original_title}': data[0].title,
                 '{title}': getLocalizedData(data[0], 'title'),
                 '{original}': getLocalizedData(data[0], 'original'),
@@ -67,8 +66,8 @@ $(document).ready(function(){
                 '{end_airing}': getLocalizedData(data[0], 'end_airing'),
                 '{runningtime}': getLocalizedData(data[0], 'runningtime'),
                 '{total_episode}': getLocalizedData(data[0], 'total_episode'),
-                '{country}': getLocalizedData(data[0], 'country'),
-                '{language}': getLocalizedData(data[0], 'language'),
+                '{country}': data[0].country,
+                '{language}': data[0].language,
   
                 '{age}': data[0].age,
                 '{kmrb}': data[0].kmrb,
