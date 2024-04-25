@@ -497,7 +497,22 @@ $(document).ready(function(){
                         '<p>편곡</p>' + item.arrange + '</div>'+
                 '</div>');
             });
-    
+
+            var episode_value = data.epicount; // 에피소드 줄 수
+            var episodeData = [];
+            for (var i = 1; i <= episode_value; i++) {
+                var episodeText = data['epiline' + i];
+                var episodeLine = i - 1;
+                episodeData.push({
+                    line: episodeLine,
+                    text: episodeText,
+                });
+            }
+            // 에피소드 줄 생성
+            episodeData.forEach(function(item) {
+                $(".episode tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
+            });
+            
             const metascore_score = data[0].metasc;
             const metascore_link = data[0].metalink;
             const metascore_percent = data[0].metaper;
