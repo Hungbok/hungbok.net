@@ -946,8 +946,8 @@ div.system-requirements-title {
     width: 100%;
 }
 
-.airing_start,
-.end_start {
+.airing_start::before,
+.end_start::before {
     background-color: var(--text-4);
     color: var(--background-8);
     border-radius: 5px;
