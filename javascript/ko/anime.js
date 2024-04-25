@@ -522,7 +522,7 @@ $(document).ready(function(){
                 '</div>');
             });
 
-            var episode_value = data.epicount; // 에피소드 줄 수
+            var episode_value = data[0].epicount; // 에피소드 줄 수
             var episodeData = [];
             for (var i = 1; i <= episode_value; i++) {
                 var episodeText = getLocalizedData(data[0], ['epiline' + i]);
