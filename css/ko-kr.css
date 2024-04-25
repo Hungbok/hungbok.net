@@ -1132,3 +1132,23 @@ body.en .middle-content::before {
 .more-info .more-info-item-text.songs::before {
     content: "곡";
 }
+
+.music-title > .opening::before {
+    content: "오프닝";
+}
+
+.music-title > .ending::before {
+    content: "엔딩";
+}
+
+.music-title > .insert::before {
+    content: "삽입곡";
+}
+
+.music-title > .theme::before {
+    content: "주제가";
+}
+
+.music-title > .ost::before {
+    content: "OST";
+}

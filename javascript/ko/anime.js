@@ -109,27 +109,6 @@ $(document).ready(function(){
                 '{social_link9}': data[0].social_link9,
                 '{social_class10}': data[0].social_class10,
                 '{social_link10}': data[0].social_link10,
-
-                '{store_class1}': data[0].store_class1,
-                '{store_link1}': data[0].store_link1,
-                '{store_class2}': data[0].store_class2,
-                '{store_link2}': data[0].store_link2,
-                '{store_class3}': data[0].store_class3,
-                '{store_link3}': data[0].store_link3,
-                '{store_class4}': data[0].store_class4,
-                '{store_link4}': data[0].store_link4,
-                '{store_class5}': data[0].store_class5,
-                '{store_link5}': data[0].store_link5,
-                '{store_class6}': data[0].store_class6,
-                '{store_link6}': data[0].store_link6,
-                '{store_class7}': data[0].store_class7,
-                '{store_link7}': data[0].store_link7,
-                '{store_class8}': data[0].store_class8,
-                '{store_link8}': data[0].store_link8,
-                '{store_class9}': data[0].store_class9,
-                '{store_link9}': data[0].store_link9,
-                '{store_class10}': data[0].store_class10,
-                '{store_link10}': data[0].store_link10,
   
                 '{attention}': data[0].attention,
                 '{plot}': getLocalizedData(data[0], 'plot'),
@@ -152,6 +131,7 @@ $(document).ready(function(){
 
                 '{review}': data[0].review,
                 '{rating}': data[0].rating,
+                '{imdbid}': data[0].imdblink,
             };
             
             // body의 HTML 가져오기
@@ -495,7 +475,7 @@ $(document).ready(function(){
             musicData.forEach(function(item) {
                 $(".music").append('<div class="music-card">'+
                     '<div class="music-title">'+
-                        '<p ttt="' + item.type + '"></p>'+
+                        '<p class="' + item.type + '"></p>'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
                     '</div>'+
                     '<div class="music-video">'+
@@ -536,13 +516,10 @@ $(document).ready(function(){
             episodeData.forEach(function(item) {
                 $(".episode-tables tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
             });
-            
-            const metascore_score = data[0].metasc;
-            const metascore_link = data[0].metalink;
-            const metascore_percent = data[0].metaper;
-            const metacritic_userscore_score = data[0].metausersc;
-            const metacritic_userscore_link = data[0].metauserlink;
-            const metacritic_userscore_percent = data[0].metauserper;
+    
+            const imdb_link = data[0].imdblink;
+            let imdb_score = data[0].imdbsc;
+            let imdb_percent = imdb_score * 10;
     
             const tomatometer_score = data[0].tomatosc;
             const tomatometer_link = data[0].tomatolink;
@@ -550,10 +527,13 @@ $(document).ready(function(){
             const rottentomatoes_audience_score = data[0].tomatousersc;
             const rottentomatoes_audience_link = data[0].tomatouserlink;
             const rottentomatoes_audience_percent = data[0].tomatouserper;
-    
-            const imdb_score = data[0].imdbsc;
-            const imdb_link = data[0].imdblink;
-            const imdb_percent = data[0].imdbper;
+            
+            const metascore_score = data[0].metasc;
+            const metascore_link = data[0].metalink;
+            const metascore_percent = data[0].metaper;
+            const metacritic_userscore_score = data[0].metausersc;
+            const metacritic_userscore_link = data[0].metauserlink;
+            const metacritic_userscore_percent = data[0].metauserper;
     
             const letterboxd_score = data[0].lettersc;
             const letterboxd_link = data[0].letterlink;
@@ -646,28 +626,15 @@ $(document).ready(function(){
             const rakutenviki_percent = data[0].rakutenvikiper;
             
             // 평가 틀 생성
-            $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
+            $(".rating.imdb").append('<div class="rating-card imdb rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Metacritic" src="//media.hungbok.net/image/logo/metacritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">메타스코어</div>'+
-                    "<a href='" + metascore_link + "' class='rating-star' target='_blank' ttt='" + metascore_score + "'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + metascore_percent + ';">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
+                    '<img title="IMDb" src="//media.hungbok.net/image/logo/imdb.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + metacritic_userscore_link + "' class='rating-star' target='_blank' ttt='" + metacritic_userscore_score + "'>"+
+                    "<a href='https://www.imdb.com/title/" + imdb_link + "' class='rating-star " + imdb_score + "' target='_blank' ttt='" + imdb_score + " / 10'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + metacritic_userscore_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + imdb_percent + '%;">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -709,16 +676,29 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
             '</div>');
-    
-            $(".rating.imdb").append('<div class="rating-card imdb rating-one-score">'+
+
+            $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
                 '<div class="rating-image">'+
-                    '<img title="IMDb" src="//media.hungbok.net/image/logo/imdb.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Metacritic" src="//media.hungbok.net/image/logo/metacritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">메타스코어</div>'+
+                    "<a href='" + metascore_link + "' class='rating-star' target='_blank' ttt='" + metascore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + metascore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='" + imdb_link + "' class='rating-star' target='_blank' ttt='" + imdb_score + "'>"+
+                    "<a href='" + metacritic_userscore_link + "' class='rating-star' target='_blank' ttt='" + metacritic_userscore_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + imdb_percent + ';">'+
+                            '<div class="fill-ratings" style="width: ' + metacritic_userscore_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
