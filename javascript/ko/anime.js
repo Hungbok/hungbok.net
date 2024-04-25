@@ -228,7 +228,7 @@ $(document).ready(function(){
             for (var i = 1; i <= story_value; i++) {
                 var storyTitle = getLocalizedTextData(data[0], ['storytitle' + i]);
                 var storyTitleOriginal = data[0]['storytitle' + i];
-                var storyText = getLocalizedTextData(data[0]['storytext' + i]);
+                var storyText = data[0]['storytext' + i];
                 var storyEpisode = data[0]['storyepisode' + i];
                 var storyDate = data[0]['storydate' + i];
                 var storyId = data[0]['storyid' + i];
