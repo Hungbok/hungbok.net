@@ -529,7 +529,7 @@ $(document).ready(function(){
             const meta_link = data[0].metalink;
             let meta_score = data[0].metasc;
             let meta_userscore_score = data[0].metausersc;
-            let meta_userscore_percent = meta_userscore_score * 20;
+            let meta_userscore_percent = meta_userscore_score * 10;
             let meta_season = data[0].season;
     
             const letterboxd_score = data[0].lettersc;
