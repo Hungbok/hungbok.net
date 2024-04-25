@@ -224,7 +224,7 @@
 .music-track-popup-pip {
 	position:absolute;
     bottom: -50px;
-    right: 4px;
+    left: 4px;
 	color:#FFF;
 	font-size:25px;
 	width:30px;
