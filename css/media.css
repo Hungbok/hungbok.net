@@ -1600,6 +1600,7 @@ div.system-requirements-title {
 .external-links {
     justify-content: center;
     gap: 20px;
+    position: relative;
 }
 
 .external-link {
