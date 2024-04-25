@@ -135,9 +135,6 @@
     position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
-    background-color: var(--background-8);
-    border-radius: 20px;
-    padding: 20px;
     gap: 20px;
 }
 
@@ -175,8 +172,11 @@
     flex-wrap: wrap;
     font-size: 14px;
     max-width: 720px;
-    height: 100%;
+    height: calc(100% - 40px);
     gap: 10px;
+    background-color: var(--background-8);
+    border-radius: 20px;
+    padding: 20px;
     align-items: stretch;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
