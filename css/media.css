@@ -196,8 +196,6 @@
     content: "";
     width: 86px;
     height: 86px;
-    background-image: url("//media.hungbok.net/image/icon/play.svg");
-    background-size: cover;
     vertical-align: bottom;
     display: inline-block;
     position: absolute;
@@ -214,6 +212,18 @@
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.video-play-button.youtube-link::after {
+    background-image: url("//media.hungbok.net/image/icon/play.svg");
+}
+
+.video-play-button.vimeo-link::after {
+    background-image: url("//media.hungbok.net/image/icon/play_button.svg");
+}
+
+.video-play-button.video-link::after {
+    background-image: url("//media.hungbok.net/image/icon/play_circle.svg");
 }
 
 .video-play-button:hover::after {

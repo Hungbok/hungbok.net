@@ -180,18 +180,6 @@
     border-radius: 20px;
 }
 
-.video-play-button.youtube-link::after {
-    background-image: url("//media.hungbok.net/image/icon/play.svg");
-}
-
-.video-play-button.vimeo-link::after {
-    background-image: url("//media.hungbok.net/image/icon/play_button.svg");
-}
-
-.video-play-button.video-link::after {
-    background-image: url("//media.hungbok.net/image/icon/play_circle.svg");
-}
-
 .youtube-title {
     position: absolute;
     bottom: 0px;
