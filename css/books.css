@@ -18,14 +18,12 @@
     margin: 0px;
     position: relative;
     display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100%;
+    justify-content: center;
 }
 
 .top-title img {
-    min-height: 50px;
-    max-height: 100px;
+    max-height: 200px;
     max-width: 320px;
 }
 
