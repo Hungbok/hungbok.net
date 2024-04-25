@@ -145,7 +145,7 @@
     grid-template-columns: 380px auto;
     column-gap: 40px;
     row-gap: 40px;
-    padding: 40px 40px 0;
+    padding: 40px;
     align-items: start;
 }
 
