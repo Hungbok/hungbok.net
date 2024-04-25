@@ -86,7 +86,7 @@
 }
 
 .contents-top-thumbnail:hover .item-hover-first > .item:first-child {
-    left: 100px;
+    left: 115px;
 }
 
 .contents-top-thumbnail .item-hover-middle {
@@ -113,7 +113,7 @@
 }
 
 .contents-top-thumbnail:hover .item-hover-middle > .item:first-child {
-    left: 200px;
+    left: 230px;
 }
 
 .contents-top-thumbnail .item-hover-last {
@@ -149,11 +149,11 @@
 }
 
 .contents-top-thumbnail:hover .item-hover-last > .item:first-child {
-    left: 300px;
+    left: 345px;
 }
 
 .contents-top-thumbnail:hover .item-hover-last > .item:last-child {
-    left: 400px;
+    left: 460px;
 }
 
 .contents-top-thumbnail .item-thumbnail {
