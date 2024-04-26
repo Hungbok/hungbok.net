@@ -428,7 +428,7 @@ $(document).ready(function(){
             characterData.forEach(function(item) {
                 $(".character").append('<div class="character-card">'+
                     '<div class="character-image">'+
-                        '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;" loading="lazy">'+
+                        '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="character-info">'+
                         '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
