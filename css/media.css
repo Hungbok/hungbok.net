@@ -13,6 +13,7 @@ body.adult > main > .top-backgrounds {
 body.adult > main > .top-backgrounds > div {
     background-position: center center!important;
     transform: translate(0, 0)!important;
+    height: 100%;
 }
 
 #warning {

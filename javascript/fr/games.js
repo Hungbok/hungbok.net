@@ -1873,7 +1873,7 @@ window.addEventListener("scroll", function() {
     }
   
     if (newPosition2 >= 0 && newPosition2 <= 250) {
-        document.getElementsByClassName("top-background-shadow")[0].style.transform = "scaleX(1) scaleY(-1) translate(-50%, " + newPosition2 + "px)";
+        document.getElementsByClassName("top-background-shadow")[0].style.transform = "scaleX(1) scaleY(-1) translate(0%, " + newPosition2 + "px)";
     }
 });
 
