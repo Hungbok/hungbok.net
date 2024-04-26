@@ -91,7 +91,7 @@ $(document).ready(function(){
                 // 날짜 형식에 따라 다르게 처리
                 switch (parts.length) {
                     case 6: // yyyy-mm-dd-hh-mm-ss
-                        formattedTime = `${parts[3]}:${parts[4]}:${parts[5]}`;
+                        formattedTime = `${parts[3]}:${parts[4]}`;
                         break;
                     case 5: // yyyy-mm-dd-hh-mm-ss
                         formattedTime = `${parts[3]}:${parts[4]}`;
