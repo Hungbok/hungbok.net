@@ -57,6 +57,12 @@ $(document).ready(function(){
             
                 // 날짜 형식에 따라 다르게 처리
                 switch (parts.length) {
+                    case 6: // yyyy-mm-dd-hh-mm-ss
+                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
+                        break;
+                    case 5: // yyyy-mm-dd-hh-mm-ss
+                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
+                        break;
                     case 3: // yyyy-mm-dd
                         formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
                         break;
@@ -71,6 +77,30 @@ $(document).ready(function(){
                 }
             
                 return formattedDate;
+            }
+            
+            function formatTime(date) {
+                // date가 문자열이 아닐 경우 문자열로 변환
+                if (typeof date !== 'string') {
+                    date = String(date);
+                }
+                
+                const parts = date.split('-');
+                let formattedTime = '';
+            
+                // 날짜 형식에 따라 다르게 처리
+                switch (parts.length) {
+                    case 6: // yyyy-mm-dd-hh-mm-ss
+                        formattedTime = `${parts[3]}:${parts[4]}:${parts[5]}`;
+                        break;
+                    case 5: // yyyy-mm-dd-hh-mm-ss
+                        formattedTime = `${parts[3]}:${parts[4]}`;
+                        break;
+                    default:
+                        formattedTime = `-`;
+                }
+            
+                return formattedTime;
             }
 
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
@@ -101,6 +131,7 @@ $(document).ready(function(){
                 '{broadcast}': getLocalizedData(data[0], 'broadcast'),
                 '{start_airing}': formatDate(data[0].start_airing),
                 '{end_airing}': formatDate(data[0].end_airing),
+                '{airing_time}': formatTime(data[0].start_airing),
                 '{runningtime}': data[0].runningtime,
                 '{total_episode}':  data[0].total_episode,
                 '{season}':  data[0].season,
