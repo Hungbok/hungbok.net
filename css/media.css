@@ -1608,6 +1608,8 @@ div.system-requirements-title {
     justify-content: center;
     gap: 20px;
     position: relative;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .external-link {
@@ -3548,6 +3550,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.info-slider:hover .owl-nav button,
 .owl-carousel:hover .owl-nav button {
     opacity: 0.8;
     -webkit-transition: all 0.5s;
@@ -3704,6 +3707,10 @@ div.system-requirements-title {
 }
 
 .owl-grab + .progress-container {
+    display: none;
+}
+
+.owl-dots.disabled {
     display: none;
 }
 
