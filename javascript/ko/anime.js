@@ -3,10 +3,10 @@ async function loadAsyncScripts() {
     await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
-    await loadScript('//www.hungbok.net/javascript/table-multi-hover.js');
-    await loadScript('//www.hungbok.net/javascript/html_loader.js');
     // 이미지 및 동영상 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/slick.js');
+    await loadScript('//www.hungbok.net/javascript/table-multi-hover.js');
+    await loadScript('//www.hungbok.net/javascript/html_loader.js');
     await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
 
@@ -598,6 +598,57 @@ $(document).ready(function(){
             episodeData.forEach(function(item) {
                 $(".episode-tables tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
             });
+
+            window.onload = function() {
+                $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
+                    // 스크립트가 성공적으로 로드되고 실행된 후에 실행할 코드를 작성합니다.
+                    // 이 코드는 your_script.js 파일 내의 함수 또는 기능을 호출할 수 있습니다.
+                    var $carousel = $('.owl-carousel');
+        
+                    $carousel.children().each( function( index ) {
+                      $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+                    });
+        
+                    $(document).ready(function() {
+                        var $carousel = $('.info-slider');
+        
+                        $carousel.owlCarousel({
+                            nav: true,
+                            loop: true,
+                            dots: true,
+                            merge: true,
+                            center: true,
+                            autoplay: false,
+                            autoWidth: true,
+                            smartSpeed: 1000,
+                        });
+                    });
+        
+                    $(window).on('resize', function() {
+                        $carousel.trigger('next.owl.carousel');
+                    });
+        
+                    $(document).ready(function () {
+                        // 처음 로딩되었을 때 첫번째 활성화된 .owl-item의 .item에 .active 추가
+                        $('.owl-stage .owl-item.center .item').addClass('active');
+                    
+                        // 슬라이드 이동 이벤트가 발생할 때마다 실행
+                        $('.owl-carousel').on('translated.owl.carousel', function(e) {
+                            // 기존에 .active가 있던 .item에서 .active 제거
+                            $('.owl-stage .owl-item .item.active').removeClass('active');
+                    
+                            // 새로 .active가 된 첫번째 .owl-item의 .item에 .active 추가
+                            $('.owl-stage .owl-item.center .item').addClass('active');
+                        });
+        
+                        $(document).on('click', '.owl-item > div', function() {
+                            // see https://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html#to-owl-carousel
+                            var $speed = 300;  // in ms
+                            $carousel.trigger('to.owl.carousel', [$(this).data( 'position' ), $speed] );
+                        });
+                    });
+                });
+            };
     
             const imdb_link = data[0].imdblink;
             let imdb_score = data[0].imdbsc;
