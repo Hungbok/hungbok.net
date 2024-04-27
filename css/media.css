@@ -3324,7 +3324,8 @@ div.system-requirements-title {
     display: none;
 }
 
-.game-section .owl-stage {
+.game-section .owl-stage,
+.info-slider .owl-stage {
     margin: 0;
     padding: 10px 0px;
     display: flex;

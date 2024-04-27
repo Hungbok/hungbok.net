@@ -610,7 +610,6 @@ $(document).ready(function(){
                             center: true,
                             autoplay: false,
                             autoWidth: true,
-                            smartSpeed: 1000,
                         });
                     });
                 });
