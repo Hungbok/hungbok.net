@@ -1701,7 +1701,16 @@ div.system-requirements-title {
     align-items: flex-start;
 }
 
-.info-slider .owl-stage > .owl-item,
+.info-slider .owl-stage > .owl-item {
+    opacity: 0;
+    z-index: -1;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
 .info-loop-slider .owl-stage > .owl-item {
     opacity: 0.25;
     z-index: -1;
@@ -3730,6 +3739,12 @@ div.system-requirements-title {
 .owl-nav button.disabled {
     opacity: 0.25;
     cursor: not-allowed;
+}
+
+.info-slider:hover .owl-nav button.disabled,
+.info-loop-slider:hover .owl-nav button.disabled {
+    opacity: 0.25!important;
+    cursor: not-allowed!important;
 }
 
 .owl-dots.disabled,
