@@ -655,9 +655,9 @@ $(document).ready(function(){
                     var cName = getLocalizedTextData(data[0], ['book' + (countIndex + 1) + 'name' + j]);
                     var cNameog = data[0]['book' + (countIndex + 1) + 'name' + j];
         
-                    $('.voice' + (countIndex + 1)).append('<div class="books-voicer ' + cLang + '">'+
-                        '<p class="books-lang"></p>'+
-                        '<p class="books-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
+                    $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
+                        '<p class="character-lang"></p>'+
+                        '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
                     '</div>');
                 }
             });
