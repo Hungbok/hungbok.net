@@ -568,7 +568,7 @@ body.adult > main > .top-backgrounds > div {
 .middle-bottom-content {
     display: grid;
     row-gap: 40px;
-    padding: 0px 40px 0px;
+    padding: 0px 40px 40px;
 }
 
 .slider-bottom-content {
