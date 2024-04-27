@@ -903,7 +903,7 @@ body.adult > main > .top-backgrounds > div {
     width: 100%;
 }
 
-.system-requirements > p {
+.system-requirements-container > p {
     background-color: var(--background-8);
     border-radius: 20px 20px 0 0;
     padding: 30px 30px 0;
