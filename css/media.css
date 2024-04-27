@@ -3557,6 +3557,7 @@ div.system-requirements-title {
 }
 
 .info-slider:hover .owl-nav button,
+.info-loop-slider:hover .owl-nav button,
 .owl-carousel:hover .owl-nav button {
     opacity: 0.8;
     -webkit-transition: all 0.5s;
@@ -3585,6 +3586,10 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.info-slider .owl-nav .owl-prev {
+    left: -10%;
+}
+
 .owl-prev::before {
     content: "❮";
     font-size: 24px;
@@ -3605,6 +3610,10 @@ div.system-requirements-title {
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.info-slider .owl-nav .owl-next {
+    right: -10%;
 }
 
 .owl-next::before {
