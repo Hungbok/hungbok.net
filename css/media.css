@@ -732,7 +732,7 @@ div.system-requirements-title {
     background-color: var(--background-6);
     position: absolute;
     left: 20px;
-    bottom: 1px;
+    bottom: 0px;
 }
 
 .more-info-tab {
@@ -3119,7 +3119,7 @@ div.system-requirements-title {
 }
 
 .rating .filmarks {
-    background-color: #111111;
+    background-color: #000000;
 }
 
 .rating .yahoojapan {

@@ -931,12 +931,12 @@ div.system-requirements-title {
 
 .more-info-tabs:after {
     content: "";
-    width: calc(100% - 40px);
+    width: calc(100% - 60px);
     height: 1px;
     background-color: var(--background-6);
     position: absolute;
-    left: 20px;
-    bottom: 1px;
+    left: 30px;
+    bottom: 0px;
 }
 
 .more-info-tab {
