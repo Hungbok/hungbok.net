@@ -56,6 +56,11 @@
     grid-row-end: 4;
 }
 
+.external-links.external-store-link {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
 /* item */
 
 .contents-top-thumbnail .item {
