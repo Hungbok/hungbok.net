@@ -3760,7 +3760,10 @@ div.system-requirements-title {
 .info-slider > .story-container,
 .info-slider > .setting-container,
 .info-slider > .character-container,
-.info-loop-slider > .music-card {
+.info-slider > .books-container,
+.info-loop-slider > .music-card,
+.info-loop-slider > .mv-player-card,
+.info-loop-slider > .lyrics-card {
     display: none;
 }
 
