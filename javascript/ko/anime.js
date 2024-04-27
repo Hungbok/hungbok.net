@@ -605,7 +605,7 @@ $(document).ready(function(){
                         $('.info-slider').owlCarousel({
                             nav: true,
                             loop: false,
-                            dots: true,
+                            dots: false,
                             merge: true,
                             center: true,
                             autoplay: false,
