@@ -37,3 +37,20 @@ window.onload = function() {
         document.getElementById('textoutput').value = convertedContent;
     });
 };
+
+$(document).ready(function() {
+    $("#generate-btn").click(function() {
+        $("#textinput").copyTo("#textoutput");
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var textarea = document.getElementById('textinput');
+
+    textarea.addEventListener('input', autoResize, false);
+
+    function autoResize() {
+        this.style.height = 'auto'; // 높이를 자동으로 재설정
+        this.style.height = this.scrollHeight + 'px'; // scrollHeight를 사용하여 실제 텍스트 높이에 맞게 조정
+    }
+});
