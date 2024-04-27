@@ -565,6 +565,12 @@ body.adult > main > .top-backgrounds > div {
 
 /* bottom */
 
+.slider-bottom-content {
+    display: flex;
+    row-gap: 40px;
+    flex-direction: column;
+}
+
 .bottom-content {
     display: grid;
     grid-template-rows: auto auto auto auto;
@@ -1682,7 +1688,6 @@ div.system-requirements-title {
 .info-slider .owl-stage,
 .info-loop-slider .owl-stage {
     margin: 0;
-    padding: 10px 0px;
     display: -webkit-flex;
     display: flex;
     align-items: flex-start;
