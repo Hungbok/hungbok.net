@@ -364,14 +364,25 @@ $(document).ready(function(){
                 var lyricsText = getLocalizedTextData(data[0], ['lyricstext' + i]);
                 var lyricsName = getLocalizedTextData(data[0], ['lyricsname' + i]);
                 var lyricsNameOriginal = data[0]['lyricsname' + i];
-                var lyricsImage = 'lyrics_' + i;
-                var lyricsVoice = 'voice' + i;
+                var lyricsId = data[0]['lyricsid' + i];
+                var lyricsServer = data[0]['lyricsserver' + i];
+                var lyricsExtension = 'jpg';
+                if (lyricsServer === 'youtube') {
+                    lyricsExtension = 'jpg';
+                }
+                if (lyricsServer === 'video') {
+                    lyricsExtension = 'jpg';
+                }
+                if (lyricsServer === 'vimeo') {
+                    lyricsExtension = 'avif';
+                }
                 lyricsData.push({
                     text: lyricsText,
                     name: lyricsName,
                     nameog: lyricsNameOriginal,
-                    img: lyricsImage,
-                    vo: lyricsVoice,
+                    videoid: lyricsId,
+                    server: lyricsServer,
+                    extension: lyricsExtension,
                 });
             }
             // lyrics 생성
@@ -379,8 +390,8 @@ $(document).ready(function(){
             $(".lyrics").append(lyricsContainer);
             lyricsData.forEach(function(item, index) {
                 var lyricsCard = $('<div class="lyrics-card">'+
-                    '<div class="lyrics-image video-play-button youtube-link" videoid="aOAiUwz7Zt8">'+
-                        '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<div class="lyrics-image video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
+                        '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="lyrics-info">'+
                         '<div class="lyrics-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
