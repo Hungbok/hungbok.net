@@ -40,11 +40,6 @@
 }
 
 .item-container {
-    position: relative;
-}
-
-.item-content {
-    width: 220px;
     height: 320px;
     position: relative;
 }
