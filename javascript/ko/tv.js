@@ -1,7 +1,6 @@
 async function loadAsyncScripts() {
     // 동영상 팝업 재생
     await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
-    await loadScript('//www.hungbok.net/javascript/music-popup.js');
     // 이미지 팝업 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
     // 이미지 및 동영상 슬라이드쇼
@@ -29,7 +28,7 @@ $(document).ready(function(){
     
     if (queryParam) {
         // JSON 파일 가져오기
-        $.getJSON(`//data.hungbok.net/data/music/${queryParam}.json`, function (data) {
+        $.getJSON(`//data.hungbok.net/data/tv/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
         
             // en 또는 ko 데이터에 접근하는 함수
@@ -244,8 +243,8 @@ $(document).ready(function(){
             videoData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
                     '<div class="video-play-button ' + item.server + '-link" videoid="' + item.id + '">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/tv/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/tv/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '<div class="youtube-title">' + item.title + '</div>'+
                     '</div>'+
                 '</div>');
@@ -262,9 +261,9 @@ $(document).ready(function(){
             // image 생성
             imageData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
-                    '<a class="slider-image" href="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '<a class="slider-image" href="//media.hungbok.net/image/tv/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/tv/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/tv/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
             });
@@ -308,7 +307,7 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="story-image">'+
                         '<img class="story-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                        '<img class="story-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '<img class="story-background" src="//media.hungbok.net/image/tv/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="story-description">'+
                         '<p>' + item.text + '</p>'+
@@ -342,7 +341,7 @@ $(document).ready(function(){
                 var settingCard = $('<div class="setting-card">'+
                     '<div class="setting-image">'+
                         '<img class="setting-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                        '<img class="setting-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '<img class="setting-background" src="//media.hungbok.net/image/tv/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="setting-title">'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
@@ -482,7 +481,7 @@ $(document).ready(function(){
             characterData.forEach(function(item, index) {
                 var characterCard = $('<div class="character-card">'+
                     '<div class="character-image">'+
-                        '<img class="character-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                        '<img class="character-background" src="//media.hungbok.net/image/tv/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="character-info">'+
                         '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
@@ -569,13 +568,13 @@ $(document).ready(function(){
                     '<div class="music-video">'+
                         '<div class="video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
                             '<img src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                            '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="slider-background" src="//media.hungbok.net/image/tv/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</div>'+
                     '</div>'+
                     '<div class="music-image">'+
                         '<a href="https://www.hungbok.com/music?q=' + item.url + '">'+
                             '<img class="music-background" src="//media.hungbok.net/image/hb/hb_error_square.svg">'+
-                            '<img class="music-cover" src="//media.hungbok.net/image/music/' + item.url + '/hb_thumbnail.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="music-cover" src="//media.hungbok.net/image/tv/' + item.url + '/hb_thumbnail.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</a>'+
                         '<img class="music-lp" src="//media.hungbok.net/image/icon/recode.png">'+
                     '</div>'+
@@ -2211,7 +2210,7 @@ function showError(image) {
     var q = urlParams.get('q');
 
     // JSON 파일 불러오기
-    fetch(`//data.hungbok.net/data/music/${q}.json`)
+    fetch(`//data.hungbok.net/data/tv/${q}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

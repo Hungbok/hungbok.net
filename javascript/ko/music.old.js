@@ -29,7 +29,7 @@ $(document).ready(function(){
     
     if (queryParam) {
         // JSON 파일 가져오기
-        $.getJSON(`//data.hungbok.net/data/music/${queryParam}.json`, function (data) {
+        $.getJSON(`//data.hungbok.net/data/anime/${queryParam}.json`, function (data) {
             // JSON 데이터를 HTML에 대체삽입
         
             // en 또는 ko 데이터에 접근하는 함수
@@ -37,118 +37,46 @@ $(document).ready(function(){
                 return data['ko'] && data['ko'][key] ? data['ko'][key] : data['en'][key];
             }
 
-            function getLocalizedTextData(data, key) {
-                if (data['ko'] && data['ko'][key]) {
-                    return data['ko'][key];
-                } else if (data['en'] && data['en'][key]) {
-                    return data['en'][key];
-                } else {
-                    return data[key];
-                }
-            }
-            
-            function formatDate(date) {
-                // date가 문자열이 아닐 경우 문자열로 변환
-                if (typeof date !== 'string') {
-                    date = String(date);
-                }
-                
-                const parts = date.split('-');
-                let formattedDate = '';
-            
-                // 날짜 형식에 따라 다르게 처리
-                switch (parts.length) {
-                    case 6: // yyyy-mm-dd-hh-mm-ss
-                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
-                        break;
-                    case 5: // yyyy-mm-dd-hh-mm-ss
-                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
-                        break;
-                    case 3: // yyyy-mm-dd
-                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
-                        break;
-                    case 2: // yyyy-mm
-                        formattedDate = `${parts[0]}년 ${parts[1]}월`;
-                        break;
-                    case 1: // yyyy
-                        formattedDate = `${parts[0]}년`;
-                        break;
-                    default:
-                        console.error('Invalid date format');
-                }
-            
-                return formattedDate;
-            }
-            
-            function formatTime(date) {
-                // date가 문자열이 아닐 경우 문자열로 변환
-                if (typeof date !== 'string') {
-                    date = String(date);
-                }
-                
-                const parts = date.split('-');
-                let formattedTime = '';
-            
-                // 날짜 형식에 따라 다르게 처리
-                switch (parts.length) {
-                    case 6: // yyyy-mm-dd-hh-mm-ss
-                        formattedTime = `${parts[3]}:${parts[4]}`;
-                        break;
-                    case 5: // yyyy-mm-dd-hh-mm-ss
-                        formattedTime = `${parts[3]}:${parts[4]}`;
-                        break;
-                    default:
-                        formattedTime = `-`;
-                }
-            
-                return formattedTime;
-            }
-
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
-            $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang') + ' ' + data[0].age_check);
+            $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang'));
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
     
 
             // 대체할 값들을 저장한 객체
             var replacement = {
                 '{type}': data[0].type,
-                '{original_title}': data[0].title,
                 '{title}': getLocalizedData(data[0], 'title'),
-                '{original}': getLocalizedData(data[0], 'original'),
+                '{developer}': data[0].developer,
+                '{info_developer}': getLocalizedData(data[0], 'info_developer'),
+                '{publisher}': data[0].publisher,
+                '{info_publisher}': getLocalizedData(data[0], 'info_publisher'),
+                '{platform}': data[0].platform,
+                '{release}': getLocalizedData(data[0], 'release'),
                 '{genre}': getLocalizedData(data[0], 'genre'),
+                '{mode}': getLocalizedData(data[0], 'mode'),
                 '{franchise}': getLocalizedData(data[0], 'franchise'),
-                '{general_director}': getLocalizedData(data[0], 'general_director'),
-                '{director}': getLocalizedData(data[0], 'director'),
-                '{screenplay}': getLocalizedData(data[0], 'screenplay'),
-                '{writer}': getLocalizedData(data[0], 'writer'),
-                '{character_design}': getLocalizedData(data[0], 'character_design'),
-                '{performer}': getLocalizedData(data[0], 'performer'),
-                '{music_producer}': getLocalizedData(data[0], 'music_producer'),
-                '{producer}': getLocalizedData(data[0], 'producer'),
-                '{animation_production}': data[0].animation_production,
-                '{production}': data[0].production,
-                '{broadcast}': data[0].broadcast,
-                '{info_animation_production}': getLocalizedData(data[0], 'animation_production'),
-                '{info_production}': getLocalizedData(data[0], 'production'),
-                '{info_broadcast}': getLocalizedData(data[0], 'broadcast'),
-                '{start_airing}': formatDate(data[0].start_airing),
-                '{end_airing}': formatDate(data[0].end_airing),
-                '{airing_time}': formatTime(data[0].start_airing),
-                '{runningtime}': data[0].runningtime,
-                '{total_episode}':  data[0].total_episode,
-                '{season}':  data[0].season,
-                '{country}': data[0].country,
-                '{language}': data[0].language,
   
+                '{pc}': data[0].pc,
+                '{console}': data[0].console,
+                '{mobile}': data[0].mobile,
+                '{esd}': data[0].esd,
+                '{release_date}': getLocalizedData(data[0], 'release_date'),
+                '{engine}': getLocalizedData(data[0], 'engine'),
                 '{age}': data[0].age,
-                '{kmrb}': data[0].kmrb,
-                '{kcsc}': data[0].kcsc,
-                '{eirin}': data[0].eirin,
-                '{tvpg}': data[0].tvpg,
-                '{mpaa}': data[0].mpaa,
+                '{esrb}': data[0].esrb,
+                '{pegi}': data[0].pegi,
+                '{iarc}': data[0].iarc,
+                '{cero}': data[0].cero,
+                '{grac}': data[0].grac,
+                '{usk}': data[0].usk,
                 '{acb}': data[0].acb,
-                '{bbfc}': data[0].bbfc,
-                '{fsk}': data[0].fsk,
+                '{gsrr}': data[0].gsrr,
+                '{rars}': data[0].rars,
+                '{classind}': data[0].classind,
+                '{appstoreage}': data[0].appstoreage,
+  
+                '{language}': data[0].language,
+                '{language_supported}': data[0].language_supported,
   
                 '{social_class1}': data[0].social_class1,
                 '{social_link1}': data[0].social_link1,
@@ -170,6 +98,27 @@ $(document).ready(function(){
                 '{social_link9}': data[0].social_link9,
                 '{social_class10}': data[0].social_class10,
                 '{social_link10}': data[0].social_link10,
+
+                '{store_class1}': data[0].store_class1,
+                '{store_link1}': data[0].store_link1,
+                '{store_class2}': data[0].store_class2,
+                '{store_link2}': data[0].store_link2,
+                '{store_class3}': data[0].store_class3,
+                '{store_link3}': data[0].store_link3,
+                '{store_class4}': data[0].store_class4,
+                '{store_link4}': data[0].store_link4,
+                '{store_class5}': data[0].store_class5,
+                '{store_link5}': data[0].store_link5,
+                '{store_class6}': data[0].store_class6,
+                '{store_link6}': data[0].store_link6,
+                '{store_class7}': data[0].store_class7,
+                '{store_link7}': data[0].store_link7,
+                '{store_class8}': data[0].store_class8,
+                '{store_link8}': data[0].store_link8,
+                '{store_class9}': data[0].store_class9,
+                '{store_link9}': data[0].store_link9,
+                '{store_class10}': data[0].store_class10,
+                '{store_link10}': data[0].store_link10,
   
                 '{attention}': data[0].attention,
                 '{plot}': getLocalizedData(data[0], 'plot'),
@@ -184,11 +133,6 @@ $(document).ready(function(){
                 '{capsule}': data[0].capsule,
                 '{poster}': data[0].poster,
                 '{thumbnail}': data[0].thumbnail,
-                '{book1}': data[0].book1,
-                '{book2}': data[0].book2,
-                '{book3}': data[0].book3,
-                '{book4}': data[0].book4,
-                '{book5}': data[0].book5,
                 '{franchise1}': data[0].franchise1,
                 '{franchise2}': data[0].franchise2,
                 '{franchise3}': data[0].franchise3,
@@ -196,8 +140,75 @@ $(document).ready(function(){
                 '{franchise5}': data[0].franchise5,
 
                 '{review}': data[0].review,
-                '{rating}': data[0].rating,
-                '{imdbid}': data[0].imdblink,
+                '{metacritic}': data[0].metacritic,
+                '{opencritic}': data[0].opencritic,
+                '{metacritic1}': data[0].metacritic1,
+                '{metacritic2}': data[0].metacritic2,
+                '{metacritic3}': data[0].metacritic3,
+                '{metacritic4}': data[0].metacritic4,
+                '{metacritic5}': data[0].metacritic5,
+                '{metacritic6}': data[0].metacritic6,
+                '{metacritic7}': data[0].metacritic7,
+                '{metacritic8}': data[0].metacritic8,
+                '{metacritic9}': data[0].metacritic9,
+                '{metacritic10}': data[0].metacritic10,
+                '{metacritic11}': data[0].metacritic11,
+                '{metacritic12}': data[0].metacritic12,
+                '{metacritic_class1}': data[0].metacritic_class1,
+                '{metacritic_class2}': data[0].metacritic_class2,
+                '{metacritic_class3}': data[0].metacritic_class3,
+                '{metacritic_class4}': data[0].metacritic_class4,
+                '{metacritic_class5}': data[0].metacritic_class5,
+                '{metacritic_class6}': data[0].metacritic_class6,
+                '{metacritic_class7}': data[0].metacritic_class7,
+                '{metacritic_class8}': data[0].metacritic_class8,
+                '{metacritic_class9}': data[0].metacritic_class9,
+                '{metacritic_class10}': data[0].metacritic_class10,
+                '{metacritic_class11}': data[0].metacritic_class11,
+                '{metacritic_class12}': data[0].metacritic_class12,
+                '{opencritic_rating}': data[0].opencritic_rating,
+                '{top_critic_average}': data[0].top_critic_average,
+                '{critics_recommend}': data[0].critics_recommend,
+                
+                '{system_requirements_tab1}': data[0].system_requirements_tab1,
+                '{system_requirements_tab2}': data[0].system_requirements_tab2,
+                '{system_requirements_tab3}': data[0].system_requirements_tab3,
+                '{minimum_os}': data[0].minimum_os,
+                '{minimum_processor}': data[0].minimum_processor,
+                '{minimum_memory}': data[0].minimum_memory,
+                '{minimum_graphics}': data[0].minimum_graphics,
+                '{minimum_storage}': data[0].minimum_storage,
+                '{minimum_other}': data[0].minimum_other,
+                '{recommended_os}': data[0].recommended_os,
+                '{recommended_processor}': data[0].recommended_processor,
+                '{recommended_memory}': data[0].recommended_memory,
+                '{recommended_graphics}': data[0].recommended_graphics,
+                '{recommended_storage}': data[0].recommended_storage,
+                '{recommended_other}': data[0].recommended_other,
+                '{minimum_os2}': data[0].minimum_os2,
+                '{minimum_processor2}': data[0].minimum_processor2,
+                '{minimum_memory2}': data[0].minimum_memory2,
+                '{minimum_graphics2}': data[0].minimum_graphics2,
+                '{minimum_storage2}': data[0].minimum_storage2,
+                '{minimum_other2}': data[0].minimum_other2,
+                '{recommended_os2}': data[0].recommended_os2,
+                '{recommended_processor2}': data[0].recommended_processor2,
+                '{recommended_memory2}': data[0].recommended_memory2,
+                '{recommended_graphics2}': data[0].recommended_graphics2,
+                '{recommended_storage2}': data[0].recommended_storage2,
+                '{recommended_other2}': data[0].recommended_other2,
+                '{minimum_os3}': data[0].minimum_os3,
+                '{minimum_processor3}': data[0].minimum_processor3,
+                '{minimum_memory3}': data[0].minimum_memory3,
+                '{minimum_graphics3}': data[0].minimum_graphics3,
+                '{minimum_storage3}': data[0].minimum_storage3,
+                '{minimum_other3}': data[0].minimum_other3,
+                '{recommended_os3}': data[0].recommended_os3,
+                '{recommended_processor3}': data[0].recommended_processor3,
+                '{recommended_memory3}': data[0].recommended_memory3,
+                '{recommended_graphics3}': data[0].recommended_graphics3,
+                '{recommended_storage3}': data[0].recommended_storage3,
+                '{recommended_other3}': data[0].recommended_other3,
             };
             
             // body의 HTML 가져오기
@@ -223,29 +234,17 @@ $(document).ready(function(){
                 var videoId = data[0]['videoid' + i];
                 var videoTitle = getLocalizedData(data[0], 'videotitle' + i);
                 var videoServer = data[0]['videoserver' + i];
-                var videoExtension = 'jpg';
-                if (videoServer === 'youtube') {
-                    videoExtension = 'jpg';
-                }
-                if (videoServer === 'video') {
-                    videoExtension = 'jpg';
-                }
-                if (videoServer === 'vimeo') {
-                    videoExtension = 'avif';
-                }
                 videoData.push({
                     id: videoId,
                     title: videoTitle,
                     server: videoServer,
-                    extension: videoExtension,
                 });
             }
             // video 생성
             videoData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
-                    '<div class="video-play-button ' + item.server + '-link" videoid="' + item.id + '">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.id + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '<div class="video-play-button youtube-link" videoid="' + item.id + '">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_video_' + item.id + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                         '<div class="youtube-title">' + item.title + '</div>'+
                     '</div>'+
                 '</div>');
@@ -262,25 +261,23 @@ $(document).ready(function(){
             // image 생성
             imageData.forEach(function(item) {
                 $(".slider").append('<div class="slider-item">'+
-                    '<a class="slider-image" href="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                    '<a class="slider-image" href="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" data-lightbox="preview">'+
+                        '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
                     '</a>'+
                 '</div>');
             });
     
-            var story_value = data[0].storycount; // story 수
+            var story_value = data.storycount; // story 수
             var storyData = [];
             for (var i = 1; i <= story_value; i++) {
-                var storyTitle = getLocalizedTextData(data[0], ['storytitle' + i]);
-                var storyTitleOriginal = data[0]['storytitle' + i];
-                var storyText = getLocalizedTextData(data[0], ['storytext' + i]);
-                var storyEpisode = i;
-                var storyairingdate = getLocalizedTextData(data[0], ['storydate' + i]);
-                var storyDate = formatDate(storyairingdate);
-                var storyId = data[0]['storyid' + i];
+                var storyText = data['storytext' + i];
+                var storyTitle = data['storytitle' + i];
+                var storyTitleOriginal = data['storytitle_og' + i];
+                var storyEpisode = data['storyepisode' + i];
+                var storyDate = data['storydate' + i];
+                var storyId = data['storyid' + i];
                 var storyImage = 'story_' + i;
-                var storyTime = data[0]['storytime' + i];
+                var storyTime = data['storytime' + i];
                 storyData.push({
                     text: storyText,
                     title: storyTitle,
@@ -293,12 +290,10 @@ $(document).ready(function(){
                 });
             }
             // story 생성
-            var storyContainer = $('<div class="story-container"></div>');
-            $(".story").append(storyContainer);
-            storyData.forEach(function(item, index) {
-                var storyCard = $('<div class="story-card">'+
+            storyData.forEach(function(item) {
+                $(".story").append('<div class="story-card">'+
                     '<div class="story-episode">'+
-                        '<p>제' + item.epi + '화</p>'+
+                        '<p>' + item.epi + '</p>'+
                     '</div>'+
                     '<div class="story-title">'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
@@ -308,25 +303,20 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="story-image">'+
                         '<img class="story-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                        '<img class="story-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '<img class="story-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="story-description">'+
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
-                storyContainer.append(storyCard);
-                if ((index + 1) % 5 === 0 && index + 1 < storyData.length) {
-                    storyContainer = $('<div class="story-container"></div>');
-                    $(".story").append(storyContainer);
-                }
             });
             
-            var setting_value = data[0].settingcount; // 설정 카드 수
+            var setting_value = data.settingcount; // 설정 카드 수
             var settingData = [];
             for (var i = 1; i <= setting_value; i++) {
-                var settingText = getLocalizedTextData(data[0], ['settingtext' + i]);
-                var settingTitle = getLocalizedTextData(data[0], ['settingtitle' + i]);
-                var settingTitleOriginal = data[0]['settingtitle' + i];
+                var settingText = data['settingtext' + i];
+                var settingTitle = data['settingtitle' + i];
+                var settingTitleOriginal = data['settingtitle_og' + i];
                 var settingImage = 'setting_' + i;
                 settingData.push({
                     text: settingText,
@@ -335,14 +325,12 @@ $(document).ready(function(){
                     img: settingImage,
                 });
             }
-            // setting 생성
-            var settingContainer = $('<div class="setting-container"></div>');
-            $(".setting").append(settingContainer);
-            settingData.forEach(function(item, index) {
-                var settingCard = $('<div class="setting-card">'+
+            // 설정 카드 생성
+            settingData.forEach(function(item) {
+                $(".setting").append('<div class="setting-card">'+
                     '<div class="setting-image">'+
                         '<img class="setting-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                        '<img class="setting-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                        '<img class="setting-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="setting-title">'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
@@ -351,121 +339,116 @@ $(document).ready(function(){
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
-                settingContainer.append(settingCard);
-                if ((index + 1) % 3 === 0 && index + 1 < settingData.length) {
-                    settingContainer = $('<div class="setting-container"></div>');
-                    $(".setting").append(settingContainer);
-                }
             });
             
-            var character_value = data[0].charcount; // character 수
+            var character_value = data.charcount; // character 수
             var characterCounts = [
-                data[0].char1count,
-                data[0].char2count,
-                data[0].char3count,
-                data[0].char4count,
-                data[0].char5count,
-                data[0].char6count,
-                data[0].char7count,
-                data[0].char8count,
-                data[0].char9count,
-                data[0].char10count,
-                data[0].char11count,
-                data[0].char12count,
-                data[0].char13count,
-                data[0].char14count,
-                data[0].char15count,
-                data[0].char16count,
-                data[0].char17count,
-                data[0].char18count,
-                data[0].char19count,
-                data[0].char20count,
-                data[0].char21count,
-                data[0].char22count,
-                data[0].char23count,
-                data[0].char24count,
-                data[0].char25count,
-                data[0].char26count,
-                data[0].char27count,
-                data[0].char28count,
-                data[0].char29count,
-                data[0].char30count,
-                data[0].char31count,
-                data[0].char32count,
-                data[0].char33count,
-                data[0].char34count,
-                data[0].char35count,
-                data[0].char36count,
-                data[0].char37count,
-                data[0].char38count,
-                data[0].char39count,
-                data[0].char40count,
-                data[0].char41count,
-                data[0].char42count,
-                data[0].char43count,
-                data[0].char44count,
-                data[0].char45count,
-                data[0].char46count,
-                data[0].char47count,
-                data[0].char48count,
-                data[0].char49count,
-                data[0].char50count,
-                data[0].char51count,
-                data[0].char52count,
-                data[0].char53count,
-                data[0].char54count,
-                data[0].char55count,
-                data[0].char56count,
-                data[0].char57count,
-                data[0].char58count,
-                data[0].char59count,
-                data[0].char60count,
-                data[0].char61count,
-                data[0].char62count,
-                data[0].char63count,
-                data[0].char64count,
-                data[0].char65count,
-                data[0].char66count,
-                data[0].char67count,
-                data[0].char68count,
-                data[0].char69count,
-                data[0].char70count,
-                data[0].char71count,
-                data[0].char72count,
-                data[0].char73count,
-                data[0].char74count,
-                data[0].char75count,
-                data[0].char76count,
-                data[0].char77count,
-                data[0].char78count,
-                data[0].char79count,
-                data[0].char80count,
-                data[0].char81count,
-                data[0].char82count,
-                data[0].char83count,
-                data[0].char84count,
-                data[0].char85count,
-                data[0].char86count,
-                data[0].char87count,
-                data[0].char88count,
-                data[0].char89count,
-                data[0].char90count,
-                data[0].char91count,
-                data[0].char92count,
-                data[0].char93count,
-                data[0].char94count,
-                data[0].char95count,
-                data[0].char96count,
-                data[0].char97count,
-                data[0].char98count,
-                data[0].char99count,
-                data[0].char100count,
+                data.char1count,
+                data.char2count,
+                data.char3count,
+                data.char4count,
+                data.char5count,
+                data.char6count,
+                data.char7count,
+                data.char8count,
+                data.char9count,
+                data.char10count,
+                data.char11count,
+                data.char12count,
+                data.char13count,
+                data.char14count,
+                data.char15count,
+                data.char16count,
+                data.char17count,
+                data.char18count,
+                data.char19count,
+                data.char20count,
+                data.char21count,
+                data.char22count,
+                data.char23count,
+                data.char24count,
+                data.char25count,
+                data.char26count,
+                data.char27count,
+                data.char28count,
+                data.char29count,
+                data.char30count,
+                data.char31count,
+                data.char32count,
+                data.char33count,
+                data.char34count,
+                data.char35count,
+                data.char36count,
+                data.char37count,
+                data.char38count,
+                data.char39count,
+                data.char40count,
+                data.char41count,
+                data.char42count,
+                data.char43count,
+                data.char44count,
+                data.char45count,
+                data.char46count,
+                data.char47count,
+                data.char48count,
+                data.char49count,
+                data.char50count,
+                data.char51count,
+                data.char52count,
+                data.char53count,
+                data.char54count,
+                data.char55count,
+                data.char56count,
+                data.char57count,
+                data.char58count,
+                data.char59count,
+                data.char60count,
+                data.char61count,
+                data.char62count,
+                data.char63count,
+                data.char64count,
+                data.char65count,
+                data.char66count,
+                data.char67count,
+                data.char68count,
+                data.char69count,
+                data.char70count,
+                data.char71count,
+                data.char72count,
+                data.char73count,
+                data.char74count,
+                data.char75count,
+                data.char76count,
+                data.char77count,
+                data.char78count,
+                data.char79count,
+                data.char80count,
+                data.char81count,
+                data.char82count,
+                data.char83count,
+                data.char84count,
+                data.char85count,
+                data.char86count,
+                data.char87count,
+                data.char88count,
+                data.char89count,
+                data.char90count,
+                data.char91count,
+                data.char92count,
+                data.char93count,
+                data.char94count,
+                data.char95count,
+                data.char96count,
+                data.char97count,
+                data.char98count,
+                data.char99count,
+                data.char100count,
             ];
             var characterData = [];
             for (var i = 1; i <= character_value; i++) {
-                var characterText = getLocalizedTextData(data[0], ['chartext' + i]);
-                var characterName = getLocalizedTextData(data[0], ['charname' + i]);
-                var characterNameOriginal = data[0]['charname' + i];
+                var characterText = data['chartext' + i];
+                var characterName = data['charname' + i];
+                var characterNameOriginal = data['charname_og' + i];
                 var characterImage = 'character_' + i;
                 var characterVoice = 'voice' + i;
                 characterData.push({
@@ -477,12 +460,10 @@ $(document).ready(function(){
                 });
             }
             // character 생성
-            var characterContainer = $('<div class="character-container"></div>');
-            $(".character").append(characterContainer);
-            characterData.forEach(function(item, index) {
-                var characterCard = $('<div class="character-card">'+
+            characterData.forEach(function(item) {
+                $(".character").append('<div class="character-card">'+
                     '<div class="character-image">'+
-                        '<img class="character-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                        '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="character-info">'+
                         '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
@@ -492,54 +473,37 @@ $(document).ready(function(){
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
-                characterContainer.append(characterCard);
-                if ((index + 1) % 4 === 0 && index + 1 < characterData.length) {
-                    characterContainer = $('<div class="character-container"></div>');
-                    $(".character").append(characterContainer);
-                }
             });
             // voicer 생성
             characterCounts.forEach(function (characterCount, countIndex) {
                 for (var j = 1; j <= characterCount; j++) {
-                    var cLang = data[0]['char' + (countIndex + 1) + 'lang' + j];
-                    var cName = getLocalizedTextData(data[0], ['char' + (countIndex + 1) + 'name' + j]);
-                    var cNameog = data[0]['char' + (countIndex + 1) + 'name' + j];
+                    var cLang = data['char' + (countIndex + 1) + 'lang' + j];
+                    var cName = data['char' + (countIndex + 1) + 'name' + j];
+                    var cNameog = data['char' + (countIndex + 1) + 'name_og' + j];
         
                     $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
-                        '<p class="character-lang"></p>'+
                         '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
                     '</div>');
                 }
             });
             
-            var music_value = data[0].musiccount; // music 수
+            var music_value = data.musiccount; // music 수
             var musicData = [];
             for (var i = 1; i <= music_value; i++) {
-                var musicType = data[0]['musictype' + i];
-                var musicTitle = getLocalizedTextData(data[0], ['musictitle' + i]);
-                var musicTitleOriginal = data[0]['musictitle' + i];
-                var musicUrl = data[0]['musicurl' + i];
-                var musicVideoId = data[0]['musicvideoid' + i];
-                var musicSing = getLocalizedTextData(data[0], ['musicsing' + i]);
-                var musicSingOriginal = data[0]['musicsing' + i];
-                var musicWrite = getLocalizedTextData(data[0], ['musicwrite' + i]);
-                var musicWriteOriginal = data[0]['musicwrite' + i];
-                var musicProduce = getLocalizedTextData(data[0], ['musicproduce' + i]);
-                var musicProduceOriginal = data[0]['musicproduce' + i];
-                var musicArrange = getLocalizedTextData(data[0], ['musicarrange' + i]);
-                var musicArrangeOriginal = data[0]['musicarrange' + i];
+                var musicType = data['musictype' + i];
+                var musicTitle = data['musictitle' + i];
+                var musicTitleOriginal = data['musictitle_og' + i];
+                var musicUrl = data['musicurl' + i];
+                var musicVideoId = data['musicvideoid' + i];
+                var musicSing = data['musicsing' + i];
+                var musicSingOriginal = data['musicsing_og' + i];
+                var musicWrite = data['musicwrite' + i];
+                var musicWriteOriginal = data['musicwrite_og' + i];
+                var musicProduce = data['musicproduce' + i];
+                var musicProduceOriginal = data['musicproduce_og' + i];
+                var musicArrange = data['musicarrange' + i];
+                var musicArrangeOriginal = data['musicarrange_og' + i];
                 var musicImage = 'music_' + i;
-                var musicvideoServer = data[0]['musicvideoserver' + i];
-                var musicvideoExtension = 'jpg';
-                if (musicvideoServer === 'youtube') {
-                    musicvideoExtension = 'jpg';
-                }
-                if (musicvideoServer === 'video') {
-                    musicvideoExtension = 'jpg';
-                }
-                if (musicvideoServer === 'vimeo') {
-                    musicvideoExtension = 'avif';
-                }
                 musicData.push({
                     type: musicType,
                     title: musicTitle,
@@ -555,27 +519,25 @@ $(document).ready(function(){
                     arrange: musicArrange,
                     arrangeog: musicArrangeOriginal,
                     img: musicImage,
-                    server: musicvideoServer,
-                    extension: musicvideoExtension,
                 });
             }
             // music 생성
             musicData.forEach(function(item) {
                 $(".music").append('<div class="music-card">'+
                     '<div class="music-title">'+
-                        '<p class="' + item.type + '"></p>'+
+                        '<p>' + item.type + '</p>'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
                     '</div>'+
                     '<div class="music-video">'+
-                        '<div class="video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
+                        '<div class="youtube-link" youtubeid="' + item.videoid + '">'+
                             '<img src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                            '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="slider-background" src="//media.hungbok.net/image/anime/' + url + '/' + item.videoid + '.avif" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</div>'+
                     '</div>'+
                     '<div class="music-image">'+
-                        '<a href="https://www.hungbok.com/music?q=' + item.url + '">'+
+                        '<a href="' + item.url + '" target="_blank">'+
                             '<img class="music-background" src="//media.hungbok.net/image/hb/hb_error_square.svg">'+
-                            '<img class="music-cover" src="//media.hungbok.net/image/music/' + item.url + '/hb_thumbnail.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="music-cover" src="//media.hungbok.net/image/anime/' + url + '/' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</a>'+
                         '<img class="music-lp" src="//media.hungbok.net/image/icon/recode.png">'+
                     '</div>'+
@@ -589,166 +551,126 @@ $(document).ready(function(){
                         '<p>편곡</p>' + item.arrange + '</div>'+
                 '</div>');
             });
-
-            var episode_value = data[0].epicount; // 에피소드 줄 수
-            var episodeData = [];
-            for (var i = 1; i <= episode_value; i++) {
-                var episodeText = getLocalizedData(data[0], ['epiline' + i]);
-                var episodeLine = i - 1;
-                episodeData.push({
-                    line: episodeLine,
-                    text: episodeText,
-                });
-            }
-            // 에피소드 줄 생성
-            episodeData.forEach(function(item) {
-                $(".episode-tables tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
-            });
-
-            window.onload = function() {
-                $.getScript('//www.hungbok.net/javascript/owl.carousel.min.js', function() {
-                    $(document).ready(function() {
-                        $('.info-slider').owlCarousel({
-                            nav: true,
-                            loop: false,
-                            dots: false,
-                            merge: true,
-                            center: true,
-                            autoplay: false,
-                            autoWidth: true,
-                            autoHeight: true,
-                            items: 1,
-                            margin: 20,
-                        });
-                        $('.info-loop-slider').owlCarousel({
-                            nav: true,
-                            loop: true,
-                            dots: false,
-                            merge: true,
-                            center: true,
-                            autoplay: false,
-                            autoWidth: true,
-                            autoHeight: true,
-                            items: 1,
-                            margin: 20,
-                        });
-                    });
-                });
-                
-                var itemCount = document.querySelectorAll('.item-container .item').length;
-                var container = document.querySelector('.item-container');
-                if (container) {
-                    container.classList.add('item-' + itemCount);
-                }
-            };
     
-            const imdb_link = data[0].imdblink;
-            let imdb_score = data[0].imdbsc;
-            let imdb_percent = imdb_score * 10;
+            const metascore_score = data.metasc;
+            const metascore_link = data.metalink;
+            const metascore_percent = data.metaper;
+            const metacritic_userscore_score = data.metausersc;
+            const metacritic_userscore_link = data.metauserlink;
+            const metacritic_userscore_percent = data.metauserper;
     
-            const tomato_link = data[0].tomatolink;
-            let tomato_score = data[0].tomatosc;
-            let tomato_userscore_score = data[0].tomatousersc;
-            
+            const tomatometer_score = data.tomatosc;
+            const tomatometer_link = data.tomatolink;
+            const tomatometer_percent = data.tomatoper;
+            const rottentomatoes_audience_score = data.tomatousersc;
+            const rottentomatoes_audience_link = data.tomatouserlink;
+            const rottentomatoes_audience_percent = data.tomatouserper;
     
-            const meta_link = data[0].metalink;
-            let meta_score = data[0].metasc;
-            let meta_userscore_score = data[0].metausersc;
-            let meta_userscore_percent = meta_userscore_score * 10;
-            let meta_season = data[0].season;
+            const imdb_score = data.imdbsc;
+            const imdb_link = data.imdblink;
+            const imdb_percent = data.imdbper;
     
-            const letter_link = data[0].letterlink;
-            let letter_score = data[0].lettersc;
-            let letter_percent = letter_score * 20;
+            const letterboxd_score = data.lettersc;
+            const letterboxd_link = data.letterlink;
+            const letterboxd_percent = data.letterper;
     
-            const tmdb_link = data[0].tmdblink;
-            let tmdb_score = data[0].tmdbsc;
+            const tmdb_score = data.tmdbsc;
+            const tmdb_link = data.tmdblink;
+            const tmdb_percent = data.tmdbper;
     
-            const filmarks_link = data[0].filmarkslink;
-            let filmarks_score = data[0].filmarkssc;
-            let filmarks_percent = filmarks_score * 20;
+            const filmarks_score = data.filmarkssc;
+            const filmarks_link = data.filmarkslink;
+            const filmarks_percent = data.filmarksper;
     
-            const yahoo_link = data[0].yahoolink;
-            let yahoo_score = data[0].yahoosc;
-            let yahoo_percent = yahoo_score * 20;
+            const yahoojp_score = data.yahoosc;
+            const yahoojp_link = data.yahoolink;
+            const yahoojp_percent = data.yahooper;
     
-            const google_link = data[0].googlelink;
-            let google_score = data[0].googlesc;
+            const google_score = data.googlesc;
+            const google_link = data.googlelink;
+            const google_percent = data.googleper;
     
-            const eiga_link = data[0].eigalink;
-            let eiga_score = data[0].eigasc;
-            let eiga_percent = eiga_score * 20;
+            const eiga_score = data.eigasc;
+            const eiga_link = data.eigalink;
+            const eiga_percent = data.eigaper;
     
-            const douban_link = data[0].doubanlink;
-            let douban_score = data[0].doubansc;
-            let douban_percent = douban_score * 10;
+            const douban_score = data.doubansc;
+            const douban_link = data.doubanlink;
+            const douban_percent = data.doubanper;
     
-            const bili_link = data[0].bililink;
-            let bili_score = data[0].bilisc;
-            let bili_percent = bili_score * 10;
+            const bilibili_score = data.bilisc;
+            const bilibili_link = data.bililink;
+            const bilibili_percent = data.biliper;
     
-            const mal_link = data[0].mallink;
-            let mal_score = data[0].malsc;
-            let mal_percent = mal_score * 10;
+            const myanimelist_score = data.malsc;
+            const myanimelist_link = data.mallink;
+            const myanimelist_percent = data.malper;
     
-            const mdl_link = data[0].mdllink;
-            let mdl_score = data[0].mdlsc;
-            let mdl_percent = mdl_score * 10;
+            const mydramalist_score = data.mdlsc;
+            const mydramalist_link = data.mdllink;
+            const mydramalist_percent = data.mdlper;
     
-            const anikore_link = data[0].anikorelink;
-            let anikore_score = data[0].anikoresc;
-            let anikore_userscore_score = data[0].anikoreusersc;
-            let anikore_userscore_percent = anikore_userscore_score * 20;
+            const anikore_score = data.anikoresc;
+            const anikore_link = data.anikorelink;
+            const anikore_percent = data.anikoreper;
+            const anikore_userscore_score = data.anikoreusersc;
+            const anikore_userscore_link = data.anikoreuserlink;
+            const anikore_userscore_percent = data.anikoreuserper;
     
-            const anilist_link = data[0].anilistlink;
-            let anilist_score = data[0].anilistsc;
+            const anilist_score = data.anilistsc;
+            const anilist_link = data.anilistlink;
+            const anilist_percent = data.anilistper;
     
-            const watcha_link = data[0].watchalink;
-            let watcha_score = data[0].watchasc;
-            let watcha_percent = watcha_score * 20;
+            const watchapedia_score = data.watchasc;
+            const watchapedia_link = data.watchalink;
+            const watchapedia_percent = data.watchaper;
     
-            const kino_link = data[0].kinolink;
-            let kino_score = data[0].kinosc;
-            let kino_userscore_score = data[0].kinousersc;
-            let kino_userscore_percent = kino_userscore_score * 20;
+            const kinolights_score = data.kinosc;
+            const kinolights_link = data.kinolink;
+            const kinolights_percent = data.kinoper;
+            const kinolights_userscore_score = data.kinousersc;
+            const kinolights_userscore_link = data.kinouserlink;
+            const kinolights_userscore_percent = data.kinouserper;
     
-            const prime_link = data[0].primelink;
-            let prime_score = data[0].primesc;
-            let prime_percent = prime_score * 20;
+            const primevideo_score = data.primesc;
+            const primevideo_link = data.primelink;
+            const primevideo_percent = data.primeper;
     
-            const unext_link = data[0].unextlink;
-            let unext_score = data[0].unextsc;
-            let unext_percent = unext_score * 20;
+            const unext_score = data.unextsc;
+            const unext_link = data.unextlink;
+            const unext_percent = data.unextper;
     
-            const crunchy_link = data[0].crunchylink;
-            let crunchy_score = data[0].crunchysc;
-            let crunchy_percent = crunchy_score * 20;
+            const crunchyroll_score = data.crunchysc;
+            const crunchyroll_link = data.crunchylink;
+            const crunchyroll_percent = data.crunchyper;
     
-            const laftel_link = data[0].laftellink;
-            let laftel_score = data[0].laftelsc;
-            let laftel_percent = laftel_score * 20;
-    
-            const googletv_link = data[0].googletvlink;
-            let googletv_score = data[0].googletvsc;
-            let googletv_percent = googletv_score * 20;
-    
-            const justwatch_link = data[0].justwatchlink;
-            let justwatch_score = data[0].justwatchsc;
-    
-            const rakutenviki_link = data[0].rakutenvikilink;
-            let rakutenviki_score = data[0].rakutenvikisc;
-            let rakutenviki_percent = rakutenviki_score * 10;
+            const laftel_score = data.laftelsc;
+            const laftel_link = data.laftellink;
+            const laftel_percent = data.laftelper;
             
             // 평가 틀 생성
-            $(".rating.imdb").append('<div class="rating-card imdb rating-one-score">'+
+            $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
                 '<div class="rating-image">'+
-                    '<img title="IMDb" src="//media.hungbok.net/image/logo/imdb.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '<img title="Metacritic" src="//media.hungbok.net/image/logo/metacritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                '</div>'+
+                '<div class="rating-score">'+
+                    '<div class="rating-title">메타스코어</div>'+
+                    "<a href='" + metascore_link + "' class='rating-star' target='_blank' ttt='" + metascore_score + "'>"+
+                        '<div class="star-ratings">'+
+                            '<div class="fill-ratings" style="width: ' + metascore_percent + ';">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                            '<div class="empty-ratings">'+
+                                '<span>★★★★★</span>'+
+                            '</div>'+
+                        '</div>'+
+                    '</a>'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.imdb.com/title/" + imdb_link + "' class='rating-star " + imdb_score + "' target='_blank' ttt='" + imdb_score + " / 10'>"+
+                    "<a href='" + metacritic_userscore_link + "' class='rating-star' target='_blank' ttt='" + metacritic_userscore_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + imdb_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + metacritic_userscore_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -765,9 +687,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">토마토미터</div>'+
-                    "<a href='https://www.rottentomatoes.com/tv/" + tomato_link + "' class='rating-star " + tomato_score + "' target='_blank' ttt='" + tomato_score + "% / 100%'>"+
+                    "<a href='" + tomatometer_link + "' class='rating-star' target='_blank' ttt='" + tomatometer_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + tomato_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + tomatometer_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -778,9 +700,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">관객 점수</div>'+
-                    "<a href='https://www.rottentomatoes.com/tv/" + tomato_link + "' class='rating-star " + tomato_userscore_score + "' target='_blank' ttt='" + tomato_userscore_score + "% / 100%'>"+
+                    "<a href='" + rottentomatoes_audience_link + "' class='rating-star' target='_blank' ttt='" + rottentomatoes_audience_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + tomato_userscore_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + rottentomatoes_audience_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -790,29 +712,16 @@ $(document).ready(function(){
                     '</a>'+
                 '</div>'+
             '</div>');
-
-            $(".rating.metacritic").append('<div class="rating-card metacritic rating-two-score">'+
+    
+            $(".rating.imdb").append('<div class="rating-card imdb rating-one-score">'+
                 '<div class="rating-image">'+
-                    '<img title="Metacritic" src="//media.hungbok.net/image/logo/metacritic.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">메타스코어</div>'+
-                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/critic-reviews/?season=season-" + meta_season + "' class='rating-star " + meta_score + "' target='_blank' ttt='" + meta_score + " / 100'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + meta_score + '%;">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
+                    '<img title="IMDb" src="//media.hungbok.net/image/logo/imdb.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.metacritic.com/tv/" + meta_link + "/user-reviews/?season=season-" + meta_season + "' class='rating-star " + meta_userscore_score + "' target='_blank' ttt='" + meta_userscore_score + " / 10'>"+
+                    "<a href='" + imdb_link + "' class='rating-star' target='_blank' ttt='" + imdb_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + meta_userscore_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + imdb_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -829,9 +738,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://letterboxd.com/film/" + letter_link + "' class='rating-star " + letter_score + "' target='_blank' ttt='" + letter_score + " / 5.0'>"+
+                    "<a href='" + letterboxd_link + "' class='rating-star' target='_blank' ttt='" + letterboxd_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + letter_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + letterboxd_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -848,9 +757,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.themoviedb.org/tv/" + tmdb_link + "' class='rating-star " + tmdb_score + "' target='_blank' ttt='" + tmdb_score + "% / 100%'>"+
+                    "<a href='" + tmdb_link + "' class='rating-star' target='_blank' ttt='" + tmdb_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + tmdb_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + tmdb_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -867,9 +776,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://filmarks.com/animes/" + filmarks_link + "' class='rating-star " + filmarks_score + "' target='_blank' ttt='" + filmarks_score + " / 5.0'>"+
+                    "<a href='" + filmarks_link + "' class='rating-star' target='_blank' ttt='" + filmarks_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + filmarks_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + filmarks_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -886,9 +795,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://search.yahoo.co.jp/movie?ml=prop:movie_revlist;movieCinemaId:" + yahoo_link + "' class='rating-star " + yahoo_score + "' target='_blank' ttt='" + yahoo_score + " / 5'>"+
+                    "<a href='" + yahoojp_link + "' class='rating-star' target='_blank' ttt='" + yahoojp_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + yahoo_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + yahoojp_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -905,9 +814,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://g.co/kgs/" + google_link + "' class='rating-star " + google_score + "' target='_blank' ttt='" + google_score + "% / 100%'>"+
+                    "<a href='" + google_link + "' class='rating-star' target='_blank' ttt='" + google_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + google_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + google_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -924,9 +833,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://eiga.com/movie/" + eiga_link + "' class='rating-star " + eiga_score + "' target='_blank' ttt='" + eiga_score + " / 5.0'>"+
+                    "<a href='" + eiga_link + "' class='rating-star' target='_blank' ttt='" + eiga_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + eiga_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + eiga_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -943,9 +852,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://movie.douban.com/subject/" + douban_link + "' class='rating-star " + douban_score + "' target='_blank' ttt='" + douban_score + " / 10.0'>"+
+                    "<a href='" + douban_link + "' class='rating-star' target='_blank' ttt='" + douban_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + douban_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + douban_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -962,9 +871,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.bilibili.com/bangumi/media/" + bili_link + "' class='rating-star " + bili_score + "' target='_blank' ttt='" + bili_score + " / 10.0'>"+
+                    "<a href='" + bilibili_link + "' class='rating-star' target='_blank' ttt='" + bilibili_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + bili_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + bilibili_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -981,9 +890,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://myanimelist.net/anime/" + mal_link + "' class='rating-star " + mal_score + "' target='_blank' ttt='" + mal_score + " / 10'>"+
+                    "<a href='" + myanimelist_link + "' class='rating-star' target='_blank' ttt='" + myanimelist_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + mal_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + myanimelist_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1000,9 +909,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://mydramalist.com/" + mdl_link + "' class='rating-star " + mdl_score + "' target='_blank' ttt='" + mdl_score + " / 10'>"+
+                    "<a href='" + mydramalist_link + "' class='rating-star' target='_blank' ttt='" + mydramalist_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + mdl_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + mydramalist_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1019,9 +928,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">종합 점수</div>'+
-                    "<a href='https://www.anikore.jp/anime/" + anikore_link + "' class='rating-star " + anikore_score + "' target='_blank' ttt='" + anikore_score + " / 100'>"+
+                    "<a href='" + anikore_link + "' class='rating-star' target='_blank' ttt='" + anikore_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anikore_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + anikore_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1032,9 +941,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.anikore.jp/anime/" + anikore_link + "' class='rating-star " + anikore_userscore_score + "' target='_blank' ttt='" + anikore_userscore_score + " / 5'>"+
+                    "<a href='" + anikore_userscore_link + "' class='rating-star' target='_blank' ttt='" + anikore_userscore_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anikore_userscore_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + anikore_userscore_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1051,9 +960,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://anilist.co/anime/" + anilist_link + "' class='rating-star " + anilist_score + "' target='_blank' ttt='" + anilist_score + "% / 100%'>"+
+                    "<a href='" + anilist_link + "' class='rating-star' target='_blank' ttt='" + anilist_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + anilist_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + anilist_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1070,9 +979,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://pedia.watcha.com/contents/" + watcha_link + "' class='rating-star " + watcha_score + "' target='_blank' ttt='" + watcha_score + " / 5.0'>"+
+                    "<a href='" + watchapedia_link + "' class='rating-star' target='_blank' ttt='" + watchapedia_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + watcha_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + watchapedia_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1089,9 +998,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">신호등 평점</div>'+
-                    "<a href='https://kinolights.com/title/" + kino_link + "' class='rating-star " + kino_score + "' target='_blank' ttt='" + kino_score + "% / 100.00%'>"+
+                    "<a href='" + kinolights_link + "' class='rating-star' target='_blank' ttt='" + kinolights_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + kino_score + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + kinolights_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1102,9 +1011,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://kinolights.com/title/" + kino_link + "?tab=review' class='rating-star " + kino_userscore_score + "' target='_blank' ttt='" + kino_userscore_score + " / 5.0'>"+
+                    "<a href='" + kinolights_userscore_link + "' class='rating-star' target='_blank' ttt='" + kinolights_userscore_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + kino_userscore_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + kinolights_userscore_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1121,9 +1030,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.amazon.com/product-reviews/" + prime_link + "' class='rating-star " + prime_score + "' target='_blank' ttt='" + prime_score + " / 5'>"+
+                    "<a href='" + primevideo_link + "' class='rating-star' target='_blank' ttt='" + primevideo_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + prime_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + primevideo_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1140,9 +1049,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://video.unext.jp/title/" + unext_link + "' class='rating-star " + unext_score + "' target='_blank' ttt='" + unext_score + " / 5'>"+
+                    "<a href='" + unext_link + "' class='rating-star' target='_blank' ttt='" + unext_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + unext_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + unext_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1159,9 +1068,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.crunchyroll.com/series/" + crunchy_link + "' class='rating-star " + crunchy_score + "' target='_blank' ttt='" + crunchy_score + " / 5'>"+
+                    "<a href='" + crunchyroll_link + "' class='rating-star' target='_blank' ttt='" + crunchyroll_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + crunchy_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + crunchyroll_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1178,66 +1087,9 @@ $(document).ready(function(){
                 '</div>'+
                 '<div class="rating-score">'+
                     '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://laftel.net/item/" + laftel_link + "/review' class='rating-star " + laftel_score + "' target='_blank' ttt='" + laftel_score + " / 5.0'>"+
+                    "<a href='" + laftel_link + "' class='rating-star' target='_blank' ttt='" + laftel_score + "'>"+
                         '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + laftel_percent + '%;">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
-                '</div>'+
-            '</div>');
-    
-            $(".rating.googletv").append('<div class="rating-card googletv rating-one-score">'+
-                '<div class="rating-image">'+
-                    '<img title="googletv" src="//media.hungbok.net/image/logo/googletv.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://play.google.com/store/tv/show/?id=" + googletv_link + "' class='rating-star " + googletv_score + "' target='_blank' ttt='" + googletv_score + " ★ / 5.0 ★'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + googletv_percent + '%;">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
-                '</div>'+
-            '</div>');
-    
-            $(".rating.justwatch").append('<div class="rating-card justwatch rating-one-score">'+
-                '<div class="rating-image">'+
-                    '<img title="justwatch" src="//media.hungbok.net/image/logo/justwatch.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.justwatch.com/" + justwatch_link + "' class='rating-star " + justwatch_score + "' target='_blank' ttt='" + justwatch_score + "% / 100%'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + justwatch_score + '%;">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                            '<div class="empty-ratings">'+
-                                '<span>★★★★★</span>'+
-                            '</div>'+
-                        '</div>'+
-                    '</a>'+
-                '</div>'+
-            '</div>');
-    
-            $(".rating.rakutenviki").append('<div class="rating-card rakutenviki rating-one-score">'+
-                '<div class="rating-image">'+
-                    '<img title="rakutenviki" src="//media.hungbok.net/image/logo/rakutenviki.svg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
-                '</div>'+
-                '<div class="rating-score">'+
-                    '<div class="rating-title">유저 평점</div>'+
-                    "<a href='https://www.viki.com/tv/" + rakutenviki_link + "#reviews' class='rating-star " + rakutenviki_score + "' target='_blank' ttt='★ " + rakutenviki_score + " / 10'>"+
-                        '<div class="star-ratings">'+
-                            '<div class="fill-ratings" style="width: ' + rakutenviki_percent + '%;">'+
+                            '<div class="fill-ratings" style="width: ' + laftel_percent + ';">'+
                                 '<span>★★★★★</span>'+
                             '</div>'+
                             '<div class="empty-ratings">'+
@@ -1250,7 +1102,7 @@ $(document).ready(function(){
 
             $(document).ready(function() {
                 // .rating-star.none 클래스를 찾아서 처리합니다.
-                $('.rating-star.undefined, .rating-star.none, .rating-star[ttt="- / 100"], .rating-star[ttt="- / 10"], .rating-star[ttt="- / 5"]').each(function() {
+                $('.rating-star[ttt="undefined"], .rating-star[ttt="none"]').each(function() {
                   // 하위 .star-ratings 클래스를 삭제하고 '-'로 대체
                   $(this).find('.star-ratings').remove();
                   $(this).text('-');
@@ -1259,54 +1111,14 @@ $(document).ready(function(){
                   $(this).removeClass('none');
                 });
             });
-
-            window.addEventListener('load', function() {
-                var description = document.querySelector('.description');
-                var showMore = document.querySelector('.show-more');
-                
-                if(description.offsetHeight > 500){
-                    description.style.maxHeight = "500px";
-                    showMore.style.display = "block";
-                }
-            });
-
-            const data_import_type_first = data[0].data_import_type_first;
-            const data_import_first = data[0].data_import_first;
-            const data_import_type_second = data[0].data_import_type_second;
-            const data_import_second = data[0].data_import_second;
-            const data_import_type_third = data[0].data_import_type_third;
-            const data_import_third = data[0].data_import_third;
-
-            $(".related").append('<p class="description-title">관련 작품</p>'+
-            '<p>이 콘텐츠는 다음 작품과 관련이 있습니다.</p>'+
-            '<div>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_first + '?q=' + data_import_first + '" target="_blank" data-type={data_import_type_first} data-file={data_import_first}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_first + '/' + data_import_first + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_second + '?q=' + data_import_second + '" target="_blank" data-type={data_import_type_second} data-file={data_import_second}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_second + '/' + data_import_second + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-                '<a class="data-import" href="https://www.hungbok.com/' + data_import_type_third + '?q=' + data_import_third + '" target="_blank" data-type={data_import_type_third} data-file={data_import_third}>'+
-                    '<div>'+
-                        '<img src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_capsule.jpg" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                        '<img class="data-import-logo" src="//media.hungbok.net/image/' + data_import_type_third + '/' + data_import_third + '/hb_logo.png" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
-                    '</div>'+
-                '</a>'+
-            '</div>');
-
-            document.body.innerHTML = document.body.innerHTML
-            .replace(/{data_import_type_first}/g, data[0].data_import_type_first)
-            .replace(/{data_import_first}/g, data[0].data_import_first)
-            .replace(/{data_import_type_second}/g, data[0].data_import_type_second)
-            .replace(/{data_import_second}/g, data[0].data_import_second)
-            .replace(/{data_import_type_third}/g, data[0].data_import_type_third)
-            .replace(/{data_import_third}/g, data[0].data_import_third);
+    
+            var description = document.querySelector('.description');
+            var showMore = document.querySelector('.show-more');
+            
+            if(description.offsetHeight > 500){
+                description.style.maxHeight = "500px";
+                showMore.style.display = "block";
+            }
             
             function loadJSON(file, callback) {
                 var xhr = new XMLHttpRequest();
@@ -1343,94 +1155,11 @@ $(document).ready(function(){
             dataImportElements.forEach(function (element) {
                 updateElementWithData(element);
             });
-            
-            $(document).ready(function() {
-            
-                // 쿠키를 설정하는 함수
-                function setCookie(name, value, hours) {
-                    const date = new Date();
-                    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
-                    const expires = "expires=" + date.toUTCString();
-                    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-                }
-            
-                // 쿠키를 가져오는 함수
-                function getCookie(name) {
-                    const cname = name + "=";
-                    const decodedCookie = decodeURIComponent(document.cookie);
-                    const ca = decodedCookie.split(';');
-                    for (let i = 0; i < ca.length; i++) {
-                        let c = ca[i];
-                        while (c.charAt(0) == ' ') {
-                            c = c.substring(1);
-                        }
-                        if (c.indexOf(cname) == 0) {
-                            return c.substring(cname.length, c.length);
-                        }
-                    }
-                    return "";
-                }
-            
-                // 페이지 로드 시 실행되는 로직
-                if ($('body').hasClass('adult')) {
-                    const ageCheck = getCookie('agecheck');
-                    if (!ageCheck) {
-                        $('#warning').show();
-                        $('body.adult > main > .section').remove();
-                    }
-                }
-            
-                // 나이 확인 버튼 클릭 이벤트
-                $('#age-checking').click(function() {
-                    const year = parseInt(document.getElementById('age-check-year').value);
-                    const month = parseInt(document.getElementById('age-check-month').value) - 1; // JavaScript의 Date 객체는 월을 0부터 시작하므로 1을 빼줍니다.
-                    const day = parseInt(document.getElementById('age-check-day').value);
-                    const selectedDate = new Date(year, month, day);
-                    const today = new Date();
-                    const age = today.getFullYear() - selectedDate.getFullYear();
-                    const monthDiff = today.getMonth() - selectedDate.getMonth();
-                    const dayDiff = today.getDate() - selectedDate.getDate();
-                
-                    // 만 나이 계산
-                    let adjustedAge = age;
-                    if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-                        adjustedAge--; // 생일이 지나지 않았다면 나이에서 1을 뺍니다.
-                    }
-                
-                    // 만 19세 이상이라면
-                    if (adjustedAge >= 18) {
-                        setCookie('agecheck', 'success', 24);
-                        location.reload();
-                    } else {
-                        // 만 19세 미만이거나 나이를 확인할 수 없는 경우
-                        setCookie('agecheck', 'fail', 24); // 'agecheck' 쿠키를 'fail'로 설정하고, 24시간 동안 유지
-                        $('#warning').show(); // #warning 요소 보이기
-                        $('.age-check-container').remove(); // .age-check-container 요소 제거
-                        $('body.adult > main > .section').remove();
-                        $('#warning').append('<div id="child">죄송합니다. 이 콘텐츠에 액세스할 수 없습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
-                    }
-                });
-            
-                // 쿠키 'agecheck'의 값에 따라 초기 로직 처리
-                const ageCheck = getCookie('agecheck');
-                if (ageCheck === 'success') {
-                    $('body').removeClass('adult'); // 'adult' 클래스 제거
-                    $('#warning').remove(); // #warning 요소 숨기기
-                } else if (ageCheck === 'fail') {
-                    if ($('body').hasClass('adult')) {
-                        $('#warning').show(); // #warning 요소 보이기
-                        $('.age-check-container').remove(); // .age-check-container 요소 제거
-                        $('body.adult > main > .section').remove();
-                        $('#warning').append('<div id="child">죄송합니다. 이 콘텐츠에 액세스할 수 없습니다.</div><a class="age-check-back" onclick="window.history.back()">돌아가기</a>'); // #child 요소 추가
-                    } else {
-                        $('#warning').remove();
-                    }
-                }
-            });
         });
     } else {
         $('body').addClass('ko');
         $('.section').remove();
+        $('.top-backgrounds').remove();
         $('main').append('<div class="game-section">'+
             '<div class="owl-carousel custom-carousel owl-theme"></div>'+
             '<div class="progress-container">'+
@@ -2211,7 +1940,7 @@ function showError(image) {
     var q = urlParams.get('q');
 
     // JSON 파일 불러오기
-    fetch(`//data.hungbok.net/data/music/${q}.json`)
+    fetch(`//data.hungbok.net/data/anime/${q}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -2237,13 +1966,6 @@ function showError(image) {
 
 function hideError(image) {
     image.src = "//media.hungbok.net/image/hb/hb_error_horizontal.svg";
-}
-
-function logoError(image) {
-    var altText = image.alt;
-    var parent = image.parentNode;
-    var textNode = document.createTextNode(altText);
-    parent.replaceChild(textNode, image);
 }
 
 $(document).ready(function(){
@@ -2275,124 +1997,3 @@ $(document).ready(function(){
 window.addEventListener('load', function() {
     loadAsyncScripts();
 });
-
-function completeYear(input) {
-    let yearValue = input.value;
-    if (yearValue.length === 2) {
-        // 입력된 연도가 2자리 숫자일 때
-        if (parseInt(yearValue) <= 30) {
-            input.value = '20' + yearValue;
-        } else if (parseInt(yearValue) >= 31) {
-            input.value = '19' + yearValue;
-        }
-    } else if (yearValue.length === 1) {
-        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-        input.value = '200' + yearValue;
-    } else if (yearValue.length === 4) {
-        // 입력된 연도가 3자리 숫자일 때 처리 로직 추가 가능
-        if (parseInt(yearValue) <= 1900) {
-            input.value = '1900';
-        } else if (parseInt(yearValue) >= 2030) {
-            input.value = '2030';
-        }
-    }
-    // 4자리 숫자일 때는 변경하지 않음
-    const year = document.getElementById('age-check-year').value;
-    const month = document.getElementById('age-check-month').value;
-    const day = document.getElementById('age-check-day').value;
-    const btn = document.getElementById('age-checking');
-
-    // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
-    if (year.length === 4 && month.length === 2 && day.length === 2) {
-        // 모든 필드가 채워져 있으면 버튼 활성화
-        btn.disabled = false;
-    } else {
-        // 하나라도 빈 필드가 있으면 버튼 비활성화
-        btn.disabled = true;
-    }
-}
-
-function completeMonth(input) {
-    let monthValue = input.value;
-    if (monthValue.length === 1) {
-        // 입력된 월 또는 일이 1자리 숫자일 때
-        if (parseInt(monthValue) <= 0) {
-            input.value = '01';
-        } else if (parseInt(monthValue) >= 1) {
-            input.value = '0' + monthValue;
-        }
-    } else if (monthValue.length === 2) {
-        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-        if (parseInt(monthValue) <= 0) {
-            input.value = monthValue;
-            input.value = '01';
-        }  else if (parseInt(monthValue) <= 12) {
-            input.value = monthValue;
-        } else if (parseInt(monthValue) >= 13) {
-            input.value = '12';
-        }
-    }
-    // 2자리 숫자일 때는 변경하지 않음
-    const year = document.getElementById('age-check-year').value;
-    const month = document.getElementById('age-check-month').value;
-    const day = document.getElementById('age-check-day').value;
-    const btn = document.getElementById('age-checking');
-
-    // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
-    if (year.length === 4 && month.length === 2 && day.length === 2) {
-        // 모든 필드가 채워져 있으면 버튼 활성화
-        btn.disabled = false;
-    } else {
-        // 하나라도 빈 필드가 있으면 버튼 비활성화
-        btn.disabled = true;
-    }
-}
-
-function completeDay(input) {
-    let dayValue = input.value;
-    if (dayValue.length === 1) {
-        // 입력된 월 또는 일이 1자리 숫자일 때
-        if (parseInt(dayValue) <= 0) {
-            input.value = '01';
-        } else if (parseInt(dayValue) >= 1) {
-            input.value = '0' + dayValue;
-        }
-    } else if (dayValue.length === 2) {
-        // 입력된 연도가 1자리 숫자일 때 (예: '5' → '2005')
-        if (parseInt(dayValue) <= 0) {
-            input.value = '01';
-        } else if (parseInt(dayValue) <= 31) {
-            input.value = dayValue;
-        } else if (parseInt(dayValue) >= 32) {
-            input.value = '31';
-        }
-    }
-    // 2자리 숫자일 때는 변경하지 않음
-    const year = document.getElementById('age-check-year').value;
-    const month = document.getElementById('age-check-month').value;
-    const day = document.getElementById('age-check-day').value;
-    const btn = document.getElementById('age-checking');
-
-    // 연도, 월, 일 입력 필드가 모두 채워져 있는지 확인
-    if (year.length === 4 && month.length === 2 && day.length === 2) {
-        // 모든 필드가 채워져 있으면 버튼 활성화
-        btn.disabled = false;
-    } else {
-        // 하나라도 빈 필드가 있으면 버튼 비활성화
-        btn.disabled = true;
-    }
-}
-
-function moveFocusToNextInput(input, requiredLength) {
-    if (input.value.length === requiredLength) {
-        // 다음 입력 필드로 포커스 이동
-        let next = input.nextElementSibling;
-        // 다음 요소가 input 요소인지 확인하고, 아니면 그 다음 요소를 찾음
-        while (next && next.tagName !== 'INPUT') {
-            next = next.nextElementSibling;
-        }
-        if (next) {
-            next.focus();
-        }
-    }
-}
