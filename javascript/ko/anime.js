@@ -634,10 +634,11 @@ $(document).ready(function(){
                     });
                 });
                 
-                document.querySelectorAll('.item-container').forEach(function(container) {
-                    var itemCount = container.querySelectorAll('.item').length;
+                var itemCount = document.querySelectorAll('.item-container .item').length;
+                var container = document.querySelector('.item-container');
+                if (container) {
                     container.classList.add('item-' + itemCount);
-                });
+                }
             };
     
             const imdb_link = data[0].imdblink;
