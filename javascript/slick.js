@@ -3073,54 +3073,6 @@ $(document).ready(function(){
         autoplay: false,
         autoplaySpeed: 4000,
     });
-    $('.story').slick({
-        arrows: true,
-        dots: false,
-        infinite: true,
-        centerMode: true,
-        adaptiveHeight: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
-        autoplay: false,
-        autoplaySpeed: 4000,
-    });
-    $('.setting').slick({
-        arrows: true,
-        dots: false,
-        infinite: true,
-        centerMode: true,
-        adaptiveHeight: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
-        autoplay: false,
-        autoplaySpeed: 4000,
-    });
-    $('.character').slick({
-        arrows: true,
-        dots: false,
-        infinite: true,
-        centerMode: true,
-        adaptiveHeight: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
-        autoplay: false,
-        autoplaySpeed: 4000,
-    });
-    $('.music').slick({
-        arrows: true,
-        dots: false,
-        infinite: true,
-        centerMode: true,
-        adaptiveHeight: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
-        autoplay: false,
-        autoplaySpeed: 4000,
-    });
     
     var sliderCount = $('.calendar-container').length;
     var currentSlider = 0;
