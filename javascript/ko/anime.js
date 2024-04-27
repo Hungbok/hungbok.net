@@ -287,10 +287,10 @@ $(document).ready(function(){
                 });
             }
             // story 생성
-            var container = $('<div class="story-container"></div>'); // 초기 story-container 생성
-            $(".story").append(container); // story에 container 추가
+            var storyContainer = $('<div class="story-container"></div>');
+            $(".story").append(storyContainer);
             storyData.forEach(function(item, index) {
-                var card = $('<div class="story-card">'+
+                var storyCard = $('<div class="story-card">'+
                     '<div class="story-episode">'+
                         '<p>제' + item.epi + '화</p>'+
                     '</div>'+
@@ -308,14 +308,10 @@ $(document).ready(function(){
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
-                
-                // 현재 container에 card 추가
-                container.append(card);
-                
-                // 10의 배수마다 새로운 container 생성
+                storyContainer.append(storyCard);
                 if ((index + 1) % 10 === 0 && index + 1 < storyData.length) {
-                    container = $('<div class="story-container"></div>'); // 새로운 container 생성
-                    $(".story").append(container); // story에 새로운 container 추가
+                    storyContainer = $('<div class="story-container"></div>');
+                    $(".story").append(storyContainer);
                 }
             });
             
@@ -333,9 +329,11 @@ $(document).ready(function(){
                     img: settingImage,
                 });
             }
-            // 설정 카드 생성
-            settingData.forEach(function(item) {
-                $(".setting").append('<div class="setting-card">'+
+            // setting 생성
+            var settingContainer = $('<div class="setting-container"></div>');
+            $(".setting").append(settingContainer);
+            settingData.forEach(function(item, index) {
+                var settingCard = $('<div class="setting-card">'+
                     '<div class="setting-image">'+
                         '<img class="setting-background" src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
                         '<img class="setting-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
@@ -347,6 +345,11 @@ $(document).ready(function(){
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
+                settingContainer.append(settingCard);
+                if ((index + 1) % 5 === 0 && index + 1 < settingData.length) {
+                    settingContainer = $('<div class="setting-container"></div>');
+                    $(".setting").append(settingContainer);
+                }
             });
             
             var character_value = data[0].charcount; // character 수
@@ -468,8 +471,10 @@ $(document).ready(function(){
                 });
             }
             // character 생성
-            characterData.forEach(function(item) {
-                $(".character").append('<div class="character-card">'+
+            var characterContainer = $('<div class="character-container"></div>');
+            $(".character").append(characterContainer);
+            characterData.forEach(function(item, index) {
+                var characterCard = $('<div class="character-card">'+
                     '<div class="character-image">'+
                         '<img class="character-background" src="//media.hungbok.net/image/anime/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
@@ -481,6 +486,11 @@ $(document).ready(function(){
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
+                characterContainer.append(characterCard);
+                if ((index + 1) % 10 === 0 && index + 1 < characterData.length) {
+                    characterContainer = $('<div class="character-container"></div>');
+                    $(".character").append(characterContainer);
+                }
             });
             // voicer 생성
             characterCounts.forEach(function (characterCount, countIndex) {
