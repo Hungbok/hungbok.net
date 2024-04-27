@@ -287,8 +287,10 @@ $(document).ready(function(){
                 });
             }
             // story 생성
-            storyData.forEach(function(item) {
-                $(".story").append('<div class="story-card">'+
+            var container = $('<div class="story-container"></div>'); // 초기 story-container 생성
+            $(".story").append(container); // story에 container 추가
+            storyData.forEach(function(item, index) {
+                var card = $('<div class="story-card">'+
                     '<div class="story-episode">'+
                         '<p>제' + item.epi + '화</p>'+
                     '</div>'+
@@ -306,6 +308,15 @@ $(document).ready(function(){
                         '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
+                
+                // 현재 container에 card 추가
+                container.append(card);
+                
+                // 10의 배수마다 새로운 container 생성
+                if ((index + 1) % 10 === 0 && index + 1 < storyData.length) {
+                    container = $('<div class="story-container"></div>'); // 새로운 container 생성
+                    $(".story").append(container); // story에 새로운 container 추가
+                }
             });
             
             var setting_value = data[0].settingcount; // 설정 카드 수
