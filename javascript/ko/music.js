@@ -391,7 +391,7 @@ $(document).ready(function(){
             lyricsData.forEach(function(item, index) {
                 var lyricsCard = $('<div class="lyrics-card">'+
                     '<div class="lyrics-image video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
-                        '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                        '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="lyrics-info">'+
                         '<div class="lyrics-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
