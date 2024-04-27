@@ -3727,7 +3727,13 @@ div.system-requirements-title {
     display: none;
 }
 
-.owl-dots.disabled {
+.owl-nav button.disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.owl-dots.disabled,
+.owl-nav.disabled {
     display: none;
 }
 
