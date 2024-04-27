@@ -903,6 +903,14 @@ body.adult > main > .top-backgrounds > div {
     width: 100%;
 }
 
+.system-requirements > p {
+    background-color: var(--background-8);
+    border-radius: 20px 20px 0 0;
+    padding: 30px 30px 0;
+    margin: 0;
+    width: calc(100% - 60px);
+}
+
 div.system-requirements-title {
     display: inline-block;
     background-color: var(--text-3);
@@ -916,10 +924,9 @@ div.system-requirements-title {
 
 .more-info-tabs {
     overflow: hidden;
-    padding: 20px 20px 0;
+    padding: 30px 30px 0;
     position: relative;
     background-color: var(--background-8);
-    border-radius: 20px 20px 0 0;
 }
 
 .more-info-tabs:after {
