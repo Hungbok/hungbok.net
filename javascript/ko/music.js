@@ -358,157 +358,39 @@ $(document).ready(function(){
                 }
             });
             
-            var character_value = data[0].charcount; // character 수
-            var characterCounts = [
-                data[0].char1count,
-                data[0].char2count,
-                data[0].char3count,
-                data[0].char4count,
-                data[0].char5count,
-                data[0].char6count,
-                data[0].char7count,
-                data[0].char8count,
-                data[0].char9count,
-                data[0].char10count,
-                data[0].char11count,
-                data[0].char12count,
-                data[0].char13count,
-                data[0].char14count,
-                data[0].char15count,
-                data[0].char16count,
-                data[0].char17count,
-                data[0].char18count,
-                data[0].char19count,
-                data[0].char20count,
-                data[0].char21count,
-                data[0].char22count,
-                data[0].char23count,
-                data[0].char24count,
-                data[0].char25count,
-                data[0].char26count,
-                data[0].char27count,
-                data[0].char28count,
-                data[0].char29count,
-                data[0].char30count,
-                data[0].char31count,
-                data[0].char32count,
-                data[0].char33count,
-                data[0].char34count,
-                data[0].char35count,
-                data[0].char36count,
-                data[0].char37count,
-                data[0].char38count,
-                data[0].char39count,
-                data[0].char40count,
-                data[0].char41count,
-                data[0].char42count,
-                data[0].char43count,
-                data[0].char44count,
-                data[0].char45count,
-                data[0].char46count,
-                data[0].char47count,
-                data[0].char48count,
-                data[0].char49count,
-                data[0].char50count,
-                data[0].char51count,
-                data[0].char52count,
-                data[0].char53count,
-                data[0].char54count,
-                data[0].char55count,
-                data[0].char56count,
-                data[0].char57count,
-                data[0].char58count,
-                data[0].char59count,
-                data[0].char60count,
-                data[0].char61count,
-                data[0].char62count,
-                data[0].char63count,
-                data[0].char64count,
-                data[0].char65count,
-                data[0].char66count,
-                data[0].char67count,
-                data[0].char68count,
-                data[0].char69count,
-                data[0].char70count,
-                data[0].char71count,
-                data[0].char72count,
-                data[0].char73count,
-                data[0].char74count,
-                data[0].char75count,
-                data[0].char76count,
-                data[0].char77count,
-                data[0].char78count,
-                data[0].char79count,
-                data[0].char80count,
-                data[0].char81count,
-                data[0].char82count,
-                data[0].char83count,
-                data[0].char84count,
-                data[0].char85count,
-                data[0].char86count,
-                data[0].char87count,
-                data[0].char88count,
-                data[0].char89count,
-                data[0].char90count,
-                data[0].char91count,
-                data[0].char92count,
-                data[0].char93count,
-                data[0].char94count,
-                data[0].char95count,
-                data[0].char96count,
-                data[0].char97count,
-                data[0].char98count,
-                data[0].char99count,
-                data[0].char100count,
-            ];
-            var characterData = [];
-            for (var i = 1; i <= character_value; i++) {
-                var characterText = getLocalizedTextData(data[0], ['chartext' + i]);
-                var characterName = getLocalizedTextData(data[0], ['charname' + i]);
-                var characterNameOriginal = data[0]['charname' + i];
-                var characterImage = 'character_' + i;
-                var characterVoice = 'voice' + i;
-                characterData.push({
-                    text: characterText,
-                    name: characterName,
-                    nameog: characterNameOriginal,
-                    img: characterImage,
-                    vo: characterVoice,
+            var lyrics_value = data[0].lyricscount; // lyrics 수
+            var lyricsData = [];
+            for (var i = 1; i <= lyrics_value; i++) {
+                var lyricsText = getLocalizedTextData(data[0], ['lyricstext' + i]);
+                var lyricsName = getLocalizedTextData(data[0], ['lyricsname' + i]);
+                var lyricsNameOriginal = data[0]['lyricsname' + i];
+                var lyricsImage = 'lyrics_' + i;
+                var lyricsVoice = 'voice' + i;
+                lyricsData.push({
+                    text: lyricsText,
+                    name: lyricsName,
+                    nameog: lyricsNameOriginal,
+                    img: lyricsImage,
+                    vo: lyricsVoice,
                 });
             }
-            // character 생성
-            var characterContainer = $('<div class="character-container"></div>');
-            $(".character").append(characterContainer);
-            characterData.forEach(function(item, index) {
-                var characterCard = $('<div class="character-card">'+
-                    '<div class="character-image">'+
-                        '<img class="character-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+            // lyrics 생성
+            var lyricsContainer = $('<div class="lyrics-container"></div>');
+            $(".lyrics").append(lyricsContainer);
+            lyricsData.forEach(function(item, index) {
+                var lyricsCard = $('<div class="lyrics-card">'+
+                    '<div class="lyrics-image video-play-button youtube-link" videoid="aOAiUwz7Zt8">'+
+                        '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
-                    '<div class="character-info">'+
-                        '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
-                        '<div class="character-voice ' + item.vo + '"></div>'+
+                    '<div class="lyrics-info">'+
+                        '<div class="lyrics-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
                     '</div>'+
-                    '<div class="character-description">'+
-                        '<p>' + item.text + '</p>'+
-                    '</div>'+
+                    '<div class="lyrics-description">' + item.text + '</div>'+
                 '</div>');
-                characterContainer.append(characterCard);
-                if ((index + 1) % 4 === 0 && index + 1 < characterData.length) {
-                    characterContainer = $('<div class="character-container"></div>');
-                    $(".character").append(characterContainer);
-                }
-            });
-            // voicer 생성
-            characterCounts.forEach(function (characterCount, countIndex) {
-                for (var j = 1; j <= characterCount; j++) {
-                    var cLang = data[0]['char' + (countIndex + 1) + 'lang' + j];
-                    var cName = getLocalizedTextData(data[0], ['char' + (countIndex + 1) + 'name' + j]);
-                    var cNameog = data[0]['char' + (countIndex + 1) + 'name' + j];
-        
-                    $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
-                        '<p class="character-lang"></p>'+
-                        '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
-                    '</div>');
+                lyricsContainer.append(lyricsCard);
+                if ((index + 1) % 2 === 0 && index + 1 < lyricsData.length) {
+                    lyricsContainer = $('<div class="lyrics-container"></div>');
+                    $(".lyrics").append(lyricsContainer);
                 }
             });
             
@@ -520,6 +402,7 @@ $(document).ready(function(){
                 var musicTitleOriginal = data[0]['musictitle' + i];
                 var musicUrl = data[0]['musicurl' + i];
                 var musicVideoId = data[0]['musicvideoid' + i];
+                var musicVideo2Id = data[0]['musicvideo2id' + i];
                 var musicSing = getLocalizedTextData(data[0], ['musicsing' + i]);
                 var musicSingOriginal = data[0]['musicsing' + i];
                 var musicWrite = getLocalizedTextData(data[0], ['musicwrite' + i]);
@@ -540,12 +423,24 @@ $(document).ready(function(){
                 if (musicvideoServer === 'vimeo') {
                     musicvideoExtension = 'avif';
                 }
+                var musicvideo2Server = data[0]['musicvideo2server' + i];
+                var musicvideo2Extension = 'jpg';
+                if (musicvideo2Server === 'youtube') {
+                    musicvideo2Extension = 'jpg';
+                }
+                if (musicvideo2Server === 'video') {
+                    musicvideo2Extension = 'jpg';
+                }
+                if (musicvideo2Server === 'vimeo') {
+                    musicvideo2Extension = 'avif';
+                }
                 musicData.push({
                     type: musicType,
                     title: musicTitle,
                     titleog: musicTitleOriginal,
                     url: musicUrl,
                     videoid: musicVideoId,
+                    video2id: musicVideo2Id,
                     sing: musicSing,
                     singog: musicSingOriginal,
                     write: musicWrite,
@@ -557,36 +452,44 @@ $(document).ready(function(){
                     img: musicImage,
                     server: musicvideoServer,
                     extension: musicvideoExtension,
+                    server2: musicvideo2Server,
+                    extension2: musicvideo2Extension,
                 });
             }
             // music 생성
             musicData.forEach(function(item) {
-                $(".music").append('<div class="music-card">'+
-                    '<div class="music-title">'+
-                        '<p class="' + item.type + '"></p>'+
-                        '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
-                    '</div>'+
-                    '<div class="music-video">'+
+                $(".music").append('<div class="mv-card">'+
+                    '<div class="music-player-video">'+
                         '<div class="video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
-                            '<img src="//media.hungbok.net/image/hb/hb_error_horizontal.svg">'+
-                            '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                            '<div class="youtube-title">Full Version</div>'+
+                        '</div>'+
+                        '<div class="video-play-button ' + item.server2 + '-link" videoid="' + item.video2id + '">'+
+                            '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.video2id + '.' + item.extension2 + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
+                            '<div class="youtube-title">Edit Version</div>'+
                         '</div>'+
                     '</div>'+
-                    '<div class="music-image">'+
-                        '<a href="https://www.hungbok.com/music?q=' + item.url + '">'+
-                            '<img class="music-background" src="//media.hungbok.net/image/hb/hb_error_square.svg">'+
-                            '<img class="music-cover" src="//media.hungbok.net/image/music/' + item.url + '/hb_cover.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
-                        '</a>'+
-                        '<img class="music-lp" src="//media.hungbok.net/image/icon/recode.png">'+
+                    '<div class="mv-info">'+
+                        '<div class="mv-name" ttt="' + item.titleog + '">' + item.title + '</div>'+
+                        '<div class="mv-voice voice1">'+
+                            '<div class="mv-voicer">'+
+                                '<p class="mv-lang">노래</p>'+
+                                '<p class="mv-voicername" ttt="">' + item.sing + '</p>'+
+                            '</div>'+
+                            '<div class="mv-voicer">'+
+                                '<p class="mv-lang">작사</p>'+
+                                '<p class="mv-voicername" ttt="">' + item.write + '</p>'+
+                            '</div>'+
+                            '<div class="mv-voicer">'+
+                                '<p class="mv-lang">작곡</p>'+
+                                '<p class="mv-voicername" ttt="">' + item.produce + '</p>'+
+                            '</div>'+
+                            '<div class="mv-voicer">'+
+                                '<p class="mv-lang">편곡</p>'+
+                                '<p class="mv-voicername" ttt="">' + item.arrange + '</p>'+
+                            '</div>'+
+                        '</div>'+
                     '</div>'+
-                    '<div class="music-text">'+
-                        '<p>노래</p>' + item.sing + '</div>'+
-                    '<div class="music-text">'+
-                        '<p>작사</p>' + item.write + '</div>'+
-                    '<div class="music-text">'+
-                        '<p>작곡</p>' + item.produce + '</div>'+
-                    '<div class="music-text">'+
-                        '<p>편곡</p>' + item.arrange + '</div>'+
                 '</div>');
             });
 

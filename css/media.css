@@ -640,7 +640,7 @@ body.adult > main > .top-backgrounds > div {
 .more-info-reviews,
 .story,
 .setting,
-.mv-player,
+.mv,
 .character,
 .books,
 .music {
@@ -1669,7 +1669,7 @@ div.system-requirements-title {
 .story [ttt]:hover::after,
 .setting [ttt]:hover::after,
 .lyrics [ttt]:hover::after,
-.mv-player [ttt]:hover::after,
+.mv [ttt]:hover::after,
 .character [ttt]:hover::after,
 .books [ttt]:hover::after,
 .music [ttt]:hover::after,
@@ -2046,7 +2046,7 @@ div.system-requirements-title {
 .books-card {
     display: flex;
     position: relative;
-    max-width: 200px;
+    max-width: 220px;
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
@@ -2093,8 +2093,8 @@ div.system-requirements-title {
 .books-image {
     grid-row-start: 2;
     grid-row-end: 3;
-    width: 200px;
-    height: 300px;
+    width: 220px;
+    height: 330px;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -2387,15 +2387,15 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-/* mv-player */
+/* mv */
 
-.mv-player {
+.mv {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.mv-player-card {
+.mv-card {
     display: grid;
     position: relative;
     width: calc(100% - 80px);
@@ -2412,7 +2412,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-card:hover {
+.mv-card:hover {
     background-color: var(--background-6);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2421,11 +2421,11 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-card > .music-player-video > .video-play-button {
+.mv-card > .music-player-video > .video-play-button {
     aspect-ratio: 16 / 9;
 }
 
-.mv-player-image {
+.mv-image {
     grid-row-start: 1;
     grid-row-end: 2;
     width: 330px;
@@ -2444,7 +2444,7 @@ div.system-requirements-title {
     user-select: none;
 }
 
-.mv-player-image .mv-player-background {
+.mv-image .mv-background {
     z-index: 0;
     width: auto;
     height: 100%;
@@ -2458,12 +2458,12 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-image img {
+.mv-image img {
     position: absolute;
     transform: translate(-50%);
 }
 
-.mv-player-card:hover .mv-player-background {
+.mv-card:hover .mv-background {
     transform: translate(-50%, -50%) scale(1.05);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2472,13 +2472,13 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-image .onerror {
+.mv-image .onerror {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.mv-player-info img {
+.mv-info img {
     height: 20px;
     max-height: 50px;
     max-width: 100px;
@@ -2491,7 +2491,7 @@ div.system-requirements-title {
     position: relative;
 }
 
-.mv-player-voice {
+.mv-voice {
     border-radius: 20px;
     background-color: var(--background-7);
     -webkit-transition: all 0.5s;
@@ -2501,7 +2501,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-card:hover .mv-player-voice {
+.mv-card:hover .mv-voice {
     background-color: var(--background-4);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2510,7 +2510,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-name {
+.mv-name {
     background-color: #dddddd;
     color: #222222;
     font-weight: bold;
@@ -2519,7 +2519,7 @@ div.system-requirements-title {
     margin: 0px 0px 20px;
 }
 
-.mv-player-name[ttt]:hover::after {
+.mv-name[ttt]:hover::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;
@@ -2527,7 +2527,7 @@ div.system-requirements-title {
     opacity: 1;
 }
 
-.mv-player-voicer {
+.mv-voicer {
     display: grid;
     grid-template-columns: 20% 80%;
     text-align: center;
@@ -2542,7 +2542,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-voicer:hover {
+.mv-voicer:hover {
     background-color: var(--background-2);
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -2551,7 +2551,7 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-lang {
+.mv-lang {
     width: 30px;
     height: 24px;
     overflow: hidden;
@@ -2571,12 +2571,12 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.mv-player-voicername {
+.mv-voicername {
     margin: auto;
     padding: 10px 0px;
 }
 
-.mv-player-description p {
+.mv-description p {
     vertical-align: middle;
     text-align: center;
     position: relative;
@@ -3762,7 +3762,7 @@ div.system-requirements-title {
 .info-slider > .character-container,
 .info-slider > .books-container,
 .info-loop-slider > .music-card,
-.info-loop-slider > .mv-player-card,
+.info-loop-slider > .mv-card,
 .info-loop-slider > .lyrics-card {
     display: none;
 }
