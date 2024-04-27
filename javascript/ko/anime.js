@@ -610,6 +610,14 @@ $(document).ready(function(){
                             autoplay: false,
                             autoWidth: true,
                         });
+                        $('.info-loop-slider').owlCarousel({
+                            nav: true,
+                            loop: true,
+                            dots: false,
+                            merge: true,
+                            autoplay: false,
+                            autoWidth: true,
+                        });
                     });
                 });
             };

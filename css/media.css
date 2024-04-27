@@ -2527,7 +2527,7 @@ div.system-requirements-title {
 
 .music {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 20px;
 }
