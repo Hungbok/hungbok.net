@@ -609,7 +609,8 @@ $(document).ready(function(){
                             merge: true,
                             autoplay: false,
                             autoWidth: true,
-                            autoHeight:true
+                            autoHeight:true,
+                            items:1,
                         });
                         $('.info-loop-slider').owlCarousel({
                             nav: true,
@@ -618,7 +619,8 @@ $(document).ready(function(){
                             merge: true,
                             autoplay: false,
                             autoWidth: true,
-                            autoHeight:true
+                            autoHeight:true,
+                            items:1,
                         });
                     });
                 });
