@@ -565,6 +565,12 @@ body.adult > main > .top-backgrounds > div {
 
 /* bottom */
 
+.middle-bottom-content {
+    display: grid;
+    row-gap: 40px;
+    padding: 0px 40px 0px;
+}
+
 .slider-bottom-content {
     display: flex;
     row-gap: 40px;
