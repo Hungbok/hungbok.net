@@ -609,14 +609,16 @@ $(document).ready(function(){
                             merge: true,
                             autoplay: false,
                             autoWidth: true,
+                            autoHeight:true
                         });
                         $('.info-loop-slider').owlCarousel({
                             nav: true,
-                            loop: true,
+                            loop: false,
                             dots: false,
                             merge: true,
                             autoplay: false,
                             autoWidth: true,
+                            autoHeight:true
                         });
                     });
                 });
