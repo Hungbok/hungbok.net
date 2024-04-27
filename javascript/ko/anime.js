@@ -618,6 +618,7 @@ $(document).ready(function(){
                             loop: true,
                             dots: false,
                             merge: true,
+                            center: true,
                             autoplay: false,
                             autoWidth: true,
                             autoHeight: true,
