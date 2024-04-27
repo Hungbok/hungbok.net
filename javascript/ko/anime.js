@@ -3,10 +3,10 @@ async function loadAsyncScripts() {
     await loadScript('//www.hungbok.net/javascript/youtube-popup.js');
     // 이미지 팝업 슬라이드쇼
     await loadScript('//www.hungbok.net/javascript/lightbox.js');
-    // 이미지 및 동영상 슬라이드쇼
-    await loadScript('//www.hungbok.net/javascript/slick.js');
     await loadScript('//www.hungbok.net/javascript/table-multi-hover.js');
     await loadScript('//www.hungbok.net/javascript/html_loader.js');
+    // 이미지 및 동영상 슬라이드쇼
+    await loadScript('//www.hungbok.net/javascript/slick.js');
     await loadScript('//www.hungbok.net/javascript/ko/error404.js');
 }
 
@@ -287,7 +287,7 @@ $(document).ready(function(){
                 });
             }
             // story 생성
-            var storyContainer = $('<div class="story-container slider-item"></div>');
+            var storyContainer = $('<div class="story-container"></div>');
             $(".story").append(storyContainer);
             storyData.forEach(function(item, index) {
                 var storyCard = $('<div class="story-card">'+
@@ -310,7 +310,7 @@ $(document).ready(function(){
                 '</div>');
                 storyContainer.append(storyCard);
                 if ((index + 1) % 10 === 0 && index + 1 < storyData.length) {
-                    storyContainer = $('<div class="story-container slider-item"></div>');
+                    storyContainer = $('<div class="story-container"></div>');
                     $(".story").append(storyContainer);
                 }
             });
@@ -330,7 +330,7 @@ $(document).ready(function(){
                 });
             }
             // setting 생성
-            var settingContainer = $('<div class="setting-container slider-item"></div>');
+            var settingContainer = $('<div class="setting-container"></div>');
             $(".setting").append(settingContainer);
             settingData.forEach(function(item, index) {
                 var settingCard = $('<div class="setting-card">'+
@@ -347,7 +347,7 @@ $(document).ready(function(){
                 '</div>');
                 settingContainer.append(settingCard);
                 if ((index + 1) % 5 === 0 && index + 1 < settingData.length) {
-                    settingContainer = $('<div class="setting-container slider-item"></div>');
+                    settingContainer = $('<div class="setting-container"></div>');
                     $(".setting").append(settingContainer);
                 }
             });
@@ -471,7 +471,7 @@ $(document).ready(function(){
                 });
             }
             // character 생성
-            var characterContainer = $('<div class="character-container slider-item"></div>');
+            var characterContainer = $('<div class="character-container"></div>');
             $(".character").append(characterContainer);
             characterData.forEach(function(item, index) {
                 var characterCard = $('<div class="character-card">'+
@@ -488,7 +488,7 @@ $(document).ready(function(){
                 '</div>');
                 characterContainer.append(characterCard);
                 if ((index + 1) % 10 === 0 && index + 1 < characterData.length) {
-                    characterContainer = $('<div class="character-container slider-item"></div>');
+                    characterContainer = $('<div class="character-container"></div>');
                     $(".character").append(characterContainer);
                 }
             });
@@ -555,7 +555,7 @@ $(document).ready(function(){
             }
             // music 생성
             musicData.forEach(function(item) {
-                $(".music").append('<div class="music-card slider-item">'+
+                $(".music").append('<div class="music-card">'+
                     '<div class="music-title">'+
                         '<p class="' + item.type + '"></p>'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
