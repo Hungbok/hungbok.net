@@ -575,7 +575,7 @@ body.adult > main > .top-backgrounds > div {
 .bottom-content {
     display: grid;
     row-gap: 40px;
-    padding: 0px 40px;
+    padding: 40px 40px 0px;
 }
 
 .info-th {
@@ -2989,10 +2989,15 @@ div.system-requirements-title {
 
 /* rating */
 
+.more-info-item-text.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .rating-card {
     border-radius: 20px;
     display: grid;
-    margin: 20px 0px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
