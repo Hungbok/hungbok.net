@@ -485,19 +485,19 @@ $(document).ready(function(){
                         '<div class="mv-voice voice1">'+
                             '<div class="mv-voicer">'+
                                 '<p class="mv-lang">노래</p>'+
-                                '<p class="mv-voicername" ttt="">' + item.sing + '</p>'+
+                                '<div class="mv-voicername">' + item.sing + '</div>'+
                             '</div>'+
                             '<div class="mv-voicer">'+
                                 '<p class="mv-lang">작사</p>'+
-                                '<p class="mv-voicername" ttt="">' + item.write + '</p>'+
+                                '<div class="mv-voicername">' + item.write + '</div>'+
                             '</div>'+
                             '<div class="mv-voicer">'+
                                 '<p class="mv-lang">작곡</p>'+
-                                '<p class="mv-voicername" ttt="">' + item.produce + '</p>'+
+                                '<div class="mv-voicername">' + item.produce + '</div>'+
                             '</div>'+
                             '<div class="mv-voicer">'+
                                 '<p class="mv-lang">편곡</p>'+
-                                '<p class="mv-voicername" ttt="">' + item.arrange + '</p>'+
+                                '<div class="mv-voicername">' + item.arrange + '</div>'+
                             '</div>'+
                         '</div>'+
                     '</div>'+
