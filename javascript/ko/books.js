@@ -511,6 +511,160 @@ $(document).ready(function(){
                 }
             });
             
+            var books_value = data[0].bookcount; // books 수
+            var booksCounts = [
+                data[0].book1count,
+                data[0].book2count,
+                data[0].book3count,
+                data[0].book4count,
+                data[0].book5count,
+                data[0].book6count,
+                data[0].book7count,
+                data[0].book8count,
+                data[0].book9count,
+                data[0].book10count,
+                data[0].book11count,
+                data[0].book12count,
+                data[0].book13count,
+                data[0].book14count,
+                data[0].book15count,
+                data[0].book16count,
+                data[0].book17count,
+                data[0].book18count,
+                data[0].book19count,
+                data[0].book20count,
+                data[0].book21count,
+                data[0].book22count,
+                data[0].book23count,
+                data[0].book24count,
+                data[0].book25count,
+                data[0].book26count,
+                data[0].book27count,
+                data[0].book28count,
+                data[0].book29count,
+                data[0].book30count,
+                data[0].book31count,
+                data[0].book32count,
+                data[0].book33count,
+                data[0].book34count,
+                data[0].book35count,
+                data[0].book36count,
+                data[0].book37count,
+                data[0].book38count,
+                data[0].book39count,
+                data[0].book40count,
+                data[0].book41count,
+                data[0].book42count,
+                data[0].book43count,
+                data[0].book44count,
+                data[0].book45count,
+                data[0].book46count,
+                data[0].book47count,
+                data[0].book48count,
+                data[0].book49count,
+                data[0].book50count,
+                data[0].book51count,
+                data[0].book52count,
+                data[0].book53count,
+                data[0].book54count,
+                data[0].book55count,
+                data[0].book56count,
+                data[0].book57count,
+                data[0].book58count,
+                data[0].book59count,
+                data[0].book60count,
+                data[0].book61count,
+                data[0].book62count,
+                data[0].book63count,
+                data[0].book64count,
+                data[0].book65count,
+                data[0].book66count,
+                data[0].book67count,
+                data[0].book68count,
+                data[0].book69count,
+                data[0].book70count,
+                data[0].book71count,
+                data[0].book72count,
+                data[0].book73count,
+                data[0].book74count,
+                data[0].book75count,
+                data[0].book76count,
+                data[0].book77count,
+                data[0].book78count,
+                data[0].book79count,
+                data[0].book80count,
+                data[0].book81count,
+                data[0].book82count,
+                data[0].book83count,
+                data[0].book84count,
+                data[0].book85count,
+                data[0].book86count,
+                data[0].book87count,
+                data[0].book88count,
+                data[0].book89count,
+                data[0].book90count,
+                data[0].book91count,
+                data[0].book92count,
+                data[0].book93count,
+                data[0].book94count,
+                data[0].book95count,
+                data[0].book96count,
+                data[0].book97count,
+                data[0].book98count,
+                data[0].book99count,
+                data[0].book100count,
+            ];
+            var booksData = [];
+            for (var i = 1; i <= books_value; i++) {
+                var booksText = getLocalizedTextData(data[0], ['booktext' + i]);
+                var booksName = getLocalizedTextData(data[0], ['bookname' + i]);
+                var booksNameOriginal = data[0]['bookname' + i];
+                var booksImage = 'book_' + i;
+                var booksVoice = 'voice' + i;
+                booksData.push({
+                    text: booksText,
+                    name: booksName,
+                    nameog: booksNameOriginal,
+                    img: booksImage,
+                    vo: booksVoice,
+                });
+            }
+            // books 생성
+            var booksContainer = $('<div class="books-container"></div>');
+            $(".books").append(booksContainer);
+            booksData.forEach(function(item, index) {
+                var booksCard = $('<div class="books-card">'+
+                    '<div class="books-image">'+
+                        '<img class="books-background" src="//media.hungbok.net/image/books/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
+                    '</div>'+
+                    '<div class="books-info">'+
+                        '<div class="books-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
+                        '<div class="books-voice ' + item.vo + '"></div>'+
+                    '</div>'+
+                    '<div class="books-description">'+
+                        '<p>' + item.text + '</p>'+
+                    '</div>'+
+                '</div>');
+                booksContainer.append(booksCard);
+                if ((index + 1) % 4 === 0 && index + 1 < booksData.length) {
+                    booksContainer = $('<div class="books-container"></div>');
+                    $(".books").append(booksContainer);
+                }
+            });
+            // voicer 생성
+            booksCounts.forEach(function (booksCount, countIndex) {
+                for (var j = 1; j <= booksCount; j++) {
+                    var cLang = data[0]['book' + (countIndex + 1) + 'lang' + j];
+                    var cName = getLocalizedTextData(data[0], ['book' + (countIndex + 1) + 'name' + j]);
+                    var cNameog = data[0]['book' + (countIndex + 1) + 'name' + j];
+        
+                    $('.voice' + (countIndex + 1)).append('<div class="books-voicer ' + cLang + '">'+
+                        '<p class="books-lang"></p>'+
+                        '<p class="books-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
+                    '</div>');
+                }
+            });
+            
             var music_value = data[0].musiccount; // music 수
             var musicData = [];
             for (var i = 1; i <= music_value; i++) {
