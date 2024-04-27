@@ -485,7 +485,7 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="character-info">'+
                         '<div class="character-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
-                        '<div class="character-voice ' + item.vo + '"></div>'+
+                        '<div class="character-voice c' + item.vo + '"></div>'+
                     '</div>'+
                     '<div class="character-description">'+
                         '<p>' + item.text + '</p>'+
@@ -504,7 +504,7 @@ $(document).ready(function(){
                     var cName = getLocalizedTextData(data[0], ['char' + (countIndex + 1) + 'name' + j]);
                     var cNameog = data[0]['char' + (countIndex + 1) + 'name' + j];
         
-                    $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
+                    $('.cvoice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
                         '<p class="character-lang"></p>'+
                         '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
                     '</div>');
@@ -639,7 +639,7 @@ $(document).ready(function(){
                         '<img class="books-background" src="//media.hungbok.net/image/books/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="books-info">'+
-                        '<div class="books-voice ' + item.vo + '"></div>'+
+                        '<div class="books-voice b' + item.vo + '"></div>'+
                     '</div>'+
                 '</div>');
                 booksContainer.append(booksCard);
@@ -655,9 +655,9 @@ $(document).ready(function(){
                     var cName = getLocalizedTextData(data[0], ['book' + (countIndex + 1) + 'name' + j]);
                     var cNameog = data[0]['book' + (countIndex + 1) + 'name' + j];
         
-                    $('.voice' + (countIndex + 1)).append('<div class="character-voicer ' + cLang + '">'+
-                        '<p class="character-lang"></p>'+
-                        '<p class="character-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
+                    $('.bvoice' + (countIndex + 1)).append('<div class="books-voicer ' + cLang + '">'+
+                        '<p class="books-lang"></p>'+
+                        '<p class="books-voicername" ttt="' + cNameog + '">' + cName + '</p>'+
                     '</div>');
                 }
             });
