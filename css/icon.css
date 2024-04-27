@@ -37,18 +37,21 @@
 /* 활성 언어 */
 
 .character-voicer.en > .character-lang,
+.books-voicer.us > .books-lang,
 .more-info-item-text > .us,
 .language-select[data-lang="en"] .language-flag {
     background: url(//media.hungbok.net/image/flag/us.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.ja > .character-lang,
+.books-voicer.jp > .books-lang,
 .more-info-item-text > .jp,
 .language-select[data-lang="ja"] .language-flag {
     background: url(//media.hungbok.net/image/flag/jp.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.ko > .character-lang,
+.books-voicer.kr > .books-lang,
 .more-info-item-text > .kr,
 .language-select[data-lang="ko"] .language-flag {
     background: url(//media.hungbok.net/image/flag/kr.svg) no-repeat center / 30px 20px;
@@ -57,6 +60,7 @@
 /* 비활성 언어 */
 
 .character-voicer.gb > .character-lang,
+.books-voicer.gb > .books-lang,
 .more-info-item-text > .gb,
 .language-select[data-lang="gb"] .language-flag,
 .language-select[data-lang="en-gb"] .language-flag {
@@ -64,6 +68,7 @@
 }
 
 .character-voicer.ca > .character-lang,
+.books-voicer.ca > .books-lang,
 .more-info-item-text > .ca,
 .language-select[data-lang="ca"] .language-flag,
 .language-select[data-lang="en-ca"] .language-flag {
@@ -71,6 +76,7 @@
 }
 
 .character-voicer.au > .character-lang,
+.books-voicer.au > .books-lang,
 .more-info-item-text > .au,
 .language-select[data-lang="au"] .language-flag,
 .language-select[data-lang="en-au"] .language-flag {
@@ -78,24 +84,28 @@
 }
 
 .character-voicer.cs > .character-lang,
-.more-info-item-text > .cs,
+.books-voicer.cz > .books-lang,
+.more-info-item-text > .cz,
 .language-select[data-lang="cs"] .language-flag {
     background: url(//media.hungbok.net/image/flag/cz.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.de > .character-lang,
+.books-voicer.de > .books-lang,
 .more-info-item-text > .de,
 .language-select[data-lang="de"] .language-flag {
     background: url(//media.hungbok.net/image/flag/de.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.es > .character-lang,
+.books-voicer.es > .books-lang,
 .more-info-item-text > .es,
 .language-select[data-lang="es"] .language-flag {
     background: url(//media.hungbok.net/image/flag/es.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.mx > .character-lang,
+.books-voicer.mx > .books-lang,
 .more-info-item-text > .mx,
 .language-select[data-lang="mx"] .language-flag,
 .language-select[data-lang="es-mx"] .language-flag {
@@ -103,12 +113,14 @@
 }
 
 .character-voicer.fi > .character-lang,
+.books-voicer.fi > .books-lang,
 .more-info-item-text > .fi,
 .language-select[data-lang="fi"] .language-flag {
     background: url(//media.hungbok.net/image/flag/fi.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.fr > .character-lang,
+.books-voicer.fr > .books-lang,
 .more-info-item-text > .fr,
 .language-select[data-lang="fr"] .language-flag {
     background: url(//media.hungbok.net/image/flag/fr.svg) no-repeat center / 30px 20px; 
@@ -119,42 +131,49 @@
 }
 
 .character-voicer.hu > .character-lang,
+.books-voicer.hu > .books-lang,
 .more-info-item-text > .hu,
 .language-select[data-lang="hu"] .language-flag {
     background: url(//media.hungbok.net/image/flag/hu.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.hi > .character-lang,
-.more-info-item-text > .hi,
+.books-voicer.in > .books-lang,
+.more-info-item-text > .in,
 .language-select[data-lang="hi"] .language-flag {
     background: url(//media.hungbok.net/image/flag/in.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.it > .character-lang,
+.books-voicer.it > .books-lang,
 .more-info-item-text > .it,
 .language-select[data-lang="it"] .language-flag {
     background: url(//media.hungbok.net/image/flag/it.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.nl > .character-lang,
+.books-voicer.nl > .books-lang,
 .more-info-item-text > .nl,
 .language-select[data-lang="nl"] .language-flag {
     background: url(//media.hungbok.net/image/flag/nl.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.pl > .character-lang,
+.books-voicer.pl > .books-lang,
 .more-info-item-text > .pl,
 .language-select[data-lang="pl"] .language-flag {
     background: url(//media.hungbok.net/image/flag/pl.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.pt > .character-lang,
+.books-voicer.pt > .books-lang,
 .more-info-item-text > .pt,
 .language-select[data-lang="pt"] .language-flag {
     background: url(//media.hungbok.net/image/flag/pt.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.br > .character-lang,
+.books-voicer.br > .books-lang,
 .more-info-item-text > .br,
 .language-select[data-lang="br"] .language-flag,
 .language-select[data-lang="pt-br"] .language-flag {
@@ -162,36 +181,42 @@
 }
 
 .character-voicer.ru > .character-lang,
+.books-voicer.ru > .books-lang,
 .more-info-item-text > .ru,
 .language-select[data-lang="ru"] .language-flag {
     background: url(//media.hungbok.net/image/flag/ru.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.ar > .character-lang,
-.more-info-item-text > .ar,
+.books-voicer.sa > .books-lang,
+.more-info-item-text > .sa,
 .language-select[data-lang="ar"] .language-flag {
     background: url(//media.hungbok.net/image/flag/sa.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.th > .character-lang,
+.books-voicer.th > .books-lang,
 .more-info-item-text > .th,
 .language-select[data-lang="th"] .language-flag {
     background: url(//media.hungbok.net/image/flag/th.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.tr > .character-lang,
+.books-voicer.tr > .books-lang,
 .more-info-item-text > .tr,
 .language-select[data-lang="tr"] .language-flag {
     background: url(//media.hungbok.net/image/flag/tr.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.uk > .character-lang,
-.more-info-item-text > .uk,
+.books-voicer.ua > .books-lang,
+.more-info-item-text > .ua,
 .language-select[data-lang="uk"] .language-flag {
     background: url(//media.hungbok.net/image/flag/ua.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.cn > .character-lang,
+.books-voicer.cn > .books-lang,
 .more-info-item-text > .cn,
 .language-select[data-lang="zh"] .language-flag,
 .language-select[data-lang="cn"] .language-flag,
@@ -200,6 +225,7 @@
 }
 
 .character-voicer.tw > .character-lang,
+.books-voicer.tw > .books-lang,
 .more-info-item-text > .tw,
 .language-select[data-lang="tw"] .language-flag,
 .language-select[data-lang="zh-tw"] .language-flag {
@@ -207,54 +233,63 @@
 }
 
 .character-voicer.bg > .character-lang,
+.books-voicer.bg > .books-lang,
 .more-info-item-text > .bg,
 .language-select[data-lang="bg"] .language-flag {
     background: url(//media.hungbok.net/image/flag/bg.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.ms > .character-lang,
-.more-info-item-text > .ms,
+.books-voicer.my > .books-lang,
+.more-info-item-text > .my,
 .language-select[data-lang="ms"] .language-flag {
     background: url(//media.hungbok.net/image/flag/my.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.el > .character-lang,
-.more-info-item-text > .el,
+.books-voicer.gr > .books-lang,
+.more-info-item-text > .gr,
 .language-select[data-lang="el"] .language-flag {
     background: url(//media.hungbok.net/image/flag/gr.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.no > .character-lang,
+.books-voicer.no > .books-lang,
 .more-info-item-text > .no,
 .language-select[data-lang="no"] .language-flag {
     background: url(//media.hungbok.net/image/flag/no.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.da > .character-lang,
-.more-info-item-text > .da,
+.books-voicer.dk > .books-lang,
+.more-info-item-text > .dk,
 .language-select[data-lang="da"] .language-flag {
     background: url(//media.hungbok.net/image/flag/dk.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.sv > .character-lang,
-.more-info-item-text > .sv,
+.books-voicer.se > .books-lang,
+.more-info-item-text > .se,
 .language-select[data-lang="sv"] .language-flag {
     background: url(//media.hungbok.net/image/flag/se.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.ro > .character-lang,
+.books-voicer.ro > .books-lang,
 .more-info-item-text > .ro,
 .language-select[data-lang="ro"] .language-flag {
     background: url(//media.hungbok.net/image/flag/ro.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.vi > .character-lang,
-.more-info-item-text > .vi,
+.books-voicer.vn > .books-lang,
+.more-info-item-text > .vn,
 .language-select[data-lang="vi"] .language-flag {
     background: url(//media.hungbok.net/image/flag/vn.svg) no-repeat center / 30px 20px;
 }
 
 .character-voicer.id > .character-lang,
+.books-voicer.id > .books-lang,
 .more-info-item-text > .id,
 .language-select[data-lang="id"] .language-flag {
     background: url(//media.hungbok.net/image/flag/id.svg) no-repeat center / 30px 20px;
