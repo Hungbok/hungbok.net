@@ -487,7 +487,7 @@ $(document).ready(function(){
                     '</div>'+
                 '</div>');
                 characterContainer.append(characterCard);
-                if ((index + 1) % 6 === 0 && index + 1 < characterData.length) {
+                if ((index + 1) % 4 === 0 && index + 1 < characterData.length) {
                     characterContainer = $('<div class="character-container"></div>');
                     $(".character").append(characterContainer);
                 }

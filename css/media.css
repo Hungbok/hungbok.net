@@ -574,7 +574,6 @@ body.adult > main > .top-backgrounds > div {
 
 .bottom-content {
     display: grid;
-    grid-template-rows: auto auto auto auto;
     row-gap: 40px;
     padding: 0px 40px;
 }
