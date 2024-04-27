@@ -614,7 +614,7 @@ $(document).ready(function(){
         
                         $carousel.owlCarousel({
                             nav: true,
-                            loop: true,
+                            loop: false,
                             dots: true,
                             merge: true,
                             center: true,

@@ -3049,18 +3049,6 @@ $(document).ready(function(){
         autoplay: false,
         autoplaySpeed: 4000,
     });
-    $('.info-slider').slick({
-        arrows: true,
-        dots: false,
-        infinite: false,
-        centerMode: true,
-        adaptiveHeight: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
-        autoplay: false,
-        autoplaySpeed: 4000,
-    });
     $('.tab-content').slick({
         arrows: true,
         dots: true,
