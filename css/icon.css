@@ -405,331 +405,331 @@
 /* general */
 
 .icon-ageall {
-    background: url(//media.hungbok.net/image/age/all.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/all.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-age7 {
-    background: url(//media.hungbok.net/image/age/7.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/7.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-age10 {
-    background: url(//media.hungbok.net/image/age/10.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/10.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-age13 {
-    background: url(//media.hungbok.net/image/age/13.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/13.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-age16 {
-    background: url(//media.hungbok.net/image/age/16.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/16.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-age18 {
-    background: url(//media.hungbok.net/image/age/18.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/18.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* apple app store */
 
 .icon-appstoreage4 {
-    background: url(//media.hungbok.net/image/age/games/apple_4.svg) no-repeat center / 30px 30px, #222222;
+    background: url(//media.hungbok.net/image/rating/games/apple_4.svg) no-repeat center / 30px 30px, #222222;
 }
 
 .icon-appstoreage9 {
-    background: url(//media.hungbok.net/image/age/games/apple_9.svg) no-repeat center / 30px 30px, #222222;
+    background: url(//media.hungbok.net/image/rating/games/apple_9.svg) no-repeat center / 30px 30px, #222222;
 }
 
 .icon-appstoreage12 {
-    background: url(//media.hungbok.net/image/age/games/apple_12.svg) no-repeat center / 30px 30px, #222222;
+    background: url(//media.hungbok.net/image/rating/games/apple_12.svg) no-repeat center / 30px 30px, #222222;
 }
 
 .icon-appstoreage17 {
-    background: url(//media.hungbok.net/image/age/games/apple_17.svg) no-repeat center / 30px 30px, #222222;
+    background: url(//media.hungbok.net/image/rating/games/apple_17.svg) no-repeat center / 30px 30px, #222222;
 }
 
 /* google play */
 
 .icon-googleplayage3 {
-    background: url(//media.hungbok.net/image/age/games/google_3.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/google_3.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-googleplayage7 {
-    background: url(//media.hungbok.net/image/age/games/google_7.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/google_7.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-googleplayage12 {
-    background: url(//media.hungbok.net/image/age/games/google_12.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/google_12.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-googleplayage16 {
-    background: url(//media.hungbok.net/image/age/games/google_16.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/google_16.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-googleplayage18 {
-    background: url(//media.hungbok.net/image/age/games/google_18.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/google_18.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* cero (japan) */
 
 .icon-ceroa {
-    background: url(//media.hungbok.net/image/age/games/cero_a.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_a.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-cerob {
-    background: url(//media.hungbok.net/image/age/games/cero_b.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_b.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-ceroc {
-    background: url(//media.hungbok.net/image/age/games/cero_c.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_c.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-cerod {
-    background: url(//media.hungbok.net/image/age/games/cero_d.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_d.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-ceroz {
-    background: url(//media.hungbok.net/image/age/games/cero_z.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_z.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-ceroec {
-    background: url(//media.hungbok.net/image/age/games/cero_ec.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_ec.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-cerorp {
-    background: url(//media.hungbok.net/image/age/games/cero_rp.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_rp.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-cerorating {
-    background: url(//media.hungbok.net/image/age/games/cero_rating.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/cero_rating.svg) no-repeat center / 30px 30px, #000000;
 }
 
 /* esrb (united state) */
 
 .icon-esrbe {
-    background: url(//media.hungbok.net/image/age/games/esrb_e.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/esrb_e.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-esrb10 {
-    background: url(//media.hungbok.net/image/age/games/esrb_10.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/esrb_10.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-esrbt {
-    background: url(//media.hungbok.net/image/age/games/esrb_t.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/esrb_t.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-esrbm {
-    background: url(//media.hungbok.net/image/age/games/esrb_m.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/esrb_m.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-esrbao {
-    background: url(//media.hungbok.net/image/age/games/esrb_ao.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/esrb_ao.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-esrbrp {
-    background: url(//media.hungbok.net/image/age/games/esrb_rp.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/esrb_rp.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* grac (korea) */
 
 .icon-gracall {
-    background: url(//media.hungbok.net/image/age/games/grac_all.svg) no-repeat center / 30px 30px, #41a13f;
+    background: url(//media.hungbok.net/image/rating/games/grac_all.svg) no-repeat center / 30px 30px, #41a13f;
 }
 
 .icon-grac12 {
-    background: url(//media.hungbok.net/image/age/games/grac_12.svg) no-repeat center / 30px 30px, #4268ae;
+    background: url(//media.hungbok.net/image/rating/games/grac_12.svg) no-repeat center / 30px 30px, #4268ae;
 }
 
 .icon-grac15 {
-    background: url(//media.hungbok.net/image/age/games/grac_15.svg) no-repeat center / 30px 30px, #f8b845;
+    background: url(//media.hungbok.net/image/rating/games/grac_15.svg) no-repeat center / 30px 30px, #f8b845;
 }
 
 .icon-grac18 {
-    background: url(//media.hungbok.net/image/age/games/grac_18.svg) no-repeat center / 30px 30px, #a11438;
+    background: url(//media.hungbok.net/image/rating/games/grac_18.svg) no-repeat center / 30px 30px, #a11438;
 }
 
 .icon-grac19 {
-    background: url(//media.hungbok.net/image/age/games/grac_19.svg) no-repeat center / 30px 30px, #a11438;
+    background: url(//media.hungbok.net/image/rating/games/grac_19.svg) no-repeat center / 30px 30px, #a11438;
 }
 
 .icon-gracr {
-    background: url(//media.hungbok.net/image/age/games/grac_r.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/grac_r.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-gracre {
-    background: url(//media.hungbok.net/image/age/games/grac_re.svg) no-repeat center / 30px 30px, #f8c52b;
+    background: url(//media.hungbok.net/image/rating/games/grac_re.svg) no-repeat center / 30px 30px, #f8c52b;
 }
 
 .icon-gractest {
-    background: url(//media.hungbok.net/image/age/games/grac_test.svg) no-repeat center / 30px 30px, #f57f1e;
+    background: url(//media.hungbok.net/image/rating/games/grac_test.svg) no-repeat center / 30px 30px, #f57f1e;
 }
 
 /* iarc (international) */
 
 .icon-iarc3 {
-    background: url(//media.hungbok.net/image/age/games/iarc_3.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/iarc_3.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-iarc7 {
-    background: url(//media.hungbok.net/image/age/games/iarc_7.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/iarc_7.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-iarc12 {
-    background: url(//media.hungbok.net/image/age/games/iarc_12.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/iarc_12.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-iarc16 {
-    background: url(//media.hungbok.net/image/age/games/iarc_16.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/iarc_16.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-iarc18 {
-    background: url(//media.hungbok.net/image/age/games/iarc_18.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/iarc_18.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* pegi (europe) */
 
 .icon-pegi3 {
-    background: url(//media.hungbok.net/image/age/games/pegi_3.svg) no-repeat center / 30px 30px, #a5c400;
+    background: url(//media.hungbok.net/image/rating/games/pegi_3.svg) no-repeat center / 30px 30px, #a5c400;
 }
 
 .icon-pegi7 {
-    background: url(//media.hungbok.net/image/age/games/pegi_7.svg) no-repeat center / 30px 30px, #A5C400;
+    background: url(//media.hungbok.net/image/rating/games/pegi_7.svg) no-repeat center / 30px 30px, #A5C400;
 }
 
 .icon-pegi12 {
-    background: url(//media.hungbok.net/image/age/games/pegi_12.svg) no-repeat center / 30px 30px, #f5a200;
+    background: url(//media.hungbok.net/image/rating/games/pegi_12.svg) no-repeat center / 30px 30px, #f5a200;
 }
 
 .icon-pegi16 {
-    background: url(//media.hungbok.net/image/age/games/pegi_16.svg) no-repeat center / 30px 30px, #f5a200;
+    background: url(//media.hungbok.net/image/rating/games/pegi_16.svg) no-repeat center / 30px 30px, #f5a200;
 }
 
 .icon-pegi18 {
-    background: url(//media.hungbok.net/image/age/games/pegi_18.svg) no-repeat center / 30px 30px, #E2011A;
+    background: url(//media.hungbok.net/image/rating/games/pegi_18.svg) no-repeat center / 30px 30px, #E2011A;
 }
 
 .icon-pegiparental {
-    background: url(//media.hungbok.net/image/age/games/pegi_parental.svg) no-repeat center / 30px 30px, #F5A200;
+    background: url(//media.hungbok.net/image/rating/games/pegi_parental.svg) no-repeat center / 30px 30px, #F5A200;
 }
 
 /* acb (australia) */
 
 .icon-acbg {
-    background: url(//media.hungbok.net/image/age/games/acb_g.svg) no-repeat center / 30px 30px, #33a02b;
+    background: url(//media.hungbok.net/image/rating/games/acb_g.svg) no-repeat center / 30px 30px, #33a02b;
 }
 
 .icon-acbpg {
-    background: url(//media.hungbok.net/image/age/games/acb_pg.svg) no-repeat center / 30px 30px, #ffff01;
+    background: url(//media.hungbok.net/image/rating/games/acb_pg.svg) no-repeat center / 30px 30px, #ffff01;
 }
 
 .icon-acbm {
-    background: url(//media.hungbok.net/image/age/games/acb_m.svg) no-repeat center / 30px 30px, #009fc6;
+    background: url(//media.hungbok.net/image/rating/games/acb_m.svg) no-repeat center / 30px 30px, #009fc6;
 }
 
 .icon-acbma {
-    background: url(//media.hungbok.net/image/age/games/acb_ma.svg) no-repeat center / 30px 30px, #fe0000;
+    background: url(//media.hungbok.net/image/rating/games/acb_ma.svg) no-repeat center / 30px 30px, #fe0000;
 }
 
 .icon-acbr {
-    background: url(//media.hungbok.net/image/age/games/acb_r.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/acb_r.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-acbx {
-    background: url(//media.hungbok.net/image/age/media/acb_x.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/acb_x.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-acbrc {
-    background: url(//media.hungbok.net/image/age/games/acb_rc.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/acb_rc.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* usk (germany) */
 
 .icon-usk0 {
-    background: url(//media.hungbok.net/image/age/games/usk_0.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/games/usk_0.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-usk6 {
-    background: url(//media.hungbok.net/image/age/games/usk_6.svg) no-repeat center / 30px 30px, #f5f582;
+    background: url(//media.hungbok.net/image/rating/games/usk_6.svg) no-repeat center / 30px 30px, #f5f582;
 }
 
 .icon-usk12 {
-    background: url(//media.hungbok.net/image/age/games/usk_12.svg) no-repeat center / 30px 30px, #28c864;
+    background: url(//media.hungbok.net/image/rating/games/usk_12.svg) no-repeat center / 30px 30px, #28c864;
 }
 
 .icon-usk16 {
-    background: url(//media.hungbok.net/image/age/games/usk_16.svg) no-repeat center / 30px 30px, #3cbee6;
+    background: url(//media.hungbok.net/image/rating/games/usk_16.svg) no-repeat center / 30px 30px, #3cbee6;
 }
 
 .icon-usk18 {
-    background: url(//media.hungbok.net/image/age/games/usk_18.svg) no-repeat center / 30px 30px, #e65a50;
+    background: url(//media.hungbok.net/image/rating/games/usk_18.svg) no-repeat center / 30px 30px, #e65a50;
 }
 
 /* rars (russia) */
 
 .icon-rars0 {
-    background: url(//media.hungbok.net/image/age/games/rars_0.svg) no-repeat center / 30px 30px, #f9f9f9;
+    background: url(//media.hungbok.net/image/rating/games/rars_0.svg) no-repeat center / 30px 30px, #f9f9f9;
 }
 
 .icon-rars6 {
-    background: url(//media.hungbok.net/image/age/games/rars_6.svg) no-repeat center / 30px 30px, #00d24a;
+    background: url(//media.hungbok.net/image/rating/games/rars_6.svg) no-repeat center / 30px 30px, #00d24a;
 }
 
 .icon-rars12 {
-    background: url(//media.hungbok.net/image/age/games/rars_12.svg) no-repeat center / 30px 30px, #efc600;
+    background: url(//media.hungbok.net/image/rating/games/rars_12.svg) no-repeat center / 30px 30px, #efc600;
 }
 
 .icon-rars16 {
-    background: url(//media.hungbok.net/image/age/games/rars_16.svg) no-repeat center / 30px 30px, #f24c04;
+    background: url(//media.hungbok.net/image/rating/games/rars_16.svg) no-repeat center / 30px 30px, #f24c04;
 }
 
 .icon-rars18 {
-    background: url(//media.hungbok.net/image/age/games/rars_18.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/rars_18.svg) no-repeat center / 30px 30px, #000000;
 }
 
 /* gsrr (taiwan) */
 
 .icon-gsrr0 {
-    background: url(//media.hungbok.net/image/age/games/gsrr_0.svg) no-repeat center / 30px 30px, #4fad26;
+    background: url(//media.hungbok.net/image/rating/games/gsrr_0.svg) no-repeat center / 30px 30px, #4fad26;
 }
 
 .icon-gsrr6 {
-    background: url(//media.hungbok.net/image/age/games/gsrr_6.svg) no-repeat center / 30px 30px, #0197b5;
+    background: url(//media.hungbok.net/image/rating/games/gsrr_6.svg) no-repeat center / 30px 30px, #0197b5;
 }
 
 .icon-gsrr12 {
-    background: url(//media.hungbok.net/image/age/games/gsrr_12.svg) no-repeat center / 30px 30px, #ffd600;
+    background: url(//media.hungbok.net/image/rating/games/gsrr_12.svg) no-repeat center / 30px 30px, #ffd600;
 }
 
 .icon-gsrr15 {
-    background: url(//media.hungbok.net/image/age/games/gsrr_15.svg) no-repeat center / 30px 30px, #ff7800;
+    background: url(//media.hungbok.net/image/rating/games/gsrr_15.svg) no-repeat center / 30px 30px, #ff7800;
 }
 
 .icon-gsrr18 {
-    background: url(//media.hungbok.net/image/age/games/gsrr_18.svg) no-repeat center / 30px 30px, #f20017;
+    background: url(//media.hungbok.net/image/rating/games/gsrr_18.svg) no-repeat center / 30px 30px, #f20017;
 }
 
 /* classind (brazil) */
 
 .icon-classindl {
-    background: url(//media.hungbok.net/image/age/games/classind_l.svg) no-repeat center / 30px 30px, #00af51;
+    background: url(//media.hungbok.net/image/rating/games/classind_l.svg) no-repeat center / 30px 30px, #00af51;
 }
 
 .icon-classind10 {
-    background: url(//media.hungbok.net/image/age/games/classind_10.svg) no-repeat center / 30px 30px, #00ccff;
+    background: url(//media.hungbok.net/image/rating/games/classind_10.svg) no-repeat center / 30px 30px, #00ccff;
 }
 
 .icon-classind12 {
-    background: url(//media.hungbok.net/image/age/games/classind_12.svg) no-repeat center / 30px 30px, #ffcc00;
+    background: url(//media.hungbok.net/image/rating/games/classind_12.svg) no-repeat center / 30px 30px, #ffcc00;
 }
 
 .icon-classind14 {
-    background: url(//media.hungbok.net/image/age/games/classind_14.svg) no-repeat center / 30px 30px, #ff6600;
+    background: url(//media.hungbok.net/image/rating/games/classind_14.svg) no-repeat center / 30px 30px, #ff6600;
 }
 
 .icon-classind16 {
-    background: url(//media.hungbok.net/image/age/games/classind_16.svg) no-repeat center / 30px 30px, #fe0000;
+    background: url(//media.hungbok.net/image/rating/games/classind_16.svg) no-repeat center / 30px 30px, #fe0000;
 }
 
 .icon-classind18 {
-    background: url(//media.hungbok.net/image/age/games/classind_18.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/games/classind_18.svg) no-repeat center / 30px 30px, #000000;
 }
 
 /* age rating - media */
@@ -737,111 +737,115 @@
 /* kmrb (korea - film) */
 
 .icon-kmrball {
-    background: url(//media.hungbok.net/image/age/media/kmrb_all.svg) no-repeat center / 30px 30px, #00974c;
+    background: url(//media.hungbok.net/image/rating/media/kmrb_all.svg) no-repeat center / 30px 30px, #00974c;
 }
 
 .icon-kmrb12 {
-    background: url(//media.hungbok.net/image/age/media/kmrb_12.svg) no-repeat center / 30px 30px, #ebbd00;
+    background: url(//media.hungbok.net/image/rating/media/kmrb_12.svg) no-repeat center / 30px 30px, #ebbd00;
 }
 
 .icon-kmrb15 {
-    background: url(//media.hungbok.net/image/age/media/kmrb_15.svg) no-repeat center / 30px 30px, #dd7218;
+    background: url(//media.hungbok.net/image/rating/media/kmrb_15.svg) no-repeat center / 30px 30px, #dd7218;
 }
 
 .icon-kmrb18 {
-    background: url(//media.hungbok.net/image/age/media/kmrb_18.svg) no-repeat center / 30px 30px, #d71e28;
+    background: url(//media.hungbok.net/image/rating/media/kmrb_18.svg) no-repeat center / 30px 30px, #d71e28;
+}
+
+.icon-kmrb19 {
+    background: url(//media.hungbok.net/image/rating/media/kmrb_19.svg) no-repeat center / 30px 30px, #d71e28;
 }
 
 .icon-kmrbrs {
-    background: url(//media.hungbok.net/image/age/media/kmrb_rs.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/kmrb_rs.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* kcsc (korea - tv) */
 
 .icon-kcscall {
-    background: url(//media.hungbok.net/image/age/media/kcsc_all.svg) no-repeat center / 30px 30px, #ffcb00;
+    background: url(//media.hungbok.net/image/rating/media/kcsc_all.svg) no-repeat center / 30px 30px, #ffcb00;
 }
 
 .icon-kcsc7 {
-    background: url(//media.hungbok.net/image/age/media/kcsc_7.svg) no-repeat center / 30px 30px, #ffcb00;
+    background: url(//media.hungbok.net/image/rating/media/kcsc_7.svg) no-repeat center / 30px 30px, #ffcb00;
 }
 
 .icon-kcsc12 {
-    background: url(//media.hungbok.net/image/age/media/kcsc_12.svg) no-repeat center / 30px 30px, #ffcb00;
+    background: url(//media.hungbok.net/image/rating/media/kcsc_12.svg) no-repeat center / 30px 30px, #ffcb00;
 }
 
 .icon-kcsc15 {
-    background: url(//media.hungbok.net/image/age/media/kcsc_15.svg) no-repeat center / 30px 30px, #ffcb00;
+    background: url(//media.hungbok.net/image/rating/media/kcsc_15.svg) no-repeat center / 30px 30px, #ffcb00;
 }
 
 .icon-kcsc19 {
-    background: url(//media.hungbok.net/image/age/media/kcsc_19.svg) no-repeat center / 30px 30px, #ffcb00;
+    background: url(//media.hungbok.net/image/rating/media/kcsc_19.svg) no-repeat center / 30px 30px, #ffcb00;
 }
 
 /* eirin (japan - film) */
 
 .icon-eiring {
-    background: url(//media.hungbok.net/image/age/media/eirin_g.svg) no-repeat center / 30px 30px, #00a650;
+    background: url(//media.hungbok.net/image/rating/media/eirin_g.svg) no-repeat center / 30px 30px, #00a650;
 }
 
 .icon-eirin12 {
-    background: url(//media.hungbok.net/image/age/media/eirin_12.svg) no-repeat center / 30px 30px, #00adef;
+    background: url(//media.hungbok.net/image/rating/media/eirin_12.svg) no-repeat center / 30px 30px, #00adef;
 }
 
 .icon-eirin15 {
-    background: url(//media.hungbok.net/image/age/media/eirin_15.svg) no-repeat center / 30px 30px, #ec008c;
+    background: url(//media.hungbok.net/image/rating/media/eirin_15.svg) no-repeat center / 30px 30px, #ec008c;
 }
 
 .icon-eirin18 {
-    background: url(//media.hungbok.net/image/age/media/eirin_18.svg) no-repeat center / 30px 30px, #ed1c24;
+    background: url(//media.hungbok.net/image/rating/media/eirin_18.svg) no-repeat center / 30px 30px, #ed1c24;
 }
 
 /* tvpg (united state - tv) */
 
 .icon-tvpgy {
-    background: url(//media.hungbok.net/image/age/media/tvpg_y.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/tvpg_y.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-tvpgg {
-    background: url(//media.hungbok.net/image/age/media/tvpg_g.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/tvpg_g.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-tvpgy7 {
-    background: url(//media.hungbok.net/image/age/media/tvpg_y7.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/tvpg_y7.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-tvpgpg {
-    background: url(//media.hungbok.net/image/age/media/tvpg_pg.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/tvpg_pg.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-tvpg14 {
-    background: url(//media.hungbok.net/image/age/media/tvpg_14.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/tvpg_14.svg) no-repeat center / 30px 30px, #000000;
 }
 
 .icon-tvpgma {
-    background: url(//media.hungbok.net/image/age/media/tvpg_ma.svg) no-repeat center / 30px 30px, #000000;
+    background: url(//media.hungbok.net/image/rating/media/tvpg_ma.svg) no-repeat center / 30px 30px, #000000;
 }
 
 /* mpaa (united state - film) */
 
 .icon-mpaag {
-    background: url(//media.hungbok.net/image/age/media/mpaa_g.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/mpaa_g.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-mpaapg {
-    background: url(//media.hungbok.net/image/age/media/mpaa_pg.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/mpaa_pg.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-mpaa13 {
-    background: url(//media.hungbok.net/image/age/media/mpaa_13.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/mpaa_13.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-mpaar {
-    background: url(//media.hungbok.net/image/age/media/mpaa_r.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/mpaa_r.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-mpaa17 {
-    background: url(//media.hungbok.net/image/age/media/mpaa_17.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/mpaa_17.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 /* acb (australia - film / tv = game) */
@@ -849,53 +853,53 @@
 /* bbfc (united kingdom - film) */
 
 .icon-bbfcu {
-    background: url(//media.hungbok.net/image/age/media/bbfc_u.svg) no-repeat center / 30px 30px, #2ea635;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_u.svg) no-repeat center / 30px 30px, #2ea635;
 }
 
 .icon-bbfcpg {
-    background: url(//media.hungbok.net/image/age/media/bbfc_pg.svg) no-repeat center / 30px 30px, #fab800;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_pg.svg) no-repeat center / 30px 30px, #fab800;
 }
 
 .icon-bbfc12a {
-    background: url(//media.hungbok.net/image/age/media/bbfc_12a.svg) no-repeat center / 30px 30px, #ee7817;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_12a.svg) no-repeat center / 30px 30px, #ee7817;
 }
 
 .icon-bbfc12 {
-    background: url(//media.hungbok.net/image/age/media/bbfc_12.svg) no-repeat center / 30px 30px, #ee7817;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_12.svg) no-repeat center / 30px 30px, #ee7817;
 }
 
 .icon-bbfc15 {
-    background: url(//media.hungbok.net/image/age/media/bbfc_15.svg) no-repeat center / 30px 30px, #eb5791;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_15.svg) no-repeat center / 30px 30px, #eb5791;
 }
 
 .icon-bbfc18 {
-    background: url(//media.hungbok.net/image/age/media/bbfc_18.svg) no-repeat center / 30px 30px, #d70723;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_18.svg) no-repeat center / 30px 30px, #d70723;
 }
 
 .icon-bbfcr18 {
-    background: url(//media.hungbok.net/image/age/media/bbfc_r18.svg) no-repeat center / 30px 30px, #007dc7;
+    background: url(//media.hungbok.net/image/rating/media/bbfc_r18.svg) no-repeat center / 30px 30px, #007dc7;
 }
 
 /* fsk (germany - film / tv) */
 
 .icon-fsk0 {
-    background: url(//media.hungbok.net/image/age/media/fsk_0.svg) no-repeat center / 30px 30px, #ffffff;
+    background: url(//media.hungbok.net/image/rating/media/fsk_0.svg) no-repeat center / 30px 30px, #ffffff;
 }
 
 .icon-fsk6 {
-    background: url(//media.hungbok.net/image/age/media/fsk_6.svg) no-repeat center / 30px 30px, #ffe801;
+    background: url(//media.hungbok.net/image/rating/media/fsk_6.svg) no-repeat center / 30px 30px, #ffe801;
 }
 
 .icon-fsk12 {
-    background: url(//media.hungbok.net/image/age/media/fsk_12.svg) no-repeat center / 30px 30px, #33b540;
+    background: url(//media.hungbok.net/image/rating/media/fsk_12.svg) no-repeat center / 30px 30px, #33b540;
 }
 
 .icon-fsk16 {
-    background: url(//media.hungbok.net/image/age/media/fsk_16.svg) no-repeat center / 30px 30px, #38a7e4;
+    background: url(//media.hungbok.net/image/rating/media/fsk_16.svg) no-repeat center / 30px 30px, #38a7e4;
 }
 
 .icon-fsk18 {
-    background: url(//media.hungbok.net/image/age/media/fsk_18.svg) no-repeat center / 30px 30px, #ed1c24;
+    background: url(//media.hungbok.net/image/rating/media/fsk_18.svg) no-repeat center / 30px 30px, #ed1c24;
 }
 
 /* social */
