@@ -2268,12 +2268,19 @@ div.system-requirements-title {
 
 /* lyrics */
 
-.lyrics,
+.lyrics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
 .lyrics-container {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    width: 1120px;
 }
 
 .lyrics-card {
@@ -2574,6 +2581,10 @@ div.system-requirements-title {
 .mv-voicername {
     margin: auto;
     padding: 10px 0px;
+}
+
+.mv-voicername p {
+    margin: 0;
 }
 
 .mv-description p {
