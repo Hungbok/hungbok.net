@@ -309,7 +309,7 @@ $(document).ready(function(){
                     '</div>'+
                 '</div>');
                 storyContainer.append(storyCard);
-                if ((index + 1) % 10 === 0 && index + 1 < storyData.length) {
+                if ((index + 1) % 5 === 0 && index + 1 < storyData.length) {
                     storyContainer = $('<div class="story-container"></div>');
                     $(".story").append(storyContainer);
                 }
@@ -346,7 +346,7 @@ $(document).ready(function(){
                     '</div>'+
                 '</div>');
                 settingContainer.append(settingCard);
-                if ((index + 1) % 5 === 0 && index + 1 < settingData.length) {
+                if ((index + 1) % 3 === 0 && index + 1 < settingData.length) {
                     settingContainer = $('<div class="setting-container"></div>');
                     $(".setting").append(settingContainer);
                 }
@@ -487,7 +487,7 @@ $(document).ready(function(){
                     '</div>'+
                 '</div>');
                 characterContainer.append(characterCard);
-                if ((index + 1) % 10 === 0 && index + 1 < characterData.length) {
+                if ((index + 1) % 6 === 0 && index + 1 < characterData.length) {
                     characterContainer = $('<div class="character-container"></div>');
                     $(".character").append(characterContainer);
                 }
