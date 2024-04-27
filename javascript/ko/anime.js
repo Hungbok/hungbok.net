@@ -607,7 +607,6 @@ $(document).ready(function(){
                             loop: false,
                             dots: false,
                             merge: true,
-                            center: true,
                             autoplay: false,
                             autoWidth: true,
                         });

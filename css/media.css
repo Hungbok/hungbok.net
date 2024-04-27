@@ -1677,7 +1677,6 @@ div.system-requirements-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1200px;
 }
 
 .story-card {
@@ -1829,7 +1828,6 @@ div.system-requirements-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1200px;
 }
 
 .setting-card {
@@ -1962,7 +1960,6 @@ div.system-requirements-title {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    max-width: 1200px;
 }
 
 .character-card {
@@ -2530,7 +2527,6 @@ div.system-requirements-title {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 1200px;
 }
 
 .music-card {
@@ -3306,6 +3302,15 @@ div.system-requirements-title {
     vertical-align: middle;
 }
 
+.info-slider .owl-stage {
+    margin: 0;
+    padding: 10px 0px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 /* home */
 
 .game-section {
@@ -3324,8 +3329,7 @@ div.system-requirements-title {
     display: none;
 }
 
-.game-section .owl-stage,
-.info-slider .owl-stage {
+.game-section .owl-stage {
     margin: 0;
     padding: 10px 0px;
     display: flex;
