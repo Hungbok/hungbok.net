@@ -394,7 +394,7 @@ $(document).ready(function(){
                         '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
                     '<div class="lyrics-info">'+
-                        '<div class="lyrics-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
+                        '<div class="lyrics-title" ttt="' + item.nameog + '">' + item.name + '</div>'+
                     '</div>'+
                     '<div class="lyrics-description">' + item.text + '</div>'+
                 '</div>');
