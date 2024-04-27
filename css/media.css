@@ -2398,8 +2398,7 @@ div.system-requirements-title {
 .mv-card {
     display: grid;
     position: relative;
-    width: calc(100% - 80px);
-    margin: 10px;
+    width: 760px;
     border-radius: 20px;
     padding: 20px;
     overflow: hidden;
