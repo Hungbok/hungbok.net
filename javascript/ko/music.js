@@ -458,7 +458,7 @@ $(document).ready(function(){
             }
             // music 생성
             musicData.forEach(function(item) {
-                $(".music").append('<div class="mv-card">'+
+                $(".music-player").append('<div class="mv-card">'+
                     '<div class="music-player-video">'+
                         '<div class="video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
                             '<img class="slider-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.src=`//media.hungbok.net/image/hb/hb_error_horizontal.svg`;">'+
