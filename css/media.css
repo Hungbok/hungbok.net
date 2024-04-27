@@ -1677,6 +1677,7 @@ div.system-requirements-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 1200px;
 }
 
 .story-card {
@@ -1828,6 +1829,7 @@ div.system-requirements-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 1200px;
 }
 
 .setting-card {
@@ -1960,6 +1962,7 @@ div.system-requirements-title {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    max-width: 1200px;
 }
 
 .character-card {
@@ -2527,6 +2530,7 @@ div.system-requirements-title {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    max-width: 1200px;
 }
 
 .music-card {
