@@ -3737,14 +3737,9 @@ div.system-requirements-title {
 }
 
 .owl-nav button.disabled {
-    opacity: 0.25;
+    opacity: 0 !important;
     cursor: not-allowed;
-}
-
-.info-slider:hover .owl-nav button.disabled,
-.info-loop-slider:hover .owl-nav button.disabled {
-    opacity: 0.25!important;
-    cursor: not-allowed!important;
+    pointer-events: none;
 }
 
 .owl-dots.disabled,
