@@ -569,6 +569,7 @@ body.adult > main > .top-backgrounds > div {
     display: flex;
     row-gap: 40px;
     flex-direction: column;
+    padding: 0 40px;
 }
 
 .bottom-content {
