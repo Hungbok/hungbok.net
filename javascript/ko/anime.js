@@ -633,6 +633,29 @@ $(document).ready(function(){
                         });
                     });
                 });
+                
+                var itemCount = document.querySelectorAll('.item-container .item').length;
+                var container = document.querySelector('.item-container');
+                switch(itemCount) {
+                    case 1:
+                        container.style.width = '220px';
+                        break;
+                    case 2:
+                        container.style.width = '440px';
+                        break;
+                    case 3:
+                        container.style.width = '660px';
+                        break;
+                    case 4:
+                        container.style.width = '880px';
+                        break;
+                    case 5:
+                        container.style.width = '1100px';
+                        break;
+                    default:
+                        console.log("Unhandled item count: " + itemCount);
+                        break;
+                }
             };
     
             const imdb_link = data[0].imdblink;
