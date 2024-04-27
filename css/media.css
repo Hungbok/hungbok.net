@@ -2268,7 +2268,8 @@ div.system-requirements-title {
 
 /* lyrics */
 
-.lyrics {
+.lyrics,
+.lyrics-container {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
