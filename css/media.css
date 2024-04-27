@@ -3752,6 +3752,13 @@ div.system-requirements-title {
     display: none;
 }
 
+.info-slider > .story-container,
+.info-slider > .setting-container,
+.info-slider > .character-container,
+.info-loop-slider > .music-card {
+    display: none;
+}
+
 /* .owl-grab > div > .owl-stage > .owl-item > .item {
     width: 400px;
 } */
