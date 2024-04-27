@@ -42,6 +42,11 @@
 .item-container {
     height: 320px;
     position: relative;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .item-container.item-1 {
