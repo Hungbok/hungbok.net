@@ -613,7 +613,7 @@ $(document).ready(function(){
                         });
                         $('.info-loop-slider').owlCarousel({
                             nav: true,
-                            loop: false,
+                            loop: true,
                             dots: false,
                             merge: true,
                             autoplay: false,

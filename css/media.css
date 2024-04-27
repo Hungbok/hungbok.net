@@ -1677,7 +1677,7 @@ div.system-requirements-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 1200px;
+    width: 1120px;
 }
 
 .story-card {
@@ -1829,7 +1829,7 @@ div.system-requirements-title {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 1200px;
+    width: 1120px;
 }
 
 .setting-card {
@@ -1962,7 +1962,7 @@ div.system-requirements-title {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    width: 1200px;
+    width: 1120px;
 }
 
 .character-card {
@@ -3305,7 +3305,8 @@ div.system-requirements-title {
     vertical-align: middle;
 }
 
-.info-slider .owl-stage {
+.info-slider .owl-stage,
+.info-loop-slider .owl-stage {
     margin: 0;
     padding: 10px 0px;
     display: flex;
