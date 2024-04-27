@@ -1670,6 +1670,24 @@ div.system-requirements-title {
     opacity: 1;
 }
 
+.info-slider .owl-height,
+.info-loop-slider .owl-height {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.info-slider .owl-stage,
+.info-loop-slider .owl-stage {
+    margin: 0;
+    padding: 10px 0px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+}
+
 /* story */
 
 .story,
@@ -3303,15 +3321,6 @@ div.system-requirements-title {
     height: 100%;
     text-align: center;
     vertical-align: middle;
-}
-
-.info-slider .owl-stage,
-.info-loop-slider .owl-stage {
-    margin: 0;
-    padding: 10px 0px;
-    display: flex;
-    display: -webkit-flex;
-    gap: 20px;
 }
 
 /* home */
