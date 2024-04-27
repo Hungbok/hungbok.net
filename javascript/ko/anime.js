@@ -604,7 +604,7 @@ $(document).ready(function(){
                     $(document).ready(function() {
                         $('.info-slider').owlCarousel({
                             nav: true,
-                            loop: true,
+                            loop: false,
                             dots: false,
                             merge: true,
                             autoplay: false,
