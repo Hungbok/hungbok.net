@@ -43,6 +43,12 @@
     position: relative;
 }
 
+.item-content {
+    width: 220px;
+    height: 320px;
+    position: relative;
+}
+
 /* item */
 
 .contents-top-thumbnail .item {
