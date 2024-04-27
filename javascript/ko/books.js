@@ -643,7 +643,7 @@ $(document).ready(function(){
                     '</div>'+
                 '</div>');
                 booksContainer.append(booksCard);
-                if ((index + 1) % 4 === 0 && index + 1 < booksData.length) {
+                if ((index + 1) % 12 === 0 && index + 1 < booksData.length) {
                     booksContainer = $('<div class="books-container"></div>');
                     $(".books").append(booksContainer);
                 }
