@@ -574,7 +574,7 @@ $(document).ready(function(){
                     '<div class="music-image">'+
                         '<a href="https://www.hungbok.com/music?q=' + item.url + '">'+
                             '<img class="music-background" src="//media.hungbok.net/image/hb/hb_error_square.svg">'+
-                            '<img class="music-cover" src="//media.hungbok.net/image/books/' + item.url + '/hb_thumbnail.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
+                            '<img class="music-cover" src="//media.hungbok.net/image/music/' + item.url + '/hb_cover.jpg" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                         '</a>'+
                         '<img class="music-lp" src="//media.hungbok.net/image/icon/recode.png">'+
                     '</div>'+
