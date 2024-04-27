@@ -84,6 +84,8 @@
 .contents-top-thumbnail .item-hover-first {
     z-index: 9;
     position: relative;
+    height: 320px;
+    min-width: 270px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -111,6 +113,8 @@
 .contents-top-thumbnail .item-hover-middle {
     z-index: 7;
     position: relative;
+    height: 320px;
+    min-width: 320px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -138,6 +142,8 @@
 .contents-top-thumbnail .item-hover-last {
     z-index: 5;
     position: relative;
+    height: 320px;
+    min-width: 420px;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
