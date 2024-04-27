@@ -1679,6 +1679,11 @@ div.system-requirements-title {
     opacity: 1;
 }
 
+.info-slider,
+.info-loop-slider {
+    position: relative;
+}
+
 .info-slider .owl-height,
 .info-loop-slider .owl-height {
     -webkit-transition: all 0.5s;
