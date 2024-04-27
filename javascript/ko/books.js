@@ -634,15 +634,12 @@ $(document).ready(function(){
             $(".books").append(booksContainer);
             booksData.forEach(function(item, index) {
                 var booksCard = $('<div class="books-card">'+
+                    '<div class="books-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
                     '<div class="books-image">'+
                         '<img class="books-background" src="//media.hungbok.net/image/books/' + url + '/hb_' + item.img + '.jpg"  onerror="this.src=`//media.hungbok.net/image/hb/hb_error.svg`;this.className=`onerror`;" loading="lazy">'+
                     '</div>'+
                     '<div class="books-info">'+
-                        '<div class="books-name" ttt="' + item.nameog + '">' + item.name + '</div>'+
                         '<div class="books-voice ' + item.vo + '"></div>'+
-                    '</div>'+
-                    '<div class="books-description">'+
-                        '<p>' + item.text + '</p>'+
                     '</div>'+
                 '</div>');
                 booksContainer.append(booksCard);
