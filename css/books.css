@@ -4,7 +4,7 @@
     min-height: 400px;
     display: grid;
     grid-template-columns: auto 320px;
-    grid-template-rows: 40px auto;
+    grid-template-rows: 40px 50px auto;
     column-gap: 40px;
     row-gap: 20px;
     padding: 40px 80px;
@@ -25,8 +25,8 @@
 }
 
 .top-title img {
-    max-height: 200px;
-    max-width: 320px;
+    max-height: 50px;
+    max-width: 200px;
 }
 
 .contents-top-thumbnail {
@@ -42,6 +42,7 @@
 .item-container {
     height: 320px;
     position: relative;
+    display: flex;
 }
 
 /* item */
@@ -51,7 +52,7 @@
     height: auto;
     margin: 10px;
     display: inline-block;
-    position: absolute;
+    position: relative;
     z-index: 10;
     left: 0;
     text-decoration-line: none;
@@ -72,15 +73,18 @@
     transition: all 0.5s;
 }
 
+.contents-top-thumbnail .item-container > .item:first-child {
+    left: 300px;
+}
+
 .contents-top-thumbnail:hover .item-container > .item:first-child {
-    left: -200px;
+    left: 100px;
 }
 
 .contents-top-thumbnail .item-hover-first {
     z-index: 9;
     position: relative;
-    height: 320px;
-    min-width: 270px;
+    display: flex;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -93,7 +97,7 @@
 }
 
 .contents-top-thumbnail .item-hover-first > .item:first-child {
-    left: 50px;
+    left: 150px;
     z-index: 8;
 }
 
@@ -102,14 +106,13 @@
 }
 
 .contents-top-thumbnail:hover .item-hover-first > .item:first-child {
-    left: -50px;
+    left: 50px;
 }
 
 .contents-top-thumbnail .item-hover-middle {
     z-index: 7;
     position: relative;
-    height: 320px;
-    min-width: 320px;
+    display: flex;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -122,7 +125,7 @@
 }
 
 .contents-top-thumbnail .item-hover-middle > .item:first-child {
-    left: 100px;
+    left: 0px;
     z-index: 6;
 }
 
@@ -131,14 +134,13 @@
 }
 
 .contents-top-thumbnail:hover .item-hover-middle > .item:first-child {
-    left: 100px;
+    left: 0px;
 }
 
 .contents-top-thumbnail .item-hover-last {
     z-index: 5;
     position: relative;
-    height: 320px;
-    min-width: 420px;
+    display: flex;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -151,12 +153,12 @@
 }
 
 .contents-top-thumbnail .item-hover-last > .item:first-child {
-    left: 150px;
+    left: -150px;
     z-index: 4;
 }
 
 .contents-top-thumbnail .item-hover-last > .item:last-child {
-    left: 200px;
+    left: -300px;
     z-index: 3;
 }
 
@@ -169,11 +171,11 @@
 }
 
 .contents-top-thumbnail:hover .item-hover-last > .item:first-child {
-    left: 250px;
+    left: -50px;
 }
 
 .contents-top-thumbnail:hover .item-hover-last > .item:last-child {
-    left: 400px;
+    left: -100px;
 }
 
 .contents-top-thumbnail .item-thumbnail {
