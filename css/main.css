@@ -282,6 +282,8 @@
     font-size: inherit;
     opacity: 0;
     left: 50%;
+    transform: translate(-50%, 0px);
+    bottom: calc(100% + 10px);
     vertical-align: middle;
     word-wrap: break-word;
     text-wrap: nowrap;
