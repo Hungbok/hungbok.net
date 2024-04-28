@@ -2402,14 +2402,14 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.lyrics-description div {
-    height: 100%;
-    min-height: 24px;
-}
-
 .lyrics-description p {
     display: inline-block;
     margin: 0;
+}
+
+.lyrics-description .lyrics-card p:after {
+    bottom: calc(100% + 10px);
+    top: unset;
 }
 
 .lyrics-description .h1 {
