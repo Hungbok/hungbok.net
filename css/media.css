@@ -2296,7 +2296,7 @@ div.system-requirements-title {
 .lyrics-card {
     display: grid;
     position: relative;
-    max-width: 450px;
+    max-width: 750px;
     width: 100%;
     padding: 20px;
     border-radius: 20px;
@@ -2379,8 +2379,8 @@ div.system-requirements-title {
 
 .lyrics-image .lyrics-background {
     z-index: 0;
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
