@@ -386,7 +386,7 @@ $(document).ready(function(){
                 });
             }
             // lyrics 생성
-            musicData.forEach(function(item) {
+            lyricsData.forEach(function(item) {
                 $(".lyrics").append('<div class="lyrics-card">'+
                     '<div class="lyrics-image video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
                         '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
