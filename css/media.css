@@ -2053,7 +2053,6 @@ div.system-requirements-title {
     max-width: 220px;
     border-radius: 20px;
     padding: 20px;
-    overflow: hidden;
     gap: 20px;
     flex-direction: column;
     background-color: var(--background-8);
@@ -2256,7 +2255,11 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
-.books-voicername,
+.books-voicername {
+    margin: auto;
+    padding: 10px 0px;
+}
+
 .character-voicername {
     margin: auto;
     min-height: 24px;
