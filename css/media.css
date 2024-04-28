@@ -1688,6 +1688,14 @@ div.system-requirements-title {
     opacity: 1;
 }
 
+.lyrics-description [ttt]:hover::after {
+    left: 50%;
+    transform: translate(-50%, 0px);
+    top: unset;
+    bottom: calc(100% + 10px);
+    opacity: 1;
+}
+
 .info-slider,
 .info-loop-slider {
     position: relative;

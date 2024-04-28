@@ -267,17 +267,21 @@
 
 /* ---------- Text Tooltip ---------- */
 
+[ttt] {
+    position: relative;
+}
+
 [ttt]:hover {
     position: relative;
 }
 
 [ttt]::after {
     content: attr(ttt);
-    padding: 10px 20px;
+    padding: 10px 10px;
     position: absolute;
     font-size: inherit;
     opacity: 0;
-    left: -99999px;
+    left: 50%;
     vertical-align: middle;
     word-wrap: break-word;
     text-wrap: nowrap;
@@ -298,15 +302,16 @@
     -o-border-radius: 50px;
     -ms-border-radius: 50px;
     border-radius: 50px;
-    -webkit-transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    -moz-transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    -o-transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    -ms-transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 [ttt]:hover::after {
     left: 50%;
+    padding: 10px 20px;
     transform: translate(-50%, 0px);
     bottom: calc(100% + 10px);
     opacity: 1;
