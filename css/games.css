@@ -1799,7 +1799,6 @@ div.opencritic-reviews {
     transform: translate(-50%, 0px);
     top: calc(100% + 10px);
     bottom: unset;
-    opacity: 1;
 }
 
 .star-ratings {

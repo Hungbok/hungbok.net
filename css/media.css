@@ -1685,7 +1685,6 @@ div.system-requirements-title {
     transform: translate(-50%, 0px);
     top: calc(100% + 10px);
     bottom: unset;
-    opacity: 1;
 }
 
 .lyrics-description [ttt]::after {
@@ -1693,7 +1692,6 @@ div.system-requirements-title {
     transform: translate(-50%, 0px);
     top: unset;
     bottom: calc(100% + 10px);
-    opacity: 1;
 }
 
 .info-slider,
@@ -2214,7 +2212,6 @@ div.system-requirements-title {
     transform: translate(-50%, 0px);
     top: unset;
     bottom: calc(100% + 10px);
-    opacity: 1;
 }
 
 .books-voicer,
@@ -2662,7 +2659,6 @@ div.system-requirements-title {
     transform: translate(-50%, 0px);
     top: unset;
     bottom: calc(100% + 10px);
-    opacity: 1;
 }
 
 .mv-voicer {
@@ -3122,7 +3118,6 @@ div.system-requirements-title {
     transform: translate(-50%, 0px);
     top: unset;
     bottom: calc(100% + 10px);
-    opacity: 1;
 }
 
 .table-bg {
