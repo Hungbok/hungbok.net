@@ -2407,11 +2407,6 @@ div.system-requirements-title {
     margin: 0;
 }
 
-.lyrics-description .lyrics-card p:after {
-    bottom: calc(100% + 10px);
-    top: unset;
-}
-
 .lyrics-description .h1 {
     font-size: 24px;
     color: var(--text-1);
@@ -2419,8 +2414,13 @@ div.system-requirements-title {
 
 .lyrics-description .h6 {
     font-size: 14px;
-    color: var(--text-1);
+    background-color: var(--text-1);
+    color: var(--background-8);
+    padding: 0 10px;
+    border-radius: 10px;
     font-weight: bold;
+    line-height: 24px;
+    text-transform: uppercase;
 }
 
 .lyrics-description .bold {
