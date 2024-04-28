@@ -501,6 +501,10 @@ $(document).ready(function(){
                             '</div>'+
                         '</div>'+
                     '</div>'+
+                    '<details class="details">'+
+                        '<summary></summary>'+
+                        '<div class="franchise-contents lyrics-description">' + item.text + '</div>'+
+                    '</details>'+
                 '</div>');
             });
 

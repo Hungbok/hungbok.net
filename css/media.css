@@ -2288,7 +2288,7 @@ div.system-requirements-title {
 .lyrics-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     gap: 20px;
     width: 1120px;
 }
