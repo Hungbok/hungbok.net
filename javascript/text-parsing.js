@@ -15,7 +15,7 @@ function convertContent(originalContent) {
         .replace(/\[h1\](.*?)\[\/h1\]/g, '<p class=\'h1\'>$1</p>')
         .replace(/\[h6\](.*?)\[\/h6\]/g, '<p class=\'h6\'>$1</p>')
         .replace(/\[t=(.*?)\](.*?)\[\/t\]/g, '<p ttt=\'$1\'>$2</p>')
-        .replace(/\[d=(.*?)r=(.*?)t=(.*?)\](.*?)\[\/d\]/g, '<td rep=\'$1\' rowspan=\'$2\'><p ttt=\'$3\'>$4</p></td>')
+        .replace(/\[d=(.*?)r=(.*?)\](.*?)\[\/d\]/g, '<td rep=\'$1\' rowspan=\'$2\'>$3</td>')
         .replace(/\[b\](.*?)\[\/b\]/g, '<p class=\'bold\'>$1</p>')
         .replace(/\[u\](.*?)\[\/u\]/g, '<p class=\'underbar\'>$1</p>')
         .replace(/\[i\](.*?)\[\/i\]/g, '<p class=\'italic\'>$1</p>')
