@@ -386,10 +386,8 @@ $(document).ready(function(){
                 });
             }
             // lyrics 생성
-            var lyricsContainer = $('<div class="lyrics-container"></div>');
-            $(".lyrics").append(lyricsContainer);
-            lyricsData.forEach(function(item, index) {
-                var lyricsCard = $('<div class="lyrics-card">'+
+            musicData.forEach(function(item) {
+                $(".lyrics").append('<div class="lyrics-card">'+
                     '<div class="lyrics-image video-play-button ' + item.server + '-link" videoid="' + item.videoid + '">'+
                         '<img class="lyrics-background" src="//media.hungbok.net/image/music/' + url + '/hb_video_' + item.videoid + '.' + item.extension + '" onerror="this.remove ? this.remove() : this.removeNode();" loading="lazy">'+
                     '</div>'+
@@ -398,11 +396,6 @@ $(document).ready(function(){
                     '</div>'+
                     '<div class="lyrics-description">' + item.text + '</div>'+
                 '</div>');
-                lyricsContainer.append(lyricsCard);
-                if ((index + 1) % 1 === 0 && index + 1 < lyricsData.length) {
-                    lyricsContainer = $('<div class="lyrics-container"></div>');
-                    $(".lyrics").append(lyricsContainer);
-                }
             });
             
             var music_value = data[0].musiccount; // music 수
