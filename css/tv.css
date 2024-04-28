@@ -470,7 +470,7 @@
     max-width: 125px;
 }
 
-.tv-table .tv-tr:last-child > td > p[ttt]:hover::after {
+.tv-table .tv-tr:last-child > td > p[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;

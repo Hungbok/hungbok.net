@@ -596,7 +596,7 @@
     max-width: 300px;
 }
 
-.books-table .books-tr:last-child > td > p[ttt]:hover::after {
+.books-table .books-tr:last-child > td > p[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;

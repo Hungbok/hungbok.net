@@ -1670,17 +1670,17 @@ div.system-requirements-title {
     display: none;
 }
 
-.story [ttt]:hover::after,
-.setting [ttt]:hover::after,
-.lyrics [ttt]:hover::after,
-.mv [ttt]:hover::after,
-.character [ttt]:hover::after,
-.books [ttt]:hover::after,
-.music [ttt]:hover::after,
-.rating-star[ttt]:hover::after,
-.tv-table .tv-tr > td > p[ttt]:hover::after,
-.music-table .music-tr > td > p[ttt]:hover::after,
-.episode-table .episode-tr > td > p[ttt]:hover::after {
+.story [ttt]::after,
+.setting [ttt]::after,
+.lyrics [ttt]::after,
+.mv [ttt]::after,
+.character [ttt]::after,
+.books [ttt]::after,
+.music [ttt]::after,
+.rating-star[ttt]::after,
+.tv-table .tv-tr > td > p[ttt]::after,
+.music-table .music-tr > td > p[ttt]::after,
+.episode-table .episode-tr > td > p[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: calc(100% + 10px);
@@ -1688,7 +1688,7 @@ div.system-requirements-title {
     opacity: 1;
 }
 
-.lyrics-description [ttt]:hover::after {
+.lyrics-description [ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;
@@ -2208,8 +2208,8 @@ div.system-requirements-title {
     border-radius: 20px;
 }
 
-.books-name[ttt]:hover::after,
-.character-name[ttt]:hover::after {
+.books-name[ttt]::after,
+.character-name[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;
@@ -2657,7 +2657,7 @@ div.system-requirements-title {
     margin: 0px 0px 20px;
 }
 
-.mv-name[ttt]:hover::after {
+.mv-name[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;
@@ -3117,7 +3117,7 @@ div.system-requirements-title {
     max-width: 125px;
 }
 
-.episode-table .episode-tr:last-child > td > p[ttt]:hover::after {
+.episode-table .episode-tr:last-child > td > p[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;

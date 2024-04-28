@@ -1794,7 +1794,7 @@ div.opencritic-reviews {
     transition: all 0.5s;
 }
 
-.rating-star[ttt]:hover::after {
+.rating-star[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: calc(100% + 10px);
