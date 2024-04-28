@@ -652,7 +652,8 @@ $(document).ready(function(){
             booksCounts.forEach(function (booksCount, countIndex) {
                 for (var j = 1; j <= booksCount; j++) {
                     var cLang = data[0]['book' + (countIndex + 1) + 'lang' + j];
-                    var cName = getLocalizedTextData(data[0], ['book' + (countIndex + 1) + 'name' + j]);
+                    var cNameDate = getLocalizedTextData(data[0], ['book' + (countIndex + 1) + 'name' + j]);
+                    var cName = formatDate(cNameDate);
                     var cNameog = data[0]['book' + (countIndex + 1) + 'name' + j];
         
                     $('.bvoice' + (countIndex + 1)).append('<div class="books-voicer ' + cLang + '">'+
