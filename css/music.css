@@ -416,6 +416,17 @@
     gap: 10px;
 }
 
+.music-player-video .video-play-button {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
 .album-link,
 .music-link,
 .external-link {
@@ -610,7 +621,7 @@
     max-width: 125px;
 }
 
-.music-table .music-tr:last-child > td > p[ttt]:hover::after {
+.music-table .music-tr:last-child > td > p[ttt]::after {
     left: 50%;
     transform: translate(-50%, 0px);
     top: unset;
