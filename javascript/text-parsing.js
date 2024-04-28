@@ -12,19 +12,19 @@ function convertContent(originalContent) {
 
     let convertedContent = contentWithPlaceholders
         .split('\n').map(line => `<div>${line}</div>`).join('')
-        .replace(/\[h1\](.*?)\[\/h1\]/g, '<p class="h1">$1</p>')
-        .replace(/\[h6\](.*?)\[\/h6\]/g, '<p class="h6">$1</p>')
-        .replace(/\[t=(.*?)\](.*?)\[\/t\]/g, '<p ttt="$1">$2</p>')
-        .replace(/\[d=(.*?)r=(.*?)t=(.*?)\](.*?)\[\/d\]/g, '<td rep="$1" rowspan="$2"><p ttt="$3">$4</p></td>')
-        .replace(/\[b\](.*?)\[\/b\]/g, '<p class="bold">$1</p>')
-        .replace(/\[u\](.*?)\[\/u\]/g, '<p class="underbar">$1</p>')
-        .replace(/\[i\](.*?)\[\/i\]/g, '<p class="italic">$1</p>')
-        .replace(/\[strike\](.*?)\[\/strike\]/g, '<p class="strike">$1</p>')
-        .replace(/\[spoiler\](.*?)\[\/spoiler\]/g, '<p class="spoiler">$1</p>')
-        .replace(/\[url=(.*?)\](.*?)\[\/url\]/g, '<a href="https://$1">$2</a>')
-        .replace(/\[img=(.*?)\](.*?)\[\/img\]/g, '<div class="image-container"><img src="https://$1" title="$2"></div>')
-        .replace(/\[yt=(.*?)\](.*?)\[\/yt\]/g, '<div class="video-container"><iframe src="https://www.youtube.com/embed/$1" title="$2" frameborder="0" allowfullscreen=""></iframe></div>')
-        .replace(/\[x=(.*?)=(.*?)\](.*?)\[\/x\]/g, '<div class="widget-container"><blockquote class="twitter-tweet" align="center" data-theme="dark" title="$3"><a href="https://twitter.com/$1/status/$2"></a></blockquote></div>');
+        .replace(/\[h1\](.*?)\[\/h1\]/g, '<p class=\'h1\'>$1</p>')
+        .replace(/\[h6\](.*?)\[\/h6\]/g, '<p class=\'h6\'>$1</p>')
+        .replace(/\[t=(.*?)\](.*?)\[\/t\]/g, '<p ttt=\'$1\'>$2</p>')
+        .replace(/\[d=(.*?)r=(.*?)t=(.*?)\](.*?)\[\/d\]/g, '<td rep=\'$1\' rowspan=\'$2\'><p ttt=\'$3\'>$4</p></td>')
+        .replace(/\[b\](.*?)\[\/b\]/g, '<p class=\'bold\'>$1</p>')
+        .replace(/\[u\](.*?)\[\/u\]/g, '<p class=\'underbar\'>$1</p>')
+        .replace(/\[i\](.*?)\[\/i\]/g, '<p class=\'italic\'>$1</p>')
+        .replace(/\[strike\](.*?)\[\/strike\]/g, '<p class=\'strike\'>$1</p>')
+        .replace(/\[spoiler\](.*?)\[\/spoiler\]/g, '<p class=\'spoiler\'>$1</p>')
+        .replace(/\[url=(.*?)\](.*?)\[\/url\]/g, '<a href=\'https://$1\'>$2</a>')
+        .replace(/\[img=(.*?)\](.*?)\[\/img\]/g, '<div class=\'image-container\'><img src=\'https://$1\' title=\'$2\'></div>')
+        .replace(/\[yt=(.*?)\](.*?)\[\/yt\]/g, '<div class=\'video-container\'><iframe src=\'https://www.youtube.com/embed/$1\' title=\'$2\' frameborder=\'0\' allowfullscreen=\'\'></iframe></div>')
+        .replace(/\[x=(.*?)=(.*?)\](.*?)\[\/x\]/g, '<div class=\'widget-container\'><blockquote class=\'twitter-tweet\' align=\'center\' data-theme=\'dark\' title=\'$3\'><a href=\'https://twitter.com/$1/status/$2\'></a></blockquote></div>');
 
     noparsePlaceholders.forEach(({ placeholder, content }) => {
         convertedContent = convertedContent.replace(placeholder, `<p>${content}</p>`);
