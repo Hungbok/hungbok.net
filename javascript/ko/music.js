@@ -399,7 +399,7 @@ $(document).ready(function(){
                     '<div class="lyrics-description">' + item.text + '</div>'+
                 '</div>');
                 lyricsContainer.append(lyricsCard);
-                if ((index + 1) % 2 === 0 && index + 1 < lyricsData.length) {
+                if ((index + 1) % 1 === 0 && index + 1 < lyricsData.length) {
                     lyricsContainer = $('<div class="lyrics-container"></div>');
                     $(".lyrics").append(lyricsContainer);
                 }
@@ -408,6 +408,7 @@ $(document).ready(function(){
             var music_value = data[0].musiccount; // music 수
             var musicData = [];
             for (var i = 1; i <= music_value; i++) {
+                var musicType = data[0]['musictype' + i];
                 var musicTitle = getLocalizedTextData(data[0], ['musictitle' + i]);
                 var musicTitleOriginal = data[0]['musictitle' + i];
                 var musicUrl = data[0]['musicurl' + i];
@@ -421,7 +422,7 @@ $(document).ready(function(){
                 var musicProduceOriginal = data[0]['musicproduce' + i];
                 var musicArrange = getLocalizedTextData(data[0], ['musicarrange' + i]);
                 var musicArrangeOriginal = data[0]['musicarrange' + i];
-                var lyricsText = getLocalizedTextData(data[0], ['lyricstext' + i]);
+                var musicImage = 'music_' + i;
                 var musicvideoServer = data[0]['musicvideoserver' + i];
                 var musicvideoExtension = 'jpg';
                 if (musicvideoServer === 'youtube') {
@@ -445,6 +446,7 @@ $(document).ready(function(){
                     musicvideo2Extension = 'avif';
                 }
                 musicData.push({
+                    type: musicType,
                     title: musicTitle,
                     titleog: musicTitleOriginal,
                     url: musicUrl,
@@ -458,7 +460,7 @@ $(document).ready(function(){
                     produceog: musicProduceOriginal,
                     arrange: musicArrange,
                     arrangeog: musicArrangeOriginal,
-                    text: lyricsText,
+                    img: musicImage,
                     server: musicvideoServer,
                     extension: musicvideoExtension,
                     server2: musicvideo2Server,
@@ -499,10 +501,6 @@ $(document).ready(function(){
                             '</div>'+
                         '</div>'+
                     '</div>'+
-                    '<details class="details">'+
-                        '<summary></summary>'+
-                        '<div class="details-contents lyrics-description">' + item.text + '</div>'+
-                    '</details>'+
                 '</div>');
             });
 
