@@ -2402,6 +2402,10 @@ div.system-requirements-title {
     transition: all 0.5s;
 }
 
+.lyrics-description div {
+    min-height: 24px;
+}
+
 .lyrics-description p {
     display: inline-block;
     margin: 0;

@@ -562,7 +562,7 @@
 }
 
 .music-table > tbody > tr > td[rep="8"] > p {
-    margin: 0px;
+    margin: 5px;
     vertical-align: middle;
 }
 

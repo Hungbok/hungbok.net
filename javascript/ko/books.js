@@ -752,7 +752,7 @@ $(document).ready(function(){
             }
             // 에피소드 줄 생성
             episodeData.forEach(function(item) {
-                $(".episode-tables tbody").append('<tr i="' + item.line + '" class="episode-tr">' + item.text + '</tr>');
+                $(".books-tables tbody").append('<tr i="' + item.line + '" class="books-tr">' + item.text + '</tr>');
             });
 
             window.onload = function() {
