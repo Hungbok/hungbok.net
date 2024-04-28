@@ -357,7 +357,8 @@ body.adult > main > .top-backgrounds > div {
     background-image: url("//media.hungbok.net/image/icon/play_circle.svg");
 }
 
-.video-play-button.none-link {
+.video-play-button.none-link,
+.music-player-video .video-play-button.none-link {
     display: none;
 }
 
