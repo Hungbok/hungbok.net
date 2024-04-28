@@ -1081,6 +1081,26 @@ body.en .middle-content::before {
     content: "방영일자";
 }
 
+.books-table > thead > tr > th:nth-child(1):before {
+    content: "수록";
+}
+
+.books-table > thead > tr > th:nth-child(2)::before {
+    content: "번호";
+}
+
+.books-table > thead > tr > th:nth-child(3)::before {
+    content: "제목";
+}
+
+.books-table > thead > tr > th:nth-child(4)::before {
+    content: "목차";
+}
+
+.books-table > thead > tr > th:nth-child(5)::before {
+    content: "애니메이션";
+}
+
 .more-info .more-info-item-text.tva::before {
     content: "TV 애니메이션";
 }
