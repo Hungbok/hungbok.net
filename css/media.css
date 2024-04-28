@@ -3902,7 +3902,7 @@ div.system-requirements-title {
 .info-slider > .books-container,
 .info-loop-slider > .music-card,
 .info-loop-slider > .mv-card,
-.info-loop-slider > .lyrics-card {
+.info-loop-slider > .lyrics-container {
     display: none;
 }
 
