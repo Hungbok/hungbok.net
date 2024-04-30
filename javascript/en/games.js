@@ -1055,7 +1055,7 @@ $(document).ready(function(){
                 
                     // 만 19세 이상이라면
                     if (adjustedAge >= 18) {
-                        setCookie('agecheck', 'success', 24);
+                        setCookie('agecheck', 'success', 168);
                         location.reload();
                     } else {
                         // 만 19세 미만이거나 나이를 확인할 수 없는 경우
