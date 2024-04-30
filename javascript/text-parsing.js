@@ -23,6 +23,12 @@ function convertContent(originalContent) {
         .replace(/\[spoiler\](.*?)\[\/spoiler\]/g, '<p class=\'spoiler\'>$1</p>')
         .replace(/\[url=(.*?)\](.*?)\[\/url\]/g, '<a href=\'https://$1\'>$2</a>')
         .replace(/\[img=(.*?)\](.*?)\[\/img\]/g, '<div class=\'image-container\'><img src=\'https://$1\' title=\'$2\'></div>')
+        .replace(/\[sp=(.*?)\](.*?)\[\/sp\]/g, '<p class=\'music-link icon-spotify spotify-track\' videoid=\'$1\' title=\'$2\' ttt=\'Spotify\'></p>')
+        .replace(/\[ap=(.*?)\](.*?)\[\/ap\]/g, '<p class=\'music-link icon-applemusic apple-track\' videoid=\'$1\' title=\'$2\' ttt=\'Apple Music\'></p>')
+        .replace(/\[am=(.*?)\](.*?)\[\/am\]/g, '<p class=\'music-link icon-amazonmusic amazon-track\' videoid=\'$1\' title=\'$2\' ttt=\'Amazon Music\'></p>')
+        .replace(/\[de=(.*?)\](.*?)\[\/de\]/g, '<p class=\'music-link icon-deezer deezer-track\' videoid=\'$1\' title=\'$2\' ttt=\'Deezer\'></p>')
+        .replace(/\[li=(.*?)\](.*?)\[\/li\]/g, '<p class=\'music-link icon-linemusic line-track\' videoid=\'$1\' title=\'$2\' ttt=\'Line Music\'></p>')
+        .replace(/\[vi=(.*?)\](.*?)\[\/vi\]/g, '<p class=\'music-link icon-vibe naver-track\' videoid=\'$1\' title=\'$2\' ttt=\'Vibe\'></p>')
         .replace(/\[yt=(.*?)\](.*?)\[\/yt\]/g, '<div class=\'video-container\'><iframe src=\'https://www.youtube.com/embed/$1\' title=\'$2\' frameborder=\'0\' allowfullscreen=\'\'></iframe></div>')
         .replace(/\[x=(.*?)=(.*?)\](.*?)\[\/x\]/g, '<div class=\'widget-container\'><blockquote class=\'twitter-tweet\' align=\'center\' data-theme=\'dark\' title=\'$3\'><a href=\'https://twitter.com/$1/status/$2\'></a></blockquote></div>');
 
