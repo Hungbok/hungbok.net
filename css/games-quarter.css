@@ -167,7 +167,7 @@ div#calendar > div > div {
 .co > img.console,
 .vr > img.vr,
 .ar > img.arcade {
-    display: block;
+    display: inline-block;
 }
 
 .pc > img.display,
