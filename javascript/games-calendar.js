@@ -242,6 +242,7 @@ window.onload = function() {
     $(".xb").append('<img ttt="Xbox" src="https://media.hungbok.net/image/icon/xbox.svg">');
     $(".ns").append('<img ttt="Nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg">');
     $(".co").append('<img ttt="Console" src="https://media.hungbok.net/image/icon/gamepad.svg">');
+    $(".vr").append('<img ttt="VR" src="https://media.hungbok.net/image/icon/goggles.svg">');
     $(".ar").append('<img ttt="Arcade" src="https://media.hungbok.net/image/icon/arcade.svg">');
     $(".mo").append('<img ttt="Mobile" src="https://media.hungbok.net/image/icon/phone.svg">');
     $(".cl").append('<img ttt="Cloud" src="https://media.hungbok.net/image/icon/cloud.svg">');

@@ -283,6 +283,9 @@ div#calendar > div > div {
 .ps > img.playstation,
 .xb > img.xbox,
 .ns > img.nintendo,
+.co > img.console,
+.vr > img.vr,
+.ar > img.arcade,
 .mo > img.phone,
 .cl > img.cloud {
     display: inline-block;

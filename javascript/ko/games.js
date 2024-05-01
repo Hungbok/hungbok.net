@@ -378,6 +378,7 @@ $(document).ready(function(){
             $(".platform.xbox").append('<div class="icon-xbox" ttt="Xbox"></div>');
             $(".platform.nintendo").append('<div class="icon-nintendo" ttt="Nintendo"></div>');
             $(".platform.console").append('<div class="icon-console" ttt="Console"></div>');
+            $(".platform.vr").append('<div class="icon-vr" ttt="VR"></div>');
             $(".platform.arcade").append('<div class="icon-arcade" ttt="Arcade"></div>');
             $(".platform.mobile").append('<div class="icon-mobile" ttt="Mobile"></div>');
             $(".platform.cloud").append('<div class="icon-cloud" ttt="Cloud"></div>');

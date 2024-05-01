@@ -139,6 +139,9 @@ if (year && season && monthRange) {
                 <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="console" src="https://media.hungbok.net/image/icon/gamepad.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="vr" src="https://media.hungbok.net/image/icon/goggles.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="arcade" src="https://media.hungbok.net/image/icon/arcade.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
@@ -161,6 +164,9 @@ if (year && season && monthRange) {
                 <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="console" src="https://media.hungbok.net/image/icon/gamepad.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="vr" src="https://media.hungbok.net/image/icon/goggles.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="arcade" src="https://media.hungbok.net/image/icon/arcade.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
@@ -184,6 +190,9 @@ if (year && season && monthRange) {
                 <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="console" src="https://media.hungbok.net/image/icon/gamepad.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="vr" src="https://media.hungbok.net/image/icon/goggles.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="arcade" src="https://media.hungbok.net/image/icon/arcade.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
@@ -208,6 +217,9 @@ if (year && season && monthRange) {
                 <img class="playstation" src="https://media.hungbok.net/image/icon/playstation.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="xbox" src="https://media.hungbok.net/image/icon/xbox.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="nintendo" src="https://media.hungbok.net/image/icon/nintendo.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="console" src="https://media.hungbok.net/image/icon/gamepad.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="vr" src="https://media.hungbok.net/image/icon/goggles.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
+                <img class="arcade" src="https://media.hungbok.net/image/icon/arcade.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="phone" src="https://media.hungbok.net/image/icon/phone.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
                 <img class="cloud" src="https://media.hungbok.net/image/icon/cloud.svg" onerror="this.src='//media.hungbok.net/image/hb/hb_error.svg';">
               </div>
