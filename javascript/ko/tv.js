@@ -54,20 +54,25 @@ $(document).ready(function(){
                 
                 const parts = date.split('-');
                 let formattedDate = '';
+    
+                // 월을 영어로 변환
+                const months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+                // parts[1]은 월 부분을 가리키며, 배열 인덱스는 0부터 시작하므로 -1을 해줍니다.
+                const monthName = months[parseInt(parts[1], 10) - 1];
             
                 // 날짜 형식에 따라 다르게 처리
                 switch (parts.length) {
                     case 6: // yyyy-mm-dd-hh-mm-ss
-                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
+                        formattedDate = `${parts[0]}년 ${monthName}월 ${parts[2]}일`;
                         break;
                     case 5: // yyyy-mm-dd-hh-mm-ss
-                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
+                        formattedDate = `${parts[0]}년 ${monthName}월 ${parts[2]}일`;
                         break;
                     case 3: // yyyy-mm-dd
-                        formattedDate = `${parts[0]}년 ${parts[1]}월 ${parts[2]}일`;
+                        formattedDate = `${parts[0]}년 ${monthName}월 ${parts[2]}일`;
                         break;
                     case 2: // yyyy-mm
-                        formattedDate = `${parts[0]}년 ${parts[1]}월`;
+                        formattedDate = `${parts[0]}년 ${monthName}월`;
                         break;
                     case 1: // yyyy
                         formattedDate = `${parts[0]}년`;

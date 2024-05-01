@@ -35,6 +35,78 @@ $(document).ready(function(){
                 return data['fr'] && data['fr'][key] ? data['fr'][key] : data['en'][key];
             }
 
+            function getLocalizedTextData(data, key) {
+                if (data['ko'] && data['ko'][key]) {
+                    return data['ko'][key];
+                } else if (data['en'] && data['en'][key]) {
+                    return data['en'][key];
+                } else {
+                    return data[key];
+                }
+            }
+            
+            function formatDate(date) {
+                // date가 문자열이 아닐 경우 문자열로 변환
+                if (typeof date !== 'string') {
+                    date = String(date);
+                }
+                
+                const parts = date.split('-');
+                let formattedDate = '';
+    
+                // 월을 영어로 변환
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                // parts[1]은 월 부분을 가리키며, 배열 인덱스는 0부터 시작하므로 -1을 해줍니다.
+                const monthName = months[parseInt(parts[1], 10) - 1];
+            
+                // 날짜 형식에 따라 다르게 처리
+                switch (parts.length) {
+                    case 6: // yyyy-mm-dd-hh-mm-ss
+                        formattedDate = `${parts[2]} ${monthName} ${parts[0]}`;
+                        break;
+                    case 5: // yyyy-mm-dd-hh-mm-ss
+                        formattedDate = `${parts[2]} ${monthName} ${parts[0]}`;
+                        break;
+                    case 3: // yyyy-mm-dd
+                        formattedDate = `${parts[2]} ${monthName} ${parts[0]}`;
+                        break;
+                    case 2: // yyyy-mm
+                        formattedDate = `${monthName} ${parts[0]}`;
+                        break;
+                    case 1: // yyyy
+                        formattedDate = `${parts[0]}`;
+                        break;
+                    default:
+                        console.error('Invalid date format');
+                }
+            
+                return formattedDate;
+            }
+            
+            function formatTime(date) {
+                // date가 문자열이 아닐 경우 문자열로 변환
+                if (typeof date !== 'string') {
+                    date = String(date);
+                }
+                
+                const parts = date.split('-');
+                let formattedTime = '';
+            
+                // 날짜 형식에 따라 다르게 처리
+                switch (parts.length) {
+                    case 6: // yyyy-mm-dd-hh-mm-ss
+                        formattedTime = `${parts[3]}:${parts[4]}`;
+                        break;
+                    case 5: // yyyy-mm-dd-hh-mm-ss
+                        formattedTime = `${parts[3]}:${parts[4]}`;
+                        break;
+                    default:
+                        formattedTime = `-`;
+                }
+            
+                return formattedTime;
+            }
+
             $("#page-title").text(getLocalizedData(data[0], 'title') + ' | HungBok');
             $('body').addClass('body-' + data[0].type + ' ' + getLocalizedData(data[0], 'lang') + ' ' + data[0].age_check);
             $('#report-title').attr('value', 'https://www.hungbok.com' + data[0].page);
