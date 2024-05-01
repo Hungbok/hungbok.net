@@ -152,6 +152,24 @@ div#calendar > div > div {
     opacity: 0.25;
 }
 
+.calendar-item-platform img.console,
+.calendar-item-platform img.vr,
+.calendar-item-platform img.arcade {
+    display: none;
+}
+
+.co > img.playstation,
+.co > img.xbox,
+.co > img.nintendo {
+    display: none;
+}
+
+.co > img.console,
+.vr > img.vr,
+.ar > img.arcade {
+    display: block;
+}
+
 .pc > img.display,
 .ps > img.playstation,
 .xb > img.xbox,
