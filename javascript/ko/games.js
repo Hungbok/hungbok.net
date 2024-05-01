@@ -1643,7 +1643,7 @@ $(document).ready(function(){
         let freegamesData = [];
         let filteredfreegamesData = [];
         let freegamesStart = 0;
-        let freegamesLimit = 6;
+        let freegamesLimit = 3;
         
         // 데이터를 가져오는 부분은 변경하지 않았습니다.
         Promise.all([
@@ -2029,7 +2029,7 @@ changeTab({currentTarget: document.getElementsByClassName("more-info-tab")[0]}, 
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
-    
+
     var description = document.querySelector('.description');
     var showMore = document.querySelector('.show-more');
     
