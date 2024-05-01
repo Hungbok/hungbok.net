@@ -274,7 +274,7 @@ $(document).ready(function(){
                 var storyTitle = getLocalizedTextData(data[0], ['storytitle' + i]);
                 var storyTitleOriginal = data[0]['storytitle' + i];
                 var storyText = getLocalizedTextData(data[0], ['storytext' + i]);
-                var storyEpisode = i;
+                var storyEpisode = getLocalizedTextData(data[0], ['storyepisode' + i]);
                 var storyairingdate = getLocalizedTextData(data[0], ['storydate' + i]);
                 var storyDate = formatDate(storyairingdate);
                 var storyId = data[0]['storyid' + i];
@@ -297,7 +297,7 @@ $(document).ready(function(){
             storyData.forEach(function(item, index) {
                 var storyCard = $('<div class="story-card">'+
                     '<div class="story-episode">'+
-                        '<p>제' + item.epi + '화</p>'+
+                        '<p>' + item.epi + '</p>'+
                     '</div>'+
                     '<div class="story-title">'+
                         '<p ttt="' + item.titleog + '">' + item.title + '</p>'+
