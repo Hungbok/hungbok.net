@@ -1416,16 +1416,6 @@ $(document).ready(function(){
                 });
             });
 
-            window.addEventListener('load', function() {
-                var description = document.querySelector('.description');
-                var showMore = document.querySelector('.show-more');
-                
-                if(description.offsetHeight > 500){
-                    description.style.maxHeight = "500px";
-                    showMore.style.display = "block";
-                }
-            });
-
             const data_import_type_first = data[0].data_import_type_first;
             const data_import_first = data[0].data_import_first;
             const data_import_type_second = data[0].data_import_type_second;
@@ -2430,6 +2420,14 @@ $(document).ready(function(){
 
 window.addEventListener('load', function() {
     loadAsyncScripts();
+    
+    var description = document.querySelector('.description');
+    var showMore = document.querySelector('.show-more');
+    
+    if(description.offsetHeight > 300){
+        description.style.maxHeight = "300px";
+        showMore.style.display = "block";
+    }
 });
 
 function completeYear(input) {
