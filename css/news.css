@@ -206,7 +206,7 @@
 }
 
 .description p {
-    display: inline-block;
+    display: contents;
     margin: 0;
 }
 
