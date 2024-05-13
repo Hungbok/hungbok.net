@@ -32,7 +32,7 @@ async function paginateData(data, page) {
             const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
             let htmlToAdd = ""; // 모든 데이터를 저장할 HTML 문자열 초기화
 
-            document.querySelector('.list-loading').style.display = 'block';
+            document.querySelector('.list-loading').style.display = 'flex';
         
             for (const item of dataToDisplay) {
                 const monthNames = ["1", "2", "3", "4", "5", "6",
