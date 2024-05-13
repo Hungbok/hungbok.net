@@ -48,17 +48,17 @@ function getTimeDifference(publishedTime) {
     const diffInYears = Math.floor(diffInDays / 365);
 
     if (diffInSeconds < 60) {
-        return "Just Now";
+        return "Tout de suite";
     } else if (diffInMinutes < 60) {
-        return `${diffInMinutes}minutes ago`;
+        return `Il y a ${diffInMinutes} minutes`;
     } else if (diffInHours < 24) {
-        return `${diffInHours}hours ago`;
+        return `Il y a ${diffInHours} heures`;
     } else if (diffInDays < 30) {
-        return `${diffInDays}days ago`;
+        return `Il y a ${diffInDays} jours`;
     } else if (diffInMonths < 12) {
-        return `${diffInMonths}months ago`;
+        return `Il y a ${diffInMonths} mois`;
     } else {
-        return `${diffInYears}years ago`;
+        return `Il y a ${diffInYears} années`;
     }
 }
 

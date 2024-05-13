@@ -50,15 +50,15 @@ function getTimeDifference(publishedTime) {
     if (diffInSeconds < 60) {
         return "Just Now";
     } else if (diffInMinutes < 60) {
-        return `${diffInMinutes}minutes ago`;
+        return `${diffInMinutes} minutes ago`;
     } else if (diffInHours < 24) {
-        return `${diffInHours}hours ago`;
+        return `${diffInHours} hours ago`;
     } else if (diffInDays < 30) {
-        return `${diffInDays}days ago`;
+        return `${diffInDays} days ago`;
     } else if (diffInMonths < 12) {
-        return `${diffInMonths}months ago`;
+        return `${diffInMonths} months ago`;
     } else {
-        return `${diffInYears}years ago`;
+        return `${diffInYears} years ago`;
     }
 }
 
