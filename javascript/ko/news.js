@@ -116,7 +116,6 @@ async function paginateData(data, page) {
 
             document.querySelector('.list-loading').style.display = 'none';
         })();
-
     }
 }
 

@@ -73,20 +73,29 @@ async function paginateData(data, page) {
     if (dataToDisplay.length === 0) {
         searchResults.innerHTML = `<div class="no-data">検索結果がありません。</div>`;
     } else {
-        // 현재 페이지의 언어 코드를 가져옵니다.
-        const lang = document.documentElement.lang || "en";
+        (async function() { // 비동기 처리를 위한 즉시 실행 함수
+            const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
+            let htmlToAdd = ""; // 모든 데이터를 저장할 HTML 문자열 초기화
 
-        for (const item of dataToDisplay) {
-            const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
-            try {
-                const response = await fetch(detailDataUrl);
-                const detailData = await response.json();
-                const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
-                const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
-                const summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
-                const timeDifference = getTimeDifference(item.published);
-
-                searchResults.innerHTML += `
+            document.querySelector('.list-loading').style.display = 'block';
+        
+            for (const item of dataToDisplay) {
+                let title = item.title; // 초기 제목 설정
+                const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
+        
+                try {
+                    const response = await fetch(detailDataUrl);
+                    const detailData = await response.json();
+                    const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
+                    title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+                    summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
+                    timeDifference = getTimeDifference(item.published);
+                } catch (error) {
+                    console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
+                }
+        
+                // HTML 문자열을 누적하여 추가
+                htmlToAdd += `
                 <a class="item" href="${item.link}" title="${title}">
                     <div class="image">
                         <img src="${item.image}" onerror="this.src='//media.hungbok.net/image/hb/hb_error_horizontal.svg';">
@@ -99,10 +108,13 @@ async function paginateData(data, page) {
                     </div>
                 </a>
                 `;
-            } catch (error) {
-                console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
             }
-        }
+            
+            // 루프가 끝난 후, 모든 HTML을 한 번에 추가
+            searchResults.innerHTML = htmlToAdd;
+
+            document.querySelector('.list-loading').style.display = 'none';
+        })();
     }
 }
 

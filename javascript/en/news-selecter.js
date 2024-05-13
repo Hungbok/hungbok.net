@@ -193,6 +193,98 @@ $(document).ready(function(){
         loadResource('js', '//www.hungbok.net/javascript/en/news.js');
 
         $('main').append(`<section class="section">
+            <span class="list-loading">
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+            </span>
             <div id="searchResults"></div>
             <div id="pagination"></div>
         </section>`);
