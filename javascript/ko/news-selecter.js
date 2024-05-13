@@ -191,7 +191,6 @@ $(document).ready(function(){
         loadResource('js', '//www.hungbok.net/javascript/ko/news.js');
 
         $('main').append(`<section class="section">
-            <div id="searchResults"></div>
             <span class="list-loading">
                 <a class="item"">
                     <div class="image"></div>
@@ -284,6 +283,7 @@ $(document).ready(function(){
                     </div>
                 </a>
             </span>
+            <div id="searchResults"></div>
             <div id="pagination"></div>
         </section>`);
     }

@@ -78,7 +78,7 @@ async function paginateData(data, page) {
             const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
             let htmlToAdd = ""; // 모든 데이터를 저장할 HTML 문자열 초기화
 
-            document.querySelector('.list-loading').style.display = 'flex';
+            document.querySelector('.list-loading').style.display = 'block';
         
             for (const item of dataToDisplay) {
                 let title = item.title; // 초기 제목 설정
