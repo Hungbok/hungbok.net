@@ -29,7 +29,7 @@ async function paginateData(data, page) {
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         (async function() { // 비동기 처리를 위한 즉시 실행 함수
-            const lang = document.documentElement.lang || "en"; // 현재 문서의 언어 설정
+            const lang = document.documentElement.lang || "ko"; // 현재 문서의 언어 설정
             let htmlToAdd = ""; // 모든 데이터를 저장할 HTML 문자열 초기화
 
             document.querySelector('.list-loading').style.display = 'flex';
