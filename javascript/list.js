@@ -57,6 +57,8 @@ async function paginateData(data, page) {
                         releaseMonth = releaseParts[1] ? monthNames[parseInt(releaseParts[1], 10) - 1] : ''; // 월 변환
                         releaseDay = releaseParts[2] || '';
                     }
+
+                    platformData = detailData[0].platform;
                 } catch (error) {
                     console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
                 }
@@ -66,7 +68,7 @@ async function paginateData(data, page) {
                 <a class="item" href="${item.link}">
                     <div class="image"><img src="${item.image}" onerror="this.onerror=null; this.src='//media.hungbok.net/image/hb/hb_error_vertical.svg'"></div>
                     <div class="title" title="${title}">${title}</div>
-                    <div class="platform ${item.platform}"></div>
+                    <div class="platform ${platformData}"></div>
                     <div class="date">
                         ${releaseYear ? `<p class="grid-date-year">${releaseYear}</p>` : ''}
                         ${releaseMonth ? `<p class="grid-date-month">${releaseMonth}</p>` : ''}
