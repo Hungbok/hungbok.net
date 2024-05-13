@@ -192,6 +192,7 @@ $(document).ready(function(){
 
         $('main').append(`<section class="section">
             <div id="searchResults"></div>
+            <span class="list-loading"></span>
             <div id="pagination"></div>
         </section>`);
     }
