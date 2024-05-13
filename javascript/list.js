@@ -35,21 +35,28 @@ async function paginateData(data, page) {
             document.querySelector('.list-loading').style.display = 'flex';
         
             for (const item of dataToDisplay) {
-                const monthNames = ["1", "2", "3", "4", "5", "6",
-                                    "7", "8", "9", "10", "11", "12"];
-        
-                const monthName = item.release_month ? monthNames[parseInt(item.release_month, 10) - 1] : '';
-                const displayMonth = monthName ? `<p class="grid-date-month">${monthName}</p>` : '';
-                const displayDay = item.release_day ? `<p class="grid-date-day">${item.release_day}</p>` : '';
-        
                 let title = item.title; // 초기 제목 설정
                 const detailDataUrl = `//data.hungbok.net/data/games/${item.url}.json`;
+
+                let releaseYear = '', releaseMonth = '', releaseDay = ''; // 년, 월, 일 초기화
+
+                const monthNames = ["1", "2", "3", "4", "5", "6",
+                                    "7", "8", "9", "10", "11", "12"];
         
                 try {
                     const response = await fetch(detailDataUrl);
                     const detailData = await response.json();
                     const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                     title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title; // 언어에 맞는 제목으로 업데이트
+
+                    // release 데이터 처리
+                    const releaseData = detailData[0].release;
+                    if (releaseData) {
+                        const releaseParts = releaseData.split('-'); // 'yyyy-mm-dd' 형식 분리
+                        releaseYear = releaseParts[0] || '';
+                        releaseMonth = releaseParts[1] ? monthNames[parseInt(releaseParts[1], 10) - 1] : ''; // 월 변환
+                        releaseDay = releaseParts[2] || '';
+                    }
                 } catch (error) {
                     console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
                 }
@@ -61,9 +68,9 @@ async function paginateData(data, page) {
                     <div class="title" title="${title}">${title}</div>
                     <div class="platform ${item.platform}"></div>
                     <div class="date">
-                        <p class="grid-date-year">${item.release_year}</p>
-                        ${displayMonth}
-                        ${displayDay}
+                        ${releaseYear ? `<p class="grid-date-year">${releaseYear}</p>` : ''}
+                        ${releaseMonth ? `<p class="grid-date-month">${releaseMonth}</p>` : ''}
+                        ${releaseDay ? `<p class="grid-date-day">${releaseDay}</p>` : ''}
                     </div>
                 </a>
                 `;
