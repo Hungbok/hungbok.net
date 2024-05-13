@@ -600,3 +600,40 @@ button:disabled {
     padding: 10px;
     pointer-events: none;
 }
+
+.list-loading {
+    animation: breath 2s linear infinite;
+    max-width: 1100px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.list-loading .image {
+    background-color: var(--background-7);
+    border-radius: 10px;
+}
+
+.list-loading .item:hover .image {
+    transform: translate(0px, 0px);
+}
+
+.list-loading .title {
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--background-7);
+}
+
+.list-loading .platform {
+    height: 20px;
+    background-color: var(--background-7);
+    border-radius: 10px;
+}
+
+.list-loading .date {
+    height: 20px;
+    background-color: var(--background-7);
+    border-radius: 10px;
+}

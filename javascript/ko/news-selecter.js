@@ -192,7 +192,98 @@ $(document).ready(function(){
 
         $('main').append(`<section class="section">
             <div id="searchResults"></div>
-            <span class="list-loading"></span>
+            <span class="list-loading">
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+                <a class="item"">
+                    <div class="image"></div>
+                    <div class="info">
+                        <div class="type"></div>
+                        <div class="title"></div>
+                        <div class="subtitle"></div>
+                        <div class="date"></div>
+                    </div>
+                </a>
+            </span>
             <div id="pagination"></div>
         </section>`);
     }
