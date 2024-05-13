@@ -71,6 +71,7 @@ async function paginateData(data, page) {
     searchResults.innerHTML = '';
 
     if (dataToDisplay.length === 0) {
+        // 데이터가 비어 있을 경우 사용자에게 알림
         searchResults.innerHTML = `<div class="no-data">검색 결과가 없습니다.</div>`;
     } else {
         (async function() { // 비동기 처리를 위한 즉시 실행 함수
@@ -80,15 +81,16 @@ async function paginateData(data, page) {
             document.querySelector('.list-loading').style.display = 'flex';
         
             for (const item of dataToDisplay) {
+                let title = item.title; // 초기 제목 설정
                 const detailDataUrl = `//data.hungbok.net/data/news/${item.url}.json`;
         
                 try {
                     const response = await fetch(detailDataUrl);
                     const detailData = await response.json();
                     const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
-                    const title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
-                    const summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
-                    const timeDifference = getTimeDifference(item.published);
+                    title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
+                    summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
+                    timeDifference = getTimeDifference(item.published);
                 } catch (error) {
                     console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
                 }
@@ -113,8 +115,8 @@ async function paginateData(data, page) {
             searchResults.innerHTML = htmlToAdd;
 
             document.querySelector('.list-loading').style.display = 'none';
-            
         })();
+
     }
 }
 
