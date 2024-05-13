@@ -178,12 +178,14 @@ button:disabled {
 
 .list-loading .platform {
     height: 20px;
+    width: 75px;
     background-color: var(--background-7);
     border-radius: 10px;
 }
 
 .list-loading .date {
     height: 20px;
+    width: 50%;
     background-color: var(--background-7);
     border-radius: 10px;
 }

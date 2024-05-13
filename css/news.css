@@ -628,6 +628,8 @@ button:disabled {
     background-color: var(--background-7);
     border-radius: 10px;
     display: flex;
+    width: 300px;
+    height: 168.75px;
 }
 
 .list-loading .item:hover .image {
@@ -643,20 +645,30 @@ button:disabled {
     justify-content: space-between;
 }
 
-.list-loading .title {
-    height: 30px;
+.list-loading .type {
+    height: 24px;
+    width: 100px;
     border-radius: 10px;
     background-color: var(--background-7);
 }
 
-.list-loading .platform {
-    height: 20px;
+.list-loading .title {
+    height: 36px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--background-7);
+}
+
+.list-loading .subtitle {
+    height: 54px;
+    width: 100%;
     background-color: var(--background-7);
     border-radius: 10px;
 }
 
 .list-loading .date {
-    height: 20px;
+    height: 24px;
+    width: 75px;
     background-color: var(--background-7);
     border-radius: 10px;
 }
