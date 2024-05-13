@@ -90,7 +90,7 @@ async function paginateData(data, page) {
                     const itemLangData = detailData.find(d => d.hasOwnProperty(lang)) || detailData.find(d => d.hasOwnProperty("en"));
                     title = itemLangData[lang] ? itemLangData[lang].title : itemLangData["en"].title;
                     summary = itemLangData[lang] ? itemLangData[lang].summary : itemLangData["en"].summary;
-                    const timeDifference = getTimeDifference(item.published);
+                    timeDifference = getTimeDifference(item.published);
                 } catch (error) {
                     console.error('상세 데이터를 불러오는 중 오류가 발생했습니다:', error);
                 }
