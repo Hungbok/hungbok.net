@@ -461,7 +461,7 @@
 }
 
 .external-link.icon-website::after,
-#dataContainer .item.from-website a.item-link::before {
+#dataContainer .item.from-website a.item-link::after {
     content: "Website";
 }
 
