@@ -460,6 +460,11 @@
     content: "Abonnez-vous à ";
 }
 
+.external-link.icon-website::after,
+#dataContainer .item.from-website a.item-link::before {
+    content: "Website";
+}
+
 .external-link.icon-steam::after,
 #dataContainer .item.from-steam a.item-link::after {
     content: "Steam";

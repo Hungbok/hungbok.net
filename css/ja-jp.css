@@ -460,6 +460,11 @@
     content: "をサブスクライブ";
 }
 
+.external-link.icon-website::after,
+#dataContainer .item.from-website a.item-link::before {
+    content: "公式サイト";
+}
+
 .external-link.icon-steam::after,
 #dataContainer .item.from-steam a.item-link::before {
     content: "Steam";

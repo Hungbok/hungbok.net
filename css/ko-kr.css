@@ -460,6 +460,11 @@
     content: " 구독하기";
 }
 
+.external-link.icon-website::after,
+#dataContainer .item.from-website a.item-link::before {
+    content: "웹사이트";
+}
+
 .external-link.icon-steam::after,
 #dataContainer .item.from-steam a.item-link::before {
     content: "스팀";
